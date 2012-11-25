@@ -8,4 +8,5 @@ The Amahi Platform is part of the services provided by [Amahi](http://www.amahi.
 
 [![Build Status](https://secure.travis-ci.org/amahi/platform.png)](http://travis-ci.org/amahi/platform)
 
-This program is Copyright (C) 2007-2013, [Amahi](http://www.amahi.org). See the license in the COPYING file.
+This program is Copyright (C) 2007-2013, [Amahi](http://www.amahi.org).
+Licensed under the AGPL. See the license in the COPYING file.
