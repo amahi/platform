@@ -1,0 +1,5 @@
+page['select-message'].hide
+page.select(".fw-selection").each do |item|
+        item.hide
+end
+page.visual_effect :appear, "port-filter"

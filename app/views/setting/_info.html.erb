@@ -1,0 +1,17 @@
+<fieldset>
+<legend>&nbsp; <%=t 'system_info' %> &nbsp;</legend>
+  <div style="float: right">
+	<%= render :partial => "setting/system" %>
+  </div>
+<div class="settings-fields" id="info-table">
+<table style="padding: 20px">
+	<tr><td><%=t 'system' %>:</td> <td><%= `uname -r` %>, <%= `uname -m` %></td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td><%=t 'platform' %>:</td> <td><%= @version[:platform] %></td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td><%=t 'core' %>:</td> <td><%= @version[:hdactl] %></td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td><%=t 'uptime' %>:</td> <td><%= `uptime` %></td></tr>
+</table>
+</div>
+</fieldset>

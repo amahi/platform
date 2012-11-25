@@ -1,0 +1,1 @@
+page["wake-icon-#{@mac}"].replace_html theme_image_tag("ok")

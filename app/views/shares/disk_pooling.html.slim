@@ -1,0 +1,33 @@
+#shares.settings
+  .errors[style="display:none;"]
+  br
+  span.warning
+    = theme_image_tag("danger.png", :class => 'theme-image')
+    | &nbsp;
+    = "#{t('warning')}: #{t('this_feature_is_under_heavy_development')}"
+    | &nbsp;&raquo;&nbsp;
+    = link_to theme_image_tag('more.png', :title => 'Greyhole', :class => 'theme-image'), "http://wiki.amahi.org/index.php/Greyhole", :target => '_blank'
+  .center
+    table.apptable[width="100%"]
+      thead.apptable
+        tr
+          td= t('pooled')
+          td[align="center"]= t('location')
+          td[align="center"]= t('total_space')
+          td[align="center"]= t('free_space')
+          td[align="center"] (%)
+      tbody
+        = render :partial => 'disk_pooling_partition', :collection => @partitions
+        = render :partial => 'disk_pooling_broken_partition', :collection => @broken_partitions
+
+  br
+
+  - unless Greyhole.enabled?
+    p= "#{theme_image_tag("warning.png", :class => 'theme-image')} #{t('greyhole_not_installed')}".html_safe
+    br
+
+  p
+    = t('disk_pool_details', :greyhole => '<a target="_blank" href="http://greyhole.pommepause.com/">Greyhole</a>',\
+                             :shares => link_to(t('shares'), shares_path)).html_safe
+    | &nbsp; &nbsp; &raquo;
+    = link_to theme_image_tag('more.png', :class => 'theme-image'), 'http://wiki.amahi.org/index.php/Storage_pooling', :target => '_blank'

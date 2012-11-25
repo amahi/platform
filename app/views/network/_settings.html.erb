@@ -1,0 +1,24 @@
+<% router_model = Setting.network.find_by_name('router_model') %>
+<div class="settings">
+
+  <div class="error" style="display:none"></div>
+
+<div style="width: 95%">
+<% if @advanced %>
+  <fieldset>
+  <legend>&nbsp; <%=t 'network_settings' %> &nbsp;</legend>
+  <div class="settings-fields" id="network-settings">
+	<%= render :partial => "network/settings_server" %>
+  </div>
+  </fieldset>
+<% end %>
+<br/>
+  <fieldset>
+  <legend>&nbsp; <%=t 'router_firewall_settings' %> &nbsp;</legend>
+  <div class="settings-fields" id="router-settings">
+	<%= render :partial => "network/router/settings" %>
+  </div>
+  </fieldset>
+</div>
+
+</div>

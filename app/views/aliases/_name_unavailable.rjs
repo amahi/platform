@@ -1,0 +1,4 @@
+page[:alias_messages].replace_html theme_image_tag("stop") + " " + t('alias_is_taken_already')
+page.show 'alias_messages'
+page[:alias_address].disabled = true
+page[:alias_create_button].disabled = true

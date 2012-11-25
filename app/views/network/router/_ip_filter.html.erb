@@ -1,0 +1,6 @@
+<%= checkbox_to_remote setting.value == '1',
+	:url => { :controller => 'network', :action => 'toggle_setting', :id => setting, :kind => 'ip_filter' },
+		:before => spinner_show('ip-filter'),
+		:success => spinner_hide('ip-filter'),
+	:update => "setting-ip-filter" %>
+&nbsp; <%= spinner "ip-filter" %>

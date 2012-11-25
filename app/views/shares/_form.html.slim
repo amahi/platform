@@ -1,0 +1,28 @@
+- @share = @share || Share.new
+
+= form_for @share, :remote => true, :html => { :class => 'share', :id => 'new-share-form' } do |f|
+
+    fieldset
+      legend &nbsp; #{t('create_a_new_share')} &nbsp;
+
+      div.create-new-inside
+        = render :partial => 'shared/errors', :object => @share
+        div
+          span = f.text_field :name, :size => 16, :maxlength => 20, :placeholder => "Name"
+          span.messages
+        div
+          span = f.text_field :path, :size => 38, :maxlength => 128, :data => {:pre => Share.full_path}, :placeholder => "Path"
+          span.messages
+        div
+          span
+            = f.check_box :visible, { :checked => true }
+            = label(:visible, t('visible'))
+        div
+          span
+            = f.check_box :rdonly
+            = label(:rdonly, t('read_only'))
+        div.action-button
+          span.btn-wrap
+            = f.submit "#{t('new_share')} &raquo;".html_safe, :id => 'share_create_button'
+            | &nbsp;&nbsp;&nbsp;
+            = link_to t('cancel'), '#', :class => 'close-area', :data => {:related => '#new-share-to-step1'}

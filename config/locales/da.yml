@@ -1,0 +1,557 @@
+# Danish translations for Amahi
+# by Niels Højdahl (hoejdahl at gmail) and Peter Tobler (ptob89 at gmail)
+
+--- 
+da: 
+  remember_me: Husk mig
+  port_range_looks_good: "Portomr\xC3\xA5det ser ok ud"
+  aliases: Aliases
+  free_space: Fri plads
+  datetime: 
+    distance_in_words: 
+      less_than_x_minutes: 
+        one: mindre end 1 minut
+        other: mindre end %{count} minutter
+      x_days: 
+        one: 1 dag
+        other: "%{count} dage"
+      x_minutes: 
+        one: 1 minut
+        other: "%{count} minutter"
+      x_seconds: 
+        one: 1 sekund
+        other: "%{count} sekunder"
+      less_than_x_seconds: 
+        one: mindre end 1 sekund
+        other: mindre end %{count} sekunder
+      x_months: 
+        one: "1 m\xC3\xA5ned"
+        other: "%{count} m\xC3\xA5neder"
+      about_x_hours: 
+        one: cirka 1 time
+        other: cirka %{count} timer
+      about_x_months: 
+        one: "cirka 1 m\xC3\xA5ned"
+        other: "cirka %{count} m\xC3\xA5neder"
+      about_x_years: 
+        one: "cirka 1 \xC3\xA5r"
+        other: "cirka %{count} \xC3\xA5r"
+      half_a_minute: et halvt minut
+      over_x_years: 
+        one: "mere end 1 \xC3\xA5r"
+        other: "mere end %{count} \xC3\xA5r"
+    prompts: 
+      month: "M\xC3\xA5ned"
+      second: Sekunder
+      minute: Minut
+      hour: Time
+      day: Dag
+      year: "\xC3\x85r"
+  search: "S\xC3\xB8gning"
+  this_share_name_is_not_valid: Deette share navn er ikke gyldigt
+  this_will_stop_the_server_permanently: Dette vil stoppe %{name} permanent.
+  preparing_to_install: Forbereder installationen ...
+  this_ip_will_be_filtered: Denne IP-adresse vil blive filtreret.
+  these_rules_are_used_to_restrict_ips: "Disse regler anvendes til at begr\xC3\xA6nse datapakker fra en IP i dit lokale netv\xC3\xA6rk til internettet. Brug af s\xC3\xA5danne filtre kan hj\xC3\xA6lpe med at sikre eller begr\xC3\xA6nse dit lokale netv\xC3\xA6rk."
+  share_path_cannot_be_blank: "Share sti kan ikke v\xC3\xA6re tom"
+  share_name_is_available: Share navnet er ledigt
+  workgroup_name: Workgroup Navn
+  global_settings_for_shares: Globale indstillinger for shares
+  dns_alias: DNS Alias
+  view_all_calendars_simultaneously: Se alle kalendere samtidigt
+  description: Beskrivelse
+  apps: Apps
+  get_involved: Involver dig!
+  dyndns_info: "Amahi giver en GRATIS, nul-konfiguration dynamisk DNS-adresse til dig. Den er uden for dit hjemmenetv\xC3\xA6rk. Du kan bruge den til <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/VPN\">Mac</a> eller <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a> <a\r\n\
+    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN-klienter</a> (tekniske brugere kan bruge den til at logge ind med <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>). Tekniske brugere kan bruge den til at hoste websteder, spilservere eller andre ydelser fra dit hjemmenetv\xC3\xA6rk (hvis du er ivrig efter at pr\xC3\xB8ve, s\xC3\xA5 bare sp\xC3\xB8rg i IRC-kanalen eller s\xC3\xB8g p\xC3\xA5 wiki)."
+  user_name_is_available: Brugernavnet er ledigt
+  a_single_number_0_254_to_point_to_a_given_machine: "Et enkelt nummer (0-254) til at pege p\xC3\xA5 en bestemt maskine p\xC3\xA5 dit netv\xC3\xA6rk"
+  this_shares_files_deleted: "Dette share vil ikke l\xC3\xA6ngere v\xC3\xA6re til r\xC3\xA5dighed (filerne i det vil IKKE blive slettet)."
+  new_static_ip: Ny statisk IP
+  settings: Indstillinger
+  help: "Hj\xC3\xA6lp"
+  please_select_the_type_of_rule_you_want: "V\xC3\xA6lg den type regel, du \xC3\xB8nsker at tilf\xC3\xB8je."
+  file_server_samba: Fil Server (Samba)
+  alias_is_taken_already: Alias er brugt allerede eller er reserveret
+  router_setting_failed: Router indstilling mislykkedes. Tjek venligst dine indstillinger.
+  pictures: Billeder
+  network_gateway: "Netv\xC3\xA6rk Gateway"
+  share: Share
+  confirmation_must_match: "Bekr\xC3\xA6ftelse skal matche"
+  special_instructions: "S\xC3\xA6rlige instruktioner"
+  firewall_url_filter_message: "Input i denne tabel bruges til at begr\xC3\xA6nse webadresser via Gateway."
+  create_your_hda_profile: Opret din HDA profil
+  rule_type: Regel Type
+  create_alias: Opret Alias
+  password_is_too_short: Password er for kort
+  to_recover_your_password: For at gendanne din adgangskode eller aktiverings e-mail, skal du indtaste din e-mail nedenfor
+  news_about_applications: "Nyheder om applikationer, der k\xC3\xB8rer p\xC3\xA5 Amahi"
+  language: Sprog
+  files: Filer
+  port_range: "Port omr\xC3\xA5de"
+  music: Musik
+  this_could_be_due_to_lack_of_network_connectivity: "Dette kan skyldes manglende netv\xC3\xA6rksforbindelse."
+  is_being_monitored_24x7: "overv\xC3\xA5ges 24x7"
+  new_alias: Nyt Alias
+  images: Billeder
+  firewall: Firewall
+  router_control: Router Kontrol
+  username_cannot_be_blank: "Brugernavnet kan ikke v\xC3\xA6re tomt"
+  the_name_you_input_above_will_be_added_to_the_DNS_server: "Det navn, du angav ovenfor, vil blive f\xC3\xB8jet til DNS-serveren og er associeret med MAC-og IP-adresser nedenfor."
+  new_firewall_rule: Ny Firewall regel
+  change: "\xC3\x86ndre"
+  your_control_panel: Dit Kontrolpanel
+  stop_it: Stop det
+  there_are_no_calendars_available_see_wiki: "Der er ingen kalendere tilg\xC3\xA6ngelige p\xC3\xA5 serveren. Opret dem med en kalender-klient. Se <a href=\"http://wiki.amahi.org/index.php/Calendars\">kalendere wiki</a>."
+  not_a_valid_user_or_password: "Fejl: Forkert brugernavn eller password"
+  there_are_no_static_dhcp_leases: "Der er ingen statiske DHCP leases p\xC3\xA5 dette tidspunkt."
+  disk: Disk
+  please_double_check_the_settings: "Du bedes <strong>kontrollere</strong> disse indstillinger, da de er afg\xC3\xB8rende for at f\xC3\xA5 din HDA til at k\xC3\xB8re."
+  are_you_sure_advanced_features: "Er du sikker p\xC3\xA5, du vil aktivere Avancerede funktioner?"
+  sign_out: Log ud
+  edit_and_rate_beta_apps: Rediger og vurder Beta apps
+  home: Hjem
+  are_you_sure_share: "Er du sikker p\xC3\xA5 du vil slette share '%{share}'?"
+  transmission_bittorrent_server: Transmission Bittorrent Server
+  gallery: Galleri
+  sign_up_here: Tilmeld dig her
+  confirm_email: "Bekr\xC3\xA6ft e-mail"
+  themes: Temaer
+  no_description_supplied: Ingen beskrivelse angivet!
+  installed_paren: (Installeret)
+  path_looks_good: Sti ser ok ud
+  mac_address_of_the_device: "MAC-adressen p\xC3\xA5 enheden (p\xC3\xA5 formen 00:11:22:33:44:55)"
+  writeable: Skrivbar
+  address_looks_good: Adresse ser ud til at fungere
+  user_name_is_not_available: "Brugernavn er ikke tilg\xC3\xA6ngelig"
+  ushare_upnp_media_server: Ushare UPnP Media Server
+  there_are_no_servers_available: "Der er ingen servere til r\xC3\xA5dighed p\xC3\xA5 dette tidspunkt."
+  there_are_no_firewall_rules_defined: "Der er ingen firewall regler fastlagt p\xC3\xA5 dette tidspunkt."
+  there_are_no_static_ips_defined: "Der er ingen statiske IP'er fastlagt p\xC3\xA5 nuv\xC3\xA6rende tidspunkt."
+  upcoming: Kommende
+  name_looks_good: Navn ser ok ud
+  this_file_was_automatically_generated_on: "# Denne fil blev automatisk genereret p\xC3\xA5 %{time} - ADVARSEL - alle manuelle redigeringer vil g\xC3\xA5 tabt!"
+  thanks_for_visiting: "Tak for dit bes\xC3\xB8g. St\xC3\xB8t vores sponsorer!"
+  app_logs: App Logs
+  the_watchdog_is_a_critical_setting: "Vagthunden er en KRITISK indstilling. At stoppe overv\xC3\xA5gning af en server proces FRAR\xC3\x85DES KRAFTIGT. Dette er designet til at holde tjenester i dit HDA til at k\xC3\xB8re p\xC3\xA5lideligt, selv ved udfald. Er du sikker p\xC3\xA5, at du \xC3\xB8nsker at stoppe vagthunden p\xC3\xA5 denne server?"
+  your_home_dns_domain: "Dit hjemme DNS dom\xC3\xA6ne"
+  username: Brugernavn
+  tour: Tur
+  dhcp_ip_address: DHCP IP-adresse
+  firewall_port_filter_message: "Port filter regler anvendes til at begr\xC3\xA6nse datapakker fra dit lokale netv\xC3\xA6rk til internettet."
+  stopped: Stoppet
+  recover: Genskab
+  will_not_start_at_boot_time: vil </b>ikke<b> starte ved opstart
+  support_win_95_98: Support Windows 95/98 - giver (usikker) LanManager autentificering
+  enabling_pdc_is_a_major_share_change: "Aktivering af PDC tilstand er en v\xC3\xA6sentlig \xC3\xA6ndring i den m\xC3\xA5de, hvorp\xC3\xA5 shares fungere. Dette vilaktivere dom\xC3\xA6netilstand og deaktivere Workgroup mode og kr\xC3\xA6ve, at alle maskiner skal v\xC3\xA6re enterprise (eller \"PRO\") maskiner, som anvender de rette legitimationsoplysninger. Dette er beregnet til virksomheders netv\xC3\xA6rk. Er du sikker p\xC3\xA5 at du vil aktivere PDC mode?"
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Aktivering af debug vil potentielt generere meget store logfiler. Er du sikker p\xC3\xA5, at du vil aktivere Samba debugging?"
+  name_is_taken_already_or_is_reserved: Navnet er taget allerede eller er reserveret
+  mac_filtering: MAC-filtrering
+  check_the_features_take_the_tour: "Tjek de funktioner, der i \xC3\xB8jeblikket er tilg\xC3\xA6ngelige, kig dig rundt, eller hvis du ikke kan vente -"
+  installed: Installeret
+  the_boot_option_is_a_critical_setting: "Boot option er en KRITISK indstilling. Ikke t starte en server proces FRAR\xC3\x85DES KRAFTIGT. Dette er designet til at starte tjenester i dit HDA ved hver opstart. Er du sikker p\xC3\xA5, du ikke vil starte denne proces ved opstart?"
+  general_amahi_news: Generelle Amahi nyheder
+  webapps: Webapps
+  computer: Computer
+  no_account_yet: Ingen konto endnu?
+  share_path_is_available: "Share sti er tilg\xC3\xA6ngelig"
+  manage_your_contributed_apps: "Administrer dine tilf\xC3\xB8jede apps"
+  this_path_is_not_valid: Denne sti er ikke gyldig
+  feedback: Feedback
+  this_users_files_deleted: Filerne i denne brugers hjemmemappe, VIL BLIVE SLETTET
+  url_filtering: URL-filtrering
+  create_share: Opret dette share
+  advanced_settings: Avancerede indstillinger
+  dns_server: DNS-server
+  get_started: Kom i gang!
+  used_space: Brugt plads
+  control_panel: Kontrolpanel
+  networking: "Netv\xC3\xA6rk"
+  are_you_sure_you_want_to_delete_the_static_ip: "Er du sikker p\xC3\xA5, du vil slette den statiske IP '%{name}'?"
+  create: Opret
+  shares: Shares
+  are_you_sure_you_want_to_stop_the_server: "Er du sikker p\xC3\xA5, at du \xC3\xB8nsker at stoppe %{name}?"
+  password_changed_successfully: "Password \xC3\xA6ndret"
+  tracker: Tracker
+  system_info: System Info
+  you_have_been_logged_out: Du er blevet logget ud.
+  warning_this_application_is_in_testing: "ADVARSEL: Dette program er i test!"
+  computer_name: Computer Navn
+  configured: Konfigureret
+  start_at_boot_time: Start ved opstart
+  sign_in: Log ind
+  name: Navn
+  finalize_settings: Afslut Indstillinger
+  dashboard: Dashboard
+  uninstall: Afinstaller
+  there_are_no_webapps: "Der er ingen web apps konfigureret i dit system p\xC3\xA5 nuv\xC3\xA6rende tidspunkt."
+  new_share: Nyt Share
+  details: Detaljer
+  login: Login
+  support: Support
+  manage_themes: Administrer Temaer
+  the_alias_name_you_input_will_be_added: "Det navn, du angav ovenfor vil blive f\xC3\xB8jet til DNS-serveren som et alias for IP-adressen nedenfor."
+  it_will_be_restarted_by_the_watchdog: (bliver genstartet af vagthunden)
+  otherwise_you_can_go_to_the_error_log: "Ellers kan du g\xC3\xA5 direkte til <a href=\"/setup?tab=debug\">fejllog</a>."
+  are_you_sure_webapp: "Er du sikker p\xC3\xA5 du vil slette web app '%{webapp}'?"
+  efficiently_manage_your_network: "Effektiv styring af netv\xC3\xA6rk og backup af alle de computere, spilkonsoller og andre enheder i dit netv\xC3\xA6rk, og sikker adgang til dit netv\xC3\xA6rk fra internettet. Det er bare starten p\xC3\xA5, hvad du vil v\xC3\xA6re i stand til at g\xC3\xB8re med Amahi."
+  partitions: Partitioner
+  unleash_the_power_of_your_home_network: "Frig\xC3\xB8r kraften i dit hjemmenetv\xC3\xA6rk."
+  audio: Audio
+  movies: Film
+  rule: Regel
+  edit_web_app: Rediger Web App
+  are_you_sure_you_would_like_to_delete_calendar: "Er du sikker p\xC3\xA5, du vil slette %{calendar}?"
+  router_firewall_settings: Router/firewall indstillinger
+  name_is_taken_already: Navnet er taget allerede
+  calendars: Kalendere
+  pdc_primary_domain_controller: "PDC &mdash; Prim\xC3\xA6r Dom\xC3\xA6ne Controller"
+  time: 
+    am: am
+    formats: 
+      default: "%e. %B %Y, %H:%M"
+      long: "%A, %e. %B %Y, %H:%M"
+      short: "%e. %b %Y, %H:%M"
+    pm: pm
+  this_path_is_not_available: "Denne sti er ikke tilg\xC3\xA6ngelig"
+  number: 
+    format: 
+      separator: ","
+      delimiter: .
+      precision: 3
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        format: "%n %u"
+        units: 
+          kb: KB
+          tb: TB
+          gb: GB
+          byte: 
+            one: Byte
+            other: Bytes
+          mb: MB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+    currency: 
+      format: 
+        format: "%u %n"
+        unit: DKK
+        separator: ","
+        delimiter: .
+        precision: 2
+  disks: Diske
+  nickname_info: "\"Kaldenavnet\" er en entydig identifikator for din HDA.\r\n\
+    Du skal bruge det til at logge ind p\xC3\xA5 din <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> med <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows-klienten</a> (og en autoriseret bruger og password p\xC3\xA5 dit hjemmenetv\xC3\xA6rk)."
+  application_uninstalled: Applikation afinstalleret.
+  warning: ADVARSEL
+  start_building_a_new_hda: Begynde at bygge et nyt HDA!
+  users: Brugere
+  your_domain_info: "Dette er dit hjemmenetv\xC3\xA6rk dom\xC3\xA6ne. Det er <b>kun</b> tilg\xC3\xA6ngeligt i dit hjemmenetv\xC3\xA6rk. For flere detaljer om dette henvises til <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">FAQ'en</a>."
+  debug: Debug
+  the_url_is_invalid: URL-adressen er ikke gyldig
+  testimonials: Testimonials
+  global_settings: Globale indstillinger
+  your_existing_network_gatweay: "Din eksisterende netv\xC3\xA6rk Gateway / Router"
+  amahi_dyndns_updater: Amahi Dynamisk DNS Updater
+  require_login: "Kr\xC3\xA6ver login"
+  application: Applikation
+  firewall_mac_address_filter_info: "Input i denne tabel bruges til at begr\xC3\xA6nse visse typer af datapakker fra dit lokale netv\xC3\xA6rk til internettet via Gateway. Brug af s\xC3\xA5danne filtre kan hj\xC3\xA6lpe med at sikre eller begr\xC3\xA6nse dit lokale netv\xC3\xA6rk."
+  web_apps: Web Apps
+  user_name_is_not_valid: Brugernavn er ikke gyldigt
+  nickname: Kaldenavn
+  this_application_install_ended_with_an_error_please_uninstall_status_is: "Denne programinstallation endte med en fejl. Du bedes afinstallere og pr\xC3\xB8ve igen! Program status er"
+  delete_alias: Slet Alias
+  this_application_is_not_installed_please_refresh: Dette program er ikke installeret. Opdater venligst denne webside.
+  docs: Docs
+  are_you_sure_you_would_like_to_uninstall: "Er du sikker p\xC3\xA5, du \xC3\xB8nsker at afinstallere dette program?\r\n\
+    Alle data i forbindelse med programmet VIL BLIVE SLETTET."
+  activerecord: 
+    errors: 
+      messages: 
+        taken: er allerede brugt
+        accepted: skal accepteres
+        not_a_number: er ikke et tal
+        blank: skal udfyldes
+        record_invalid: "Validering mislykkedes: %{errors}"
+        greater_than_or_equal_to: "skal v\xC3\xA6re st\xC3\xB8rre end eller lig med %{count}"
+        confirmation: stemmer ikke overens
+        less_than_or_equal_to: "skal v\xC3\xA6re mindre end eller lig med %{count}"
+        exclusion: er reserveret
+        odd: "skal v\xC3\xA6re ulige"
+        invalid: er ikke gyldig
+        too_short: er for kort (minimum %{count} tegn)
+        wrong_length: "har forkert l\xC3\xA6ngde (skulle v\xC3\xA6re %{count} tegn)"
+        empty: "m\xC3\xA5 ikke udelades"
+        too_long: er for lang (maksimum er %{count} tegn)
+        less_than: "skal v\xC3\xA6re mindre end %{count}"
+        even: "skal v\xC3\xA6re lige"
+        greater_than: "skal v\xC3\xA6re st\xC3\xB8rre end %{count}"
+        equal_to: "skal v\xC3\xA6re lig med %{count}"
+        inclusion: er ikke i listen
+      template: 
+        body: "Der var problemer med f\xC3\xB8lgende felter:"
+        header: 
+          one: En fejl forhindrede %{model} i at blive gemt
+          other: "%{count} fejl forhindrede denne %{model} i at blive gemt"
+      full_messages: 
+        format: "%{attribute} %{message}"
+  web: Web
+  core: Kerne
+  port_forwarding: Port Forwarding
+  port_range_ports_must_be_0_to_64k: "Portene skal v\xC3\xA6re i omr\xC3\xA5det 0-65535"
+  partition: Partition
+  delete_this_rule: Slet denne regel
+  is_now_installed: er nu installeret
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: Applikationen har opdaget en fejl. Du sendes til en side, der viser fejllog.
+  making_home_networking_simple: "G\xC3\xB8r hjemmenetv\xC3\xA6rk simpelt"
+  no_documents_found: Ingen dokumenter fundet
+  available: "Tilg\xC3\xA6ngelig"
+  is_now_uninstalled: er nu afinstalleret
+  the_ip_must_be_1_to_254: "IP'en skal v\xC3\xA6re i intervallet 1-254"
+  ip_filtering: IP-filtrering
+  log_in: Log ind
+  all_users: Alle brugere
+  about: Om
+  close: luk
+  when_there_are_major_announcements: "N\xC3\xA5r der er store annonceringer"
+  theme: Tema
+  applications: Applikationer
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "BEM\xC3\x86RK: Vagthunden K\xC3\x98RER og vil genstarte det om et par sekunder."
+  the_mac_is_invalid: MAC-adressen er ugyldig
+  check_the_calendars_wiki_for_more_details: "Kontroller kalender wiki for mere information om h\xC3\xA5ndtering af kalendere og hvilke klienter, der er kompatible."
+  password_looks_good: Password ser ok ud
+  running: "K\xC3\xB8rer"
+  delete_web_app: Slet Web App
+  share_name_cannot_be_blank: "Share navn kan ikke v\xC3\xA6re tomt"
+  refresh_status: Opdateringsstatus
+  dhcp_leases: DHCP Leases
+  there_are_no_dynamic_dhcp_leases_outstanding: "Der er ingen dynamiske DHCP leases p\xC3\xA5 dette tidspunkt."
+  next: "N\xC3\xA6ste"
+  video: Video
+  an_external_ip_address_to_make_the_alias: "En ekstern IP-adresse til at pege p\xC3\xA5 en bestemt IP-adresse"
+  confirm_password: "Bekr\xC3\xA6ft adgangskode"
+  there_is_no_undo: Der er INGEN FORTRYD til denne sletning
+  delete_user: Slet bruger
+  visible: Synlig
+  mysql_database_server: MySQL DB Server
+  router_ip: Router IP
+  logout: Log ud
+  not_updating: Opdaterer ikke
+  permanently: permanent
+  port_range_ports_are_already_allocated: "Porte i det omr\xC3\xA5de, er allerede afsat"
+  new: Ny
+  automated_install: Automatiseret Installation
+  edit_alias: Rediger alias
+  install_code: Installeringskode
+  create_a_new_user: Opret en ny brugerkonto
+  full_name_looks_good: Fulde navn ser ok ud
+  wiki: Wiki
+  dhcp_server: DHCP Server
+  done_final_check: "F\xC3\xA6rdig! Sidste check"
+  edit_static_ip: Rediger statisk IP
+  root_path: Rod&nbsp;Sti
+  home_domain: "Hjemmedom\xC3\xA6ne"
+  are_you_sure_you_want_to_start_the_server: "Er du sikker p\xC3\xA5, du vil starte %{name}?"
+  press: Tryk
+  there_are_no_applications_available: "Der er ingen programmer, der er tilg\xC3\xA6ngelige p\xC3\xA5 dette tidspunkt."
+  will_start_at_boot_time: vil starte ved opstart
+  setup: Setup
+  tags: Tags
+  platform: Platform
+  this_name_is_not_available: "Dette navn er ikke tilg\xC3\xA6ngelig"
+  address_already_allocated: Adresse er allerede afsat
+  watchdog: Vagthund
+  are_you_sure_user: "Er du sikker p\xC3\xA5 du vil slette brugeren '%{user}'?"
+  delete: Slet
+  mac_address_to_be_filtered_in_format: "MAC-adresse, der skal filtreres (p\xC3\xA5 formen 00:11:22:33:44:55)."
+  there_are_no_shares_created: "Der er ingen shares, i dit system p\xC3\xA5 nuv\xC3\xA6rende tidspunkt."
+  path: Sti
+  seconds: sekund
+  live_help: "Live Hj\xC3\xA6p"
+  there_are_no_aliases_defined: "Der er ingen aliaser defineret p\xC3\xA5 nuv\xC3\xA6rende tidspunkt"
+  mac_looks_good: MAC ser ok ud
+  comment: Kommentar
+  videos: Videoer
+  static_ip_address: Statisk IP-adresse
+  mac_already_allocated: MAC allerede afsat
+  permissions: Tilladelser
+  need_help_logging_in: "Brug for hj\xC3\xA6lp til at logge ind?"
+  dns_aliases: DNS aliaser
+  read_only: Skrivebeskyttet
+  or_view_each_one_separately_below: "eller se hver enkelt s\xC3\xA6rskilt nedenfor."
+  never_email_me: Aldrig e-mail mig
+  disabling_pdc_will_enable_workgroup_mode: "Deaktivering af PDC tilstand vil aktivere Workgroup tilstand.\r\n\
+    Dette er en V\xC3\x86SENTLIG \xC3\xA6ndring i den m\xC3\xA5de, hvorp\xC3\xA5 shares fungerer. Dette er beregnet til hjemme-netv\xC3\xA6rk (tjek wikien for mere info).\r\n\
+    Er du sikker p\xC3\xA5, at du vil deaktivere PDC mode?"
+  delete_share: Slet share
+  avanced_settings_is_for_developers: Aktivering af avancerede funktioner er kun for avancerede/tekniske brugere og udviklere.
+  port_range_ports_must_be_increasing_order: "Den f\xC3\xB8rste port skal v\xC3\xA6re mindre end eller lig med den 2. port"
+  available_for_installation: "(Tilg\xC3\xA6ngelig for installation)"
+  back: Tilbage
+  storage: Lager
+  alias_is_not_valid: Alias er ikke gyldig
+  protocol: Protokol
+  notifications_from_amahi: Meddelelser fra Amahi
+  results_found: resultater fundet
+  beta_apps: Beta Apps
+  this_feature_is_under_heavy_development: denne funktion er under kraftig udvikling
+  translate_amahi: "Overs\xC3\xA6t Amahi"
+  preparing_to_uninstall: Forbereder afinstallation ...
+  alias_looks_good: Alias ser ok ud
+  more: mere
+  control_panel_for_your_amahi_hdas: Kontrolpanel til dine Amahi HDAs
+  total_space: Samlet plads
+  by_signing_up_you_agree_to_the_terms_of_service: "Ved at tilmelde dig, accepterer du, og har l\xC3\xA6st <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">vores Terms of Service</a>"
+  there_are_no_applications_installed: "Der er ingen Apps installeret p\xC3\xA5 dette tidspunkt."
+  name_is_not_valid: Navn er ikke gyldigt
+  valid_email_required_for_service: "Gyldig e-mail er n\xC3\xB8dvendig for aktivering. Vi vil <a href=\"http://www.amahi.org/privacy\" target=\"_blank\">ikke spamme you</a>"
+  the_url_looks_good: URL ser ok ud
+  mac_address: MAC-adresse
+  port_range_field_cannot_be_empty: "Felterne kan ikke v\xC3\xA6re tomme"
+  confirmation_matches: "Bekr\xC3\xA6ftelse matcher"
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: "Denne IP-adresse (1-%{max}) vil altid v\xC3\xA6re statisk knyttet til MAC-adressen nedenfor."
+  url_to_filter: URL til filter
+  enabling_lan_manager_is_less_secure: "Aktivering af Windows 95/98 autentificeringstilstand er mindre sikker og kan hj\xC3\xA6lpe med adgang til \xC3\xA6ldre maskiner. Er du sikker p\xC3\xA5, at du vil aktivere Windows 95/98 LanManager autentificering?"
+  cancel: Annuller
+  static_ips: Statiske IP-adresser
+  features: Funktioner
+  calendar_name: Kalender Navn
+  password_cannot_be_blank: "Adgangskode kan ikke v\xC3\xA6re tomt"
+  are_you_sure_you_want_to_restart_the_server: "Er du sikker p\xC3\xA5, du vil genstarte %{name}?"
+  forums: Fora
+  port_filtering: Port-filtrering
+  this_path_exists_already: Denne sti findes allerede
+  disabling_lan_manager_will_not_allow_older_machines: "Deaktivering af Windows 95/98 LanManager godkendelse, vil ikke tillade \xC3\xA6ldre maskiner at bruge shares. Er du sikker p\xC3\xA5, du vil deaktivere Windows 95/98 authentication mode?"
+  dhcp_lease: DHCP Lease
+  network_settings: "Netv\xC3\xA6rksindstillinger"
+  subscribe: Abonner
+  edit_share: Rediger share
+  location: Placering
+  url: URL
+  mac_is_invalid: MAC er ugyldig
+  install_code_info: "Denne installeringskode rummer alle indstillingerne for din HDA og den bruges en gang, som det sidste skridt i installationen af din HDA. Du b\xC3\xB8r ikke genbruge den til to eller flere systemer i drift, da det vil bryde den dynamiske DNS og VPN. Opret en profil for hver HDA du k\xC3\xB8rer."
+  system: System
+  pdc_domain: "PDC Dom\xC3\xA6ne"
+  logs: Logs
+  the_ip_looks good: IP ser ok ud
+  full_name: Fulde navn
+  is_not_being_monitored_24x7: "bliver <b>ikke</b> overv\xC3\xA5get 24x7"
+  stop: Stop
+  suggest: "Foresl\xC3\xA5!"
+  changelog: ChangeLog
+  news: Nyheder
+  new_web_app: Ny Web App
+  please_select: "V\xC3\xA6lg venligst ..."
+  state: Tilstand
+  discussion_forum_for: Diskussionsforum for
+  all_you_need: "Alt du beh\xC3\xB8ver!"
+  this_application_is_installed: Dette program er installeret.
+  are_you_sure: Er du sikker?
+  contribute: Bidrag
+  change_your_account_settings: "\xC3\x86ndre dine kontoindstillinger"
+  start_now: Start nu
+  the_mac_looks_good: MAC ser ok ud
+  ip_address: IP-adresse
+  firewall_port_forward_message: "Disse regler giver dig mulighed for automatisk at omdirigere porte for net-tjenester til en bestemt maskine inden for firewall'en. Disse indstillinger er kun n\xC3\xB8dvendige, hvis du \xC3\xB8nsker at hoste f.eks. servere, som en webserver eller mailserver p\xC3\xA5 private lokale netv\xC3\xA6rk inden for firewall'en."
+  this_application_is_installed_already_please_refresh: Dette program er allerede installeret.Opdater venligst denne webside.
+  powerful_simple_home_networking: "Kraftfuld, simpelt, hjemmenetv\xC3\xA6rk"
+  date: 
+    order: 
+    - :day
+    - :month
+    - :year
+    abbr_day_names: 
+    - "s\xC3\xB8"
+    - ma
+    - ti
+    - "on"
+    - to
+    - fr
+    - "l\xC3\xB8"
+    formats: 
+      default: "%d.%m.%Y"
+      long: "%e. %B %Y"
+      short: "%e. %b %Y"
+    month_names: 
+    - 
+    - januar
+    - februar
+    - marts
+    - april
+    - maj
+    - juni
+    - juli
+    - august
+    - september
+    - oktober
+    - november
+    - december
+    day_names: 
+    - "s\xC3\xB8ndag"
+    - mandag
+    - tirsdag
+    - onsdag
+    - torsdag
+    - fredag
+    - "l\xC3\xB8rdag"
+    abbr_month_names: 
+    - 
+    - jan
+    - feb
+    - mar
+    - apr
+    - maj
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - dec
+  there_are_no_users: "Der er ingen brugere i dit system p\xC3\xA5 nuv\xC3\xA6rende tidspunkt."
+  email_me: E-mail mig
+  create_a_new_share: Opret et nyt share
+  my_account: Min konto
+  control: Kontrol
+  status: Status
+  address_is_not_valid: Adresse er ikke gyldig
+  servers: Servere
+  network: "Netv\xC3\xA6rk"
+  new_user: Ny Bruger
+  dhcp: DHCP
+  port_range_ports_must_be_numbers: "Portene skal v\xC3\xA6re numeriske"
+  confirm: "Bekr\xC3\xA6ft"
+  installation_instructions: Installationsvejledning
+  this_looks_like_a_database_corruption_please_report_it: Dette ligner en database korruption eller en bug (husk at <a href="http://bugs.amahi.org">rapportere den</a>).
+  created: Oprettet
+  access: Adgang
+  new_dns_alias: Ny DNS Alias
+  password: Adgangskode
+  create_a_new_webapp: Opret en ny Web App
+  static_ip_address_for_your_hda: Statisk IP-adresse til din HDA
+  setting_dmz_failed: Indstilling af DMZ mislykkedes. Tjek venligst dine indstillinger.
+  community: "F\xC3\xA6llesskabet"
+  edit_user: Rediger bruger
+  email: E-mail
+  the_ip_address_can_be: "IP-adresse kan v\xC3\xA6re"
+  my_apps: Mine Apps
+  username_or_email: Brugernavn eller e-mail
+  dynamic_dns: Dynamisk DNS
+  are_you_sure_you_want_to_delete_alias: "Er du sikker p\xC3\xA5, du vil slette alias for '%{name}'?"
+  delete_profile: Slet profil
+  the_name_cannot_be_blank: "Navnet kan ikke v\xC3\xA6re tomt"
+  submit_for_debug: Send til Debug
+  delete_static_ip: Slet statisk IP
+  the_ip_address_cannot_be_empty: "IP-adressen kan ikke v\xC3\xA6re tom"
+  apache_web_server: Apache Web Server
+  awake_this_device_via_wol: Tænd denne enhed

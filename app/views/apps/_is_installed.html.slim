@@ -1,0 +1,46 @@
+- if app.initial_user and ! app.initial_user.blank?
+  fieldset
+	legend &nbsp; #{t('initial_user_info')} &nbsp;
+	blockquote
+	  span.initial-user-more &raquo;
+	  a href="http://wiki.amahi.org/index.php/Initial_user" target="_blank"
+	    = theme_image_tag('more.png', :title => t('more'))
+	| #{t('initial_user')}:&nbsp;
+	code= app.initial_user || "(blank)"
+	br
+	| #{t('initial_password')}:&nbsp;
+	code= app.initial_password || "(blank)"
+	p
+
+- if app.special_instructions and ! app.special_instructions.blank?
+  fieldset
+    legend &nbsp; #{t('special_instructions')} &nbsp;
+    = app.special_instructions.html_safe
+
+
+- if app.webapp
+  div.app-url= link_to(app.full_url, "#{app.full_url}.#{Setting.value_by_name('domain')}", :target => '_blank')
+
+- if app.theme
+  div.app-url= link_to(t('manage_themes'), app.full_url)
+
+- if app.webapp
+  = render 'in_dashboard', :app => app
+
+br
+br
+br
+
+= theme_image_tag("working.gif", :class => "spinner spinner-installation", :style=> "display: none;")
+span.progress
+  - unless app.has_dependents?
+    span.install-button
+      = link_to("#{t('uninstall')} &raquo;".html_safe, uninstall_via_daemon_app_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-via-deamon')
+
+
+- unless app.installed
+  br
+  p
+  b [!] #{t('warning')}:
+  em #{t('this_application_install_ended_with_an_error_please_uninstall_status_is')} #{app.install_status} ("#{app.install_message}")
+

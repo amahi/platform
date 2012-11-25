@@ -1,0 +1,23 @@
+<div id="servers-table">
+	<div class="settings-table">
+		<% if servers.size > 0 %>
+			<table class="settings">
+			  <thead>
+			  <tr>
+			    <th scope="col" class="settings-col1 servers-col1"><%=t 'servers' %></th>
+			    <th scope="col" class="settings-col2 servers-col2"><%=t 'state' %></th>
+			  </tr>
+			</thead>
+			<tbody style="display: none"><tr><td></td></tr></tbody>
+			</table>
+			<%= render :partial => 'server/one', :collection => servers %>
+		<% else %>
+			<div align="center">
+				<h2><%=t 'there_are_no_servers_available' %></h2>
+				<p>
+				<%=t 'this_could_be_due_to_lack_of_network_connectivity' %>
+				</p>
+			</div>
+		<% end %>
+	</div>
+</div>

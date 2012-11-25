@@ -1,0 +1,18 @@
+#header
+  .inside
+    #head-left
+      ul
+        li.first= link_to t('home'), root_path
+        li.last
+          = form_tag '/search/hda', :id => 'searchform' do
+            = text_field_tag 'query', @query, :maxlength => 15, :size => 20, :class => "ip-input", :id => 'searchinput'
+            = submit_tag 'HDA', :class => 'searchbutton', :name => "button"
+            = submit_tag t('web'), :class => 'searchbutton', :name => "button"
+    #head-right
+      ul
+        - if current_user_is_admin?
+          li.first= link_to t('setup'), users_path
+          li= link_to t('help'), 'http://help.amahi.org'
+          li.last= link_to t('apps'), apps_path
+        - else
+          li.first.last= link_to t('help'), 'http://help.amahi.org'

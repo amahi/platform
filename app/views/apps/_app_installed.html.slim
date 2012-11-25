@@ -1,0 +1,44 @@
+- app = app_installed
+
+= content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => uninstall_progress_app_path(app.identifier) } do
+
+  table.settings.stretchtoggle[id="app_row_#{app.identifier}"]
+    tr.alt-row
+      td.settings-col1.apps-col1
+        = link_to name_with_warning(app), '#'
+      td.settings-col2.apps-col2[id="app_ip_#{app.identifier}"]
+        = short_desc(app)
+
+  .settings-stretcher[id="app_info_#{app.identifier}" style="#{display_style}"]
+    .app-manage
+      fieldset
+        legend &nbsp; #{app.name} #{t('installed_paren')} &nbsp;
+        .settings-fields
+
+          = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
+
+          p
+          = app.description.try(:html_safe) || t('no_description_supplied')
+          p
+
+          = render 'is_installed', :app => app
+
+          .app-more
+            | #{t('version')}:&nbsp;#{app.version}&nbsp;&nbsp;&raquo;&nbsp;#{link_to(theme_image_tag('more.png', :title => t('more')), app.app_url, :target => '_blank')}
+            br
+            - if app.forum_url.present?
+              br
+              = link_to "#{t('discussion_forum_for')} #{app.name}", app.forum_url, :target => '_blank'
+              | &raquo;
+
+          - unless app.live?
+            br
+            p
+            em
+              sup*
+              = t('warning_this_application_is_in_testing')
+
+          p
+
+        .app-flash-notice[id="app_legend_#{app.identifier}" style="display:none;"]
+          | #{app.name} #{t('is_now_installed')}

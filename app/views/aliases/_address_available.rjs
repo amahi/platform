@@ -1,0 +1,3 @@
+page[:address_messages].replace_html theme_image_tag("ok") + " " + t('address_looks_good')
+page.show 'address_messages'
+page[:alias_create_button].disabled = false

@@ -1,0 +1,629 @@
+--- 
+de: 
+  new_user: Neuer Benutzer
+  alias_is_taken_already: Alias wird bereits benutzt oder ist reserviert
+  storage: Speicher
+  user_name_is_not_available: "Benutzername ist nicht verf\xC3\xBCgbar"
+  platform: Plattform
+  are_you_sure_share: "Sind Sie sicher, dass sie die Freigabe '%{share}' l\xC3\xB6schen wollen?"
+  these_rules_are_used_to_restrict_ips: "Diese Regeln werden verwendet, um Datenpakete von einer IP im lokalen Netzwerk auf das Internet beschr\xC3\xA4nken. Verwendung solcher Filter bei der Sicherung oder einschr\xC3\xA4nken Ihrem lokalen Netzwerk hilfreich sein."
+  this_looks_like_a_database_corruption_please_report_it: Dies scheint ein Fehler in der Datenbank oder ein Softwarefehler zu sein (bitte <a href="http://bugs.amahi.org">berichten Sie</a>).
+  mac_looks_good: MAC sieht gut aus
+  wiki: Wiki
+  confirm_email: "Email best\xC3\xA4tigen"
+  last_login: Letzter Login
+  setup: Einstellungen
+  start_at_boot_time: "W\xC3\xA4hrend des Hochfahrens starten"
+  news_about_applications: "Neuigkeiten \xC3\xBCber Anwendungen, die auf Amahi laufen"
+  delete_user: "Benutzer l\xC3\xB6schen"
+  delete_profile: "Folgendes Profil l\xC3\xB6schen"
+  running: Laufend
+  start_building_a_new_hda: Erstellen Sie Ihren neuen HDA!
+  delete: "L\xC3\xB6schen"
+  name_is_taken_already: Name ist bereits vergeben
+  unleash_the_power_of_your_home_network: "Setzen Sie die M\xC3\xB6glichkeiten Ihres Heimnetzwerkes frei."
+  are_you_sure_webapp: "Sind Sie sicher, dass sie die Web-Anwendung '%{webapp}' l\xC3\xB6schen wollen?"
+  automated_install: Automatische Installation
+  need_help_logging_in: Brauchen Sie Hilfe beim Login?
+  confirm_password: "Passwort best\xC3\xA4tigen"
+  installed_paren: (Installiert)
+  tour: Tour
+  address_already_allocated: Adresse wurde bereits reserviert
+  new: Neu
+  are_you_sure_you_want_to_stop_the_server: Sind Sie sicher, dass Sie %{name} anhalten wollen?
+  disabling_pdc_will_enable_workgroup_mode: "Das Abschalten des PDC-Modus wird den Arbeitsgruppen-Modus aktivieren.\r\n\
+    Das ist eine EINSCHNEIDENDE Ver\xC3\xA4nderung der Arbeitsweise der Freigaben. Dies ist f\xC3\xBCr Heimnetze vorgesehen (vergleichen Sie dazu auch das Wiki).\r\n\
+    Sind Sie sicher, dass Sie den PDC-Modus abschalten m\xC3\xB6chten?"
+  address_looks_good: Die Adresse sieht gut aus
+  finalize_settings: "Einstellungen abschlie\xC3\x9Fen"
+  confirmation_must_match: "Best\xC3\xA4tigung muss \xC3\xBCbereinstimmen"
+  stopped: Angehalten
+  applications: Applikationen
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: Diese IP-Adresse (1-%{max}) wird immer statisch zur unten genannten MAC-Adresse assoziiert.
+  this_path_exists_already: Dieser Pfad existiert bereits
+  poweroff: Herunterfahren
+  router_control: Router-Kontrolle
+  are_you_sure_you_would_like_to_delete_calendar: "Sind Sie sich sicher, dass Sie %{calendar} l\xC3\xB6schen wollen?"
+  port_range_looks_good: "Port-Bereich g\xC3\xBCltig"
+  pictures: Bilder
+  disk: Platte
+  location: Ort
+  require_login: Anmeldung voraussetzen
+  theme: Thema
+  disks: "Datentr\xC3\xA4ger"
+  rule: Regel
+  static_ips: Statische IPs
+  mac_address_to_be_filtered_in_format: MAC Adresse, die gefiltert werden soll (in folgender Form 00:11:22:33:44:55)
+  my_apps: Meine Apps
+  disk_pool_copies: Extra Kopien
+  cancel: Abbrechen
+  port_range_ports_must_be_increasing_order: Der erste Port muss kleiner oder gleich dem ersten Port sein
+  password_is_too_short: Passwort ist zu kurz
+  preparing_to_install: Bereite die Installation vor...
+  model: Modell
+  are_you_sure_you_want_to_start_the_server: Sind Sie sicher, dass Sie %{name} starten wollen?
+  nickname_info: "Der \"Nickname\" ist eine eindeutige ID f\xC3\xBCr ihre HDA.\r\n\
+    Sie ben\xC3\xB6tigen ihn um sich mithilfe des <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows-Clients</a> mit ihrem <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> zu verbinden. (nat\xC3\xBCrlich auch Benutzername und Kennwort)"
+  files: Dateien
+  by_signing_up_you_agree_to_the_terms_of_service: "Mit der Anmeldung best\xC3\xA4tigen Sie unsere <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">AGB</a> gelesen und akzeptiert zu haben."
+  the_url_looks_good: Die URL sieht gut aus
+  application_uninstalled: Anwendung wurde entfernt.
+  delete_web_app: "Web App l\xC3\xB6schen"
+  free_space: Freier Platz
+  url: URL
+  are_you_sure_you_would_like_to_uninstall: "Sind Sie sicher, dass Sie diese Anwendung deinstallieren wollen?\r\n\
+    Alle mit dieser Anwendung verbundenen Daten WERDEN GEL\xC3\x96SCHT WERDEN."
+  temperature: Temperatur
+  users: Benutzer
+  debug: Fehlersuche
+  the_ip_address_can_be: Die IP-Adresse kann sein
+  read_only: Nur Lesen
+  install_code_info: "Der Installations Code behinhaltet alle Einstellungen f\xC3\xBCr Ihr HDA und wird einmalig f\xC3\xBCr\r\n\
+    den letzten Schritt w\xC3\xA4hrend des Installierens Ihres HDAs benutzt. Sie sollten Ihn NICHT f\xC3\xBCr zwei oder mehr laufende Systeme verwenden,\r\n\
+    da dies die dynamische DNS und den VPN-Zugang st\xC3\xB6ren wird. Erstellen Sie je HDA, das Sie unterhalten jeweils ein Profil."
+  url_filtering: URL Filterung
+  available: "Verf\xC3\xBCgbar"
+  this_will_power_off: "Dies wird Ihren HDA neustarten. Wenn Ihr HDA als DHCP-Servier dient, k\xC3\xB6nnen Sie jetzt den DHCP-Server in Ihrem Router starten.\r\n\
+    Wollen Sie fortfahren?"
+  edit_static_ip: Feste IP bearbeiten
+  add_extra_parameters: "Zus\xC3\xA4tzliche Parameter hinzuf\xC3\xBCgen"
+  system_info: System Informationen
+  this_path_is_not_available: "Dieser Pfad ist nicht verf\xC3\xBCgbar"
+  firewall_port_filter_message: Regeln des Port Filters dienen dazu Datenpakete, die aus Ihrem lokalen Netzwerk ins Internet gehen, zu reglementieren.
+  press: "Dr\xC3\xBCcken"
+  share_path_cannot_be_blank: Freigabepfad darf nicht leer bleiben
+  address_is_not_valid: "Die Adresse ist ung\xC3\xBCltig"
+  create_alias: Alias erstellen
+  web: Web
+  delete_alias: "Alias l\xC3\xB6schen"
+  recover: Wiederherstellen
+  installed: Installiert
+  core: Kern
+  start_now: Jetzt starten
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: "Ein Fehler ist aufgetreten. Sie sollten in K\xC3\xBCrze zur Fehlersuche weitergeleitet werden."
+  application: Anwendung
+  advanced_settings: Erweiterte Einstellungen
+  check_the_features_take_the_tour: "Sehen Sie sich die Funktionen an, nehmen Sie die Tour, oder wenn Sie gar nicht warten k\xC3\xB6nnen-"
+  this_will_stop_the_server_permanently: Dies wird %{name} DAUERHAFT anhalten.
+  your_control_panel: Ihr Kontrollzentrum
+  full_name: "Vollst\xC3\xA4ndiger Name"
+  shares: Freigaben
+  manage_themes: Themen verwalten
+  discussion_forum_for: "Diskussionsforum f\xC3\xBCr"
+  tracker: Tracker
+  rule_type: Art der Regel
+  aliases: Aliase
+  network: Netzwerk
+  change_your_account_settings: "Account Einstellungen \xC3\xA4ndern"
+  port_range_ports_must_be_0_to_64k: "Die Ports m\xC3\xBCssen sich im Bereich 0-65535 befinden."
+  share_path_is_available: "Freigabepfad ist verf\xC3\xBCgbar"
+  this_could_be_due_to_lack_of_network_connectivity: "Dies k\xC3\xB6nnte durch einen Ausfall der Netzwerkverbindungen verursacht worden sein."
+  enabling_lan_manager_is_less_secure: "Das Einschalten des Windows 95/98 Authentifizierungsmodus ist weniger sicher und k\xC3\xB6nnte den Zugriff mit \xC3\xA4lteren Ger\xC3\xA4te erleichtern.\r\n\
+    Sind Sie sicher, dass die Windows 95/98 LanManager Authentifizierung einschalten m\xC3\xB6chten?"
+  special_instructions: Besondere Anweisungen
+  there_are_no_dynamic_dhcp_leases_outstanding: Es stehen aktuell keine dynamischen DHCP Leases an.
+  login: Anmeldung
+  edit_share: Freigabe bearbeiten
+  dhcp_lease: DHCP Lease
+  change: "\xC3\x84ndern"
+  status: Status
+  not_updating: Aktualisiert nicht
+  videos: Videos
+  dhcp_active: Aktiv
+  name_is_not_valid: "Name ist nicht g\xC3\xBCltig"
+  restart: Neustart
+  confirm: "Best\xC3\xA4tigen"
+  sign_out: Abmelden
+  this_application_is_installed_already_please_refresh: Diese Applikation ist bereits installiert. Bitte aktualisieren Sie diese Website.
+  state: Status
+  new_web_app: Neue Web-Anwendung
+  email: Email
+  full_name_looks_good: "Name g\xC3\xBCltig"
+  workgroup_name: Arbeitsgruppen Name
+  name_looks_good: Name sieht gut aus
+  new_alias: Neuer Alias
+  must_be_logged_in: "Sie m\xC3\xBCssen f\xC3\xBCr Zutritt zu diesem Bereich eingeloggt sein."
+  rebooting: Starte neu...
+  uptime: Betriebszeit
+  disk_pooling: Storage Pool
+  this_will_reboot: "Dies wird Ihren HDA neustarten. Sind Sie sicher, dass Sie fortfahren m\xC3\xB6chten?"
+  dns_aliases: DNS Aliase
+  used_space: Belegter Patz
+  static_ip_address_for_your_hda: "Statische IP-Adresse f\xC3\xBCr Ihren HDA"
+  comment: Kommentar
+  the_alias_name_you_input_will_be_added: "Der Name den Sie oben eingeben wird \xC3\xBCber den DNS-Server als Alias f\xC3\xBCr unten angegebene IP-Adresse angelegt."
+  root_path: Root Pfad
+  search: Suchen
+  upcoming: "Demn\xC3\xA4chst"
+  username_or_email: Benutzername oder Email
+  network_settings: Netzwerk Einstellungen
+  no_documents_found: Keine Dokumente gefunden
+  visible: Sichtbar
+  create_a_new_share: Einen neue Freigabe anlengen
+  enabling_pdc_is_a_major_share_change: "Das Einschalten des PDC-Modus ist eine EINSCHNEIDENDE Ver\xC3\xA4nderung der Arbeitsweise der Freigaben.\r\n\
+    Dies wird den Dom\xC3\xA4nen-Modus einschalten und den Arbeitsgruppen-Modus abschalten und setzt voraus, dass NUR professionelle Ger\xC3\xA4te eingesetzt werden, die korrekte Legitimationen verwenden. Dies ist f\xC3\xBCr Unternehmensnetze vorgesehen.\r\n\
+    Sind Sie sicher, dass Sie den PDC-Modus einschalten wollen?"
+  all_users: Alle Benutzer
+  delete_static_ip: "Feste IP l\xC3\xB6schen"
+  audio: Audio
+  dashboard: Kontrollzentrum
+  this_ip_will_be_filtered: Diese IP Adresse wird gefiltert.
+  dns_alias: DNS Alias
+  url_to_filter: Zu filternde URL
+  the_boot_option_is_a_critical_setting: "Die Einstellungen f\xC3\xBCr das Hochfahren sind KRITISCHE Einstellungen. Davon, einen Server Prozess nicht zu starten, wird DRINGEN ABGERATEN. Dies wurde entwickelt, um Dienste Ihres HDAs jedesmal w\xC3\xA4hrend des Hochfahrens zu starten. Sind Sie sicher, dass Sie diesen Prozess w\xC3\xA4hrend des Hochfahrens nicht starten wollen?"
+  greyhole_not_installed: "WARNUNG: Greyhole ist auf diesem System nicht installiert!"
+  must_be_admin: "Sie brauchen f\xC3\xBCr Zutritt zu diesem Bereich Administratorenrechte."
+  valid_email_required_for_service: "Eine g\xC3\xBCltige Emailadresse wird zur Aktivierung vorausgesetzt. Wir versenden <a href=\"http://www.amahi.org/privacy\" target=\"_blank\">keine unaufgeforderten Werbung</a>"
+  are_you_sure_you_want_to_delete_alias: "Sind Sie sich sicher, dass Sie das Alias f\xC3\xBCr '%{name}' l\xC3\xB6schen wollen?"
+  is_not_being_monitored_24x7: "wird <b>nicht</b> rund um die Uhr \xC3\xBCberwacht"
+  activerecord: 
+    errors: 
+      models: 
+      messages: 
+        greater_than_or_equal_to: "muss gr\xC3\xB6\xC3\x9Fer oder gleich %{count} sein"
+        record_invalid: "G\xC3\xBCltigkeitspr\xC3\xBCfung ist fehlgeschlagen: %{errors}"
+        confirmation: "stimmt nicht mit der Best\xC3\xA4tigung \xC3\xBCberein"
+        less_than_or_equal_to: muss kleiner oder gleich %{count} sein
+        blank: "muss ausgef\xC3\xBCllt werden"
+        exclusion: "ist nicht verf\xC3\xBCgbar"
+        invalid: "ist nicht g\xC3\xBCltig"
+        odd: muss ungerade sein
+        even: muss gerade sein
+        too_short: ist zu kurz (mindestens %{count} Zeichen)
+        wrong_length: "hat die falsche L\xC3\xA4nge (muss genau %{count} Zeichen lang sein)"
+        empty: "muss ausgef\xC3\xBCllt werden"
+        less_than: muss kleiner als %{count} sein
+        greater_than: "muss gr\xC3\xB6\xC3\x9Fer als %{count} sein"
+        equal_to: muss genau %{count} sein
+        too_long: ist zu lang (maximal %{count} Zeichen)
+        taken: ist bereits vergeben
+        accepted: muss akzeptiert werden
+        inclusion: "ist kein g\xC3\xBCltiger Wert"
+        not_a_number: ist keine Zahl
+      full_messages: 
+        format: "%{attribute} %{message}"
+      template: 
+        body: "Bitte \xC3\xBCberpr\xC3\xBCfen Sie die folgenden Felder:"
+        header: 
+          one: "Konnte dieses %{model} Objekt nicht speichern: 1 Fehler."
+          other: "Konnte dieses %{model} Objekt nicht speichern: %{count} Fehler."
+  there_are_no_static_dhcp_leases: Es stehen aktuell keine statischen DHCP Leases an.
+  live_help: Live Hilfe
+  edit_user: Benutzer bearbeiten
+  control_panel: Kontrollzentrum
+  share_name_cannot_be_blank: Freigabename darf nicht leer bleiben
+  get_started: Loslegen!
+  my_account: Mein Account
+  gallery: Gallerie
+  transmission_bittorrent_server: Transmission Bittorrent Server
+  ip_address: IP Adresse
+  number: 
+    format: 
+      separator: ","
+      precision: 2
+      delimiter: .
+    human: 
+      format: 
+        precision: 1
+        delimiter: ""
+      storage_units: 
+        format: "%n %u"
+        units: 
+          kb: KB
+          tb: TB
+          gb: GB
+          byte: 
+            one: Byte
+            other: Bytes
+          mb: MB
+    percentage: 
+      format: 
+        delimiter: ""
+    currency: 
+      format: 
+        format: "%n%u"
+        unit: !binary |
+          4oKs
+
+        separator: .
+        precision: 
+        delimiter: ","
+    precision: 
+      format: 
+        delimiter: ""
+  mysql_database_server: MySQL Datenbank Server
+  edit_and_rate_beta_apps: Beta Apps bearbeiten und bewerten
+  or_view_each_one_separately_below: oder betrachten Sie jeden einzeln unten.
+  username: Benutzername
+  are_you_sure_you_want_to_restart_the_server: Sind Sie sicher, dass Sie %{name} neustarten wollen?
+  done_final_check: "Fertig! Letzte \xC3\x9Cberpr\xC3\xBCfung"
+  this_application_is_not_installed_please_refresh: Diese Anwendung ist nicht installiert. Bitte laden Sie diese Website neu.
+  user_name_is_available: "Benutzername ist verf\xC3\xBCgbar"
+  first_time_admin_setup: Erstmalige Einrichtung. Bitte erstellen Sie das Benutzerpasswort neu.
+  news: Neuigkeiten
+  password: Passwort
+  access: Zugriff
+  avanced_settings_is_for_developers: "Das Einschalten der erweiterten Einstellungen ist nur f\xC3\xBCr fortgeschrittene/technischversierte Nutzer und Entwickler."
+  there_are_no_shares_created: Zur Zeit sind keine Freigbaen in Ihrem System eingerichtet.
+  created: Erstellt
+  watchdog: Watchdog
+  stop: Stop
+  device: !binary |
+    R2Vyw6R0
+
+  initial_user: Benutzername
+  admin_setup_worked: Admin Setup abgeschlossen. Bitte loggen Sie sich jetzt ein
+  preparing_to_uninstall: Bereite die Deinstallation vor...
+  time: 
+    am: vormittags
+    formats: 
+      default: "%A, %d. %B %Y, %H:%M Uhr"
+      time: "%H:%M"
+      short: "%d. %B, %H:%M Uhr"
+      long: "%A, %d. %B %Y, %H:%M Uhr"
+    pm: nachmittags
+  dns_server: DNS Server
+  sign_up_here: Hier anmelden
+  servers: Server
+  router_ip: Router IP
+  general_amahi_news: "Allgemeine Nachrichten \xC3\xBCber Amahi"
+  feedback: Feedback
+  name: Name
+  awake_this_device_via_wol: "Schalten Sie das Ger\xC3\xA4t"
+  port_forwarding: Port-Weiterleitung
+  datetime: 
+    prompts: 
+      minute: Minuten
+      second: Sekunden
+      month: Monat
+      hour: Stunden
+      day: Tag
+      year: Jahr
+    distance_in_words: 
+      less_than_x_minutes: 
+        one: weniger als eine Minute
+        other: weniger als %{count} Minuten
+        zero: weniger als 1 Minute
+      x_days: 
+        one: 1 Tag
+        other: "%{count} Tage"
+      x_seconds: 
+        one: 1 Sekunde
+        other: "%{count} Sekunden"
+      about_x_hours: 
+        one: etwa 1 Stunde
+        other: etwa %{count} Stunden
+      less_than_x_seconds: 
+        one: weniger als 1 Sekunde
+        other: weniger als %{count} Sekunden
+        zero: weniger als 1 Sekunde
+      x_months: 
+        one: 1 Monat
+        other: "%{count} Monate"
+      x_minutes: 
+        one: 1 Minute
+        other: "%{count} Minuten"
+      about_x_years: 
+        one: etwa 1 Jahr
+        other: etwa %{count} Jahre
+      about_x_months: 
+        one: etwa 1 Monat
+        other: etwa %{count} Monate
+      over_x_years: 
+        one: mehr als 1 Jahr
+        other: mehr als %{count} Jahre
+      half_a_minute: eine halbe Minute
+  nickname: Spitzname
+  check_the_calendars_wiki_for_more_details: "Im Kalender Wiki finden Sie weitere Informationen \xC3\xBCber die Verwaltung von Kalendern und welche Clients kompatibel sind."
+  pooled: Pooled
+  edit_web_app: Web App bearbeiten
+  movies: Filme
+  mac_already_allocated: MAC wird bereits verwendet
+  dyndns_info: "Amahi stellt eine KOSTENLOSE, fertig konfigurierte dynamische DNS Adresse f\xC3\xBCr Sie. Diese ist au\xC3\x9Ferhalb Ihres\r\n\
+    lokalen Netzwerkes. Sie k\xC3\xB6nnen Sie benutzen f\xC3\xBCr <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/VPN\">Mac</a> oder <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a> <a\r\n\
+    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a>\r\n\
+    Clients nutzen. (Technisch versierte Nutzer k\xC3\xB6nnen dies f\xC3\xBCr einen<a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH-Zugang</a> nutzen). \r\n\
+    Technisch versierte Nutzer k\xC3\xB6nnen dies au\xC3\x9Ferdem nutzen, um Internetseiten, Spiele-Server\r\n\
+    oder andere Dienste von Ihrem Heimnetzwerk aus anzubieten (sollten Sie nicht\r\n\
+    warten k\xC3\xB6nnen dies auszuprobieren, fragen Sie einfach im IRC Kanal oder suchen Sie im Wiki)."
+  confirmation_matches: "Best\xC3\xA4tigung stimmt \xC3\xBCberein"
+  setting_dmz_failed: "Fehler beim Erstellen der DMZ. Bitte pr\xC3\xBCfen Sie Ihre Einstellungen."
+  logs: Logs
+  this_name_is_not_available: "Diese Name ist nicht verf\xC3\xBCgbar"
+  drives: Laufwerk
+  password_changed_successfully: "Passwort erfolgreich ge\xC3\xA4ndert"
+  will_start_at_boot_time: "wird w\xC3\xA4hrend des Hochfahrens gestartet"
+  calendar_name: Kalender Name
+  this_application_install_ended_with_an_error_please_uninstall_status_is: Die Installation dieser Applikation wurde mit Fehlern beendet. Bitte deinstallieren Sie sie und versuchen es erneut. Applikation-Status ist
+  mac_filtering: MAC Filter
+  tags: Tags
+  router_firewall_settings: Router/Firewall Einstellungen
+  firewall_mac_address_filter_info: "Eintr\xC3\xA4ge in dieser Tabelle werden dazu verwendet, um zu verhindern, dass Pakete eines bestimmten Datentyps vom lokalen Netzwerk ins Internet gelangen. Die Benutzung dieser Filter kann hilfreich sein, das Netzwerk zu sichern oder zu beschr\xC3\xA4nken."
+  static_ip_address: Feste IP Adresse
+  are_you_sure_advanced_features: Sind Sie sicher, dass Sie die erweiterten Einstellungen aktivieren wollen?
+  dhcp_server: DHCP Server
+  app_logs: Anwendungs-Logs
+  changelog: "Liste der \xC3\x84nderungen"
+  contribute: Beitragen
+  back: "Zur\xC3\xBCck"
+  notifications_from_amahi: Mitteilungen von Amahi
+  support_win_95_98: "Windows 95/98-Unterst\xC3\xBCtzung - erm\xC3\xB6glicht (unsichere) LanManager Authentifizierung"
+  there_are_no_calendars_available_see_wiki: "Es stehen aktuell keine Kalender auf dem Server zur Verf\xC3\xBCgung. Erstellen Sie sie mit einem Client-Programm. Weitere Informationen im <a href=\"http://wiki.amahi.org/index.php/Calendars\">Kalender Wiki</a>."
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Das Einschalten der Fehlersuche wird m\xC3\xB6glicherweise sehr gro\xC3\x9Fe Protokolldateien erzeugen.\r\n\
+    Sind Sie sicher, dass Sie die Samba-Fehlersuche aktivieren m\xC3\xB6chten?"
+  the_mac_is_invalid: "Die MAC Adresse ist ung\xC3\xBCltig"
+  making_home_networking_simple: Heimnetzwerk, ganz einfach gemacht
+  disk_pool_details: "W\xC3\xA4hlen Sie hier die Partitionen, die zum %{greyhole} Pool geh\xC3\xB6ren, und danach die %{shares}, die den Pool nutzen."
+  calendars: Kalender
+  a_single_number_0_254_to_point_to_a_given_machine: "Eine einzelne Nummer (0-254) die einem Ger\xC3\xA4t in ihrem Netzwerk zugeordnet ist."
+  writeable: Schreibbar
+  port_range_ports_must_be_numbers: "Die Ports d\xC3\xBCrfen nur aus Ziffern bestehen."
+  help: Hilfe
+  new_firewall_rule: Neue Firewall Regel
+  video: Video
+  thanks_for_visiting: "Vielen Dank f\xC3\xBCr den Besuch. Bitte unterst\xC3\xBCtzen Sie unsere Sponsoren!"
+  install_code: Installations Code
+  new_static_ip: Neue feste IP
+  this_share_name_is_not_valid: "Dieser Name f\xC3\xBCr eine Freigabe ist ung\xC3\xBCltig"
+  there_are_no_applications_available: "Zur Zeit sind keine Anwendungen verf\xC3\xBCgbar."
+  ip_filtering: IP Filterung
+  create: Erstellen
+  guest_dashboard: Gastzugang
+  view_all_calendars_simultaneously: Alle Kalender gleichzeitig betrachten
+  music: Musik
+  permissions: Berechtigungen
+  initial_password: Kennwort
+  your_domain_info: "Dies ist Ihre Home Dom\xC3\xA4ne. Sie steht <b>nur</b> innerhalb des Heimnetzwerkes zur Verf\xC3\xBCgung.\r\n\
+    F\xC3\xBCr weitere Details schauen Sie sich bitte <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">die FAQ</a> an."
+  there_are_no_firewall_rules_defined: Zur Zeit wurden keine Firewallregeln festgelegt.
+  firewall_url_filter_message: "Eintr\xC3\xA4ge in dieser Tabelle werden verwendet, um den Zugriff auf URLs durch das Gateway zu beschr\xC3\xA4nken."
+  dhcp_leases: DHCP Leases
+  dynamic_dns: Dynamische DNS
+  the_ip_must_be_1_to_254: Die IP-Adresse muss sich im Bereich von 1-254 befinden
+  not_a_valid_user_or_password: "Fehler: Falscher Benutzername oder Passwort"
+  create_your_hda_profile: HDA Profil erstellen
+  your_home_dns_domain: Ihre Home DNS Domain
+  theme_by: Thema erstellt von
+  forums: Foren
+  there_are_no_aliases_defined: Es sind bis jetzt keine Aliase definiert
+  user_name_is_not_valid: "Benutzername ist ung\xC3\xBCltig"
+  all_you_need: Alles was Sie brauchen!
+  system: System
+  name_is_taken_already_or_is_reserved: Name wird bereits verwendet oder ist reserviert
+  webapps: Webapps
+  submit_for_debug: Submit for debug
+  more: mehr
+  protocol: Protokoll
+  no_account_yet: Noch kein Account?
+  delete_this_rule: "Diese Regel l\xC3\xB6schen"
+  images: Bilder
+  language: Sprache
+  this_application_is_installed: Diese Applikation ist installiert.
+  share: Freigabe
+  partitions: Partitionen
+  router_setting_failed: "Router-Konfiguration fehlgeschlagen. Bitte pr\xC3\xBCfen Sie Ihre Einstellungen."
+  global_settings_for_shares: "Globale Einstellungen f\xC3\xBCr Freigaben"
+  the_watchdog_is_a_critical_setting: "Der Watchdog ist eine kritische Einstellung. Vom Stoppen der \xC3\x9Cberwachung eines Server-Prozess wird dringend abgeraten. Dies dient dazu, Dienste die in ihrem HDA laufen auch in Zukunft zuverl\xC3\xA4ssig vor St\xC3\xB6rungen zu sch\xC3\xBCtzem. Sind Sie sicher, dass Sie den Watchdog in diesem Server-Dienst zu stoppen wollen?"
+  warning_this_application_is_in_testing: "Vorsicht: Diese Anwendung wird noch getestet!"
+  is_being_monitored_24x7: "wird rund um die Uhr \xC3\xBCberwacht"
+  computer: Computer
+  an_external_ip_address_to_make_the_alias: Eine Externe IP-Adresse um auf eine spezielle IP-Adresse weiterzuleiten.
+  file_server_samba: Datei Server (Samba)
+  mac_is_invalid: "MAC ist ung\xC3\xBCltig"
+  edit_alias: "Alias ver\xC3\xA4ndern"
+  port_range_ports_are_already_allocated: Ports in diesem Bereich sind bereits zugewiesen
+  please_double_check_the_settings: "Bitte <strong>kontrollieren Sie diese Einstellungen genauestens</strong>, da sie entscheidend daf\xC3\xBCr sind, ob Ihr HDA sofort nach der Einrichtung funktioniert."
+  otherwise_you_can_go_to_the_error_log: "Anderfalls k\xC3\xB6nnen Sie direkt zur <a href=\"/setup?tab=debug\">Fehlersuche</a> wechseln."
+  description: Beschreibung
+  there_are_no_users: Es sind aktuell keine Benutzer in diesem System.
+  are_you_sure: Sind Sie sicher?
+  efficiently_manage_your_network: "Effiziente Verwaltung f\xC3\xBCr Netz und Backup aller Computer, Spielekonsolen und anderer Ger\xC3\xA4te in Ihrem Netzwerk und sicherer Zugriff auf Ihr Netzwerk vom Internet aus. Und das ist bei weitem nicht alles, was sie mit Amahi machen k\xC3\xB6nnen."
+  port_range_field_cannot_be_empty: "Diese Felder d\xC3\xBCrfen nicht leer bleiben"
+  available_for_installation: "(Ist f\xC3\xBCr die Installation verf\xC3\xBCgbar)"
+  create_share: Neue Freigabe
+  apps: Anwendungen
+  translate_amahi: "Amahi \xC3\xBCbersetzen"
+  alias_looks_good: Alias ist in Ordnung
+  support: 
+    array: 
+      words_connector: ", "
+      last_word_connector: " und "
+      two_words_connector: " und "
+  delete_share: "Freigabe l\xC3\xB6schen"
+  ushare_upnp_media_server: Ushare UPnP Media Server
+  monitor: Monitor
+  sign_in: Anmelden
+  disk_pooling_enabled: Verwendet Pool
+  new_dns_alias: Neuer DNS Alias
+  community: Gemeinschaft
+  create_a_new_user: Einen neuen Benutzer anlegen
+  suggest: Vorschlagen!
+  port_filtering: Port-Filterung
+  results_found: Ergebnisse gefunden
+  the_mac_looks_good: Die MAC sieht gut aus
+  when_there_are_major_announcements: "Wenn es gr\xC3\xB6\xC3\x9Fere Ank\xC3\xBCndigungen gibt"
+  no_description_supplied: "Es wurde keine Beschreibung zur Verf\xC3\xBCgung gestellt!"
+  manage_your_contributed_apps: Die von Ihnen beigetragenen Apps verwalten
+  global_settings: Globale Einstellungen
+  networking: Netzwerk
+  firewall: Firewall
+  there_are_no_servers_available: "Zur Zeit sind keine Server verf\xC3\xBCgbar."
+  port_range: Port-Bereich
+  network_gateway: Netzwerk Gateway
+  path_looks_good: "Pfad g\xC3\xBCltig"
+  please_select: "Bitte w\xC3\xA4hlen..."
+  subscribe: Abonnieren
+  mac_address: MAC Adresse
+  anonymous_guests: !binary |
+    R8Okc3Rl
+
+  settings: Einstellungen
+  initial_user_info: "Anf\xC3\xA4nglicher Benutzername"
+  control: Kontrolle
+  disk_pool_replication: Replication
+  date: 
+    month_names: 
+    - 
+    - Januar
+    - Februar
+    - !binary |
+      TcOkcno=
+
+    - April
+    - Mai
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Dezember
+    abbr_day_names: 
+    - So
+    - Mo
+    - Di
+    - Mi
+    - Do
+    - Fr
+    - Sa
+    order: 
+    - :day
+    - :month
+    - :year
+    formats: 
+      only_day: "%e"
+      default: "%d.%m.%Y"
+      short: "%e. %b"
+      long: "%e. %B %Y"
+    day_names: 
+    - Sonntag
+    - Montag
+    - Dienstag
+    - Mittwoch
+    - Donnerstag
+    - Freitag
+    - Samstag
+    abbr_month_names: 
+    - 
+    - Jan
+    - Feb
+    - !binary |
+      TcOkcg==
+
+    - Apr
+    - Mai
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Okt
+    - Nov
+    - Dez
+  username_cannot_be_blank: Benutzername darf nicht leer bleiben
+  reboot: Neustart
+  the_ip_looks good: Die IP sieht gut aus
+  this_feature_is_under_heavy_development: Dieses Funktion bedindet sich noch in der Entwicklung
+  there_are_no_webapps: "Es sind aktuell keine Webapps f\xC3\xBCr dieses System konfiguriert."
+  are_you_sure_you_want_to_delete_the_static_ip: "Sind Sie sicher, dass Sie die feste IP '%{name}' l\xC3\xB6schen wollen?"
+  the_name_cannot_be_blank: Der Name darf nicht leer bleiben
+  uninstall: Deinstallieren
+  details: Details
+  is_now_uninstalled: ist jetzt deinstalliert
+  themes: Themen
+  the_name_you_input_above_will_be_added_to_the_DNS_server: "Der Name den Sie oben eingeben wird \xC3\xBCber den DNS-Server als Alias f\xC3\xBCr unten angegebene Kombination von MAC- und IP-Adresse angelegt."
+  new_share: Neue Freigabe
+  this_path_is_not_valid: "Dieser Pfad ist ung\xC3\xBCltig"
+  log_in: Einloggen
+  are_you_sure_user: "Sind Sie sicher, dass sie den Benutzer '%{user}' l\xC3\xB6schen wollen?"
+  extra_parameters: "Zus\xC3\xA4tzliche Parameter"
+  try_installing_some_apps: Anwendung installieren
+  testimonials: Testimonials
+  version: Version
+  powering_off: Fahre herunter...
+  get_involved: Sich beteiligen!
+  stop_it: Stoppen
+  home_domain: "Home Dom\xC3\xA4ne"
+  total_space: Gesamter Platz
+  never_email_me: Keine E-Mails an mich versenden
+  is_now_installed: ist jetzt installiert
+  this_shares_files_deleted: "Die Dateien in dieser Freigabe WERDEN GEL\xC3\x96SCHT."
+  alias_is_not_valid: "Alias ist ung\xC3\xBCltig"
+  mac_address_of_the_device: "MAC Adresse des Ger\xC3\xA4ts (in folgender Form 00:11:22:33:44:55)"
+  next: Weiter
+  web_apps: Web-Anwendungen
+  remember_me: Erinnern
+  password_looks_good: "Password g\xC3\xBCltig"
+  docs: Dokumente
+  the_ip_address_cannot_be_empty: Die IP Adresse darf nicht leer bleiben
+  pdc_primary_domain_controller: PDC &mdash; Primary Domain Controller
+  computer_name: Computer Name
+  close: "schlie\xC3\x9Fen"
+  this_file_was_automatically_generated_on: "# Diese Datei wurde am %{time} automatisch erstellt - ACHTUNG - alle manuellen \xC3\x84nderungen WERDEN \xC3\xBCberschrieben!"
+  installation_instructions: Installations Anleitungen
+  control_panel_for_your_amahi_hdas: "Kontroll Zentrum f\xC3\xBCr Ihre Amahi HDAs"
+  please_select_the_type_of_rule_you_want: "Bitte w\xC3\xA4hlen Sie die Art der Regel, die Sie hinzuf\xC3\xBCgen wollen."
+  create_a_new_webapp: Eine neue Web App erstellen
+  refresh_status: Aktualisierungsstatus
+  home: Startseite
+  will_not_start_at_boot_time: "wird <b>nicht</b> w\xC3\xA4hrend des Hochfahrens gestartet"
+  there_are_no_static_ips_defined: Es sind aktuell keine statischen IP-Adressen definiert.
+  share_name_is_available: "Freigabename ist verf\xC3\xBCgbar"
+  powerful_simple_home_networking: "M\xC3\xA4chtig, einfach, Heimnetzwerk"
+  about: !binary |
+    w5xiZXI=
+
+  email_me: Email an mich
+  there_are_no_applications_installed: Es sind aktuell keine Applikationen installiert.
+  firewall_port_forward_message: "Diese Regeln erlauben es Ihnen\r\n\
+    automatisch Ports f\xC3\xBCr Netzwerkdienste an ein bestimmtes\r\n\
+    Ger\xC3\xA4t hinter der Firewall umzuleiten. Diese Einstellungen sind nur n\xC3\xB6tig wenn\r\n\
+    Sie eine bestimmte Sorte Server, wie zum Beispiel einen Web- oder Mailserver\r\n\
+    in einem privaten, \xC3\xB6rtlichen Netzwerk, hinter der Firewall, unterbringen wollen."
+  to_recover_your_password: "Um Ihr Passwort zur\xC3\xBCckzusetzen oder die Aktivierungs E-Mail erneut zutgesendet zu bekommen, geben Sie bitte Ihre E-Mail-Adresse unten ein."
+  apache_web_server: Apache Web Server
+  seconds: Sekunden
+  partition: Partition
+  dhcp: DHCP
+  dhcp_free: Inaktiv
+  this_users_files_deleted: "Die Dateien dieses Benutzers WERDEN GEL\xC3\x96SCHT."
+  configured: Eingerichtet
+  disabling_lan_manager_will_not_allow_older_machines: "Das Abschalten der Windows 95/98 LanManager Authentifizierung wird verhindern, dass \xC3\xA4ltere Ger\xC3\xA4te die Freigaben nutzen k\xC3\xB6nnen. Sind Sie sicher, dass Sie den Windows 95/98 Authentifizierungsmodus abschalten m\xC3\xB6chten?"
+  you_have_been_logged_out: Sie wurden abgemeldet.
+  permanently: dauerhaft
+  the_url_is_invalid: "Die URL ist ung\xC3\xBCltig"
+  it_will_be_restarted_by_the_watchdog: (wird vom watchdog neu gestartet)
+  amahi_dyndns_updater: Amahi Dynamic DNS Updater
+  pdc_domain: "PDC Dom\xC3\xA4ne"
+  path: Pfad
+  features: Funktionen
+  password_cannot_be_blank: Passwort darf nicht leer bleiben
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "HINWEIS: Der Watchdog l\xC3\xA4uft und wird in ein paar Sekunden neustarten."
+  your_existing_network_gatweay: Ihr vorhandenes Netzwerk Gateway/Router
+  warning: Warnung
+  dhcp_ip_address: DHCP IP-Adresse
+  beta_apps: Beta Apps
+  logout: Abmelden
+  there_is_no_undo: "Diese L\xC3\xB6schung KANN NICHT R\xC3\x9CCKG\xC3\x84NGIG GEMACHT WERDEN."

@@ -1,0 +1,131 @@
+#!/usr/bin/env ruby
+
+# Amahi Home Server
+# Copyright (C) 2007-2010 Amahi
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License v3
+# (29 June 2007), as published in the COPYING file.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# file COPYING for more details.
+#
+# You should have received a copy of the GNU General Public
+# License along with this program; if not, write to the Amahi
+# team at http://www.amahi.org/ under "Contact Us."
+
+require File.dirname(__FILE__) + '/../config/boot'
+require File.dirname(__FILE__) + '/../config/environment'
+
+#require 'commands/runner'
+require 'optparse'
+require 'thread'
+require 'etc'
+
+# switch to apache:users first
+uid = Etc.getpwnam("apache").uid
+gid = Etc.getgrnam("users").gid
+Process.gid = gid
+Process.egid = gid
+Process.uid = uid
+Process.euid = uid
+
+# make things group (users) writeable
+File.umask(0002)
+
+options = { :environment => (ENV['RAILS_ENV'] || "development").dup }
+options[:install] = true
+app_id = nil
+
+ARGV.clone.options do |opts|
+  script_name = File.basename($0)
+  opts.banner = "Usage: #{$0} [options] <app-identifier>"
+
+  opts.separator ""
+
+  opts.on("-e", "--environment=name", String,
+          "Specifies the environment to operate under (test/development/production).",
+          "Default: development") { |v| options[:environment] = v }
+
+  opts.on("-u", "--uninstall", "Uninstall the app provided") { |v| options[:install] = false }
+
+  opts.separator ""
+
+  opts.on("-h", "--help",
+          "Show this help message.") { $stderr.puts opts; exit }
+
+  opts.order! { |o| app_id ||= o } rescue retry
+end
+
+ARGV.delete(app_id)
+
+ENV["RAILS_ENV"] = options[:environment]
+Rails.env.replace(options[:environment]) if defined?(Rails.env)
+
+# load default settings
+HDA_CONFIG = YAML.load_file("#{Rails.root}/config/hda.yml")[Rails.env]
+
+ROOTDIR = File.join(File.dirname(__FILE__), "..")
+require 'active_record'
+require 'yaml'
+require 'erb'
+require File.join(ROOTDIR, 'lib/greyhole')
+require File.join(ROOTDIR, 'lib/amahi_api')
+require File.join(ROOTDIR, 'app/models/app')
+require File.join(ROOTDIR, 'app/models/app_dependency')
+require File.join(ROOTDIR, 'app/models/db')
+require File.join(ROOTDIR, 'app/models/disk_pool_partition')
+require File.join(ROOTDIR, 'app/models/webapp_alias')
+require File.join(ROOTDIR, 'app/models/webapp')
+require File.join(ROOTDIR, 'app/models/setting')
+require File.join(ROOTDIR, 'app/models/server')
+require File.join(ROOTDIR, 'app/models/user')
+require File.join(ROOTDIR, 'app/models/share')
+require File.join(ROOTDIR, 'app/models/cap_access')
+require File.join(ROOTDIR, 'app/models/cap_writer')
+require File.join(ROOTDIR, 'app/models/dns_alias')
+require File.join(ROOTDIR, 'app/models/host')
+require File.join(ROOTDIR, 'app/models/theme')
+ActiveRecord::Base.establish_connection((YAML::load(ERB.new(
+                                                        File.read("#{ROOTDIR}/config/database.yml")).result).symbolize_keys)[(ENV['RAILS_ENV'] || :development).to_sym])
+
+def install_or_uninstall(install, app_id, app)
+  if install
+    puts "=======  app install begin      @  #{Time.now} =========="
+    puts "Installing   app id #{app_id} under #{Rails.root} ENV=#{Rails.env}"
+    app.install_bg
+    puts "App: #{app.name} installed"
+    puts "=======  app install end        @  #{Time.now} =========="
+  else
+    puts "=======  app uninstall begin    @  #{Time.now} =========="
+    puts "Uninstalling app id #{app_id} under #{Rails.root} ENV=#{Rails.env}"
+    app.uninstall_bg
+    puts "App: #{app.name} uninstalled"
+    puts "=======  app uninstall end      @  #{Time.now} =========="
+  end
+end
+
+
+def main(app_id, install)
+  if app_id.nil?
+    $stderr.puts "Run '#{$0} -h' for help."
+    exit 1
+  end
+  begin
+    app = install ? App.new(app_id) : App.find_by_identifier(app_id)
+    raise "Error: cannot find #{app_id} to #{install ? "install" : "uninstall"}!" unless app
+    install_or_uninstall install, app_id, app
+  rescue => e
+    AmahiApi.api_key = Setting.value_by_name "api-key"
+    subject = "App #{install ? "install" : "uninstall"} error for #{app.name rescue app_id}"
+    trace = [e.inspect.to_s, e.backtrace].join ",\n"
+    er = AmahiApi::ErrorReport.new(:report => trace, :comments => e.inspect.to_s, :subject => subject)
+    #puts "DEBUG: backtrace: #{trace}"
+    er.save
+    raise e
+  end
+end
+
+main app_id, options[:install]

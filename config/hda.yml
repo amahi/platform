@@ -1,0 +1,15 @@
+# Amahi HDA platform settings
+
+defaults: &defaults
+  dummy_mode: false
+
+development:
+  <<: *defaults
+  dummy_mode: true
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+

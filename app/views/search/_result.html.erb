@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <table>
+      <tr>
+	<td><%= file_type_to_icon(result[:type], result[:path]) %></td>
+	<td>&nbsp;</td>
+	<td><%= link_to h(result[:title]), path2uri(result[:path]) %></td>
+      </tr>
+      <tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	<td><span class="search-location"><%= path2location(result[:path]) %></span> - <%= number_to_human_size(result[:size]) %> - <%= h(result[:owner]) %> - <%= link_to "folder", path2uri(File.dirname result[:path]) %></td>
+      </tr>
+    </table>
+  </td>
+</tr>

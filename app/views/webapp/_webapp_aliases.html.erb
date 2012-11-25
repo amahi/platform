@@ -1,0 +1,18 @@
+<% uid = webapp.id.to_s %>
+<span id="webapp_aliases_<%=uid%>">
+<span id="webapp_aliases_new_<%=uid%>">
+<%= link_to_remote t('new_alias'),
+	:update => "webapp_aliases_new_#{uid}",
+	:before => spinner_show(uid),
+	:success => spinner_hide(uid),
+	:url => { :controller => 'webapp_alias', :action => 'new', :id => uid } %>
+&nbsp; &nbsp; &raquo; <a href="http://wiki.amahi.org/index.php/Webapp_aliases" target="_blank"><%= theme_image_tag "more" %></a>
+</span>
+<%= webapp.webapp_aliases.count > 0 ? "<br/><br/>" : "" %>
+	<%= webapp.webapp_aliases.map do |a|
+		del = link_to_remote("x", :update => "webapp_aliases_#{uid}", :before => spinner_show(uid), :success => spinner_hide(uid), :url => { :controller => 'webapp_alias', :action => 'destroy', :id => a.id, :webapp => uid });
+		link = link_to("http://#{a}", "http://#{a}", { :target => '_blank'})
+		"<span class=\"hidden_webapp_alias_delete\">[#{del}]</span> #{link}"
+		end.join("<br/>")
+%>
+</span>

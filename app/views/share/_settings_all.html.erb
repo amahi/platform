@@ -1,0 +1,78 @@
+<table>
+<%=  form_tag do %>
+<%= text_field '' %>
+<% end %>
+
+<% if @pdc.value == '0' %>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td></td>
+          <td>
+          	<%=t 'workgroup_name' %>: &nbsp; <%= editable_content(
+				:content => {
+				  :element => 'span',
+				  :text => h(@workgroup.value.upcase),
+				  :options => {
+				    :id => "workgroup_id",
+				    :class => 'editable'
+				  }
+				 },
+				:url => { :controller => 'share', :action => 'update_workgroup_name', :id => @workgroup }
+			) %>
+	  </td>
+          </tr>
+<% end %>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td></td>
+          <td>
+		<span id="shares-debug">
+		<%= render :partial => 'share/debug' %>
+		</span>
+		&nbsp; <%=t 'debug' %> &nbsp; &nbsp; &raquo; <a href="http://wiki.amahi.org/index.php/Shares_Debug" target="_blank"><%= theme_image_tag "more"  %></a>
+		&nbsp; <%= spinner "debug" %>
+	  </td>
+          </tr>
+<% if @pdc.value == '0' %>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td></td>
+          <td>
+		<span id="shares-win98">
+		<%= render :partial => 'share/win98' %>
+		</span>
+		&nbsp; <%=t 'support_win_95_98' %>
+		&nbsp; <%= spinner "win98" %>
+	  </td>
+          </tr>
+<% end %>
+          <tr><td>&nbsp;</td></tr>
+          <tr>
+          <td></td>
+          <td>
+		<span id="shares-pdc">
+		<%= render :partial => 'share/pdc' %>
+		</span>
+		&nbsp; <%=t 'pdc_primary_domain_controller' %>
+		&nbsp; &nbsp; &nbsp; &raquo; <a href="http://wiki.amahi.org/index.php/PDC" target="_blank"><%= theme_image_tag "more"  %></a>
+                
+		&nbsp; <%= spinner "pdc" %>
+<% if @pdc.value == '1' %>
+		<br/>
+		<blockquote>
+          	&nbsp; &nbsp; <%=t 'pdc_domain' %>: &nbsp; <%= editable_content(
+				:content => {
+				  :element => 'span',
+				  :text => h(@workgroup.value.upcase),
+				  :options => {
+				    :id => "workgroup_id",
+				    :class => 'editable'
+				  }
+				 },
+				:url => { :controller => 'share', :action => 'update_workgroup_name', :id => @workgroup }
+			) %>
+		</blockquote>
+<% end %>
+	  </td>
+          </tr>
+</table>

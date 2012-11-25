@@ -1,0 +1,21 @@
+= form_for Share.new,\
+    :remote => true,\
+    :url => '/shares/${share_id}/update_extras',\
+    :method => :put,\
+    :html => {\
+      :class => 'share area update-extras-form',\
+      :id => 'update-extras-form'\
+    } do |f|
+
+  table
+
+    tr
+      td= f.text_area :extras, :rows => 10, :placeholder => t('add_extra_parameters')
+      td.align-top
+        .messages
+
+    tr
+      td
+        = f.submit "#{t('change')} &raquo;".html_safe
+        | &nbsp;&nbsp;&nbsp;
+        = link_to t('cancel'), '#', :class => 'close-update-extras-area'

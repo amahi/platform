@@ -1,0 +1,5 @@
+page.visual_effect :fade, :debug_submit_form
+page[:thanks].replace_html "Debug report submitted. Your report ID is <b>#{error_id}</b>. Thanks for helping improve Amahi!"
+page.visual_effect :highlight, :thanks, { :duration => 14 }
+page[:subject].value = "Describe what failed here ..."
+page[:comments].value = "Click here to explain how the error occurred ..."

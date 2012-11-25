@@ -1,0 +1,23 @@
+= form_for Share.new,\
+    :remote => true,\
+    :url => '/shares/${share_id}/update_tags',\
+    :method => :put,\
+    :html => {\
+      :data => {\
+        :ok_icon_path => theme_image_path('ok.png'),\
+        :error_icon_path => theme_image_path('stop.png')\
+      },\
+      :class => 'share area update-tags-form',\
+      :id => 'update-tags-form'\
+    } do |f|
+
+  table
+    tr
+      td= f.text_field :tags, :size => 16, :maxlength => 255, :placeholder => '(add tags)'
+      td.form-action-wrap
+        = f.submit "#{t('change')} &raquo;".html_safe
+        | &nbsp;&nbsp;&nbsp;
+        = link_to t('cancel'), '#', :class => 'close-update-tags-area'
+      td[width="230px"]
+        .messages
+     

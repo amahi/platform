@@ -1,0 +1,10 @@
+<% if  @servers.length > 0 %>
+	<%= render :partial => 'server/all', :locals => { :servers => @servers } %>
+<% else %>
+	<div align="center">
+		<h2><%=t 'there_are_no_servers_available' %></h2>
+		<p>
+		<%=t 'this_looks_like_a_database_corruption_please_report_it' %>
+		</p>
+	</div>
+<% end %>

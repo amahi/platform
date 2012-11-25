@@ -1,0 +1,5 @@
+page[:host_messages].replace_html theme_image_tag("stop") + " " + t('name_is_not_valid')
+page.show 'host_messages'
+page[:host_address].disabled = true
+page[:host_mac].disabled = true
+page[:host_create_button].disabled = true

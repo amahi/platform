@@ -1,0 +1,73 @@
+- share = access
+
+.access
+  = simple_remote_checkbox :id => "share_everyone_#{share.id}",
+                           :css_class => 'share_everyone_checkbox',
+                           :url => toggle_everyone_share_path(:id => share.id),
+                           :label => t('all_users'),
+                           :checked => share.everyone,
+                           :no_spinner => true
+  | &nbsp;&nbsp;&nbsp;
+  - if share.everyone
+    = simple_remote_checkbox :id => "share_readonly_#{share.id}",
+                           :css_class => 'share_readonly_checkbox',
+                           :url => toggle_readonly_share_path(:id => share.id),
+                           :label => t('writeable'),
+                           :checked => !share.rdonly,
+                           :no_spinner => true
+  = spinner
+
+  - unless share.everyone or User.count < 1
+    fieldset
+      legend
+        | &nbsp; #{t('users')} &nbsp;
+      table[class="shares-users-table"]
+        thead
+          tr
+            td &nbsp;
+            td &nbsp;
+            td= t('access')
+            td &nbsp;
+            td &nbsp;
+            td= t('writeable')
+
+        - User.all.each do |user|
+          tbody
+            tr
+              td= user.name
+              td &nbsp;
+              td.align-center= simple_remote_checkbox :id => "share_access_for_user#{user.id}",
+                                             :css_class => 'share_access_checkbox',
+                                             :url => toggle_access_share_path(:id => share.id, :user_id => user.id),
+                                             :label => "",
+                                             :checked => share.users_with_share_access.include?(user),
+                                             :no_spinner => true
+              td &nbsp;
+              td &nbsp;
+              td.align-center= simple_remote_checkbox :id => "share_write_for_user#{user.id}",
+                                             :css_class => 'share_write_checkbox',
+                                             :url => toggle_write_share_path(:id => share.id, :user_id => user.id),
+                                             :label => "",
+                                             :checked => share.users_with_write_access.include?(user),
+                                             :no_spinner => true,
+                                             :disabled => !share.users_with_share_access.include?(user)
+
+        tbody
+          tr
+            td= t('anonymous_guests')
+            td &nbsp;
+            td.align-center= simple_remote_checkbox :id => "share_guest_access_#{share.id}",
+                                       :css_class => 'share_guest_access_checkbox',
+                                       :url => toggle_guest_access_share_path(:id => share.id),
+                                       :label => "",
+                                       :checked => share.guest_access,
+                                       :no_spinner => true
+            td &nbsp;
+            td &nbsp;
+            td.align-center= simple_remote_checkbox :id => "share_guest_writeable_#{share.id}",
+                                       :css_class => 'share_guest_writeable_checkbox',
+                                       :url => toggle_guest_writeable_share_path(:id => share.id),
+                                       :label => "",
+                                       :checked => share.guest_writeable,
+                                       :no_spinner => true,
+                                       :disabled => !share.guest_access

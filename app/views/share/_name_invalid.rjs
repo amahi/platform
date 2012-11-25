@@ -1,0 +1,4 @@
+page[:name_messages].replace_html theme_image_tag("stop") + " " + t('this_share_name_is_not_valid')
+page.show 'name_messages'
+page[:share_create_button].disabled = true
+page[:path].disabled = true

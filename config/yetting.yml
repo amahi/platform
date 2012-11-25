@@ -1,0 +1,49 @@
+defaults: &defaults
+
+  default_theme: 'main'
+  valid_dhcp_address_range: 100
+
+  locales_implemented:
+    - ['العربية', 'ar']
+    - ['Bahasa Indonesia', 'id']
+    - ['български език', 'bg']
+    - ['Dansk', 'da']
+    - ['Deutsch', 'de']
+    - ['Ελληνικά', 'el']
+    - ['English', 'en']
+    - ['Español', 'es']
+    - ['Français', 'fr']
+    - ['עברית', 'he']
+    - ['hrvatski', 'hr']
+    - ["latviešu valoda", 'lv']
+    - ['Italiano', 'it']
+    - ['日本語', 'ja']
+    - ['한국어', 'ko']
+    - ['Nederlands', 'nl']
+    - ['Norsk (Bokmål)', 'no-NB']
+    - ['Norsk (Nynorsk)', 'no-NN']
+    - ['Polski', 'pl']
+    - ['Português - Brasil', 'pt-br']
+    - ['Português - Portugal', 'pt-pt']
+    - ['română', 'ro']
+    - ['Русский язык', 'ru']
+    - ['suomi', 'fi']
+    - ['Svenska', 'sv']
+    - ['中文', 'zh']
+
+  rtl_locales:
+    - 'ar'
+    - 'he'
+
+  dummy_mode: false
+
+development:
+  <<: *defaults
+  dummy_mode: true
+
+test:
+  <<: *defaults
+  dummy_mode: true
+
+production:
+  <<: *defaults

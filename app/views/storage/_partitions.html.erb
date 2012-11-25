@@ -1,0 +1,40 @@
+<%
+
+   t = 0 # total bytes
+   u = 0 # used bytes
+   f = 0 # free bytes
+
+   @partitions.each do | part |
+   	total = part[:bytes_total]
+   	free = part[:bytes_free]
+	t += total
+	u += (total - free)
+	f += free
+   end
+%>
+<center>
+<table style="width: 30%; border: 1px solid #ddd; padding: 15px" >
+<tr><td>
+<strong><%=t 'free_space' %>: </strong></td><td><%= number_to_human_size(f) %>
+</td></tr>
+<tr><td>
+<strong><%=t 'used_space' %>: </strong></td><td><%= number_to_human_size(u) %>
+</td></tr>
+<tr><td>
+<strong><%=t 'total_space' %>: </strong></td><td><%= number_to_human_size(t) %>
+</td></tr>
+</table>
+<br />
+<br />
+<div>
+
+<% i=0; @partitions.each do |part| %>
+	<%= "<br /><br />" if (i > 1 && (i % 2 == 0)) %>
+	<img class="drive-usage" width="400" height="300" title="<%= part[:path] -%>" alt="<%=t 'partition' %> <%= i %>" src="<%= url_for :controller => 'setup', :action => "disk_graph", :total => part[:bytes_total], :free => part[:bytes_free], :path => h(part[:path]), :index => i %>" />&nbsp;&nbsp;
+	<% i += 1 %>
+<% end %>
+
+<br />
+<br />
+</div>
+</center>

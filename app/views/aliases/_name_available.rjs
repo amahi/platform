@@ -1,0 +1,3 @@
+page[:alias_messages].replace_html theme_image_tag("ok") + " " + t('alias_looks_good')
+page.show 'alias_messages'
+page[:alias_address].disabled = false

@@ -1,0 +1,15 @@
+# See
+#      http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale
+#
+# for starting points of base locales for a number of languages.
+#
+# To contribute a translation, check the english file en.yml and
+# change the right hand side of the strings to be 
+#
+# Once the translation file is ready, go to app/controllers/setup_controller.rb
+# and in the locales_implemented method add the language name and code
+#
+#      http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+#
+# Pick columns 6 (name of the language *in the native language*)
+# and column 1 (ISO code)

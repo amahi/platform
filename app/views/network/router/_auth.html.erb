@@ -1,0 +1,39 @@
+<fieldset>
+<legend>&nbsp; Your Router Login &nbsp;</legend>
+<div class="settings-fields" id="auth">
+<table>
+<tr><td>&nbsp;</td></tr>
+<tr>
+<td>
+Username: </td><td> <%= editable_content(
+	:content => {
+	  :element => 'span',
+	  :text => username ? "*******" : "(not set)",
+	  :options => {
+	    :id => "username_id",
+	    :class => 'editable'
+	  }
+	 },
+	:url => { :controller => 'network', :action => 'update_router_user_pwd', :id => Setting.network.find_by_name('router_username') }
+) %>
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+<td>
+Password: </td><td><%= editable_content(
+		:content => {
+		  :element => 'span',
+		  :text => password ? "*******" : "(not set)",
+		  :options => {
+		    :id => "password_id",
+		    :class => 'editable'
+		  }
+		 },
+		:url => { :controller => 'network', :action => 'update_router_user_pwd', :id => Setting.network.find_by_name('router_password') }
+) %>
+</td>
+</tr>
+</table>
+</div>
+</fieldset>

@@ -1,0 +1,15 @@
+- share = tags
+
+.tags
+  span.open-update-tags-area.focus= tags_to_str(share.tags)
+  | &nbsp;
+  = spinner
+  p[class="shares-fixed-tags"]
+
+    - [t('music'), t('pictures'), t('movies'), t('videos'), t('docs')].each_with_index do |tag, i|
+      = simple_remote_checkbox :id => "share_visible_#{share.id}_#{i}",
+                                      :css_class => 'share_tags_checkbox',
+                                      :url => update_tags_share_path(:id => share.id, :name => tag),
+                                      :label => tag,
+                                      :checked => share.tags.include?(tag.downcase)
+      | &nbsp;&nbsp;&nbsp;

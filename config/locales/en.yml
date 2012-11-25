@@ -1,0 +1,541 @@
+# Translations in English for Amahi
+
+'en':
+  # new items
+  reboot: Reboot
+  rebooting: Reboot in progress ...
+  poweroff: Power off
+  powering_off: Power off in progress ...
+  uptime: Uptime
+  this_will_power_off: |-
+        This will power off your HDA.
+        You may want to turn on your router DHCP server if your HDA was acting as DHCP server.
+
+        Are you sure you want to proceed?
+  this_will_reboot: |-
+        This will reboot your HDA.
+
+        Are you sure you want to proceed?
+
+  #=============================================
+
+  # default layout and dashboard
+  home: Home
+  setup: Setup
+  web: Web
+  apps: Apps
+  dashboard: Dashboard
+  help: Help
+  your_control_panel: Your Control Panel
+  feedback: Feedback
+  forums: Forums
+  wiki: Wiki
+  tracker: Tracker
+  live_help: Live Help
+  about: About
+  theme_by: Theme by
+
+  # login
+  log_in: Log In
+  not_a_valid_user_or_password: "Error: Incorrect username or password"
+  first_time_admin_setup: "First admin setup. Please re-create your user password."
+  remember_me: Remember me
+
+  # setup panel tabs
+  users: Users
+  shares: Shares
+  storage: Storage
+  networking: Networking
+  themes: Themes
+  settings: Settings
+
+  # misc common stuff
+  cancel: Cancel
+  create: Create
+  created: Created
+  password: Password
+  change: Change
+  ip_address: IP Address
+  mac_address: MAC Address
+  comment: Comment
+  details: Details
+  name: Name
+  url: URL
+  confirm: Confirm
+  access: Access
+  debug: Debug
+  music: Music
+  pictures: Pictures
+  movies: Movies
+  videos: Videos
+  docs: Docs
+  public: Public
+  name_is_not_valid: Name is not valid
+  name_looks_good: Name looks good
+  warning: WARNING
+  state: State
+  there_is_no_undo: There is NO UNDO TO THIS DELETION.
+  ip_address: IP Address
+  path: Path
+
+  # user tab
+  username: Username
+  full_name: Full Name
+  delete_user: Delete user
+  edit_user: Edit user
+  create_a_new_user: Create a New User
+  new_user: New User
+  confirmation_matches: Confirmation matches
+  confirmation_must_match: Confirmation must match
+  full_name_looks_good: Full name looks good
+  new: New
+  password_cannot_be_blank: Password cannot be blank
+  password_changed_successfully: Password changed successfully
+  password_is_too_short: Password is too short
+  password_looks_good: Password looks good
+  the_name_cannot_be_blank: The name cannot be blank
+  there_are_no_users: There are no users in your system at this time.
+  user_name_is_available: User name is available
+  user_name_is_not_available: User name is not available
+  user_name_is_not_valid: User name is not valid
+  username_cannot_be_blank: User name cannot be blank
+  are_you_sure_user: Are you sure you want to delete user '%{user}' ?
+  this_users_files_deleted: "The files in this user's home folder WILL BE DELETED"
+  last_login: Last login
+
+  # shares tab
+  permissions: Permissions
+  share: Share
+  location: Location
+  create_a_new_share: Create a New Share
+  new_share: New Share
+  writeable: Writeable
+  all_users: All users
+  delete_share: Delete share
+  edit_share: Edit share
+  visible: Visible
+  read_only: Read Only
+  tags: Tags
+  extra_parameters: Extra Parameters
+  add_extra_parameters: (add extra parameters)
+  disabling_lan_manager_will_not_allow_older_machines: Disabling Windows 95/98 LanManager authentication will not allow older machines to use the shares.
+        Are you sure you want to disable Windows 95/98 authentication mode?
+  disabling_pdc_will_enable_workgroup_mode: |-
+        Disabling PDC mode will enable Workgroup mode.
+        
+        This is a MAJOR change in the way the shares operate. This is meant for home networks (check the wiki for more).
+        
+        Are you sure you want to disable PDC mode?
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: |-
+        Enabling debug will potentially generate very large log files.
+        Are you sure you want to enable Samba debugging?
+  enabling_pdc_is_a_major_share_change: |-
+        Enabling PDC mode is a MAJOR change in the way the shares operate.
+        
+        This will enable Domain mode and disable Workgroup mode and require that ALL machines be enterprise (or "PRO") machines, using proper credentials. It is meant for enterprise networks.
+        
+        Are you sure you want to enable PDC mode?
+  enabling_lan_manager_is_less_secure: |-
+        Enabling Windows 95/98 mode authentication is less secure and may help accesses with older machines.
+
+        Are you sure you want to enable Windows 95/98 LanManager authentication?
+  global_settings_for_shares: Global Settings for Shares
+  pdc_domain: PDC Domain
+  pdc_primary_domain_controller: PDC &mdash; Primary Domain Controller
+  share_name_cannot_be_blank: Share name cannot be blank
+  share_name_is_available: Share name is available
+  share_path_cannot_be_blank: Share path cannot be blank
+  share_path_is_available: Share path is available
+  support_win_95_98: Support Windows 95/98 &mdash; enables (insecure) LanManager authentication
+  there_are_no_shares_created: There are no shares created in your system at this time.
+  this_name_is_not_available: This name is not available
+  this_path_is_not_available: This path is not available
+  this_path_is_not_valid: This path is not valid
+  this_share_name_is_not_valid: This share name is not valid
+  workgroup_name: Workgroup Name
+  are_you_sure_share: Are you sure you want to delete share '%{share}' ?
+  this_shares_files_deleted: This share will no longer be available (files in it will NOT be deleted).
+  anonymous_guests: Guests
+
+  # disk pooling, greyhole
+  disk_pooling: Storage Pool
+  disk_pooling_enabled: Uses pool
+  disk_pool_details: Select the partitions you want to include in the %{greyhole} storage pool, and then have %{shares} use the storage pool.
+  disk_pool_replication: Replication
+  disk_pool_copies: Extra copies
+  greyhole_not_installed: "WARNING: Greyhole is not installed in this system!"
+  pooled: Pooled
+
+  # networking common keywords
+  address_looks_good: Address looks good
+  address_is_not_valid: Address is not valid
+
+  # networking -> dhcp
+  dhcp: DHCP
+  computer: Computer
+  dhcp_ip_address: DHCP IP Address
+  dhcp_lease: DHCP Lease
+  dhcp_leases: DHCP Leases
+  there_are_no_dynamic_dhcp_leases_outstanding: There are no dynamic DHCP leases outstanding at this time.
+  dhcp_active: Active
+  dhcp_free: Inactive
+
+  # networking -> static ips
+  static_ips: Static IPs
+  address_already_allocated: Address is already allocated
+  are_you_sure: Are you sure?
+  are_you_sure_you_want_to_delete_the_static_ip: Are you sure you want to delete the static IP '%{name}' ?
+  computer_name: Computer Name
+  delete_static_ip: Delete Static IP
+  edit_static_ip: Edit Static IP
+  mac_address_of_the_device: MAC address of the device (in the form 00:11:22:33:44:55)
+  mac_already_allocated: MAC already allocated
+  mac_is_invalid: MAC is invalid
+  mac_looks_good: MAC looks good
+  name_is_taken_already_or_is_reserved: Name is taken already or is reserved
+  network_settings: Network Settings
+  new_static_ip: New Static IP
+  router_firewall_settings: Router/Firewall Settings
+  router_ip: Router IP
+  seconds: seconds
+  static_ip_address: Static IP Address
+  the_name_you_input_above_will_be_added_to_the_DNS_server: The name you input above will be added to the DNS server and associated to the MAC and IP addresses below.
+  there_are_no_static_dhcp_leases: There are no static DHCP leases outstanding at this time.
+  there_are_no_static_ips_defined: There are no static IPs defined at this time.
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: This IP Address (1-%{max}) will always be statically associated to the MAC address below.
+  awake_this_device_via_wol: Wake this device
+
+  # networking -> aliases
+  aliases: Aliases
+  a_single_number_0_254_to_point_to_a_given_machine: A single number (0-254) to point to a given machine in your network
+  alias_is_not_valid: Alias is not valid
+  alias_is_taken_already: Alias is taken already or is reserved
+  alias_looks_good: Alias looks good
+  an_external_ip_address_to_make_the_alias: An external IP address to make it point to a specific IP address
+  are_you_sure_you_want_to_delete_alias: Are you sure you want to delete the alias for '%{name}' ?
+  create_alias: Create Alias
+  delete_alias: Delete Alias
+  dns_alias: DNS Alias
+  dns_aliases: DNS Aliases
+  edit_alias: Edit alias
+  new_alias: New Alias
+  new_dns_alias: New DNS Alias
+  the_alias_name_you_input_will_be_added: The name you input above will be added to the DNS server as an alias for the IP address below.
+  the_ip_address_can_be: The IP Address can be
+  there_are_no_aliases_defined: There are no Aliases defined at this time
+
+  # applications and servers area
+  application: Application
+  available: Available
+  are_you_sure_you_would_like_to_uninstall: |-
+        Are you sure you would like to uninstall this application?
+
+        Any data associated with this application WILL BE DELETED.
+  available_for_installation: (Available for Installation)
+  description: Description
+  discussion_forum_for: Discussion forum for
+  installed_paren: (Installed)
+  installed: Installed
+  is_now_installed: is now Installed
+  is_now_uninstalled: is now Uninstalled
+  manage_themes: Manage Themes
+  no_description_supplied: No description supplied!
+  preparing_to_install: Preparing to install ...
+  preparing_to_uninstall: Preparing to uninstall ...
+  initial_user_info: Initial User
+  initial_user: Username
+  initial_password: Password
+  special_instructions: Special Instructions
+  there_are_no_applications_available: There are no applications available at this time.
+  there_are_no_applications_installed: There are no Apps installed at this time.
+  there_are_no_servers_available: There are no servers available at this time.
+  this_application_install_ended_with_an_error_please_uninstall_status_is: This application install ended with an error. Please uninstall it and try again! Application status is
+  this_could_be_due_to_lack_of_network_connectivity: This could be due to a lack of network connectivity.
+  this_looks_like_a_database_corruption_please_report_it: This looks like a database corruption or a bug (please <a href="http://bugs.amahi.org">report it</a>).
+  uninstall: Uninstall
+  warning_this_application_is_in_testing: "WARNING: This application is in testing!"
+  application_uninstalled: Application uninstalled.
+  this_application_is_installed: This application is installed.
+  this_application_is_installed_already_please_refresh: This application is installed already. Please refresh this web page.
+  this_application_is_not_installed_please_refresh: This application is not installed. Please refresh this web page.
+  try_installing_some_apps: Try installing some Apps
+
+  # networking -> firewall
+  firewall: Firewall
+  port_range_field_cannot_be_empty: The fields cannot be empty
+  port_range_looks_good: The port range looks good
+  port_range_ports_are_already_allocated: Ports in that range are already allocated
+  port_range_ports_must_be_0_to_64k: The ports must be in the 0-65535 range
+  port_range_ports_must_be_increasing_order: The first port must be less than or equal to the second port
+  port_range_ports_must_be_numbers: The ports must be numbers
+  router_setting_failed: Router setting failed. Please check your settings.
+  setting_dmz_failed: Setting the DMZ failed. Please check your settings.
+  the_ip_address_cannot_be_empty: The IP address cannot be empty
+  the_ip_looks good: The IP looks good
+  the_ip_must_be_1_to_254: The IP must be in the range 1-254
+  the_mac_is_invalid: The MAC address is invalid
+  the_mac_looks_good: The MAC looks good
+  the_url_is_invalid: The URL is not valid
+  the_url_looks_good: The URL looks good
+
+  # calendars
+  calendars: Calendars
+  are_you_sure_you_would_like_to_delete_calendar: Are you sure you would like to delete %{calendar} ?
+  calendar_name: Calendar Name
+  check_the_calendars_wiki_for_more_details: Check the calendar wiki for more information on how to manage calendars and what clients are compatible.
+  delete: Delete
+  subscribe: Subscribe
+  there_are_no_calendars_available_see_wiki: There are no calendars available in the server. Create them with a calendar client. See the <a href="http://wiki.amahi.org/index.php/Calendars">calendars wiki</a>.
+  view_all_calendars_simultaneously: View all calendars simultaneously
+  or_view_each_one_separately_below: or view each one separately below.
+
+  # errors
+  otherwise_you_can_go_to_the_error_log: Otherwise you can go directly to the <a href="/setup?tab=debug">error log</a>.
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: The application has come across an error. You should be forwarded shortly to a page showing the error log.
+
+  # firewall related
+  delete_this_rule: Delete this rule
+  firewall_mac_address_filter_info: |-
+    Entries in this table are used to restrict certain types of data
+    			packets from your local network to Internet through the Gateway.
+    			Use of such filters can be helpful in securing or restricting
+    			your local network.
+  firewall_port_filter_message: Port filter rules are used to restrict data packets from your local network to the Internet.
+  firewall_port_forward_message: |-
+    These rules allow you to
+          	automatically redirect ports for network services to a specific
+          	machine inside the firewall. These settings are only necessary if
+          	you wish to host some sort of server like a web server or mail
+          	server on the private local network inside the firewall.
+  firewall_url_filter_message: Entries in this table are used to restrict URLs through the Gateway.
+  ip_filtering: IP Filtering
+  mac_address_to_be_filtered_in_format: MAC address to be filtered (in the form 00:11:22:33:44:55).
+  mac_filtering: MAC Filtering
+  new_firewall_rule: New Firewall Rule
+  please_select: Please select ...
+  please_select_the_type_of_rule_you_want: Please select the type of rule you want to add.
+  port_filtering: Port Filtering
+  port_forwarding: Port Forwarding
+  port_range: Port Range
+  protocol: Protocol
+  rule: Rule
+  rule_type: Rule Type
+  there_are_no_firewall_rules_defined: There are no Firewall rules defined at this time.
+  these_rules_are_used_to_restrict_ips: |-
+    These rules are used to restrict data packets from
+    			an IP in your local network to the Internet.
+    			Use of such filters can be helpful in securing or restricting
+    			your local network.
+  this_ip_will_be_filtered: This IP Address will be filtered.
+  url_filtering: URL Filtering
+  url_to_filter: URL to filter
+
+  # search area
+  audio: Audio
+  files: Files
+  images: Images
+  news: News
+  no_documents_found: No Documents Found
+  results_found: "%{count} results found"
+  search: Search
+  video: Video
+
+  # server area
+  are_you_sure_you_want_to_restart_the_server: Are you sure you want to restart the %{name}?
+  are_you_sure_you_want_to_start_the_server: Are you sure you want to start the %{name}?
+  are_you_sure_you_want_to_stop_the_server: Are you sure you want to stop the %{name}?
+  control: Control
+  is_being_monitored_24x7: is being monitored 24x7
+  is_not_being_monitored_24x7: is <b>not</b> being monitored 24x7
+  it_will_be_restarted_by_the_watchdog: (it will be restarted by the watchdog)
+  permanently: permanently
+  refresh_status: Refresh status
+  running: Running
+  servers: Servers
+  start_at_boot_time: Start at boot time
+  status: Status
+  stop: Stop
+  stop_it: Stop it
+  stopped: Stopped
+  restart: Restart
+  the_boot_option_is_a_critical_setting: The boot option is a CRITICAL setting. Not starting a server process is STRONGLY DISCOURAGED. This is designed to start services in your HDA at every boot. Are you sure you want to not start this process at boot time?
+  the_watchdog_is_a_critical_setting: The watchdog is a CRITICAL setting. Stopping monitoring a server process is STRONGLY DISCOURAGED. This is designed to keep services in your HDA running reliably even in the presence of glitches. Are you sure you want to stop the watchdog in this server?
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "NOTE: The watchdog is RUNNING and will restart it in a few seconds."
+  this_will_stop_the_server_permanently: This will stop the %{name} PERMANENTLY.
+  watchdog: Watchdog
+  will_not_start_at_boot_time: will <b>not</b> start at boot time
+  will_start_at_boot_time: will start at boot time
+
+  # settings tab:
+  language: Language
+  advanced_settings: Advanced Settings
+  platform: Platform
+  router_control: Router Control
+  avanced_settings_is_for_developers: Enabling Advanced Features is only for advanced/technical users and developers.
+  are_you_sure_advanced_features: Are you sure you want to enable Advanced Features?
+  core: Core
+  global_settings: Global Settings
+  system_info: System Info
+  translate_amahi: Translate Amahi
+  this_feature_is_under_heavy_development: this feature is under heavy development
+  guest_dashboard: Guest Dashboard
+
+  # storage area
+  free_space: Free space
+  partition: Partition
+  partitions: Partitions
+  total_space: Total space
+  used_space: Used space
+  disk: Disk
+  disks: Disks
+  model: Model
+  device: Device
+  temperature: Temperature
+
+  # themes area
+  theme: Theme
+
+  # applications -> webapps area
+  create_a_new_webapp: Create a New Web App
+  webapps: Webapps
+  delete_web_app: Delete Web App
+  edit_web_app: Edit Web App
+  name_is_taken_already: Name is taken already
+  new_web_app: New Web App
+  path_looks_good: Path looks good
+  require_login: Require login
+  root_path: Root&nbsp;Path
+  there_are_no_webapps: There are no web apps configured in your system at this time.
+  this_path_exists_already: This path exists already
+  are_you_sure_webapp: Are you sure you want to delete web app '%{webapp}' ?
+  web_apps: Web Apps
+  version: Version
+
+  # server model
+  amahi_dyndns_updater: Amahi Dynamic DNS Updater
+  apache_web_server: Apache Web Server
+  dhcp_server: DHCP Server
+  dns_server: DNS Server
+  file_server_samba: File Server (Samba)
+  mysql_database_server: MySQL DB Server
+  this_file_was_automatically_generated_on: "# This file was automatically generated on %{time} - WARNING - any manual edits WILL be lost!"
+  transmission_bittorrent_server: Transmission Bittorrent Server
+  ushare_upnp_media_server: Ushare UPnP Media Server
+
+  # debug area
+  submit_for_debug: Submit for Debug
+  app_logs: App Logs
+  logs: Logs
+  system: System
+  logout: Logout
+  log_in: Log In
+
+### amahi.org
+
+  control_panel: Control Panel
+  control_panel_for_your_amahi_hdas: Control Panel for your Amahi HDAs
+  change_your_account_settings: Change your account settings
+  nickname: Nickname
+  installation_instructions: Installation instructions
+  start_building_a_new_hda: Start building a new HDA!
+  configured: Configured
+  my_account: My Account
+  beta_apps: Beta Apps
+  edit_and_rate_beta_apps: Edit and rate Beta apps
+  manage_your_contributed_apps: Manage your contributed apps
+  features: Features
+  applications: Applications
+  gallery: Gallery
+  tour: Tour
+  testimonials: Testimonials
+  support: Support
+  my_apps: My Apps
+  community: Community
+  contribute: Contribute
+  sign_out: Sign Out
+  not_updating: Not Updating
+  dynamic_dns: Dynamic DNS
+  home_domain: Home Domain
+  network_gateway: Network Gateway
+  network: Network
+  install_code: Install Code
+  automated_install: Automated Install
+  your_existing_network_gatweay: Your Existing Network Gateway/Router
+  static_ip_address_for_your_hda: Static IP Address for your HDA
+  more: more
+  back: Back
+  next: Next
+  network_settings: Network Settings
+  your_home_dns_domain: Your Home DNS Domain
+  done_final_check: "Done! Final Check"
+  please_double_check_the_settings: Please <strong>double check these settings</strong>, as they are crucial to getting your HDA running out of the box.
+  create_your_hda_profile: Create Your HDA Profile
+  finalize_settings: Finalize Settings
+
+  notifications_from_amahi: Notifications from Amahi
+  never_email_me: Never email me
+  email_me: Email me
+  when_there_are_major_announcements: When there are major announcements
+  news_about_applications: News about Applications that run on Amahi
+  general_amahi_news: General Amahi news
+  available: Available
+  upcoming: Upcoming
+  suggest: Suggest!
+  changelog: ChangeLog
+  press: Press
+  get_involved: Get Involved!
+  contribute: Contribute
+  close: close
+  delete_profile: Delete profile for
+
+  nickname_info: |-
+        The "nickname" is a unique identifier for your HDA.
+        You will need it to log in to your <a target="_blank" href="http://wiki.amahi.org/index.php/VPN">VPN</a>
+        with the <a target="_blank" href="http://wiki.amahi.org/index.php/VPNWindows">Windows client</a> client
+        (and an authorized user and password on your home network).
+  dyndns_info: |-
+        Amahi provides a FREE, zero-configuration dynamic DNS address for you. It is external to your
+        home network. You can use it for the <a target="_blank"
+        href="http://wiki.amahi.org/index.php/VPN">Mac</a> or <a target="_blank"
+        href="http://wiki.amahi.org/index.php/VPNLinux">Linux</a> <a
+        target="_blank" href="http://wiki.amahi.org/index.php/VPN">VPN</a>
+        clients (technical users can use it for logging in with <a target="_blank"
+        href="http://wiki.amahi.org/index.php/Ssh-ports">SSH</a>).
+        Technical users can use it to host web sites, game
+        servers or other services from your home network (if you are in a
+        rush to try, just ask in the IRC channel or search the wiki).
+  your_domain_info: |-
+        This is your home network domain. It is <b>only</b> available inside your home network.
+        For more details about this refer to <a target="_blank" href="http://www.amahi.org/faq#what-home-domain-should-i-use">the FAQ</a>.
+  install_code_info: |-
+        This install code captures all the settings for your HDA and it's used once as
+        the final step in installing your HDA. You should NOT reuse it for two or more running systems,
+        as that will break the Dynamic DNS and the VPN. Create one profile for each HDA you are running.
+  making_home_networking_simple: Making Home Networking Simple
+  powerful_simple_home_networking: Powerful, Simple, Home Networking
+  unleash_the_power_of_your_home_network: Unleash the power of your home network.
+  check_the_features_take_the_tour: Check the features currently available, take the tour, or if you can't wait -
+  get_started: Get Started!
+  efficiently_manage_your_network: Efficiently manage the networking and backup of all the computers, game consoles and other devices in your network, and securely access your network from the internet. That's just the start of what you'll be able to do with Amahi.
+  email: Email
+  start_now: Start Now
+  confirm_email: Confirm Email
+  confirm_password: Confirm Password
+  all_you_need: All you need!
+  by_signing_up_you_agree_to_the_terms_of_service: By signing up, you agree and have read <a href="http://www.amahi.org/home/tos" target="_blank">our terms of service</a>
+  valid_email_required_for_service: Valid email required for activation. We will <a href="http://www.amahi.org/privacy" target="_blank">not spam you</a>
+  sign_in: Sign In
+  username_or_email: Username or email
+  remember_me: Remember me
+  must_be_logged_in: You must be logged in to access this area
+  must_be_admin: You must have admin privileges to access this area
+  admin_setup_worked: Admin setup worked. Please login now
+  login: Login
+  need_help_logging_in: Need help logging in?
+  no_account_yet: No account yet?
+  sign_up_here: Sign up here
+  to_recover_your_password: To recover your password or activation email, please enter your email below
+  recover: Recover
+  you_have_been_logged_out: You have been logged out
+  thanks_for_visiting: Thanks for visiting. Support our Sponsors!
+

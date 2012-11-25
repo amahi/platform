@@ -1,0 +1,4 @@
+page['select-message'].show
+page.select(".fw-selection").each do |item|
+        item.hide
+end

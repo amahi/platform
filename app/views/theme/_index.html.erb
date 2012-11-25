@@ -1,0 +1,15 @@
+<div class="theme-thumbs">
+<% for theme in @themes %>
+  <% t = theme.name; path_ss = "$('theme-sshot').src = '/themes/#{theme.css}/theme-sshot.png'" %>
+  <% image = theme_named_image_tag('theme-thumb.png', theme.css, :alt => t, :title => t, :class => "theme-thumb") %>
+<%= link_to image , { :action => "set_theme", :name => theme.css }, { :onmouseover => path_ss } %>
+
+<% end %>
+</div>
+<br />
+<% t = "#{t('theme')}: " +  @themes.first.name  %>
+<div style="text-align:center">
+  <div id="theme_sshot_image">
+    <%= theme_named_image_tag('theme-sshot.png', @themes.first.css, :alt => t, :title => t, :id => "theme-sshot") %>
+  </div>
+</div>

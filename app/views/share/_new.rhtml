@@ -1,0 +1,38 @@
+<br />
+<br />
+<div align="center">
+<%= button_to_function " #{t 'new_share'} &raquo; ", update_page { |page|
+   	page.hide 'new-share-to-step1'
+   	page[:name].value = ""
+   	page[:path].value = ""
+   	page[:visible].checked = true
+   	page[:readonly].checked = false
+	page[:share_create_button].disabled = true
+	page.select(".messages").each do |item|
+		page.send 'replace_html', item, ""
+	end
+   	page[:path].disabled = true
+   	page[:visible].disabled = true
+   	page[:readonly].disabled = true
+   	page[:share_create_button].disabled = true
+   	page.visual_effect :appear, 'new-share-step1'
+   	page[:name].focus
+   }, :id => "new-share-to-step1" %>
+
+	<div id="new-share-box" >
+		<div id="share-new">
+
+   		<br />
+   		<%= error_messages_for :setup %>
+   		<br />
+
+   		<% form_for :shares, :id => "share-new", :url => { :controller => 'share', :action => 'create' } do |f| -%>
+
+   			<div style="display: none" id="new-share-step1">
+   				<%= render :partial => "share/step1", :locals => { :form => f } -%>
+   			</div>
+
+   		<% end %>
+		</div>
+	</div>
+</div>

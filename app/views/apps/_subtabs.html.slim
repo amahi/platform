@@ -1,0 +1,6 @@
+tr.prefsubtab
+  td[class="#{subtab_class('index')} first"]= link_to_unless_current t('available'), apps_path
+  td[class="#{subtab_class('installed')} #{advanced? ? 'other' : 'last'}"]= link_to t('installed'), installed_apps_path
+  - if advanced?
+    td[class="#{subtab_class('webapps')} last"]= link_to t('webapps'), '#'
+

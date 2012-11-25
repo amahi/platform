@@ -1,0 +1,4 @@
+tr
+  = render :partial => "one", :locals => { :app => pair.first, :subclass => "-small" }
+  = render(:partial => "one", :locals => { :app => pair.last, :subclass => "-small" }) if pair.last
+

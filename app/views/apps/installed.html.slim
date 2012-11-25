@@ -1,0 +1,21 @@
+.app-store-header
+  span.app-store-count 1
+  | Get apps
+  | #{link_to image_tag('amahi-app-store-logo.png'), 'https://www.amahi.org/apps', :title => 'Amahi App Store', :target => '_blank'}
+  | &nbsp; &nbsp; &nbsp;
+  span.app-store-count 2
+  | Install here!
+  | #{link_to image_tag('install.png'), apps_path, :title => 'Refresh'}
+
+#apps-table
+  .setting-table
+    - if @apps.any?
+      table.settings
+        tr
+          th.settings-col1.apps-col1[scope='col']= t('application')
+          th.settings-col2.apps-col2[scope='col']= t('description')
+      = render :partial => 'apps/app_installed', :collection => @apps
+    - else
+      div.align-center.default-message
+        h2= t('there_are_no_applications_available')
+        p=  t('this_could_be_due_to_lack_of_network_connectivity')

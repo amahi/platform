@@ -1,0 +1,34 @@
+<% id = "tags_#{share.id}"
+
+	def tag_checkbox(share, str)
+		id = "tags_#{share.id}"
+		checkbox_to_remote(share.tag_list.include?(str),
+			:url => { :controller => 'share', :action => 'toggle_tag', :id => share, :tag => str },
+			:submit => id,
+			:before => "Element.show('spinner-tags-#{id}')",
+			:success => "Element.hide('spinner-tags-#{id}')",
+			:update => id) + "&nbsp; #{str.capitalize} &nbsp;"
+	end
+	default_tags = [t('music'), t('pictures'), t('movies'), t('videos'), t('docs')]
+	display_list = share.tag_list - default_tags
+%>
+<div id="<%= id %>">
+<%= editable_content(
+	:content => {
+	  :element => 'span',
+	  :text => (share.tag_list.empty? ? '(add tags)' : h(share.tag_list.join(', '))),
+	  :options => {
+	    :id => "share_tags_#{share.id}",
+	    :class => 'editable'
+	  }
+	 },
+	:url => {
+	  :controller => 'share',
+	  :action => 'update_tags',
+	  :id => share.id
+	})
+%>
+&nbsp;
+<%= spinner "tags-#{id}" %>
+<p><%= default_tags.map { |t| tag_checkbox(share, t) } %></p>
+</div>

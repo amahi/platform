@@ -1,0 +1,3 @@
+page[:address_messages].replace_html theme_image_tag("stop") + " " + t('address_is_not_valid')
+page.show 'address_messages'
+page[:alias_create_button].disabled = true

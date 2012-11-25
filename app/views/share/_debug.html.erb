@@ -1,0 +1,9 @@
+<%=
+	checked = @debug.value == '1'
+	checkbox_to_remote checked,
+	:url => { :controller => 'share', :action => 'toggle_setting', :id => @debug },
+	:before => "Element.show('spinner-debug')",
+	:success => "Element.hide('spinner-debug')",
+	:update => "shares-settings",
+	:confirm => checked ? nil : t('enabling_debug_may_generate_a_lot_of_logs_are_you_sure')
+%>

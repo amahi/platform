@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+# Amahi Home Server
+# Copyright (C) 2007-2010 Amahi
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License v3
+# (29 June 2007), as published in the COPYING file.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# file COPYING for more details.
+#
+# You should have received a copy of the GNU General Public
+# License along with this program; if not, write to the Amahi
+# team at http://www.amahi.org/ under "Contact Us."
+
+require File.dirname(__FILE__) + '/../config/boot'
+
+# send warnings to the bit bucket
+$stderr.reopen("/dev/null", "w")
+
+#require 'optparse'
+
+# switch to apache:users first
+#uid = Etc.getpwnam("apache").uid
+#gid = Etc.getgrnam("users").gid
+#Process.gid = gid
+#Process.egid = gid
+#Process.uid = uid
+#Process.euid = uid
+
+# make things group (users) writeable
+#File.umask(0002)
+
+
+
+ENV["RAILS_ENV"] = (ENV['RAILS_ENV'] || "production").dup
+RAILS_ENV.replace(ENV['RAILS_ENV']) if defined?(RAILS_ENV)
+
+# full RoR environment!
+require RAILS_ROOT + '/config/environment'
+ROOTDIR = File.join(File.dirname(__FILE__), "..")
+#require 'active_record'
+#require 'yaml'
+#require 'erb'
+#require File.join(ROOTDIR, 'lib/greyhole')
+#require File.join(ROOTDIR, 'lib/amahi-api')
+#require File.join(ROOTDIR, 'app/models/app')
+#require File.join(ROOTDIR, 'app/models/app_dependency')
+#require File.join(ROOTDIR, 'app/models/db')
+#require File.join(ROOTDIR, 'app/models/disk_pool_partition')
+#require File.join(ROOTDIR, 'app/models/webapp')
+#require File.join(ROOTDIR, 'app/models/setting')
+#require File.join(ROOTDIR, 'app/models/server')
+#require File.join(ROOTDIR, 'app/models/share')
+#require File.join(ROOTDIR, 'app/models/cap_access')
+#require File.join(ROOTDIR, 'app/models/cap_writer')
+#require File.join(ROOTDIR, 'app/models/alias')
+#require File.join(ROOTDIR, 'app/models/host')
+#require File.join(ROOTDIR, 'app/models/theme')
+#require File.join(ROOTDIR, 'app/models/user')
+#ActiveRecord::Base.establish_connection((YAML::load(ERB.new(
+#                File.read("#{ROOTDIR}/config/database.yml")).result).symbolize_keys)[(ENV['RAILS_ENV'] || :development).to_sym])
+
+def main
+	begin
+		puts User.admins.first.login
+	rescue => e
+		puts "error, cannot find any admin user. sorry."
+	end
+end
+
+main

@@ -1,0 +1,35 @@
+<% id = "greyhole_#{share.id}" %>
+<span id="<%= id %>">
+<%= checkbox_to_remote share.disk_pool_copies > 0,
+	{ :url => { :controller => 'share', :action => 'toggle_disk_pool_enabled', :id => share },
+	:submit => id,
+	:before => "Element.show('spinner-greyhole-#{share.id}')",
+	:success => "Element.hide('spinner-greyhole-#{share.id}')",
+	:update => id },
+	:id => id + "_enabled" -%>&nbsp;<%= t 'disk_pooling_enabled' %> &nbsp; &nbsp;
+
+<% if share.disk_pool_copies > 0 && DiskPoolPartition.count > 1 %>
+	&nbsp;<%= t 'disk_pool_copies' %>: &nbsp;
+	<% selection = [["-", 1]]
+		max = DiskPoolPartition.count - 1
+		1.upto(max) do |i|
+			selection += [["#{i}", i+1]]
+		end
+		# Last choice is for all drives, present and future! FIXME - put it in a constant/symbol
+		selection += [["Always Max", 999]]
+		num_copies_list = options_for_select(selection, share.disk_pool_copies)
+	%>
+	<%= select_tag :disk_pool_copies, num_copies_list,
+			:onchange => remote_function(
+				:url => { :controller => 'share', :action => 'update_disk_pool_copies', :id => share },
+				:before => "Element.show('spinner-greyhole-#{share.id}')",
+				:success => "Element.hide('spinner-greyhole-#{share.id}')",
+				:with => "'value=' + value",
+				:update => id) %>
+<% end %>
+
+&nbsp; &nbsp; &raquo; <a href="http://wiki.amahi.org/index.php/Storage_pooling" target="_blank"><%= theme_image_tag "more"  %></a>
+
+<%= spinner "greyhole-#{share.id}" %>
+
+</span>

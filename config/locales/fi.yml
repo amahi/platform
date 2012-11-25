@@ -1,0 +1,839 @@
+--- 
+fi: 
+  new_user: !binary |
+    VXVzaSBrw6R5dHTDpGrDpA==
+
+  alias_is_taken_already: Alias on varattu
+  storage: Tallennus
+  user_name_is_not_available: "K\xC3\xA4ytt\xC3\xA4j\xC3\xA4nimi on varattu"
+  platform: Alusta
+  are_you_sure_share: Haluatko varmasti poistaa jaon '%{share}' ?
+  these_rules_are_used_to_restrict_ips: "N\xC3\xA4it\xC3\xA4 s\xC3\xA4\xC3\xA4nt\xC3\xB6j\xC3\xA4 k\xC3\xA4ytet\xC3\xA4\xC3\xA4n est\xC3\xA4m\xC3\xA4\xC3\xA4n datapakettien p\xC3\xA4\xC3\xA4sy\xC3\xA4\n\
+    \t\t\tl\xC3\xA4hiverkkosi IP-osoitteesta internetiin.\n\
+    \t\t\tT\xC3\xA4m\xC3\xA4n tyyppisten suodattimien k\xC3\xA4ytt\xC3\xB6 parantaa l\xC3\xA4hiverkkosi tietoturvaa\n\
+    \t\t\tja niill\xC3\xA4 voidaan my\xC3\xB6s rajoittaa liikennett\xC3\xA4."
+  this_looks_like_a_database_corruption_please_report_it: "T\xC3\xA4m\xC3\xA4 vaikuttaa tietokannan korruptoitumiselta tai ohjelmavirheelt\xC3\xA4 (<a href=\"http://bugs.amahi.org\">raportoi ongelmasta</a>)."
+  mac_looks_good: !binary |
+    TUFDIG7DpHl0dMOkw6QgaHl2w6RsdMOk
+
+  wiki: Wiki
+  confirm_email: "Vahvista s\xC3\xA4hk\xC3\xB6posti"
+  last_login: "Viimeisin sis\xC3\xA4\xC3\xA4nkirjautuminen"
+  setup: Asennus
+  start_at_boot_time: "K\xC3\xA4ynnist\xC3\xA4 tietokoneen k\xC3\xA4ynnistyksen yhteydess\xC3\xA4"
+  news_about_applications: Uutisia Amahi-sovelmista
+  delete_user: !binary |
+    UG9pc3RhIGvDpHl0dMOkasOk
+
+  delete_profile: Poista profiili
+  running: !binary |
+    S8OkeW5uaXNzw6Q=
+
+  start_building_a_new_hda: Aloita uuden HDA-laitteen rakentaminen!
+  delete: Poista
+  name_is_taken_already: Nimi on varattu
+  unleash_the_power_of_your_home_network: Vapauta kotiverkkosi voima.
+  are_you_sure_webapp: Haluatko varmasti poistaa websovelman '%{webapp}' ?
+  automated_install: Automatisoitu asennus
+  need_help_logging_in: "Tarvitsetko apua sis\xC3\xA4\xC3\xA4nkirjauksessa?"
+  confirm_password: Vahvista salasana
+  installed_paren: (Asennettu)
+  tour: Kierros
+  address_already_allocated: Osoite on jo varattu
+  new: Uusi
+  are_you_sure_you_want_to_stop_the_server: "Haluatko varmasti pys\xC3\xA4ytt\xC3\xA4\xC3\xA4 %{name}?"
+  disabling_pdc_will_enable_workgroup_mode: "PDC:n (Primary Domain Controller) poistaminen k\xC3\xA4yt\xC3\xB6st\xC3\xA4 mahdollistaa ty\xC3\xB6ryhm\xC3\xA4tilan.\n\n\
+    T\xC3\xA4m\xC3\xA4 on SUURI muutos jakojen toiminnassa. T\xC3\xA4m\xC3\xA4 on tarkoitettu kotiverkkoihin (lue lis\xC3\xA4\xC3\xA4 wikist\xC3\xA4mme).\n\n\
+    Haluatko varmasti poistaa PDC:n k\xC3\xA4yt\xC3\xB6st\xC3\xA4?"
+  address_looks_good: !binary |
+    T3NvaXRlIG7DpHl0dMOkw6QgaHl2w6RsdMOk
+
+  finalize_settings: Viimeistele asetukset
+  confirmation_must_match: !binary |
+    VmFodmlzdHVrc2VuIHBpdMOkw6QgdMOkc23DpHTDpA==
+
+  stopped: "Pys\xC3\xA4ytetty"
+  applications: Sovellukset
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: "IP-osoite (1-%{max}) yhdistet\xC3\xA4\xC3\xA4n aina kiinte\xC3\xA4sti alla olevaan MAC-osoitteeseen."
+  this_path_exists_already: "Polku on jo k\xC3\xA4yt\xC3\xB6ss\xC3\xA4"
+  poweroff: Sammuta
+  router_control: Reitittimen hallinta
+  are_you_sure_you_would_like_to_delete_calendar: Haluatko varmasti poistaa %{calendar} ?
+  port_range_looks_good: !binary |
+    UG9ydHRpdsOkbGkgbsOkeXR0w6TDpCBoeXbDpGx0w6Q=
+
+  pictures: Kuvat
+  disk: Levy
+  location: Sijainti
+  require_login: Vaadi kirjautuminen
+  theme: Teema
+  disks: Levyt
+  rule: !binary |
+    U8Okw6RudMO2
+
+  static_ips: "Kiinte\xC3\xA4t IP:t"
+  mac_address_to_be_filtered_in_format: Suodatettava MAC-osoite (muodossa 00:11:22:33:44:55).
+  my_apps: Omat sovelmani
+  disk_pool_copies: "Lis\xC3\xA4kopiot"
+  cancel: Peruuta
+  port_range_ports_must_be_increasing_order: "Ensimm\xC3\xA4isen portin pit\xC3\xA4\xC3\xA4 olla pienempi tai yht\xC3\xA4 suuri kuin toisen portin"
+  password_is_too_short: Salasana on liian lyhyt
+  preparing_to_install: Asennuksen valmistelu...
+  model: Malli
+  are_you_sure_you_want_to_start_the_server: "Haluatko varmasti k\xC3\xA4ynnist\xC3\xA4\xC3\xA4 %{name}?"
+  nickname_info: "\"Lempinimi\" on HDA-laitteesi uniikki tunnus.\n\
+    Tarvitset sit\xC3\xA4 kirjautuaksesi <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN-yhteyteen</a>\n\
+    <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows-asiakasohjelmalla</a>\n\
+    (ja valtuutetun k\xC3\xA4ytt\xC3\xA4j\xC3\xA4n ja salasanan kotiverkkoosi)."
+  files: Tiedostot
+  by_signing_up_you_agree_to_the_terms_of_service: "Rekister\xC3\xB6itym\xC3\xA4ll\xC3\xA4 vahvistat lukeneesi ja hyv\xC3\xA4ksyv\xC3\xA4si <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">palvelumme k\xC3\xA4ytt\xC3\xB6ehdot</a>"
+  the_url_looks_good: !binary |
+    VVJMIG7DpHl0dMOkw6QgaHl2w6RsdMOk
+
+  application_uninstalled: Sovelman asennus poistettu.
+  delete_web_app: Poista websovelma
+  free_space: Vapaa tila
+  url: URL
+  are_you_sure_you_would_like_to_uninstall: "Haluatko varmasti poistaa t\xC3\xA4m\xC3\xA4n sovelman asennuksen?\n\n\
+    Kaikki t\xC3\xA4h\xC3\xA4n sovelmaan liittyv\xC3\xA4 tieto POISTETAAN."
+  temperature: !binary |
+    TMOkbXDDtnRpbGE=
+
+  users: !binary |
+    S8OkeXR0w6Rqw6R0
+
+  debug: Virheenkorjaus
+  the_ip_address_can_be: IP-osoite voi olla
+  read_only: Vain luku
+  install_code_info: "T\xC3\xA4m\xC3\xA4 asennuskoodi tallentaa kaikki asetukset HDA-laitteellesi ja sit\xC3\xA4 k\xC3\xA4ytet\xC3\xA4\xC3\xA4n yhden kerran\n\
+    asennuksen viimeisess\xC3\xA4 osassa. Koodia EI pit\xC3\xA4isi k\xC3\xA4ytt\xC3\xA4\xC3\xA4 kuin yhteen j\xC3\xA4rjestelm\xC3\xA4\xC3\xA4n, koska muussa tapauksessa\n\
+    se rikkoo dynaamisen DNS:n ja VPN:n. Luo uusi profiili jokaiselle k\xC3\xA4ytt\xC3\xA4m\xC3\xA4llesi HDA-laitteelle."
+  url_filtering: URL-suodatus
+  available: Saatavilla
+  this_will_power_off: "T\xC3\xA4m\xC3\xA4 sammuttaa HDA-laitteesi (Home Digital Assistant).\n\
+    Jos HDA-laite toimi DHCP-palvelimena, sekin sammutetaan.\n\n\
+    Haluatko varmasti jatkaa?"
+  add_extra_parameters: "(lis\xC3\xA4\xC3\xA4 parametreja)"
+  edit_static_ip: "Muokkaa kiinte\xC3\xA4\xC3\xA4 IP:t\xC3\xA4"
+  system_info: "J\xC3\xA4rjestelm\xC3\xA4n tiedot"
+  this_path_is_not_available: "T\xC3\xA4m\xC3\xA4 polku on varattu"
+  firewall_port_filter_message: "Porttisuodatuss\xC3\xA4\xC3\xA4nt\xC3\xB6j\xC3\xA4 k\xC3\xA4ytet\xC3\xA4\xC3\xA4n est\xC3\xA4\xC3\xA4ksemme datapakettien p\xC3\xA4\xC3\xA4sy\xC3\xA4 l\xC3\xA4hiverkosta internetiin."
+  press: "Lehdist\xC3\xB6"
+  share_path_cannot_be_blank: "Jakopolku ei voi olla tyhj\xC3\xA4"
+  address_is_not_valid: Osoite on virheellinen
+  create_alias: Luo alias
+  web: Internet
+  delete_alias: Poista alias
+  recover: Palauta
+  installed: Asennettu
+  core: Ydin
+  start_now: Aloita nyt
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: "Sovelma on kohdannut virheen. Sinut siirret\xC3\xA4\xC3\xA4n hetken kuluttua virhelokisivulle."
+  application: Sovelma
+  advanced_settings: "Lis\xC3\xA4asetukset"
+  check_the_features_take_the_tour: "Katso nykyversion ominaisuudet, l\xC3\xA4hde tutustumiskierrokselle tai jollet malta odottaa -"
+  this_will_stop_the_server_permanently: "T\xC3\xA4m\xC3\xA4 pys\xC3\xA4ytt\xC3\xA4\xC3\xA4 palvelun %{name} PYSYV\xC3\x84STI."
+  your_control_panel: Ohjauspaneeli
+  full_name: Koko nimi
+  shares: Jaot
+  manage_themes: Hallitse teemoja
+  discussion_forum_for: Keskustelufoorumi aiheelle
+  tracker: "Etsij\xC3\xA4"
+  rule_type: !binary |
+    U8Okw6RudMO2dHl5cHBp
+
+  aliases: Aliakset
+  network: Verkko
+  change_your_account_settings: Muuta tiliasetuksiasi
+  port_range_ports_must_be_0_to_64k: "Porttien pit\xC3\xA4\xC3\xA4 olla v\xC3\xA4lilt\xC3\xA4 0-65535"
+  share_path_is_available: Jakopolku on vapaana
+  this_could_be_due_to_lack_of_network_connectivity: "T\xC3\xA4m\xC3\xA4 saattaa johtua verkkoyhteyden puutteesta."
+  enabling_lan_manager_is_less_secure: "Windows 95/98 -kirjautumistilan k\xC3\xA4ytt\xC3\xB6\xC3\xB6notto on turvattomampi, mutta se voi helpottaa vanhempien tietokoneiden k\xC3\xA4ytt\xC3\xB6\xC3\xA4 j\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4.\n\n\
+    Haluatko varmasti ottaa k\xC3\xA4ytt\xC3\xB6\xC3\xB6n Windows 95/98 LanManager -kirjautumisen?"
+  special_instructions: Erityisohjeet
+  there_are_no_dynamic_dhcp_leases_outstanding: "J\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4 ei t\xC3\xA4ll\xC3\xA4 hetkell\xC3\xA4 ole dynaamisia DHCP:n jakamia osoitteita."
+  login: Kirjaudu
+  edit_share: Muokkaa jakoa
+  dhcp_lease: DHCP:n jakama osoite
+  change: Vaihda
+  status: Tila
+  not_updating: "Ei p\xC3\xA4ivitet\xC3\xA4"
+  videos: Videot
+  dhcp_active: Aktiivinen
+  name_is_not_valid: Nimi on virheellinen
+  restart: "K\xC3\xA4ynnist\xC3\xA4 uudelleen"
+  confirm: Vahvista
+  sign_out: Kirjaudu ulos
+  this_application_is_installed_already_please_refresh: "Sovelma on jo asennettu. Virkist\xC3\xA4 t\xC3\xA4m\xC3\xA4 nettisivu (F5)."
+  state: Tila
+  new_web_app: Uusi websovelma
+  email: !binary |
+    U8OkaGvDtnBvc3Rp
+
+  full_name_looks_good: !binary |
+    S29rbyBuaW1pIG7DpHl0dMOkw6QgaHl2w6RsdMOk
+
+  workgroup_name: "Ty\xC3\xB6ryhm\xC3\xA4n nimi"
+  name_looks_good: !binary |
+    TmltaSBuw6R5dHTDpMOkIGh5dsOkbHTDpA==
+
+  new_alias: Uusi alias
+  must_be_logged_in: "P\xC3\xA4\xC3\xA4st\xC3\xA4ksesi t\xC3\xA4h\xC3\xA4n osioon, sinulla pit\xC3\xA4\xC3\xA4 olla kirjautunut sis\xC3\xA4\xC3\xA4n"
+  rebooting: "K\xC3\xA4ynnistet\xC3\xA4\xC3\xA4n uudelleen..."
+  uptime: !binary |
+    S8OkeW5uaXNzw6Q=
+
+  disk_pooling: Tallennuspalvelu
+  this_will_reboot: "T\xC3\xA4m\xC3\xA4 k\xC3\xA4ynnist\xC3\xA4\xC3\xA4 HDA-laitteesi uudelleen.\r\n\
+    \r\n\
+    Haluatko varmasti jatkaa?"
+  dns_aliases: DNS-aliakset
+  used_space: "K\xC3\xA4ytetty tila"
+  static_ip_address_for_your_hda: "HDA-laitteesi kiinte\xC3\xA4 IP-osoite"
+  comment: Kommentti
+  the_alias_name_you_input_will_be_added: "Ylle sy\xC3\xB6tt\xC3\xA4m\xC3\xA4si nimi lis\xC3\xA4t\xC3\xA4\xC3\xA4n DNS-palvelimeen aliakseksi alla olevalle IP-osoitteelle."
+  root_path: Juuripolku
+  search: Etsi
+  upcoming: Tulossa
+  username_or_email: !binary |
+    S8OkeXR0w6Rqw6RuaW1pIHRhaSBzw6Roa8O2cG9zdGk=
+
+  network_settings: Verkkoasetukset
+  no_documents_found: "Tiedostoja ei l\xC3\xB6ytynyt"
+  visible: !binary |
+    TsOka3l2aXNzw6Q=
+
+  create_a_new_share: Luo uusi jako
+  enabling_pdc_is_a_major_share_change: "PDC:n (Primary Domain Controller) k\xC3\xA4ytt\xC3\xB6\xC3\xB6notto in SUURI muutos jakojen toiminnassa.\n\n\
+    T\xC3\xA4m\xC3\xA4 ottaa k\xC3\xA4ytt\xC3\xB6\xC3\xB6n toimialuetilan ja poistaa ty\xC3\xB6ryhm\xC3\xA4tilan k\xC3\xA4yt\xC3\xB6st\xC3\xA4. Muutos vaatii, ett\xC3\xA4 KAIKKI tietokoneet ovat yritys (tai \"pro\") tietokoneita ja k\xC3\xA4ytt\xC3\xA4v\xC3\xA4t asianmukaisia tunnuksia. T\xC3\xA4m\xC3\xA4 on tarkoitettu yritysverkkoihin .\n\n\
+    Haluatko varmasti ottaa PDC:n k\xC3\xA4ytt\xC3\xB6\xC3\xB6n?"
+  all_users: !binary |
+    S2Fpa2tpIGvDpHl0dMOkasOkdA==
+
+  delete_static_ip: "Poista kiinte\xC3\xA4 IP"
+  audio: Audio
+  dashboard: Kojelauta
+  this_ip_will_be_filtered: "T\xC3\xA4m\xC3\xA4n IP-osoitteen liikennett\xC3\xA4 suodatetaan."
+  dns_alias: DNS-alias
+  url_to_filter: Suodatettava URL
+  the_boot_option_is_a_critical_setting: "K\xC3\xA4ynnistysvalinta on KRIITTINEN asetus. Palvelinprosessin k\xC3\xA4ynnist\xC3\xA4m\xC3\xA4tt\xC3\xA4 j\xC3\xA4tt\xC3\xA4minen EI OLE SUOSITELTAVAA. Palvelu on suunniteltu k\xC3\xA4ynnistym\xC3\xA4\xC3\xA4n joka kerta HDA-laitteesi k\xC3\xA4ynnistyess\xC3\xA4. Haluatko varmasti j\xC3\xA4tt\xC3\xA4\xC3\xA4 t\xC3\xA4m\xC3\xA4n palvelun k\xC3\xA4ynnist\xC3\xA4m\xC3\xA4tt\xC3\xA4 tietokoneen k\xC3\xA4ynnistyksen yhteydess\xC3\xA4?"
+  greyhole_not_installed: "VAROITUS: Greyholea ei ole asennetty t\xC3\xA4h\xC3\xA4n j\xC3\xA4rjestelm\xC3\xA4\xC3\xA4n!"
+  must_be_admin: !binary |
+    UMOkw6RzdMOka3Nlc2kgdMOkaMOkbiBvc2lvb24sIHNpbnVsbGEgcGl0w6TD
+    pCBvbGxhIHDDpMOka8OkeXR0w6Rqw6RuIG9pa2V1ZGV0
+
+  valid_email_required_for_service: "Aktivointiin vaaditaan voimassa oleva s\xC3\xA4hk\xC3\xB6postiosoite. <a href=\"http://www.amahi.org/privacy\" target=\"_blank\">Emme l\xC3\xA4het\xC3\xA4 sinulle roskapostia</a>"
+  are_you_sure_you_want_to_delete_alias: Haluatko varmasti poistaa aliaksen '%{name}' ?
+  is_not_being_monitored_24x7: <b>ei ole</b> valvonnassa 24x7
+  activerecord: 
+    errors: 
+      messages: 
+        greater_than_or_equal_to: "on oltava suurempi tai yht\xC3\xA4 suuri kuin %{count}"
+        record_invalid: "Validointi ep\xC3\xA4onnistui: %{errors}"
+        confirmation: ei vastaa vahvistusta
+        less_than_or_equal_to: "on oltava pienempi tai yht\xC3\xA4 suuri kuin %{count}"
+        blank: "ei voi olla tyhj\xC3\xA4"
+        exclusion: on varattu
+        invalid: ei kelpaa
+        odd: "pit\xC3\xA4\xC3\xA4 olla pariton"
+        even: "pit\xC3\xA4\xC3\xA4 olla jopa"
+        too_short: "on liian lyhyt (minimi on %{count} merkki\xC3\xA4)"
+        wrong_length: "on v\xC3\xA4\xC3\xA4r\xC3\xA4n pituinen (pit\xC3\xA4isi olla %{count} merkki\xC3\xA4)"
+        empty: "ei voi olla tyhj\xC3\xA4"
+        less_than: on oltava alle %{count}
+        greater_than: on oltava suurempi kuin %{count}
+        equal_to: "on oltava yht\xC3\xA4 suuri kuin %{count}"
+        too_long: "on liian pitk\xC3\xA4 (maksimi on %{count} merkki\xC3\xA4)"
+        taken: on jo otettu
+        accepted: !binary |
+          cGl0w6TDpCBoeXbDpGtzecOk
+
+        inclusion: ei ole luettelossa
+        not_a_number: ei ole numero
+      full_messages: 
+        format: "%{attribute} %{message}"
+      template: 
+        body: "Seuraavissa kentiss\xC3\xA4 oli ongelmia:"
+        header: 
+          one: "1 virhe est\xC3\xA4\xC3\xA4 %{model} tallentamisen"
+          other: "%{count} virhett\xC3\xA4 est\xC3\xA4\xC3\xA4  %{model} tallentamisen"
+  there_are_no_static_dhcp_leases: "J\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4 ei t\xC3\xA4ll\xC3\xA4 hetkell\xC3\xA4 ole kiinteit\xC3\xA4 DHCP:n jakamia osoitteita."
+  live_help: Live-apu
+  edit_user: !binary |
+    TXVva2thYSBrw6R5dHTDpGrDpMOk
+
+  control_panel: Ohjauspaneeli
+  share_name_cannot_be_blank: "Jakonimi ei voi olla tyhj\xC3\xA4"
+  get_started: "Aloita k\xC3\xA4ytt\xC3\xB6!"
+  my_account: Oma tilini
+  gallery: Galleria
+  transmission_bittorrent_server: "Bittorrenttien v\xC3\xA4lityspalvelin"
+  ip_address: IP-osoite
+  number: 
+    format: 
+      separator: .
+      delimiter: ","
+    human: 
+      storage_units: 
+        format: "%n %u"
+        units: 
+          kb: Kb
+          tb: Tb
+          gb: Gb
+          byte: 
+            one: Tavu
+            other: Tavua
+          mb: Mb
+    currency: 
+      format: 
+        format: "%u%n"
+        unit: !binary |
+          4oKs
+
+        separator: .
+        delimiter: ","
+  mysql_database_server: MySQL-tietokantapalvelin
+  edit_and_rate_beta_apps: Muokkaa ja arvioi beta-sovelmia
+  or_view_each_one_separately_below: "tai n\xC3\xA4yt\xC3\xA4 ne yksi kerrallaan."
+  username: !binary |
+    S8OkeXR0w6Rqw6RuaW1p
+
+  are_you_sure_you_want_to_restart_the_server: "Haluatko varmasti uudelleenk\xC3\xA4ynnist\xC3\xA4\xC3\xA4 %{name}?"
+  done_final_check: Valmis! Lopputarkastus
+  this_application_is_not_installed_please_refresh: "Sovelmaa ei ole asennettu. Virkist\xC3\xA4 t\xC3\xA4m\xC3\xA4 nettisivu (F5)."
+  user_name_is_available: "K\xC3\xA4ytt\xC3\xA4j\xC3\xA4nimi on vapaana"
+  first_time_admin_setup: "Ensimm\xC3\xA4isen p\xC3\xA4\xC3\xA4k\xC3\xA4ytt\xC3\xA4j\xC3\xA4n asetus. Vaihda salasanasi."
+  news: Uutiset
+  password: Salasana
+  access: !binary |
+    UMOkw6RzeQ==
+
+  avanced_settings_is_for_developers: "Lis\xC3\xA4asetusten k\xC3\xA4ytt\xC3\xB6\xC3\xB6notto on suositeltavaa ainoastaan teknisille k\xC3\xA4ytt\xC3\xA4jille ja ohjelmakehitt\xC3\xA4jille."
+  there_are_no_shares_created: "J\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4 ei t\xC3\xA4ll\xC3\xA4 hetkell\xC3\xA4 ole jakoja."
+  created: Luotu
+  watchdog: Vahtikoira
+  stop: !binary |
+    UHlzw6R5dMOk
+
+  device: Laite
+  initial_user: !binary |
+    S8OkeXR0w6Rqw6RuaW1p
+
+  admin_setup_worked: "P\xC3\xA4\xC3\xA4k\xC3\xA4ytt\xC3\xA4j\xC3\xA4asetukset toimivat. Kirjaudu sis\xC3\xA4\xC3\xA4n nyt."
+  preparing_to_uninstall: Asennuksen poiston valmistelu...
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    pm: pm
+  dns_server: DNS-palvelin
+  sign_up_here: !binary |
+    UmVraXN0ZXLDtmlkeSB0w6TDpGxsw6Q=
+
+  servers: Palvelimet
+  router_ip: Reitittimen IP
+  general_amahi_news: Yleisuutisia Ahamista
+  feedback: Palaute
+  name: Nimi
+  awake_this_device_via_wol: !binary |
+    SGVyw6R0w6QgdMOkbcOkIGxhaXRl
+
+  port_forwarding: "Porttiv\xC3\xA4litys"
+  datetime: 
+    prompts: 
+      minute: Minuutti
+      second: Sekuntia
+      month: Kuukausi
+      hour: Tunti
+      day: !binary |
+        UMOkaXbDpA==
+
+      year: Vuosi
+    distance_in_words: 
+      less_than_x_minutes: 
+        one: alle minuutti
+        other: alle %{count} minuuttia
+      x_days: 
+        one: !binary |
+          MSBww6RpdsOk
+
+        other: !binary |
+          e3tjb3VudH19IHDDpGl2w6TDpA==
+
+      x_seconds: 
+        one: 1 sekunti
+        other: "%{count} sekuntia"
+      about_x_hours: 
+        one: noin 1 tunti
+        other: noin %{count} tuntia
+      less_than_x_seconds: 
+        one: alle 1 sekunti
+        other: alle %{count} sekuntia
+      x_months: 
+        one: 1 kuukausi
+        other: "%{count} kuukautta"
+      x_minutes: 
+        one: 1 minuutti
+        other: "%{count} minuuttia"
+      about_x_years: 
+        one: noin 1 vuosi
+        other: noin %{count} vuotta
+      about_x_months: 
+        one: noin 1 kuukausi
+        other: noin %{count} kuukautta
+      over_x_years: 
+        one: yli 1 vuosi
+        other: yli %{count} vuotta
+      half_a_minute: puoli minuuttia
+  nickname: Lempinimi
+  check_the_calendars_wiki_for_more_details: "Tarkista kalenteriwikist\xC3\xA4 lis\xC3\xA4tietoja siit\xC3\xA4, miten hallita kalentereita ja mitk\xC3\xA4 asiakaslaitteeet ovat yhteensopivia."
+  pooled: Yhdistetty
+  edit_web_app: Muokkaa websovelmaa
+  movies: Elokuvat
+  mac_already_allocated: MAC on jo varattu
+  dyndns_info: "Amahi tarjoaa sinulle ILMAISEN, heti k\xC3\xA4ytt\xC3\xB6valmiin DNS-osoitteen. Se on kotiverkkosi\n\
+    ulkopuolella. Voit k\xC3\xA4ytt\xC3\xA4\xC3\xA4 sit\xC3\xA4 <a target=\"_blank\"\n\
+    href=\"http://wiki.amahi.org/index.php/VPN\">Macin</a> tai <a target=\"_blank\"\n\
+    href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linuxin</a> <a\n\
+    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a>\n\
+    -asiakasohjelmilla (tekniset k\xC3\xA4ytt\xC3\xA4j\xC3\xA4t voivat k\xC3\xA4ytt\xC3\xA4\xC3\xA4 sit\xC3\xA4<a target=\"_blank\"\n\
+    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>-sis\xC3\xA4\xC3\xA4nkirjautumiseen).\n\
+    Tekniset k\xC3\xA4ytt\xC3\xA4j\xC3\xA4t voivat k\xC3\xA4ytt\xC3\xA4\xC3\xA4 sit\xC3\xA4 is\xC3\xA4nn\xC3\xB6im\xC3\xA4\xC3\xA4n nettisivuja, pelipalvelimia\n\
+    tai muita palveluita kotiverkostasi (jos haluat kokeilla,\n\
+    kysy IRC-kanavalta tai etsi wikist\xC3\xA4)."
+  confirmation_matches: !binary |
+    VmFodmlzdHVzIHTDpHNtw6TDpA==
+
+  setting_dmz_failed: "DMZ:n (demilitarisoitu alue) asettaminen ep\xC3\xA4onnistui. Tarkista asetuksesi."
+  logs: Lokit
+  this_name_is_not_available: "T\xC3\xA4m\xC3\xA4 nimi on varattu"
+  password_changed_successfully: Salasana muutettu onnistuneesti
+  will_start_at_boot_time: "k\xC3\xA4ynnistyy tietokoneen k\xC3\xA4ynnityksen yhteydess\xC3\xA4"
+  calendar_name: Kalenterin nimi
+  this_application_install_ended_with_an_error_please_uninstall_status_is: "Sovelman asennuksessa tapahtui virhe. Poista asennus ja yrit\xC3\xA4 uudelleen! Sovelman tila on"
+  mac_filtering: MAC-suodatus
+  tags: !binary |
+    VMOkZ2k=
+
+  router_firewall_settings: Reitittimen/palomuurin asetukset
+  firewall_mac_address_filter_info: "T\xC3\xA4m\xC3\xA4n taulukon merkint\xC3\xB6j\xC3\xA4 k\xC3\xA4ytet\xC3\xA4\xC3\xA4n rajoittamaan tietyn tyyppisten datapakettien\n\
+    \t\t\tp\xC3\xA4\xC3\xA4sy\xC3\xA4 l\xC3\xA4hiverkostasi reitittimen l\xC3\xA4pi internetiin.\n\
+    \t\t\tT\xC3\xA4m\xC3\xA4n tyyppisten suodattimien k\xC3\xA4ytt\xC3\xB6 parantaa l\xC3\xA4hiverkkosi tietoturvaa\n\
+    \t\t\tja niill\xC3\xA4 voidaan my\xC3\xB6s rajoittaa liikennett\xC3\xA4."
+  static_ip_address: "Kiinte\xC3\xA4 IP-osoite"
+  are_you_sure_advanced_features: "Haluatko varmasti ottaa lis\xC3\xA4asetukset k\xC3\xA4ytt\xC3\xB6\xC3\xB6n?"
+  dhcp_server: DHCP-palvelin
+  app_logs: Sovelmalokit
+  changelog: Muutosloki
+  contribute: Avusta
+  back: Edellinen
+  notifications_from_amahi: Huomautukset Ahahilta
+  support_win_95_98: "Windows 95/98 -tuki &mdash; ottaa k\xC3\xA4ytt\xC3\xB6\xC3\xB6n (turvattoman) LanManager-kirjautumisen"
+  there_are_no_calendars_available_see_wiki: "J\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4 ei t\xC3\xA4ll\xC3\xA4 hetkell\xC3\xA4 ole kalentereita. Luo niit\xC3\xA4 kalenterisovelluksella. Lue lis\xC3\xA4\xC3\xA4 <a href=\"http://wiki.amahi.org/index.php/Calendars\">kalenteriwikist\xC3\xA4</a>."
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Virheenkorjauksen k\xC3\xA4ytt\xC3\xB6\xC3\xB6notto luo todenn\xC3\xA4k\xC3\xB6isesti todella suuria lokitiedostoja.\n\
+    Haluatko varmasti ottaa Samban virheenkorjausen k\xC3\xA4ytt\xC3\xB6\xC3\xB6n?"
+  the_mac_is_invalid: MAC-osoite on virheellinen
+  making_home_networking_simple: Yksinkertaisen kotiverkon puolesta
+  disk_pool_details: "Valitse osiot, jotka haluat sis\xC3\xA4llytt\xC3\xA4\xC3\xA4 %{greyhole}-tallennuspalveluun ja sen j\xC3\xA4lkeen salli %{shares} k\xC3\xA4ytt\xC3\xA4\xC3\xA4 tallennuspalvelua."
+  calendars: Kalenterit
+  a_single_number_0_254_to_point_to_a_given_machine: "yksitt\xC3\xA4inen numero (0-254), joka viittaa sovittuun tietokoneeseen verkossasi"
+  writeable: Kirjoitettavissa
+  port_range_ports_must_be_numbers: "Porttien pit\xC3\xA4\xC3\xA4 olla numeroita"
+  help: Apua
+  new_firewall_rule: "Uusi palomuuris\xC3\xA4\xC3\xA4nt\xC3\xB6"
+  video: Video
+  thanks_for_visiting: Kiitos vierailustasi. Tuethan sponsoreitamme!
+  install_code: Asennuskoodi
+  new_static_ip: "Uusi kiinte\xC3\xA4 IP"
+  this_share_name_is_not_valid: "T\xC3\xA4m\xC3\xA4 jakonimi on virheellinen"
+  there_are_no_applications_available: "J\xC3\xA4rjestelm\xC3\xA4\xC3\xA4n ei ole saatavilla sovelmia."
+  ip_filtering: IP-suodatus
+  create: Luo
+  guest_dashboard: Vierailijan kojelauta
+  view_all_calendars_simultaneously: "N\xC3\xA4yt\xC3\xA4 kaikki kalenterit samanaikaisesti"
+  music: Musiikki
+  permissions: Oikeudet
+  initial_password: Salasana
+  your_domain_info: "T\xC3\xA4m\xC3\xA4 on kotitoimialueesi. Se on saatavilla <b>ainoastaan</b> kotiverkossasi.\n\
+    Saadaksesi lis\xC3\xA4tietoa t\xC3\xA4st\xC3\xA4, katso <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">FAQ:sta</a>."
+  there_are_no_firewall_rules_defined: !binary |
+    SsOkcmplc3RlbG3DpHNzw6QgZWkgdMOkbGzDpCBoZXRrZWxsw6Qgb2xlIHBh
+    bG9tdXVyaXPDpMOkbnTDtmrDpC4=
+
+  firewall_url_filter_message: "T\xC3\xA4m\xC3\xA4n taulukon merkint\xC3\xB6j\xC3\xA4 k\xC3\xA4ytet\xC3\xA4\xC3\xA4n rajoittamaan URL-pyynt\xC3\xB6jen p\xC3\xA4\xC3\xA4sya reitittimen l\xC3\xA4pi."
+  dhcp_leases: DHCP:n jakamat osoitteet
+  dynamic_dns: Dynaaminen DNS
+  the_ip_must_be_1_to_254: "IP:n pit\xC3\xA4\xC3\xA4 olla v\xC3\xA4lilt\xC3\xA4 1-254"
+  not_a_valid_user_or_password: "Virhe: Virheellinen k\xC3\xA4ytt\xC3\xA4j\xC3\xA4tunnus tai salasana"
+  create_your_hda_profile: Luo HDA-profiilisi
+  your_home_dns_domain: Koti-DNS -toimialueesi
+  theme_by: "Teeman tekij\xC3\xA4"
+  forums: Foorumit
+  there_are_no_aliases_defined: "J\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4 ei t\xC3\xA4ll\xC3\xA4 hetkell\xC3\xA4 ole aliaksia"
+  user_name_is_not_valid: "K\xC3\xA4ytt\xC3\xA4j\xC3\xA4nimi on virheellinen"
+  all_you_need: "Kaikki, mit\xC3\xA4 tarvitset!"
+  system: !binary |
+    SsOkcmplc3RlbG3DpA==
+
+  name_is_taken_already_or_is_reserved: Nimi on jo varattu
+  webapps: Websovelmat
+  submit_for_debug: "L\xC3\xA4het\xC3\xA4 virheenkorjaukseen"
+  more: !binary |
+    bGlzw6TDpA==
+
+  protocol: Protokolla
+  no_account_yet: "Ei viel\xC3\xA4 tili\xC3\xA4?"
+  delete_this_rule: !binary |
+    UG9pc3RhIHPDpMOkbnTDtg==
+
+  images: Kuvat
+  language: Kieli
+  this_application_is_installed: Sovelma asennettu.
+  share: Jako
+  partitions: Osiot
+  router_setting_failed: "Reitittimen asettanminen ep\xC3\xA4onnistui. Tarkista asetuksesi."
+  global_settings_for_shares: Jakojen yleisasetukset
+  the_watchdog_is_a_critical_setting: "Vahtikoirapalvelu on KRIITTINEN asetus. Palvelinprosessin valvonnan pys\xC3\xA4ytt\xC3\xA4minen EI OLE SUOSITELTAVAA. T\xC3\xA4m\xC3\xA4n tarkoituksena on pit\xC3\xA4\xC3\xA4 HDA-laitteesi palvelut luotettavasti k\xC3\xA4ynniss\xC3\xA4 jopa h\xC3\xA4iri\xC3\xB6iden sattuessa. Haluatko varmasti pys\xC3\xA4ytt\xC3\xA4\xC3\xA4 vahtikoirapalvelun t\xC3\xA4ll\xC3\xA4 palvelimella?"
+  warning_this_application_is_in_testing: "VAROITUS: T\xC3\xA4m\xC3\xA4 sovelma on testausvaiheessa!"
+  is_being_monitored_24x7: on valvonnassa 24x7
+  computer: Tietokone
+  an_external_ip_address_to_make_the_alias: ulkoinen IP-osoite, joka viittaa sovittuun IP-osoitteeseen
+  file_server_samba: Tiedostopalvelin (Samba)
+  mac_is_invalid: MAC on virheellinen
+  edit_alias: Muokkaa aliasta
+  port_range_ports_are_already_allocated: "T\xC3\xA4m\xC3\xA4n v\xC3\xA4lin portit ovat jo varattu"
+  please_double_check_the_settings: "<strong>Tarkista n\xC3\xA4m\xC3\xA4 asetukset</strong>, sill\xC3\xA4 ne ovat ehdottoman t\xC3\xA4rkeit\xC3\xA4, jotta HDA-laitteesi saadaan toimimaan kerralla."
+  otherwise_you_can_go_to_the_error_log: "Muussa tapauksessa voit menn\xC3\xA4 suoraan <a href=\"/setup?tab=debug\">virhelokiin</a>."
+  description: Kuvaus
+  there_are_no_users: !binary |
+    SsOkcmplc3RlbG3DpHNzw6QgZWkgdMOkbGzDpCBoZXRrZWxsw6Qgb2xlIGvD
+    pHl0dMOkamnDpC4=
+
+  are_you_sure: Oletko varma?
+  efficiently_manage_your_network: "Hallitse tehokkaasti verkkoasi, tietokoneittesi varmistuksia, pelikonsoleitasi sek\xC3\xA4 muita verkkolaitteitasi. Tee internetyhteydest\xC3\xA4si tietoturvallinen. Siin\xC3\xA4 vasta muutama seikka, joita voit tehd\xC3\xA4a Amahin avulla."
+  port_range_field_cannot_be_empty: "Kentt\xC3\xA4 ei voi olla tyhj\xC3\xA4"
+  available_for_installation: (Saatavilla asennettavaksi)
+  create_share: "Luo t\xC3\xA4m\xC3\xA4 jako"
+  apps: Sovelmat
+  translate_amahi: !binary |
+    S8Okw6RubsOkIEFtYWhp
+
+  alias_looks_good: !binary |
+    QWxpYXMgbsOkeXR0w6TDpCBoeXbDpGx0w6Q=
+
+  support: Tuki
+  delete_share: Poista jako
+  ushare_upnp_media_server: Ushare UPnP -mediapalvelin
+  sign_in: "Kirjaudu sis\xC3\xA4\xC3\xA4n"
+  disk_pooling_enabled: !binary |
+    S8OkeXR0w6TDpCBwYWx2ZWx1YQ==
+
+  new_dns_alias: Uusi DNS-alias
+  community: "Yhteis\xC3\xB6"
+  create_a_new_user: "Luo uusi k\xC3\xA4ytt\xC3\xA4j\xC3\xA4"
+  suggest: Ehdota!
+  port_filtering: Porttisuodatus
+  results_found: tulosta
+  the_mac_looks_good: !binary |
+    TUFDLW9zb2l0ZSBuw6R5dHTDpMOkIGh5dsOkbHTDpA==
+
+  when_there_are_major_announcements: "Kun on t\xC3\xA4rke\xC3\xA4\xC3\xA4 tiedotettavaa"
+  no_description_supplied: Kuvausta ei ole saatavilla!
+  manage_your_contributed_apps: Hallitse avustuksena antamiasi sovelmia
+  global_settings: Yleisasetukset
+  networking: Verkko
+  firewall: Palomuuri
+  there_are_no_servers_available: "J\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4 ei t\xC3\xA4ll\xC3\xA4 hetkell\xC3\xA4 ole palvelimia."
+  port_range: Porttialue
+  network_gateway: "Verkkoyhdysk\xC3\xA4yt\xC3\xA4v\xC3\xA4"
+  path_looks_good: !binary |
+    UG9sa3UgbsOkeXR0w6TDpCBoeXbDpGx0w6Q=
+
+  please_select: Valitse...
+  subscribe: Tilaa
+  mac_address: MAC-osoite
+  anonymous_guests: Vieraat
+  settings: Asetukset
+  initial_user_info: !binary |
+    QWxrdXBlcsOkaW5lbiBrw6R5dHTDpGrDpA==
+
+  control: Valvonta
+  disk_pool_replication: Replikointi
+  date: 
+    formats: 
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%d %B, %Y"
+  username_cannot_be_blank: "K\xC3\xA4ytt\xC3\xA4j\xC3\xA4nimi ei voi olla tyhj\xC3\xA4"
+  reboot: "K\xC3\xA4ynnist\xC3\xA4 uudelleen"
+  this_feature_is_under_heavy_development: "t\xC3\xA4m\xC3\xA4 ominaisuus on vasta kehitysasteella"
+  there_are_no_webapps: "J\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4 ei t\xC3\xA4ll\xC3\xA4 hetkell\xC3\xA4 ole m\xC3\xA4\xC3\xA4ritettyj\xC3\xA4 websovelmia."
+  are_you_sure_you_want_to_delete_the_static_ip: "Haluatko varmasti poistaa kiinte\xC3\xA4n IP:n '%{name}' ?"
+  the_ip_looks good: !binary |
+    SVAtb3NvaXRlIG7DpHl0dMOkw6QgaHl2w6RsdMOk
+
+  the_name_cannot_be_blank: !binary |
+    TmltZcOkIGVpIHZvaSBqw6R0dMOkw6QgdHloasOka3Np
+
+  uninstall: Poista asennus
+  details: Tiedot
+  is_now_uninstalled: on nyt poistettu
+  themes: Teemat
+  the_name_you_input_above_will_be_added_to_the_DNS_server: "Ylle sy\xC3\xB6tt\xC3\xA4m\xC3\xA4si nimi lis\xC3\xA4t\xC3\xA4\xC3\xA4n DNS-palvelimeen ja se yhdistet\xC3\xA4\xC3\xA4n alla oleviin MAC- ja IP-osoitteisiin."
+  new_share: Uusi jako
+  this_path_is_not_valid: "T\xC3\xA4m\xC3\xA4 polku on virheellinen"
+  log_in: "Kirjaudu sis\xC3\xA4\xC3\xA4n"
+  are_you_sure_user: "Haluatko varmasti poistaa k\xC3\xA4ytt\xC3\xA4j\xC3\xA4n '%{user}' ?"
+  extra_parameters: "Lis\xC3\xA4parametrit"
+  try_installing_some_apps: "Yrit\xC3\xA4 asentaa joitakin sovelmia"
+  testimonials: Lausunnot
+  version: Versio
+  powering_off: Sammutetaan...
+  get_involved: Tule mukaan!
+  stop_it: !binary |
+    UHlzdMOkeXTDpA==
+
+  home_domain: Kotitoimialue
+  total_space: Kokonaistila
+  never_email_me: !binary |
+    w4Rsw6QgbMOkaGV0w6Qgc8OkaGvDtnBvc3RpYQ==
+
+  is_now_installed: on nyt asennettu
+  this_shares_files_deleted: "T\xC3\xA4m\xC3\xA4 jako poistetaan k\xC3\xA4yt\xC3\xB6st\xC3\xA4 (jaettuja tiedostoja EI POISTETA)."
+  alias_is_not_valid: Alias on virheellinen
+  mac_address_of_the_device: Laitteen MAC-osoite (muodossa 00:11:22:33:44:55)
+  next: Seuraava
+  web_apps: Websovelmat
+  remember_me: Muista minut
+  password_looks_good: !binary |
+    U2FsYXNhbmEgbsOkeXR0w6TDpCBoeXbDpGx0w6Q=
+
+  docs: Dokumentit
+  the_ip_address_cannot_be_empty: "IP-osoite ei voi olla tyhj\xC3\xA4"
+  pdc_primary_domain_controller: PDC &mdash; Ensisijainen toimialueen ohjain
+  computer_name: Tietokoneen nimi
+  close: sulje
+  this_file_was_automatically_generated_on: "# T\xC3\xA4m\xC3\xA4 tiedosto luotiin automaattisesti %{time} - VAROITUS - kaikki manuaaliset muokkaukset H\xC3\x84VI\xC3\x84V\xC3\x84T!"
+  installation_instructions: Asennusohjeet
+  control_panel_for_your_amahi_hdas: Amahi HDA-laitteittesi ohjauspaneeli
+  please_select_the_type_of_rule_you_want: "Valitse lis\xC3\xA4tt\xC3\xA4v\xC3\xA4n s\xC3\xA4\xC3\xA4nn\xC3\xB6n tyyppi."
+  create_a_new_webapp: Luo uusi websovelma
+  refresh_status: Virkistyksen tila
+  home: Koti
+  will_not_start_at_boot_time: "<b>ei</b> k\xC3\xA4ynnisty tietokoneen k\xC3\xA4ynnistyksen yhteydess\xC3\xA4"
+  there_are_no_static_ips_defined: "J\xC3\xA4rjestelm\xC3\xA4ss\xC3\xA4 ei t\xC3\xA4ll\xC3\xA4 hetkell\xC3\xA4 ole kiinteit\xC3\xA4 IP-osoitteita."
+  share_name_is_available: Jakonimi on vapaana
+  powerful_simple_home_networking: Tehokas ja yksinkertainen kotiverkko
+  about: Tietoa
+  email_me: !binary |
+    TMOkaGV0w6Qgc8OkaGvDtnBvc3RpYQ==
+
+  there_are_no_applications_installed: "J\xC3\xA4rjestelm\xC3\xA4\xC3\xA4n ei ole asennettu sovelmia."
+  firewall_port_forward_message: "N\xC3\xA4m\xC3\xA4 s\xC3\xA4\xC3\xA4nn\xC3\xB6t sallivat sinun\n      \tohjata automaattisesti verkkopalveluiden portteja tiettyyn\n      \ttietokoneeseen palomuurin sis\xC3\xA4puolella. N\xC3\xA4m\xC3\xA4 asetukset ovat\n      \ttarpeellisia, jos haluat tarjota jotakin palvelua\n      \t(www, s\xC3\xA4hk\xC3\xB6posti) l\xC3\xA4hiverkossasi palomuurin sis\xC3\xA4puolella."
+  to_recover_your_password: "Palauttaaksesi salasanasi tai aktivointis\xC3\xA4hk\xC3\xB6postisi, sy\xC3\xB6t\xC3\xA4 s\xC3\xA4hk\xC3\xB6postiosoitteesi alle"
+  apache_web_server: Apache-webpalvelin
+  seconds: sekuntia
+  partition: Osio
+  dhcp: DHCP
+  dhcp_free: Passiivinen
+  this_users_files_deleted: "Tiedostot k\xC3\xA4ytt\xC3\xA4j\xC3\xA4n kotihakemistossa POISTETAAN"
+  configured: !binary |
+    TcOkw6RyaXRldHR5
+
+  disabling_lan_manager_will_not_allow_older_machines: "Windows 95/98 LanManager -kirjautumisen poistaminen k\xC3\xA4yt\xC3\xB6st\xC3\xA4 est\xC3\xA4\xC3\xA4 vanhempia tietokoneita k\xC3\xA4ytt\xC3\xA4m\xC3\xA4st\xC3\xA4 jakoja. Haluatko varmasti poistaa Windows 95/98 -kirjautumisen k\xC3\xA4yt\xC3\xB6st\xC3\xA4?"
+  you_have_been_logged_out: Olet kirjautunut ulos.
+  permanently: "pysyv\xC3\xA4sti"
+  the_url_is_invalid: URL on virheellinen
+  it_will_be_restarted_by_the_watchdog: "(uudelleenk\xC3\xA4ynistet\xC3\xA4\xC3\xA4n vahtikoiran toimesta)"
+  amahi_dyndns_updater: "Amahin dynaaminen DNS-p\xC3\xA4ivitt\xC3\xA4j\xC3\xA4"
+  pdc_domain: PDC-toimialue
+  path: Polku
+  features: Ominaisuudet
+  password_cannot_be_blank: "Salasana ei voi olla tyhj\xC3\xA4"
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "HUOM: Vahtikoirapalvelu on K\xC3\x84YNNISS\xC3\x84 ja se uudelleenk\xC3\xA4ynnistet\xC3\xA4\xC3\xA4n muutaman sekunnin p\xC3\xA4\xC3\xA4st\xC3\xA4."
+  your_existing_network_gatweay: "Olemassa oleva verkkoyhdysk\xC3\xA4yt\xC3\xA4v\xC3\xA4si/-reitittimesi"
+  warning: VAROITUS
+  dhcp_ip_address: DHCP IP-osoite
+  beta_apps: Beta-sovelmat
+  logout: Kirjaudu ulos
+  there_is_no_undo: "T\xC3\xA4t\xC3\xA4 toimintoa EI VOI PERUA."
+
+  date:
+    formats:
+      default: "%e. %Bta %Y"
+      long: "%A %e. %Bta %Y"
+      short: "%e.%m.%Y"
+
+    day_names: [sunnuntai, maanantai, tiistai, keskiviikko, torstai, perjantai, lauantai]
+    abbr_day_names: [su, ma, ti, ke, to, pe, la]
+
+    month_names: [~, tammikuu, helmikuu, maaliskuu, huhtikuu, toukokuu, kesäkuu, heinäkuu, elokuu, syyskuu, lokakuu, marraskuu, joulukuu]
+    abbr_month_names: [~, tammi, helmi, maalis, huhti, touko, kesä, heinä, elo, syys, loka, marras, joulu]
+    order:
+      - :day
+      - :month
+      - :year
+
+  time:
+    formats:
+      default: "%A %e. %Bta %Y %H:%M:%S %z"
+      short: "%e.%m. %H.%M"
+      long: "%e. %Bta %Y %H.%M"
+    am: "aamupäivä"
+    pm: "iltapäivä"
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " ja "
+      last_word_connector: " ja "
+
+    select:
+      prompt: "Valitse"
+
+  number:
+    format:
+      separator: "."
+      delimiter: ","
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+
+    currency:
+      format:
+        format: "%n %u"
+        unit: "€"
+        separator: ","
+        delimiter: "."
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+
+    percentage:
+      format:
+        delimiter: ""
+
+    precision:
+      format:
+        delimiter: ""
+
+    human:
+      format:
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "tavu"
+            other: "tavua"
+          kb: "kB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: Tuhatta
+          million: Euroa
+          billion: Miljardia
+          trillion: Biljoona
+          quadrillion: Kvadriljoona
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "puoli minuuttia"
+      less_than_x_seconds:
+        one:   "alle sekunti"
+        other: "alle %{count} sekuntia"
+      x_seconds:
+        one:   "sekunti"
+        other: "%{count} sekuntia"
+      less_than_x_minutes:
+        one:   "alle minuutti"
+        other: "alle %{count} minuuttia"
+      x_minutes:
+        one:   "minuutti"
+        other: "%{count} minuuttia"
+      about_x_hours:
+        one:   "noin tunti"
+        other: "noin %{count} tuntia"
+      x_days:
+        one:   "päivä"
+        other: "%{count} päivää"
+      about_x_months:
+        one:   "noin kuukausi"
+        other: "noin %{count} kuukautta"
+      x_months:
+        one:   "kuukausi"
+        other: "%{count} kuukautta"
+      about_x_years:
+        one:   "vuosi"
+        other: "noin %{count} vuotta"
+      over_x_years:
+        one:   "yli vuosi"
+        other: "yli %{count} vuotta"
+      almost_x_years:
+        one: "melkein yksi vuosi"
+        other: "melkein %{count} vuotta"
+    prompts:
+      year:   "Vuosi"
+      month:  "Kuukausi"
+      day:    "Päivä"
+      hour:   "Tunti"
+      minute: "Minuutti"
+      second: "Sekunti"
+
+  helpers:
+    select:
+      prompt: "Valitse"
+
+    submit:
+      create: 'Luo %{model}'
+      update: 'Päivitä %{model}'
+      submit: 'Tallenna %{model}'
+
+  errors:
+    format: "%{attribute} %{message}"
+
+    messages: &errors_messages
+      inclusion: "ei löydy listasta"
+      exclusion: "on varattu"
+      invalid: "on kelvoton"
+      confirmation: "ei vastaa varmennusta"
+      accepted: "täytyy olla hyväksytty"
+      empty: "ei voi olla tyhjä"
+      blank: "ei voi olla sisällötön"
+      too_long: "on liian pitkä (saa olla enintään %{count} merkkiä)"
+      too_short: "on liian lyhyt (oltava vähintään %{count} merkkiä)"
+      wrong_length: "on väärän pituinen (täytyy olla täsmälleen %{count} merkkiä)"
+      not_an_integer: "on kokonaisluku"
+      not_a_number: "ei ole luku"
+      greater_than: "täytyy olla suurempi kuin %{count}"
+      greater_than_or_equal_to: "täytyy olla suurempi tai yhtä suuri kuin %{count}"
+      equal_to: "täytyy olla yhtä suuri kuin %{count}"
+      less_than: "täytyy olla pienempi kuin %{count}"
+      less_than_or_equal_to: "täytyy olla pienempi tai yhtä suuri kuin %{count}"
+      odd: "täytyy olla pariton"
+      even: "täytyy olla parillinen"
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one:    "Virhe syötteessä esti mallin %{model} tallentamisen"
+          other:  "%{count} virhettä esti mallin %{model} tallentamisen"
+        body: "Seuraavat kentät aiheuttivat ongelmia:"
+
+      messages:
+        taken: "on jo käytössä"
+        record_invalid: "Validointi epäonnistui: %{errors}"
+        <<: *errors_messages
+
+      full_messages:
+        format: "%{attribute}%{message}"

@@ -1,0 +1,5 @@
+tr.prefsubtab
+  td[class="#{subtab_class('index')} first"]= link_to_unless_current t('shares'), shares_path
+  - if advanced?
+    td[class="#{subtab_class('disk_pooling')} other"]= link_to t('disk_pooling'), disk_pooling_shares_path
+    td[class="#{subtab_class('settings')} last"]= link_to t('settings'), settings_shares_path

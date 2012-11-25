@@ -1,0 +1,619 @@
+--- 
+hr: 
+  new_user: Novi korisnik
+  alias_is_taken_already: "Poveznica (alias) \xE2\x80\x8B\xE2\x80\x8Bje zauzeta ili je rezervirana"
+  storage: Spremnik
+  user_name_is_not_available: "Korisni\xC4\x8Dko ime nije dostupno"
+  platform: Platforma
+  are_you_sure_share: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 obrisati djeljeno mjesto '%{share}' ?"
+  this_looks_like_a_database_corruption_please_report_it: "Ovo izgleda kao gre\xC5\xA1ka u bazi podataka ili bug ( molim te <a href=\"http://bugs.amahi.org\">prijavi gre\xC5\xA1ku</a>)."
+  mac_looks_good: MAC Adresa izgleda u redu
+  wiki: Wiki
+  these_rules_are_used_to_restrict_ips: "Ova pravila koriste se za ograni\xC4\x8Davanje podatkovnih paketa sa \r\n\
+    odre\xC4\x91ene IP adrese u tvojoj lokalnoj mre\xC5\xBEi prema Internetu.\r\n\
+    Upotreba ovakvih filtera mo\xC5\xBEe ti pomo\xC4\x87i pove\xC4\x87ati sigurnost tvoje lokalne mre\xC5\xBEe ili zabraniti pristup."
+  confirm_email: Potvrdi e-mail
+  last_login: Zadnja prijava
+  setup: Postavke
+  start_at_boot_time: Pokreni pr podizanju sustava
+  news_about_applications: Novosti o aplikacijama dostupne na Amahi
+  delete_profile: "Obri\xC5\xA1i profil od "
+  delete_user: "Obri\xC5\xA1i korisnika"
+  running: Pokrenuto
+  start_building_a_new_hda: "Zapo\xC4\x8Dni izradu novog HDA!"
+  delete: "Obri\xC5\xA1i"
+  name_is_taken_already: "Naziv je ve\xC4\x87 u upotrebi"
+  unleash_the_power_of_your_home_network: "Oslobodite snagu svog ku\xC4\x87ne mre\xC5\xBEe."
+  are_you_sure_webapp: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 ukloniti web aplikaciju '%{webapp}' ?"
+  automated_install: Automatska instalacija
+  need_help_logging_in: "Treba\xC5\xA1 pomo\xC4\x87 kod prijave?"
+  confirm_password: Potvrdi lozinku
+  installed_paren: (Instalirane)
+  tour: Obilazak
+  address_already_allocated: "Adresa je ve\xC4\x87 dodijeljena"
+  new: Novi
+  are_you_sure_you_want_to_stop_the_server: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 zaustaviti %{name}?"
+  disabling_pdc_will_enable_workgroup_mode: "Onemogu\xC4\x87avanje PDC na\xC4\x8Din rada omogu\xC4\x87iti \xC4\x87e Workgroup na\xC4\x8Din rada.\r\n\
+    To je velika promjena u na\xC4\x8Dinu na koji djeluju mjesta za razmjenu datoteka. To je namjenjeno za ku\xC4\x87ne mre\xC5\xBEe (provjerite na wiki vi\xC5\xA1e o tome). \r\n\
+    Jesi li siguran da \xC5\xBEeli\xC5\xA1 onemogu\xC4\x87iti PDC na\xC4\x8Din rada?"
+  finalize_settings: "Zavr\xC5\xA1ne postavke"
+  address_looks_good: Adresa izgleda dobro
+  confirmation_must_match: "Potvrda mora biti odgovaraju\xC4\x87a"
+  stopped: Zaustavljen
+  router_control: Upravljanje routerom
+  applications: Aplikacije
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: "Ova IP adresa (1-%{max}) uvijek \xC4\x87e biti stati\xC4\x8Dki povezana na MAC adresu ispod."
+  this_path_exists_already: "Ova putanja ve\xC4\x87 postoji"
+  poweroff: "Isklju\xC4\x8Di"
+  are_you_sure_you_would_like_to_delete_calendar: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 obrisati %{calendar} ?"
+  port_range_looks_good: Raspon portova izgleda u redu
+  pictures: Slike
+  disk: Disk
+  location: Lokacija
+  require_login: Zahtijeva prijavu
+  theme: Tema
+  disks: Diskovi
+  rule: Pravilo
+  static_ips: "Stati\xC4\x8Dke adrese"
+  mac_address_to_be_filtered_in_format: MAC Adresa za filtriranje (u obliku 00:11:22:33:44:55)
+  my_apps: Moje Aplikacije
+  disk_pool_copies: Dodatne kopije
+  cancel: Odustani
+  port_range_ports_must_be_increasing_order: Ovaj port mora biti manji ili jednak drugom portu
+  password_is_too_short: Lozinka je prekratka
+  preparing_to_install: Priprema za instalaciju ...
+  model: Model
+  are_you_sure_you_want_to_start_the_server: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 pokrenuti %{name}?"
+  nickname_info: "\"Nadimak\" je jedinstveni identifikator za Va\xC5\xA1 HDA. Trebat \xC4\x87e vam da se prijavite na svoj <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> s <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows klijentom</a> (i ispravnim korisni\xC4\x8Dkim imenom i lozinkom na va\xC5\xA1u ku\xC4\x87nu mre\xC5\xBEu)."
+  files: Podaci
+  by_signing_up_you_agree_to_the_terms_of_service: "Svojim potpisom (potvrdom), prihva\xC4\x87a\xC5\xA1 i pro\xC4\x8Ditao si <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">uvjete kori\xC5\xA1tenja</a>"
+  the_url_looks_good: URL izgleda u redu
+  application_uninstalled: Aplikacija uklonjena
+  delete_web_app: "Obri\xC5\xA1i web aplikaciju"
+  free_space: Slobodan prostor
+  url: URL
+  are_you_sure_you_would_like_to_uninstall: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 ukloniti ovu aplikaciju?\r\n\
+    Svi podaci vezani uz ovu aplikaciju BITI \xC4\x86E OBRISANI."
+  temperature: Temperature
+  users: Korisnici
+  debug: Debug
+  the_ip_address_can_be: "IP adresa mo\xC5\xBEe biti"
+  read_only: "Samo za \xC4\x8Ditanje"
+  install_code_info: "Instalacijski kod obuhva\xC4\x87a sve postavke za tvoj HDA i koristi se jednom \r\n\
+    kao zavr\xC5\xA1ni korak pri instalaciji tvog HDA. Nemoj koristiti isti instalacijski kod za vi\xC5\xA1e od jedan aktivni sustav, \r\n\
+    jer \xC4\x87e\xC5\xA1 u protivnom onemogu\xC4\x87iti Dinami\xC4\x8Dki DNS i VPN. Izradi  za svaki aktivni HDA zaseban profil."
+  url_filtering: URL filtriranje
+  available: Dostupne
+  this_will_power_off: "Ovo radnja \xC4\x87e isklju\xC4\x8Diti tvoj HDA.\r\n\
+    Mo\xC5\xBEda \xC4\x87e\xC5\xA1 htjeti uklju\xC4\x8Diti DHCP server na svom routeru ukoliko je tvoj HDA bio DHCP server do sada.\r\n\
+    \xC5\xBDeli\xC5\xA1 nastaviti?"
+  edit_static_ip: "Uredi stati\xC4\x8Dku IP adresu"
+  add_extra_parameters: (dodaj dodatne parametre)
+  system_info: Informacije o sustavu
+  this_path_is_not_available: Ova putanja nije dostupna
+  firewall_port_filter_message: "Pravila za filtriranje portova koriste se za ograni\xC4\x8Davanje podatkovnih paketa iz lokalne mre\xC5\xBEe na Internet."
+  press: Pritisni
+  share_path_cannot_be_blank: "Putanja mjesta za razmjenu nemo\xC5\xBEe biti prazna"
+  address_is_not_valid: Adresa nije valjana
+  create_alias: Dodaj poveznicu (alias)
+  recover: Vrati nazad
+  web: Web
+  delete_alias: "Obri\xC5\xA1i poveznicu"
+  installed: Instalirane
+  start_now: "Zapo\xC4\x8Dni sada"
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: "Aplikacija je zabilje\xC5\xBEila pogre\xC5\xA1ku u radu. Biti \xC4\x87e\xC5\xA1 preusmjeren na stranicu koja prikazuje zapis o pogre\xC5\xA1ci."
+  core: Jezgra
+  application: Aplikacija
+  advanced_settings: Napredne postavke
+  check_the_features_take_the_tour: "Provjeri trenutno dostupne mogu\xC4\x87nosti, kreni u obilazak, ili ako si nestrpljiv - "
+  this_will_stop_the_server_permanently: "Ova radnja \xC4\x87e zaustaviti %{name} TRAJNO."
+  your_control_panel: Tvoj kontrolni panel
+  full_name: Puno ime
+  shares: Razmjena
+  manage_themes: Upravljanje temama
+  discussion_forum_for: Diskusijski forum za
+  tracker: Tracker
+  rule_type: Vrsta pravila
+  aliases: Poveznice
+  enabling_lan_manager_is_less_secure: "Omogu\xC4\x87avanje Windows 95/98 na\xC4\x8Dina autentifikacije je manje sigurno ali mo\xC5\xBEe pomo\xC4\x87i starijim ra\xC4\x8Dunalima da pristupe mjestima za razmjenu.\r\n\
+    Jesi li siguran da \xC5\xBEeli\xC5\xA1 omogu\xC4\x87iti Windows 95/98 LanManager autentifikaciju?"
+  network: !binary |
+    TXJlxb5h
+
+  change_your_account_settings: "Promjeni postavke korisni\xC4\x8Dkog ra\xC4\x8Diuna"
+  port_range_ports_must_be_0_to_64k: "Portovi moraju biti u rasponu od 0-65535 "
+  share_path_is_available: Putanja mjesta za razmjenu je dostupna
+  this_could_be_due_to_lack_of_network_connectivity: "To bi moglo biti zbog nedostatka mre\xC5\xBEne konekcije."
+  special_instructions: Posebne upute
+  there_are_no_dynamic_dhcp_leases_outstanding: "Nema aktivnih dinami\xC4\x8Dkih IP adresa u ovom trenutku."
+  login: Prijava
+  dhcp_lease: DHCP najam (Lease)
+  edit_share: Uredi mjesto za razmjenu
+  change: Promjeni
+  status: Status
+  not_updating: "Ne a\xC5\xBEurira se"
+  videos: Video
+  dhcp_active: Aktivan
+  this_application_is_installed_already_please_refresh: "Aplikacija je ve\xC4\x87 instalirana. Molim te osvje\xC5\xBEi web stranicu (Refresh)"
+  restart: Restart
+  confirm: Potvrdi
+  name_is_not_valid: Naziv nije ispravan
+  sign_out: Odjava
+  state: Stanje
+  new_web_app: Nova web aplikacija
+  email: E-mail
+  full_name_looks_good: Puno ime izgleda u redu
+  workgroup_name: Workgroup naziv
+  name_looks_good: Naziv izgleda u redu
+  new_alias: Nova poveznica
+  must_be_logged_in: "Mora\xC5\xA1 biti prijavljen da bi pristupio ovdje"
+  rebooting: Ponovno pokretanje sustava u tijeku ...
+  uptime: Vrijeme neprekidnog rada
+  disk_pooling: Polje za pohranu
+  this_will_reboot: "Ova radnja \xC4\x87e ponovo pokrenuti tvoj HDA.\r\n\
+    \xC5\xBDeli\xC5\xA1 nastaviti?"
+  dns_aliases: DNS poveznice
+  used_space: "Kori\xC5\xA1ten prostor"
+  static_ip_address_for_your_hda: "Stati\xC4\x8Dka IP adresa za tvoj HDA"
+  comment: Komentar
+  the_alias_name_you_input_will_be_added: "Ime koje unese\xC5\xA1 iznad biti \xC4\x87e dodano u DNS poslu\xC5\xBEitelj kao alias za IP adresu."
+  root_path: "Root\xC2\xA0Putanja"
+  search: !binary |
+    VHJhxb5p
+
+  upcoming: "Nadolaze\xC4\x87i"
+  username_or_email: "Korisni\xC4\x8Dko ime ili email"
+  network_settings: "Mre\xC5\xBEne postavke"
+  no_documents_found: "Nema prona\xC4\x91enih dokumenata"
+  visible: Vidljiv
+  create_a_new_share: Dodaj novo mjesto za razmjenu
+  enabling_pdc_is_a_major_share_change: "Omogu\xC4\x87avanje PDC na\xC4\x8Dina rada je velika promjena u na\xC4\x8Dinu na koji fukcioniraju mjesta za razmjenu datoteka. To \xC4\x87e omogu\xC4\x87iti Domain na\xC4\x8Din rada i onemogu\xC4\x87iti Workgroup na\xC4\x8Din rada i zahtijeva da sva ra\xC4\x8Dunala imaju  PRO verzije operativnog sustava i koriste odgovaraju\xC4\x87e ovlasti. Ovaj na\xC4\x8Din rada namijenjen je za poslovne mre\xC5\xBEe (tvrtke). Jesi li siguran da \xC5\xBEeli\xC5\xA1 omogu\xC4\x87iti PDC na\xC4\x8Din rada?"
+  all_users: Svi korisnici
+  delete_static_ip: "Obri\xC5\xA1i stati\xC4\x8Dku IP adresu"
+  audio: Zvuk
+  dashboard: "Nadzorna plo\xC4\x8Da"
+  this_ip_will_be_filtered: "Ova IP adresa biti \xC4\x87e filtrirana."
+  dns_alias: DNS poveznica
+  url_to_filter: URL za filtriranje
+  the_boot_option_is_a_critical_setting: "Ova boot opcija je KRITI\xC4\x8CNA postavka. Isklju\xC4\x8Divanje serverskih procesa se IZRAZITO NE PREPORU\xC4\x8CUJE. Ovo je namjenjeno da pokre\xC4\x87e servise na tvom HDA pri svakom podizanju sustava. Jesi li siguran da ne \xC5\xBEeli\xC5\xA1 pokrenuti ovaj proces pri podizanju sustava?"
+  greyhole_not_installed: "UPOZORENJE: Greyhole nije instaliran na ovom sustavu!"
+  must_be_admin: "Mora\xC5\xA1 imati administratorske privilegije da bi pristupio ovdje"
+  valid_email_required_for_service: "Valjani e-mail je nu\xC5\xBEan za aktivaciju. Mi te  <a href=\"http://www.amahi.org/privacy\" target=\"_blank\">ne\xC4\x87emo spamati</a>"
+  are_you_sure_you_want_to_delete_alias: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 obrisati poveznicu sa '%{name}' ?"
+  is_not_being_monitored_24x7: <b>ne</b> nadzire se 24x7
+  activerecord: 
+    errors: 
+      messages: 
+        record_invalid: "Provjera valjanosti nije uspjela: %{errors}"
+        greater_than_or_equal_to: "mora biti ve\xC4\x87e ili jednako od %{count}"
+        confirmation: "ne odgovara potvr\xC4\x91enom"
+        less_than_or_equal_to: mora biti manje ili jednako od %{count}
+        blank: mora biti ispunjen
+        exclusion: rezerviran
+        invalid: nije ispravan
+        odd: mora biti neparno
+        even: mora biti paran
+        too_short: prekratko (ne manje od %{count}  znakova)
+        wrong_length: "nije odgovaraju\xC4\x87e du\xC5\xBEine (mora imati %{count} znakova)"
+        empty: mora biti ispunjen
+        less_than: mora biti manje od %{count}
+        greater_than: "mora biti ve\xC4\x87i od %{count}"
+        equal_to: mora biti jednak sa %{count}
+        too_long: "preduga\xC4\x8Dko (ne vi\xC5\xA1e od %{count} znakova)"
+        taken: "ve\xC4\x87 je zauzet"
+        accepted: "mora biti prihva\xC4\x87en"
+        not_a_number: nije broj
+        inclusion: "nije uklju\xC4\x8Den u popis"
+      template: 
+        body: "Molim Vas provjerite slijede\xC4\x87a polja:"
+        header: 
+          few: "Nisam uspio spremiti %{model}: %{count} gre\xC5\xA1ke."
+          one: "zbog 1 pogre\xC5\xA1ke ovaj %{model} nije dozvoljeno spremiti"
+          other: "zbog %{count} pogre\xC5\xA1ke ovaj %{model} nije dozvoljeno spremiti"
+      full_messages: 
+        format: "%{attribute} %{message}"
+  there_are_no_static_dhcp_leases: "Nema aktivnih stati\xC4\x8Dkih IP adresa u ovom trenutku."
+  live_help: "Live Pomo\xC4\x87"
+  edit_user: Uredi korisnika
+  control_panel: "Kontrolna plo\xC4\x8Da"
+  share_name_cannot_be_blank: Mjesto za raznmjenu mora imati ime
+  get_started: Kreni!
+  my_account: "Moj korisni\xC4\x8Dki ra\xC4\x8Dun"
+  gallery: Galerija
+  transmission_bittorrent_server: Transmission Bittorrent Server
+  ip_address: IP Adresa
+  number: 
+    format: 
+      separator: ","
+      precision: 3
+      delimiter: .
+    human: 
+      storage_units: 
+        format: "%n %u"
+        units: 
+          kb: KB
+          tb: TB
+          gb: GB
+          byte: 
+            one: Bajt
+            other: Bajtova
+          mb: MB
+    currency: 
+      format: 
+        format: "%n %u"
+        unit: Kn
+        separator: .
+        precision: 2
+        delimiter: ","
+  mysql_database_server: MySQL DB Server
+  edit_and_rate_beta_apps: Uredi i ocjeni Beta aplikacije
+  or_view_each_one_separately_below: ili pogledaj svaku posebno ispod.
+  username: "Korisni\xC4\x8Dko ime"
+  are_you_sure_you_want_to_restart_the_server: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 ponovo pokrenuti %{name}?"
+  user_name_is_available: "Korisni\xC4\x8Dko ime dostupno"
+  done_final_check: "Gotovo! Zavr\xC5\xA1na provjera"
+  this_application_is_not_installed_please_refresh: "Ova aplikacija nije instalirana. Molim te osvje\xC5\xBEi web stranicu (Refresh)"
+  first_time_admin_setup: "Na po\xC4\x8Detku, admin postavke. Molimo ponovno izraditi svoju lozinku."
+  password: Lozinka
+  access: Pristup
+  news: Novosti
+  avanced_settings_is_for_developers: "Omogu\xC4\x87avanje Naprednih mogu\xC4\x87nosti namjenjeno je za napredne korisnike."
+  there_are_no_shares_created: "Nema izra\xC4\x91enih djeljenih mjesta u ovom trenutku."
+  created: "Izra\xC4\x91en"
+  watchdog: Watchdog
+  stop: Stani
+  device: "Ure\xC4\x91aj"
+  dns_server: DNS Server
+  initial_user: "Korisni\xC4\x8Dko ime"
+  admin_setup_worked: Admin postavke su u redu. Prijavi se, molim
+  preparing_to_uninstall: Priprema za deinstaliciju ...
+  time: 
+    am: prije podne
+    formats: 
+      am: AM
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      time: "%H:%M"
+      pm: PM
+      short: "%d %b %H:%M"
+      only_second: "%S"
+      datetime: 
+        formats: 
+          default: "%Y-%m-%dT%H:%M:%S%Z"
+      long: "%B %d, %Y %H:%M"
+    pm: poslije podne
+  sign_up_here: Prijavi se ovdje
+  servers: "Poslu\xC5\xBEitelji"
+  router_ip: Router IP
+  general_amahi_news: Osnovne Amahi vijesti
+  feedback: Povratna informacija
+  name: Naziv
+  awake_this_device_via_wol: "Uklju\xC4\x8Di (probudi) ovaj ure\xC4\x91aj"
+  port_forwarding: "Proslije\xC4\x91ivanje portova"
+  datetime: 
+    prompts: 
+      minute: Minuta
+      second: Sekunde
+      month: MjJesec
+      hour: Sat
+      day: Dan
+      year: Godina
+    distance_in_words: 
+      less_than_x_minutes: 
+        one: manje od 1 minute
+        other: manje od %{count} minuta
+        zero: manje od minute
+      x_days: 
+        one: 1 dan
+        other: "%{count} dana"
+      x_seconds: 
+        few: "%{count} sekunde"
+        one: 1 sekunda
+        other: "%{count} sekundi"
+      less_than_x_seconds: 
+        few: manje od %{count} sekunde
+        one: manje od 1 sekunde
+        other: manje od %{count} sekundi
+        zero: manje od 1 sekunde
+      x_months: 
+        few: "%{count} mjeseca"
+        one: 1 mjesec
+        other: "%{count} mjeseci"
+      x_minutes: 
+        one: 1 minuta
+        other: "%{count} minuta-e"
+      about_x_hours: 
+        few: oko %{count} sata
+        one: oko 1 sat
+        other: oko %{count} sati
+      about_x_years: 
+        one: oko 1 godine
+        other: oko %{count} godine
+      about_x_months: 
+        few: oko %{count} mjeseca
+        one: oko 1 mjesec
+        other: oko %{count} mjeseci
+      over_x_years: 
+        one: preko 1 godine
+        other: preko %{count} godine
+      half_a_minute: pola minute
+  nickname: Nadimak
+  check_the_calendars_wiki_for_more_details: "Provjeri wiki stranicu kalendara za vi\xC5\xA1e informacija na koji na\xC4\x8Din mo\xC5\xBEe\xC5\xA1 upravljati kalendarima i koji su klijenti podr\xC5\xBEani."
+  pooled: "Udru\xC5\xBEuje"
+  edit_web_app: Uredi web aplikaciju
+  movies: Filmovi
+  mac_already_allocated: "MAC Adresa ve\xC4\x87 postoji"
+  dyndns_info: "Amahi omogu\xC4\x87uje BESPLATNU, dinami\xC4\x8Dku DNS adresu za tebe. Ona je vanjska (public) adresa tvoje ku\xC4\x87ne mre\xC5\xBEe. Mo\xC5\xBEe\xC5\xA1 ju koristiti za <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">Mac</a> ili <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a> <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> klijente (napredni korisnici mogu ga koristiti za prijavu preko <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>). Napredni korisnici mogu je koristiti za smje\xC5\xA1taj web stranice, game servere ili druge servise iz  ku\xC4\x87ne mre\xC5\xBEe (ako \xC5\xBEeli\xC5\xA1 odmah saznati vi\xC5\xA1e postavi pitanje na IRC kanalu ili pretra\xC5\xBEi wiki)."
+  confirmation_matches: "Potvrda uspje\xC5\xA1na"
+  this_name_is_not_available: Ovo naziv nije dostupan
+  setting_dmz_failed: Postavljanje DMZ nije uspjelo. Molimo provjeri postavke.
+  logs: Logovi
+  password_changed_successfully: "Lozinka uspje\xC5\xA1no promjenjena"
+  will_start_at_boot_time: "<b>biti \xC4\x87e</b> pokrenut pri podizanju sustava"
+  calendar_name: Naziv kalendara
+  this_application_install_ended_with_an_error_please_uninstall_status_is: "Instalacija je zavr\xC5\xA1ila sa gre\xC5\xA1kom. Molim deinstaliraj aplikaciju i poku\xC5\xA1aj ponovo. Status aplikacje je"
+  mac_filtering: MAC Filtriranje
+  tags: Tagovi
+  router_firewall_settings: Postavke routera/vatrozida
+  app_logs: App Logovi
+  firewall_mac_address_filter_info: "Unosi u ovoj tabeli koriste se za ograni\xC4\x8Davanje odre\xC4\x91enih vrsta podatkovnih paketa iz lokalne mre\xC5\xBEe na Internet preko Gateway-a. Upotreba takvih filtera mo\xC5\xBEe biti korisna u osiguravanju ili ograni\xC4\x8Davanje pristupa va\xC5\xA1oj lokalnoj mre\xC5\xBEi."
+  static_ip_address: "Stati\xC4\x8Dka IP Adresa"
+  are_you_sure_advanced_features: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 omogu\xC4\x87iti Napredne postavke?"
+  dhcp_server: DHCP server
+  contribute: Doprinijeti
+  back: Nazad
+  changelog: Log promjena
+  notifications_from_amahi: Obavijesti iz Amahi
+  support_win_95_98: "Podr\xC5\xA1ka za Windows 95/98 \xE2\x80\x94  omogu\xC4\x87uje (nesigurnu) LanManager autentifikaciju"
+  there_are_no_calendars_available_see_wiki: "Nema dostupnih kalendara na ovom poslu\xC5\xBEitelju. Izradi ih preko klijenta.  Pogledaj <a href=\"http://wiki.amahi.org/index.php/Calendars\">calendars wiki</a>."
+  the_mac_is_invalid: MAC adresa nije valjana
+  making_home_networking_simple: "\xC4\x8Cinimo ku\xC4\x8Dne ra\xC4\x8Dunalne mre\xC5\xBEe jednostavnima"
+  disk_pool_details: "Odaberi particije koje \xC5\xBEeli\xC5\xA1 uklju\xC4\x8Diti u %{greyhole} polje i onda podesi %{shares} da koriste to polje."
+  calendars: Kalendari
+  a_single_number_0_254_to_point_to_a_given_machine: "Broj (0-254) koji odre\xC4\x91uje ra\xC4\x8Dunalo u tvojoj lokalnoj mre\xC5\xBEi"
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Omogu\xC4\x87avanje debug na\xC4\x8Din rada mo\xC5\xBEe generirati jako velike log datoteke.\r\n\
+    Jesi li siguran da \xC5\xBEeli\xC5\xA1 uklju\xC4\x8Diti Samba debug na\xC4\x8Din rada?"
+  writeable: "Mogu\xC4\x87 zapis"
+  port_range_ports_must_be_numbers: Portovi moraju biti znamenke
+  help: !binary |
+    UG9tb8SH
+
+  new_firewall_rule: Novo pravilo vatrozida
+  video: Video
+  new_static_ip: "Nova stati\xC4\x8Dka IP adresa"
+  thanks_for_visiting: "Hvala na posjeti. Podr\xC5\xBEi na\xC5\xA1e sponzore!"
+  install_code: Instalacijski kod
+  this_share_name_is_not_valid: Ovo djeljeno mjesto nije ispravno
+  there_are_no_applications_available: Nema dostupnih aplikacija u ovom trenutku.
+  ip_filtering: IP Filtriranje
+  create: Izradi
+  guest_dashboard: "Gostuju\xC4\x87a nadzorna plo\xC4\x8Da"
+  view_all_calendars_simultaneously: "Prika\xC5\xBEi sve kalendara istovremeno"
+  music: Muzika
+  permissions: Dozvole
+  initial_password: Lozinka
+  your_domain_info: "Ovo je tvoja ku\xC4\x87na domenska mre\xC5\xBEa. Dostupna je <b>jedino</b> unutar tvoje ku\xC4\x87ne mre\xC5\xBEe.\r\n\
+    Za vi\xC5\xA1e informacija o tome pogledaj <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">\xC4\x8Desto postavljena pitanja (FAQ)</a>"
+  there_are_no_firewall_rules_defined: Nema definiranih vatrozid pravila u ovom trenutku.
+  firewall_url_filter_message: "Unosi u ovoj tablici koriste se za ograni\xC4\x8Davanje URL-a kroz Gateway."
+  dynamic_dns: "Dinami\xC4\x8Dki DNS"
+  dhcp_leases: DHCP najmovi (Leases)
+  the_ip_must_be_1_to_254: IP mora biti u rasponu od 1-254
+  not_a_valid_user_or_password: "Gre\xC5\xA1ka: Neispravno korisni\xC4\x8Dko ime ili lozinka"
+  create_your_hda_profile: Izradi svoj HDA profil
+  your_home_dns_domain: "Tvoja ku\xC4\x87na DNS domena"
+  theme_by: Theme od
+  forums: Forumi
+  there_are_no_aliases_defined: Nema definiranih poveznica u ovom trenutku
+  user_name_is_not_valid: "Korisni\xC4\x8Dko ime nije ispravno"
+  all_you_need: "Sve \xC5\xA1to treba\xC5\xA1!"
+  system: Sustav
+  name_is_taken_already_or_is_reserved: "Naziv je rezerviran ili ve\xC4\x87 u upotrebi"
+  webapps: WebApps
+  submit_for_debug: "Prijavi gre\xC5\xA1ku"
+  more: !binary |
+    dmnFoWU=
+
+  protocol: Protokol
+  no_account_yet: "Nema jo\xC5\xA1 ra\xC4\x8Dun?"
+  delete_this_rule: "Obri\xC5\xA1i ovo pravilo"
+  images: Slike
+  partitions: Particije
+  language: Jezik
+  this_application_is_installed: Ovaj aplikacija je instalirana.
+  share: Razmjena
+  router_setting_failed: "Router pode\xC5\xA1avanje nije uspjelo. Molimo provjeri postavke."
+  global_settings_for_shares: Globalne postavke i mjesta za razmjenu
+  the_watchdog_is_a_critical_setting: "Watchdog je KRITI\xC4\x8CNA postavka. Zaustavljanje nadzora procesa poslu\xC5\xBEitelja NE PREPORU\xC4\x8CA SE. Svrha ovoga je da omogu\xC4\x87i neprekidan i stabilan rad svih servisa ukoliko do\xC4\x91e do problema u radu. Jesi li siguran da \xC5\xBEeli\xC5\xA1 zaustaviti watchdog na ovom poslu\xC5\xBEitelju? "
+  warning_this_application_is_in_testing: "UPOZORENJE: Ova aplikacija je u testiranju!"
+  is_being_monitored_24x7: nadzire se 24x7
+  computer: "Ra\xC4\x8Dunalo"
+  an_external_ip_address_to_make_the_alias: "Vanjska IP adresa koju \xC4\x87e\xC5\xA1 usmjeriti na specifi\xC4\x8Dnu IP adresu "
+  file_server_samba: Podatkovni server (Samba)
+  mac_is_invalid: MAC Adresea je neispravna
+  edit_alias: Uredi poveznicu
+  port_range_ports_are_already_allocated: "Portovi u tom rasponu su ve\xC4\x87 u upotrebi"
+  please_double_check_the_settings: "Molim <strong>detaljno provjeri postavke</strong> jer su one klju\xC4\x8Dne za ispravan rad tvog HDA od samog po\xC4\x8Detka."
+  otherwise_you_can_go_to_the_error_log: "U suprotnom mo\xC5\xBEe\xC5\xA1 oti\xC4\x87i izravno na <a href=\"/setup?tab=debug\">error log</a>."
+  description: Opis
+  there_are_no_users: "Nema korisni\xC4\x8Dkih ra\xC4\x8Duna u tvom sustavu u ovom trenutku."
+  are_you_sure: Jesi li siguran?
+  efficiently_manage_your_network: "U\xC4\x8Dinkovito upravljaj mre\xC5\xBEom i sigurnosnim kopijama svih ra\xC4\x8Dunala, game konzola i ostalih ure\xC4\x91aja u svojoj mre\xC5\xBE te sigurno pristupi svojoj mre\xC5\xBEi preko interneta. To je samo jedan dio mogu\xC4\x87nosti za koje \xC4\x87e\xC5\xA1 koristiti Amahi."
+  port_range_field_cannot_be_empty: Polje ne mogu biti prazna
+  available_for_installation: (Dostupne za instalaciju)
+  create_share: Izradi ovo mjesto za razmjenu
+  apps: Aplikacije
+  alias_looks_good: "Poveznica (alias) \xE2\x80\x8B\xE2\x80\x8Bizgleda  u redu"
+  translate_amahi: Prevedi Amahi
+  support: arraysentence_connectori
+  delete_share: "Obri\xC5\xA1i mjesto za razmjenu"
+  ushare_upnp_media_server: "Ushare UPnP Media poslu\xC5\xBEitelj"
+  sign_in: Prijava
+  disk_pooling_enabled: Koristi polje
+  new_dns_alias: Nova DNS poveznica
+  community: Zajednica
+  create_a_new_user: Dodaj novog korisnika
+  suggest: "Predlo\xC5\xBEi!"
+  port_filtering: Filtriranje portova
+  results_found: "%{count} na\xC4\x91enih rezultata"
+  the_mac_looks_good: MAC izgleda  u redu
+  when_there_are_major_announcements: "Ukoliko postoje neke va\xC5\xBEne obavijesti"
+  no_description_supplied: Opis nije unesen!
+  manage_your_contributed_apps: Upravljaj vlastitim aplikacijama
+  global_settings: Globalne postavke
+  networking: !binary |
+    TXJlxb5h
+
+  firewall: Vatrozid
+  there_are_no_servers_available: "Nema dostupnih poslu\xC5\xBEitelja u ovom trenutku."
+  port_range: Raspon portova
+  network_gateway: "Mre\xC5\xBEni usmjeriva\xC4\x8D"
+  subscribe: Pretplati se
+  path_looks_good: Putanja izgleda u redu
+  please_select: Molimo odaberi ...
+  mac_address: MAC Adresa
+  anonymous_guests: Gosti
+  settings: Postavke
+  initial_user_info: "Po\xC4\x8Detni korisnik"
+  control: Kontrola
+  disk_pool_replication: Kopiranje
+  date: 
+    month_names: 
+    - 
+    - "Sije\xC4\x8Danj"
+    - "Velja\xC4\x8Da"
+    - "O\xC5\xBEujak"
+    - Travanj
+    - Svibanj
+    - Lipanj
+    - Srpanj
+    - Kolovoz
+    - Rujan
+    - Listopad
+    - Studeni
+    - Prosinac
+    order: 
+    - :day
+    - :month
+    - :year
+    abbr_day_names: 
+    - Ned
+    - Pon
+    - Uto
+    - Sre
+    - !binary |
+      xIxldA==
+
+    - Pet
+    - Sub
+    formats: 
+      only_day: "%e"
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+    day_names: 
+    - Nedjelja
+    - Ponedjeljak
+    - Utorak
+    - Srijeda
+    - "\xC4\x8Cetvrtak"
+    - Petak
+    - Subota
+    abbr_month_names: 
+    - 
+    - Sij
+    - Vel
+    - !binary |
+      T8W+dQ==
+
+    - Tra
+    - Svi
+    - Lip
+    - Srp
+    - Kol
+    - Ruj
+    - Lis
+    - Stu
+    - Pro
+  username_cannot_be_blank: "Korisni\xC4\x8Dko imene mo\xC5\xBEe biti prazno"
+  reboot: Ponovno pokretanje sustava
+  this_feature_is_under_heavy_development: "Ova zna\xC4\x8Dajka je u razvoju"
+  there_are_no_webapps: "Nema pode\xC5\xA1enih web aplikacija u tvom sustavu u ovom trenutku."
+  are_you_sure_you_want_to_delete_the_static_ip: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 obrisati stati\xC4\x8Dki IP '%{name}' ?"
+  the_ip_looks good: IP izgleda u redu
+  the_name_cannot_be_blank: "Neziv mo\xC5\xBEe biti prazan"
+  uninstall: Deinstaliraj
+  details: Detalji
+  is_now_uninstalled: Sada je deinstalirana
+  themes: Teme
+  the_name_you_input_above_will_be_added_to_the_DNS_server: "Naziv koji unese\xC5\xA1 iznad biti \xC4\x87e dodan u DNS poslu\xC5\xBEitelj i povezan s MAC i IP adresom ispod."
+  new_share: Novo mjesto za razmjenu
+  this_path_is_not_valid: Ova putanja nije ispravna
+  are_you_sure_user: "Jesi li siguran da \xC5\xBEeli\xC5\xA1 obrisati korisnika '%{user}' ?"
+  extra_parameters: Dodatni parametri
+  log_in: Prijava
+  try_installing_some_apps: "Poku\xC5\xA1aj instalirati neke aplikacije"
+  testimonials: Iskustva
+  version: Verzija
+  powering_off: "Isklju\xC4\x8Divanje u tijeku ..."
+  get_involved: "Uklju\xC4\x8Di se i ti!"
+  stop_it: Zaustavi
+  home_domain: "Ku\xC4\x87na domena"
+  is_now_installed: Sada je instalirana
+  total_space: Ukupan prostor
+  never_email_me: "Nikada ne \xC5\xA1alji e-mail"
+  this_shares_files_deleted: "Ovo djeljeno mjesto ne\xC4\x87e biti vi\xC5\xA1e dostupno ( datoteke NE\xC4\x86E biti obrisane)"
+  alias_is_not_valid: "Poveznica (alias) \xE2\x80\x8B\xE2\x80\x8Bnije ispravna"
+  mac_address_of_the_device: "MAC Adresa ure\xC4\x91aja (u obliku 00:11:22:33:44:55)"
+  next: "Slijede\xC4\x87i"
+  web_apps: Web Aplikacije
+  remember_me: Zapamti me
+  password_looks_good: Lozinka izgleda u redu
+  docs: Dokumenti
+  the_ip_address_cannot_be_empty: "IP adresa ne mo\xC5\xBEe biti prazna"
+  pdc_primary_domain_controller: "PDC \xE2\x80\x94 Primarni Domenski Poslu\xC5\xBEitelj"
+  computer_name: "Naziv ra\xC4\x8Dunala"
+  close: zatvori
+  this_file_was_automatically_generated_on: "# Ova datoteka automatski je generirana u %{time} - UPOZORENJE -  bilo kakva ru\xC4\x8Dna promjena BITI \xC4\x86E izgubljena!"
+  installation_instructions: Upute za instalaciju
+  control_panel_for_your_amahi_hdas: "Kontrolna plo\xC4\x8Da tvojih Amahi HDA-ova"
+  please_select_the_type_of_rule_you_want: "Molim odaberi vrstu pravila koju \xC5\xBEeli\xC5\xA1 dodati."
+  create_a_new_webapp: Dodaj novu web aplikaciju
+  refresh_status: "Osvje\xC5\xBEi status"
+  home: "Po\xC4\x8Detna"
+  will_not_start_at_boot_time: "<b>ne\xC4\x87e</b> biti pokrenut pri podizanju sustava"
+  there_are_no_static_ips_defined: "Nema pode\xC5\xA1enih stati\xC4\x8Dkih IP adresa u ovom trenutku."
+  share_name_is_available: Ime mjesta za razmjenu je dostupno
+  powerful_simple_home_networking: "Mo\xC4\x87na, jednostavna ku\xC4\x87na mre\xC5\xBEa"
+  about: Ukratko
+  email_me: "Po\xC5\xA1alji mi e-mail"
+  there_are_no_applications_installed: Nema instaliranih aplikacija u ovom trenutku.
+  firewall_port_forward_message: "Ova pravila omogu\xC4\x87uju ti \r\n\
+    da automatski preusmjeri\xC5\xA1 portove za mre\xC5\xBEne servise prema specifi\xC4\x8Dnim\r\n\
+    ra\xC4\x8Dunalima iza vatrozida. Ove postavke su jedino potrbne ukoliko\r\n\
+    \xC5\xBEeli\xC5\xA1 smjestiti neku vrstu servera, kao npr. web server ili mail\r\n\
+    server na privatnu lokalnu mre\xC5\xBEu iza vatrozida."
+  to_recover_your_password: "Da obnovi\xC5\xA1 lozinku ili aktivacijski e-mail, molim unesi tvoj e-mail ispod"
+  apache_web_server: "Apache Web Poslu\xC5\xBEitelj"
+  seconds: sekundi
+  partition: Particija
+  dhcp: DHCP
+  dhcp_free: Neaktivan
+  this_users_files_deleted: "Datoteke u korisni\xC4\x8Dkom direktoriju (HOME) BITI \xC4\x86E OBRISANE"
+  configured: "Pode\xC5\xA1eno"
+  disabling_lan_manager_will_not_allow_older_machines: "Onemogu\xC4\x87avanje Windows 95/98 LanManager autentifikacije dozvoliti straijim ra\xC4\x8Dunalima pristup mjestu za razmjenu datoteka. Jesi li siguran da \xC5\xBEeli\xC5\xA1 onemogu\xC4\x87iti Windows 95/98 autentifikaciju?"
+  it_will_be_restarted_by_the_watchdog: "(watchdog \xC4\x87e ga ponovno pokrenuti)"
+  you_have_been_logged_out: Odjavljen si
+  permanently: trajno
+  the_url_is_invalid: URL nije valjan
+  amahi_dyndns_updater: "Amahi Dinami\xC4\x8Dko DNS Obnavljanje "
+  pdc_domain: PDC Domena
+  path: Putanja
+  features: "Mogu\xC4\x87nosti"
+  password_cannot_be_blank: Lozinka nesmije biti prazna
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "NAPOMENA: Watchdog je pokrenut i ponovno \xC4\x87e se pokrenuti za nekoliko sekundi."
+  your_existing_network_gatweay: "Tvoj postoje\xC4\x87i mre\xC5\xBEni izlaz/router"
+  warning: UPOZORENJE
+  beta_apps: Beta (test) aplikacije
+  logout: Odjava
+  there_is_no_undo: "NE POSTOJI NA\xC4\x8CIN DA PONI\xC5\xA0TI\xC5\xA0 slijede\xC4\x87i brisanje."
+  dhcp_ip_address: DHCP IP Adresa

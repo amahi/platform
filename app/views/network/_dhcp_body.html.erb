@@ -1,0 +1,21 @@
+<div id="dhcp-table">
+	<div class="settings-table">
+	<% if leases.size > 0 %>
+		<table class="settings">
+		  <thead>
+		    <tr>
+		      <th scope="col" class="settings-col1 dhcp-col1"><%=t 'computer' %></th>
+		      <th scope="col" class="settings-col1 dhcp-col2"><%=t 'dhcp_ip_address' %></th>
+		    </tr>
+		  </thead>
+		  <tbody style="display: none"><tr><td></td></tr></tbody>
+		</table>
+		<%= render :partial => 'network/dhcp_one', :collection => leases %>
+	</div>
+	<% else %>
+	<div align="center">
+	    <h2><%=t 'there_are_no_dynamic_dhcp_leases_outstanding' %></h2>
+	</div>
+	<% end %>
+	</div>
+</div>

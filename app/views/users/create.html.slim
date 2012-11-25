@@ -1,0 +1,4 @@
+- if @user.errors.any?
+  = render 'users/form', :object => @user, :status => 500
+- else
+  = render @users

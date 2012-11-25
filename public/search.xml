@@ -1,0 +1,11 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>HDA Search</ShortName>
+<Description>Search your HDA!</Description>
+<OutputEncoding>UTF-8</OutputEncoding>
+<InputEncoding>UTF-8</InputEncoding>
+<Image height="16" width="16" type="image/png">http://hda/images/logo16x16.png</Image>
+<Url type="text/html" template="http://hda/search/hda?query={searchTerms}" />
+<AdultContent>false</AdultContent>
+<Language>en-us</Language>
+</OpenSearchDescription>

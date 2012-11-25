@@ -1,0 +1,3 @@
+page[:path_messages].replace_html theme_image_tag("warning") + " " + t('this_path_exists_already')
+page.show 'path_messages'
+page[:webapp_create_button].disabled = false

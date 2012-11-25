@@ -1,0 +1,48 @@
+#
+# Greyhole default settings
+#
+# Note: if you make changes to this file and they do not appear
+# in the greyhole.conf, please double check the formatting. To
+# test the parsing of this file do:
+#
+#       echo 'require "yaml"; YAML::load(File.open("greyhole.yml"))' | irb
+#
+
+# db_engine: sqlite or mysql
+db_engine: mysql
+
+# options for sqlite db engine
+db_path: /var/cache/greyhole.sqlite
+
+# options for mysql db engine
+db_name: greyhole
+db_user: greyhole
+db_pass: greyhole
+db_host: localhost
+
+# other defaults:
+email_to: root
+greyhole_log_file: /var/log/greyhole.log
+log_level: DEBUG
+log_memory_usage: no
+dir_selection_algorithm: most_available_space
+df_cache_time: 15
+delete_moves_to_attic: yes
+balance_modified_files: no
+
+# sticky_files and stick_into options can have special nested formatting. *indentation matters*
+# see the details here http://wiki.amahi.org/index.php/Greyhole#Greyhole_advanced_options
+sticky_files:
+- - Music/
+
+# special note about this field:
+#
+# * the format of this section is passed *raw*
+#   to he greyhole.conf file. i.e. use setting = value in greyhole
+#   style, not setting: value
+# * do not use tabs in new lines below, use spaces. otherwise the
+#   yaml parser gets confused. (fwiw: vim does that automatically)
+#
+other: |-
+        # add any group of other settings
+        # here in multiple lines

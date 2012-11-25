@@ -1,0 +1,11 @@
+<%= checkbox_to_remote setting.value == '1',
+	:url => { :controller => 'network', :action => 'toggle_setting', :id => setting, :kind => 'dhcp_in_router' },
+	:before => spinner_show('dhcp'),
+	:success => spinner_hide('dhcp'),
+	:update => { :success => "setting-dhcp" } -%>
+&nbsp; <%= spinner "dhcp" %> &raquo; 
+<% if setting.value == '1' %>
+Uncheck to turn off the DHCP server in your router
+<% else %>
+Check to turn on the DHCP server in your router
+<% end %>

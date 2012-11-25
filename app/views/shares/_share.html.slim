@@ -1,0 +1,71 @@
+div.share[id="whole_share_#{share.id}"]
+
+  table.settings.stretchtoggle
+    tr.alt-row
+      td.settings-col1.shares-col1
+        = link_to share.name, '#'
+      td.settings-col2.shares-col2
+        = link_to path2location(share.name), path2uri(share.name)
+
+  .settings-stretcher[style="display:none;"]
+    .share-manage
+      fieldset
+
+        legend
+          | &nbsp; #{t('edit_share')} &nbsp;
+          b= share.name
+          | &nbsp;&mdash;&nbsp;
+          small= "#{t('created')} #{formatted_date(share.created_at)}"
+
+        .settings-actions
+          = spinner
+          span.delete
+            | #{t('delete')}&nbsp;
+            b= share.name
+            | &nbsp;
+            = link_to theme_image_tag("delete.png", :title => t('delete'), :class => 'theme-image'),
+              share_path(share),
+              :method => :delete,
+              :data => {:confirm => confirm_share_destroy_message(share.name)},
+              :remote => true,
+              :class => 'delete-share'
+
+        .settings-fields
+          table
+            tr
+              td #{t('access')}
+              td= simple_remote_checkbox :id => "share_visible_#{share.id}",
+                                        :css_class => 'share_visible_checkbox',
+                                        :url => toggle_visible_share_path(:id => share.id),
+                                        :label => "#{t('visible')}",
+                                        :checked => share.visible
+            tr
+              td #{t('permissions')}
+              td= render :partial => 'shares/access', :object => share
+
+            - if advanced?
+              tr
+                td #{t('tags')}
+                td[colspan='8' class="tag-main-wrap"]= render :partial => 'shares/tags', :object => share
+
+            tr
+              td #{t('location')}
+              td
+                span.open-update-path-area.focus= share.path
+
+            - if disk_pooling_area?
+              tr
+                td &nbsp;
+                td &nbsp;
+              tr
+                td #{t('disk_pooling')}:
+                td= render :partial => 'shares/disk_pool', :object => share
+
+            - if advanced?
+              tr
+                td #{t('extra_parameters')}
+                td
+                  span.open-update-extras-area.focus= share.extras.blank? ? t('add_extra_parameters') : share.extras
+                  | &nbsp; &nbsp; &nbsp; &raquo; <a href="http://wiki.amahi.org/index.php/Share_Extra_Parameters" target="_blank">#{theme_image_tag("more.png", :class => 'theme-image')}</a>
+                  = simple_remote_select :collection => [[1, 'ok'], [2, 'no']],
+                                         :selected => 2

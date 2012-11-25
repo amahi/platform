@@ -1,0 +1,3 @@
+page[:path_messages].replace_html theme_image_tag("stop") + " " + t('this_path_is_not_valid')
+page.show 'path_messages'
+page[:webapp_create_button].disabled = true

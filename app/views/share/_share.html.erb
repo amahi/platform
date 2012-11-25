@@ -1,0 +1,106 @@
+<%
+	delete_icon = theme_image_tag("delete", :title => "Delete Share")
+	uid = share.id.to_s
+	return if share.nil?
+	toggler = update_page do |page|
+			row = "share_row_" + uid
+			info = "share_info_" + uid
+			page.toggle info
+			page[row].toggle_class_name "settings-row-open"
+		  end
+%>
+<table id="share_row_<%= uid %>" class="settings stretchtoggle" onmouseup="<%= h toggler %>">
+    <tr class="alt-row">
+	<td class="settings-col1 shares-col1">
+		<%= link_to_function(h(share.name), '') %>
+	</td>
+	<td class="settings-col2 shares-col2" id="share_full_path_<%= uid %>">
+		<a href="<%= path2uri(share.name) -%>"><%= path2location(share.name) %></a>
+	</td>
+    </tr>
+</table>
+<div class="settings-stretcher" id="share_info_<%= uid %>" style="display:none;">
+	<div class="share-manage">
+		<fieldset>
+		<legend>&nbsp; <%= t 'edit_share' %> <b><%= h(share.name) %></b> &mdash;
+			<small> <%= d = share.created_at.localtime; "#{t('created')} #{d.to_formatted_s(:short)}  (#{time_ago_in_words(d)})" %></small> &nbsp;</legend>
+			<div class="settings-actions">
+				<%= spinner uid %>
+				<%= t 'delete' %> <b><%= h share.name %></b> &nbsp;
+				<%= link_to_remote(delete_icon,
+					:update => 'shares-table',
+					:confirm => [t('are_you_sure_share', :share => share.name), 
+							t('this_shares_files_deleted'), "", t('there_is_no_undo'), ""].join("\n"),
+					:before => "Element.show('spinner-#{uid}')",
+					:success => "Element.hide('spinner-#{uid}')",
+					:url => { :controller => 'share', :action => 'delete', :id => uid }) %>
+			</div>
+			<div class="settings-fields">
+				<table>
+				<tr>
+					<td><%= t 'access' %>: </td>
+					<td valign="top">
+					<%= render :partial => 'share/visible', :locals => { :share => share } %>
+					</td>
+				</tr>
+				<tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+				<tr>
+					<td><%= t 'permissions' %>: </td>
+					<td valign="top">
+					<%= render :partial => 'share/access', :locals => { :share => share } %>
+					</td>
+				</tr>
+				<% if @advanced %>
+				<tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+				<tr>
+					<td><%= t 'tags' %>: </td>
+					<td colspan="8">
+					<%= render :partial => 'share/tags', :locals => { :share => share } %>
+					</td>
+				</tr>
+				<% end %>
+				<tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+				<tr>
+					<td><%= t 'location' %>: </td>
+					<td> <%= editable_content(
+						:content => {
+						  :element => 'span',
+						  :text => h(share.path),
+						  :options => {
+						    :id => "share_path_#{uid}",
+						    :class => 'editable'
+						  }
+						 },
+						:url => {
+						  :controller => 'share',
+						  :action => 'update_path',
+						  :id => uid
+						}) %>
+					</td>
+				</tr>
+				<% if @advanced && DiskPoolPartition.count > 0 && Greyhole.enabled? %>
+					<tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+					<tr>
+						<td><%= t 'disk_pooling' %>: </td>
+						<td>
+							<%= render :partial => 'share/disk_pool_share', :locals => { :share => share } %>
+						</td>
+					</tr>
+				<% end %>
+				<% if @advanced %>
+					<tr><td> &nbsp; </td><td> &nbsp; </td></tr>
+					<tr>
+						<td><%= t 'extra_parameters' %>: </td>
+						<td>
+							<%= render :partial => 'share/extras', :locals => { :share => share } %>
+						</td>
+					</tr>
+				<% end %>
+				</table>
+			</div>
+			<% status = "settings-status-#{uid}" -%>
+			<div class="settings-status" id="<%= status %>" style="display:none"></div>
+		</fieldset>
+	</div>
+</div>
+

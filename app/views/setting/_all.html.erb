@@ -1,0 +1,51 @@
+<table>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+	<td><%= t 'language' %>:</td>
+	<td>
+		<%= select_tag 'locale', options_for_select(@available_locales, I18n.locale.to_s),
+			:onchange => remote_function(
+				:url => { :controller => 'setting', :action => 'change_language' },
+					:before => spinner_show('global'),
+					:success => spinner_hide('global'),
+					:with => "'locale=' + escape(value)")
+		 %>
+		&nbsp; &nbsp; &raquo; <a href="http://wiki.amahi.org/index.php/Translate_Amahi" target="_blank"><%= theme_image_tag("more", :title => t('translate_amahi')) %></a>
+		<span style="float: right"><%= spinner "global" %></span>
+	</td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td><%= t 'advanced_settings' %>:</td>
+	<td>
+		<span id="setting-advanced">
+		<%= render :partial => "setting/advanced", :locals => { :setting => Setting.find_by_name('advanced') } %>
+		</span>
+		&nbsp; <%= theme_image_tag("danger") %>
+		&nbsp; &nbsp; &raquo; <a href="http://wiki.amahi.org/index.php/Advanced_Settings" target="_blank"><%= theme_image_tag("more") %></a>
+	</td>
+	</tr>
+<% if @advanced %>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+	<td><%= t 'router_control' %>:</td>
+	<td>
+		<span id="setting-firewall">
+		<%= render :partial => "setting/firewall", :locals => { :setting => @firewall } %>
+		</span>
+		&nbsp;
+		<span class="warning">
+		<%= theme_image_tag("danger") %> &nbsp; <%= t 'warning' %>: <%=t 'this_feature_is_under_heavy_development' %>&nbsp;&raquo;&nbsp;<a href="http://wiki.amahi.org/index.php/Router_Control" target="_blank"><%= theme_image_tag("more", :title => 'Router Control') %></a>
+		</span>
+	</td>
+	</tr>
+<% end %>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+	<td><%= t 'guest_dashboard' %>:</td>
+	<td>
+		<span id="setting-guest-dashboard">
+		<%= render :partial => "setting/guest_dashboard", :locals => { :setting => @guest_dashboard } %>
+		</span>
+	</td>
+	</tr>
+</table>

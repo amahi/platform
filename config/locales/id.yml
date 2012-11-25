@@ -1,0 +1,624 @@
+--- 
+id: 
+  firewall_port_forward_message: |-
+    Aturan-aturan ini mengijinkan anda untuk
+    secara otomatis mengalihkan port dari layanan jaringan ke mesin spesifik
+    dalam firewall. Setting ini hanya diperlukan jika anda hendak menginang 
+    server seperti server web atau server mail dalam jaringan pribadi 
+    dalam firewall
+  dhcp: DHCP
+  this_users_files_deleted: Berkas-berkas pengguna ini AKAN DIHAPUS.
+  finalize_settings: Pengaturan Akhir
+  configured: Konfigurasi
+  are_you_sure_share: Anda yakin hendak menghapus share '%{share}'?
+  mac_looks_good: MAC kelihatan beres
+  wiki: Wiki
+  applications: Aplikasi-aplikasi
+  confirm_email: Konfirmasi Email
+  router_control: Kontrol Router
+  openvpn_server: Server OpenVPN
+  port_range_looks_good: Port Range terlihat beres
+  setup: Setup
+  amahi_dyndns_updater: Pembaru Dynamic DNS Amahi
+  start_at_boot_time: Mulai pada saat booting
+  news_about_applications: Berita tentang Aplikasi yang berjalan di Amahi
+  password_cannot_be_blank: Sandi tidak dapat kosong
+  delete_user: Hapus pengguna
+  running: Berjalan
+  require_login: Harus login
+  warning: PERINGATAN
+  start_building_a_new_hda: Mulai membangun HDA baru!
+  name_is_taken_already: Nama telah dipakai
+  my_apps: Aplikasi saya
+  need_help_logging_in: Bantuan untuk log in masuk?
+  confirm_password: Konfirmasi Sandi
+  cancel: Batal
+  address_already_allocated: Alamat telah dialokasikan
+  new: Baru
+  are_you_sure_you_want_to_stop_the_server: Anda yakin hendak menghentikan %{name}?
+  disabling_pdc_will_enable_workgroup_mode: |-
+    Menonaktifkan modus PDC akan mengaktifkan modus Workgroup.
+    Ini adalah perubahan BESAR pengoperasian share. Ini diperuntukkan bagi jaringan rumah (cek wiki untuk pejelasan lanjutan).
+    Anda yakin hendak menonaktifkan modus PDC?
+  address_looks_good: Alamat beres
+  user_name_is_not_available: Nama pengguna tidak tersedia
+  confirmation_must_match: Konfirmasi harus sesuai
+  this_looks_like_a_database_corruption_please_report_it: Sepertinya ada korupsi basis data atau bug (silahkan <a href="http://bugs.amahi.org">lapor di sini</a>).
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: Alamat IP (1-%{max}) akan selalu diasosiasikan dengan alamat MAC di bawah secara statis.
+  are_you_sure_you_would_like_to_delete_calendar: Anda yakin hendak menghapus %{calendar}?
+  are_you_sure_you_would_like_to_uninstall: |-
+    Anda yakin hendak melepas aplikasi ini?
+    Semua data yang diasosiasi dengan aplikasi ini AKAN DIHAPUS
+  pictures: Gambar
+  delete_profile: Hapus profil untuk
+  delete: Hapus
+  theme: Tema
+  disks: Disks
+  unleash_the_power_of_your_home_network: Tunjukkan kekuatan jaringan rumah anda.
+  rule: Aturan
+  are_you_sure_webapp: Anda yakin hendak menghapus Aplikasi web '%{webapp}'?
+  static_ips: IP statik
+  mac_address_to_be_filtered_in_format: alamat MAC yang akan difilter (dalam bentuk 00:11:22:33:44:55)
+  tour: Jelajahi
+  the_ip_address_can_be: Alamat IP dapat
+  port_range_ports_must_be_increasing_order: Port pertama harus kurang atau sama dengan port kedua
+  read_only: Hanya Baca
+  url_filtering: Filter URL
+  password_is_too_short: Sandi terlalu pendek
+  are_you_sure_you_want_to_start_the_server: Anda yakin hendak memulai %{name}?
+  edit_static_ip: Sunting IP statis
+  nickname_info: |-
+    "Alias" adalah pengidentifikasi unik untuk HDA anda.
+    Anda akan perlu untuk log ke <a target="_blank" href="http://wiki.amahi.org/index.php/VPN">VPN</a>  anda
+    dengan <a target="_blank" href="http://wiki.amahi.org/index.php/VPNWindows">klien Windows </a>
+    (dan nama pengguna dan sandi yang telah terdaftar dalam jaringan rumah anda)
+  stopped: Dihentikan
+  add_extra_parameters: (tambahkan parameter ekstra)
+  this_path_exists_already: Jalur ini sudah ada
+  by_signing_up_you_agree_to_the_terms_of_service: Dengan mendaftar anda setujbu dan telah membaca <a href="http://www.amahi.org/home/tos" target="_blank">syarat layanan kami</a>
+  poweroff: Matikan
+  application_uninstalled: Aplikasi yg di-uninstall
+  free_space: Ruang Sisa
+  url: URL
+  location: Lokasi
+  press: Tekan
+  disk: Disk
+  temperature: Temperatur
+  users: Pengguna
+  debug: Debug
+  disk_pool_copies: kopi tambahan
+  full_name: Nama Lengkap
+  install_code_info: |-
+    Install code menyimpan semua pengaturan untuk HDA anda dan digunakan sekali sebagai
+    langkah ahir instalasi HDA anda. Anda TIDAK DAPAT menggunakannya kembali untuk sistem
+    lain karena akan mengacaukan DNS dinamis dan VPN. Buat satu profil untuk tiap HDA yang anda jalankan
+  available: Tersedia
+  this_will_power_off: |-
+    Ini akan mematikan HDA anda.
+    Anda mungkin ingin mematikan DHCP server di router anda jika HDA anda akan berlaku sebagai server DHCP
+    Anda yakin ingin melanjutkan?
+  model: Model
+  system_info: Informasi Sistem
+  preparing_to_install: Mempersiapkan pemasangan
+  the_url_looks_good: URL terlihat beres
+  delete_web_app: Hapus Web app
+  firewall_port_filter_message: Aturan filter port digunakan untuk membatasi paket data dari jaringan lokal anda ke Internet
+  files: Berkas-berkas
+  enabling_lan_manager_is_less_secure: |-
+    Mengaktifkan modus autentifikasi Windows 95/98 tidak terlalu aman, namun akan membantu mengakses mesin-mesin yang lebih lama.
+    Anda yakin hendak mengaktifkan autentifikasi LanManager Windows 95/98?
+  create_alias: Buat Alias
+  status: Status
+  web: Web
+  delete_alias: Hapus Alias
+  recover: Pulihkan
+  start_now: Mulai Sekarang
+  not_updating: Tidak diperbarui
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: Aplikasi menemui kesalahan. Anda akan diteruskan ke halaman log kesalahan (error).
+  core: Inti
+  application: Aplikasi
+  advanced_settings: Pengaturan lanjutan
+  check_the_features_take_the_tour: Periksa fitur-fitur yang tersedia, jelajahi, atau jika anda tidak sabar menunggu -
+  this_will_stop_the_server_permanently: Ini akan menghentikan %{name} SECARA PERMANEN
+  your_control_panel: Panel Kontrol Anda
+  this_application_is_installed_already_please_refresh: Aplikasi sudah terpasang. Silahkan perbarui halaman web ini.
+  sign_out: Keluar
+  this_path_is_not_available: Jalur ini tidak tersedia
+  tracker: Tracker
+  rule_type: Jenis Aturan
+  workgroup_name: Nama Workgroup
+  aliases: Alias-alias
+  port_range_ports_must_be_0_to_64k: Port harus dalam rentang 0-65535
+  share_path_is_available: Jalur share tersedia
+  this_could_be_due_to_lack_of_network_connectivity: Ini mungkin dsebabkan jaringan tidak terhubung.
+  share_path_cannot_be_blank: Jalur share tidak bisa kosong
+  address_is_not_valid: Alamat tidak valid
+  there_are_no_dynamic_dhcp_leases_outstanding: Tidak ada peminjaman DHCP dinamis pada saat ini
+  login: Login
+  rebooting: Dalam proses reboot
+  installed: Terpasang
+  edit_share: Sunting share
+  dhcp_lease: Peminjaman DHCP
+  change: Ubah
+  restart: Restart
+  shares: Shares
+  state: Kondisi
+  manage_themes: Atur Tema
+  search: Cari
+  username_or_email: Nama pengguna atau email
+  email: Email
+  discussion_forum_for: Forum diskusi untuk
+  full_name_looks_good: Nama Lengkap beres
+  name_looks_good: Nama terlihat beres
+  network: Jaringan
+  change_your_account_settings: Ubah pengaturan akun anda
+  visible: Terlihat
+  special_instructions: Instruksi khusus
+  uptime: Waktu nyala
+  disk_pooling: Storage pool
+  this_will_reboot: |-
+    Ini akan me-reboot HDA anda.
+    Anda yakin ingin melanjutkan?
+  this_ip_will_be_filtered: Alamat IP ini akan difilter.
+  dns_aliases: Alias DNS
+  videos: Video
+  used_space: Ruang Terpakai
+  dns_alias: Alias DNS
+  confirm: Konfirmasi
+  name_is_not_valid: Nama tidak valid
+  new_web_app: Apl Web Baru
+  the_alias_name_you_input_will_be_added: Nama yang anda masukkan di atas akan ditambahkan pada server DNS sebagai alias untuk alamat IP di bawah ini.
+  no_documents_found: Tidak ada Dokumen ditemukan
+  there_are_no_static_dhcp_leases: Tidak ada peminjaman DHCP statis pada saat ini.
+  new_alias: Alias Baru
+  edit_user: Sunting pengguna
+  live_help: Bantuan Langsung
+  enabling_pdc_is_a_major_share_change: |-
+    Mengaktifkan modus PDC adalah perubahan BESAR dalam operasi shares.
+    Ini akan mengaktifkan modus Domain dan menonakfifkan modus Workgroup dan memerlukan SEMUA mesin menjadi mesin enterprise (atau "PRO"), dengan informasi yang sesuai. Ini diperuntukkan untuk jaringan perusahaan.
+    Anda yakin hendak mengaktifkan modus PDC?
+  audio: Audio
+  dashboard: Dashboard
+  url_to_filter: URL yang difilter
+  static_ip_address_for_your_hda: Alamat IP Statis untuk HDA anda
+  comment: Komentar
+  root_path: Root Path
+  valid_email_required_for_service: "Alamat email valid diperlukan untuk aktivasi. Kami tidak akan <a href=\"http://www.amahi.org/privacy\" target=\"_blank\">mengirim sampah</a> "
+  number: 
+    format: 
+      separator: ","
+      delimiter: .
+      precision: 3
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        format: "%n %u"
+        units: 
+          kb: KB
+          tb: TB
+          gb: GB
+          byte: 
+            one: Byte
+            other: Bytes
+          mb: MB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+    currency: 
+      format: 
+        format: "%n. %u"
+        unit: Rp
+        separator: ","
+        delimiter: .
+        precision: 2
+  upcoming: Akan datang
+  network_settings: Pengaturan Jaringan
+  are_you_sure_you_want_to_restart_the_server: Anda yakin anda ingin me-restart %{name}?
+  activerecord: 
+    errors: 
+      messages: 
+        taken: sudah dipanjar
+        accepted: harus diterima
+        not_a_number: bukan nomor
+        blank: tidak bisa kosong
+        record_invalid: Validasi gagal:%{errors}
+        greater_than_or_equal_to: harus sama atau lebih besar dari %{count}
+        confirmation: tidak sesuai dengan konfirmasi
+        less_than_or_equal_to: harus sama atau lebih kecil dari %{count}
+        exclusion: sudah dipanjar
+        odd: harus ganjil
+        invalid: tidak valid
+        too_short: terlalu pendek (maksimum %{count} karakter)
+        wrong_length: dengan panjang tidak sama (seharusnya %{count} karakter)
+        empty: tidak bisa kosong
+        too_long: terlalu panjang (maksimum %{count} karakter)
+        less_than: harus lebih kecil dari %{count}
+        even: harus genap
+        greater_than: harus lebih besar dari %{count}
+        equal_to: harus sama dengan %{count}
+        inclusion: tidak terikut di daftar
+      template: 
+        body: "Ada persoalan dengan field berikut:"
+        header: 
+          one: 1 kesalahan mengakibatkan %{model} ini tidak bisa disimpan
+          other: "%{count} kesalahan mengakibatkan %{model} ini tidak bisa disimpan"
+      full_messages: 
+        format: "%{attribute} %{message}"
+  create_a_new_share: Buat Share Baru
+  all_users: Seluruh pengguna
+  delete_static_ip: Hapus IP Statis
+  control_panel: Panel Pengaturan
+  share_name_cannot_be_blank: Nama Share tidak bisa kosong
+  the_boot_option_is_a_critical_setting: Opsi boot adalah pengaturan PENTING. Tidak memulai proses server SANGAT TIDAK DIANJURKAN. Ini dirancang untuk memulai layanan dalam HDA anda tiap boot. ANda yakin tidak ingin memulai proses ini pada saat booting?
+  my_account: Akun saya
+  greyhole_not_installed: "PERHATIAN: Greyhole tidak terpasang dalam sistem ini!"
+  gallery: Galeri
+  transmission_bittorrent_server: Server Bittorrent Transmission
+  is_not_being_monitored_24x7: <b>tidak</b> akan dimonitor 24x7
+  are_you_sure_you_want_to_delete_alias: Anda yakin hendak menghapus alias '%{name}'?
+  ip_address: Alamat IP
+  mysql_database_server: Server DB MySQL
+  edit_and_rate_beta_apps: Sunting dan nilai aplikasi-aplikasi Beta
+  feedback: Tanggapan
+  username: Pengguna
+  done_final_check: Selesai! Pemeriksaan Akhir
+  this_application_is_not_installed_please_refresh: Aplikasi ini tidak terpasang. Silahkan perbarui halaman web ini.
+  user_name_is_available: Nama pengguna tersedia
+  access: Akses
+  there_are_no_shares_created: Tidak ada share dibuat dalam sistem anda saat ini.
+  password: Sandi
+  news: Berita
+  avanced_settings_is_for_developers: Mengaktifkan fitur canggih hanya untuk pengguna lanjut/teknis dan pembangun
+  pooled: Pooled
+  movies: Film
+  get_started: Ayo Mulai!
+  stop: Berhenti
+  confirmation_matches: Konfirmasi kesesuaian
+  device: Perangkat
+  initial_user: Nama Pengguna
+  preparing_to_uninstall: Persiapan untuk melepas
+  servers: Server
+  will_start_at_boot_time: akan mulai pada saat boot
+  this_application_install_ended_with_an_error_please_uninstall_status_is: "Pemasangan aplikasi ini berakhir dengan kesalahan. Silahkan lepaskan dan coba lagi! Status aplikasi ini "
+  mac_filtering: Filter MAC
+  or_view_each_one_separately_below: atau lihat satu per satu secara terpisah.
+  firewall_mac_address_filter_info: |-
+    Masukan pada tabel ini digunakan untuk membatasi tipe paket data tertentu
+    dari jaringan lokal nada ke internet melalui Gateway.
+    Penggunaan filter seperti ini dapat membantu mengamankan atau membatasi
+    jaringan lokal anda.
+  name: Nama
+  are_you_sure_advanced_features: Anda yakin hendak mengaktifkan fitur-fitur canggih?
+  datetime: 
+    distance_in_words: 
+      less_than_x_minutes: 
+        one: kurang dari 1 menit
+        other: kurang dari  %{count} menit
+      x_days: 
+        one: sehari
+        other: "%{count} hari"
+      x_seconds: 
+        one: 1 detik
+        other: "%{count} detik"
+      x_minutes: 
+        one: menit
+        other: "%{count} menit"
+      about_x_hours: 
+        one: sekitar 1 jam
+        other: sekitar %{count} jam
+      less_than_x_seconds: 
+        one: kurang dari 1 detik
+        other: kurang dari %{count} detik
+      x_months: 
+        one: sebulan
+        other: "%{count} bulan"
+      about_x_months: 
+        one: sekitar sebulan
+        other: sekitar %{count} bulan
+      about_x_years: 
+        one: tahun
+        other: noin %{count} tahun
+      over_x_years: 
+        one: lebih dari setahun
+        other: lebih dari %{count} tahun
+      half_a_minute: setengah menit
+    prompts: 
+      month: Bulan
+      second: Detik
+      minute: Menit
+      hour: Jam
+      day: Hari
+      year: Tahun
+  nickname: Alias
+  the_mac_is_invalid: Alamat MAC tidak valid
+  making_home_networking_simple: Menyederhnakan Jaringan Rumah
+  edit_web_app: Sunting Web App
+  created: Dibuat
+  watchdog: Watchdog
+  mac_already_allocated: MAC telah teralokasikan
+  video: Video
+  dyndns_info: |-
+    Amahi memberikan alamat DNS dinamis GRATIS untuk anda. Ini di luar
+    network rumah anda. Anda dapat menggunakannya untuk klien
+    <a target="_blank"
+    href="http://wiki.amahi.org/index.php/VPN">Mac</a> or <a target="_blank"
+    href="http://wiki.amahi.org/index.php/VPNLinux">Linux</a> <a
+    target="_blank" href="http://wiki.amahi.org/index.php/VPN">VPN</a>  
+    (pengguna teknis dapat menggunakannya untuk login dengan <a target="_blank"
+    href="http://wiki.amahi.org/index.php/Ssh-ports">SSH</a>). 
+    Pengguna teknis dapat menggunakannya untuk menginangkan situs web, server game
+    atau servis-servis lain dari network rumah anda (jika anda ingin segera mencoba, tanyakan 
+    melalui kanal IRC atau cari dalam wiki).
+  setting_dmz_failed: Pengaturan DMZ gagal. Silahkan periksa lagi.
+  logs: Log
+  this_name_is_not_available: Nama ini tidak tersedia
+  install_code: Install Code
+  drives: Drives
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H.%M.%S %z"
+      short: "%d %b %H.%M"
+      long: "%d %B %Y %H.%M"
+    pm: pm
+  dns_server: Server DNS
+  calendar_name: Nama Kalender
+  router_ip: IP Router
+  general_amahi_news: "Berita Umum Amahi "
+  sign_up_here: Daftar di sini
+  static_ip_address: Alamat IP Statis
+  port_forwarding: Port Forwarding
+  app_logs: Log Apl
+  view_all_calendars_simultaneously: Lihat semua kalender bersamaan
+  contribute: Kontribusi
+  back: Kembali
+  check_the_calendars_wiki_for_more_details: Periksa calendar wiki untuk informasi lebih banyak bagaimana mengatur kalender dan klien apa yang sesuai.
+  initial_password: Kata sandi
+  support_win_95_98: Dukung Windows 96/98 %mdash; aktifkan (tidak aman) autentifikasi LanManager
+  there_are_no_calendars_available_see_wiki: Tidak ada kalender pada server. Buat kalender dengan klien. Lihat <a href="http://wiki.amahi.org/index.php/Calendars">wiki kalender</a>.
+  dhcp_leases: Peminjaman-peminjaman DHCP
+  disk_pool_details: Pilihlah partisi yang ingin anda masukkan dalam %{greyhole} storage pool, kemudian biarkan %{shares} menggunakan storage pool
+  calendars: Kalender
+  a_single_number_0_254_to_point_to_a_given_machine: Nomor tunggal (0-254) untuk menunjukkan mesin tertentu dalam jaringan anda
+  port_range_ports_must_be_numbers: Port harus berupa angka
+  help: Bantuan
+  there_are_no_applications_available: Tidak ada aplikasi tersedia saat ini.
+  ip_filtering: Filter IP
+  password_changed_successfully: Sandi berhasil diubah
+  tags: Tag
+  router_firewall_settings: Pengaturan Router/Firewall
+  submit_for_debug: Kirimkan untuk debug
+  dhcp_server: Server DHCP
+  name_is_taken_already_or_is_reserved: Nama telah dipakai atau dipesan
+  changelog: Log Perubahan
+  notifications_from_amahi: Notifikasi dari Amahi
+  permissions: Perijinan
+  your_domain_info: |-
+    Inia adalah domain jaringan rumah anda. <b>Hanya</b> tersedia dalam jaringan rumah anda.
+    Untuk detil lebih lanjut silahkan lihat <a target="_blank" href="http://www.amahi.org/faq#what-home-domain-should-i-use">FAQ</a>.
+  there_are_no_firewall_rules_defined: Tidak ada aturan Firewall pada saat ini
+  firewall_url_filter_message: Masukan tabel ini digunakan untuk membatasi URL melalui Gateway
+  the_ip_must_be_1_to_254: IP harus dalam rentang 1-254
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: |-
+    Mengaktifkan modus debug mungkin akan menciptakan berkas log yang sangat besar.
+    Anda yakin hendak mengaktifkan debug Samba?
+  not_a_valid_user_or_password: "Error: nama pengguna atau sandi salah"
+  create_your_hda_profile: Buat Profil HDA Anda
+  share: Share
+  forums: Forum
+  writeable: Dapat ditulis
+  there_are_no_aliases_defined: Tidak ada alias yang didefinisi pada saat ini
+  user_name_is_not_valid: Nama pengguna tidak valid
+  computer: Komputer
+  new_firewall_rule: Aturan Firewall Baru
+  file_server_samba: Server File (Samba)
+  thanks_for_visiting: Terima kasih untuk kunjungannya. Dukung Sponsor kami!
+  new_static_ip: IP Statis Baru
+  this_share_name_is_not_valid: Nama share ini tidak valid
+  create: Buat
+  all_you_need: Semua yang anda perlukan!
+  system: Sistem
+  webapps: Aplikasi Web
+  more: tambahan
+  no_account_yet: Belum ada akun?
+  images: Gambar-gambar
+  music: Musik
+  dynamic_dns: DNS Dinamis
+  this_application_is_installed: Aplikasi terpasang
+  your_home_dns_domain: Domain DNS Rumah Anda
+  router_setting_failed: Pengaturan Router gagal. Silahkan periksa kembali
+  support: 
+    array: 
+      skip_last_comma: true
+      sentence_connector: dan
+  the_watchdog_is_a_critical_setting: Watchdog adalah pengaturan PENTING. Menghentikan proses server pemeriksa SANGAT TIDAK DIANJURKAN. Ini dirancang untuk menjaga layanan di HDA anda berjalan dengan andal meski ada kesalahan kecil. Anda yakin hendak menghentikan watchdog pada server ini?
+  an_external_ip_address_to_make_the_alias: Alamat IP eksternal untuk menunjuk ke alamat IP spesifik
+  ushare_upnp_media_server: Server Media UPnP Ushare
+  mac_is_invalid: MAC tidak valid
+  edit_alias: Sunting alias
+  port_range_ports_are_already_allocated: Port pada rentang itu telah dialokasikan
+  otherwise_you_can_go_to_the_error_log: Atau anda dapat langsung ke <a href="/setup?tab=debug">error log</a>.
+  suggest: Anjurkan!
+  there_are_no_users: Tidak ada pengguna dalam sistem anda saat ini.
+  the_mac_looks_good: MAC terlihat beres
+  protocol: Protokol
+  delete_this_rule: Hapus aturan ini
+  partitions: Partisi-partisi
+  create_share: Buat Share ini
+  no_description_supplied: Tidak ada deskripsi!
+  language: Bahasa
+  apps: Apps
+  alias_looks_good: Alias beres
+  translate_amahi: Terjemahkan Amahi
+  warning_this_application_is_in_testing: "PERINGATAN: Aplikasi ini sedang diuji!"
+  there_are_no_servers_available: Tidak ada server tersedia saat ini.
+  global_settings_for_shares: Pengaturan Global untuk Share
+  subscribe: Langganan
+  delete_share: Hapus share
+  is_being_monitored_24x7: akan dimonitor 24x7
+  disk_pool_replication: Replikasi
+  reboot: Reboot
+  sign_in: Masuk
+  please_double_check_the_settings: Silahkan <strong>periksa kembali pengaturan ini</strong>. karena penting untuk menjalankan HDA anda.
+  new_dns_alias: Alias DNS Baru
+  community: Komunitas
+  create_a_new_user: Buat Pengguna Baru
+  there_are_no_webapps: Tidak ada aplikasi web terpasang pada sistem anda saat ini.
+  are_you_sure_you_want_to_delete_the_static_ip: Anda yakin hendak menghapus IP statis '%{name}'?
+  description: Deskripsi
+  are_you_sure: Anda yakin?
+  port_filtering: Port Filtering
+  results_found: hasil ditemukan
+  efficiently_manage_your_network: Secara efisien mengatur jaringan dan backup dari semua komputer, konsol game dan perangkat lain dalam network anda, dan mengakses secara aman jaringan dari internet. Ini hanya permulaan dari apa yang akan dapat anda kerjakan dengan Amahi.
+  uninstall: Lepaskan
+  port_range_field_cannot_be_empty: Field tidak dapat kosong
+  available_for_installation: (Tersedia untuk instalasi)
+  when_there_are_major_announcements: Kalau ada pengumuman penting
+  manage_your_contributed_apps: Atur aplikasi kontribusi anda
+  log_in: Log In
+  are_you_sure_user: Anda yakin hendak menghapus pengguna '%{user}'?
+  extra_parameters: Parameter tambahan
+  port_range: Port Range
+  network_gateway: Gateway Jaringan
+  please_select: Silahkan pilih...
+  powering_off: Dalam proses mematikan...
+  settings: Pengaturan
+  monitor: Monitor
+  initial_user_info: Pengguna Awal
+  control: Kontrol
+  disk_pooling_enabled: Pool pengguna
+  username_cannot_be_blank: Nama pengguna tidak dapat kosong
+  this_feature_is_under_heavy_development: Fitur ini dalam banyak perubahan
+  alias_is_not_valid: Alias tidak valid
+  details: Detil
+  is_now_uninstalled: telah dilepas
+  global_settings: Pengaturan Global
+  pdc_primary_domain_controller: PDC &mdash; Primary Domain Controller
+  networking: Jaringan
+  themes: Tema
+  the_name_you_input_above_will_be_added_to_the_DNS_server: Nama yang anda masukkan di atas akan ditambahkan ke server DNS dan diasosiasikan pada alamat MAC dan IP di bawah.
+  testimonials: Testimoni
+  installation_instructions: Instruksi instalasi
+  firewall: Firewall
+  version: Versi
+  path_looks_good: Jalur terlihat beres
+  get_involved: Ayo Terlibat!
+  mac_address: alamat MAC
+  refresh_status: Perbarui status
+  date: 
+    order: 
+    - :day
+    - :month
+    - :year
+    abbr_day_names: 
+    - Minggu,Senin
+    - Selasa
+    - Rabu
+    - Kamis
+    - Jum'at
+    - Sabtu
+    formats: 
+      default: "%d %B %Y"
+      short: "%d.%m.%Y"
+      long: "%A, %d %B %Y"
+    day_names: 
+    - Minggu,Senin
+    - Selasa
+    - Rabu
+    - Kamis
+    - Jum'at
+    - Sabtu
+    abbr_month_names: 
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - Mei
+    - Jun
+    - Jul
+    - Agu
+    - Sep
+    - Okt
+    - Nov
+    - Des
+    month_names: 
+    - 
+    - Januari
+    - Februari
+    - Maret
+    - April
+    - Mei
+    - Juni
+    - Juli
+    - Agustus
+    - September
+    - Oktober
+    - November
+    - Desember
+  will_not_start_at_boot_time: <b>Tidak akan</b> mulai pada saat boot
+  there_are_no_static_ips_defined: Tidak ada IP statis pada saat ini.
+  this_shares_files_deleted: Berkas-berkas share ini AKAN DIHAPUS.
+  email_me: Email saya
+  the_ip_looks good: IP terlihat beres
+  there_are_no_applications_installed: Tida ada aplikasi terpasang saat ini.
+  next: Berikut
+  web_apps: Aplikasi Web
+  apache_web_server: Web Server Apache
+  the_name_cannot_be_blank: Nama tidak dapat kosong
+  password_looks_good: Sandi terlihat beres
+  to_recover_your_password: Untuk mengembalikan sandi atau email aktivasi, silahkan masukkan email anda di bawah ini
+  computer_name: Nama Komputer
+  the_ip_address_cannot_be_empty: Alamat IP tidak dapat kosong
+  seconds: detik
+  partition: Partisi
+  new_share: Share Baru
+  this_path_is_not_valid: Jalur in tidak valid
+  disabling_lan_manager_will_not_allow_older_machines: Menonaktifkan autentifikasi LanManager Windows 95/98 tidak akan mengijinkan mesin yang lama melihat share. Anda yakin hendak menonaktifkan modus ini?
+  close: tutup
+  this_file_was_automatically_generated_on: "# File ini dibuat otomatis pada %{time} -PERHATIAN- semua suntingan manual AKAN HILANG!"
+  please_select_the_type_of_rule_you_want: Silahkan pilih jenis aturan yang hendak ditambah
+  create_a_new_webapp: Buat Web App Baru
+  pdc_domain: Domain PDC
+  home_domain: Domain Home
+  you_have_been_logged_out: Anda telah log keluar
+  home: Home
+  stop_it: Hentikan
+  total_space: Ruang Total
+  never_email_me: Jangan pernah email saya
+  path: Path
+  is_now_installed: telah terpasang
+  share_name_is_available: Nama Share tersedia
+  powerful_simple_home_networking: Jaringan rumah handal, mudah
+  beta_apps: Applikasi Beta
+  logout: Logout
+  about: Tentang
+  mac_address_of_the_device: alamat MAC dari perangkat (dalam bentuk 00:11:22:33:44:55)
+  new_user: Pengguna baru
+  docs: Dokumen
+  remember_me: Ingat saya
+  alias_is_taken_already: Alias telah dipakai atau telah dipesan
+  storage: Storage
+  platform: Platform
+  control_panel_for_your_amahi_hdas: Panel Pengaturan untuk Amahi HDA anda
+  these_rules_are_used_to_restrict_ips: |-
+    Aturan berikut ini digunakan untuk membatasi paket data dari
+    IP pada jaringan lokal anda ke Internet.
+    Filter seperti ini dapat berguna dalam mengamankan atau membatasi
+    jaringan lokal anda.
+  permanently: secara permanen
+  the_url_is_invalid: URL tidak valid
+  it_will_be_restarted_by_the_watchdog: (akan di-restrart oleh watchdog)
+  features: Fitur-fitur
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: Watchdong BERJALAN dan akan diulang daam beberapa detik.
+  your_existing_network_gatweay: Router Network/Gateway Anda Saat Ini
+  automated_install: Instal otomatis
+  there_is_no_undo: PENGHAPUSAN INI TIDAK DAPAT DIBATALKAN.
+  dhcp_ip_address: Alamat IP DHCP
+  installed_paren: (terpasang)
+  awake_this_device_via_wol: Aktifkan perangkat ini

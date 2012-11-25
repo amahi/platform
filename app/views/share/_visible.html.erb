@@ -1,0 +1,11 @@
+<% id = "visible_#{share.id}" %>
+<span id="<%= id %>">
+<%= checkbox_to_remote share.visible,
+	:url => { :controller => 'share', :action => 'toggle_visible', :id => share },
+	:submit => id,
+	:before => "Element.show('spinner-access-#{share.id}')",
+	:success => "Element.hide('spinner-access-#{share.id}')",
+	:update => id -%>
+&nbsp; <%= t 'visible' %> &nbsp;
+<%= spinner "access-#{share.id}" %>
+</span>

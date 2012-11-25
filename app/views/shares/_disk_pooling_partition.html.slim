@@ -1,0 +1,20 @@
+- greyhole = disk_pooling_partition
+
+- path = greyhole[:path]
+- total_space = greyhole[:bytes_total].to_f
+- free_space = greyhole[:bytes_free].to_f
+- space_color_class = space_color(total_space, free_space)
+
+- disabled = (!Greyhole.enabled?) || path =~ /^\/media/
+- checked = DiskPoolPartition.enabled?(path) && !disabled
+
+tr[class="#{cycle('odd', 'even')}"]
+  td[align="center"]= simple_remote_checkbox :css_class => 'disk_pooling_checkbox',
+                                             :url => toggle_disk_pool_partition_shares_path(:path => path),
+                                             :checked => checked,
+                                             :disabled => disabled
+  td[align="left"]
+    | #{path} #{warning_greyhole(path)}
+  td[align="center"]= number_to_human_size(total_space)
+  td[align="center" class="temperature #{space_color_class}"]= number_to_human_size(free_space)
+  td[align="center" class="temperature #{space_color_class}"]= number_to_percentage(free_space/total_space*100, :precision => 0)

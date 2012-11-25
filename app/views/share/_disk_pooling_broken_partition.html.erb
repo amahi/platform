@@ -1,0 +1,18 @@
+<% part = disk_pooling_broken_partition
+	t = 0
+	f = 0
+	spacecolor = "bad"
+	path = part[:path]
+	# FIXME not terribly efficient, but hey, big deal
+	checked = DiskPoolPartition.enabled?(path)
+-%>
+<tr class="<%= cycle("odd", "even") %>">
+	<td align="center">
+		<%= render :partial => 'share/disk_pooling_partition_checkbox', :locals => { :checked => checked, :path => path } %>
+	</td>
+	<td><%= spinner "part-#{path}" %></td>
+	<td align="left"><%= part[:path] -%></td>
+	<td align="center"><%= theme_image_tag "warning" %></td>
+	<td align="center">-</td>
+	<td align="center">-</td>
+</tr>

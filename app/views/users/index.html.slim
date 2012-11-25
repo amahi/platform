@@ -1,0 +1,27 @@
+#users.settings
+  #users-table
+    .settings-table
+      - if @users.any?
+        table.settings
+          thead
+            tr
+           	  th.settings-col1.users-col1[scope="col"]= t('username')
+           	  th.settings-col1.users-col2[scope="col"]= t('full_name')
+        = render @users
+      - else
+        div
+          h2= t('there_are_no_users')
+
+= tag('input', :type => 'button', :value => " #{t('new_user')} &raquo; ".html_safe, :class => 'open-area', :id => "new-user-to-step1",  :data => { :related => "#new-user-step1" } )
+
+div
+  #new-user-box
+    #user-new
+      #new-user-step1.area[style="display:none;"]
+        = render 'form'
+
+= content_for(:js_templates) do
+  script[id='updatePasswordTemplate' type='text/x-jquery-tmpl']
+    = render '/js_templates/users/password_form'
+  script[id='updateUsernameTemplate' type='text/x-jquery-tmpl']
+    = render '/js_templates/users/username_form'

@@ -1,0 +1,18 @@
+
+<%= spinner 'systems' %>
+<span id="systems-result">
+<%= link_to_remote(theme_image_tag("poweroff", :title => t('poweroff'), :alt => t('poweroff')),
+		:confirm => t('this_will_power_off'),
+		:url =>  { :controller => 'setting', :action => 'poweroff' },
+		:before => spinner_show('systems'),
+		:success => spinner_hide('systems'),
+		:update => { :success => "systems-result", :failure => 'error_msgs' }) %>
+&nbsp;
+<%= link_to_remote(theme_image_tag("reboot", :title => t('reboot'), :alt => t('reboot')),
+		:confirm => t('this_will_reboot'),
+		:url =>  { :controller => 'setting', :action => 'reboot' },
+		:before => spinner_show('systems'),
+		:success => spinner_hide('systems'),
+		:update => { :success => "systems-result", :failure => 'error_msgs' }) %>
+</span>
+&nbsp;&nbsp;

@@ -1,0 +1,60 @@
+<%	wake_icon = theme_image_tag("wake", :title => t('awake_this_device_via_wol'))
+	lease = dhcp_one[1]
+	uid = lease[:mac]
+	toggler = update_page do |page|
+			row = "dhcp_row_" + uid
+			info = "dhcp_info_" + uid
+			page.toggle info
+			page[row].toggle_class_name "settings-row-open"
+		  end
+%>
+<table id="dhcp_row_<%= uid %>" class="settings stretchtoggle" onmouseup="<%= h toggler %>">
+  <tbody>
+    <tr class="alt-row">
+      <td class="settings-col1 dhcp-col1">
+		<%= link_to_function("#{h lease[:name]}.#{@domain}", '') %>
+      </td>
+      <td class="settings-col2 dhcp-col2">
+        <%= lease[:ip] %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="settings-stretcher" id="dhcp_info_<%= uid %>" style="display:none;">
+	<div class="dhcp-manage">
+		<fieldset>
+		<legend>&nbsp; <b><%= h(lease[:name]) %></b> &mdash;
+			<small> <%= "#{t('created')} #{lease[:last_seen].to_formatted_s(:short)}  (#{time_ago_in_words(lease[:last_seen])})" %></small> &nbsp;</legend>
+			<div class="settings-actions">
+				<%= spinner uid %> &nbsp;
+				<%=t 'awake_this_device_via_wol'%> (<a href="http://wiki.amahi.org/index.php/WOL" target="_blank">WOL</a>)
+					&nbsp; <span id="wake-icon-<%= uid %>"><%= link_to_remote(wake_icon,
+							:before => "Element.show('spinner-#{uid}')",
+							:success => "Element.hide('spinner-#{uid}')",
+							:url => { :controller => 'hosts', :action => 'wake_mac', :mac => lease[:mac]}) %></span>
+			</div>
+			<div class="settings-fields">
+				<table>
+				<tr><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td></tr>
+				<tr>
+					<td><%=t 'ip_address' %>: </td><td> &nbsp; </td>
+					<td><%= lease[:ip] %></td>
+				</tr>
+				<tr><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td></tr>
+				<tr>
+					<td><%=t 'mac_address' %>: </td><td> &nbsp; </td>
+					<td> <%= lease[:mac] %>
+					</td>
+				</tr>
+				<tr><td> &nbsp; </td><td> &nbsp; </td><td> &nbsp; </td></tr>
+				<tr>
+					<td><%=t 'dhcp_lease' %>: </td><td> &nbsp; </td>
+					<td> <%=t "dhcp_#{lease[:state]}" %>
+					</td>
+				</tr>
+				</table>
+			</div>
+		</fieldset>
+	</div>
+</div>
+

@@ -1,0 +1,619 @@
+--- 
+nl: 
+  new_user: Nieuwe gebruiker
+  alias_is_taken_already: Alias is reeds gebruikt of is gereserveerd
+  storage: Opslag
+  user_name_is_not_available: Gebruikersnaam is niet beschikbaar
+  platform: Platform
+  are_you_sure_share: Weet u zeker dat u de gedeelde map '%{share}' wilt verwijderen?
+  these_rules_are_used_to_restrict_ips: Deze regels worden gebruikt om datapakketten te beperken van een IP in uw lokale netwerk met het internet. Het gebruik van dergelijke filters kunnen nuttig zijn bij het veiligstellen of de beperking van uw lokale netwerk.
+  this_looks_like_a_database_corruption_please_report_it: Dit ziet eruit als een database corruptie of een bug (a href="http://bugs.amahi.org">gelieve te melden</a>).
+  mac_looks_good: MAC ziet er goed uit
+  wiki: Wiki
+  confirm_email: Bevestig Email
+  last_login: Laatste login
+  setup: Setup
+  start_at_boot_time: Starten tijdens het opstarten
+  news_about_applications: Nieuws over toepassingen die op Amahi draaien
+  delete_user: Verwijder gebruiker
+  delete_profile: Verwijder profiel voor
+  running: Actief
+  start_building_a_new_hda: Start bouw van een nieuwe HDA!
+  delete: Verwijderen
+  name_is_taken_already: Naam is al in gebruik
+  unleash_the_power_of_your_home_network: Bevrijd de kracht van uw thuis netwerk!
+  are_you_sure_webapp: Weet u zeker dat je de webapplicatie '%{webapp}' wilt verwijderen?
+  automated_install: Automatische installatie
+  need_help_logging_in: Hulp nodig bij het aanmelden?
+  confirm_password: Bevestig wachtwoord
+  installed_paren: (Geinstalleerd)
+  tour: Toer
+  address_already_allocated: Adres is reeds toegewezen
+  new: Nieuw
+  are_you_sure_you_want_to_stop_the_server: Weet u zeker dat u %{name} wil stoppen?
+  disabling_pdc_will_enable_workgroup_mode: |-
+    Uitschakelen van PDC modus schakeld de werkgroep modus in.
+    Dit is een GROTE verandering in de manier waarop de gedeelde mappen werken.
+    Deze optie is bedoeld voor thuis netwerken (zie <a href="http://wiki.amahi.org">de wiki</a> voor meer informatie)
+    Weet u zeker dat u DCP modus uit wil schakelen?
+  address_looks_good: Adres ziet er goed uit
+  finalize_settings: sla instellingen op
+  confirmation_must_match: Bevestiging moet overeenkomen
+  stopped: Gestopt
+  applications: toepassingen
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: Dit statische IP-adres (1-%{max}) is altijd gekoppeld aan het MAC-adres hieronder.
+  this_path_exists_already: Dit pad bestaat al
+  poweroff: Afsluiten
+  router_control: Router beheer
+  are_you_sure_you_would_like_to_delete_calendar: Weet u zeker dat u %{calendar} wil verwijderen?
+  openvpn_server: OpenVPN Server
+  port_range_looks_good: De poort bereik ziet er goed uit
+  pictures: Afbeeldingen
+  disk: Schijf
+  location: Locatie
+  require_login: Aanmelding verplicht
+  theme: Thema
+  disks: Disks
+  rule: Regel
+  static_ips: Statische IP adressen
+  mac_address_to_be_filtered_in_format: MAC adres dat gefilterd moet worden (in de vorm 11:22:33:44:55)
+  my_apps: Mijn toepassingen
+  disk_pool_copies: "Extra copi\xC3\xABen"
+  cancel: Annuleren
+  port_range_ports_must_be_increasing_order: De eerste poort moet minder of gelijk zijn aan de tweede poort
+  password_is_too_short: Wachtwoord is te kort
+  preparing_to_install: Installatie voorbereiden
+  model: Model
+  are_you_sure_you_want_to_start_the_server: Weet u zeker dat u %{name} wil starten?
+  nickname_info: |-
+    De "gebruikersnaam" is uniek voor uw HDA.
+    U heeft het nodig om u aan te melden op <a target="_blank" href="http://wiki.amahi.org/index.php/VPN">VPN</a> met de <a target="_blank" href="http://wiki.amahi.org/index.php/VPNWindows">Windows client</a> (en een geauthoriseerde gebruiker op uw thuis netwerk)
+  files: Bestanden
+  by_signing_up_you_agree_to_the_terms_of_service: Door in te schrijven gaat u akkoord, en hebt u de <a href="http://www.amahi.org/home/tos" target="_blank">terms of service</a> gelezen
+  the_url_looks_good: De URL ziet er goed uit
+  application_uninstalled: Toepassing verwijderd
+  delete_web_app: Verwijder web toepassing
+  free_space: Vrije ruimte
+  url: URL
+  are_you_sure_you_would_like_to_uninstall: |-
+    Weet u zeker dat u deze toepassing wil verwijderen? 
+    Alle gegevens van deze toepassing, WORDEN VERWIJDERD.
+  temperature: Temperatuur
+  users: Gebruikers
+  debug: Debuggen
+  the_ip_address_can_be: Het IP adres kan zijn
+  read_only: Alleen lezen
+  install_code_info: "De installatie code bekijkt alle instellingen voor uw HDA en word eenmalig gebruikt als laatste stap tijdens de installatie van uw HDA. U kunt het beter NIET op meerdere systemen gebruiken, dit zorgt voor fouten in de dynamische DNS en VPN. Cre\xC3\xABer een nieuw profiel voor elke HDA die u heeft."
+  url_filtering: URL Filtering
+  available: Beschikbaar
+  this_will_power_off: |-
+    Dit zal uw HDA afsluiten.
+    Misschien wilt u de router DHCP server aanzetten als uw HDA als DHCP server was ingesteld.
+    Wilt u doorgaan?
+  add_extra_parameters: (extra parameter toevoegen)
+  edit_static_ip: Bewerk statische IP
+  system_info: Systeem informatie
+  this_path_is_not_available: Dit pad is niet beschikbaar
+  firewall_port_filter_message: Poort filter regels worden gebruikt om datapaketten van uw lokale netwerk naar het internet te beperken.
+  press: Pers
+  share_path_cannot_be_blank: Pad van gedeelde map kan niet leeg zijn.
+  address_is_not_valid: Adres is niet geldig
+  create_alias: "Cre\xC3\xABer alias"
+  web: Web
+  delete_alias: Verwijder alias
+  recover: achterhalen
+  installed: Geinstalleerd
+  core: Core
+  start_now: start nu
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: De toepassing heeft een fout gevonden. U word binnen enkele seconden doorgestuurd naar de fout log.
+  application: Toepassing
+  advanced_settings: Geavanceerde instellingen
+  check_the_features_take_the_tour: Bekijk de mogenlijkheden, doe de toer, of als je niet kunt wachten -
+  this_will_stop_the_server_permanently: Hierdoor stopt de %{name} permanent.
+  your_control_panel: Uw configuratiescherm
+  full_name: Volledige naam
+  shares: Shares
+  manage_themes: Beheer thema's
+  discussion_forum_for: Discussie forum voor
+  tracker: Tracker
+  rule_type: Regel type
+  aliases: Aliassen
+  network: Netwerk
+  change_your_account_settings: Verander uw account instellingen
+  port_range_ports_must_be_0_to_64k: De poorten moeten binnen het 0-65535 bereik liggen
+  share_path_is_available: Pad van gedeelde map is beschikbaar.
+  this_could_be_due_to_lack_of_network_connectivity: Dit kan te wijten zijn aan een gebrek van de netwerk-connectiviteit.
+  enabling_lan_manager_is_less_secure: |-
+    Inschakelen van windows 95/98/ME authenticatie is minder veilig maar helpt toegang vanaf oudere machines.
+    Weet u zeker dat u windows 95/98/ME authenticatie in wil schakelen?
+  special_instructions: Speciale instructies
+  there_are_no_dynamic_dhcp_leases_outstanding: Er zijn geen dynamische DHCP-lease uitstaand op dit moment.
+  login: Aanmelden
+  edit_share: Bewerk gedeelde map
+  dhcp_lease: DHCP lease
+  change: Verander
+  status: Status
+  not_updating: Geen updates
+  videos: Videos
+  dhcp_active: Actief
+  name_is_not_valid: Naam is onjuist
+  restart: Herstart
+  confirm: Bevestigen
+  sign_out: Afmelden
+  this_application_is_installed_already_please_refresh: "Deze toepassing is al ge\xC3\xAFnstalleerd. Vernieuw deze webpagina."
+  state: Toestand
+  new_web_app: Nieuwe web applicatie
+  email: Email
+  full_name_looks_good: Volledige naam ziet er goed uit
+  workgroup_name: werkgroep Naam
+  name_looks_good: Naam ziet er goed uit
+  new_alias: Nieuwe alias
+  must_be_logged_in: Je moet ingelogd zijn om toegang te krijgen tot deze pagina
+  rebooting: Opstarten ...
+  uptime: Bedrijfstijd
+  disk_pooling: Opslag pool
+  this_will_reboot: |-
+    Dit zal uw HDA opnieuw opstarten.
+    Wilt u doorgaan?
+  dns_aliases: DNS Aliassen
+  used_space: Gebruikte ruimte
+  static_ip_address_for_your_hda: Statisch IP adres voor uw HDA
+  comment: Reactie
+  the_alias_name_you_input_will_be_added: De naam die u hierboven invult zal worden toegevoegd aan de DNS-server als een alias voor het IP-adres hieronder.
+  root_path: Root Pad
+  search: Zoeken
+  upcoming: Binnenkort
+  username_or_email: Gebruikersnaam of email
+  network_settings: Netwerk instellingen
+  no_documents_found: geen documenten gevonden
+  visible: Zichtbaar
+  create_a_new_share: Maak een nieuwe gedeelde map
+  enabling_pdc_is_a_major_share_change: |-
+    Inschakelen PDC-modus is een belangrijke verandering in de manier waarop u gedeelde mappen benaderd.
+    Hierdoor schakeld u Domein-modus in en de Werkgroep modus uit en vereisen dat alle machines minimaal  PROFESSIONAL versies gebruiken.
+    Het is bedoeld voor enterprise netwerken. Weet u zeker dat u PDC-modus wil inschakelen?
+  all_users: Alle gebruikers
+  delete_static_ip: Verwijder statische IP
+  audio: Geluid
+  dashboard: Dashboard
+  this_ip_will_be_filtered: Dit IP-adres wordt gefilterd.
+  dns_alias: DNS Alias
+  url_to_filter: Url om te filteren
+  the_boot_option_is_a_critical_setting: De boot optie is een kritische instelling. Niet starten van een server proces wordt sterk afgeraden. Dit is bedoeld om diensten te starten in uw HDA bij elke boot. Weet u zeker dat u dit proces niet wil starten tijdens het booten?
+  greyhole_not_installed: "WAARSCHUWING: Greyhole is niet geinstalleerd op dit systeem!"
+  must_be_admin: Je moet beheerder rechten hebben om toegang te krijgen tot deze pagina
+  valid_email_required_for_service: Een geldig emailadres is benodigt voor de activatie. wij zullen je nooit <a href="http://www.amahi.org/privacy" target="_blank">spammen</a>
+  are_you_sure_you_want_to_delete_alias: "Weet u zeker dat u de volgende alias wil verwijderen: '%{name}' "
+  is_not_being_monitored_24x7: word <b>niet</b> 24x7 bewaakt
+  activerecord: 
+    errors: 
+      messages: 
+        greater_than_or_equal_to: moet groter of gelijk zijn aan %{count}
+        record_invalid: "Validatie mislukt: %{errors}"
+        confirmation: komt niet met de bevestiging overeen
+        less_than_or_equal_to: moet minder of gelijk zijn aan %{count}
+        blank: moet opgegeven zijn
+        exclusion: is niet beschikbaar
+        invalid: is ongeldig
+        odd: moet oneven zijn
+        even: moet even zijn
+        too_short: is te kort (niet minder dan %{count} tekens)
+        wrong_length: heeft niet de juiste lengte (moet %{count} tekens lang zijn)
+        empty: moet opgegeven zijn
+        less_than: moet minder zijn dan %{count}
+        greater_than: moet groter zijn dan %{count}
+        equal_to: moet gelijk zijn aan %{count}
+        too_long: is te lang (niet meer dan %{count} tekens)
+        taken: is niet beschikbaar
+        accepted: moet worden geaccepteerd
+        inclusion: is niet in de lijst opgenomen
+        not_a_number: is geen getal
+      full_messages: 
+        format: "%{attribute} %{message}"
+      template: 
+        body: "Controleer alstublieft de volgende velden:"
+        header: 
+          one: "Kon dit %{model} object niet opslaan: 1 fout."
+          other: "Kon dit %{model} niet opslaan: %{count} fouten."
+  there_are_no_static_dhcp_leases: Er zijn geen statische DHCP leases uitstaand op dit moment.
+  live_help: Live Help
+  edit_user: Bewerk gebruiker
+  control_panel: Configuratiescherm
+  share_name_cannot_be_blank: Naam van gedeelde map kan niet leeg zijn
+  get_started: Ga aan de slag!
+  my_account: Mijn account
+  gallery: Gallerij
+  transmission_bittorrent_server: Transmission Bittorrent Server
+  ip_address: IP adres
+  number: 
+    format: 
+      separator: ","
+      precision: 2
+      delimiter: .
+    human: 
+      storage_units: 
+        format: "%n %u"
+        units: 
+          kb: KB
+          tb: TB
+          gb: GB
+          byte: 
+            one: Byte
+            other: Bytes
+          mb: MB
+    currency: 
+      format: 
+        format: "%u %n"
+        unit: !binary |
+          4oKs
+
+        separator: .
+        precision: 2
+        delimiter: .
+  mysql_database_server: MySQL DB Server
+  edit_and_rate_beta_apps: Bewerk en stem op Beta toepassingen
+  or_view_each_one_separately_below: Of bekijk elk apart onderaan
+  username: Gebruikersnaam
+  are_you_sure_you_want_to_restart_the_server: Weet u zeker dat u %{name} opnieuw wil starten?
+  done_final_check: Klaar! laatste check
+  this_application_is_not_installed_please_refresh: "Deze toepassing is niet ge\xC3\xAFnstalleerd. Vernieuw deze webpagina."
+  user_name_is_available: Gebruikersnaam is beschikbaar
+  first_time_admin_setup: Eerste Admin setup. Creeer aub nogmaals uw wachtwoord.
+  news: Nieuws
+  password: Wachtwoord
+  access: Toegang
+  avanced_settings_is_for_developers: Het inschakelen van geavanceerde functies is alleen voor gevorderde / technische gebruikers en ontwikkelaars.
+  there_are_no_shares_created: Er zijn geen gedeelde mappen gemaakt op uw systeem op dit moment.
+  created: Aangemaakt
+  watchdog: Watchdog
+  stop: Stop
+  device: Aparaat
+  initial_user: Gebruikersnaam
+  admin_setup_worked: Admin setup heeft gewerkt. Je kunt nu inloggen
+  preparing_to_uninstall: Verwijdering voorbereiden
+  time: 
+    am: "'s ochtends"
+    formats: 
+      default: "%a %d %b %Y %H:%M:%S %Z"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      datetime: 
+        formats: 
+          default: "%d-%m-%YT%H:%M:%S%Z"
+      only_second: "%S"
+      long: "%d %B %Y %H:%M"
+    pm: "'s middags"
+  dns_server: DNS Server
+  sign_up_here: Meld je hier aan
+  servers: Servers
+  router_ip: Router IP
+  general_amahi_news: Algemeen amahi nieuws
+  feedback: Feedback
+  name: Naam
+  awake_this_device_via_wol: Wek dit systeem
+  port_forwarding: Poort doorsturen
+  datetime: 
+    format: 
+      default: "%Y-%m-%dT%H:%M:%S%Z"
+    prompts: 
+      minute: minuut
+      month: maand
+      second: seconden
+      hour: uur
+      day: dag
+      year: jaar
+    distance_in_words: 
+      less_than_x_minutes: 
+        one: "minder dan \xC3\xA9\xC3\xA9n minuut"
+        other: minder dan %{count} minuten
+      x_days: 
+        one: 1 dag
+        other: "%{count} dagen"
+      x_seconds: 
+        one: 1 seconde
+        other: "%{count} seconden"
+      about_x_hours: 
+        one: "ongeveer \xC3\xA9\xC3\xA9n uur"
+        other: ongeveer %{count} uur
+      less_than_x_seconds: 
+        one: "minder dan \xC3\xA9\xC3\xA9n seconde"
+        other: minder dan %{count} seconden
+      x_months: 
+        one: 1 maand
+        other: "%{count} maanden"
+      x_minutes: 
+        one: 1 minuut
+        other: "%{count} minuten"
+      about_x_years: 
+        one: "ongeveer \xC3\xA9\xC3\xA9n jaar"
+        other: ongeveer %{count} jaren
+      about_x_months: 
+        one: "ongeveer \xC3\xA9\xC3\xA9n maand"
+        other: ongeveer %{count} maanden
+      over_x_years: 
+        one: "langer dan \xC3\xA9\xC3\xA9n jaar"
+        other: langer %{count} jaar
+      half_a_minute: halve minuut
+  nickname: Gebruikersnaam
+  check_the_calendars_wiki_for_more_details: Controleer de kalender wiki voor meer informatie over hoe je de agenda beheerd en welke clients er compatibel zijn.
+  pooled: Pooled
+  edit_web_app: Bewerk web toepassing
+  movies: Films
+  mac_already_allocated: MAC adres al in gebruik
+  dyndns_info: |-
+    Amahi verzorgt een GRATIS, nul-configuratie dynamische DNS adres voor u. Het is extern naar uw thuis netwerk.  U kunt het gebruiken voor <a target="_blank" href="http://wiki.amahi.org/index.php/VPN">Mac</a> of <a target="_blank" href="http://wiki.amahi.org/index.php/VPNLinux">Linux</a> <a target="_blank" href="http://wiki.amahi.org/index.php/VPN">VPN</a>  (Technische gebruikers kunnen het ook gebruiken voor <a target="_blank"
+    href="http://wiki.amahi.org/index.php/Ssh-ports">SSH</a>).  U kunt er websites me hosten, spelletjes servers, of andere diensten voor uw thuis netwerk. (als u haast heeft, vraag het in het IRC kanaal of zoek het in de wiki)
+  confirmation_matches: Bevestiging komt overeen
+  setting_dmz_failed: het instellen van de DMZ is mislukt. check de instellingen op juistheid.
+  logs: Logbestanden
+  this_name_is_not_available: Deze naam is niet beschikbaar
+  drives: Schijven
+  password_changed_successfully: Wachtwoord succesvol veranderd
+  will_start_at_boot_time: zal starten tijdens het opstarten
+  calendar_name: Kalender Naam
+  this_application_install_ended_with_an_error_please_uninstall_status_is: Deze toepassings installatie eindigde met een fout. Verwijder en probeer het opnieuw! Toepassings status is
+  mac_filtering: MAC filtering
+  tags: Tags
+  router_firewall_settings: Router/Firewall instellingen
+  firewall_mac_address_filter_info: |-
+    Regels in deze tabel worden gebruikt om bepaalde soorten gegevens pakketten te beperken van uw lokale netwerk naar internet via de gateway.
+    Gebruik van dergelijke filters kunnen nuttig zijn bij het beveiligen of beperken van je lokale netwerk.
+  static_ip_address: Statisch IP adres
+  are_you_sure_advanced_features: Bent u er zeker van dat u de geavanceerde instellingen wil inschakelen
+  dhcp_server: DHCP server
+  app_logs: Toepassings Logbestanden
+  changelog: Veranderingen
+  contribute: Toevoegen
+  back: Terug
+  notifications_from_amahi: Notificaties van amahi
+  support_win_95_98: Ondersteuning Windows 95/98 - schakeld onveilige LanManager authenticatie in
+  there_are_no_calendars_available_see_wiki: "Er zijn geen agenda's beschikbaar op de server. Maak ze met een kalender cli\xC3\xABnt. Zie de <a href=\"http://wiki.amahi.org/index.php/Calendars\">Kalenders wiki</a>."
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: |-
+    Inschakelen van debug zorgt mogenlijk voor grote log bestanden.
+    Weet je zeker dat je samba debug in wil schakelen?
+  the_mac_is_invalid: Het MAC adres is onjuist
+  making_home_networking_simple: Maakt thuis netwerken simpel!
+  disk_pool_details: Selecteer de partitie's die je toe wil voegen in %{greyhole} opslag, voor %{shares} om te gebruiken.
+  calendars: Kalenders
+  a_single_number_0_254_to_point_to_a_given_machine: Een enkele nummer (0-254) om te verwijzen naar een bepaalde machine in je netwerk
+  writeable: Beschrijfbaar
+  port_range_ports_must_be_numbers: De poorten moeten uit nummers bestaan
+  help: Help
+  new_firewall_rule: Nieuwe firewall regel
+  video: Video
+  thanks_for_visiting: Bedankt en tot ziens. Bekijk ook onze sponsors!
+  install_code: Installatie code
+  new_static_ip: Nieuwe statische IP
+  this_share_name_is_not_valid: Deze gedeelde map naam is niet geldig
+  there_are_no_applications_available: Er zijn geen toepassingen beschikbaar op dit moment.
+  ip_filtering: IP filtering
+  create: "Cre\xC3\xABer"
+  guest_dashboard: Gasten Dashboard
+  view_all_calendars_simultaneously: Alle kalenders tegelijk bekijken
+  music: Muziek
+  permissions: Rechten
+  initial_password: Wachtwoord
+  your_domain_info: |-
+    Dit is uw thuis netwerk domein, het is <b>alleen</b> beschikbaar binnen uw thuis netwerk.
+    Voor meer details over dit onderwerp kijk op <a target="_blank" href="http://www.amahi.org/faq#what-home-domain-should-i-use">de FAQ</a>.
+  there_are_no_firewall_rules_defined: Er zijn geen firewall regels gedefineerd op dit moment.
+  firewall_url_filter_message: Regels in deze tabel worden gebruikt om URL's te beperken door middel van de Gateway.
+  dhcp_leases: DHCP leases
+  dynamic_dns: Dynamische DNS
+  the_ip_must_be_1_to_254: "Het IP adres moet in de volgende bereik liggen: 1-254"
+  not_a_valid_user_or_password: "Fout: Ongeldige gebruikersnaam of ongeldig wachtwoord"
+  create_your_hda_profile: "cre\xC3\xABer uw HDA profiel"
+  your_home_dns_domain: Uw thuis DNS Domein
+  theme_by: Thema door
+  forums: Forums
+  there_are_no_aliases_defined: Er zijn geen aliassen gedefinieerd op dit moment
+  user_name_is_not_valid: Gebruikersnaam is onjuist
+  all_you_need: Alles wat je nodig hebt!
+  system: Systeem
+  name_is_taken_already_or_is_reserved: Naam is al in gebruik, of is regeserveerd
+  webapps: Webtoepassingen
+  submit_for_debug: Versturen voor debuggen
+  more: Meer
+  protocol: Protocol
+  no_account_yet: Nog geen account?
+  delete_this_rule: Verwijder deze regel
+  images: Afbeeldingen
+  language: Taal
+  this_application_is_installed: "Deze Toepassing is ge\xC3\xAFnstalleerd."
+  share: Gedeelde map
+  partitions: Partities
+  router_setting_failed: Router instellen mislukt. Bekijk uw instellingen.
+  global_settings_for_shares: Globale instellingen voor gedeelde mappen
+  the_watchdog_is_a_critical_setting: De watchdog is een kritische instelling. Stoppen met het toezicht op een server proces wordt sterk afgeraden. Dit is bedoeld om diensten draaiend te houden, zelfs in de aanwezigheid van fouten. Weet u zeker dat u de watchdog van deze server wil stoppen?
+  warning_this_application_is_in_testing: "WAARSCHUWING: Deze toepassing is nog in beta stadium"
+  is_being_monitored_24x7: word 24x7 bewaakt
+  computer: Computer
+  an_external_ip_address_to_make_the_alias: Een externe IP-adres, zodat het verwijst naar een specifiek IP-adres
+  file_server_samba: Bestands server (Samba)
+  mac_is_invalid: MAC is onjuist
+  edit_alias: Bewerk alias
+  port_range_ports_are_already_allocated: Poorten binnen dit bereik zijn al gebruikt
+  please_double_check_the_settings: |-
+    <strong>Wees er zeker van</strong> dat deze instellingen correct zijn.
+    Deze instellingen zijn cruciaal om uw HDA meteen werkend te krijgen.
+  otherwise_you_can_go_to_the_error_log: Of ga meteen door naar de <a href="/setup?tab=debug">error log</a>.
+  description: Beschrijving
+  there_are_no_users: Er zijn geen gebruikers op uw systeem op dit moment.
+  are_you_sure: Bent u er zeker van?
+  efficiently_manage_your_network: Beheer efficient het netwerk en backup alle computers, console's en andere apparaten op uw netwerk, en bereik uw netwerk op afstand via een beveiligde verbinding. Dit is enkel het begin van wat u allemaal kunt doen met Amahi!
+  port_range_field_cannot_be_empty: Deze velden kunnen niet leeg zijn
+  available_for_installation: (Beschikbaar voor installatie)
+  create_share: "Cre\xC3\xABer deze gedeelde map"
+  apps: Toepassingen
+  translate_amahi: Vertaal Amahi
+  alias_looks_good: Alias ziet er goed uit
+  support: 
+    array: 
+      words_connector: ","
+      last_word_connector: ", en"
+      two_words_connector: en
+  delete_share: Verwijder gedeelde map
+  ushare_upnp_media_server: Ushare UPnP Media Server
+  monitor: Bewaking
+  sign_in: Aanmelden
+  disk_pooling_enabled: Gebruikt pool
+  new_dns_alias: Nieuwe DNS alias
+  community: Gemeenschap
+  create_a_new_user: Maak een nieuwe gebruiker aan
+  suggest: Suggesties
+  port_filtering: Poort Filtering
+  results_found: resultaten gevonden
+  the_mac_looks_good: het MAC adres ziet er goed uit
+  when_there_are_major_announcements: Als er grote mededelingen zijn
+  no_description_supplied: Geen beschrijving toegevoegd!
+  manage_your_contributed_apps: Beheer uw toegevoegde toepassingen
+  global_settings: Globale instellingen
+  networking: Netwerken
+  firewall: firewall
+  there_are_no_servers_available: Er zijn geen servers beschikbaar op dit moment.
+  port_range: Poort bereik
+  network_gateway: Netwerk Gateway
+  path_looks_good: pad ziet er juist uit
+  please_select: Selecteer alstublieft..
+  subscribe: Abonneren
+  mac_address: MAC adres
+  anonymous_guests: Gasten
+  settings: Instellingen
+  initial_user_info: Eerste gebruiker
+  control: Beheer
+  disk_pool_replication: Replicatie
+  date: 
+    month_names: 
+    - 
+    - januari
+    - februari
+    - maart
+    - april
+    - mei
+    - juni
+    - juli
+    - augustus
+    - september
+    - oktober
+    - november
+    - december
+    order: 
+    - :day
+    - :month
+    - :year
+    abbr_day_names: 
+    - zon
+    - maa
+    - din
+    - woe
+    - don
+    - vri
+    - zat
+    formats: 
+      only_day: "%e"
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    day_names: 
+    - zondag
+    - maandag
+    - dinsdag
+    - woensdag
+    - donderdag
+    - vrijdag
+    - zaterdag
+    abbr_month_names: 
+    - 
+    - jan
+    - feb
+    - mar
+    - apr
+    - mei
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - dec
+  username_cannot_be_blank: Gebruikersanaam kan niet leeg zijn
+  reboot: Opnieuw opstarten
+  the_ip_looks good: Het IP adres ziet er goed uit
+  this_feature_is_under_heavy_development: Deze functie is zwaar in ontwikkeling
+  there_are_no_webapps: Er zijn geen web toepassingen geconfigureerd in uw systeem op dit moment.
+  are_you_sure_you_want_to_delete_the_static_ip: "Weet u zeker dat u de volgende statische IP wil verwijderen:  '%{name}'?"
+  the_name_cannot_be_blank: De naam kan niet leeg zijn
+  uninstall: Verwijderen
+  details: Details
+  is_now_uninstalled: Is nu verwijderd
+  themes: Thema's
+  the_name_you_input_above_will_be_added_to_the_DNS_server: De naam die u hierboven invult zal worden toegevoegd aan de DNS-server en gekoppeld worden aan het MAC en IP-adressen hieronder.
+  new_share: Nieuwe gedeelde map
+  this_path_is_not_valid: Dit pad is niet geldig
+  log_in: aanmelden
+  are_you_sure_user: Weet u zeker dat u gebruiker '%{user}' wilt verwijderen?
+  extra_parameters: Extra Parameters
+  try_installing_some_apps: Installeer eens wat apps
+  testimonials: Getuigenissen
+  version: Versie
+  powering_off: Afsluiten ...
+  get_involved: Raak betrokken!
+  stop_it: Stop
+  home_domain: Thuis Domein
+  total_space: Totale ruimte
+  never_email_me: Email mij nooit.
+  is_now_installed: Is nu geinstalleerd
+  this_shares_files_deleted: Deze gedeelde map zal niet langer beschikbaar zijn! (bestanden zullen niet worden verwijderd).
+  alias_is_not_valid: Alias is ongeldig
+  mac_address_of_the_device: MAC adres van het apparaat (in de vorm 11:22:33:44:55)
+  next: Volgende
+  web_apps: Web applicaties
+  remember_me: Herinner mij
+  password_looks_good: Wachtwoord ziet er juist uit
+  docs: Documenten
+  the_ip_address_cannot_be_empty: Het IP adres kan niet leeg zijn
+  pdc_primary_domain_controller: PDC &mdash; Primairy Domain Controller
+  computer_name: Computernaam
+  close: Sluiten
+  this_file_was_automatically_generated_on: "# Dit bestand is automatisch gegenereerd op %{time} - WAARSCHUWING - alle handmatig wijzigingen zullen verloren gaan!"
+  installation_instructions: Installatie instructies
+  control_panel_for_your_amahi_hdas: Configuratiescherm voor uw Amahi HDA
+  please_select_the_type_of_rule_you_want: Selecteer alstublieft het type regel dat u toe wil voegen.
+  create_a_new_webapp: "Cre\xC3\xABer een nieuwe web toepassing"
+  refresh_status: Vernieuwen status
+  home: Start
+  will_not_start_at_boot_time: Zal <b>niet</b> gestart worden tijdens het opstarten
+  there_are_no_static_ips_defined: Er zijn geen statische IP adressen gedefinieerd op dit moment.
+  share_name_is_available: Naam van gedeelde map is beschikbaar
+  powerful_simple_home_networking: Krachtig, Simpel, Thuis netwerken
+  about: Over Amahi
+  email_me: Email mij
+  there_are_no_applications_installed: Er zijn nog geen toepassingen geinstalleerd op dit moment.
+  firewall_port_forward_message: Deze regels stellen u in staat  automatisch poorten door te sturen voor netwerk diensten aan een specifieke machine in de firewall. Deze instellingen zijn alleen nodig indien u wenst om een soort van server zoals een webserver of mailserver op de particuliere lokale netwerk binnen de firewall te gebruiken.
+  to_recover_your_password: Om je wachtwoord of activatiemail te achterhalen, vul je email in in het onderstaande veld.
+  apache_web_server: Apache Web Server
+  seconds: Seconden
+  partition: Partitie
+  dhcp: DHCP
+  dhcp_free: Inactief
+  this_users_files_deleted: De bestanden van deze gebruiker ZULLEN WORDEN VERWIJDERD.
+  configured: Geconfigureerd
+  disabling_lan_manager_will_not_allow_older_machines: |-
+    Uitschakelen van windows 95/98/ME LanManager authenticatie masakt het voor oudere machines onmogenlijk te verbinden met uw gedeelde mappen.
+    Weet u zeker dat u deze authenticatie modus wil uitschakelen?
+  you_have_been_logged_out: U bent afgemeld
+  permanently: Permanent
+  the_url_is_invalid: De URL is niet geldig
+  it_will_be_restarted_by_the_watchdog: (Het zal herstart worden door de watchdog)
+  amahi_dyndns_updater: Amahi Dynamische DNS Updater
+  pdc_domain: PDC Domein
+  path: Pad
+  features: mogelijkheden
+  password_cannot_be_blank: Wachtwoord kan niet leeg zijn
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "OPMERKING: De watchdog wordt uitgevoerd en zal het opnieuw starten in een paar seconden."
+  your_existing_network_gatweay: Uw bestaande netwerk Gateway/Router
+  warning: WAARSCHUWING
+  dhcp_ip_address: DHCP IP Adres
+  beta_apps: Beta toepassingen
+  logout: Afmelden
+  there_is_no_undo: Dit kan NIET ONGEDAAN worden gemaakt.

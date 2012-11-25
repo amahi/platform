@@ -1,0 +1,155 @@
+@import "compass";
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/reset";
+
+
+body {
+	font: 12px "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif;
+	background: url(/assets/body_bg.jpg) repeat-x #e6f5fc;
+    &.login {border-top-color: #464646;}
+
+}
+
+#nav {
+  margin: 0 0 0 8px;
+  padding: 16px;
+  a: {color: #777;}
+}
+
+a {text-decoration: none;}
+
+#logo {
+  margin-top: 100px;
+  h1 a {
+    background: url(/assets/amahi-logo.png) no-repeat top center;
+    width: 326px;
+    height: 67px;
+    text-indent: -9999px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    display: block;
+  }
+}
+
+#login {
+  width: 380px;
+  margin: 20px  auto 7em auto;
+}
+
+.message-error {
+  margin: 0 0 16px 8px;
+  padding: 12px;
+  border: 1px solid #C00000;
+  background-color: #FFEBE8;
+}
+
+.message-message {
+  margin: 0 0 16px 8px;
+  padding: 12px;
+  border: 1px solid #9ee894;
+  background-color: #e0ffda;
+}
+
+.message-notice {
+  margin: 0 0 16px 8px;
+  padding: 12px;
+  border: 1px solid #FAB762;
+  background-color: #FFF8B0;
+}
+
+form {
+  margin-left: 8px;
+  padding: 26px 46px 50px 46px;
+
+  font-weight: bold;
+
+  @include border-radius(5px);
+  @include box-shadow(rgba(200,200,200,1) 0 4px 18px);
+
+  background: #f4e4c3;
+
+  .rememberme {
+    font-weight: normal;
+    float: left;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 24px;
+  }
+
+  label {
+    padding-bottom: 4px;
+    display: block;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  input {
+    color: #555;
+    &[disabled='disabled'] {
+      color: #999;
+      background-color: #eee;
+    }
+  }
+
+  .submit {
+
+    float: right;
+
+    input {
+
+      margin-top: -6px;
+      padding: 5px 10px 5px 10px;
+
+      background-color: #e1b65b !important;
+
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif;
+      font-size: 13px;
+      color: #444;
+      text-decoration: none;
+
+      border: 1px solid #cf9820;
+      @include border-radius(6px);
+
+      cursor: default;
+
+      &:hover {
+        color: #d54e21;
+        border-color: #8e6203;
+      }
+    }
+  }
+
+  #password, #username, #password_confirmation, #user_email {
+    font-size: 20px;
+    width: 97%;
+    padding: 3px;
+    margin-right: 6px;
+  }
+
+}
+
+.updated {
+	background-color: #ffffe0;
+	border-color: #e6db55;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
