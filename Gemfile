@@ -43,5 +43,7 @@ group :test do
   gem "capybara"
   # FIXME: required for Fedora 17
   gem 'minitest'
+  #required for javascript test in selenium
+  gem 'poltergeist'
 end
 
