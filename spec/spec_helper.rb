@@ -7,7 +7,7 @@ require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'factory_girl_rails'
 
-#reguired for using transactional fixtures with selenium
+#reguired for using transactional fixtures with javascript driver
 ActiveRecord::ConnectionAdapters::ConnectionPool.class_eval do
 	def current_connection_id
 		# Thread.current.object_id
@@ -49,6 +49,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include FactoryGirl::Syntax::Methods
+
   #change the default javascript driver to webkit
   config.before(:suite) do
 	Capybara.javascript_driver = :poltergeist
@@ -57,5 +58,4 @@ RSpec.configure do |config|
 	Capybara.reset_sessions!
 	Capybara.use_default_driver
   end
-
 end
