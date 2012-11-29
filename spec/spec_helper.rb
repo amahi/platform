@@ -4,7 +4,16 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
 require 'factory_girl_rails'
+
+#reguired for using transactional fixtures with selenium
+ActiveRecord::ConnectionAdapters::ConnectionPool.class_eval do
+	def current_connection_id
+		# Thread.current.object_id
+		Thread.main.object_id
+	end
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -40,4 +49,13 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include FactoryGirl::Syntax::Methods
+  #change the default javascript driver to webkit
+  config.before(:suite) do
+	Capybara.javascript_driver = :poltergeist
+  end
+  config.after(:each) do 
+	Capybara.reset_sessions!
+	Capybara.use_default_driver
+  end
+
 end
