@@ -42,24 +42,34 @@ describe "Users tab" do
 		expect(page).to have_no_content(user.login)
 	end
 	it "should not allow an admin user to delete its own account" do
+		pending
 	end
 	it "should not allow an admin user to revoke its own admin rights" do
+		pending
 	end
 	it "should allow an admin user to create a regular user" do
+		pending
 	end
 	it "should allow an admin nuser to create an admin user" do
+		pending
 	end
 	it "should allow an admin user to revoke admin rights to another user" do
+		pending
 	end
 	it "should allow an admin user to promote a regular user to admin" do
+		pending
 	end 
 	it "should allow an admin user to change his full name" do
+		pending
 	end
 	it "should allow an admin user to change the full name of another user" do
+		pending
 	end
 	it "should allow an admin user to change his password" do
+		pending
 	end
 	it "should allow an admin user to change another user's password" do
+		pending
 	end
 end
 
