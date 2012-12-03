@@ -33,20 +33,20 @@ class UsersController < ApplicationController
       user.save!
       @saved = true
     end
-    render :json => {:status => @saved ? 200 : 500}
+    render :json => { :status => @saved ? :ok : :not_acceptable }
   end
 
   def update_password
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
     errors = @user.errors.any?
-    render :json => {:status => errors ? 500 : 200, :message => errors ? '' : t('password_changed_successfully')}
+    render :json => { :status => errors ? :not_acceptable : :ok, :message => errors ? '' : t('password_changed_successfully') }
   end
 
   def update_username
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
-    render :json => {:status => @user.errors.any? ? 500 : 200}
+    render :json => { :status => @user.errors.any? ? :not_acceptable : :ok }
   end
 
   protected

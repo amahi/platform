@@ -60,7 +60,7 @@ class AppsController < ApplicationController
       app.save
       @saved = true
     end
-    render :json => {:status => @saved ? 200 : 500}
+    render :json => { :status => @saved ? :ok : :not_acceptable }
   end
 
 end

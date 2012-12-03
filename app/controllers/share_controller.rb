@@ -314,7 +314,7 @@ class ShareController < ApplicationController
 		end
 	end
 
-private
+	private
 
 	def is_valid_domain_name(domain)
 		return false if domain.size > 15 || domain.size < 1

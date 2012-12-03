@@ -37,7 +37,7 @@ class NetworkController < ApplicationController
 			# visible to the user!
 			s.value = old
 			s.save!
-			render :partial => 'network/router/errors', :status => 500, :locals => { :msg => t('router_setting_failed') }
+			render :partial => 'network/router/errors', :status => :not_acceptable, :locals => { :msg => t('router_setting_failed') }
 		end
 	end
 
@@ -56,7 +56,7 @@ class NetworkController < ApplicationController
 		rescue
 			s.value = old
 			s.save!
-			render :partial => 'network/router/dmz_error', :status => 500, :locals => { :msg => t('setting_dmz_failed') }
+			render :partial => 'network/router/dmz_error', :status => :not_acceptable, :locals => { :msg => t('setting_dmz_failed') }
 		end
 	end
 

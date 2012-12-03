@@ -6,12 +6,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -22,106 +22,106 @@ require 'net/http'
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
-  # refactored
+	# refactored
 
-  def current_user_is_admin?
-    current_user && current_user.admin?
-  end
+	def current_user_is_admin?
+		current_user && current_user.admin?
+	end
 
-  def rtl?
-    @locale_direction == 'rtl'
-  end
+	def rtl?
+		@locale_direction == 'rtl'
+	end
 
-  def theme
-    @theme
-  end
+	def theme
+		@theme
+	end
 
-  def hda_stylesheets
-    @hda_stylesheets || []
-  end
+	def hda_stylesheets
+		@hda_stylesheets || []
+	end
 
-  def page_title
-    @page_title
-  end
-  def full_page_title
-    page_title ? "Amahi Home Server &rsaquo; #{page_title}".html_safe : "Amahi Home Server"
-  end
+	def page_title
+		@page_title
+	end
+	def full_page_title
+		page_title ? "Amahi Home Server &rsaquo; #{page_title}".html_safe : "Amahi Home Server"
+	end
 
-  def get_feeds()
-    feeds = ""
-    begin
-      feed = 'blog.amahi.org'
-      if Ping.pingecho(feed, 2, 'http')
-        Net::HTTP.start(feed) do |http|
-          req = Net::HTTP::Get.new('/news/')
-          response = http.request(req)
-          feeds = response.body
-        end
-      end
-    rescue Exception => e
-      puts e
-    end
-    feeds.html_safe
-  end
-
-
-
-  def simple_remote_checkbox options
-
-    parsed_options = {}
-    parsed_options[:checked] = 'checked' if options[:checked]
-    parsed_options[:disabled] = 'disabled' if options[:disabled]
-
-    options[:id] = SecureRandom.hex(2) unless options[:id]
-
-    content_tag('span', :id => options[:id]) do
-      html = ''
-      html << tag('input', {:class => options[:css_class], :id => "checkbox-#{options[:id]}", :type => 'checkbox', :data => {:url => options[:url]}}.merge(parsed_options))
-      html << "&nbsp;&nbsp;"
-      html << (block_given? ? yield : options[:label].to_s)
-      html.html_safe
-    end
-  end
-
-  def simple_remote_select options
-
-    parsed_options = {}
-    parsed_options[:disabled] = 'disabled' if options[:disabled]
-
-    options[:id] = SecureRandom.hex(2) unless options[:id]
-
-    content_tag('span', :id => options[:id]) do
-      html = ''
-      html << (block_given? ? yield : options[:label].to_s)
-      html << select_tag("select", options_from_collection_for_select(options[:collection], "first", "last", options[:selected].to_s), :data => {:url => options[:url]}.merge(parsed_options))
-      html << theme_image_tag("working.gif", :class => "spinner theme-image", :style=> "display: none;") unless options[:no_spinner]
-      html.html_safe
-    end
-  end
+	def get_feeds()
+		feeds = ""
+		begin
+			feed = 'blog.amahi.org'
+			if Ping.pingecho(feed, 2, 'http')
+				Net::HTTP.start(feed) do |http|
+					req = Net::HTTP::Get.new('/news/')
+					response = http.request(req)
+					feeds = response.body
+				end
+			end
+		rescue Exception => e
+			puts e
+		end
+		feeds.html_safe
+	end
 
 
-  def spinner css_class = ''
-    theme_image_tag("working.gif", :class => "spinner theme-image #{css_class}", :style=> "display: none;")
-  end
 
-  def formatted_date(date)
-    date = date.localtime
-    "#{date.to_formatted_s(:short)} (#{time_ago_in_words(date)})"
-  rescue
-    '-'
-  end
+	def simple_remote_checkbox options
+		parsed_options = {}
+		parsed_options[:checked] = 'checked' if options[:checked]
+		parsed_options[:disabled] = 'disabled' if options[:disabled]
 
-  def path2uri(name)
-    name = URI.escape name
-    is_a_mac? ? "smb://hda/#{name}" : "file://///hda/#{name}"
-  end
+		options[:id] = SecureRandom.hex(2) unless options[:id]
 
-  def path2location(name)
-    fwd = '\\'
-    is_a_mac? ? '&raquo; '.html_safe + h(name.gsub(/\//, ' ▸ ')) : h('\\\\hda\\' + name.gsub(/\//, fwd))
-  end
+		content_tag('span', :id => options[:id]) do
+			html = ''
+			html << tag('input', {:class => options[:css_class], :id => "checkbox-#{options[:id]}", :type => 'checkbox', :data => {:url => options[:url]}}.merge(parsed_options))
+			html << "&nbsp;&nbsp;"
+			html << (block_given? ? yield : options[:label].to_s)
+			html << "&nbsp;"
+      html << theme_image_tag("working.gif", :class => "spinner theme-image", :style => "display: none;")
+			html.html_safe
+		end
+	end
 
-  # to verify ################################################
+	def simple_remote_select options
+		parsed_options = {}
+		parsed_options[:disabled] = 'disabled' if options[:disabled]
+
+		options[:id] = SecureRandom.hex(2) unless options[:id]
+
+		content_tag('span', :id => options[:id]) do
+			html = ''
+			html << (block_given? ? yield : options[:label].to_s)
+			html << select_tag("select", options_from_collection_for_select(options[:collection], "first", "last", options[:selected].to_s), :data => {:url => options[:url]}.merge(parsed_options))
+			html << theme_image_tag("working.gif", :class => "spinner theme-image", :style=> "display: none;") unless options[:no_spinner]
+			html.html_safe
+		end
+	end
+
+
+	def spinner css_class = ''
+		theme_image_tag("working.gif", :class => "spinner theme-image #{css_class}", :style=> "display: none;")
+	end
+
+	def formatted_date(date)
+		date = date.localtime
+		"#{date.to_formatted_s(:short)} (#{time_ago_in_words(date)})"
+	rescue
+		'-'
+	end
+
+	def path2uri(name)
+		name = URI.escape name
+		is_a_mac? ? "smb://hda/#{name}" : "file://///hda/#{name}"
+	end
+
+	def path2location(name)
+		fwd = '\\'
+		is_a_mac? ? '&raquo; '.html_safe + h(name.gsub(/\//, ' ▸ ')) : h('\\\\hda\\' + name.gsub(/\//, fwd))
+	end
+
+	# to verify ################################################
 
 	def is_a_mac?
 		(request.env["HTTP_USER_AGENT"] =~ /Macintosh/) ? true : false
@@ -145,9 +145,9 @@ module ApplicationHelper
 		script << ")"
 
 		content_tag(
-		  options[:content][:element],
-		  options[:content][:text],
-		  options[:content][:options]
+		options[:content][:element],
+		options[:content][:text],
+		options[:content][:options]
 		) + javascript_tag( script.join("\n") )
 	end
 
@@ -160,12 +160,12 @@ module ApplicationHelper
 		html_options.symbolize_keys!
 		function = update_page(&block) if block_given?
 		tag("input",
-		  html_options.merge({
-		    :type => "checkbox",
-		    :checked => ("checked" if checked),
-		    # FIXME-cpg: href should not be needed? :href => html_options[:href] || "#",
-		    :onclick => (html_options[:onclick] ? "#{html_options[:onclick]}; " : "") + "#{function}; return false;"
-		  })
+		html_options.merge({
+			:type => "checkbox",
+			:checked => ("checked" if checked),
+			# FIXME-cpg: href should not be needed? :href => html_options[:href] || "#",
+			:onclick => (html_options[:onclick] ? "#{html_options[:onclick]}; " : "") + "#{function}; return false;"
+		})
 		)
 	end
 
