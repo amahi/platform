@@ -33,7 +33,7 @@ The tests are in `spec/`. All test files are typically inside `spec/requests` an
 
 #### 4. Test by hand in the browser
 
-To run the app in the browser, you need to [bootstrap it](http://wiki.amahi.org/index.php/Amahi_Edge) first. The first db: command assumes you have MySQL up and wunning and will ask fir the root user credentials in MySQL:
+To run the app in the browser, you need to [bootstrap it](http://wiki.amahi.org/index.php/Amahi_Edge) first. The first db: command assumes you have MySQL up and running and will ask for the root user credentials in MySQL:
 
 ```bash
 bundle install
@@ -48,7 +48,7 @@ To start the app and use it with a browser, start a web server with rails:
 rails s
 ```
 
-...then visit `http://localhost:3000/` and excersise the app as much as you can.
+Visit `http://localhost:3000/`, login with the username of `admin` & the password of `admin` and excersise the app as much as you can.
 
 
 #### 5. Create a pull request
@@ -63,4 +63,3 @@ For mutual protection, please check the icla.txt file for the individual contrib
 
 This program is Copyright (C) 2007-2013, [Amahi](http://www.amahi.org).
 Licensed under the AGPL. See the license in the COPYING file.
-
