@@ -6,12 +6,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -25,18 +25,18 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery
 
 	before_filter :before_filter_hook
-  before_filter :initialize_validators
+	before_filter :initialize_validators
 
 	helper_method :current_user
 
 
-  def initialize_validators
-    @validators_string = ''
-  end
+	def initialize_validators
+		@validators_string = ''
+	end
 
 	def before_filter_hook
 		set_locale
-    set_direction
+		set_direction
 		check_for_amahi_app
 		prepare_theme
 		adv = Setting.find_by_name('advanced')
@@ -55,8 +55,8 @@ class ApplicationController < ActionController::Base
 	end
 
 	def prepare_theme
-    @theme = SetTheme.find
-    theme @theme.name
+		@theme = SetTheme.find
+		theme @theme.name
 	end
 
 
@@ -87,29 +87,29 @@ class ApplicationController < ActionController::Base
 	end
 
 	def locales_implemented
-    Yetting.locales_implemented
+		Yetting.locales_implemented
 	end
 
-private
+	private
 
 	def set_locale
-    I18n.locale = :en
-    return
+		I18n.locale = :en
+		return
 
-    preferred_locales = request.headers['HTTP_ACCEPT_LANGUAGE'].split(',').map { |locale| locale.split(';').first } rescue nil
-    available_locales = I18n.available_locales
-    default_locale = I18n.default_locale
-    locale_from_params = params[:locale]
+		preferred_locales = request.headers['HTTP_ACCEPT_LANGUAGE'].split(',').map { |locale| locale.split(';').first } rescue nil
+		available_locales = I18n.available_locales
+		default_locale = I18n.default_locale
+		locale_from_params = params[:locale]
 
 		I18n.locale = begin
-      locale = preferred_locales.select { |locale| available_locales.include?(locale.to_sym) }
-      default_locale = locale.empty? ? default_locale : locale.first
+			locale = preferred_locales.select { |locale| available_locales.include?(locale.to_sym) }
+			default_locale = locale.empty? ? default_locale : locale.first
 
 			# Allow a URL param to override everything else, for devel
 			if locale_from_params
 				if available_locales.include?(locale_from_params.to_sym)
 					cookies['locale'] = { :value => locale_from_params, :expires => 1.year.from_now }
-          locale_from_params.to_sym
+					locale_from_params.to_sym
 				else
 					cookies.delete 'locale'
 					default_locale
@@ -124,12 +124,12 @@ private
 			# if something happens (like a locale file renamed!?) go back to the default
 			default_locale
 		end
-  end
+	end
 
-  def set_direction
-    # right to left language support
-    @locale_direction = Yetting.rtl_locales.include?(I18n.locale) ? 'rtl' : 'ltr'
-  end
+	def set_direction
+		# right to left language support
+		@locale_direction = Yetting.rtl_locales.include?(I18n.locale) ? 'rtl' : 'ltr'
+	end
 
 	# FIXME: these are simple rot13
 	def obfuscate(s)
@@ -177,18 +177,18 @@ private
 
 	def store_location
 		session[:return_to] = request.fullpath
-  end
+	end
 
-  def set_title(title)
-    @page_title = title
-  end
+	def set_title(title)
+		@page_title = title
+	end
 
-  def no_tabs
-    @no_tabs = true
-  end
+	def no_tabs
+		@no_tabs = true
+	end
 
-  def no_subtabs
-    @no_subtabs = true
-  end
+	def no_subtabs
+		@no_subtabs = true
+	end
 
 end

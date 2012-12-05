@@ -14,10 +14,9 @@ var Shares = {
         // new share
         $('#new-share-form').live({
             'ajax:success': function(data, results, jqXHR){
-                if(results['status'] == 500) {
+                if (results['status'] != 'ok') {
                     _this.form().replaceWith(results['content']);
-                }
-                else {
+                } else {
                     parent = $('#shares-table');
                     parent.replaceWith(results['content']);
                 }
@@ -94,7 +93,7 @@ var Shares = {
 
         $('.update-path-form').live({
             'ajax:success': function(data, results, jqXHR){
-                if(results['status'] == 200) {
+                if (results['status'] == 'ok') {
                     form = $(this);
                     link = form.prev();
                     value = FormHelpers.find_first(form).val();
@@ -139,7 +138,7 @@ var Shares = {
 
         $('.update-extras-form').live({
             'ajax:success': function(data, results, jqXHR){
-                if(results['status'] == 200) {
+                if(results['status'] == 'ok') {
                     form = $(this);
                     link = form.prev();
                     text_area = FormHelpers.find_first(form);

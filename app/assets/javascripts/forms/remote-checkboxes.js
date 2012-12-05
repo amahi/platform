@@ -14,12 +14,12 @@ var RemoteCheckbox = {
 
     */
 
-    initialize: function(options){
+    initialize: function(options) {
 
         var _this = this;
         var options = options || {};
 
-        $(options['selector']).live('click', function(){
+        $(options['selector']).live('click', function() {
 
             options['beforeSend'] = typeof(options['beforeSend']) == 'undefined' ? function(){} : options['beforeSend'];
             options['success'] = typeof(options['success']) == 'undefined' ? function(){} : options['success'];
@@ -32,16 +32,15 @@ var RemoteCheckbox = {
 
             checkbox.blur();
 
-            if(typeof(checkbox.data('confirm')) == 'undefined') {
+            if (typeof(checkbox.data('confirm')) == 'undefined') {
                run_request = true;
-            }
-            else {
+            } else {
                run_request = confirm(checkbox.data('confirm'));
             }
 
-            if(run_request && typeof(checkbox.data('request')) == 'undefined') {
+            if (run_request && typeof(checkbox.data('request')) == 'undefined') {
                 $.ajax({
-                    beforeSend: function(){
+                    beforeSend: function() {
                         checkbox.data('request', true);
                         _this.toggle_spinner(options['spinnerParentSelector'], checkbox);
                         options['beforeSend'](_this, checkbox);
@@ -49,19 +48,19 @@ var RemoteCheckbox = {
                     type: 'PUT',
                     url: _this.url(checkbox),
                     success: function(data) {
-                        if(data['status'] == 200) {
+                        if (data['status'] == 'ok') {
                           options['success'](_this, checkbox, data);
                           checkbox.attr('checked', !checkbox.attr('checked'));
                         }
-                        if(typeof(data['force']) != 'undefined'){
+                        if (typeof(data['force']) != 'undefined') {
                             checkbox.attr('checked', data['force']);
                         }
                     },
-                    complete: function(){
+                    complete: function() {
                         try {
                             _this.toggle_spinner(options['spinnerParentSelector'], checkbox);
                             options['complete'](_this, checkbox);
-                            if(options['parentSelector']){
+                            if (options['parentSelector']){
                                 _this.highlight_parent(options['parentSelector'], checkbox);
                             }
                             checkbox.removeData('request');
@@ -76,13 +75,13 @@ var RemoteCheckbox = {
 
     },
 
-    url : function(element) {return $(element).data('url')},
+    url : function(element) { return $(element).data('url') },
 
-    toggle_spinner: function(spinnerParentSelector, element){
+    toggle_spinner: function(spinnerParentSelector, element) {
       $(element).parents(spinnerParentSelector).find('.spinner:first').toggle();
     },
 
-    highlight_parent: function(parentSelector, element){
+    highlight_parent: function(parentSelector, element) {
         $(element).parents(parentSelector).effect('highlight');
     }
 

@@ -1,12 +1,12 @@
 var Users = {
-    initialize: function(){
+    initialize: function() {
 
         var _this = this;
 
         // new user
         $('#new-user-form').live({
             'ajax:success': function(data, results, jqXHR){
-                if (results['status'] == 500) {
+                if (results['status'] != 'ok') {
                     _this.form().replaceWith(results['content']);
                 } else {
                     parent = $('#users').parents('td:first')
@@ -77,7 +77,7 @@ var Users = {
 
         $('.username-form').live({
             'ajax:success': function(data, results, jqXHR){
-                if(results['status'] == 200) {
+                if (results['status'] == 'ok') {
                   form = $(this);
                   link = form.prev();
                   value = FormHelpers.find_first(form).val();
@@ -96,7 +96,7 @@ var Users = {
             }
         });
 
-        RemoteCheckbox.initialize({'selector': '.user_admin_checkbox', 'parentSelector': 'span:first', 'success': function(rc, checkbox){
+        RemoteCheckbox.initialize({'selector': '.user_admin_checkbox', 'parentSelector': 'span:first', 'success': function(rc, checkbox) {
             _this.user(checkbox).find('.user_icons:first').toggleClass('user_admin');
             _this.delete_area_toggle(checkbox);
         }});
@@ -130,8 +130,6 @@ var Users = {
     }
 
 }
-
-
 
 
 $(document).ready(function(){

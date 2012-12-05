@@ -1,9 +1,9 @@
 self.formats = [:html]
 
 if @user.errors.any?
-  json.status 500
+  json.status :not_accepted
   json.content render(:partial => 'users/form', :object => @user)
 else
-  json.status 200
+  json.status :ok
   json.content render(:template => 'users/index')
 end
