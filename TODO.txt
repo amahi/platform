@@ -1,0 +1,17 @@
+We are in the process of developing Amahi 7, the next version of the platform.
+
+Things you can get involved with:
+
+1) One of the things we want to do is to make it modular, with pluggable modules
+we call widgets (basically, RoR engines).
+
+It's a fun area, but also a bit challenging. There is not much about this yet.
+
+2) Write tests! See the README for details on how to run tests. Add tests in spec/
+trying to preserve the structure, or enhancing it as much as possible.
+
+3) Help test by hand. Some things cannot be tested automatically with tests. App installs,
+in-system testing, etc. all can use some help.
+
+4) Clean the code up! Lots of this needed, after so many years of hacking on it!
+
