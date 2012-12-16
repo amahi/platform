@@ -5,7 +5,6 @@ gem 'rails', '3.2.9'
 gem 'mysql2'
 gem "yettings"
 
-
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -32,7 +31,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'unicorn'
 
-gem 'quiet_assets', :group => :development
+group :development do
+	gem 'quiet_assets'
+	gem 'thin'
+end
 
 gem 'pluginfactory'
 
