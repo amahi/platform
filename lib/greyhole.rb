@@ -1,5 +1,5 @@
 # Amahi Home Server
-# Copyright (C) 2007-2010 Amahi Team
+# Copyright (C) 2007-2013 Amahi Team
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
