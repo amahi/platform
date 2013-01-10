@@ -1,4 +1,4 @@
-Html::Application.routes.draw do
+AmahiHDA::Application.routes.draw do
 
   themes_for_rails
 
