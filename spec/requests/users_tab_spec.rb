@@ -28,11 +28,12 @@ describe "Users tab" do
 		user = create(:user)
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
-        fill_in "username", :with => admin.login
-        fill_in "password", :with => "secret"
-        click_button "Log In"
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		fail "FIXME: this is failing at the next line, not clear why"
+		click_button "Log In"
 		expect(page).to have_content("Setup")
-        visit users_path
+		visit users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link user.login
@@ -44,11 +45,11 @@ describe "Users tab" do
 		admin = create(:admin)
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
-        fill_in "username", :with => admin.login
-        fill_in "password", :with => "secret"
-        click_button "Log In"
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		click_button "Log In"
 		expect(page).to have_content("Setup")
-        visit users_path
+		visit users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link admin.login
@@ -58,11 +59,11 @@ describe "Users tab" do
 		admin = create(:admin)
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
-        fill_in "username", :with => admin.login
-        fill_in "password", :with => "secret"
-        click_button "Log In"
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		click_button "Log In"
 		expect(page).to have_content("Setup")
-        visit users_path
+		visit users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link admin.login
@@ -73,11 +74,11 @@ describe "Users tab" do
 		user = create(:admin)
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
-        fill_in "username", :with => admin.login
-        fill_in "password", :with => "secret"
-        click_button "Log In"
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		click_button "Log In"
 		expect(page).to have_content("Setup")
-        visit users_path
+		visit users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link user.login
@@ -90,11 +91,11 @@ describe "Users tab" do
 		user = create(:user)
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
-        fill_in "username", :with => admin.login
-        fill_in "password", :with => "secret"
-        click_button "Log In"
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		click_button "Log In"
 		expect(page).to have_content("Setup")
-        visit users_path
+		visit users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link user.login
