@@ -59,6 +59,27 @@ When you are ready for your changes and it's good code that fits with the goals 
 
 For mutual protection, please check the icla.txt file for the individual contributor agreement we require for contributors. It's a virtual copy to Apache's CLA. Generally, you will be asked by email to read it and accept. If you are working for a company or some large institution, we will ask that you submit a scan of the signed CLA for us to keep on file.
 
+#### 7. Plugins
+
+Plugins should be in `plugins/` and can be generated with
+
+```bash
+rails plugin new foo_bar --mountable
+```
+
+This will generate a module called foo_bar in the root directory. It has to be moved to `plugins/` to be active and have a file called `config/amahi_plugin.yml` with, for example:
+
+	# human readable name (no localization supported yet)
+	name: Foo Bar Tab
+	# class to be mounted
+	class: FooBar
+	# kind of plugin (so far we only support 'tab' plugins)
+	kind: tab
+	# url where it will be mounted
+	url: /tab/foobar
+
+FIXME: indicate what other things an Amahi platform module should have to be well behaved
+
 # License
 
 This program is Copyright (C) 2007-2013, [Amahi](http://www.amahi.org).

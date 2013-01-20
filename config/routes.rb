@@ -1,6 +1,8 @@
+
 AmahiHDA::Application.routes.draw do
 
   themes_for_rails
+  amahi_plugin_routes
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
@@ -61,5 +63,6 @@ AmahiHDA::Application.routes.draw do
   root :to => 'front#index'
 
   match ':controller(/:action(/:id))(.:format)'
+
   match '*rest' => 'setup#index'
 end

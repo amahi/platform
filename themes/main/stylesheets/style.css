@@ -323,7 +323,15 @@ input[type=text]:focus,input[type=password]:focus{
     padding:10px;
     word-wrap:break-word
 }
-#aliases-table,#apps-table,#servers-table,#webapps-table,#users-table,#new-user-step1,#shares-table,#new-share-step1,#new-webapp-step1,#hosts-table,#debug_submit_form,#dhcp-table,#fw-rules-table {
+#aliases-table,#apps-table,#servers-table,#webapps-table,#new-user-step1,#new-share-step1,#new-webapp-step1,#hosts-table,#debug_submit_form,#dhcp-table,#fw-rules-table {
+    width:95%;
+    margin:20px auto;
+    border:1px solid #e8e8e8;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px
+}
+.settings-table {
     width:95%;
     margin:20px auto;
     border:1px solid #e8e8e8;
@@ -351,7 +359,7 @@ thead.apptable td{
 #calendars-table td{
     padding:5px
 }
-.settings,.settings th{
+table.settings,.settings th{
     border-collapse:collapse
 }
 #settings-table table tr td:first-child{
@@ -402,21 +410,29 @@ thead.apptable td:last-child,.fw-rules-col3{
     -webkit-border-radius:0 5px 0 0;
     border-radius:0 5px 0 0
 }
+.settings-lastcol {
+    padding: 0 0 0 3px;
+    -moz-border-radius:0 5px 0 0;
+    -webkit-border-radius:0 5px 0 0;
+    border-radius:0 5px 0 0
+}
 table.apptable,thead.apptable{
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     border-radius:5px
 }
 
-table.apptable .odd td{
+table.settings .odd td{
     background:#f8f8f8
 }
-table.apptable .odd td,table.apptable .even td{
+table.settings .odd td,table.settings .even td {
     padding:5px 0;
     border-bottom:1px solid #e8e8e8;
-    text-align:left
 }
-table.apptable thead td{
+div.no-content {
+	margin: 4em; text-align: center;
+}
+th.centered, td.centered {
     text-align:center
 }
 table.apptable .odd td:first-child,table.apptable .even td:first-child{

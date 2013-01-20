@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
 
 	before_filter :before_filter_hook
 	before_filter :initialize_validators
+	before_filter :setup_tabs
 
 	helper_method :current_user
 
@@ -187,6 +188,20 @@ class ApplicationController < ActionController::Base
 
 	def no_subtabs
 		@no_subtabs = true
+	end
+
+
+	# this sets up the extra tabs
+	def setup_tabs
+		# for now we need a list of name and url to link to e.g. [['Pooling', '/tab/pooling']]
+		@setup_tabs = plugin_tabs.map{|ap| [ap[:name], ap[:url]]}
+	end
+
+	private
+
+	# select the "tab plugins" from all the plugins
+	def plugin_tabs
+		AmahiHDA::Application.config.amahi_plugins.select{|ap| ap[:kind] == 'tab'}
 	end
 
 end
