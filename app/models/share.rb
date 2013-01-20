@@ -4,12 +4,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -18,7 +18,7 @@ require 'command'
 require 'platform'
 
 class Share < ActiveRecord::Base
-	include Greyhole
+	# include Greyhole
 
 	DEFAULT_SHARES_ROOT = '/var/hda/files'
 
@@ -26,9 +26,8 @@ class Share < ActiveRecord::Base
 	DEFAULT_SHARES = [ "Books", "Pictures", "Videos", "Music", "Docs", "Public" ].each {|s| I18n.t s }
 	PDC_SETTINGS = "/var/hda/domain-settings"
 
-  default_scope order("name")
-	scope :in_disk_pool, where([ "disk_pool_copies > ?", 0])
-
+	default_scope order("name")
+	# scope :in_disk_pool, where([ "disk_pool_copies > ?", 0])
 
 	has_many :cap_accesses, :dependent => :destroy
 	has_many :users_with_share_access, :through => :cap_accesses, :source => :user
@@ -41,19 +40,15 @@ class Share < ActiveRecord::Base
 	after_save :after_save_hook
 	after_destroy :after_destroy_hook
 
+	attr_accessible :name, :path, :rdonly, :visible, :tags, :extras
 
+	validates :name, :presence => true,
+		:format => { :with => /^\w[\w ]+$/ },
+		:length => { :maximum => 32 },
+		:uniqueness => { :case_sensitive => false }
 
-  attr_accessible :name, :path, :rdonly, :visible, :tags, :extras
-
-  validates :name, :presence => true,
-            :format => { :with => /^\w[\w ]+$/ },
-            :length => { :maximum => 32 },
-            :uniqueness => { :case_sensitive => false }
-
-  validates :path, :presence => true,
-            :length => { :maximum => 64 }
-
-
+	validates :path, :presence => true,
+		:length => { :maximum => 64 }
 
 	# return the full path of a share (even if it does not exist!).
 	# (this is for encapsulation purposes mostly)
@@ -97,26 +92,26 @@ class Share < ActiveRecord::Base
 
 	def self.create_default_shares
 		DEFAULT_SHARES.each do |s|
-		    sh = Share.new
-		    sh.path = Share.full_path(s)
-		    sh.name = s
-		    sh.rdonly = false
-		    sh.visible = true
-		    sh.tags = s.downcase
-		    sh.extras = ""
-		    sh.disk_pool_copies = 0
-		    sh.save!
-		    sh.reload
+			sh = Share.new
+			sh.path = Share.full_path(s)
+			sh.name = s
+			sh.rdonly = false
+			sh.visible = true
+			sh.tags = s.downcase
+			sh.extras = ""
+			sh.disk_pool_copies = 0
+			sh.save!
+			sh.reload
 		end
 	end
 
 	# configuration for one share
 	def share_conf
-		ret = "[%s]\n" 			\
-			"\tcomment = %s\n" 	\
-			"\tpath = %s\n" 	\
-			"\twriteable = %s\n" 	\
-			"\tbrowseable = %s\n%s%s%s%s\n"
+		ret = "[%s]\n"		\
+		"\tcomment = %s\n" 	\
+		"\tpath = %s\n" 	\
+		"\twriteable = %s\n" 	\
+		"\tbrowseable = %s\n%s%s%s%s\n"
 		wr = rdonly ? "no" : "yes"
 		br = visible ? "yes" : "no"
 		allowed  = ''
@@ -171,104 +166,103 @@ class Share < ActiveRecord::Base
 		c.execute
 	end
 
-  def toggle_everyone!
-    begin
-      if self.everyone
-        users = User.all
-        self.users_with_share_access = users
-        self.users_with_write_access = users
-        self.everyone = false
-        self.rdonly = true
-      else
-        self.users_with_share_access = []
-        self.users_with_write_access = []
-        self.guest_access = false
-        self.guest_writeable = false
-        self.everyone = true
-      end
-      self.save
-    rescue
-    end
-  end
+	def toggle_everyone!
+		begin
+			if self.everyone
+				users = User.all
+				self.users_with_share_access = users
+				self.users_with_write_access = users
+				self.everyone = false
+				self.rdonly = true
+			else
+				self.users_with_share_access = []
+				self.users_with_write_access = []
+				self.guest_access = false
+				self.guest_writeable = false
+				self.everyone = true
+			end
+			self.save
+		rescue
+		end
+	end
 
-  def toggle_visible!
-    self.visible = !self.visible
-    self.save
-  end
+	def toggle_visible!
+		self.visible = !self.visible
+		self.save
+	end
 
-  def toggle_readonly!
-    self.rdonly = !self.rdonly
-    self.save
-  end
+	def toggle_readonly!
+		self.rdonly = !self.rdonly
+		self.save
+	end
 
-  def toggle_access!(user_id)
-    unless self.everyone
-      user = User.find(user_id)
-      if self.users_with_share_access.include? user
-        self.users_with_share_access -= [user]
-      else
-        self.users_with_share_access += [user]
-      end
-    end
-    self.save
-  end
+	def toggle_access!(user_id)
+		unless self.everyone
+			user = User.find(user_id)
+			if self.users_with_share_access.include? user
+				self.users_with_share_access -= [user]
+			else
+				self.users_with_share_access += [user]
+			end
+		end
+		self.save
+	end
 
-  def toggle_write!(user_id)
-    unless self.everyone
-      user = User.find(user_id)
-      if self.users_with_write_access.include? user
-        self.users_with_write_access -= [user]
-      else
-        self.users_with_write_access += [user]
-      end
-    end
-    self.save
-  end
+	def toggle_write!(user_id)
+		unless self.everyone
+			user = User.find(user_id)
+			if self.users_with_write_access.include? user
+				self.users_with_write_access -= [user]
+			else
+				self.users_with_write_access += [user]
+			end
+		end
+		self.save
+	end
 
-  def toggle_guest_access!
-    if self.guest_access
-      self.guest_access = false
-    else
-      self.guest_access = true
-      # forced read-only as default
-      self.guest_writeable = false
-    end
-    self.save
-  end
+	def toggle_guest_access!
+		if self.guest_access
+			self.guest_access = false
+		else
+			self.guest_access = true
+			# forced read-only as default
+			self.guest_writeable = false
+		end
+		self.save
+	end
 
-  def toggle_guest_writeable!
-    self.guest_writeable = !self.guest_writeable
-    self.save
-  end
+	def toggle_guest_writeable!
+		self.guest_writeable = !self.guest_writeable
+		self.save
+	end
 
-  def update_tags!(params)
+	def update_tags!(params)
+		# format with coma is set in before save
 
-    #format with coma is set in before save
+		unless params[:share].blank?
+			self.update_attributes(params[:share])
+		else
+			name = params[:name].downcase
+			if self.tags.include?(name)
+				self.tags = self.tags.gsub(name, '')
+			else
+				self.tags = "#{self.tags}, #{name}"
+			end
+			self.save
+		end
 
-    unless params[:share].blank?
-      self.update_attributes(params[:share])
-    else
-      name = params[:name].downcase
-      if self.tags.include?(name)
-        self.tags = self.tags.gsub(name, '')
-      else
-        self.tags = "#{self.tags}, #{name}"
-      end
-      self.save
-    end
+	end
 
-  end
+	def toggle_disk_pool!
+		self.disk_pool_copies = (self.disk_pool_copies > 0) ? 0 : 1
+		self.save
+	end
 
-  def toggle_disk_pool!
-    self.disk_pool_copies = (self.disk_pool_copies > 0) ? 0 : 1
-    self.save
-  end
+	def update_extras!(params)
+		self.update_attributes(params[:share])
+	end
 
-  def update_extras!(params)
-    self.update_attributes(params[:share])
-  end
-
-private
+	private
 
 	def before_save_hook
 		self.tags = self.tags.split(/\s*,\s*|\s+/).reject {|s| s.empty? }.join(', ').downcase if self.tags_changed?
@@ -288,7 +282,7 @@ private
 			guest_writeable ? make_guest_writeable : make_guest_non_writeable
 		end
 		Share.push_shares
-		Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
+		# Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
 	end
 
 	def before_destroy_hook
@@ -299,7 +293,7 @@ private
 	def after_destroy_hook
 		Share.push_shares
 		# sync the gh configuration
-		Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
+		# Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
 	end
 
 	def self.samba_conf(domain)
@@ -315,44 +309,44 @@ private
 		debug = Setting.shares.value_by_name('debug') == '1'
 		win98 = Setting.shares.value_by_name('win98') == '1'
 		ret = ["# This file is automatically generated for WORKGROUP setup.",
-		"# Any manual changes MAY BE OVERWRITTEN\n# #{SIGNATURE}, generated on #{Time.now}",
-		"[global]",
-		"\tworkgroup = %s",
-		"\tserver string = %s",
-		"\tnetbios name = hda",
-		"\tprinting = cups",
-		"\tprintcap name = cups",
-		"\tload printers = yes",
-		"\tcups options = raw",
-		"\tlog file = /var/log/samba/%%m.log",
-		"\tlog level = #{debug ? 5 : 0}",
-		"\tmax log size = 150",
-		"\tsocket options = TCP_NODELAY",
-		"\tpreferred master = yes",
-		"\tos level = 60",
-		"\ttime server = yes",
-		"\tunix extensions = no",
-		"\twide links = yes",
-		"\tveto files = /*.nws/riched20.dll/*.{*}/",
-		"\tsecurity = user",
-		"\tusername map script = /usr/share/hda-platform/hda-usermap",
-		"\tlarge readwrite = yes",
-		"\tencrypt passwords = yes",
-		"\tdos charset = CP850",
-		"\tunix charset = UTF8",
-		"\tdisplay charset =  LOCALE",
-		"\tguest account = nobody",
-		"\tmap to guest = Bad User",
-		"\twins support = yes",
-		"\tprinter admin = root, @ntadmin, administrator",
-		win98 ? "client lanman auth = yes" : "",
-		"",
-		"[homes]",
-		"\tcomment = Home Directories",
-		"\tvalid users = %%S",
-		"\tbrowseable = no",
-		"\twritable = yes",
-		"\tcreate mask = 0644",
+			"# Any manual changes MAY BE OVERWRITTEN\n# #{SIGNATURE}, generated on #{Time.now}",
+			"[global]",
+			"\tworkgroup = %s",
+			"\tserver string = %s",
+			"\tnetbios name = hda",
+			"\tprinting = cups",
+			"\tprintcap name = cups",
+			"\tload printers = yes",
+			"\tcups options = raw",
+			"\tlog file = /var/log/samba/%%m.log",
+			"\tlog level = #{debug ? 5 : 0}",
+			"\tmax log size = 150",
+			"\tsocket options = TCP_NODELAY",
+			"\tpreferred master = yes",
+			"\tos level = 60",
+			"\ttime server = yes",
+			"\tunix extensions = no",
+			"\twide links = yes",
+			"\tveto files = /*.nws/riched20.dll/*.{*}/",
+			"\tsecurity = user",
+			"\tusername map script = /usr/share/hda-platform/hda-usermap",
+			"\tlarge readwrite = yes",
+			"\tencrypt passwords = yes",
+			"\tdos charset = CP850",
+			"\tunix charset = UTF8",
+			"\tdisplay charset =  LOCALE",
+			"\tguest account = nobody",
+			"\tmap to guest = Bad User",
+			"\twins support = yes",
+			"\tprinter admin = root, @ntadmin, administrator",
+			win98 ? "client lanman auth = yes" : "",
+			"",
+			"[homes]",
+			"\tcomment = Home Directories",
+			"\tvalid users = %%S",
+			"\tbrowseable = no",
+			"\twritable = yes",
+			"\tcreate mask = 0644",
 		"\tdirectory mask = 0755"].join "\n"
 		ret % [short_domain, domain]
 	end
@@ -362,89 +356,89 @@ private
 		debug = Setting.shares.value_by_name('debug') == '1'
 		admins = User.admins rescue ["no_such_user"]
 		ret = ["# This file is automatically generated for PDC setup.",
-		"# Any manual changes MAY BE OVERWRITTEN\n# #{SIGNATURE}, generated on #{Time.now}",
-		"[global]",
-		"\tworkgroup = %s",
-		"\tserver string = %s",
-		"\tnetbios name = hda",
-		"\tprinting = cups",
-		"\tprintcap name = cups",
-		"\tload printers = yes",
-		"\tcups options = raw",
-		"\tlog file = /var/log/samba/%%m.log",
-		"\tlog level = #{debug ? 5 : 0}",
-		"\tmax log size = 150",
-		"\tsocket options = TCP_NODELAY",
-		"\tpreferred master = yes",
-		"\tos level = 65",
-		"\tdomain master = yes",
-		"\tlocal master = yes",
-		"\tadmin users = #{admins.map{|u| u.login}.join ', '}",
-		"\tdomain logons = yes",
-		"\tlogon path = \\\\%%L\\profiles\\%%U",
-		"\tlogon drive = q:",
-		"\tlogon home = \\\\%%N\\%%U",
-		"\ttime server = yes",
-		"\tunix extensions = no",
-		"\twide links = yes",
-		"\tveto files = /*.nws/riched20.dll/*.{*}/",
-		"\tsecurity = user",
-		"\tusername map script = /usr/share/hda-platform/hda-usermap ",
-		"\tlarge readwrite = yes",
-		"\tencrypt passwords = yes",
-		"\tdos charset = CP850",
-		"\tunix charset = UTF8",
-		"\tdisplay charset =  LOCALE",
-		"\tguest account = nobody",
-		"\tmap to guest = Bad User",
-		"\twins support = yes",
-		"\tprinter admin = root, @ntadmin, administrator",
-		"\tlogon script = %%U.bat",
-		"\t# FIXME - is 99 (nobody) the right group?",
-		"\tadd machine script = /usr/sbin/useradd -d /dev/null -g 99 -s /bin/false -M %%u",
-		"",
-		"[netlogon]",
-		"\tpath = #{PDC_SETTINGS}/netlogon",
-		"\tguest ok = yes",
-		"\twritable = no",
-		"\tshare modes = no",
-		"",
-		"[profiles]",
-		"\tpath = #{PDC_SETTINGS}/profiles",
-		"\twritable = yes",
-		"\tbrowseable = no",
-		"\tread only = no",
-		"\tcreate mode = 0777",
-		"\tdirectory mode = 0777",
-		"",
-		"[homes]",
-		"\tcomment = Home Directories",
-		"\tread only = no",
-		"\twriteable = yes",
-		"\tbrowseable = yes",
-		"\tcreate mask = 0640",
-		"\tdirectory mask = 0750",
+			"# Any manual changes MAY BE OVERWRITTEN\n# #{SIGNATURE}, generated on #{Time.now}",
+			"[global]",
+			"\tworkgroup = %s",
+			"\tserver string = %s",
+			"\tnetbios name = hda",
+			"\tprinting = cups",
+			"\tprintcap name = cups",
+			"\tload printers = yes",
+			"\tcups options = raw",
+			"\tlog file = /var/log/samba/%%m.log",
+			"\tlog level = #{debug ? 5 : 0}",
+			"\tmax log size = 150",
+			"\tsocket options = TCP_NODELAY",
+			"\tpreferred master = yes",
+			"\tos level = 65",
+			"\tdomain master = yes",
+			"\tlocal master = yes",
+			"\tadmin users = #{admins.map{|u| u.login}.join ', '}",
+			"\tdomain logons = yes",
+			"\tlogon path = \\\\%%L\\profiles\\%%U",
+			"\tlogon drive = q:",
+			"\tlogon home = \\\\%%N\\%%U",
+			"\ttime server = yes",
+			"\tunix extensions = no",
+			"\twide links = yes",
+			"\tveto files = /*.nws/riched20.dll/*.{*}/",
+			"\tsecurity = user",
+			"\tusername map script = /usr/share/hda-platform/hda-usermap ",
+			"\tlarge readwrite = yes",
+			"\tencrypt passwords = yes",
+			"\tdos charset = CP850",
+			"\tunix charset = UTF8",
+			"\tdisplay charset =  LOCALE",
+			"\tguest account = nobody",
+			"\tmap to guest = Bad User",
+			"\twins support = yes",
+			"\tprinter admin = root, @ntadmin, administrator",
+			"\tlogon script = %%U.bat",
+			"\t# FIXME - is 99 (nobody) the right group?",
+			"\tadd machine script = /usr/sbin/useradd -d /dev/null -g 99 -s /bin/false -M %%u",
+			"",
+			"[netlogon]",
+			"\tpath = #{PDC_SETTINGS}/netlogon",
+			"\tguest ok = yes",
+			"\twritable = no",
+			"\tshare modes = no",
+			"",
+			"[profiles]",
+			"\tpath = #{PDC_SETTINGS}/profiles",
+			"\twritable = yes",
+			"\tbrowseable = no",
+			"\tread only = no",
+			"\tcreate mode = 0777",
+			"\tdirectory mode = 0777",
+			"",
+			"[homes]",
+			"\tcomment = Home Directories",
+			"\tread only = no",
+			"\twriteable = yes",
+			"\tbrowseable = yes",
+			"\tcreate mask = 0640",
+			"\tdirectory mask = 0750",
 		"\n"].join "\n"
 		ret % [short_domain, domain]
 	end
 
 	def self.header_common
 		["",
-		"[print$]",
-		"\tpath = /var/lib/samba/drivers",
-		"\tread only = yes",
-		"\tforce group = root",
-		"\twrite list = @ntadmin root",
-		"\tforce group = root",
-		"\tcreate mask = 0664",
-		"\tdirectory mask = 0775",
-		"\tguest ok = yes",
-		"",
-		"[printers]",
-		"\tpath = /var/spool/samba",
-		"\twriteable = yes",
-		"\tbrowseable = yes",
-		"\tprintable = yes",
+			"[print$]",
+			"\tpath = /var/lib/samba/drivers",
+			"\tread only = yes",
+			"\tforce group = root",
+			"\twrite list = @ntadmin root",
+			"\tforce group = root",
+			"\tcreate mask = 0664",
+			"\tdirectory mask = 0775",
+			"\tguest ok = yes",
+			"",
+			"[printers]",
+			"\tpath = /var/spool/samba",
+			"\twriteable = yes",
+			"\tbrowseable = yes",
+			"\tprintable = yes",
 		"\tpublic = yes\n\n"].join("\n")
 	end
 
@@ -469,10 +463,10 @@ private
 	def self.samba_lmhosts(domain)
 		ip = Setting.value_by_name('net') + '.' + Setting.value_by_name('self-address')
 		ret = ["# This file is automatically generated. Any manual changes MAY BE OVERWRITTEN\n# #{SIGNATURE}, generated on #{Time.now}",
-		"127.0.0.1 localhost",
-		"%s hda",
-		"%s files",
-		"%s hda.%s",
+			"127.0.0.1 localhost",
+			"%s hda",
+			"%s files",
+			"%s hda.%s",
 		"%s files.%s"].join "\n"
 		ret % [ip, ip, ip, domain, ip, domain]
 	end
@@ -482,7 +476,7 @@ private
 		d = d.gsub /\./, '_'
 		# fallback, in case too much gets chopped
 		d = domain if d.size == 0
-		d = d[-15..-1] if d.size > 15 
+		d = d[-15..-1] if d.size > 15
 		d
 	end
 end
