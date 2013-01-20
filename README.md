@@ -61,24 +61,7 @@ For mutual protection, please check the icla.txt file for the individual contrib
 
 #### 7. Plugins
 
-Plugins should be in `plugins/` and can be generated with
-
-```bash
-rails plugin new foo_bar --mountable
-```
-
-This will generate a module called foo_bar in the root directory. It has to be moved to `plugins/` to be active and have a file called `config/amahi_plugin.yml` with, for example:
-
-	# human readable name (no localization supported yet)
-	name: Foo Bar Tab
-	# class to be mounted
-	class: FooBar
-	# kind of plugin (so far we only support 'tab' plugins)
-	kind: tab
-	# url where it will be mounted
-	url: /tab/foobar
-
-FIXME: indicate what other things an Amahi platform module should have to be well behaved
+See the [plugins](doc/plugins.md) docs file.
 
 # License
 
