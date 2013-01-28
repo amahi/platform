@@ -19,8 +19,8 @@ require 'yettings'
 
 class Command
 
-	CMD_FIFO = "/var/run/hdactl/notify"
-	HDACTL_PID = "/var/run/hdactl.pid"
+	CMD_FIFO = "/var/run/hda-ctl/notify"
+	HDACTL_PID = "/var/run/hda-ctl.pid"
 
 	@cmd = []
 
@@ -32,7 +32,7 @@ class Command
 	def execute
 		return if @dummy_mode
 		puts "EXECUTING: #{@cmd.join "\n"}" if @debug
-		raise "hdactl does not appear to be running!" unless running?
+		raise "hda-ctl does not appear to be running!" unless running?
 		command = @cmd.join "\n"
 		f = UNIXSocket.open(CMD_FIFO)
 		f.send(command, 0)
@@ -41,7 +41,7 @@ class Command
 	end
 
 	def run_now
-		raise "hdactl does not appear to be running!" unless running?
+		raise "hda-ctl does not appear to be running!" unless running?
 		confirm = "done" # Digest::SHA1.hexdigest(Time.now.to_s.split(//).sort_by {rand}.join)
 		@cmd.push "confirm: #{confirm}\n"
 		command = @cmd.join "\n"

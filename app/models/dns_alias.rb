@@ -28,7 +28,7 @@ class DnsAlias < ActiveRecord::Base
 
 	def restart
 		# FIXME - only do named
-		system("hdactl-hup");
+		system("hda-ctl-hup");
 	end
 
 end

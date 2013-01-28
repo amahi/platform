@@ -263,16 +263,16 @@ protected
 
 	def versions
 		platform = ""
-		hdactl = ""
+		hda_ctl = ""
 		if Platform.fedora?
-			open("|rpm -q hda-platform hdactl") do |f|
+			open("|rpm -q hda-platform hda-ctl") do |f|
 				while f.gets
 					line = $_
 					if (line =~ /hda-platform-(.*).noarch/)
 						platform = $1
 					end
-					if (line =~ /hdactl-([0-9\.\-]+)\.\w+/)
-						hdactl = $1
+					if (line =~ /hda-ctl-([0-9\.\-]+)\.\w+/)
+						hda_ctl = $1
 					end
 				end
 			end
@@ -284,16 +284,16 @@ protected
 					platform = $1
 				end
 			end
-			open("|apt-cache show hdactl | grep Version") do |f|
+			open("|apt-cache show hda-ctl | grep Version") do |f|
 				f.gets
 				line = $_
 				if (line =~ /Version: (.*)/)
-					hdactl = $1
+					hda_ctl = $1
 				end
 			end
 
 		end
-		{ :platform => platform, :hdactl => hdactl }
+		{ :platform => platform, :hda_ctl => hda_ctl }
 	end
 
 end

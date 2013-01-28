@@ -88,7 +88,7 @@ class NetworkController < ApplicationController
 		lease = 86400 if lease > 86400
 		s.update_attribute(:value, value)
 		# FIXME - only dhcpd needs to be set, and only if enabled!
-		system "hdactl-hup"
+		system "hda-ctl-hup"
 		# prevent the fast clickers from bringing down the house
 		sleep 2
 		render :text => "#{s.value}"
@@ -104,7 +104,7 @@ class NetworkController < ApplicationController
 		s.update_attribute(:value, gw.to_s)
 		# FIXME - need to change the alias for "router"!
 		# FIXME - this needs to be enabled
-		# system "hdactl-hup"
+		# system "hda-ctl-hup"
 	end
 
 private

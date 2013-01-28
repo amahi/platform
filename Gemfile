@@ -5,7 +5,8 @@ gem 'rails', '3.2.11'
 gem 'mysql2'
 gem "yettings"
 
-group :assets do
+# Commenting this out because we're not going to pre-compile assets for now
+#group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -15,7 +16,7 @@ group :assets do
   gem "libv8", "~> 3.11.8.4"
 
   gem 'uglifier', '>= 1.0.3'
-end
+#end
 
 gem 'jbuilder'
 gem 'ya2yaml'

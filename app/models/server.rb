@@ -39,7 +39,7 @@ class Server < ActiveRecord::Base
 		Server.create(:name => 'dhcp', :pidfile => Platform.file_name(:dhcpd_pid), :comment => I18n.t('dhcp_server'))
 		Server.create(:name => 'mysql', :pidfile => 'mysqld/mysqld.pid', :comment => I18n.t('mysql_database_server'))
 		Server.create(:name => 'smb', :pidfile => Platform.file_name(:samba_pid), :comment => I18n.t('file_server_samba'))
-		Server.create(:name => 'hdactl', :comment => I18n.t('amahi_dyndns_updater'))
+		Server.create(:name => 'hda-ctl', :comment => I18n.t('amahi_dyndns_updater'))
 		Server.create(:name => 'greyhole', :comment => 'Greyhole')
 		r = "# WARNING - This file was automatically generated on #{Time.now}\n" \
 			"\nset daemon 30\n" \
