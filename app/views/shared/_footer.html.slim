@@ -1,18 +1,23 @@
 #footer
-  | &copy; 2011 &nbsp; <a href="http://www.amahi.org">Amahi</a>
-  | | <a href="http://www.amahi.org/user">#{t('your_control_panel')}</a>
-  | | <a href="http://www.amahi.org/feedback">#{t('feedback')}</a>
-  | | <a href="http://wiki.amahi.org/">#{t('wiki')}</a>
-  | | <a href="http://bugs.amahi.org">#{t('tracker')}</a>
+  .inside
+    .copy
+      span
+        | &copy; 2013
+      <a href="http://www.amahi.org">Amahi</a>
 
-  - if theme.author
-    | | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
+    .nav  
+      | <a href="http://www.amahi.org/user">#{t('your_control_panel')}</a>
+      | <a href="http://www.amahi.org/feedback">#{t('feedback')}</a>
+      | <a href="http://wiki.amahi.org/">#{t('wiki')}</a>
+      | <a href="http://bugs.amahi.org">#{t('tracker')}</a>
 
-  | | <a href="http://talk.amahi.org">#{t('live_help')}</a>
-  | | <a href="http://forums.amahi.org/">#{t('forums')}</a>
+      - if theme.author
+        | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
+        | <a href="http://talk.amahi.org">#{t('live_help')}</a>
+        | <a href="http://forums.amahi.org/">#{t('forums')}</a>
 
-  - if current_user
-    = link_to t('logout'), logout_path
-    | #{current_user.login}
-  - else
-    = link_to t('log_in'), login_path
+      - if current_user
+        = link_to t('logout'), logout_path
+        | #{current_user.login}
+      - else
+        = link_to t('log_in'), login_path
