@@ -10,6 +10,7 @@ table#welcome.nav[border="0" cellspacing="0" cellpadding="0" width="90%"]
 	    - if @apps.length < 3
 	      tr[align="center"]
 	       td[colspan="4"]
-	         = link_to(theme_image_tag('dashboard.png', :title => "Install applications!"), apps_path)
+	         .install-wrap
+              = link_to(theme_image_tag('new_app_btn.png', :title => "Install applications!"), apps_path)
 
     = get_feeds
