@@ -112,8 +112,7 @@ class User < ActiveRecord::Base
 		c.execute
 		unless self.password.nil? && self.password.blank?
 			p = self.password
-			c = Command.new "(echo '#{p}'; echo '#{p}') | smbpasswd -s -a \"#{self.login}\""
-			c.submit "smbpasswd -e \"#{self.login}\""
+			c = Command.new "(echo '#{p}'; echo '#{p}') | pdbedit -d0 -t -a -u \"#{self.login}\""
 			c.execute
 		end
 	end
@@ -138,8 +137,7 @@ protected
 		# FIXME - we should use add_or_passwd_change_samba_user above! DRY
 		unless self.password.nil? && self.password.blank?
 			p = self.password
-			c.submit("(echo '#{p}'; echo '#{p}') | smbpasswd -s -a \"#{self.login}\"")
-			c.submit("smbpasswd -e \"#{self.login}\"")
+			c.submit("(echo '#{p}'; echo '#{p}') | pdbedit -d0 -t -a -u \"#{self.login}\"")
 		end
 		c.execute
 	end
@@ -172,7 +170,7 @@ protected
 	end
 
 	def before_destroy_hook
-		c = Command.new("smbpasswd -x \"#{self.login}\"")
+		c = Command.new("pdbedit -d0 -x -u \"#{self.login}\"")
 		c.submit("userdel -r \"#{self.login}\"")
 		c.execute
 	end
