@@ -17,7 +17,6 @@
 # team at http://www.amahi.org/ under "Contact Us."
 
 require File.dirname(__FILE__) + '/../config/boot'
-require File.dirname(__FILE__) + '/../config/environment'
 
 #require 'commands/runner'
 require 'optparse'
@@ -62,7 +61,11 @@ end
 ARGV.delete(app_id)
 
 ENV["RAILS_ENV"] = options[:environment]
+
+# load the environment only after RAILS_ENV is set up
+require File.dirname(__FILE__) + '/../config/environment'
 Rails.env.replace(options[:environment]) if defined?(Rails.env)
+
 
 # load default settings
 HDA_CONFIG = YAML.load_file("#{Rails.root}/config/hda.yml")[Rails.env]

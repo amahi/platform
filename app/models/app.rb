@@ -350,7 +350,7 @@ protected
 	end
 
 	def mkdir(path)
-		FileUtils.mkdir_p(path) rescue nil
+		FileUtils.mkdir_p(path)
 	end
 
 	def online_app_to_local_app(online_app)
