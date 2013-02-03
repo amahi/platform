@@ -3,7 +3,6 @@
 @import "compass/utilities";
 @import "compass/reset";
 
-
 body {
 	font: 12px "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif;
 	background: url(/assets/body_bg.jpg) repeat-x #e6f5fc;
@@ -136,20 +135,8 @@ form {
 	border-color: #e6db55;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+input::-webkit-input-placeholder { color: #bbb; font-weight: normal; }
+input:-moz-placeholder { color: #bbb; font-weight: normal; }
+input::-moz-placeholder { color: #bbb; font-weight: normal; }
+input:-ms-input-placeholder { color: #bbb; font-weight: normal; }
 
