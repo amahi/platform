@@ -71,12 +71,10 @@ ROOTDIR = File.join(File.dirname(__FILE__), "..")
 require 'active_record'
 require 'yaml'
 require 'erb'
-require File.join(ROOTDIR, 'lib/greyhole')
 require File.join(ROOTDIR, 'lib/amahi_api')
 require File.join(ROOTDIR, 'app/models/app')
 require File.join(ROOTDIR, 'app/models/app_dependency')
 require File.join(ROOTDIR, 'app/models/db')
-require File.join(ROOTDIR, 'app/models/disk_pool_partition')
 require File.join(ROOTDIR, 'app/models/webapp_alias')
 require File.join(ROOTDIR, 'app/models/webapp')
 require File.join(ROOTDIR, 'app/models/setting')
@@ -89,7 +87,7 @@ require File.join(ROOTDIR, 'app/models/dns_alias')
 require File.join(ROOTDIR, 'app/models/host')
 require File.join(ROOTDIR, 'app/models/theme')
 ActiveRecord::Base.establish_connection((YAML::load(ERB.new(
-                                                        File.read("#{ROOTDIR}/config/database.yml")).result).symbolize_keys)[(ENV['RAILS_ENV'] || :development).to_sym])
+	File.read("#{ROOTDIR}/config/database.yml")).result).symbolize_keys)[(ENV['RAILS_ENV'] || :development).to_sym])
 
 def install_or_uninstall(install, app_id, app)
   if install
