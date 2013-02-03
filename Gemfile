@@ -41,6 +41,9 @@ end
 
 gem 'pluginfactory'
 
+# this is explicitly needed in fedora 18 -- somehow it's screwed up and needed for the rails console to work
+gem 'minitest'
+
 gem "rspec-rails", :group => [:test, :development]
 group :test do
   gem 'sqlite3'

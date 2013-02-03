@@ -85,7 +85,6 @@ class UserSessionsController < ApplicationController
 		u.update_attributes(:password => pwd, :password_confirmation => conf, :admin => true)
 		u.add_to_users_group
 		u.add_or_passwd_change_samba_user
-		flash[:notice] = t 'admin_setup_worked'
 		UserSession.create(u, true)
 		# create the initial server structures
 		Server.create_default_servers if Server.count < 4
