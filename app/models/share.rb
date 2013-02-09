@@ -21,7 +21,6 @@ class Share < ActiveRecord::Base
 	# include Greyhole
 
 	DEFAULT_SHARES_ROOT = '/var/hda/files'
-	TMPDIR = '/var/run/hda-ctl/tmp'
 
 	SIGNATURE = "Amahi configuration"
 	DEFAULT_SHARES = [ "Books", "Pictures", "Movies", "Videos", "Music", "Docs", "Public" ].each {|s| I18n.t s }

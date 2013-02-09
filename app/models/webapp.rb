@@ -39,12 +39,12 @@ class Webapp < ActiveRecord::Base
 	end
 
 	def write_conf_file
-		fname = "/tmp/webapp-%d.%d" % [$$, rand(9999)]
-		f = File.new fname, "w"
-		f.write(conf_file)
-		f.close
+		fname = "#{TMPDIR}/webapp-%d.%d" % [$$, rand(9999)]
+		File.open(fname, "w") { |f| f.write(conf_file) }
+
 		# move path to the http area
-		c = Command.new "mv -f #{f.path} /etc/httpd/conf.d/#{self.fname}"
+		c = Command.new "mv -f #{fname} /etc/httpd/conf.d/#{self.fname}"
+
 		# reload the server
 		c.execute
 		Platform.reload(:apache)

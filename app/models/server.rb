@@ -45,7 +45,7 @@ class Server < ActiveRecord::Base
 			"\nset daemon 30\n" \
 			"include #{Platform.file_name(:monit_dir)}/logging\n" \
 			"include #{Platform.file_name(:monit_dir)}/*.conf\n"
-		fname = "/tmp/server-conf-%d.%d" % [$$, rand(9999)]
+		fname = "#{TMPDIR}/server-conf-%d.%d" % [$$, rand(9999)]
 		f = File.new fname, "w"
 		f.write r
 		c = Command.new("cp -f \"#{f.path}\" #{Platform.file_name(:monit_conf)}")
@@ -106,7 +106,7 @@ protected
 	end
 
 	def monit_file_add
-		fname = "/tmp/server-#{self.name}-%d.%d" % [$$, rand(9999)]
+		fname = "#{TMPDIR}/server-#{self.name}-%d.%d" % [$$, rand(9999)]
 		open(fname, "w") { |f| f.write cmd_file }
 		c = Command.new "cp -f \"#{fname}\" #{File.join(Platform.file_name(:monit_dir), Platform.service_name(self.name))}.conf"
 		c.submit "rm -f \"#{fname}\""
