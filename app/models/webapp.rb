@@ -85,12 +85,7 @@ class Webapp < ActiveRecord::Base
 		path.sub!(/\/+$/, '')
 		path.gsub!(/\/+/, '/')
 		domain = ''
-		begin
-			domain = Setting.get('domain') || ''
-		rescue
-			# this could happen dues to a bad
-			# migration with webapps
-		end
+		domain = (Setting.get('domain') || '') rescue ''
 		self.kind = 'generic' if self.kind.nil?
 		case self.kind.downcase
 			when 'python'
