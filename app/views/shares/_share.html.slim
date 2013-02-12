@@ -53,14 +53,6 @@ div.share[id="whole_share_#{share.id}"]
               td
                 span.open-update-path-area.focus= share.path
 
-            - if disk_pooling_area?
-              tr
-                td &nbsp;
-                td &nbsp;
-              tr
-                td #{t('disk_pooling')}:
-                td= render :partial => 'shares/disk_pool', :object => share
-
             - if advanced?
               tr
                 td #{t('extra_parameters')}
