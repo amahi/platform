@@ -1,15 +1,25 @@
-table#welcome.nav[border="0" cellspacing="0" cellpadding="0" width="90%"]
+table#welcome.nav
   tr
     td
-      table#welcome_apps[border="0" cellspacing="0" cellpadding="0"]
+      table#welcome_apps
         - if @apps.size > 6
           = render :partial => 'pair', :collection => @apps.in_groups_of(2)
         - else
           = render :partial => 'app', :collection => @apps
 
 	    - if @apps.length < 3
-	      tr[align="center"]
-	       td[colspan="4"]
+	      tr
+	       td
 	         = link_to(theme_image_tag('dashboard.png', :title => "Install applications!"), apps_path)
 
-    = get_feeds
+    td
+      #latest_news
+        #ln_inner
+          #ln_header
+            h3
+              = t('latest_news')
+          #ln_content
+            ul
+              = render :partial => 'news', :collection => @news
+            span#more_news
+              = link_to("More news ...", "http://blog.amahi.org/")
