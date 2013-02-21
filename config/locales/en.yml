@@ -538,4 +538,7 @@
   recover: Recover
   you_have_been_logged_out: You have been logged out
   thanks_for_visiting: Thanks for visiting. Support our Sponsors!
+  # new in amahi 7
+  latest_news: Latest News
+  more_news: More news ...
 
