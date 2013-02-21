@@ -890,3 +890,5 @@ td.form-action-wrap {
 	line-height: 1.3;
 	display: block;
 }
+
+section#dashboard { float: left; text-align: center; width: 713px; }
