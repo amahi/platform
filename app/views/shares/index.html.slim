@@ -8,8 +8,7 @@
             th.settings-col2.shares-col2[scope="col"]= t('location')
       = render :partial => 'shares/share', :collection => @shares
     - else
-      div
-        h2= t('there_are_no_shares_created')
+        h2 =t('there_are_no_shares_created')
 
 = tag('input', :type => 'button', :value => " #{t('new_share')} &raquo; ".html_safe, :class => 'open-area', :id => "new-share-to-step1",  :data => { :related => "#new-share-step1" } )
 

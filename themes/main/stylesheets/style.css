@@ -559,7 +559,8 @@ td.align-top {
     margin-right: 10px;
 }
 .messages{
-    overflow:hidden display:inline-block
+    overflow: hidden; display:inline-block;
+    width: 235px;
 }
 .messages img{
     margin: 0 10px;
