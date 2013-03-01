@@ -10,7 +10,7 @@
 
 //= require lib/core-ext
 //= require lib/ajax-setup
-//= require lib/general
+//= require lib/application
 //= require lib/templates
 //= require lib/smart-links
 

@@ -7,8 +7,8 @@ gem "yettings"
 
 # Commenting this out because we're not going to pre-compile assets for now
 #group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2.5'
+  gem 'coffee-rails', '~> 3.2.2'
 
   # Disable these, as they do not compile on ARM yet and may not be needed in our current setup
   # # See https://github.com/sstephenson/execjs#readme for more supported runtimes
