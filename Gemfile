@@ -12,9 +12,9 @@ gem "yettings"
 
   # Disable these, as they do not compile on ARM yet and may not be needed in our current setup
   # # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
   # # trying libv8 to see if things work on travis ci
-  # gem "libv8", "~> 3.11.8.4"
+  gem "libv8", "~> 3.11.8.4"
 
   gem 'uglifier', '>= 1.0.3'
 #end
