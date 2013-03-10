@@ -35,6 +35,7 @@ AmahiHDA::Application.routes.draw do
       put 'update_path'
       put 'toggle_disk_pool'
       put 'update_extras'
+      put 'clear_permissions'
     end
   end
 

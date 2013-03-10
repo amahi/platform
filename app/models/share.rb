@@ -256,6 +256,13 @@ class Share < ActiveRecord::Base
 		self.update_attributes(params[:share])
 	end
 
+	# make all the files in the share globally writeable
+	def clear_permissions
+		c = Command.new
+		c.submit("chmod -R a+rwx \"#{self.path}\"")
+		c.execute
+	end
+
 	private
 
 	def before_save_hook

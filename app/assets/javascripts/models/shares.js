@@ -158,6 +158,25 @@ var Shares = {
             }
         });
 
+        $('.clear-permissions').live({
+            'ajax:success': function(data, results, jqXHR){
+                link = $(this);
+                parent = link.parent();
+                if (results['status'] == 'ok') {
+			parent.html(FormHelpers.ok_icon)
+                } else {
+			parent.html(FormHelpers.error_icon)
+		}
+            },
+            'ajax:beforeSend': function(data, results, jqXHR){
+                link = $(this);
+                spinner = link.parent().children('.spinner');
+                console.log(spinner);
+                spinner.show('fast');
+                link.hide();
+            }
+
+        });
 
 
     },

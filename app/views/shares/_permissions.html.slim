@@ -1,0 +1,8 @@
+- share = permissions
+
+.permissions
+  = link_to theme_image_tag('tools.png'), clear_permissions_share_path(share), :remote => true, :method => 'put',
+    :confirm => t('this_will_clear_permissions_wide'), 'data-success' => t('permissions_cleared'),
+    'data-error' => t('permissions_clearning_error'), :class => 'clear-permissions', :title => t('this_will_clear_permissions_wide')
+  = spinner
+  span.messages
