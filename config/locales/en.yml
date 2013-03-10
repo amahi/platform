@@ -157,7 +157,7 @@
   this_shares_files_deleted: This share will no longer be available (files in it will NOT be deleted).
   anonymous_guests: Guests
   clear: Clear
-  this_will_clear_permissions_wide: This will clear all permission limitations in the share
+  this_will_clear_permissions_wide: This will clear all permissions in the '%{share}' share
   permissions_clearning_error: An error occurred clearing permissions
   permissions_cleared: Permissions cleared successfully
 
