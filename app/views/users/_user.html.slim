@@ -41,8 +41,8 @@ div.user[id="whole_user_#{user.id}"]
                 td= formatted_date(user.last_login_at)
 
             tr
-              td Admin
-              td= simple_remote_checkbox :id => "user_admin_#{user.id}",
+              td #{t('admin')}
+              td = simple_remote_checkbox :id => "user_admin_#{user.id}",
                                          :css_class => 'user_admin_checkbox',
                                          :url => toggle_admin_user_path(:id => user.id),
                                          :label => "",

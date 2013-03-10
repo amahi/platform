@@ -48,6 +48,7 @@
   networking: Networking
   themes: Themes
   settings: Settings
+  admin: Admin
 
   # misc common stuff
   cancel: Cancel
