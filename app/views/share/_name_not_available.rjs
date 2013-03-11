@@ -1,6 +1,0 @@
-page[:name_messages].replace_html theme_image_tag("stop") + " " + t('this_name_is_not_available')
-page.show 'name_messages'
-page[:path].disabled = true
-page[:visible].disabled = true
-page[:readonly].disabled = true
-page[:share_create_button].disabled = true

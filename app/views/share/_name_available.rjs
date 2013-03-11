@@ -1,4 +1,0 @@
-page[:name_messages].replace_html theme_image_tag("ok") + " " + t('share_name_is_available')
-page.show 'name_messages'
-page[:path].disabled = false
-page[:path].value = Share.full_path(@name)

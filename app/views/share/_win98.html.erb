@@ -1,9 +1,0 @@
-<%=
-	checked = @win98.value == '1'
-	checkbox_to_remote checked,
-	:url => { :controller => 'share', :action => 'toggle_setting', :id => @win98 },
-	:before => "Element.show('spinner-win98')",
-	:success => "Element.hide('spinner-win98')",
-	:update => "shares-settings",
-	:confirm => (checked ? t('disabling_lan_manager_will_not_allow_older_machines') : t('enabling_lan_manager_is_less_secure'))
-%>

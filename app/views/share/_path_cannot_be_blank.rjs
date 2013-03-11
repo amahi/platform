@@ -1,3 +1,0 @@
-page[:path_messages].replace_html theme_image_tag("stop") + " " + t('share_path_cannot_be_blank')
-page.show 'path_messages'
-page[:share_create_button].disabled = true

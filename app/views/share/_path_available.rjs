@@ -1,5 +1,0 @@
-page[:path_messages].replace_html theme_image_tag("ok") + " " + t('share_path_is_available')
-page.show 'path_messages'
-page[:visible].disabled = false
-page[:readonly].disabled = false
-page[:share_create_button].disabled = false

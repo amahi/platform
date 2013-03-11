@@ -1,9 +1,0 @@
-<%=
-	checked = @pdc.value == '1'
-	checkbox_to_remote checked,
-	:url => { :controller => 'share', :action => 'toggle_setting', :id => @pdc },
-	:before => "Element.show('spinner-pdc')",
-	:success => "Element.hide('spinner-pdc')",
-	:update => "shares-settings",
-	:confirm => (checked ?  t('disabling_pdc_will_enable_workgroup_mode') : t('enabling_pdc_is_a_major_share_change'))
-%>
