@@ -64,13 +64,6 @@ ActiveRecord::Schema.define(:version => 20120803011600) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "disk_pool_partitions", :force => true do |t|
-    t.string   "path"
-    t.integer  "minimum_free", :default => 10
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
-
   create_table "dns_aliases", :force => true do |t|
     t.string "name",    :default => "", :null => false
     t.string "address", :default => "", :null => false
@@ -146,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20120803011600) do
     t.string   "last_login_ip"
     t.string   "current_login_ip"
     t.boolean  "admin"
+    t.text     "public_key"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
   end
