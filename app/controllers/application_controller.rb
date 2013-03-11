@@ -194,6 +194,10 @@ class ApplicationController < ActionController::Base
 		@setup_tabs = plugin_tabs.map{|ap| [ap[:name], ap[:url]]}
 	end
 
+	def development?
+		Rails.env == 'development'
+	end
+
 	private
 
 	# select the "tab plugins" from all the plugins

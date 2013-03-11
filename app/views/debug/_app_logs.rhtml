@@ -25,7 +25,7 @@
 		<tr>
 		<td> &nbsp; </td>
 		<td>
-			<%= link_to_function "Cancel", update_page { |page|
+			<%= link_to_function t('cancel'), update_page { |page|
 					page.hide 'debug_submit_form'
 					page.show 'debug_submit_link'
 					page[:subject].value = "Describe what failed here ..."

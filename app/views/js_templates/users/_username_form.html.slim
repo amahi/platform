@@ -15,5 +15,5 @@
       td= f.text_field :name, :size => 16, :maxlength => 64, :placeholder => "Full Name"
       td.form-action-wrap
         = f.submit " #{t('change')} &raquo; ".html_safe, :id => 'user_create_button'
-        = link_to t('cancel'), '#', :class => 'close-username-edit'
+        = link_to t('cancel'), '#', :class => 'close-username-edit cancel-link'
       td.messages

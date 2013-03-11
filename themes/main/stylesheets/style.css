@@ -520,7 +520,6 @@ td.align-top {
     vertical-align: top;
 }
 #update-username input[type=submit], #update-path-form input[type=submit] {
-    margin-right: 10px;
     position: relative;
     padding-bottom: 4px;
 }
@@ -545,18 +544,6 @@ td.align-top {
 }
 .settings-fields table.password-edit td.btn-wrap, td.btn-wrap {
     text-align: left;
-}
-.close-username-edit {
-    position: relative;
-    margin-right: 10px;
-}
-.close-update-path-area {
-    position: relative;
-    margin-right: 10px;
-}
-.close-password-area {
-    position: relative;
-    margin-right: 10px;
 }
 .messages{
     overflow: hidden; display:inline-block;
@@ -893,3 +880,5 @@ td.form-action-wrap {
 }
 
 section#dashboard { float: left; text-align: center; width: 713px; }
+.cancel-link { padding-left: 10px; }
+

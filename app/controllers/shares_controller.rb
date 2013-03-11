@@ -111,6 +111,7 @@ class SharesController < ApplicationController
 
 	def clear_permissions
 		@share = Share.find(params[:id]) if params[:id]
+		sleep 2 if development?
 		if @share
 			@cleared = @share.clear_permissions
 			render :json => { :status => :ok }

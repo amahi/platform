@@ -19,7 +19,7 @@ div.user[id="whole_user_#{user.id}"]
           = spinner
           span.delete[style="#{user.admin? ? "display:none;" : ""}"]
             | #{t('delete_user')}&nbsp;
-            b= user.login
+            b = user.login
             | &nbsp;
             = link_to theme_image_tag("delete.png", :title => t('delete_user'), :class => 'theme-image'),
                       user_path(user),
@@ -38,7 +38,7 @@ div.user[id="whole_user_#{user.id}"]
             - if advanced?
               tr
                 td #{t('last_login')}
-                td= formatted_date(user.last_login_at)
+                td = formatted_date(user.last_login_at)
 
             tr
               td #{t('admin')}
@@ -52,15 +52,17 @@ div.user[id="whole_user_#{user.id}"]
             tr
               td #{t('authentication')}
               td
-                = link_to theme_image_tag('identity.png'), '#', :class => 'open-pubkey-area'
+                = link_to_function theme_image_tag('identity.png'), "$(this).parent().children('.pubkey-area').toggle('slow')",
+                  :title => t('manage_your_public_key')
                 = theme_image_tag("ok.png", :class => 'ok', :style => 'display:none')
                 = theme_image_tag("warning.png", :class => 'error', :style => 'display:none')
                 = spinner
                 div.pubkey-area[style="display:none"]
                   = form_tag update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey' do |f|
-                    = text_area_tag :public_key, user.public_key, :rows => 6, :cols => 64, :placeholder => t('public_key')
+                    = text_area_tag :public_key, user.public_key, :rows => 5, :cols => 78, :placeholder => t('public_key')
                     br
                     = submit_tag t('update_key')
+                    = link_to_function t('cancel'), "$(this).parent().parent().hide('slow')", :class => 'cancel-link'
 
             tr
               td #{t('password')}

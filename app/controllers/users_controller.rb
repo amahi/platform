@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
 	def update_pubkey
 		@user = User.find(params[:id])
-		sleep 2
+		sleep 2 if development?
 		unless @user
 			render :json => { :status => :not_acceptable }
 		else

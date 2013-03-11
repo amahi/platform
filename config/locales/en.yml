@@ -105,6 +105,7 @@
   admin: Admin
   public_key: Public key
   update_key: Update Key
+  manage_your_public_key: Manage your public key
 
   # shares tab
   permissions: Permissions

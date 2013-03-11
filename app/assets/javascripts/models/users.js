@@ -41,11 +41,6 @@ var Users = {
             }
         });
 
-        $('.open-pubkey-area').live('click', function () {
-                element = $(this);
-                element.parent().children('.pubkey-area').toggle('slow');
-	});
-
         $('.update-password-form').live({
             'ajax:success': function(data, results, jqXHR){
                 form = $(this);
