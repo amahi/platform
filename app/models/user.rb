@@ -177,7 +177,7 @@ class User < ActiveRecord::Base
 	end
 
 	def update_pubkey
-		Platform.update_user_pubkey(login, pubkey)
+		Platform.update_user_pubkey(login, public_key)
 	end
 
 	def make_admin
