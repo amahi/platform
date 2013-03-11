@@ -41,6 +41,11 @@ var Users = {
             }
         });
 
+        $('.open-pubkey-area').live('click', function () {
+                element = $(this);
+                element.parent().children('.pubkey-area').toggle('slow');
+	});
+
         $('.update-password-form').live({
             'ajax:success': function(data, results, jqXHR){
                 form = $(this);
@@ -57,9 +62,6 @@ var Users = {
 
             }
         });
-
-
-
 
         // update username
         SmartLinks.initialize({
@@ -95,6 +97,30 @@ var Users = {
 
             }
         });
+
+	// management of the public key area
+        $('.update-pubkey').live({
+            'ajax:success': function(data, results, jqXHR){
+                form = $(this);
+                spinner = form.parent().parent().children('.spinner');
+		spinner.hide();
+                if (results['status'] == 'ok') {
+			image = form.parent().parent().children('.ok');
+                } else {
+			image = form.parent().parent().children('.error');
+		}
+		image.show();
+		setTimeout(function() { image.hide('slow'); }, 3000);
+            },
+            'ajax:beforeSend': function(data, results, jqXHR){
+                form = $(this);
+                spinner = form.parent().parent().children('.spinner');
+                spinner.show('fast');
+                form.parent().hide();
+            }
+
+        });
+
 
         RemoteCheckbox.initialize({'selector': '.user_admin_checkbox', 'parentSelector': 'span:first', 'success': function(rc, checkbox) {
             _this.user(checkbox).find('.user_icons:first').toggleClass('user_admin');

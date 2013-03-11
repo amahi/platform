@@ -33,7 +33,20 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		# This appears to be needed in some cases
+	end
+
+	def update_pubkey
+		@user = User.find(params[:id])
+		sleep 2
+		unless @user
+			render :json => { :status => :not_acceptable }
+		else
+			key = params[:public_key]
+			key = nil if key.blank?
+			@user.public_key=key
+			@user.save
+			render :json => { :status => @user.errors.empty? ? :ok : { :messages => @user.errors.full_messages } }
+		end
 	end
 
 	def destroy
@@ -59,7 +72,7 @@ class UsersController < ApplicationController
 		render :json => { :status => errors ? :not_acceptable : :ok, :message => errors ? '' : t('password_changed_successfully') }
 	end
 
-	def update_username
+	def update_name
 		@user = User.find(params[:id])
 		@user.update_attributes(params[:user])
 		render :json => { :status => @user.errors.any? ? :not_acceptable : :ok }

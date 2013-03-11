@@ -12,7 +12,8 @@ AmahiHDA::Application.routes.draw do
     member do
       put 'toggle_admin'
       put 'update_password'
-      put 'update_username'
+      put 'update_name'
+      put 'update_pubkey'
     end
   end
 

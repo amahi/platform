@@ -81,7 +81,7 @@ module ApplicationHelper
 
 
 	def spinner css_class = ''
-		theme_image_tag("working.gif", :class => "spinner theme-image #{css_class}", :style=> "display: none;")
+		theme_image_tag("working.gif", :class => "spinner #{css_class}", :style=> "display: none;")
 	end
 
 	def formatted_date(date)

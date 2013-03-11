@@ -171,7 +171,6 @@ var Shares = {
             'ajax:beforeSend': function(data, results, jqXHR){
                 link = $(this);
                 spinner = link.parent().children('.spinner');
-                console.log(spinner);
                 spinner.show('fast');
                 link.hide();
             }

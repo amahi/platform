@@ -50,6 +50,19 @@ div.user[id="whole_user_#{user.id}"]
                                          :disabled => !can_i_toggle_admin?(user)
 
             tr
+              td #{t('authentication')}
+              td
+                = link_to theme_image_tag('identity.png'), '#', :class => 'open-pubkey-area'
+                = theme_image_tag("ok.png", :class => 'ok', :style => 'display:none')
+                = theme_image_tag("warning.png", :class => 'error', :style => 'display:none')
+                = spinner
+                div.pubkey-area[style="display:none"]
+                  = form_tag update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey' do |f|
+                    = text_area_tag :public_key, user.public_key, :rows => 6, :cols => 64, :placeholder => t('public_key')
+                    br
+                    = submit_tag t('update_key')
+
+            tr
               td #{t('password')}
               td
                 = link_to t('change'), '#', :class => 'open-password-area'

@@ -48,7 +48,6 @@
   networking: Networking
   themes: Themes
   settings: Settings
-  admin: Admin
 
   # misc common stuff
   cancel: Cancel
@@ -103,6 +102,9 @@
   are_you_sure_user: Are you sure you want to delete user '%{user}' ?
   this_users_files_deleted: "The files in this user's home folder WILL BE DELETED"
   last_login: Last login
+  admin: Admin
+  public_key: Public key
+  update_key: Update Key
 
   # shares tab
   permissions: Permissions
