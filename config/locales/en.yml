@@ -102,6 +102,9 @@
   are_you_sure_user: Are you sure you want to delete user '%{user}' ?
   this_users_files_deleted: "The files in this user's home folder WILL BE DELETED"
   last_login: Last login
+  admin: Admin
+  public_key: Public key
+  update_key: Update Key
 
   # shares tab
   permissions: Permissions
@@ -156,6 +159,10 @@
   are_you_sure_share: Are you sure you want to delete share '%{share}' ?
   this_shares_files_deleted: This share will no longer be available (files in it will NOT be deleted).
   anonymous_guests: Guests
+  clear: Clear
+  this_will_clear_permissions_wide: This will clear all permissions in the '%{share}' share
+  permissions_clearning_error: An error occurred clearing permissions
+  permissions_cleared: Permissions cleared successfully
 
   # disk pooling, greyhole
   disk_pooling: Storage Pool
@@ -538,4 +545,7 @@
   recover: Recover
   you_have_been_logged_out: You have been logged out
   thanks_for_visiting: Thanks for visiting. Support our Sponsors!
+  # new in amahi 7
+  latest_news: Latest News
+  more_news: More news ...
 

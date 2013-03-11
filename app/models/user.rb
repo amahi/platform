@@ -4,12 +4,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -19,7 +19,7 @@ require 'command'
 
 class User < ActiveRecord::Base
 
-  scope :admins, where(:admin => 1)
+	scope :admins, where(:admin => 1)
 
 	begin
 		acts_as_authentic do |c|
@@ -31,17 +31,20 @@ class User < ActiveRecord::Base
 		# non-fully active record compliant, e.g. from the app installer
 	end
 
-  attr_accessible :login, :name, :password, :password_confirmation, :admin
+	attr_accessible :login, :name, :password, :password_confirmation, :admin
 
-  validates :login, :presence => true,
-            :format => { :with => /^[A-Za-z][A-Za-z0-9]+$/ },
-            :length => { :in => 3..32 },
-            :uniqueness => { :case_sensitive => false },
-            :user_not_exist_in_system => {:message => 'already exists in system', :on => :create}
+	validates :login, :presence => true,
+	:format => { :with => /^[A-Za-z][A-Za-z0-9]+$/ },
+	:length => { :in => 3..32 },
+	:uniqueness => { :case_sensitive => false },
+	:user_not_exist_in_system => {:message => 'already exists in system', :on => :create}
 
-  validates :name, :presence => true
+	# this is a very coarse check on the public key! sshd(8) explains each key can be up to 8k?
+	validates_length_of :public_key, :in => 300..8192, :allow_nil => true
 
-  #NOTE: validation for password and password_confirmation is set by authlogic
+	validates :name, :presence => true
+
+	#NOTE: validation for password and password_confirmation is set by authlogic
 
 	before_create :before_create_hook
 	before_save :before_save_hook
@@ -49,54 +52,48 @@ class User < ActiveRecord::Base
 	after_save :after_save_hook
 	after_create :after_create_hook
 
+	class << self
+		def system_find_name_by_username(username)
+			# return [username, 500] if Yetting.dummy_mode.inspect
+			pwd = StringScanner.new(File.open('/etc/passwd').readlines.join)
+			user = Regexp.new("^#{username}:[^:]*:(\\d+):\\d+:([^:]*):", Regexp::MULTILINE)
+			pwd.scan_until user or return nil
+			uid = pwd[1].to_i
+			# NOTE-cpg: in some cases (ubuntu 12), the name ends up with three commas at the end for some reason
+			name = pwd[2].gsub(/,*$/,'')
+			[name, uid]
+		end
 
+		def system_all_new_users
+			res = []
+			Dir.chdir("/home") do
+				Dir.glob("*").sort.reverse.each do |login|
+					unless User.find_by_login login
+						name, uid = system_find_name_by_username login
+						# FIXME-cpg: Fedora specific constant 500 here
+						res << { :login => login, :name => name } unless name.nil? or name.blank? or uid < 500
+					end
+				end
+			end
+			res
+		end
 
+		def all_users
+			new_users = self.system_all_new_users
+			self.create(new_users) unless new_users.blank?
+			self.where('login not in (?)', ['root']).sort { |x,y| x.login <=> y.login }
+		end
 
+		def system_user_exists? (username)
+			system_find_name_by_username(username)
+		end
 
-
-
-  class << self
-    def system_find_name_by_username(username)
-	    # return [username, 500] if Yetting.dummy_mode.inspect
-      pwd = StringScanner.new(File.open('/etc/passwd').readlines.join)
-      user = Regexp.new("^#{username}:[^:]*:(\\d+):\\d+:([^:]*):", Regexp::MULTILINE)
-      pwd.scan_until user or return nil
-      uid = pwd[1].to_i
-      # NOTE-cpg: in some cases (ubuntu 12), the name ends up with three commas at the end for some reason
-      name = pwd[2].gsub(/,*$/,'')
-      [name, uid]
-    end
-
-    def system_all_new_users
-      res = []
-      Dir.chdir("/home") do
-        Dir.glob("*").sort.reverse.each do |login|
-          unless User.find_by_login login
-            name, uid = system_find_name_by_username login
-	    # FIXME-cpg: Fedora specific constant 500 here
-            res << { :login => login, :name => name } unless name.nil? or name.blank? or uid < 500
-          end
-        end
-      end
-      res
-    end
-
-    def all_users
-      new_users = self.system_all_new_users
-      self.create(new_users) unless new_users.blank?
-      self.where('login not in (?)', ['root']).sort { |x,y| x.login <=> y.login }
-    end
-
-    def system_user_exists? (username)
-      system_find_name_by_username(username)
-    end
-
-    def is_valid_name? (username)
-      name, uid = system_find_name_by_username(username)
-      # only valid names must not exist already
-      name == nil
-    end
-  end
+		def is_valid_name? (username)
+			name, uid = system_find_name_by_username(username)
+			# only valid names must not exist already
+			name == nil
+		end
+	end
 
 
 	# add to the group called "users" so that it's like the rest
@@ -123,7 +120,7 @@ class User < ActiveRecord::Base
 	end
 
 
-protected
+	protected
 
 	def before_create_hook
 		# FIXME: this is an issue with fedora 12 and usernames in lowercase
@@ -161,7 +158,11 @@ protected
 
 	def after_save_hook
 		if admin_changed?
+			make_admin
 			Share.push_shares
+		end
+		if public_key_changed?
+			update_pubkey
 		end
 	end
 
@@ -173,5 +174,13 @@ protected
 		c = Command.new("pdbedit -d0 -x -u \"#{self.login}\"")
 		c.submit("userdel -r \"#{self.login}\"")
 		c.execute
+	end
+
+	def update_pubkey
+		Platform.update_user_pubkey(login, public_key)
+	end
+
+	def make_admin
+		Platform.make_admin(login, admin?)
 	end
 end

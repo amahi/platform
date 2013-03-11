@@ -1,6 +1,6 @@
 = form_for User.new,
     :remote => true,\
-    :url => '/users/${user_id}/update_username',\
+    :url => '/users/${user_id}/update_name',\
     :method => :put,
     :html => {\
       :class => 'user area username-form',\
@@ -16,5 +16,4 @@
       td.form-action-wrap
         = f.submit " #{t('change')} &raquo; ".html_safe, :id => 'user_create_button'
         = link_to t('cancel'), '#', :class => 'close-username-edit'
-      td
-        .messages
+      td.messages

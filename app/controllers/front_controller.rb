@@ -17,11 +17,12 @@
 class FrontController < ApplicationController
 
 	before_filter :login_required_unless_guest_dashboard
-  before_filter :no_tabs
+	before_filter :no_tabs
 
 	def index
 		@page_title = t('dashboard')
 		@apps = App.in_dashboard
+		@news = AmahiNews.top()
 	end
 
 end

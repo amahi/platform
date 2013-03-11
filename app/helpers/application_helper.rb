@@ -46,25 +46,6 @@ module ApplicationHelper
 		page_title ? "Amahi Home Server &rsaquo; #{page_title}".html_safe : "Amahi Home Server"
 	end
 
-	def get_feeds()
-		feeds = ""
-		begin
-			feed = 'blog.amahi.org'
-			if Ping.pingecho(feed, 2, 'http')
-				Net::HTTP.start(feed) do |http|
-					req = Net::HTTP::Get.new('/news/')
-					response = http.request(req)
-					feeds = response.body
-				end
-			end
-		rescue Exception => e
-			puts e
-		end
-		feeds.html_safe
-	end
-
-
-
 	def simple_remote_checkbox options
 		parsed_options = {}
 		parsed_options[:checked] = 'checked' if options[:checked]
@@ -100,7 +81,7 @@ module ApplicationHelper
 
 
 	def spinner css_class = ''
-		theme_image_tag("working.gif", :class => "spinner theme-image #{css_class}", :style=> "display: none;")
+		theme_image_tag("working.gif", :class => "spinner #{css_class}", :style=> "display: none;")
 	end
 
 	def formatted_date(date)

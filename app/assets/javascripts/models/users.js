@@ -9,10 +9,10 @@ var Users = {
                 if (results['status'] != 'ok') {
                     _this.form().replaceWith(results['content']);
                 } else {
-                    parent = $('#users').parents('td:first')
-                    parent.html(results['content']);
+			$('#users-table').parents('td:first').html(results['content']);
+			_this.form().find("input[type=text], textarea").val("");
                 }
-                _this.form().validate();
+                _this.form();
             }
 
         });
@@ -36,10 +36,15 @@ var Users = {
                user_id = _this.parse_id(user.attr('id'));
                open_link.nextAll('.messages:first').text('');
                open_link.after(Templates.run('updatePassword', {user_id: user_id}));
-               form = open_link.next().validate();
+               form = open_link.next();
                FormHelpers.focus_first(form);
             }
         });
+
+        $('.open-pubkey-area').live('click', function () {
+                element = $(this);
+                element.parent().children('.pubkey-area').toggle('slow');
+	});
 
         $('.update-password-form').live({
             'ajax:success': function(data, results, jqXHR){
@@ -58,9 +63,6 @@ var Users = {
             }
         });
 
-
-
-
         // update username
         SmartLinks.initialize({
             open_selector: '.open-username-edit',
@@ -69,7 +71,7 @@ var Users = {
                 user = _this.user(open_link);
                 user_id = _this.parse_id(user.attr('id'));
                 open_link.after(Templates.run('updateUsername', {user_id: user_id}));
-                form = open_link.next().validate();
+                form = open_link.next();
                 FormHelpers.update_first(form, open_link.text());
                 FormHelpers.focus_first(form);
             }
@@ -95,6 +97,30 @@ var Users = {
 
             }
         });
+
+	// management of the public key area
+        $('.update-pubkey').live({
+            'ajax:success': function(data, results, jqXHR){
+                form = $(this);
+                spinner = form.parent().parent().children('.spinner');
+		spinner.hide();
+                if (results['status'] == 'ok') {
+			image = form.parent().parent().children('.ok');
+                } else {
+			image = form.parent().parent().children('.error');
+		}
+		image.show();
+		setTimeout(function() { image.hide('slow'); }, 3000);
+            },
+            'ajax:beforeSend': function(data, results, jqXHR){
+                form = $(this);
+                spinner = form.parent().parent().children('.spinner');
+                spinner.show('fast');
+                form.parent().hide();
+            }
+
+        });
+
 
         RemoteCheckbox.initialize({'selector': '.user_admin_checkbox', 'parentSelector': 'span:first', 'success': function(rc, checkbox) {
             _this.user(checkbox).find('.user_icons:first').toggleClass('user_admin');

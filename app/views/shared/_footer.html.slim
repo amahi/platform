@@ -1,18 +1,20 @@
-#footer
-  | &copy; 2011 &nbsp; <a href="http://www.amahi.org">Amahi</a>
-  | | <a href="http://www.amahi.org/user">#{t('your_control_panel')}</a>
-  | | <a href="http://www.amahi.org/feedback">#{t('feedback')}</a>
-  | | <a href="http://wiki.amahi.org/">#{t('wiki')}</a>
-  | | <a href="http://bugs.amahi.org">#{t('tracker')}</a>
+footer#footer
+  nav
+    | &copy; #{Date.today.year} &ndash; #{link_to "Amahi", "http://www.amahi.org"}
+    | | #{link_to t('your_control_panel'), "http://www.amahi.org/user"}
+    | | #{link_to t('feedback'), "http://www.amahi.org/feedback" }
+    | | #{link_to t('wiki'), "http://wiki.amahi.org/" }
+    | | #{link_to t('tracker'), "http://bugs.amahi.org" }
 
-  - if theme.author
-    | | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
+    - if theme.author
+      | | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
 
-  | | <a href="http://talk.amahi.org">#{t('live_help')}</a>
-  | | <a href="http://forums.amahi.org/">#{t('forums')}</a>
+    | | #{link_to t('live_help'), "http://talk.amahi.org" }
+    | | #{link_to t('forums'), "http://forums.amahi.org" }
+    | |
 
-  - if current_user
-    = link_to t('logout'), logout_path
-    | #{current_user.login}
-  - else
-    = link_to t('log_in'), login_path
+    - if current_user
+      = link_to t('logout'), logout_path
+      | #{current_user.login}
+    - else
+      = link_to t('log_in'), login_path

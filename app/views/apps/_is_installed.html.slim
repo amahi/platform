@@ -19,7 +19,7 @@
 
 
 - if app.webapp
-  div.app-url= link_to(app.full_url, "#{app.full_url}.#{Setting.value_by_name('domain')}", :target => '_blank')
+  div.app-url= link_to(app.full_url, app.full_url, :target => '_blank')
 
 - if app.theme
   div.app-url= link_to(t('manage_themes'), app.full_url)

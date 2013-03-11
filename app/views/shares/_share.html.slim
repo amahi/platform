@@ -34,6 +34,10 @@ div.share[id="whole_share_#{share.id}"]
           table
             tr
               td #{t('access')}
+              td= render :partial => 'shares/access', :object => share
+
+            tr
+              td #{t('visibility')}
               td= simple_remote_checkbox :id => "share_visible_#{share.id}",
                                         :css_class => 'share_visible_checkbox',
                                         :url => toggle_visible_share_path(:id => share.id),
@@ -41,7 +45,7 @@ div.share[id="whole_share_#{share.id}"]
                                         :checked => share.visible
             tr
               td #{t('permissions')}
-              td= render :partial => 'shares/access', :object => share
+              td= render :partial => 'shares/permissions', :object => share
 
             - if advanced?
               tr
@@ -52,14 +56,6 @@ div.share[id="whole_share_#{share.id}"]
               td #{t('location')}
               td
                 span.open-update-path-area.focus= share.path
-
-            - if disk_pooling_area?
-              tr
-                td &nbsp;
-                td &nbsp;
-              tr
-                td #{t('disk_pooling')}:
-                td= render :partial => 'shares/disk_pool', :object => share
 
             - if advanced?
               tr

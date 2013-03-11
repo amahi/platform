@@ -20,7 +20,6 @@ var Shares = {
                     parent = $('#shares-table');
                     parent.replaceWith(results['content']);
                 }
-                _this.form().validate();
             }
 
         });
@@ -55,7 +54,7 @@ var Shares = {
                 share = _this.share(open_link);
                 share_id = _this.parse_id(share.attr('id'));
                 open_link.after(Templates.run('updateTags', {share_id: share_id}));
-                form = open_link.next().validate();
+                form = open_link.next();
                 FormHelpers.update_first(form, open_link.text());
                 FormHelpers.focus_first(form);
             }
@@ -85,7 +84,7 @@ var Shares = {
                 share = _this.share(open_link);
                 share_id = _this.parse_id(share.attr('id'));
                 open_link.after(Templates.run('updatePath', {share_id: share_id}));
-                form = open_link.next().validate();
+                form = open_link.next();
                 FormHelpers.update_first(form, open_link.text());
                 FormHelpers.focus_first(form);
             }
@@ -130,7 +129,7 @@ var Shares = {
                 share = _this.share(open_link);
                 share_id = _this.parse_id(share.attr('id'));
                 open_link.after(Templates.run('updateExtras', {share_id: share_id}));
-                form = open_link.next().validate();
+                form = open_link.next();
                 FormHelpers.update_first(form, open_link.text());
                 FormHelpers.focus_first(form);
             }
@@ -159,6 +158,24 @@ var Shares = {
             }
         });
 
+        $('.clear-permissions').live({
+            'ajax:success': function(data, results, jqXHR){
+                link = $(this);
+                parent = link.parent();
+                if (results['status'] == 'ok') {
+			parent.html(FormHelpers.ok_icon)
+                } else {
+			parent.html(FormHelpers.error_icon)
+		}
+            },
+            'ajax:beforeSend': function(data, results, jqXHR){
+                link = $(this);
+                spinner = link.parent().children('.spinner');
+                spinner.show('fast');
+                link.hide();
+            }
+
+        });
 
 
     },

@@ -109,6 +109,17 @@ class SharesController < ApplicationController
 		render :json => { :force => DiskPoolPartition.toggle_disk_pool_partition!(params[:path]) }
 	end
 
+	def clear_permissions
+		@share = Share.find(params[:id]) if params[:id]
+		if @share
+			@cleared = @share.clear_permissions
+			render :json => { :status => :ok }
+		else
+			render :json => { :status => :not_acceptable }
+		end
+	end
+
+
 	protected
 
 	def render_share_access
@@ -127,7 +138,6 @@ class SharesController < ApplicationController
 	def get_shares
 		@shares = Share.all
 	end
-
 
 	#@page_title = t 'shares'
 	#@shares = Share.all.sort { |x,y| x.name.casecmp y.name }

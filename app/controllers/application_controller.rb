@@ -19,7 +19,6 @@
 
 class ApplicationController < ActionController::Base
 
-
 	protect_from_forgery
 
 	before_filter :before_filter_hook
@@ -92,8 +91,6 @@ class ApplicationController < ActionController::Base
 	private
 
 	def set_locale
-		I18n.locale = :en
-		return
 
 		preferred_locales = request.headers['HTTP_ACCEPT_LANGUAGE'].split(',').map { |locale| locale.split(';').first } rescue nil
 		available_locales = I18n.available_locales
