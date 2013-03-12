@@ -48,12 +48,12 @@ var SmartLinks = {
 
             open_area = close_link.parents(options['open_area_selector'] + ':first');
             open_area.hide('slow');
+	    open_area.find("input[type=text], input[type=password], textarea").val('');
 
-            if(typeof(close_link.data('related')) != 'undefined') {
-                $(close_link.data('related')).show();
-            }
-            else {
-                open_area.prev().show();
+            if (typeof(close_link.data('related')) != 'undefined') {
+		$(close_link.data('related')).delay(400).show('slow');
+            } else {
+		open_area.prev().delay(400).show('slow');
             }
             options['onHide'](open_area);
             return false;
