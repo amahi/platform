@@ -205,7 +205,7 @@ class Platform
 
 	# make a user admin -- sudo capable
 	def self.make_admin(username, is_admin)
-		# NOTE-cpg: tested on Fedora only
+		# WARNING-cpg: tested on Fedora only
 		admin_groups = is_admin ? ",wheel" : ''
 		c = Command.new
 		c.submit("usermod -G #{DEFAULT_GROUP}#{admin_groups} #{username}")
@@ -214,12 +214,14 @@ class Platform
 
 	# update the public key for the user
 	def self.update_user_pubkey(username, key)
-		# NOTE-cpg: tested on Fedora only
+		# WARNING-cpg: tested on Fedora only
+		fname = "#{TMPDIR}/key-%d.%d" % [$$, rand(9999)]
+		File.open(fname, "w") { |f| f.write(key) }
 		home = "/home/#{username}"
 		c = Command.new
 		c.submit("mkdir -p #{home}/.ssh/")
 		# if the key is nil (allowed), empty the file
-		c.submit("echo \"#{key || ''}\" > #{home}/.ssh/authorized_keys")
+		c.submit("mv #{fname} #{home}/.ssh/authorized_keys")
 		c.submit("chown -R #{username}:#{DEFAULT_GROUP} #{home}/.ssh")
 		c.submit("chmod u+rwx,go-rwx #{home}/.ssh")
 		c.submit("chmod u+rw,go-rwx #{home}/.ssh/authorized_keys")
