@@ -1,0 +1,7 @@
+Description:
+    Amahi plugin generator
+
+Example:
+    rails generate plugin Thing
+
+    This will create a basic Amahi platform plugin

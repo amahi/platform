@@ -220,6 +220,7 @@ DEPENDENCIES
   themes_for_rails
   therubyracer
   thin
+  thor
   uglifier (>= 1.0.3)
   unicorn
   ya2yaml

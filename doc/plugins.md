@@ -1,14 +1,14 @@
-# Writing Platform for the Amahi Platform
+# Writing a plugin for the Amahi Platform
 
 An Amahi platform plugin is an RoR engine. For simplicity we call them plugins.
 
 Plugins should be located in `plugins/` and can be generated with a generator
 
 ```bash
-rails plugin new foo_bar --mountable
+rails generate plugin FooBar --mountable
 ```
 
-This will generate a plugin called foo_bar in the root directory of the app. It has to be moved from the root dir to `plugins/` to be active. The name of the directory does not matter much at this time.
+This will generate a plugin called FooBar in the plugin/ directory of the app. The name of the directory is the class name for the plugin and it should be CamelCased for best results.
 
 ## Requirements
 
@@ -41,5 +41,4 @@ it's recommended that the line with isolate_namespace in it. Otherwise, each of 
 2) For setup area tab plugins, it has to use this layout:
 
 	layout 'setup_area'
-
 

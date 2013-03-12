@@ -38,6 +38,7 @@ gem 'unicorn'
 group :development do
 	gem 'quiet_assets'
 	gem 'thin'
+	gem 'thor'
 end
 
 gem 'pluginfactory'
