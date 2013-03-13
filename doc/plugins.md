@@ -5,7 +5,7 @@ An Amahi platform plugin is an RoR engine. For simplicity we call them plugins.
 Plugins should be located in `plugins/` and can be generated with a generator
 
 ```bash
-rails generate plugin FooBar --mountable
+rails generate plugin FooBar
 ```
 
 This will generate a plugin called FooBar in the plugin/ directory of the app. The name of the directory is the class name for the plugin and it should be CamelCased for best results.
