@@ -1,6 +1,6 @@
 defaults: &defaults
 
-  default_theme: 'main'
+  default_theme: 'default'
   valid_dhcp_address_range: 100
 
   locales_implemented:
