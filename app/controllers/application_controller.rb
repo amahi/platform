@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
 
 	def prepare_theme
 		@theme = SetTheme.find
-		theme @theme.name
+		theme @theme.path
 	end
 
 
