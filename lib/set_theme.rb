@@ -37,7 +37,7 @@ class SetTheme
 		end
 
 		def init_file_path(name)
-			"#{Rails.root}/app/assets/themes/#{name}/init.rb"
+			"#{Rails.root}/#{THEME_ROOT}/#{name}/init.rb"
 		end
 
 		def init_file_exists?(name)
@@ -52,7 +52,7 @@ class SetTheme
 
 	def initialize(theme={})
 		self.name = theme[:name]
-		self.headers = theme[:headers].present? ? theme[:headers].map{|h| (h =~ /\.js$/) ? "/themes/#{@theme_name}/#{h}" : h } : []
+		self.headers = theme[:headers].present? ? theme[:headers].map{|h| (h =~ /\.js$/) ? "/#{THEME_ROOT}/#{@theme_name}/#{h}" : h } : []
 		self.gruff = theme[:gruff_theme]
 		self.author = theme[:author_name]
 		self.author_url = theme[:author_url]

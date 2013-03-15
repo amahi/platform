@@ -28,7 +28,7 @@ class ThemeController < ApplicationController
 		f = File.join params[:filename]
 		response.headers['Content-Type'] = MIME_TYPES[f[/\.\w+$/, 0]] or "text/plain"
 		# prevent directory traversal attacks
-		path = File.join(Rails.root, 'public', 'themes', @theme_name, f)
+		path = File.join(Rails.root, THEME_ROOT, @theme_name, f)
 		if (not f.include?("..")) and File.exist? path
 			response.headers['X-Sendfile'] = path
 			render :file => path, :template => false, :layout => false

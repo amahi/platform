@@ -411,7 +411,7 @@ protected
 		fname = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
 
 		dir = nil
-		Dir.chdir(File.join(Rails.root, "public/themes")) do
+		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do
 			mkdir '.unpack'
 			Dir.chdir(".unpack") do
 				unpack(installer.source_url, fname)
