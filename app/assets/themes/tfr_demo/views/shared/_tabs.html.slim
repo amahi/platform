@@ -7,5 +7,6 @@
     li.prefsubtab= render "#{params[:controller]}/subtabs" if params[:controller] == "apps" &&  !@no_subtabs
     - @setup_tabs.each do |name, url|
       li[class="#{tab_class(name.downcase)}"]= link_to name, url
-    - if debug_tab?
+      li.prefsubtab= render "#{name.downcase}/subtabs" if params[:controller] == name.downcase &&  !@no_subtabs
+  - if debug_tab?
       li[class="#{tab_class()}"]= link_to t('debug'), '#'
