@@ -1,0 +1,8 @@
+# human readable name (no localization supported yet)
+name: Users
+# root url where this plugin will be mounted
+url: /users
+# sub tabs this plugin will use
+#subtabs: ['users']
+#if there is a advanced tab
+#advancedtab: settings

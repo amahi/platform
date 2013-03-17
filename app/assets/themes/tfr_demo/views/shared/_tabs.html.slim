@@ -1,12 +1,20 @@
 #preferencestabs
   ul.preftab
-    li[class="#{tab_class('users')}"]= link_to t('users'), users_path
-    li[class="#{tab_class('shares')}"]= link_to t('shares'), shares_path
-    li.prefsubtab= render "#{params[:controller]}/subtabs" if params[:controller] == "shares" &&  !@no_subtabs
-    li[class="#{tab_class('apps')}"]= link_to t('apps'), apps_path
-    li.prefsubtab= render "#{params[:controller]}/subtabs" if params[:controller] == "apps" &&  !@no_subtabs
-    - @setup_tabs.each do |name, url|
-      li[class="#{tab_class(name.downcase)}"]= link_to name, url
-      li.prefsubtab= render "#{name.downcase}/subtabs" if params[:controller] == name.downcase &&  !@no_subtabs
-  - if debug_tab?
-      li[class="#{tab_class()}"]= link_to t('debug'), '#'
+    -@tabs.each do |tab|
+      li[class="#{tab_class(tab[:name].downcase)}"]= link_to tab[:name], tab[:url]
+      -if tab[:subtabs] && request.fullpath =~ /(#{Regexp.escape(tab[:name].downcase)})/
+        li.prefsubtab
+          ul.prefsubtab
+            -tab[:subtabs].each do |subtab|
+              -if tab[:kind].present?
+                -if subtab == tab[:subtabs].first
+                  li[class="#{subtab_class('index')} first"]= link_to_unless_current t(subtab), tab[:url]
+                -else
+                  li[class="#{subtab_class(subtab)}"]= link_to t(subtab), tab[:url]+"/#{subtab}"
+              -else
+                -if subtab == tab[:subtabs].first
+                  li[class="#{subtab_class('index')} first"]= link_to_unless_current t(subtab), send("#{tab[:name].downcase}_path")
+                -else
+                  li[class="#{subtab_class(subtab)}"]= link_to t(subtab), send("#{subtab}_#{tab[:name].downcase}_path")
+            - if advanced? && tab[:advancedtab].present?
+              li[class="#{subtab_class(tab[:advancedtab])} last"]= link_to t(tab[:advancedtab]), send("#{tab[:advancedtab]}_#{tab[:name].downcase}_path")
