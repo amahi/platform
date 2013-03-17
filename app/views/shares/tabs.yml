@@ -1,0 +1,8 @@
+# human readable name (no localization supported yet)
+name: Shares
+# root url where this plugin will be mounted
+url: /shares
+# sub tabs this plugin will use
+subtabs: ['shares']
+#if there is a advanced tab
+advancedtab: settings

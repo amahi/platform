@@ -24,6 +24,8 @@ class: #{class_name}
 kind: tab
 # root url where this plugin will be mounted
 url: /tab/#{plural_name}
+# sub tabs this plugin will use
+#subtabs: ['subtab1','subtab2']
 			FILE
 		end
 

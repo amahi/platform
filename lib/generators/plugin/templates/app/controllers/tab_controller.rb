@@ -7,4 +7,8 @@ class TabController < ApplicationController
 	def index
 		# do your thing here
 	end
+
+  def tester
+
+  end
 end
