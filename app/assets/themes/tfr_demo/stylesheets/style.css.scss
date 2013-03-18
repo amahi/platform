@@ -70,6 +70,9 @@ nav.preftab {
         content: '- ';
         padding-left: 1em;
       }
+      a:after {
+        content: '';
+      }
       background: #fff;
       color: #3f3f3f;
       border-right: none;
