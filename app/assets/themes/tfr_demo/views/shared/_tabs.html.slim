@@ -1,12 +1,21 @@
 #preferencestabs
-  ul.preftab
-    li[class="#{tab_class('users')}"]= link_to t('users'), users_path
-    li[class="#{tab_class('shares')}"]= link_to t('shares'), shares_path
-    li.prefsubtab= render "#{params[:controller]}/subtabs" if params[:controller] == "shares" &&  !@no_subtabs
-    li[class="#{tab_class('apps')}"]= link_to t('apps'), apps_path
-    li.prefsubtab= render "#{params[:controller]}/subtabs" if params[:controller] == "apps" &&  !@no_subtabs
-    - @setup_tabs.each do |name, url|
-      li[class="#{tab_class(name.downcase)}"]= link_to name, url
-      li.prefsubtab= render "#{name.downcase}/subtabs" if params[:controller] == name.downcase &&  !@no_subtabs
-  - if debug_tab?
-      li[class="#{tab_class()}"]= link_to t('debug'), '#'
+  nav.preftab
+    ul
+      li[class="#{tab_class('users')}"]
+        = link_to t('users'), users_path
+        i.icon-users
+      li[class="#{tab_class('shares')}"]
+        = link_to t('shares'), shares_path
+        i.icon-shares
+      li.prefsubtab= render "#{params[:controller]}/subtabs" if params[:controller] == "shares" &&  !@no_subtabs
+      li[class="#{tab_class('apps')}"]
+        = link_to t('apps'), apps_path
+        i.icon-apps
+      li.prefsubtab= render "#{params[:controller]}/subtabs" if params[:controller] == "apps" &&  !@no_subtabs
+      - @setup_tabs.each do |name, url|
+        li[class="#{tab_class(name.downcase)}"]= link_to name, url
+        li.prefsubtab= render "#{name.downcase}/subtabs" if params[:controller] == name.downcase &&  !@no_subtabs
+      - if debug_tab?
+        li[class="#{tab_class()}"]
+          = link_to t('debug'), '#'
+          i.icon-debug

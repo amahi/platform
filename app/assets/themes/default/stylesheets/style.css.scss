@@ -431,32 +431,59 @@ label {
 
 nav.preftab {
   @include border-radius(5px 0 0 0);
-
   > ul {
+        list-style: none;
+        @include clearfix;
+
+        li {
+          float: left;
+          border-right: 1px solid #e8e8e8;
+          border-bottom: 1px solid #e8e8e8;
+          &.preftabheaderActive {
+            border-bottom: none;
+            a {
+              background: #fff;
+              color: #3f3f3f;
+            }
+          }
+
+          a {
+            display: block;
+            line-height: 38px;
+            padding: 0 28px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #b3b3b3;
+            &:hover { text-decoration: none; }
+          }
+        }
+      }
+  ul.prefsubtab {
     list-style: none;
     @include clearfix;
-
     li {
-    float: left;
-    border-right: 1px solid #e8e8e8;
-
-      &.preftabheaderActive {
-        a {
+      a:before {
+        content: '- ';
+        padding-left: 1em;
+      }
+      a:after {
+        content: ' -';
+      }
       background: #fff;
       color: #3f3f3f;
+      border-right: none;
     }
-  }
-
-      a {
-    display: block;
-        line-height: 38px;
-        padding: 0 28px;
-        font-size: 12px;
-        font-weight: bold;
-        color: #b3b3b3;
-
-        &:hover { text-decoration: none; }
-  }
+    li.last {
+      border-right: 1px solid #e8e8e8;
+    }
+    a {
+      display: block;
+      line-height: 28px;
+      padding: 0 28px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #b3b3b3;
+      &:hover { text-decoration: none; }
     }
   }
 }

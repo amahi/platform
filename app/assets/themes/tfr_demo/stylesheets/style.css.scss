@@ -1,8 +1,83 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: none;
+// --------------------------------------------------
+// Amahi - Default Theme
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Clear FLoat
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+
+  &:after { clear: both; }
+}
+
+// BACKGROUND GRADIENT
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+  background-color: $startColor;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+  background-image: -moz-linear-gradient(top, $startColor, $endColor);
+  background-image: -ms-linear-gradient(top, $startColor, $endColor);
+  background-image: -o-linear-gradient(top, $startColor, $endColor);
+  background-image: linear-gradient(top, $startColor, $endColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor);
+}
+
+// BACKGROUND SIZE
+@mixin background-size($width: 100%, $height: 100%) {
+  -moz-background-size: $width $height;
+  -webkit-background-size: $width $height;
+  background-size: $width $height;
+}
+
+// BORDER RADIUS
+@mixin border-radius($radius: 5px) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+// BOX SHADOW
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+// BOX SIZING
+@mixin box-sizing($type: border-box) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}
+// OPACITY
+@mixin opacity($opacity: 0.5) {
+  filter: alpha(opacity=($opacity * 100));
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity;
+}
+
+// --------------------------------------------------
+// Vars
+// --------------------------------------------------
+$linkColor:     #0090d1;
+
+
+// --------------------------------------------------
+// GENERAL STYLES
+// --------------------------------------------------
+* { margin: 0; padding: 0; outline: none; border: 0; }
+
+html, body {
+  height: 100%;
 }
 
 body {
@@ -13,23 +88,98 @@ body {
 }
 
 a {
-  color: #0090d1;
+  color: $linkColor;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
 }
 
-.align-center {
-  text-align: center;
+
+// --------------------------------------------------
+// LAYOUT
+// --------------------------------------------------
+
+.inside {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  @include clearfix;
 }
 
-.default-message {
-  padding: 10px;
+// --------------------------------------------------
+// FORMS
+// --------------------------------------------------
+
+// Shared size and type resets
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  display: inline-block;
+  height: 20px;
+  padding: 4px 10px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  @include border-radius(3px);
+  @include box-sizing(border-box);
+  vertical-align: middle;
 }
 
-form {
-  color: black;
+// Reset appearance properties for textual inputs and textarea
+// Declare width for legacy (can't be on input[type=*] selectors or it's too specific)
+input,
+textarea,
+.uneditable-input {
+  width: 158px;
+}
+
+textarea {
+  height: auto;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  background-color: #fff;
+  border: 1px solid #d0cece;
+  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+
+  // Focus state
+  &:focus {
+    border-color: #000;
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
+  }
 }
 
 fieldset {
@@ -38,9 +188,7 @@ fieldset {
   border: 1px solid #dfdfdf;
   padding: 5px 10px;
   color: #000;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(4px);
 }
 
 .access fieldset {
@@ -62,29 +210,10 @@ label {
   margin: 0 0.4em;
 }
 
-input {
-  &[type=text], &[type=password] {
-    border: 1px solid #d0cece;
-    height: 18px;
-    width: 153px;
-    padding: 4px 10px;
-    background: #fff;
-    font-size: 12px;
-    margin: 4px 0;
-  }
-  &[type=text]:focus, &[type=password]:focus {
-    border: 1px solid black;
-  }
-}
 
-.inside {
-  width: 960px;
-  margin: 0 auto;
-}
-
-#locale {
-  border: 1px solid #cccccc;
-}
+// --------------------------------------------------
+// HEADER
+// --------------------------------------------------
 
 #header {
   width: 100%;
@@ -93,35 +222,36 @@ input {
   background: #333;
   overflow: hidden;
   height: 59px;
+
+
+  a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  }
+
+  #logo-two, #pagetitle, #search-form { display: none; }
+
 }
 
 #head-left {
-  float: left;
+    float: left;
   margin-top: 17px;
   margin-left: 0;
   display: inline;
 }
 
-#head-right {
-  float: right;
-  display: inline;
-}
-
-#header a {
-  color: #fff;
-  font-weight: bold;
-  font-size: 12px;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 #head-left {
-  li {
-    float: left;
-    list-style: none;
-  }
+
+  ul { list-style: none; @include clearfix; }
+
+  li { float: left; }
+
   input[type=text] {
     background: #fff;
     width: 180px;
@@ -134,21 +264,27 @@ input {
     font-size: 12px;
     color: #666;
     margin: 0 10px 0 0;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+    @include border-radius(4px);
     float: left;
   }
-  .first {
-    margin: 0 12px 0 0;
+
     a {
       display: inline-block;
       margin: 0 10px 0 0;
       padding: 0 9px;
       height: 24px;
       line-height: 24px;
+
+    &:hover {
+      text-decoration: none;
+      background: #000;
+      @include border-radius(4px);
+      @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.17));
     }
   }
+
+  .first { margin: 0 12px 0 0; }
+
   input[type=submit] {
     float: left;
     margin: 0 2px 0 0;
@@ -158,41 +294,41 @@ input {
 #head-right {
   margin-top: 20px;
   margin-right: 0;
-  ul li {
-    float: left;
+  float: right;
+  display: inline;
+
+  ul {
     list-style: none;
+    @include clearfix;
+
+    li {
+      float: left;
     padding: 0 0 1px 0;
     margin: 0 0 0 15px;
+
+      &:first-child { display: none; }
+    }
   }
+
   a {
     display: block;
     padding: 0 9px;
     height: 24px;
     line-height: 24px;
     float: left;
+
     &:hover {
       text-decoration: none;
       background: #000;
-      -moz-border-radius: 4px;
-      -webkit-border-radius: 4px;
-      border-radius: 4px;
-      -moz-border-shadow: 0 1px 1px rgba(255, 255, 255, 0.17);
-      -webkit-border-shadow: 0 1px 1px rgba(255, 255, 255, 0.17);
-      border-shadow: 0 1px 1px rgba(255, 255, 255, 0.17);
+      @include border-radius(4px);
+      @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.17));
     }
   }
 }
 
-#head-left a:hover {
-  text-decoration: none;
-  background: #000;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  -moz-border-shadow: 0 1px 1px rgba(255, 255, 255, 0.17);
-  -webkit-border-shadow: 0 1px 1px rgba(255, 255, 255, 0.17);
-  border-shadow: 0 1px 1px rgba(255, 255, 255, 0.17);
-}
+// --------------------------------------------------
+// CONTENTET
+// --------------------------------------------------
 
 #content {
   width: 100%;
@@ -224,16 +360,35 @@ input {
   width: 960px;
 }
 
-#welcome {
-  width: 100%;
-}
+// --------------------------------------------------
+// Dashboard
+// --------------------------------------------------
+
+// Welcome Apps
+// --------------------------------------------------
 
 #welcome_apps {
-  margin: 0 auto;
-}
+  list-style: none;
+  @include clearfix;
 
-.welcome_desc, .welcome_desc-small {
-  padding: 0 0 20px 0;
+  li {
+    float: left;
+    width: 310px;
+    margin: 0 0 23px;
+
+    a { display: table; }
+
+    img {
+      float: left;
+      margin: 0 19px 0 0;
+    }
+
+    strong {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
 }
 
 .welcome_desc a, .welcome_desc-small a {
@@ -247,83 +402,97 @@ input {
   text-decoration: underline;
 }
 
-.welcome_desc a:first-child, .welcome_desc-small a:first-child {
-  margin: 0 10px 0 0;
-}
-
-.welcome_desc a:last-child, .welcome_desc-small a:last-child {
-  margin: 19px 0 0 0;
-}
-
 .welcome-logo, .welcome-logo-small {
   width: 50px;
   padding: 10px;
   background: #fff;
   border: 3px solid #dfdfdf;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 #preferencestabs {
-  width: 154px;
+  width: 145px;
   float: left;
   border: 1px solid #e8e8e8;
-  border-right: 2px solid white;
-  -moz-border-radius: 5px 0 0 5px;
-  -webkit-border-radius: 5px 0 0 5px;
-  border-radius: 5px 0 0 5px;
-  background: #fcfcfc;
-  background: -moz-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfc), color-stop(100%, #f7f7f7));
-  background: -webkit-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -o-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -ms-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f7f7f7',GradientType=0);
-  background: linear-gradient(top, #fcfcfc 0, #fcfbfb 50%, #f7f7f7 100%);
-
-  ul li{
-    list-style-type: none;
-  }
-
-  a {
-    display: block;
-    float: left;
-    width: 104px;
-    color: #b3b3b3;
-    text-shadow: 0 1px 1px #fff;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 38px;
-    text-decoration: none;
-    padding: 0 25px;
-    height: 38px;
-  }
-  .preftab {
-    .preftabheaderActive a, li a:hover {
-      background: #fff;
-      color: #3f3f3f;
-      border-right: 4px solid white;
-    }
-  }
-  .prefsubtab {
-    text-align: center;
-    .prefsubtabheaderActive a, li a:hover {
-      background: #fff;
-      color: #3f3f3f;
-      border-right: 4px solid white;
-    }
-  }
+  border-bottom-color: #dfdfdf;
+  @include border-radius(5px 0 0 5px);
+  @include background-gradient(#fcfcfc, #f7f7f7);
 }
+
 
 #preferences {
-  width: 800px;
+  width: 770px;
   float: left;
   border: 1px solid #e8e8e8;
-  -moz-border-radius: 0 5px 5px 0;
-  -webkit-border-radius: 0 5px 5px 0;
-  border-radius: 0 5px 5px 0;
+  padding: 20px;
+  @include border-radius(0 5px 5px 5px);
 }
+
+
+// App Navigation
+// --------------------------------------------------
+
+nav.preftab {
+  @include border-radius(5px 0 0 0);
+  > ul {
+        list-style: none;
+        @include clearfix;
+
+        li {
+          width: 145px;
+          float: left;
+          border-right: 1px solid #e8e8e8;
+          border-bottom: 1px solid #e8e8e8;
+          &.preftabheaderActive {
+            border-bottom: none;
+            a {
+              background: #fff;
+              color: #3f3f3f;
+            }
+          }
+
+          a {
+            display: block;
+            line-height: 38px;
+            padding: 0 28px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #b3b3b3;
+            &:hover { text-decoration: none; }
+          }
+        }
+      }
+  ul.prefsubtab {
+    list-style: none;
+    @include clearfix;
+    li {
+      a:before {
+        content: '- ';
+        padding-left: 1em;
+      }
+      background: #fff;
+      color: #3f3f3f;
+      border-right: none;
+      border-bottom: none;
+    }
+    li.last {
+      border-right: none;
+    }
+    a {
+      display: block;
+      line-height: 28px;
+      padding: 0 28px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #b3b3b3;
+      &:hover { text-decoration: none; }
+    }
+  }
+}
+
+
+// App Content
+// --------------------------------------------------
 
 #preferences .preftab, .settings {
   width: 100%;
@@ -337,9 +506,9 @@ input {
   }
 }
 
-#aliases-table, #apps-table, #servers-table, #webapps-table, #new-user-step1, #new-share-step1, #new-webapp-step1, #hosts-table, #debug_submit_form, #dhcp-table, #fw-rules-table, .settings-table {
+settings-table {
   width: 95%;
-  margin: 20px auto;
+  margin: 0 auto 20px;
   border: 1px solid #e8e8e8;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -735,21 +904,61 @@ td {
   }
 }
 
+// --------------------------------------------------
+// Footer
+// --------------------------------------------------
+
 #footer {
   width: 100%;
   background: #333;
   height: 32px;
   text-align: center;
-  padding: 16px 0 0 0;
+  padding: 18px 0 0 0;
   color: white;
+
   a {
     color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 0 5px;
-    &:hover {
-      text-decoration: underline;
     }
+
+  .inside {
+    width: auto;
+    display: table;
+    margin: 0 auto;
+  }
+
+  .copy, nav {
+    float: left;
+  }
+
+  .copy {
+    margin: 0 15px 0 0;
+  }
+
+  nav {
+    > ul {
+      list-style: none;
+      @include clearfix;
+
+      li {
+        float: left;
+        margin: 0 15px 0 0;
+
+        &:before {
+          content: '|';
+          line-height: 18px;
+          float: left;
+          margin: 0 15px 0 0;
+          position: relative;
+          top: -2px;
+        }
+
+      }
+    }
+
+    a {
+
+    }
+
   }
 }
 
@@ -804,10 +1013,6 @@ input {
   }
 }
 
-#new-host-to-step1, #new-user-to-step1, #new-share-to-step1, #new-webapp-to-step1, #new-alias-to-step1, #debug_submit_link input, #new-firewall-step1, #new-firewall-to-step1 {
-  display: block;
-  margin: 15px 24px;
-}
 
 #debug_submit_link input {
   margin-top: 25px;
@@ -885,9 +1090,7 @@ input {
   margin-bottom: 0;
 }
 
-html, body {
-  height: 100%;
-}
+
 
 #share_extras {
   height: 110px;
@@ -1011,4 +1214,15 @@ section#dashboard {
 
 .cancel-link {
   padding-left: 10px;
+}
+
+// --------------------------------------------------
+// Buttons
+// --------------------------------------------------
+.searchbutton {
+  width: auto;
+}
+
+.open-area {
+  margin: 15px 0 0;
 }
