@@ -33,9 +33,10 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
   body
 
-    = render 'shared/header'
+    = render 'layouts/header'
 
     #content
+      = render 'layouts/subheader'
       = render 'shared/flash_messages'
       #app.inner
         - unless @no_tabs
@@ -46,7 +47,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
         - else
           = yield
 
-    = render 'shared/footer'
+    = render 'layouts/footer'
 
     #js-templates[style="display:none"]
       = yield :js_templates

@@ -1,0 +1,19 @@
+tr
+  td
+    table
+      tr
+        td = file_type_to_icon(result[:type], result[:path])
+        td
+        td = link_to h(result[:title]), path2uri(result[:path])
+      tr
+        td
+        td
+        td
+          span.search-location
+            = path2location(result[:path])
+          | -
+          = number_to_human_size(result[:size])
+          | -
+          = h(result[:owner])
+          | -
+          = link_to "folder", path2uri(File.dirname result[:path])

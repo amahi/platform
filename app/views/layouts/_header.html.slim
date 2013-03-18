@@ -6,10 +6,7 @@ header#header
       ul
         li.first= link_to t('home'), root_path
         li.last
-          = form_tag '/search/hda', :id => 'searchform' do
-            = text_field_tag 'query', @query, :maxlength => 15, :size => 20, :class => "ip-input", :id => 'searchinput'
-            = submit_tag 'HDA', :class => 'searchbutton', :name => "button"
-            = submit_tag t('web'), :class => 'searchbutton', :name => "button"
+          = render 'layouts/searchform'
     nav#head-right
       ul
         li
@@ -35,10 +32,5 @@ header#header
               = t('help')
               i.icon-apps
 
-    h2#pagetitle= page_title
+    h2#pagetitle = page_title
 
-    #search-form
-      = form_tag '/search/hda', :id => 'searchform' do
-        = text_field_tag 'query', @query, :maxlength => 15, :size => 20, :class => "ip-input", :id => 'searchinput'
-        = submit_tag 'HDA', :class => 'searchbutton hda', :name => "button"
-        = submit_tag t('web'), :class => 'searchbutton', :name => "button"

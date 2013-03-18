@@ -7,8 +7,8 @@
         = render :partial => 'app', :collection => @apps
 
       - if @apps.length < 3
-        li.install-wrap
-          = link_to(theme_image_tag('new_app_btn.png', :title => "Install applications!"), apps_path)
+        li
+          = link_to '', apps_path, :title => t('install_apps'), :id => 'install-apps'
 
   - if @news
     section#latest_news

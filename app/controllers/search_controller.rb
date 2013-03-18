@@ -17,6 +17,7 @@
 class SearchController < ApplicationController
 
 	before_filter :login_required
+	before_filter :no_tabs
 
 	RESULTS_PER_PAGE = 60
 
@@ -24,14 +25,10 @@ class SearchController < ApplicationController
 	EXT_IMAGES = ['mng', 'pct', 'bmp', 'gif', 'jpeg', 'jpg', 'png', 'psd', 'psp', 'thm', 'tif', 'ai', 'drw', 'dxf', 'eps', 'ps', 'svg', '3dm', '3dmf']
 	EXT_VIDEO = ['3g2', '3gp', 'asf', 'asx', 'avi', 'flv', 'mkv', 'mov', 'mp4', 'mpg', 'mpeg', 'qt', 'rm', 'swf', 'vob', 'wmv']
 
-	def initialize
+	def hda
 		@page_title = 'Search Results'
 		@search_value = 'HDA'
-	end
 
-	# FIXME: this broke badly with a previous rails release!
-	# rigged as is for now
-	def hda
 		if params[:button] && params[:button] == "Web"
 			require 'uri'
 			redirect_to URI.escape("http://www.google.com/search?q=#{params[:query]}")

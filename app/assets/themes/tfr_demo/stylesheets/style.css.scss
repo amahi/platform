@@ -327,7 +327,7 @@ label {
 }
 
 // --------------------------------------------------
-// CONTENTET
+// CONTENT
 // --------------------------------------------------
 
 #content {
@@ -336,23 +336,23 @@ label {
   overflow: hidden;
 }
 
-#logo {
-  margin: 25px auto 0;
+#subheader {
   width: 960px;
-  overflow: hidden;
+  margin: 5px auto 20px;
+  ul { height: 74px; }
   li {
     float: left;
     list-style: none;
-    margin: 0 15px 0 0;
   }
-}
-
-#pagetitle {
-  font-size: 33px;
-  display: block;
-  font-weight: 500;
-  margin: 19px 0 0 0;
-  color: #dfdfdf;
+  li#first {
+	color: #dfdfdf;
+	background: url(../images/logo.png) no-repeat left center;
+	width: 155px;
+	height: 56px;
+	font-size: 33px;
+	display: block;
+	padding: 36px 0 0 174px;
+  }
 }
 
 #app {
@@ -389,6 +389,13 @@ label {
     }
   }
 
+  // few or no apps
+  #install-apps {
+	background: url(../images/dashboard.png) no-repeat;
+	width: 400px;
+	height: 235px;
+	margin: 35px auto 0;
+  }
 }
 
 .welcome_desc a, .welcome_desc-small a {
