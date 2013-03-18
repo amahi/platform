@@ -23,7 +23,6 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     = javascript_tag {render 'shared/js_vars'}
     = javascript_include_tag 'application'
 
-
     - for header in theme.headers do
       = header =~ /\.js$/ ? javascript_include_tag(header) : header
 
@@ -51,4 +50,3 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
     #js-templates[style="display:none"]
       = yield :js_templates
-
