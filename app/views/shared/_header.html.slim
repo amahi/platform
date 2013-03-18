@@ -1,6 +1,8 @@
 header#header
   .inside
     nav#head-left
+      h1#logo-two
+        = link_to t('amahi'), root_url
       ul
         li.first= link_to t('home'), root_path
         li.last
@@ -10,9 +12,28 @@ header#header
             = submit_tag t('web'), :class => 'searchbutton', :name => "button"
     nav#head-right
       ul
+        li
+          = link_to t('home'), root_path
+          i.icon-home
         - if current_user_is_admin?
-          li.first= link_to t('setup'), users_path
-          li= link_to t('help'), 'http://help.amahi.org'
-          li.last= link_to t('apps'), apps_path
+          li
+            = link_to t('setup'), users_path
+            i.icon-setup
+          li
+            = link_to t('help'), 'http://help.amahi.org'
+            i.icon-help
+          li
+            = link_to t('apps'), apps_path
+            i.icon-apps
         - else
-          li.first.last= link_to t('help'), 'http://help.amahi.org'
+          li
+            = link_to t('help'), 'http://help.amahi.org'
+            i.icon-apps
+
+    h2#pagetitle= page_title
+
+    #search-form
+      = form_tag '/search/hda', :id => 'searchform' do
+        = text_field_tag 'query', @query, :maxlength => 15, :size => 20, :class => "ip-input", :id => 'searchinput'
+        = submit_tag 'HDA', :class => 'searchbutton hda', :name => "button"
+        = submit_tag t('web'), :class => 'searchbutton', :name => "button"

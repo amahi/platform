@@ -38,14 +38,12 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
     #content
       = render 'shared/flash_messages'
-      = render 'shared/logo'
-      #app
+      #app.inner
         - unless @no_tabs
           = render 'shared/tabs'
           #preferences
-            table.preftab
-              tr
-                td= yield
+            .preftab
+                = yield
         - else
           = yield
 
