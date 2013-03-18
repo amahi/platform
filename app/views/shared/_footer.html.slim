@@ -2,21 +2,21 @@ footer#footer
   .inside
     p.copy
       | &copy; #{Date.today.year} #{link_to "Amahi", "http://www.amahi.org"}
-  nav
-    ul
-      li = link_to t('your_control_panel'), 'http://www.amahi.org/user'
-      li = link_to t('feedback'),'"http://www.amahi.org/feedback' 
-      li = link_to t('wiki'), 'http://wiki.amahi.org/'
-      li = link_to t('tracker'), 'http://bugs.amahi.org'  
+    nav
+      ul
+        li = link_to t('your_control_panel'), 'https://www.amahi.org/user'
+        li = link_to t('feedback'),'https://www.amahi.org/feedback'
+        li = link_to t('wiki'), 'https://wiki.amahi.org/'
+        li = link_to t('tracker'), 'https://bugs.amahi.org'
 
-    - if theme.author
-      li 
-        | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
-      li = link_to t('live_help'), 'http://talk.amahi.org'
-      li = link_to t('forums'), 'http://forums.amahi.org'
+        - if theme.author
+          li
+            | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
+          li = link_to t('live_help'), 'http://talk.amahi.org'
+          li = link_to t('forums'), 'https://forums.amahi.org'
 
-    - if current_user
-      li.logout 
-        = link_to t('logout ' + current_user.login), logout_path
-    - else
-      li = link_to t('log_in'), login_path
+        - if current_user
+          li.logout
+            = link_to t('logout ' + current_user.login), logout_path
+        - else
+          li = link_to t('log_in'), login_path
