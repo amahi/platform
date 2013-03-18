@@ -183,9 +183,15 @@ class ApplicationController < ActionController::Base
 		@no_tabs = true
 	end
 
+	def no_subtabs
+		@no_subtabs = true
+	end
+
+
 	# this sets up the extra tabs
 	def setup_tabs
-		@tabs = AmahiHDA::Application.config.amahi_tabs
+		# for now we need a list of name and url to link to e.g. [['Pooling', '/tab/pooling']]
+		@setup_tabs = plugin_tabs.map{|ap| [ap[:name], ap[:url]]}
 	end
 
 	def development?

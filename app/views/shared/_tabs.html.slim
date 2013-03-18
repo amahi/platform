@@ -1,23 +1,12 @@
 #preferencestabs
   table.preftab
     tr
-      -@tabs.each do |tab|
-        td[class="#{tab_class(tab[:name].downcase)}"]= link_to tab[:name], tab[:url]
+      td[class="#{tab_class('users')}"]= link_to t('users'), users_path
+      td[class="#{tab_class('shares')}"]= link_to t('shares'), shares_path
+      td[class="#{tab_class('apps')}"]= link_to t('apps'), apps_path
+      - @setup_tabs.each do |name, url|
+        td[class="#{tab_class(name.downcase)}"]= link_to name, url
       - if debug_tab?
         td[class="#{tab_class()}"]= link_to t('debug'), '#'
-    -@tabs.each do |tab|
-      -if request.fullpath =~ /(#{Regexp.escape(tab[:name].downcase)})/
-        tr.prefsubtab
-          -tab[:subtabs].each do |subtab|
-            -if tab[:kind].present?
-              -if subtab == tab[:subtabs].first
-                td[class="#{subtab_class('index')} first"]= link_to_unless_current t(subtab), tab[:url]
-              -else
-                td[class="#{subtab_class(subtab)}"]= link_to t(subtab), tab[:url]+"/#{subtab}"
-            -else
-              -if subtab == tab[:subtabs].first
-                td[class="#{subtab_class('index')} first"]= link_to_unless_current t(subtab), send("#{tab[:name].downcase}_path")
-              -else
-                td[class="#{subtab_class(subtab)}"]= link_to t(subtab), send("#{subtab}_#{tab[:name].downcase}_path")
-          - if advanced? && tab[:advancedtab].present?
-            td[class="#{subtab_class(tab[:advancedtab])} last"]= link_to t(tab[:advancedtab]), send("#{tab[:advancedtab]}_#{tab[:name].downcase}_path")
+
+    = render "#{params[:controller]}/subtabs" unless @no_subtabs

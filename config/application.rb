@@ -83,26 +83,3 @@ module AmahiHDA
 	config.amahi_plugins = amahi_plugins
   end
 end
-
-############################################
-# load all Amahi platform tabs and subtabs
-############################################
-module AmahiHDA
-  class Application < Rails::Application
-    VIEW_LOCATION = File.join(Rails.root, 'app/views')
-    amahi_tabs = []
-    amahi_tabs += config.amahi_plugins
-    Dir.glob(File.join(VIEW_LOCATION, '*')).sort.each do |dir|
-        file = "#{dir}/tabs.yml"
-        if File.file?(file) and File.readable?(file)
-            tab = YAML.load(File.read(file)).symbolize_keys
-            tab[:dir] = File.basename(dir)
-            amahi_tabs << tab
-            $LOAD_PATH << "#{dir}/lib"
-        end
-    end
-    # stick them in an app-wide variable for them it's needed by the app
-    config.amahi_tabs = amahi_tabs
-end
-end
-
