@@ -411,18 +411,21 @@ label {
 }
 
 #preferencestabs {
+  width: 145px;
+  float: left;
   border: 1px solid #e8e8e8;
   border-bottom-color: #dfdfdf;
-  @include border-radius(5px 5px 0 0);
+  @include border-radius(5px 0 0 5px);
   @include background-gradient(#fcfcfc, #f7f7f7);
 }
 
 
 #preferences {
+  width: 770px;
+  float: left;
   border: 1px solid #e8e8e8;
-  border-top: none;
   padding: 20px;
-  @include border-radius(0 0 5px 5px);
+  @include border-radius(0 5px 5px 5px);
 }
 
 
@@ -436,6 +439,7 @@ nav.preftab {
         @include clearfix;
 
         li {
+          width: 145px;
           float: left;
           border-right: 1px solid #e8e8e8;
           border-bottom: 1px solid #e8e8e8;
@@ -466,15 +470,13 @@ nav.preftab {
         content: '- ';
         padding-left: 1em;
       }
-      a:after {
-        content: ' -';
-      }
       background: #fff;
       color: #3f3f3f;
       border-right: none;
+      border-bottom: none;
     }
     li.last {
-      border-right: 1px solid #e8e8e8;
+      border-right: none;
     }
     a {
       display: block;
