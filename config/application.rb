@@ -79,7 +79,7 @@ module AmahiHDA
 			Kernel.require plugin[:class].underscore
 		end
 	end
-	# stick them in an app-wide variable for them it's needed by the app
+	# stick them in an app-wide variable for when it's needed by the app
 	config.amahi_plugins = amahi_plugins
   end
 end
