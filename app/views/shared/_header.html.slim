@@ -13,22 +13,27 @@ header#header
     nav#head-right
       ul
         li
-          = link_to t('home'), root_path
-          i.icon-home
+          a href=root_path
+            = t('home')
+            i.icon-home
         - if current_user_is_admin?
           li
-            = link_to t('setup'), users_path
-            i.icon-setup
+            a href=users_path
+              = t('setup')
+              i.icon-setup
           li
-            = link_to t('help'), 'http://help.amahi.org'
-            i.icon-help
+            a href='http://help.amahi.org'
+              = t('help')
+              i.icon-help
           li
-            = link_to t('apps'), apps_path
-            i.icon-apps
+            a href=apps_path
+              = t('apps')
+              i.icon-apps
         - else
           li
-            = link_to t('help'), 'http://help.amahi.org'
-            i.icon-apps
+            a href='http://help.amahi.org'
+              = t('help')
+              i.icon-apps
 
     h2#pagetitle= page_title
 
