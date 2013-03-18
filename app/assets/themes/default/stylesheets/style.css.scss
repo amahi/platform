@@ -2,74 +2,7 @@
 // Amahi - Default Theme
 // --------------------------------------------------
 
-// --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
-// Clear FLoat
-@mixin clearfix {
-  *zoom: 1;
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-    line-height: 0;
-  }
-
-  &:after { clear: both; }
-}
-
-// BACKGROUND GRADIENT
-@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
-  background-color: $startColor;
-  background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
-  background-image: -webkit-linear-gradient(top, $startColor, $endColor);
-  background-image: -moz-linear-gradient(top, $startColor, $endColor);
-  background-image: -ms-linear-gradient(top, $startColor, $endColor);
-  background-image: -o-linear-gradient(top, $startColor, $endColor);
-  background-image: linear-gradient(top, $startColor, $endColor);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor);
-}
-
-// BACKGROUND SIZE
-@mixin background-size($width: 100%, $height: 100%) {
-  -moz-background-size: $width $height;
-  -webkit-background-size: $width $height;
-  background-size: $width $height;
-}
-
-// BORDER RADIUS
-@mixin border-radius($radius: 5px) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-}
-// BOX SHADOW
-@mixin box-shadow($shadow...) {
-  -webkit-box-shadow: $shadow;
-  -moz-box-shadow: $shadow;
-  box-shadow: $shadow;
-}
-// BOX SIZING
-@mixin box-sizing($type: border-box) {
-  -webkit-box-sizing: $type;
-  -moz-box-sizing: $type;
-  box-sizing: $type;
-}
-// OPACITY
-@mixin opacity($opacity: 0.5) {
-  filter: alpha(opacity=($opacity * 100));
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
-  -moz-opacity: $opacity;
-  -khtml-opacity: $opacity;
-  opacity: $opacity;
-}
-
-// --------------------------------------------------
-// Vars
-// --------------------------------------------------
-$linkColor:     #0090d1;
-
+@import "_mixins.css.scss";
 
 // --------------------------------------------------
 // GENERAL STYLES
