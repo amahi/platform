@@ -15,7 +15,7 @@ header#header
             i.icon-home
         - if current_user_is_admin?
           li
-            a href="/users"
+            a href=users_engine.root_path
               = t('setup')
               i.icon-setup
           li
