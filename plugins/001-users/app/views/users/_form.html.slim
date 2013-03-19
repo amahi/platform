@@ -1,6 +1,6 @@
 - @user = @user || User.new
 
-= form_for @user,
+= form_for @user, :url => users_engine.users_path,
     :remote => true, \
     :html => { \
       :data => { \
