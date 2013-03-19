@@ -33,7 +33,7 @@
 
         div.action-button
           span.btn-wrap
-            = f.submit "#{t('new_user')} &raquo;".html_safe, :id => 'user_create_button'
+            = f.submit t('create'), :id => 'user_create_button'
             | &nbsp;&nbsp;&nbsp;
             = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-user-to-step1'}
           span

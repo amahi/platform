@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 
 gem 'mysql2'
 gem "yettings"
@@ -51,7 +51,7 @@ group :test do
   gem 'sqlite3'
   gem "factory_girl_rails"
   gem "capybara"
-  # FIXME: required for Fedora 17
+  # FIXME: required for Fedora 18
   gem 'minitest'
   #required for javascript test in selenium
   gem 'poltergeist'
