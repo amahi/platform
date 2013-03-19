@@ -8,15 +8,6 @@ AmahiHDA::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'user_session/set_first_password/:username' => 'user_sessions#set_first_password', :as => :first_password
 
-  resources :users do
-    member do
-      put 'toggle_admin'
-      put 'update_password'
-      put 'update_name'
-      put 'update_pubkey'
-    end
-  end
-
   resources :shares do
     collection do
       get 'disk_pooling'

@@ -11,7 +11,7 @@ header#header
     nav#head-right
       ul
         - if current_user_is_admin?
-          li.first= link_to t('setup'), users_path
+          li.first= link_to t('setup'), users_engine.root_path
           li= link_to t('help'), 'http://help.amahi.org'
           li.last= link_to t('apps'), apps_path
         - else
