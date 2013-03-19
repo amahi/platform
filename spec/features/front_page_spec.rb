@@ -1,24 +1,24 @@
 require 'spec_helper'
 
-describe "Front page" do
-	it "should be the login page by default" do
+feature "Front page" do
+	scenario "should be the login page by default" do
 		visit root_path
 		page.should have_content("Amahi Server Login")
 	end
 
-	it "should be the dashboard if \"guest dashboard\" is enabled" do
+	scenario "should be the dashboard if \"guest dashboard\" is enabled" do
 		setting = create(:setting, name: "guest-dashboard", value: "1")
 		visit root_path
 		page.should have_content("Dashboard")
 	end
 
-	it "should be the login page if \"guest dashboard\" is disabled" do
+	scenario "should be the login page if \"guest dashboard\" is disabled" do
 		setting = create(:setting, name: "guest-dashboard", value: "0")
 		visit root_path
 		page.should have_content("Amahi Server Login")
 	end
 
-	it "should allow a user with proper username/password to login" do
+	scenario "should allow a user with proper username/password to login" do
 		user = create(:user)
 		visit root_path
 		page.should have_content("Amahi Server Login")
@@ -29,7 +29,7 @@ describe "Front page" do
 		page.should have_content("Logout")
 	end
 
-	it "should not allow a user with bad username to login" do
+	scenario "should not allow a user with bad username to login" do
 		user = create(:user)
 		visit root_path
 		page.should have_content("Amahi Server Login")
@@ -40,7 +40,7 @@ describe "Front page" do
 		page.should have_content("Amahi Server Login")
 	end
 
-	it "should not allow a user with bad password to login" do
+	scenario "should not allow a user with bad password to login" do
 		user = create(:user)
 		visit root_path
 		page.should have_content("Amahi Server Login")
@@ -51,7 +51,7 @@ describe "Front page" do
 		page.should have_content("Amahi Server Login")
 	end
 
-	it "should allow a user with proper username/password to login and also logout" do
+	scenario "should allow a user with proper username/password to login and also logout" do
 		user = create(:user)
 		visit root_path
 		page.should have_content("Amahi Server Login")

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "Admin" do
+feature "Admin" do
 
-	it "user should see the setup pages after login" do
+	scenario "user should see the setup pages after login" do
 		user = create(:admin)
 		visit root_path
 		page.should have_content("Amahi Server Login")
@@ -14,7 +14,7 @@ describe "Admin" do
 		page.should have_content("Logout")
 	end
 
-	it "non-admin users should not see the setup pages after login" do
+	scenario "non-admin users should not see the setup pages after login" do
 		user = create(:user)
 		visit root_path
 		page.should have_content("Amahi Server Login")

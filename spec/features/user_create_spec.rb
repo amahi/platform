@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-describe "Users tab" do
-	it "an admin should be able to create a new user" do
+feature "Users tab" do
+	scenario "an admin should be able to create a new user" do
 		user = create(:admin)
 		visit root_path
 		page.should have_content("Amahi Server Login")
@@ -15,7 +15,6 @@ describe "Users tab" do
 		page.should have_content("Username")
 		page.should have_content("Full Name")
 		click_button "New User"
-		page.should have_content("Create a New User")
 		fill_in "user_login", :with => "newuser"
 		fill_in "user_name", :with => "fullname"
 		fill_in "user_password", :with => "secret"

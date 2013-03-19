@@ -23,6 +23,5 @@
             = label(:rdonly, t('read_only'))
         div.action-button
           span.btn-wrap
-            = f.submit "#{t('new_share')} &raquo;".html_safe, :id => 'share_create_button'
-            | &nbsp;&nbsp;&nbsp;
-            = link_to t('cancel'), '#', :class => 'close-area', :data => {:related => '#new-share-to-step1'}
+            = f.submit t('create'), :id => 'share_create_button'
+            = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-share-to-step1'}
