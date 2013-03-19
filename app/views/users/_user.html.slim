@@ -24,6 +24,7 @@ div.user[id="whole_user_#{user.id}"]
             = link_to theme_image_tag("delete.png", :title => t('delete_user'), :class => 'theme-image'),
                       user_path(user),
                       :method => :delete,
+                      :id => "delete-user-#{user.id}",
                       :data => {:confirm => confirm_user_destroy_message(user.login)},
                       :remote => true,
                       :class => 'delete-user'

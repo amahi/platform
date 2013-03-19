@@ -29,7 +29,6 @@ feature "Users tab" do
 		expect(page).to have_content("Amahi Server Login")
 		fill_in "username", :with => admin.login
 		fill_in "password", :with => "secret"
-		pending "FIXME: this is failing at the next line, not clear why!!"
 		click_button "Log In"
 		expect(page).to have_content("Setup")
 		visit users_path
@@ -37,7 +36,7 @@ feature "Users tab" do
 		expect(page).to have_content("Full Name")
 		click_link user.login
 		expect(page).to have_selector("span.delete", :visible => true, :text => user.login);
-		click_link "Delete"
+		click_link "delete-user-#{user.id}"
 		expect(page).to have_no_content(user.login)
 	end
 	scenario "should not allow an admin user to delete its own account" do
