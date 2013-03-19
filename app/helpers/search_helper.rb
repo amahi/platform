@@ -47,7 +47,7 @@ module SearchHelper
 			# default is 'text'
 
 	def file_type_to_icon(type, path)
-		return theme_image_tag(File.join('icons', 'folder')) if type == 'directory'
+		return theme_image_tag(File.join('icons', 'folder.png')) if type == 'directory'
 		return theme_image_tag(File.join('icons', extmatch(File.extname(path))))
 	end
 
@@ -55,10 +55,10 @@ protected
 
 	def extmatch(ext)
 		EXT2ICON.each_pair do |type, regexp|
-			return type if ext =~ /\.(#{regexp})$/i
+			return "#{type}.png" if ext =~ /\.(#{regexp})$/i
 		end
 		# default
-		return 'text'
+		return 'text.png'
 	end
 
 	# for testing:
