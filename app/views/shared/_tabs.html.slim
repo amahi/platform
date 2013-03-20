@@ -18,3 +18,5 @@
       - @tabs.each do |tab|
         - tab.subtabs.each do |subtab|
           = link_to subtab.label, subtab.url
+
+    = render "#{params[:controller]}/subtabs" unless @no_subtabs
