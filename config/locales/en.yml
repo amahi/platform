@@ -78,6 +78,7 @@
   ip_address: IP Address
   path: Path
   install_apps: Install apps!
+  open: Open
 
   # user tab
   username: Username

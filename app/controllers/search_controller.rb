@@ -41,19 +41,19 @@ class SearchController < ApplicationController
 	def images
 		@query = params[:query]
 		@results = hda_search(@query, EXT_IMAGES)
-		render :template => 'search/hda'
+		render 'hda'
 	end
 
 	def audio
 		@query = params[:query]
 		@results = hda_search(@query, EXT_AUDIO)
-		render :template => 'search/hda'
+		render 'hda'
 	end
 
 	def video
 		@query = params[:query]
 		@results = hda_search(@query, EXT_VIDEO)
-		render :template => 'search/hda'
+		render 'hda'
 	end
 
 	def web

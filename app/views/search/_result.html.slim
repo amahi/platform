@@ -11,9 +11,9 @@ tr
         td
           span.search-location
             = path2location(result[:path])
-          | -
+          | &nbsp;&mdash;&nbsp;
           = number_to_human_size(result[:size])
-          | -
+          | , 
           = h(result[:owner])
-          | -
-          = link_to "folder", path2uri(File.dirname result[:path])
+          | &nbsp;&nbsp;
+          = link_to theme_image_tag("icons/open-folder.png"), path2uri(File.dirname result[:path]), :title => t('open')
