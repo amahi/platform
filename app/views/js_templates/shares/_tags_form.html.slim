@@ -16,6 +16,5 @@
       td= f.text_field :tags, :size => 16, :maxlength => 255, :placeholder => '(add tags)'
       td.form-action-wrap
         = f.submit "#{t('change')} &raquo;".html_safe
-        | &nbsp;&nbsp;&nbsp;
-        = link_to t('cancel'), '#', :class => 'close-update-tags-area'
+        = link_to t('cancel'), '#', :class => 'close-update-tags-area cancel-link'
       td.messages

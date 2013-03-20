@@ -29,6 +29,18 @@ a {
   }
 }
 
+.align-center {
+  text-align: center;
+}
+
+.default-message {
+  padding: 10px;
+}
+
+#locale {
+  border: 1px solid #cccccc;
+}
+
 
 // --------------------------------------------------
 // LAYOUT
@@ -45,74 +57,8 @@ a {
 // FORMS
 // --------------------------------------------------
 
-// Shared size and type resets
-select,
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-  display: inline-block;
-  height: 20px;
-  padding: 4px 10px;
-  margin-bottom: 0;
-  font-size: 12px;
-  line-height: 1.5;
-  @include border-radius(3px);
-  @include box-sizing(border-box);
-  vertical-align: middle;
-}
-
-// Reset appearance properties for textual inputs and textarea
-// Declare width for legacy (can't be on input[type=*] selectors or it's too specific)
-input,
-textarea,
-.uneditable-input {
-  width: 158px;
-}
-
-textarea {
-  height: auto;
-}
-
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-  background-color: #fff;
-  border: 1px solid #d0cece;
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-
-  // Focus state
-  &:focus {
-    border-color: #000;
-    outline: 0;
-    outline: thin dotted \9; /* IE6-9 */
-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
-  }
+form {
+  color: black;
 }
 
 fieldset {
@@ -121,7 +67,7 @@ fieldset {
   border: 1px solid #dfdfdf;
   padding: 5px 10px;
   color: #000;
-  @include border-radius(4px);
+  @include border-radius(5px);
 }
 
 .access fieldset {
@@ -143,6 +89,50 @@ label {
   margin: 0 0.4em;
 }
 
+input[type="text"],
+input[type="password"] {
+  border: 1px solid #d0cece;
+  height: 24px;
+  width: 153px;
+  padding: 0 10px;
+  background: #fff;
+  font-size: 12px;
+  margin: 4px 0;
+  @include border-radius(3px);
+  vertical-align: middle;
+
+  &:focus {
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+  }
+}
+
+input {
+  &[type=button], &[type=submit] {
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding: 5px 10px;
+    color: #fff;
+    border: 1px solid #322525;
+    @include border-radius(4px);
+    @include background-gradient(#e8715f, #bc0332);
+
+    &:hover {
+      @include background-gradient(#e78577, #fe0646);
+      @include box-shadow(inset 0 0 1px 1px rgba(255, 255, 255, 0.4));
+    }
+
+    &:active {
+      top: 2px;
+      @include background-gradient(#bc0332, #e8715f);
+      @include box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.6));
+    }
+
+  }
+}
 
 // --------------------------------------------------
 // HEADER
@@ -156,40 +146,34 @@ label {
   overflow: hidden;
   height: 59px;
 
-
   a {
-  color: #fff;
-  font-weight: bold;
-  font-size: 12px;
-  text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   #logo-two, #pagetitle, #search-form { display: none; }
-
 }
 
 #head-left {
-    float: left;
+  float: left;
   margin-top: 17px;
   margin-left: 0;
   display: inline;
-}
-
-#head-left {
 
   ul { list-style: none; @include clearfix; }
 
   li { float: left; }
 
-  input[type=text] {
+  #searchinput {
     background: #fff;
     width: 180px;
     height: 24px;
-    padding: 5px 0;
     line-height: 18px;
     padding: 0 14px;
     border-right: 1px solid #000;
@@ -197,16 +181,16 @@ label {
     font-size: 12px;
     color: #666;
     margin: 0 10px 0 0;
-    @include border-radius(4px);
     float: left;
+    @include border-radius(5px);
   }
 
-    a {
-      display: inline-block;
-      margin: 0 10px 0 0;
-      padding: 0 9px;
-      height: 24px;
-      line-height: 24px;
+  a {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 0 9px;
+    height: 24px;
+    line-height: 24px;
 
     &:hover {
       text-decoration: none;
@@ -216,8 +200,6 @@ label {
     }
   }
 
-  .first { margin: 0 12px 0 0; }
-
   input[type=submit] {
     float: left;
     margin: 0 2px 0 0;
@@ -225,7 +207,7 @@ label {
 }
 
 #head-right {
-  margin-top: 20px;
+  margin-top: 17px;
   margin-right: 0;
   float: right;
   display: inline;
@@ -236,8 +218,8 @@ label {
 
     li {
       float: left;
-    padding: 0 0 1px 0;
-    margin: 0 0 0 15px;
+      padding: 0 0 1px 0;
+      margin: 0 0 0 15px;
 
       &:first-child { display: none; }
     }
@@ -266,26 +248,31 @@ label {
 #content {
   width: 100%;
   background: #fff;
-  overflow: hidden;
+  overflow: auto;
+  padding-bottom: 70px;
+  @include clearfix;
 }
 
 #subheader {
   width: 960px;
   margin: 5px auto 20px;
+
   ul { height: 74px; }
+
   li {
     float: left;
     list-style: none;
   }
+
   li#first {
-	color: #dfdfdf;
-	background: url(../images/logo.png) no-repeat left center;
-	width: 539px;
-	height: 56px;
-	font-size: 33px;
-	display: block;
-	padding: 36px 0 0 174px;
-  }
+   color: #dfdfdf;
+   background: url(../images/logo.png) no-repeat left center;
+   width: 539px;
+   height: 56px;
+   font-size: 33px;
+   display: block;
+   padding: 36px 0 0 174px;
+ }
 }
 
 #app {
@@ -324,11 +311,11 @@ label {
 
   // few or no apps
   #install-apps {
-	background: url(../images/dashboard.png) no-repeat;
-	width: 400px;
-	height: 235px;
-	margin: 35px auto 0;
-  }
+   background: url(../images/dashboard.png) no-repeat;
+   width: 400px;
+   height: 235px;
+   margin: 35px auto 0;
+ }
 
 }
 
@@ -351,14 +338,6 @@ label {
   @include border-radius(5px);
 }
 
-#preferencestabs {
-  border: 1px solid #e8e8e8;
-  border-bottom-color: #dfdfdf;
-  @include border-radius(5px 5px 0 0);
-  @include background-gradient(#fcfcfc, #f7f7f7);
-}
-
-
 #preferences {
   border: 1px solid #e8e8e8;
   border-top: none;
@@ -366,67 +345,154 @@ label {
   @include border-radius(0 0 5px 5px);
 }
 
+section#dashboard {
+  float: left;
+  text-align: center;
+  width: 713px;
+}
+
+#latest_news {
+  float: right;
+  border: 1px solid #e6e6e6;
+  width: 245px;
+  @include border-radius(5px);
+
+  #ln_header {
+    background: #f7f6f6;
+    font-weight: bold;
+    color: #333;
+    height: 28px;
+    padding: 12px 17px 0;
+    @include border-radius(5px 5px 0 0);
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+#ln_content {
+  background: #f7f6f6;
+
+  > ul {
+    list-style: none;
+
+    li {
+      @include background-gradient(#fff, #f7f6f6);
+      padding: 10px 15px;
+
+      a {
+        color: #000;
+        font-weight: bold;
+        display: block;
+        margin: 0 0 5px;
+      }
+
+      span {
+        display: block;
+        background: url(../images/date-icon.png) no-repeat left 1px;
+        color: #9a9a9a;
+        padding: 0 0 0 23px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  #more_news {
+    background: #f7f6f6;
+    line-height: 30px;
+    text-align: center;
+    display: block;
+    @include border-radius(0 0 5px 5px);
+
+    a { color: #000; display: inline; font-weight: bold; }
+  }
+
+}
+
+
 
 // App Navigation
 // --------------------------------------------------
 
+#preferencestabs {
+  border: 1px solid #e8e8e8;
+  border-bottom-color: #dfdfdf;
+  @include border-radius(5px 5px 0 0);
+  @include background-gradient(#fcfcfc, #f7f7f7);
+}
+
 nav.preftab {
   @include border-radius(5px 0 0 0);
-  > ul {
-        list-style: none;
-        @include clearfix;
 
-        li {
-          float: left;
-          border-right: 1px solid #e8e8e8;
-          border-bottom: 1px solid #e8e8e8;
-          &.preftabheaderActive {
-            border-bottom: none;
-            a {
-              background: #fff;
-              color: #3f3f3f;
-            }
-          }
-
-          a {
-            display: block;
-            line-height: 38px;
-            padding: 0 28px;
-            font-size: 12px;
-            font-weight: bold;
-            color: #b3b3b3;
-            &:hover { text-decoration: none; }
-          }
-        }
-      }
-  ul.prefsubtab {
+  ul {
     list-style: none;
     @include clearfix;
+
     li {
-      a:before {
-        content: '- ';
-        padding-left: 1em;
-      }
-      a:after {
-        content: ' -';
-      }
-      background: #fff;
-      color: #3f3f3f;
-      border-right: none;
-    }
-    li.last {
+      float: left;
       border-right: 1px solid #e8e8e8;
+
+      &:first-child {
+        a {
+          @include border-radius(5px 0 0 0);
+        }
+      }
+
+      &.preftabheaderActive {
+        border-bottom: none;
+
+        a {
+          background: #fff;
+          color: #3f3f3f;
+        }
+      }
+
+      a {
+        display: block;
+        line-height: 38px;
+        padding: 0 28px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #b3b3b3;
+
+        &:hover {
+          text-decoration: none;
+          background: #fff;
+          color: #3f3f3f;
+        }
+      }
     }
-    a {
-      display: block;
-      line-height: 28px;
-      padding: 0 28px;
-      font-size: 12px;
-      font-weight: bold;
-      color: #b3b3b3;
-      &:hover { text-decoration: none; }
-    }
+
+    &.prefsubtab {
+      border-top: 1px solid #e8e8e8;
+      background: #fff;
+
+      li {
+        border-right: none;
+
+        &.prefsubtabheaderActive {
+          a { color: #3f3f3f; }
+        }
+
+        &:first-child {
+          a { @include border-radius(0); }
+        }
+      }
+
+      a {
+        line-height: 28px;
+        color: #b3b3b3;
+        font-weight: normal;
+
+        &:hover { text-decoration: none; }
+      }
+    }//prefsubtab
+
   }
+
 }
 
 
@@ -445,13 +511,16 @@ nav.preftab {
   }
 }
 
-settings-table {
-  width: 95%;
-  margin: 0 auto 20px;
+.settings-table {
+  margin: 0 auto;
   border: 1px solid #e8e8e8;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
+
+  > div {
+    &:last-child {
+      .stretchtoggle { @include border-radius(0 0 5px 5px); }
+    }
+  }
 }
 
 .apptable {
@@ -463,14 +532,7 @@ thead.apptable td {
   height: 25px;
   line-height: 25px;
   padding: 0 0 0 5px;
-  background: #fcfcfc;
-  background: -moz-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfc), color-stop(100%, #f7f7f7));
-  background: -webkit-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -o-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -ms-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f7f7f7',GradientType=0);
-  background: linear-gradient(top, #fcfcfc 0, #fcfbfb 50%, #f7f7f7 100%);
+  @include background-gradient(#fcfcfc, #f7f7f7);
 }
 
 #calendars-table td {
@@ -501,15 +563,11 @@ table.settings, .settings th {
 }
 
 thead.apptable td:first-child, .fw-rules-col1 {
-  -moz-border-radius: 5px 0 0 0;
-  -webkit-border-radius: 5px 0 0 0;
-  border-radius: 5px 0 0 0;
+  @include border-radius(5px 0 0 0);
 }
 
 thead.apptable td:last-child, .fw-rules-col3 {
-  -moz-border-radius: 0 5px 0 0;
-  -webkit-border-radius: 0 5px 0 0;
-  border-radius: 0 5px 0 0;
+  @include border-radius(0 5px 0 0);
 }
 
 .settings-col2.fw-rules-col2 {
@@ -525,30 +583,22 @@ thead.apptable td:last-child, .fw-rules-col3 {
 .settings-col1 {
   padding: 0 0 0 30px;
   width: 30%;
-  -moz-border-radius: 5px 0 0 0;
-  -webkit-border-radius: 5px 0 0 0;
-  border-radius: 5px 0 0 0;
+  @include border-radius(5px 0 0 0);
 }
 
 .settings-col2, .users-col2, .shares-col2, .dhcp-col2 {
   width: 70%;
   padding: 0 0 0 30px;
-  -moz-border-radius: 0 5px 0 0;
-  -webkit-border-radius: 0 5px 0 0;
-  border-radius: 0 5px 0 0;
+  @include border-radius(0 5px 0 0);
 }
 
 .settings-lastcol {
   padding: 0 0 0 3px;
-  -moz-border-radius: 0 5px 0 0;
-  -webkit-border-radius: 0 5px 0 0;
-  border-radius: 0 5px 0 0;
+  @include border-radius(0 5px 0 0);
 }
 
 table.apptable, thead.apptable {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
 }
 
 table.settings {
@@ -589,18 +639,12 @@ table.apptable {
 }
 
 .stretchtoggle {
-  border: 1px solid #e8e8e8;
+  border-top: 1px solid #e8e8e8;
   height: 33px;
   line-height: 33px;
   border-bottom-color: #dfdfdf;
-  background: #fcfcfc;
-  background: -moz-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfc), color-stop(100%, #f7f7f7));
-  background: -webkit-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -o-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  background: -ms-linear-gradient(top, #fcfcfc 0, #f7f7f7 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f7f7f7',GradientType=0);
-  background: linear-gradient(top, #fcfcfc 0, #fcfbfb 50%, #f7f7f7 100%);
+  @include background-gradient(#fcfcfc, #f7f7f7);
+
   td {
     text-align: left;
     a {
@@ -614,6 +658,8 @@ table.apptable {
 }
 
 .settings-stretcher {
+  border-top: 1px solid #E8E8E8;
+
   legend, fieldset {
     color: darkgrey;
   }
@@ -689,6 +735,8 @@ td {
 }
 
 .password-edit {
+  margin: 0 0 -15px;
+
   input[type=password] {
     position: relative;
     top: -3px;
@@ -754,24 +802,30 @@ td {
 }
 
 .install-button {
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  display: inline-block;
-  text-transform: uppercase;
-  padding: 2px 5px 1px 8px;
-  border: 0;
-  background: #d43e4a;
-  background: -moz-linear-gradient(top, #e8715f 0, #bc0332 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8715f), color-stop(100%, #bc0332));
-  background: -webkit-linear-gradient(top, #e8715f 0, #bc0332 100%);
-  background: -o-linear-gradient(top, #e8715f 0, #bc0332 100%);
-  background: -ms-linear-gradient(top, #e8715f 0, #bc0332 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8715f',endColorstr='#bc0332',GradientType=0);
-  background: linear-gradient(top, #e8715f 0, #bc0332 100%);
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding: 5px 10px;
+    color: #fff;
+    border: 1px solid #322525;
+    @include border-radius(4px);
+    @include background-gradient(#e8715f, #bc0332);
+
+    &:hover {
+      @include background-gradient(#e78577, #fe0646);
+      @include box-shadow(inset 0 0 1px 1px rgba(255, 255, 255, 0.4));
+    }
+
+    &:active {
+      top: 2px;
+      @include background-gradient(#bc0332, #e8715f);
+      @include box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.6));
+    }
 }
 
-.install-app-via-deamon {
+.install-app-via-daemon {
   background: url(../images/install_icon.png) no-repeat left center;
   padding: 0 2px 0 16px;
   color: #fff;
@@ -780,7 +834,7 @@ td {
   text-transform: uppercase;
 }
 
-.install-button .install-app-via-deamon {
+.install-button .install-app-via-daemon {
   text-decoration: none;
 }
 
@@ -843,21 +897,57 @@ td {
   }
 }
 
+.share {
+  #share_path { margin-bottom: 10px; }
+
+  .action-button { margin-top: 5px; }
+}
+
+
+// --------------------------------------------------
+// Search Page
+// --------------------------------------------------
+
+#search-types {
+  border-top: 1px solid #506480;
+  background-color: #f8f8f8;
+  padding: 10px;
+  margin: 10px 0 20px;
+}
+
+#search-menu {
+  list-style: none;
+  @include clearfix;
+
+  li {
+    float: left;
+    padding: 0 10px;
+    border-right: 1px solid #000;
+    line-height: 12px;
+  }
+}
+#search-number-of-results { margin-right: 15px; }
+
+
 // --------------------------------------------------
 // Footer
 // --------------------------------------------------
 
+
 #footer {
+  position: relative;
+  margin-top: -50px;
   width: 100%;
   background: #333;
   height: 32px;
   text-align: center;
   padding: 18px 0 0 0;
   color: white;
+  clear: both;
 
   a {
     color: #fff;
-    }
+  }
 
   .inside {
     width: auto;
@@ -874,6 +964,7 @@ td {
   }
 
   nav {
+
     > ul {
       list-style: none;
       @include clearfix;
@@ -893,64 +984,8 @@ td {
 
       }
     }
-
-    a {
-
-    }
-
   }
-}
-
-input {
-  &[type=button], &[type=submit] {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline-block;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding: 3px 5px;
-    color: #fff;
-    border: 1px solid #322525;
-    background: #d43e4a;
-    background: -moz-linear-gradient(top, #e8715f 0, #cf3346 50%, #bc0332 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8715f), color-stop(50%, #cf3346), color-stop(100%, #bc0332));
-    background: -webkit-linear-gradient(top, #e8715f 0, #cf3346 50%, #bc0332 100%);
-    background: -o-linear-gradient(top, #e8715f 0, #cf3346 50%, #bc0332 100%);
-    background: -ms-linear-gradient(top, #e8715f 0, #cf3346 50%, #bc0332 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8715f',endColorstr='#bc0332',GradientType=0);
-    background: linear-gradient(top, #e8715f 0, #cf3346 50%, #bc0332 100%);
-  }
-  &[type=button]:hover, &[type=submit]:hover {
-    background: #d43e4a;
-    background: -moz-linear-gradient(top, #e78577 0, #f3445e 50%, #fe0646 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e78577), color-stop(50%, #f3445e), color-stop(100%, #fe0646));
-    background: -webkit-linear-gradient(top, #e78577 0, #f3445e 50%, #fe0646 100%);
-    background: -o-linear-gradient(top, #e78577 0, #f3445e 50%, #fe0646 100%);
-    background: -ms-linear-gradient(top, #e78577 0, #f3445e 50%, #fe0646 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e78577',endColorstr='#fe0646',GradientType=0);
-    background: linear-gradient(top, #e78577 0, #cf3346 50%, #f3445e 100%);
-    -moz-box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.4) inset;
-    -webkit-box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.4) inset;
-    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.4) inset;
-  }
-  &[type=button]:active, &[type=submit]:active {
-    top: 2px;
-    background: #d43e4a;
-    background: -moz-linear-gradient(top, #bc0332 0, #cf3346 50%, #e8715f 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8715f), color-stop(50%, #cf3346), color-stop(100%, #e8715f));
-    background: -webkit-linear-gradient(top, #bc0332 0, #cf3346 50%, #e8715f 100%);
-    background: -o-linear-gradient(top, #bc0332 0, #cf3346 50%, #e8715f 100%);
-    background: -ms-linear-gradient(top, #bc0332 0, #cf3346 50%, #e8715f 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc0332',endColorstr='#e8715f',GradientType=0);
-    background: linear-gradient(top, #bc0332 0, #cf3346 50%, #e8715f 100%);
-    -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) inset;
-    -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) inset;
-    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) inset;
-  }
-}
+}// end footer
 
 
 #debug_submit_link input {
@@ -992,6 +1027,7 @@ input {
 
 .create-new-inside {
   padding: 15px;
+  margin: -10px 0;
   .messages {
     width: 300px;
   }
@@ -1030,28 +1066,10 @@ input {
 }
 
 
-
 #share_extras {
   height: 110px;
   padding: 2px 4px;
   margin-bottom: 7px;
-}
-
-#main {
-  min-height: 100%;
-}
-
-#content {
-  overflow: auto;
-  padding-bottom: 70px;
-}
-
-#footer {
-  position: relative;
-  margin-top: -40px;
-  /* negative value of footer height */
-  height: 40px;
-  clear: both;
 }
 
 .spinner {
@@ -1062,6 +1080,12 @@ input {
 
 .tags #share_tags, #update-path-form input#share_path, .user-edit input#user_name {
   margin: 0;
+}
+
+.update-tags-form {
+  position: relative;
+  top: -4px;
+  margin: 0 0 -8px;
 }
 
 .shares-users-table {
@@ -1086,7 +1110,7 @@ td.form-action-wrap {
   vertical-align: top;
 }
 
-.tag-form-wrap inpu7 {
+.tag-form-wrap input {
   margin: 3px 0 0 0;
 }
 
@@ -1107,50 +1131,6 @@ td.form-action-wrap {
   background-color: #fdfec3;
 }
 
-#latest_news {
-  float: right;
-  border: 1px solid #e6e6e6;
-  width: 245px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  li {
-    margin: 12px 0 12px 16px;
-    padding-left: 0px;
-  }
-  #ln_header {
-    background: #f7f6f6;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    padding: 15px 0 15px 0;
-  }
-  h3 {
-    text-align: center;
-  }
-}
-
-#ln_content {
-  padding: 10px 14px;
-  a {
-    color: #000;
-    font-weight: bold;
-  }
-}
-
-#latest_news ul > li span {
-  color: #999;
-  font-size: 11px;
-  line-height: 1.3;
-  display: block;
-}
-
-section#dashboard {
-  float: left;
-  text-align: center;
-  width: 713px;
-}
-
 .cancel-link {
   padding-left: 10px;
 }
@@ -1158,9 +1138,6 @@ section#dashboard {
 // --------------------------------------------------
 // Buttons
 // --------------------------------------------------
-.searchbutton {
-  width: auto;
-}
 
 .open-area {
   margin: 15px 0 0;
@@ -1171,9 +1148,6 @@ section#dashboard {
 // --------------------------------------------------
 .editable { font-weight: bold; }
 .search-location { color: #009000; }
-#search-types { width: 100%; font-size: 1.1em; border-top: 1px solid #506480; background-color: #f8f8f8; padding: 10px 0 30px 0; margin: 10px 0 20px 0;  }
-#search-menu { margin-left: 15px; }
-#search-number-of-results { margin-right: 15px; }
 
 /* firewall settings in network tab */
 .fw-box { text-align: left; padding: 20px; }

@@ -1,9 +1,9 @@
 #search-types
-  span#search-menu
-    = action_name == "hda" ? t('files') : link_to(t('files'), :action => :hda, :query => @query)
-    = action_name == "images" ? t('images') : link_to(t('images'), :action => :images, :query => @query)
-    = action_name == "audio" ? t('audio') : link_to(t('audio'), :action => :audio, :query => @query)
-    = action_name == "video" ? t('video') : link_to(t('video'), :action => :video, :query => @query)
+  ul#search-menu
+    li = action_name == "hda" ? t('files') : link_to(t('files'), :action => :hda, :query => @query)
+    li = action_name == "images" ? t('images') : link_to(t('images'), :action => :images, :query => @query)
+    li = action_name == "audio" ? t('audio') : link_to(t('audio'), :action => :audio, :query => @query)
+    li = action_name == "video" ? t('video') : link_to(t('video'), :action => :video, :query => @query)
 #search-results
   .results_list
     - if @results.size > 0
