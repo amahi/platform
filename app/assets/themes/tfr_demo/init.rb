@@ -19,7 +19,7 @@ def theme_init
 	ret[:theme_uri] = "http://www.amahi.org"
 	ret[:author] = "Solomon Seal, AKA - slm4996"
 	ret[:author_uri] = ""
-	ret[:disable_inheritance] = "false"
+	ret[:disable_inheritance] = false
 	ret[:gruff_theme] = {
 	  # basic colors for other graphs
 	  :colors => colors,

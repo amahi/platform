@@ -13,5 +13,5 @@
       td= f.text_field :path, :size => 38, :maxlength => 128, :placeholder => t('location')
       td
         = f.submit "#{t('change')} &raquo;".html_safe
-        = link_to t('cancel'), '#', :class => 'close-update-path-area'
+        = link_to t('cancel'), '#', :class => 'close-update-path-area cancel-link'
       td.messages
