@@ -1,5 +1,5 @@
 require 'spec_helper'
- 
+
 feature "Users tab" do
 	scenario "an admin should be able to create a new user" do
 		user = create(:admin)
@@ -9,7 +9,7 @@ feature "Users tab" do
 		fill_in "password", :with => "secret"
 		click_button "Log In"
 		expect(page).to have_content("Setup")
-		visit users_path
+		visit users_engine.users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_button "New User"
@@ -18,7 +18,7 @@ feature "Users tab" do
 		fill_in "user_password", :with => "secret"
 		fill_in "user_password_confirmation", :with => "secret"
 		click_button "user_create_button"
-		visit users_path
+		visit users_engine.users_path
 		expect(page).to have_content("newuser")
 		expect(page).to have_content("fullname")
 	end
@@ -31,7 +31,7 @@ feature "Users tab" do
 		fill_in "password", :with => "secret"
 		click_button "Log In"
 		expect(page).to have_content("Setup")
-		visit users_path
+		visit users_engine.users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link user.login
@@ -47,7 +47,7 @@ feature "Users tab" do
 		fill_in "password", :with => "secret"
 		click_button "Log In"
 		expect(page).to have_content("Setup")
-		visit users_path
+		visit users_engine.users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link admin.login
@@ -61,7 +61,7 @@ feature "Users tab" do
 		fill_in "password", :with => "secret"
 		click_button "Log In"
 		expect(page).to have_content("Setup")
-		visit users_path
+		visit users_engine.users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link admin.login
@@ -76,7 +76,7 @@ feature "Users tab" do
 		fill_in "password", :with => "secret"
 		click_button "Log In"
 		expect(page).to have_content("Setup")
-		visit users_path
+		visit users_engine.users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link user.login
@@ -93,14 +93,14 @@ feature "Users tab" do
 		fill_in "password", :with => "secret"
 		click_button "Log In"
 		expect(page).to have_content("Setup")
-		visit users_path
+		visit users_engine.users_path
 		expect(page).to have_content("Username")
 		expect(page).to have_content("Full Name")
 		click_link user.login
 		expect(page).to have_unchecked_field("checkbox-user_admin_2")
 		check("checkbox-user_admin_2");
 		expect(page).to have_checked_field("checkbox-user_admin_2")
-	end 
+	end
 	scenario "should allow an admin user to change his full name" do
 		pending
 	end
