@@ -5,11 +5,10 @@
         li[class=tab_class(tab)]
           = link_to tab.label, tab.url
           i class="icon-#{tab.label.downcase}"
-          -if params[:controller] == tab.label.downcase
-            ul
-              - tab.subtabs.each do |subtab|
-                li[class=subtab_class(subtab.id)]
-                  = link_to subtab.label, subtab.url
+          ul
+            - tab.subtabs.each do |subtab|
+              li[class=subtab_class(subtab.id)]
+                = link_to subtab.label, subtab.url
       li[class="#{'active' if params[:controller] == 'shares'}"]
         = link_to t('shares'), shares_path
         i.icon-shares
