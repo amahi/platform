@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
 	before_filter :before_filter_hook
 	before_filter :initialize_validators
-	before_filter :setup_tabs
+	before_filter :get_tabs
 
 	helper_method :current_user
 
@@ -187,8 +187,8 @@ class ApplicationController < ActionController::Base
 		@no_subtabs = true
 	end
 
-	# this sets up the tabs
-	def setup_tabs
+	# this gets the tabs available
+	def get_tabs
 		@tabs = Tab.all
 	end
 

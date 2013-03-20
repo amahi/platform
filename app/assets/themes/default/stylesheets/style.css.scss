@@ -114,7 +114,7 @@ input {
     display: inline-block;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     position: relative;
-    padding: 5px 10px;
+    padding: 4px 12px;
     color: #fff;
     border: 1px solid #322525;
     @include border-radius(4px);
@@ -417,7 +417,7 @@ section#dashboard {
 // App Navigation
 // --------------------------------------------------
 
-#preferencestabs {
+#tabs {
   border: 1px solid #e8e8e8;
   border-bottom-color: #dfdfdf;
   @include border-radius(5px 5px 0 0);
@@ -441,7 +441,7 @@ nav.preftab {
         }
       }
 
-      &.preftabheaderActive {
+      &.active {
         border-bottom: none;
 
         a {
@@ -473,7 +473,7 @@ nav.preftab {
       li {
         border-right: none;
 
-        &.prefsubtabheaderActive {
+        &.active {
           a { color: #3f3f3f; }
         }
 
@@ -807,7 +807,7 @@ td {
     display: inline-block;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     position: relative;
-    padding: 5px 10px;
+    padding: 4px 12px;
     color: #fff;
     border: 1px solid #322525;
     @include border-radius(4px);

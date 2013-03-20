@@ -1,22 +1,23 @@
-#preferencestabs
+#tabs
   nav.preftab
     ul
       - @tabs.each do |tab|
-        li[class="#{tab.id}"]
+        li[class=tab_class(tab)]
           = link_to tab.label, tab.url
           i class="icon-#{tab.label.downcase}"
-      li[class="#{tab_class('shares')}"]
+          ul
+            - tab.subtabs.each do |subtab|
+              li[class=subtab_class(subtab.id)]
+                = link_to subtab.label, subtab.url
+      li[class="#{'active' if params[:controller] == 'shares'}"]
         = link_to t('shares'), shares_path
         i.icon-shares
-      li[class="#{tab_class('apps')}"]
+      li[class="#{'active' if params[:controller] =='apps'}"]
         = link_to t('apps'), apps_path
         i.icon-apps
       - if debug_tab?
-        li[class="#{tab_class()}"]
+        li[class=""]
           = link_to t('debug'), '#'
           i.icon-debug
-      - @tabs.each do |tab|
-        - tab.subtabs.each do |subtab|
-          = link_to subtab.label, subtab.url
 
     = render "#{params[:controller]}/subtabs" unless @no_subtabs

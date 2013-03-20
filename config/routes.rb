@@ -57,5 +57,4 @@ AmahiHDA::Application.routes.draw do
 
   match ':controller(/:action(/:id))(.:format)'
 
-  match '*rest' => 'setup#index'
 end

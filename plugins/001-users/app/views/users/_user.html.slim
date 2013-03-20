@@ -60,7 +60,7 @@ div.user[id="whole_user_#{user.id}"]
                 = spinner
                 div.pubkey-area[style="display:none"]
                   = form_tag users_engine.update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey' do |f|
-                    = text_area_tag :public_key, user.public_key, :rows => 5, :cols => 78, :placeholder => t('public_key')
+                    = text_area_tag "public_key_#{user.id}", user.public_key, :rows => 5, :cols => 78, :placeholder => t('public_key')
                     br
                     = submit_tag t('update_key')
                     = link_to_function t('cancel'), "$(this).parent().parent().hide('slow')", :class => 'cancel-link'

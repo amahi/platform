@@ -10,7 +10,7 @@
 // Dashboard
 // --------------------------------------------------
 
-#preferencestabs {
+#tabs {
   width: 145px;
   float: left;
   border: 1px solid #e8e8e8;
@@ -43,7 +43,7 @@ nav.preftab {
           float: left;
           border-right: 1px solid #e8e8e8;
           border-bottom: 1px solid #e8e8e8;
-          &.preftabheaderActive {
+          &.active {
             border-bottom: none;
             a {
               background: #fff;

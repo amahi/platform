@@ -37,11 +37,12 @@ class UsersController < ApplicationController
 
 	def update_pubkey
 		@user = User.find(params[:id])
+		# sleep a little to see the spinner working well
 		sleep 2 if development?
 		unless @user
 			render :json => { :status => :not_acceptable }
 		else
-			key = params[:public_key]
+			key = params["public_key_#{params[:id]}"]
 			key = nil if key.blank?
 			@user.public_key=key
 			@user.save
