@@ -24,7 +24,6 @@
   width: 770px;
   float: left;
   border: 1px solid #e8e8e8;
-  padding: 20px;
   @include border-radius(0 5px 5px 5px);
 }
 
@@ -33,62 +32,25 @@
 // --------------------------------------------------
 
 nav.preftab {
-  @include border-radius(5px 0 0 0);
-  > ul {
-        list-style: none;
-        @include clearfix;
-
-        li {
-          width: 145px;
-          float: left;
-          border-right: 1px solid #e8e8e8;
-          border-bottom: 1px solid #e8e8e8;
-          &.active {
-            border-bottom: none;
-            a {
-              background: #fff;
-              color: #3f3f3f;
-            }
-          }
-
-          a {
-            display: block;
-            line-height: 38px;
-            padding: 0 28px;
-            font-size: 12px;
-            font-weight: bold;
-            color: #b3b3b3;
-            &:hover { text-decoration: none; }
-          }
-        }
-      }
-  ul.prefsubtab {
-    list-style: none;
-    @include clearfix;
-    li {
-      a:before {
-        content: '- ';
-        padding-left: 1em;
-      }
-      a:after {
-        content: '';
-      }
-      background: #fff;
-      color: #3f3f3f;
-      border-right: none;
-      border-bottom: none;
+  position: static;
+  li {
+    width: 145px;
+    &.active {
+      > ul { display: inline; }
     }
-    li.last {
-      border-right: none;
+    &:hover {
+      ul { display: inline; }
     }
     a {
-      display: block;
-      line-height: 28px;
-      padding: 0 28px;
-      font-size: 12px;
-      font-weight: bold;
-      color: #b3b3b3;
-      &:hover { text-decoration: none; }
+      width: 145px;
     }
-  }
-}
+    // secondary navigation
+    ul {
+      position: static;
+      width: 145;
+      li > a {
+        padding: 0 40px;
+      }
+    }
+  }// end li
+}// end preftab
