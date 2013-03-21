@@ -27,7 +27,7 @@ class Tab
 
 	# add a subtab, with a relative url and the label for it
 	def add(action, label)
-		u = (action == 'index') ? self.id : "#{self.url}/#{action}"
+		u = (action == 'index') ? self.url : "#{self.url}/#{action}"
 		subtabs << Tab.new(action, label, u, self.id)
 	end
 
