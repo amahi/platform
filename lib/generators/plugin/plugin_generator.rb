@@ -120,5 +120,16 @@ require 'rails/engine/commands'
 			FILE
 			chmod "script/rails", 0755
 		end
+
+		inside(root) do
+			create_file "config/initializers/plugin_init.rb", <<-FILE
+# plugin initialization
+t = Tab.new("#{plural_name}", "#{class_name}", "/tab/#{plural_name}")
+# add any subtabs with what you need. params are controller and the label, for example
+t.add('index', "All")
+t.add('settings', "Settings")
+t.add('advanced', "Advanced")
+			FILE
+		end
 	end
 end
