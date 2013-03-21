@@ -24,7 +24,6 @@ gem 'ya2yaml'
 
 gem 'themes_for_rails'
 
-gem 'compass-rails'
 gem 'jquery-rails', '~> 2.1.4'
 gem 'jquery-ui-rails'
 gem 'slim'

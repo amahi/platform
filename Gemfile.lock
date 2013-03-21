@@ -43,7 +43,6 @@ GEM
       xpath (~> 1.0.0)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
-    chunky_png (1.2.7)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -51,12 +50,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
-    compass (0.12.2)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
     diff-lcs (1.2.1)
     erubis (2.7.0)
@@ -71,7 +64,6 @@ GEM
     faye-websocket (0.4.7)
       eventmachine (>= 0.12.0)
     ffi (1.4.0)
-    fssm (0.2.10)
     hike (1.2.1)
     http_parser.rb (0.5.3)
     i18n (0.6.1)
@@ -199,7 +191,6 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capybara
   coffee-rails (~> 3.2.2)
-  compass-rails
   factory_girl_rails
   jbuilder
   jquery-rails (~> 2.1.4)
