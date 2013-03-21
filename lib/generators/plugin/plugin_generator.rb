@@ -1,6 +1,11 @@
 class PluginGenerator < Rails::Generators::NamedBase
 	source_root File.expand_path('../templates', __FILE__)
 
+	# utility method to be called by file name substitution in calls to directory
+	def classname_lower
+		"#{class_name.downcase}"
+	end
+
 	def create_config_file
 		root = "plugins/#{plural_name}"
 		# FIXME bug in thor?
@@ -104,7 +109,11 @@ end
 		inside(root) do
 			create_file "config/routes.rb", <<-FILE
 #{class_name}::Engine.routes.draw do
-        root :to => 'tab#index'
+	# root of the plugin
+        root :to => '#{plural_name}#index'
+	# examples of controllers built in this generator. delete at will
+	match 'settings' => '#{plural_name}#settings'
+	match 'advanced' => '#{plural_name}#advanced'
 end
 			FILE
 		end
@@ -122,13 +131,34 @@ require 'rails/engine/commands'
 		end
 
 		inside(root) do
-			create_file "config/initializers/plugin_init.rb", <<-FILE
-# plugin initialization
-t = Tab.new("#{plural_name}", "#{class_name}", "/tab/#{plural_name}")
-# add any subtabs with what you need. params are controller and the label, for example
-t.add('index', "All")
-t.add('settings', "Settings")
-t.add('advanced', "Advanced")
+			initializer("plugin_init.rb") do
+				data = ['# plugin initialization']
+				data << "t = Tab.new(\"#{plural_name}\", \"#{class_name}\", \"/tab/#{plural_name}\")"
+				data << '# add any subtabs with what you need. params are controller and the label, for example'
+				data << 't.add("index", "All")'
+				data << 't.add("settings", "Settings")'
+				data << 't.add("advanced", "Advanced")'
+				data.join("\n")
+			end
+		end
+
+		inside(root) do
+			create_file "app/controllers/#{class_name.downcase}_controller.rb", <<-FILE
+class #{class_name}Controller < ApplicationController
+	before_filter :admin_required
+
+	def index
+		# do your main thing here
+	end
+
+#	def settings
+#		# do the settings page here
+#	end
+
+#	def advanced
+#		# do the advanced settings page here
+#	end
+end
 			FILE
 		end
 	end
