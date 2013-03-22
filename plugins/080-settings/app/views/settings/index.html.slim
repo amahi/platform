@@ -15,7 +15,9 @@ div.settings-fields
           = t 'advanced_settings'
         td
           = tag "input", id: "advanced", type: "checkbox", checked: @advanced.set?,
-              data: { remote: true, url: settings_engine.toggle_setting_path(id: @advanced) }
+              data: { remote: true, url: settings_engine.toggle_setting_path(id: @advanced),
+              confirm: @advanced.set? ? nil : [t('avanced_settings_is_for_developers'),
+                                '', '', t('are_you_sure_advanced_features')].join("\n") }
           = spinner
           a href="http://wiki.amahi.org/index.php/Advanced_Settings" target="_blank" class="more-info"
             = theme_image_tag("more.png")
