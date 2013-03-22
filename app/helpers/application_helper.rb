@@ -35,13 +35,14 @@ module ApplicationHelper
 		@theme
 	end
 
-	def hda_stylesheets
-		@hda_stylesheets || []
-	end
-
 	def page_title
 		@page_title
 	end
+
+	def amahi_plugins
+		AmahiHDA::Application.config.amahi_plugins
+	end
+
 	def full_page_title
 		page_title ? "Amahi Home Server &rsaquo; #{page_title}".html_safe : "Amahi Home Server"
 	end
@@ -59,7 +60,7 @@ module ApplicationHelper
 			html << "&nbsp;&nbsp;"
 			html << (block_given? ? yield : options[:label].to_s)
 			html << "&nbsp;"
-      html << theme_image_tag("working.gif", :class => "spinner theme-image", :style => "display: none;")
+			html << content_tag("span", '', class: "spinner theme-image", style: "display: none")
 			html.html_safe
 		end
 	end
@@ -74,14 +75,14 @@ module ApplicationHelper
 			html = ''
 			html << (block_given? ? yield : options[:label].to_s)
 			html << select_tag("select", options_from_collection_for_select(options[:collection], "first", "last", options[:selected].to_s), :data => {:url => options[:url]}.merge(parsed_options))
-			html << theme_image_tag("working.gif", :class => "spinner theme-image", :style=> "display: none;") unless options[:no_spinner]
+			html << content_tag("span", '', class: "spinner theme-image", style: "display: none") unless options[:no_spinner]
 			html.html_safe
 		end
 	end
 
 
-	def spinner css_class = ''
-		theme_image_tag("working.gif", :class => "spinner #{css_class}", :style=> "display: none;")
+	def spinner(css_class = '')
+		content_tag('span', '', class: "spinner #{css_class}", style: "display: none")
 	end
 
 	def formatted_date(date)

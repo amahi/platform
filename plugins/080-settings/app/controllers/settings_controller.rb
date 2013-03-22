@@ -14,33 +14,38 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class SettingController < ApplicationController
+class SettingsController < ApplicationController
 
 	before_filter :admin_required
 
 	def index
 		@page_title = t 'settings'
-	end
-
-	def toggle_setting
-		id = params[:id]
-		kind = params[:kind]
-		s = Setting.find id
-		s.value = (1 - s.value.to_i).to_s
-		s.save!
-		@firewall = Setting.find_by_name('firewall')
-		@guest_dashboard = Setting.find_by_name('guest-dashboard')
 		@available_locales = locales_implemented
-		render :partial => "setting/all"
+		@advanced = Setting.find_by_name('advanced')
+		@guest = Setting.find_by_name("guest-dashboard")
+		@version = {}
+		@version[:platform] = "xyz (FIXME)"
+		@version[:core] = "xyz (FIXME)"
 	end
 
 	def change_language
+		sleep 2 if development?
 		l = params[:locale]
 		if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
 			cookies['locale'] = { :value => params[:locale], :expires => 1.year.from_now }
 		end
-		render :update do |page|
-			page.redirect_to :controller => 'setup', :tab => 'setting'
+		render json: { status: 'ok' }
+	end
+
+	def toggle_setting
+		sleep 2 if development?
+		id = params[:id]
+		s = Setting.find id
+		s.value = (1 - s.value.to_i).to_s
+		if s.save
+			render json: { status: 'ok' }
+		else
+			render json: { status: 'error' }
 		end
 	end
 

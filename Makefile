@@ -6,3 +6,14 @@ bundle:
 # install necessary packages (FIXME: this is for fedora 18 only so far)
 necessary-packages:
 	sudo yum -y install git rpm-build ruby ruby-devel gcc gcc-c++ mysql mysql-devel
+
+# cleanup misc files that bloat things up
+cleanup:
+	rm -f log/development.log
+	rm -f log/test.log
+	rm -rf tmp/cache/*
+	rm -rf tmp/lm*
+	rm -rf tmp/server*
+	rm -rf tmp/smb*
+	rm -rf tmp/key*
+	rm -rf public/assets

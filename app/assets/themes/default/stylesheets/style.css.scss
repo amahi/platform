@@ -1112,6 +1112,8 @@ td {
 
 .spinner {
   margin-left: 10px;
+  background: url(../images/working.gif) no-repeat left center;
+  padding: 16px;
 }
 
 /* Tags area */
@@ -1171,6 +1173,11 @@ td.form-action-wrap {
 
 .cancel-link {
   padding-left: 10px;
+}
+
+.more-info {
+  padding: 7px;
+  text-align: left;
 }
 
 // --------------------------------------------------

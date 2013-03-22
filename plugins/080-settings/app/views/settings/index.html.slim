@@ -1,0 +1,63 @@
+div.settings-fields
+  fieldset
+    legend
+      = t 'global_settings'
+    table
+      tr
+        td
+          = t 'language'
+        td
+          = select_tag 'locale', options_for_select(@available_locales, I18n.locale.to_s),
+            data: { remote: true, url: settings_engine.change_language_path, update: 'language' }
+          = spinner
+      tr
+        td
+          = t 'advanced_settings'
+        td
+          = tag "input", id: "advanced", type: "checkbox", checked: @advanced.set?,
+              data: { remote: true, url: settings_engine.toggle_setting_path(id: @advanced) }
+          = spinner
+          a href="http://wiki.amahi.org/index.php/Advanced_Settings" target="_blank" class="more-info"
+            = theme_image_tag("more.png")
+      tr
+        td
+          = t 'guest_dashboard'
+        td
+          = tag "input", id: "guest", type: "checkbox", checked: @guest.set?,
+              data: { remote: true, url: settings_engine.toggle_setting_path(id: @guest) }
+          = spinner
+
+div.settings-fields
+  fieldset
+    legend
+      = t 'system_info'
+    div.settings-actions
+      span#systems-result
+        = link_to theme_image_tag("poweroff.png", title: t('poweroff'), alt: t('poweroff')),
+              settings_engine.poweroff_path,
+              remote: true,
+              method: :post,
+              confirm: t('this_will_power_off')
+        = link_to theme_image_tag("reboot.png", title: t('reboot'), alt: t('reboot')),
+              settings_engine.reboot_path,
+              remote: true,
+              method: :post,
+              confirm: t('this_will_reboot')
+    div.settings-fields#info-table
+      table
+        tr
+          td = t 'system'
+          td
+            = `uname -r`
+            |,
+            = `uname -m`
+        tr
+          td = t 'platform'
+          td = @version[:platform]
+        tr
+          td = t 'core'
+          td = @version[:core]
+        tr
+          td = t 'uptime'
+          td = `uptime`
+

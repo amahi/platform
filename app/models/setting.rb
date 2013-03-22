@@ -58,7 +58,11 @@ class Setting < ActiveRecord::Base
 			end
 			setting
 		end
-
 	end
+
+	def set?
+		value == '1' || value == 'true'
+	end
+
 
 end

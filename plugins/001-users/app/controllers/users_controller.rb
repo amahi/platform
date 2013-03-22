@@ -57,6 +57,7 @@ class UsersController < ApplicationController
 	end
 
 	def toggle_admin
+		sleep 2 if development?
 		user = User.find params[:id]
 		if can_i_toggle_admin?(user)
 			user.admin = !user.admin
