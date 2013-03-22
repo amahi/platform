@@ -1,224 +1,212 @@
 --- 
 sv: 
-  new_user: "Ny anv\xC3\xA4ndare"
-  alias_is_taken_already: "Alias \xC3\xA4r redan taget eller \xC3\xA4r reserverat"
+  new_user: "Ny användare"
+  alias_is_taken_already: "Alias är redan taget eller är reserverat"
   storage: Lagring
-  user_name_is_not_available: "Anv\xC3\xA4ndarnamnet \xC3\xA4r inte tillg\xC3\xA4ngligt"
+  user_name_is_not_available: "Användarnamnet är inte tillgängligt"
   platform: Plattform
-  are_you_sure_share: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill ta bort utdelningen '%{share}' ?"
-  these_rules_are_used_to_restrict_ips: "Dessa regler anv\xC3\xA4nds f\xC3\xB6r att begr\xC3\xA4nsa datapaket fr\xC3\xA5n en IP i ditt lokala n\xC3\xA4tverk till Internet. Anv\xC3\xA4ndning av s\xC3\xA5dana filter kan vara till hj\xC3\xA4lp f\xC3\xB6r att s\xC3\xA4kra eller begr\xC3\xA4nsa ditt lokala n\xC3\xA4tverk."
-  this_looks_like_a_database_corruption_please_report_it: "Detta ser ut som en databaskorruption eller en bug (v\xC3\xA4nligen <a href=\"http://bugs.amahi.org\">rapportera den</a>)."
+  are_you_sure_share: "Är du säker på att du vill ta bort utdelningen '%{share}' ?"
+  these_rules_are_used_to_restrict_ips: "Dessa regler används för att begränsa datapaket från en IP i ditt lokala nätverk till Internet. Användning av sådana filter kan vara till hjälp för att säkra eller begränsa ditt lokala nätverk."
+  this_looks_like_a_database_corruption_please_report_it: "Detta ser ut som en databaskorruption eller en bug (vänligen <a href=\"http://bugs.amahi.org\">rapportera den</a>)."
   mac_looks_good: MAC verkar bra
   wiki: Wiki
-  confirm_email: "Bekr\xC3\xA4fta E-post"
+  confirm_email: "Bekräfta E-post"
   last_login: Senaste inloggning
   setup: Setup
-  start_at_boot_time: "B\xC3\xB6rja vid uppstart"
-  news_about_applications: "Nyheter om program som k\xC3\xB6rs p\xC3\xA5 Amahi"
-  delete_user: "Radera anv\xC3\xA4ndare"
-  delete_profile: "Radera profil f\xC3\xB6r"
-  running: !binary |
-    SWfDpW5n
-
-  start_building_a_new_hda: "B\xC3\xB6rja bygga en ny HDA!"
+  start_at_boot_time: "Börja vid uppstart"
+  news_about_applications: "Nyheter om program som körs på Amahi"
+  delete_user: "Radera användare"
+  delete_profile: "Radera profil för"
+  running: "Igång"
+  start_building_a_new_hda: "Börja bygga en ny HDA!"
   delete: Radera
-  name_is_taken_already: "Namnet \xC3\xA4r redan taget "
-  unleash_the_power_of_your_home_network: "Sl\xC3\xA4pp loss kraften i ditt hemn\xC3\xA4tverk."
-  are_you_sure_webapp: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill ta bort webbapplikationen '%{webapp}' ?"
+  name_is_taken_already: "Namnet är redan taget "
+  unleash_the_power_of_your_home_network: "Släpp loss kraften i ditt hemnätverk."
+  are_you_sure_webapp: "Är du säker på att du vill ta bort webbapplikationen '%{webapp}' ?"
   automated_install: Automatiserad installation
-  need_help_logging_in: "Beh\xC3\xB6ver du hj\xC3\xA4lp att logga in?"
-  confirm_password: "Bekr\xC3\xA4fta l\xC3\xB6senord"
+  need_help_logging_in: "Behöver du hjälp att logga in?"
+  confirm_password: "Bekräfta lösenord"
   installed_paren: (Installerad)
   tour: Rundtur
-  address_already_allocated: "Adress \xC3\xA4r redan tilldelad"
+  address_already_allocated: "Adress är redan tilldelad"
   new: Ny
-  are_you_sure_you_want_to_stop_the_server: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill stoppa '%{name}' ?"
-  disabling_pdc_will_enable_workgroup_mode: "Avaktivering av PDC l\xC3\xA4ge kommer att aktivera Workgroup l\xC3\xA4ge. Det \xC3\xA4r en stor f\xC3\xB6r\xC3\xA4ndring i hur utdelningar fungerar. Detta \xC3\xA4r avsett f\xC3\xB6r hemn\xC3\xA4tverk (kolla wiki f\xC3\xB6r mer). \xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill avaktivera PDC l\xC3\xA4ge?"
+  are_you_sure_you_want_to_stop_the_server: "Är du säker på att du vill stoppa '%{name}' ?"
+  disabling_pdc_will_enable_workgroup_mode: "Avaktivering av PDC läge kommer att aktivera Workgroup läge. Det är en stor förändring i hur utdelningar fungerar. Detta är avsett för hemnätverk (kolla wiki för mer). Är du säker på att du vill avaktivera PDC läge?"
   address_looks_good: Adressen ser bra ut
-  finalize_settings: "Slutf\xC3\xB6r Inst\xC3\xA4llningar"
-  confirmation_must_match: "Bekr\xC3\xA4ftelsen m\xC3\xA5ste \xC3\xB6verensst\xC3\xA4mma"
+  finalize_settings: "Slutför Inställningar"
+  confirmation_must_match: "Bekräftelsen måste överensstämma"
   stopped: Stoppad
   applications: Applikationer
   this_ip_address_will_always_be_statically_associated_to_the_mac_address: Denna IP-adress (1-%{max}) kommer alltid att vara statiskt knutna till MAC-adressen nedan.
-  this_path_exists_already: "Denna s\xC3\xB6kv\xC3\xA4g finns redan"
-  poweroff: "St\xC3\xA4ng av"
+  this_path_exists_already: "Denna sökväg finns redan"
+  poweroff: "Stäng av"
   router_control: Router Kontroll
-  are_you_sure_you_would_like_to_delete_calendar: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill ta bort '%{calendar}' ?"
+  are_you_sure_you_would_like_to_delete_calendar: "Är du säker på att du vill ta bort '%{calendar}' ?"
   openvpn_server: OpenVPN Server
   port_range_looks_good: Portintervallet ser bra ut
   pictures: Bilder
-  disk: "H\xC3\xA5rddisk"
+  disk: "Hårddisk"
   location: Plats
-  require_login: "Kr\xC3\xA4ver inloggning"
+  require_login: "Kräver inloggning"
   theme: Tema
-  disks: "H\xC3\xA5rddiskar"
+  disks: "Hårddiskar"
   rule: Regel
   static_ips: Statiska IP
   mac_address_to_be_filtered_in_format: MAC-adressen som ska filtreras (i form 00:11:22:33:44:55).
   my_apps: Min Apps
   disk_pool_copies: Extra kopior
   cancel: Avbryt
-  port_range_ports_must_be_increasing_order: "Den f\xC3\xB6rsta porten m\xC3\xA5ste vara mindre \xC3\xA4n eller lika med den andra porten"
-  password_is_too_short: "L\xC3\xB6senord \xC3\xA4r f\xC3\xB6r kort"
-  preparing_to_install: "F\xC3\xB6rbereder installationen ..."
+  port_range_ports_must_be_increasing_order: "Den första porten måste vara mindre än eller lika med den andra porten"
+  password_is_too_short: "Lösenord är för kort"
+  preparing_to_install: "Förbereder installationen ..."
   model: Modell
-  are_you_sure_you_want_to_start_the_server: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill starta '%{name}' ?"
-  nickname_info: "\"Smeknamnet\" \xC3\xA4r en unik identifierare f\xC3\xB6r din HDA. Du beh\xC3\xB6ver f\xC3\xB6r att logga in p\xC3\xA5 ditt  <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> med <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows klienten</a> (och en beh\xC3\xB6rig anv\xC3\xA4ndare och l\xC3\xB6senord p\xC3\xA5 ditt hemman\xC3\xA4tverk)."
+  are_you_sure_you_want_to_start_the_server: "Är du säker på att du vill starta '%{name}' ?"
+  nickname_info: "\"Smeknamnet\" är en unik identifierare för din HDA. Du behöver för att logga in på ditt  <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> med <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows klienten</a> (och en behörig användare och lösenord på ditt hemmanätverk)."
   files: Filer
-  by_signing_up_you_agree_to_the_terms_of_service: "Genom att anm\xC3\xA4la dig, samtycker du och har l\xC3\xA4st <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">v\xC3\xA5ra anv\xC3\xA4ndarvillkor</a>"
+  by_signing_up_you_agree_to_the_terms_of_service: "Genom att anmäla dig, samtycker du och har läst <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">våra användarvillkor</a>"
   the_url_looks_good: Webbadressen ser bra ut
   application_uninstalled: Applikation avinstallerad
   delete_web_app: Radera Web App
   free_space: Ledigt utrymme
   url: URL
-  are_you_sure_you_would_like_to_uninstall: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill avinstallera programmet? \r\n\
+  are_you_sure_you_would_like_to_uninstall: "Är du säker på att du vill avinstallera programmet? \r\n\
     Alla uppgifter med samband till detta program KOMMER ATT RADERAS."
   temperature: Temperatur
-  users: "Anv\xC3\xA4ndare"
+  users: "Användare"
   debug: Debug
   the_ip_address_can_be: IP-adressen kan vara
   read_only: Skrivskyddad
-  install_code_info: "Denna installationskod f\xC3\xA5ngar in alla inst\xC3\xA4llningar f\xC3\xB6r din HDA och det anv\xC3\xA4ndas en g\xC3\xA5ng som det sista steget i att installera din HDA. Du b\xC3\xB6r inte \xC3\xA5teranv\xC3\xA4nda det f\xC3\xB6r tv\xC3\xA5 eller flera system som k\xC3\xB6r, eftersom det kommer att bryta den dynamiska DNS och VPN. Skapa en profil f\xC3\xB6r varje HDA du k\xC3\xB6r."
+  install_code_info: "Denna installationskod fångar in alla inställningar för din HDA och det användas en gång som det sista steget i att installera din HDA. Du bör inte återanvända det för två eller flera system som kör, eftersom det kommer att bryta den dynamiska DNS och VPN. Skapa en profil för varje HDA du kör."
   url_filtering: URL-filtrering
-  available: "Tillg\xC3\xA4nglig"
-  this_will_power_off: "Detta kommer st\xC3\xA4nga av din HDA.\r\n\
-    Kanske borde du starta din routers DHCP-server om din HDA ocks\xC3\xA5 agerat DHCP-server.\r\n\
-    Vill du verkligen forts\xC3\xA4tta?"
-  add_extra_parameters: "(l\xC3\xA4gg till extra parametrar)"
-  edit_static_ip: "\xC3\x84ndra Statiskt IP"
+  available: "Tillgänglig"
+  this_will_power_off: "Detta kommer stänga av din HDA.\r\n\
+    Kanske borde du starta din routers DHCP-server om din HDA också agerat DHCP-server.\r\n\
+    Vill du verkligen fortsätta?"
+  add_extra_parameters: "(lägg till extra parametrar)"
+  edit_static_ip: "Ändra Statiskt IP"
   system_info: Systeminformation
-  this_path_is_not_available: "Denna s\xC3\xB6kv\xC3\xA4g \xC3\xA4r inte tillg\xC3\xA4nglig"
-  firewall_port_filter_message: "Portfilterregler anv\xC3\xA4nds f\xC3\xB6r att begr\xC3\xA4nsa datapaket fr\xC3\xA5n ditt lokala n\xC3\xA4tverk till Internet."
+  this_path_is_not_available: "Denna sökväg är inte tillgänglig"
+  firewall_port_filter_message: "Portfilterregler används för att begränsa datapaket från ditt lokala nätverk till Internet."
   press: Press
-  share_path_cannot_be_blank: "Utdelningss\xC3\xB6kv\xC3\xA4g f\xC3\xA5r inte l\xC3\xA4mnas tom"
-  address_is_not_valid: "Adressen \xC3\xA4r ogiltig"
+  share_path_cannot_be_blank: "Utdelningssökväg får inte lämnas tom"
+  address_is_not_valid: "Adressen är ogiltig"
   create_alias: Skapa Alias
   web: Web
   delete_alias: Radera alias
-  recover: !binary |
-    w4V0ZXJzdMOkbGw=
-
+  recover: "Återställ"
   installed: Installerad
-  core: !binary |
-    S8Okcm5h
-
-  start_now: "B\xC3\xB6rja nu"
+  core: "Kärna"
+  start_now: "Börja nu"
   the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: Programmet har hittat ett fel. Du kommer inom kort till en sida som visar felloggen.
   application: Applikation
-  advanced_settings: "Avancerade inst\xC3\xA4llningar"
-  check_the_features_take_the_tour: "Kolla de funktioner som f\xC3\xB6r n\xC3\xA4rvarande finns tillg\xC3\xA4ngliga, ta rundturen, eller om du inte kan v\xC3\xA4nta -"
+  advanced_settings: "Avancerade inställningar"
+  check_the_features_take_the_tour: "Kolla de funktioner som för närvarande finns tillgängliga, ta rundturen, eller om du inte kan vänta -"
   this_will_stop_the_server_permanently: Detta stoppar %{name} PERMANENT.
   your_control_panel: Din kontrollpanel
-  full_name: "Fullst\xC3\xA4ndigt namn"
+  full_name: "Fullständigt namn"
   shares: Utdelningar
   manage_themes: Hantera teman
-  discussion_forum_for: "Diskussionsforum f\xC3\xB6r"
+  discussion_forum_for: "Diskussionsforum för"
   tracker: Tracker
   rule_type: Regeltyp
   aliases: Alias
-  network: "N\xC3\xA4tverk"
-  change_your_account_settings: "\xC3\x84ndra dina kontoinst\xC3\xA4llningar"
-  port_range_ports_must_be_0_to_64k: "Portarna m\xC3\xA5ste vara i intervallet mellan 0-65535"
-  share_path_is_available: "Utdelningss\xC3\xB6kv\xC3\xA4gen \xC3\xA4r tillg\xC3\xA4nglig"
-  this_could_be_due_to_lack_of_network_connectivity: "Detta kan bero p\xC3\xA5 brist p\xC3\xA5 n\xC3\xA4tverksanslutning."
-  enabling_lan_manager_is_less_secure: "Aktivering av Windows 95/98-l\xC3\xA4ges autentisering \xC3\xA4r mindre s\xC3\xA4ker och kan hj\xC3\xA4lpa \xC3\xA5tkomster f\xC3\xB6r \xC3\xA4ldre maskiner. \xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill aktivera Windows 95/98 LanManager autentisering?"
-  special_instructions: "S\xC3\xA4rskilda anvisningar"
-  there_are_no_dynamic_dhcp_leases_outstanding: "Det finns inga DHCP lease utest\xC3\xA5ende vid denna tid."
+  network: "Nätverk"
+  change_your_account_settings: "Ändra dina kontoinställningar"
+  port_range_ports_must_be_0_to_64k: "Portarna måste vara i intervallet mellan 0-65535"
+  share_path_is_available: "Utdelningssökvägen är tillgänglig"
+  this_could_be_due_to_lack_of_network_connectivity: "Detta kan bero på brist på nätverksanslutning."
+  enabling_lan_manager_is_less_secure: "Aktivering av Windows 95/98-läges autentisering är mindre säker och kan hjälpa åtkomster för äldre maskiner. Är du säker på att du vill aktivera Windows 95/98 LanManager autentisering?"
+  special_instructions: "Särskilda anvisningar"
+  there_are_no_dynamic_dhcp_leases_outstanding: "Det finns inga DHCP lease utestående vid denna tid."
   login: Inloggning
-  edit_share: "\xC3\x84ndra utdelning"
-  dhcp_lease: "DHCP l\xC3\xA5n"
-  change: !binary |
-    w4RuZHJh
-
+  edit_share: "Ändra utdelning"
+  dhcp_lease: "DHCP lån"
+  change: "Ändra"
   status: Status
   not_updating: Uppdaterar Inte
   videos: Videos
   dhcp_active: Aktiv
-  name_is_not_valid: "Namn \xC3\xA4r inte giltigt"
+  name_is_not_valid: "Namn är inte giltigt"
   restart: Starta om
-  confirm: "Bekr\xC3\xA4fta"
+  confirm: "Bekräfta"
   sign_out: Logga ut
-  this_application_is_installed_already_please_refresh: "Denna applikation \xC3\xA4r redan installerat. Uppdatera denna webbsida."
+  this_application_is_installed_already_please_refresh: "Denna applikation är redan installerat. Uppdatera denna webbsida."
   state: Status
   new_web_app: Ny Web App
   email: E-post
-  full_name_looks_good: "Fullst\xC3\xA4ndigt namn \xC3\xA4r bra"
+  full_name_looks_good: "Fullständigt namn är bra"
   workgroup_name: Arbetsgruppsnamn
   name_looks_good: Namn verkar bra
   new_alias: Nytt Alias
-  must_be_logged_in: "Du m\xC3\xA5ste vara inloggad f\xC3\xB6r att komma \xC3\xA5t denna del"
-  rebooting: "Omstart p\xC3\xA5g\xC3\xA5r ..."
+  must_be_logged_in: "Du måste vara inloggad för att komma åt denna del"
+  rebooting: "Omstart pågår ..."
   uptime: Upptid
   disk_pooling: Lagringspool
   this_will_reboot: "Detta startar om din HDA.\r\n\
-    Vill du verkligen forts\xC3\xA4tta"
+    Vill du verkligen fortsätta"
   dns_aliases: DNS Alias
-  used_space: "Anv\xC3\xA4nt utrymme"
-  static_ip_address_for_your_hda: "Statisk IP-adress f\xC3\xB6r din HDA"
+  used_space: "Använt utrymme"
+  static_ip_address_for_your_hda: "Statisk IP-adress för din HDA"
   comment: Kommentera
-  the_alias_name_you_input_will_be_added: "Namnet du matar in ovan kommer att l\xC3\xA4ggas till DNS-servern som ett alias f\xC3\xB6r IP-adressen nedan."
-  root_path: !binary |
-    Um90c8O2a3bDpGc=
-
-  search: !binary |
-    U8O2aw==
-
+  the_alias_name_you_input_will_be_added: "Namnet du matar in ovan kommer att läggas till DNS-servern som ett alias för IP-adressen nedan."
+  root_path: "Rotsökväg"
+  search: "Sök"
   upcoming: Kommande
-  username_or_email: "Anv\xC3\xA4ndarnamn eller e-post"
-  network_settings: "N\xC3\xA4tverksinst\xC3\xA4llningar"
+  username_or_email: "Användarnamn eller e-post"
+  network_settings: "Nätverksinställningar"
   no_documents_found: Inga Dokument Hittade
   visible: Synlig
   create_a_new_share: Skapa en ny utdelning
-  enabling_pdc_is_a_major_share_change: "Aktivering av PDC l\xC3\xA4ge \xC3\xA4r en stor f\xC3\xB6r\xC3\xA4ndring i hur utdelningar fungerar. Detta kommer att aktivera Domain-l\xC3\xA4ge och Inaktivera Workgroup l\xC3\xA4ge och kr\xC3\xA4va att alla maskiner \xC3\xA4r f\xC3\xB6retags- (eller &quot;PRO&quot;) maskiner som anv\xC3\xA4nder r\xC3\xA4tt referenser. Det \xC3\xA4r avsett f\xC3\xB6r f\xC3\xB6retagsn\xC3\xA4tverk. \xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill aktivera PDC l\xC3\xA4ge?"
-  all_users: "Alla anv\xC3\xA4ndare"
+  enabling_pdc_is_a_major_share_change: "Aktivering av PDC läge är en stor förändring i hur utdelningar fungerar. Detta kommer att aktivera Domain-läge och Inaktivera Workgroup läge och kräva att alla maskiner är företags- (eller &quot;PRO&quot;) maskiner som använder rätt referenser. Det är avsett för företagsnätverk. Är du säker på att du vill aktivera PDC läge?"
+  all_users: "Alla användare"
   delete_static_ip: Radera Statisk IP
   audio: Ljud
   dashboard: Panel
   this_ip_will_be_filtered: Denna IP-adress kommer att filtreras.
   dns_alias: DNS Alias
   url_to_filter: URL att filtrera
-  the_boot_option_is_a_critical_setting: "Uppstartsalternativet \xC3\xA4r en KRITISK inst\xC3\xA4llning. Att inte starta en server process REKOMMENDERAS INTE. Detta \xC3\xA4r t\xC3\xA4nkt att inleda trafik p\xC3\xA5 din HDA vid varje uppstart. \xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill inte starta denna process vid uppstart?"
-  greyhole_not_installed: "VARNING: Greyhole \xC3\xA4r inte installerat p\xC3\xA5 systemet!"
-  must_be_admin: "Du m\xC3\xA5ste ha administrat\xC3\xB6rsbeh\xC3\xB6righet f\xC3\xB6r att komma \xC3\xA5t denna del"
-  valid_email_required_for_service: "Giltig e-postadress kr\xC3\xA4vs f\xC3\xB6r aktivering. Vi kommer inte <a href=\"http://www.amahi.org/privacy\" target=\"_blank\">skicka skr\xC3\xA4ppost</a> till dig"
-  are_you_sure_you_want_to_delete_alias: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill ta bort alias f\xC3\xB6r '%{name}' ?"
-  is_not_being_monitored_24x7: "\xC3\xB6vervakas <b>inte</b> 24x7"
+  the_boot_option_is_a_critical_setting: "Uppstartsalternativet är en KRITISK inställning. Att inte starta en server process REKOMMENDERAS INTE. Detta är tänkt att inleda trafik på din HDA vid varje uppstart. Är du säker på att du vill inte starta denna process vid uppstart?"
+  greyhole_not_installed: "VARNING: Greyhole är inte installerat på systemet!"
+  must_be_admin: "Du måste ha administratörsbehörighet för att komma åt denna del"
+  valid_email_required_for_service: "Giltig e-postadress krävs för aktivering. Vi kommer inte <a href=\"http://www.amahi.org/privacy\" target=\"_blank\">skicka skräppost</a> till dig"
+  are_you_sure_you_want_to_delete_alias: "Är du säker på att du vill ta bort alias för '%{name}' ?"
+  is_not_being_monitored_24x7: "övervakas <b>inte</b> 24x7"
   activerecord: 
     errors: 
       messages: 
-        greater_than_or_equal_to: "m\xC3\xA5ste vara st\xC3\xB6rre \xC3\xA4n eller lika med %{count}"
+        greater_than_or_equal_to: "måste vara större än eller lika med %{count}"
         record_invalid: "Ett fel uppstod: %{errors}"
-        confirmation: "st\xC3\xA4mmer inte \xC3\xB6verens"
-        less_than_or_equal_to: "m\xC3\xA5ste vara mindre \xC3\xA4n eller lika med %{count}"
-        blank: "m\xC3\xA5ste anges"
-        exclusion: "\xC3\xA4r reserverat"
-        invalid: "\xC3\xA4r ogiltigt"
-        odd: "m\xC3\xA5ste vara udda"
-        even: "m\xC3\xA5ste vara j\xC3\xA4mnt"
-        too_short: "\xC3\xA4r f\xC3\xB6r kort (minimum \xC3\xA4r %{count} tecken)"
-        wrong_length: "har fel l\xC3\xA4ngd (ska vara %{count} tecken)"
-        empty: "f\xC3\xA5r ej vara tom"
-        less_than: "m\xC3\xA5ste vara mindre \xC3\xA4n %{count}"
-        greater_than: "m\xC3\xA5ste vara st\xC3\xB6rre \xC3\xA4n %{count}"
-        equal_to: "m\xC3\xA5ste vara samma som %{count}"
-        too_long: "\xC3\xA4r f\xC3\xB6r l\xC3\xA5ngt (maximum \xC3\xA4r %{count} tecken)"
-        taken: "\xC3\xA4r upptaget"
-        accepted: "m\xC3\xA5ste vara accepterad"
+        confirmation: "stämmer inte överens"
+        less_than_or_equal_to: "måste vara mindre än eller lika med %{count}"
+        blank: "måste anges"
+        exclusion: "är reserverat"
+        invalid: "är ogiltigt"
+        odd: "måste vara udda"
+        even: "måste vara jämnt"
+        too_short: "är för kort (minimum är %{count} tecken)"
+        wrong_length: "har fel längd (ska vara %{count} tecken)"
+        empty: "får ej vara tom"
+        less_than: "måste vara mindre än %{count}"
+        greater_than: "måste vara större än %{count}"
+        equal_to: "måste vara samma som %{count}"
+        too_long: "är för långt (maximum är %{count} tecken)"
+        taken: "är upptaget"
+        accepted: "måste vara accepterad"
         inclusion: finns inte i listan
-        not_a_number: "\xC3\xA4r inte ett nummer"
+        not_a_number: "är inte ett nummer"
       full_messages: 
         format: "%{attribute} %{message}"
       template: 
-        body: "Det fanns problem med f\xC3\xB6ljande f\xC3\xA4lt:"
+        body: "Det fanns problem med följande fält:"
         header: 
-          one: "Ett fel f\xC3\xB6rhindrade denna %{model} fr\xC3\xA5n att sparas"
-          other: "%{count} fel f\xC3\xB6rhindrade denna ((modell)) fr\xC3\xA5n att sparas"
-  there_are_no_static_dhcp_leases: "Det finns inga statiska DHCP lease utest\xC3\xA5ende vid denna tid."
-  live_help: "Live Hj\xC3\xA4lp"
-  edit_user: "\xC3\x84ndra anv\xC3\xA4ndare"
+          one: "Ett fel förhindrade denna %{model} från att sparas"
+          other: "%{count} fel förhindrade denna ((modell)) från att sparas"
+  there_are_no_static_dhcp_leases: "Det finns inga statiska DHCP lease utestående vid denna tid."
+  live_help: "Live Hjälp"
+  edit_user: "Ändra användare"
   control_panel: Kontrollpanel
-  share_name_cannot_be_blank: "Utdelningsnamn f\xC3\xA5r inte vara tomt"
-  get_started: "B\xC3\xB6rja!"
+  share_name_cannot_be_blank: "Utdelningsnamn får inte vara tomt"
+  get_started: "Börja!"
   my_account: Mitt Konto
   gallery: Galleri
   transmission_bittorrent_server: Transmission Bittorrent Server
@@ -252,26 +240,26 @@ sv:
     precision: 
       format: 
   mysql_database_server: MySQL DB Server
-  edit_and_rate_beta_apps: "Redigera och betygs\xC3\xA4tt Beta-applikationer"
+  edit_and_rate_beta_apps: "Redigera och betygsätt Beta-applikationer"
   or_view_each_one_separately_below: eller visa var och en separat nedan.
-  username: "Anv\xC3\xA4ndarnamn"
-  are_you_sure_you_want_to_restart_the_server: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill starta om '%{name}' ?"
+  username: "Användarnamn"
+  are_you_sure_you_want_to_restart_the_server: "Är du säker på att du vill starta om '%{name}' ?"
   done_final_check: Klar! Slutlig Kontroll
-  this_application_is_not_installed_please_refresh: "Programmet \xC3\xA4r inte installerat. Uppdatera denna webbsida."
-  user_name_is_available: "Anv\xC3\xA4ndarnamn tillg\xC3\xA4ngligt"
-  first_time_admin_setup: "F\xC3\xB6rsta admin-kontot. V\xC3\xA4nligen \xC3\xA5terskapa ditt anv\xC3\xA4ndarl\xC3\xB6senord."
+  this_application_is_not_installed_please_refresh: "Programmet är inte installerat. Uppdatera denna webbsida."
+  user_name_is_available: "Användarnamn tillgängligt"
+  first_time_admin_setup: "Första admin-kontot. Vänligen återskapa ditt användarlösenord."
   news: Nyheter
-  password: "L\xC3\xB6senord"
-  access: "\xC3\x85tkomst"
-  avanced_settings_is_for_developers: "Aktivering av Avancerade funktioner \xC3\xA4r endast f\xC3\xB6r avancerade / tekniska anv\xC3\xA4ndare och utvecklare."
+  password: "Lösenord"
+  access: "Åtkomst"
+  avanced_settings_is_for_developers: "Aktivering av Avancerade funktioner är endast för avancerade / tekniska användare och utvecklare."
   there_are_no_shares_created: Det finns inga utdelningar skapade i ditt system just nu.
   created: Skapad
   watchdog: Watchdog
   stop: Stopp
   device: Enhet
-  initial_user: "Anv\xC3\xA4ndarnamn"
-  admin_setup_worked: "Konfigureringen f\xC3\xB6r admin fungerade. Det g\xC3\xA5r bra att logga in nu"
-  preparing_to_uninstall: "F\xC3\xB6rbereder att avinstallera ..."
+  initial_user: "Användarnamn"
+  admin_setup_worked: "Konfigureringen för admin fungerade. Det går bra att logga in nu"
+  preparing_to_uninstall: "Förbereder att avinstallera ..."
   time: 
     am: fm
     formats: 
@@ -280,33 +268,29 @@ sv:
       long: "%d %B, %Y %H:%M"
     pm: em
   dns_server: DNS-server
-  sign_up_here: "Anm\xC3\xA4l dig h\xC3\xA4r"
+  sign_up_here: "Anmäl dig här"
   servers: Servrar
   router_ip: Router Ip
-  general_amahi_news: "Allm\xC3\xA4nna Amahi nyheter"
-  feedback: "\xC3\x85terkoppling"
+  general_amahi_news: "Allmänna Amahi nyheter"
+  feedback: "Återkoppling"
   name: Namn
-  awake_this_device_via_wol: "S\xC3\xA4tt p\xC3\xA5 denna enhet"
+  awake_this_device_via_wol: "Sätt på denna enhet"
   port_forwarding: Port Forwarding
   datetime: 
     prompts: 
       minute: Minut
-      month: !binary |
-        TcOlbmFk
-
+      month: "Månad"
       second: Sekund
       hour: Timme
       day: Dag
-      year: !binary |
-        w4Vy
-
+      year: "År"
     distance_in_words: 
       less_than_x_minutes: 
-        one: "mindre \xC3\xA4n en minut"
-        other: "mindre \xC3\xA4n %{count} minuter"
+        one: "mindre än en minut"
+        other: "mindre än %{count} minuter"
       almost_x_years: 
-        one: "n\xC3\xA4stan ett \xC3\xA5r"
-        other: "n\xC3\xA4stan %{count} \xC3\xA5r"
+        one: "nästan ett år"
+        other: "nästan %{count} år"
       x_days: 
         one: en dag
         other: "%{count} dagar"
@@ -314,136 +298,132 @@ sv:
         one: en sekund
         other: "%{count} sekunder"
       about_x_hours: 
-        one: "ungef\xC3\xA4r en timme"
-        other: "ungef\xC3\xA4r %{count} timmar"
+        one: "ungefär en timme"
+        other: "ungefär %{count} timmar"
       less_than_x_seconds: 
-        one: "mindre \xC3\xA4n en sekund"
-        other: "mindre \xC3\xA4n %{count} sekunder"
+        one: "mindre än en sekund"
+        other: "mindre än %{count} sekunder"
       x_months: 
-        one: "en m\xC3\xA5nad"
-        other: "%{count} m\xC3\xA5nader"
+        one: "en månad"
+        other: "%{count} månader"
       x_minutes: 
         one: en minut
         other: "%{count} minuter"
       about_x_years: 
-        one: "ungef\xC3\xA4r ett \xC3\xA5r"
-        other: "ungef\xC3\xA4r %{count} \xC3\xA5r"
+        one: "ungefär ett år"
+        other: "ungefär %{count} år"
       about_x_months: 
-        one: "ungef\xC3\xA4r en m\xC3\xA5nad"
-        other: "ungef\xC3\xA4r %{count} m\xC3\xA5nader"
+        one: "ungefär en månad"
+        other: "ungefär %{count} månader"
       over_x_years: 
-        one: "mer \xC3\xA4n ett \xC3\xA5r"
-        other: "mer \xC3\xA4n %{count} \xC3\xA5r"
+        one: "mer än ett år"
+        other: "mer än %{count} år"
       half_a_minute: en halv minut
   nickname: Smeknamn
-  check_the_calendars_wiki_for_more_details: "Kolla <a href=\"http://wiki.amahi.org/index.php/Calendars\">kalender-wikin</a> f\xC3\xB6r mer information om hur man ska hantera kalendrar och vilka klienter som \xC3\xA4r kompatibla."
+  check_the_calendars_wiki_for_more_details: "Kolla <a href=\"http://wiki.amahi.org/index.php/Calendars\">kalender-wikin</a> för mer information om hur man ska hantera kalendrar och vilka klienter som är kompatibla."
   pooled: Poolad
-  edit_web_app: "\xC3\x84ndra Web App"
+  edit_web_app: "Ändra Web App"
   movies: Filmer
   mac_already_allocated: MAC redan allokerad
-  dyndns_info: "Amahi erbjuder en kostnadsfri, dynamisk DNS-adress till dig. Det \xC3\xA4r utanf\xC3\xB6r ditt hemn\xC3\xA4tverk. Du kan anv\xC3\xA4nda den f\xC3\xB6r <a target=\"_blank\" \r\n\
+  dyndns_info: "Amahi erbjuder en kostnadsfri, dynamisk DNS-adress till dig. Det är utanför ditt hemnätverk. Du kan använda den för <a target=\"_blank\" \r\n\
     href=\"http://wiki.amahi.org/index.php/VPN\">Mac</a> eller <a target=\"_blank\" \r\n\
     href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a> <a \r\n\
-    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN-klienter</a> (tekniska anv\xC3\xA4ndare kan anv\xC3\xA4nda den f\xC3\xB6r att logga in med a target=\"_blank\" \r\n\
-    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>). Tekniska anv\xC3\xA4ndare kan anv\xC3\xA4nda den f\xC3\xB6r att vara v\xC3\xA4rd f\xC3\xB6r webbplatser, spelservrar eller andra tj\xC3\xA4nster fr\xC3\xA5n ditt hemn\xC3\xA4tverk (om du har br\xC3\xA5ttom prova, bara att fr\xC3\xA5ga p\xC3\xA5 IRC-kanal eller s\xC3\xB6ka i wikin)."
-  confirmation_matches: "Bekr\xC3\xA4ftelsen \xC3\xB6verensst\xC3\xA4mmer"
-  setting_dmz_failed: "Inst\xC3\xA4llning av DMZ misslyckades. Kontrollera dina inst\xC3\xA4llningar."
+    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN-klienter</a> (tekniska användare kan använda den för att logga in med a target=\"_blank\" \r\n\
+    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>). Tekniska användare kan använda den för att vara värd för webbplatser, spelservrar eller andra tjänster från ditt hemnätverk (om du har bråttom prova, bara att fråga på IRC-kanal eller söka i wikin)."
+  confirmation_matches: "Bekräftelsen överensstämmer"
+  setting_dmz_failed: "Inställning av DMZ misslyckades. Kontrollera dina inställningar."
   logs: Loggar
-  this_name_is_not_available: "Detta namn \xC3\xA4r inte tillg\xC3\xA4nglig"
-  password_changed_successfully: "L\xC3\xB6senordet \xC3\xA4ndrades"
+  this_name_is_not_available: "Detta namn är inte tillgänglig"
+  password_changed_successfully: "Lösenordet ändrades"
   will_start_at_boot_time: kommer att starta vid uppstart
   calendar_name: Kalendernamn
-  this_application_install_ended_with_an_error_please_uninstall_status_is: "Denna programinstallation avslutades med ett fel. Avinstallera det och f\xC3\xB6rs\xC3\xB6k igen! Programstatus \xC3\xA4r"
+  this_application_install_ended_with_an_error_please_uninstall_status_is: "Denna programinstallation avslutades med ett fel. Avinstallera det och försök igen! Programstatus är"
   mac_filtering: MAC-filtrering
   tags: Taggar
-  router_firewall_settings: "Router- / Brandv\xC3\xA4ggsinst\xC3\xA4llningar"
-  firewall_mac_address_filter_info: "Inl\xC3\xA4gg i denna tabell anv\xC3\xA4nds f\xC3\xB6r att begr\xC3\xA4nsa vissa typer av datapaket fr\xC3\xA5n ditt lokala n\xC3\xA4tverk till Internet via en gateway. Anv\xC3\xA4ndning av s\xC3\xA5dana filter kan vara till hj\xC3\xA4lp f\xC3\xB6r att s\xC3\xA4kra eller begr\xC3\xA4nsa ditt lokala n\xC3\xA4tverk."
+  router_firewall_settings: "Router- / Brandväggsinställningar"
+  firewall_mac_address_filter_info: "Inlägg i denna tabell används för att begränsa vissa typer av datapaket från ditt lokala nätverk till Internet via en gateway. Användning av sådana filter kan vara till hjälp för att säkra eller begränsa ditt lokala nätverk."
   static_ip_address: Statisk IP-adress
-  are_you_sure_advanced_features: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill aktivera Avancerade Funktioner?"
+  are_you_sure_advanced_features: "Är du säker på att du vill aktivera Avancerade Funktioner?"
   dhcp_server: DHCP Server
   app_logs: Applikationsloggar
-  changelog: "\xC3\x84ndringslogg"
+  changelog: "Ändringslogg"
   contribute: Bidra
   back: Tillbaka
-  notifications_from_amahi: "Meddelande fr\xC3\xA5n Amahi"
-  support_win_95_98: "St\xC3\xB6d Windows 95/98 - aktiverar (os\xC3\xA4ker) LanManager autentisering"
+  notifications_from_amahi: "Meddelande från Amahi"
+  support_win_95_98: "Stöd Windows 95/98 - aktiverar (osäker) LanManager autentisering"
   there_are_no_calendars_available_see_wiki: Det finns inga kalendrar i servern. Skapa dem med en kalender klient. Se <a href="http://wiki.amahi.org/index.php/Calendars">kalenderwiki</a>.
-  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Aktivering av fels\xC3\xB6kning kommer eventuellt skapa mycket stora loggfiler. \xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill aktivera Samba fels\xC3\xB6kning?"
-  the_mac_is_invalid: "MAC-adressen \xC3\xA4r ogiltig"
-  making_home_networking_simple: "G\xC3\xB6r Hemn\xC3\xA4tverk Enkelt"
-  disk_pool_details: "V\xC3\xA4lj partitionerna du vill inkludera i lagringspoolen f\xC3\xB6r %{greyhole} och se till att %{shares} anv\xC3\xA4nder den."
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Aktivering av felsökning kommer eventuellt skapa mycket stora loggfiler. Är du säker på att du vill aktivera Samba felsökning?"
+  the_mac_is_invalid: "MAC-adressen är ogiltig"
+  making_home_networking_simple: "Gör Hemnätverk Enkelt"
+  disk_pool_details: "Välj partitionerna du vill inkludera i lagringspoolen för %{greyhole} och se till att %{shares} använder den."
   calendars: Kalendrar
-  a_single_number_0_254_to_point_to_a_given_machine: "Ett nummer (0-254) att peka p\xC3\xA5 en viss maskin i ditt n\xC3\xA4tverk"
+  a_single_number_0_254_to_point_to_a_given_machine: "Ett nummer (0-254) att peka på en viss maskin i ditt nätverk"
   writeable: Skrivbar
-  port_range_ports_must_be_numbers: "Portarna m\xC3\xA5ste vara siffror"
-  help: !binary |
-    SGrDpGxw
-
-  new_firewall_rule: "Ny brandv\xC3\xA4ggsregel"
+  port_range_ports_must_be_numbers: "Portarna måste vara siffror"
+  help: "Hjälp"
+  new_firewall_rule: "Ny brandväggsregel"
   video: Video
-  thanks_for_visiting: "Tack f\xC3\xB6r bes\xC3\xB6ket. St\xC3\xB6d v\xC3\xA5ra sponsorer!"
+  thanks_for_visiting: "Tack för besöket. Stöd våra sponsorer!"
   install_code: Installera kod
   new_static_ip: Nya Statiskt IP
-  this_share_name_is_not_valid: "Denna utdelningsnamn \xC3\xA4r inte giltigt"
-  there_are_no_applications_available: "Det finns inga program som \xC3\xA4r tillg\xC3\xA4ngliga just nu."
+  this_share_name_is_not_valid: "Denna utdelningsnamn är inte giltigt"
+  there_are_no_applications_available: "Det finns inga program som är tillgängliga just nu."
   ip_filtering: IP-filtrering
   create: Skapa
-  guest_dashboard: "G\xC3\xA4stpanel"
+  guest_dashboard: "Gästpanel"
   view_all_calendars_simultaneously: Se alla kalendrar samtidigt
   music: Musik
-  permissions: "R\xC3\xA4ttigheter"
-  initial_password: "L\xC3\xB6senord"
-  your_domain_info: "Detta \xC3\xA4r ditt hemn\xC3\xA4tverks dom\xC3\xA4n. Den \xC3\xA4r <b>bara</b> tillg\xC3\xA4nglig i ditt hemman\xC3\xA4tverk. F\xC3\xB6r mer information om detta se <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">Vanliga fr\xC3\xA5gor</a>."
-  there_are_no_firewall_rules_defined: "Det finns inga brandv\xC3\xA4ggsregler definierade vid denna tidpunkt."
-  firewall_url_filter_message: "Poster i denna tabell anv\xC3\xA4nds f\xC3\xB6r att begr\xC3\xA4nsa webbadresser genom Gatewayen."
-  dhcp_leases: "DHCP L\xC3\xA5n"
+  permissions: "Rättigheter"
+  initial_password: "Lösenord"
+  your_domain_info: "Detta är ditt hemnätverks domän. Den är <b>bara</b> tillgänglig i ditt hemmanätverk. För mer information om detta se <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">Vanliga frågor</a>."
+  there_are_no_firewall_rules_defined: "Det finns inga brandväggsregler definierade vid denna tidpunkt."
+  firewall_url_filter_message: "Poster i denna tabell används för att begränsa webbadresser genom Gatewayen."
+  dhcp_leases: "DHCP Lån"
   dynamic_dns: Dynamisk DNS
-  the_ip_must_be_1_to_254: "IP m\xC3\xA5ste vara i intervallet 1-254"
-  not_a_valid_user_or_password: "Fel: Felaktigt anv\xC3\xA4ndarnamn eller l\xC3\xB6senord"
+  the_ip_must_be_1_to_254: "IP måste vara i intervallet 1-254"
+  not_a_valid_user_or_password: "Fel: Felaktigt användarnamn eller lösenord"
   create_your_hda_profile: Skapa din HDA-profil
   your_home_dns_domain: Din DNS Domain
   theme_by: Tema gjort av
   forums: Forum
   there_are_no_aliases_defined: Det finns inga Alias definieras vid denna tidpunkt
-  user_name_is_not_valid: "Anv\xC3\xA4ndarnamnet \xC3\xA4r inte giltigt"
-  all_you_need: "Allt du beh\xC3\xB6ver!"
+  user_name_is_not_valid: "Användarnamnet är inte giltigt"
+  all_you_need: "Allt du behöver!"
   system: System
-  name_is_taken_already_or_is_reserved: "Namnet \xC3\xA4r redan taget eller \xC3\xA4r reserverat"
+  name_is_taken_already_or_is_reserved: "Namnet är redan taget eller är reserverat"
   webapps: Webapps
-  submit_for_debug: "Skicka till fels\xC3\xB6kning"
+  submit_for_debug: "Skicka till felsökning"
   more: mer
   protocol: Protokoll
-  no_account_yet: "Inget konto \xC3\xA4n?"
-  delete_this_rule: "Ta bort den h\xC3\xA4r regeln"
+  no_account_yet: "Inget konto än?"
+  delete_this_rule: "Ta bort den här regeln"
   images: Bilder
-  language: !binary |
-    U3Byw6Vr
-
-  this_application_is_installed: "Denna applikation \xC3\xA4r installerad."
+  language: "Språk"
+  this_application_is_installed: "Denna applikation är installerad."
   share: Dela ut
   partitions: Partitioner
-  router_setting_failed: "Router inst\xC3\xA4llning misslyckades. Kontrollera dina inst\xC3\xA4llningar."
-  global_settings_for_shares: "Globala inst\xC3\xA4llningar f\xC3\xB6r utdelningar"
-  the_watchdog_is_a_critical_setting: "\xC3\x96vervakaren \xC3\xA4r en KRITISK inst\xC3\xA4llning. Att stoppa \xC3\xB6vervakningen av en server process REKOMMENDERAS INTE. Detta \xC3\xA4r utformat f\xC3\xB6r att h\xC3\xA5lla tj\xC3\xA4nster i ditt HDA ig\xC3\xA5ng tillf\xC3\xB6rlitligt \xC3\xA4ven i n\xC3\xA4rvaro av glitches. \xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill avsluta \xC3\xB6vervakningen i denna server?"
-  warning_this_application_is_in_testing: "VARNING: Det h\xC3\xA4r programmet h\xC3\xA5ller p\xC3\xA5 att testas!"
-  is_being_monitored_24x7: "\xC3\xB6vervakas 24x7"
+  router_setting_failed: "Router inställning misslyckades. Kontrollera dina inställningar."
+  global_settings_for_shares: "Globala inställningar för utdelningar"
+  the_watchdog_is_a_critical_setting: "Övervakaren är en KRITISK inställning. Att stoppa övervakningen av en server process REKOMMENDERAS INTE. Detta är utformat för att hålla tjänster i ditt HDA igång tillförlitligt även i närvaro av glitches. Är du säker på att du vill avsluta övervakningen i denna server?"
+  warning_this_application_is_in_testing: "VARNING: Det här programmet håller på att testas!"
+  is_being_monitored_24x7: "övervakas 24x7"
   computer: Dator
-  an_external_ip_address_to_make_the_alias: "En extern IP-adress f\xC3\xB6r att peka mot en specifik IP-adress"
+  an_external_ip_address_to_make_the_alias: "En extern IP-adress för att peka mot en specifik IP-adress"
   file_server_samba: Filserver (Samba)
-  mac_is_invalid: "MAC \xC3\xA4r ogiltig"
-  edit_alias: "\xC3\x84ndra alias"
-  port_range_ports_are_already_allocated: "Portar i detta omr\xC3\xA5de hrr redan tilldelats"
-  please_double_check_the_settings: "<strong>Dubbelkolla inst\xC3\xA4llningarna</strong>, eftersom de \xC3\xA4r avg\xC3\xB6rande f\xC3\xB6r att f\xC3\xA5 din HDA att fungera."
-  otherwise_you_can_go_to_the_error_log: "Annars kan du g\xC3\xA5 direkt till <a href=\"/setup?tab=debug\">felloggen</a>."
+  mac_is_invalid: "MAC är ogiltig"
+  edit_alias: "Ändra alias"
+  port_range_ports_are_already_allocated: "Portar i detta område hrr redan tilldelats"
+  please_double_check_the_settings: "<strong>Dubbelkolla inställningarna</strong>, eftersom de är avgörande för att få din HDA att fungera."
+  otherwise_you_can_go_to_the_error_log: "Annars kan du gå direkt till <a href=\"/setup?tab=debug\">felloggen</a>."
   description: Beskrivning
-  there_are_no_users: "Det finns inga anv\xC3\xA4ndare i ditt system just nu."
-  are_you_sure: "\xC3\x84r du s\xC3\xA4ker?"
-  efficiently_manage_your_network: "Hantera  effektivt n\xC3\xA4tverk och backup av alla datorer, spelkonsoler och andra enheter i n\xC3\xA4tverket, och kom \xC3\xA5t n\xC3\xA4tverket s\xC3\xA4kert fr\xC3\xA5n Internet. Det \xC3\xA4r bara b\xC3\xB6rjan p\xC3\xA5 vad du kan g\xC3\xB6ra med Amahi."
-  port_range_field_cannot_be_empty: "F\xC3\xA4lten kan inte vara tomma"
-  available_for_installation: "(Tillg\xC3\xA4ngligt f\xC3\xB6r installation)"
+  there_are_no_users: "Det finns inga användare i ditt system just nu."
+  are_you_sure: "Är du säker?"
+  efficiently_manage_your_network: "Hantera  effektivt nätverk och backup av alla datorer, spelkonsoler och andra enheter i nätverket, och kom åt nätverket säkert från Internet. Det är bara början på vad du kan göra med Amahi."
+  port_range_field_cannot_be_empty: "Fälten kan inte vara tomma"
+  available_for_installation: "(Tillgängligt för installation)"
   create_share: Skapa denna utdelning
   apps: Apps
-  translate_amahi: "\xC3\x96vers\xC3\xA4tt Amahi"
+  translate_amahi: "Översätt Amahi"
   alias_looks_good: Alias ser bra ut
   support: 
     array: 
@@ -451,40 +431,34 @@ sv:
       last_word_connector: " och "
       two_words_connector: " och "
     select: 
-      prompt: !binary |
-        VsOkbGo=
-
+      prompt: "Välj"
   delete_share: Radera utdelning
   ushare_upnp_media_server: Ushare UPnP Media Server
   sign_in: Logga in
   disk_pooling_enabled: Pool aktiverad
   new_dns_alias: Nytt DNS Alias
   community: Community
-  create_a_new_user: "Skapa en ny anv\xC3\xA4ndare"
-  suggest: !binary |
-    RsO2cmVzbMOlIQ==
-
+  create_a_new_user: "Skapa en ny användare"
+  suggest: "Föreslå!"
   port_filtering: Portfiltrering
   results_found: resultat hittade
   the_mac_looks_good: MAC ser bra ut
-  when_there_are_major_announcements: "N\xC3\xA4r det finns stora tillk\xC3\xA4nnagivanden"
+  when_there_are_major_announcements: "När det finns stora tillkännagivanden"
   no_description_supplied: Ingen beskrivning levererad!
   manage_your_contributed_apps: Hantera din bidragna apps
-  global_settings: "Globala inst\xC3\xA4llningar"
-  networking: "N\xC3\xA4tverk"
-  firewall: "Brandv\xC3\xA4gg"
-  there_are_no_servers_available: "Det finns inga servrar tillg\xC3\xA4ngliga just nu."
+  global_settings: "Globala inställningar"
+  networking: "Nätverk"
+  firewall: "Brandvägg"
+  there_are_no_servers_available: "Det finns inga servrar tillgängliga just nu."
   port_range: Portintervall
-  network_gateway: "N\xC3\xA4tverksgateway"
-  path_looks_good: !binary |
-    U8O2a3bDpGdlbiDDpHIgYnJh
-
-  please_select: "V\xC3\xA4lj ..."
+  network_gateway: "Nätverksgateway"
+  path_looks_good: "Sökvägen är bra"
+  please_select: "Välj ..."
   subscribe: Prenumerera
   mac_address: MAC-adress
-  anonymous_guests: "G\xC3\xA4ster"
-  settings: "Inst\xC3\xA4llningar"
-  initial_user_info: "F\xC3\xB6rsta anv\xC3\xA4ndaren"
+  anonymous_guests: "Gäster"
+  settings: "Inställningar"
+  initial_user_info: "Första användaren"
   control: Kontrollera
   disk_pool_replication: Replikering
   date: 
@@ -507,31 +481,25 @@ sv:
     - :month
     - :year
     abbr_day_names: 
-    - !binary |
-      c8O2bg==
-
-    - !binary |
-      bcOlbg==
-
+    - "sön"
+    - "mån"
     - tis
     - ons
     - tor
     - fre
-    - !binary |
-      bMO2cg==
-
+    - "lör"
     formats: 
       default: "%Y-%m-%d"
       short: "%e %b"
       long: "%e %B, %Y"
     day_names: 
-    - "s\xC3\xB6ndag"
-    - "m\xC3\xA5ndag"
+    - "söndag"
+    - "måndag"
     - tisdag
     - onsdag
     - torsdag
     - fredag
-    - "l\xC3\xB6rdag"
+    - "lördag"
     abbr_month_names: 
     - 
     - jan
@@ -546,93 +514,89 @@ sv:
     - okt
     - nov
     - dec
-  username_cannot_be_blank: "Anv\xC3\xA4ndarnamnet f\xC3\xA5r inte l\xC3\xA4mnas tom"
+  username_cannot_be_blank: "Användarnamnet får inte lämnas tom"
   reboot: Starta om
   the_ip_looks good: IP ser bra ut
-  this_feature_is_under_heavy_development: "Denna funktion \xC3\xA4r under aktiv utveckling"
+  this_feature_is_under_heavy_development: "Denna funktion är under aktiv utveckling"
   there_are_no_webapps: Det finns inga webbprogram konfigurerade i systemet just nu.
-  are_you_sure_you_want_to_delete_the_static_ip: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill ta bort det statiska IP:t '%{name}' ?"
-  the_name_cannot_be_blank: "Namnet f\xC3\xA5r inte vara tomt"
+  are_you_sure_you_want_to_delete_the_static_ip: "Är du säker på att du vill ta bort det statiska IP:t '%{name}' ?"
+  the_name_cannot_be_blank: "Namnet får inte vara tomt"
   uninstall: Avinstallera
   details: Detaljer
-  is_now_uninstalled: "\xC3\xA4r nu avinstallerat"
+  is_now_uninstalled: "är nu avinstallerat"
   themes: Teman
-  the_name_you_input_above_will_be_added_to_the_DNS_server: "Namnet du matar in ovan kommer att l\xC3\xA4ggas till DNS-servern och associerade till MAC-och IP-adresser nedan."
+  the_name_you_input_above_will_be_added_to_the_DNS_server: "Namnet du matar in ovan kommer att läggas till DNS-servern och associerade till MAC-och IP-adresser nedan."
   new_share: Ny utdelning
-  this_path_is_not_valid: "Denna s\xC3\xB6kv\xC3\xA4g \xC3\xA4r inte giltig"
+  this_path_is_not_valid: "Denna sökväg är inte giltig"
   log_in: Logga in
-  are_you_sure_user: "\xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill ta bort anv\xC3\xA4ndare '%{user}' ?"
+  are_you_sure_user: "Är du säker på att du vill ta bort användare '%{user}' ?"
   extra_parameters: Extra parametrar
-  try_installing_some_apps: "F\xC3\xB6rs\xC3\xB6k med att ominstallera n\xC3\xA5gra applikationer"
-  testimonials: "Anv\xC3\xA4ndarkommentarer"
+  try_installing_some_apps: "Försök med att ominstallera några applikationer"
+  testimonials: "Användarkommentarer"
   version: Version
-  powering_off: "Avst\xC3\xA4ngning p\xC3\xA5g\xC3\xA5r ..."
+  powering_off: "Avstängning pågår ..."
   get_involved: Engagera dig!
   stop_it: Sluta
-  home_domain: "Hemma Dom\xC3\xA4n"
+  home_domain: "Hemma Domän"
   total_space: Total yta
   never_email_me: E-posta aldrig  mig
-  is_now_installed: "\xC3\xA4r nu installerad"
-  this_shares_files_deleted: "Denna utdelning kommer inte l\xC3\xA4ngre att vara tillg\xC3\xA4nglig (filer i den kommer inte tas bort)."
-  alias_is_not_valid: "Alias \xC3\xA4r ogiltigt"
-  mac_address_of_the_device: "MAC-adressen f\xC3\xB6r enheten (i form 00:11:22:33:44:55)"
-  next: !binary |
-    TsOkc3Rh
-
+  is_now_installed: "är nu installerad"
+  this_shares_files_deleted: "Denna utdelning kommer inte längre att vara tillgänglig (filer i den kommer inte tas bort)."
+  alias_is_not_valid: "Alias är ogiltigt"
+  mac_address_of_the_device: "MAC-adressen för enheten (i form 00:11:22:33:44:55)"
+  next: "Nästa"
   web_apps: Web Apps
   activemodel: 
     errors: 
       template: 
-        body: "Det var problem med f\xC3\xB6ljande f\xC3\xA4lt:"
+        body: "Det var problem med följande fält:"
         header: 
-          one: "Ett fel f\xC3\xB6rhindrade denna %{model} fr\xC3\xA5n att sparas"
-          other: "%{count} fel f\xC3\xB6rhindrade denna %{model} fr\xC3\xA5n att sparas"
-  remember_me: "Kom ih\xC3\xA5g mig"
-  password_looks_good: "L\xC3\xB6senord verkar bra"
+          one: "Ett fel förhindrade denna %{model} från att sparas"
+          other: "%{count} fel förhindrade denna %{model} från att sparas"
+  remember_me: "Kom ihåg mig"
+  password_looks_good: "Lösenord verkar bra"
   docs: Dokumentation
   the_ip_address_cannot_be_empty: IP-adressen kan inte vara tom
-  pdc_primary_domain_controller: "PDC - Prim\xC3\xA4r Dom\xC3\xA4n Kontrollant"
+  pdc_primary_domain_controller: "PDC - Primär Domän Kontrollant"
   computer_name: Datornamn
-  close: !binary |
-    c3TDpG5n
-
-  this_file_was_automatically_generated_on: "# Den h\xC3\xA4r filen genererades automatiskt p\xC3\xA5 %{time} - VARNING - alla manuella \xC3\xA4ndringar g\xC3\xA5r f\xC3\xB6rlorade!"
+  close: "stäng"
+  this_file_was_automatically_generated_on: "# Den här filen genererades automatiskt på %{time} - VARNING - alla manuella ändringar går förlorade!"
   installation_instructions: Installationsanvisningar
-  control_panel_for_your_amahi_hdas: "Kontrollpanelen f\xC3\xB6r ditt Amahi HDAs"
-  please_select_the_type_of_rule_you_want: "V\xC3\xA4lj den typ av regel som du vill l\xC3\xA4gga till."
+  control_panel_for_your_amahi_hdas: "Kontrollpanelen för ditt Amahi HDAs"
+  please_select_the_type_of_rule_you_want: "Välj den typ av regel som du vill lägga till."
   create_a_new_webapp: Skapa en ny webbapplikation
   refresh_status: Uppdateringsstatus
   home: Hem
   will_not_start_at_boot_time: startar <b>inte</b> vid uppstart
   there_are_no_static_ips_defined: Det finns inga statiska IP-adresser definierade vid denna tid.
-  share_name_is_available: "Utdelningsnamn \xC3\xA4r tillg\xC3\xA4ngligt"
-  powerful_simple_home_networking: "Kraftfullt, Enkelt, Hemn\xC3\xA4tverk"
+  share_name_is_available: "Utdelningsnamn är tillgängligt"
+  powerful_simple_home_networking: "Kraftfullt, Enkelt, Hemnätverk"
   about: Om
   email_me: E-posta mig
   there_are_no_applications_installed: Det finns inga Apps installeras vid denna tid.
-  firewall_port_forward_message: "Dessa regler l\xC3\xA5ter dig automatiskt styra portar f\xC3\xB6r n\xC3\xA4ttj\xC3\xA4nster till en specifik maskin innanf\xC3\xB6r brandv\xC3\xA4ggen. Dessa inst\xC3\xA4llningar \xC3\xA4r endast n\xC3\xB6dv\xC3\xA4ndiga om du vill anv\xC3\xA4nda n\xC3\xA5gon form av server, typ en webbserver eller mailserver p\xC3\xA5 det privata lokala n\xC3\xA4tverket innanf\xC3\xB6r brandv\xC3\xA4ggen."
-  to_recover_your_password: "F\xC3\xB6r att f\xC3\xA5 tillbaka ditt l\xC3\xB6senord eller aktiveringsmail, fyll i din e-postadress nedan"
+  firewall_port_forward_message: "Dessa regler låter dig automatiskt styra portar för nättjänster till en specifik maskin innanför brandväggen. Dessa inställningar är endast nödvändiga om du vill använda någon form av server, typ en webbserver eller mailserver på det privata lokala nätverket innanför brandväggen."
+  to_recover_your_password: "För att få tillbaka ditt lösenord eller aktiveringsmail, fyll i din e-postadress nedan"
   apache_web_server: Webbservern Apache
   seconds: sekunder
   partition: Partition
   dhcp: DHCP
   dhcp_free: Inaktiv
-  this_users_files_deleted: "Filerna i den h\xC3\xA4r anv\xC3\xA4ndarens hemmapp KOMMER ATT TAS BORT"
+  this_users_files_deleted: "Filerna i den här användarens hemmapp KOMMER ATT TAS BORT"
   configured: Konfigurerad
-  disabling_lan_manager_will_not_allow_older_machines: "Avaktivering av Windows 95/98 LanManager autentisering kommer inte till\xC3\xA5ta \xC3\xA4ldre maskiner att anv\xC3\xA4nda utdelningarna. \xC3\x84r du s\xC3\xA4ker p\xC3\xA5 att du vill inaktivera Windows 95/98 autentiseringsl\xC3\xA4ge?"
+  disabling_lan_manager_will_not_allow_older_machines: "Avaktivering av Windows 95/98 LanManager autentisering kommer inte tillåta äldre maskiner att använda utdelningarna. Är du säker på att du vill inaktivera Windows 95/98 autentiseringsläge?"
   you_have_been_logged_out: Du har loggats ut.
   permanently: permanent
-  the_url_is_invalid: "Webbadressen \xC3\xA4r inte giltig"
+  the_url_is_invalid: "Webbadressen är inte giltig"
   it_will_be_restarted_by_the_watchdog: (det kommer att startas om av watchdog)
   amahi_dyndns_updater: Amahi Dynamisk DNS Uppdaterare
-  pdc_domain: "PDC Dom\xC3\xA4n"
+  pdc_domain: "PDC Domän"
   path: S
   features: Funktioner
-  password_cannot_be_blank: "L\xC3\xB6senordet f\xC3\xA5r inte vara tomt"
-  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "OBS! \xC3\x96vervakningen \xC3\xA4r ig\xC3\xA5ng och startas om om n\xC3\xA5gra sekunder."
-  your_existing_network_gatweay: "Din Befintliga N\xC3\xA4tverksGateway / Router"
+  password_cannot_be_blank: "Lösenordet får inte vara tomt"
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "OBS! Övervakningen är igång och startas om om några sekunder."
+  your_existing_network_gatweay: "Din Befintliga NätverksGateway / Router"
   warning: VARNING
   dhcp_ip_address: DHCP IP-adress
   beta_apps: Beta Apps
   logout: Logga ut
-  there_is_no_undo: "det finns INGEN \xC3\x85NGRA TILL DENNA RADERING"
+  there_is_no_undo: "det finns INGEN ÅNGRA TILL DENNA RADERING"

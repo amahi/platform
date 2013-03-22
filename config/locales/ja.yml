@@ -1,206 +1,123 @@
 --- 
 ja: 
-  initial_user_info: !binary |
-    5Yid44KB44Gu44Om44O844K244O8
-
+  initial_user_info: "初めのユーザー"
   remember_me: ""
   uptime: ""
-  aliases: !binary |
-    44Ko44Kk44Oq44Ki44K5
-
+  aliases: "エイリアス"
   datetime: 
     distance_in_words: 
       less_than_x_minutes: 
-        one: "1\xE5\x88\x86\xE4\xBB\xA5\xE5\x86\x85"
-        other: "%{count}\xE5\x88\x86\xE4\xBB\xA5\xE5\x86\x85"
+        one: "1分以内"
+        other: "%{count}分以内"
       x_days: 
-        one: "1\xE6\x97\xA5"
-        other: "%{count}\xE6\x97\xA5"
+        one: "1日"
+        other: "%{count}日"
       x_minutes: 
-        one: "1\xE5\x88\x86"
-        other: "%{count}\xE5\x88\x86"
+        one: "1分"
+        other: "%{count}分"
       x_seconds: 
-        one: "1\xE7\xA7\x92"
-        other: "%{count}\xE7\xA7\x92"
+        one: "1秒"
+        other: "%{count}秒"
       less_than_x_seconds: 
-        one: "1\xE7\xA7\x92\xE4\xBB\xA5\xE5\x86\x85"
-        other: "%{count}\xE7\xA7\x92\xE4\xBB\xA5\xE5\x86\x85"
+        one: "1秒以内"
+        other: "%{count}秒以内"
       x_months: 
-        one: "1\xE3\x83\xB6\xE6\x9C\x88"
-        other: "%{count}\xE3\x83\xB6\xE6\x9C\x88"
+        one: "1ヶ月"
+        other: "%{count}ヶ月"
       about_x_hours: 
-        one: "\xE7\xB4\x841\xE6\x99\x82\xE9\x96\x93"
-        other: "\xE7\xB4\x84%{count}\xE6\x99\x82\xE9\x96\x93"
+        one: "約1時間"
+        other: "約%{count}時間"
       about_x_months: 
-        one: "\xE7\xB4\x841\xE3\x83\xB6\xE6\x9C\x88"
-        other: "\xE7\xB4\x84%{count}\xE3\x83\xB6\xE6\x9C\x88"
+        one: "約1ヶ月"
+        other: "約%{count}ヶ月"
       about_x_years: 
-        one: "\xE7\xB4\x84%{count}\xE5\xB9\xB4"
-        other: "\xE7\xB4\x84%{count}\xE5\xB9\xB4"
+        one: "約%{count}年"
+        other: "約%{count}年"
       over_x_years: 
-        one: "%{count}\xE5\xB9\xB4\xE4\xBB\xA5\xE4\xB8\x8A"
-        other: "%{count}\xE5\xB9\xB4\xE4\xBB\xA5\xE4\xB8\x8A"
-      half_a_minute: "30\xE7\xA7\x92\xE5\x89\x8D\xE5\xBE\x8C"
+        one: "%{count}年以上"
+        other: "%{count}年以上"
+      half_a_minute: "30秒前後"
     prompts: 
-      month: !binary |
-        5pyI
-
-      minute: !binary |
-        5YiG
-
-      second: !binary |
-        56eS
-
-      hour: !binary |
-        5pmC6ZaT
-
-      day: !binary |
-        5pel
-
-      year: !binary |
-        5bm0
-
-  free_space: !binary |
-    56m644GN6aCY5Z+f
-
+      month: "月"
+      minute: "分"
+      second: "秒"
+      hour: "時間"
+      day: "日"
+      year: "年"
+  free_space: "空き領域"
   share_path_cannot_be_blank: ""
   these_rules_are_used_to_restrict_ips: ""
   this_share_name_is_not_valid: ""
   this_ip_will_be_filtered: ""
-  search: !binary |
-    5qSc57Si
-
+  search: "検索"
   preparing_to_install: ""
   this_will_stop_the_server_permanently: ""
   share_name_is_available: ""
   view_all_calendars_simultaneously: ""
-  description: !binary |
-    6Kqs5piO
-
-  dns_alias: !binary |
-    77yk77yu77yz44Ko44Kk44Oq44Ki44K5
-
-  global_settings_for_shares: !binary |
-    5YWx5pyJ44Gu44Kw44Ot44O844OQ44Or6Kit5a6a
-
-  apps: !binary |
-    44Ki44OX44Oq44Kx44O844K344On44Oz
-
+  description: "説明"
+  dns_alias: "ＤＮＳエイリアス"
+  global_settings_for_shares: "共有のグローバル設定"
+  apps: "アプリケーション"
   user_name_is_available: ""
-  get_involved: !binary |
-    5Luy6ZaT44Gr5YWl44KN44GG77yB
-
-  dyndns_info: "Amahi\xE3\x81\xAF\xE3\x83\x95\xE3\x83\xAA\xE3\x83\xBC\xE3\x81\x8B\xE3\x81\xA4\xE3\x82\xB3\xE3\x83\xB3\xE3\x83\x95\xE3\x82\xA3\xE3\x82\xB0\xE3\x83\xAC\xE3\x83\xBC\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\xB3\xE4\xB8\x8D\xE8\xA6\x81\xE3\x81\xAE\xE3\x83\x80\xE3\x82\xA4\xE3\x83\x8A\xE3\x83\x9F\xE3\x83\x83\xE3\x82\xAF\xEF\xBC\xA4\xEF\xBC\xAE\xEF\xBC\xB3\xE3\x82\xA2\xE3\x83\x89\xE3\x83\xAC\xE3\x82\xB9\xE3\x82\x92\xE6\x8F\x90\xE4\xBE\x9B\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\xE3\x81\x93\xE3\x82\x8C\xE3\x81\xAF\xE3\x81\x82\xE3\x81\xAA\xE3\x81\x9F\xE3\x81\xAE\xE3\x83\x9B\xE3\x83\xBC\xE3\x83\xA0\xE3\x83\x8D\xE3\x83\x83\xE3\x83\x88\xE3\x83\xAF\xE3\x83\xBC\xE3\x82\xAF\xE3\x81\xAE\xE5\xA4\x96\xE5\x81\xB4\xE3\x81\xAB\xE8\xA8\xAD\xE5\xAE\x9A\xE3\x81\x95\xE3\x82\x8C\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82<a target=\"_blank\" \r\n\
+  get_involved: "仲間に入ろう！"
+  dyndns_info: "Amahiはフリーかつコンフィグレーション不要のダイナミックＤＮＳアドレスを提供します。これはあなたのホームネットワークの外側に設定されます。<a target=\"_blank\" \r\n\
     href=\"http://wiki.amahi.org/index.php/VPN\">Mac</a> or <a target=\"_blank\" \r\n\
     href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a> <a \r\n\
     target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> \r\n\
     clients (technical users can use it for logging in with <a target=\"_blank\" \r\n\
-    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>)\xE3\x80\x80\xE3\x81\xAB\xE4\xBD\xBF\xE7\x94\xA8\xE3\x81\xA7\xE3\x81\x8D\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\xE6\x8A\x80\xE8\xA1\x93\xE7\xB3\xBB\xE3\x81\xAE\xE3\x83\xA6\xE3\x83\xBC\xE3\x82\xB6\xE3\x83\xBC\xE3\x81\xAF\xE3\x82\xA6\xE3\x82\xA7\xE3\x83\x96\xE3\x82\xB5\xE3\x82\xA4\xE3\x83\x88\xE3\x81\xAE\xE3\x83\x9B\xE3\x82\xB9\xE3\x83\x86\xE3\x82\xA3\xE3\x83\xB3\xE3\x82\xB0\xE3\x80\x81\xE3\x82\xB2\xE3\x83\xBC\xE3\x83\xA0\xE3\x82\xB5\xE3\x83\xBC\xE3\x83\x90\xE3\x83\xBC\xE3\x80\x81\xE3\x81\x82\xE3\x82\x8B\xE3\x81\x84\xE3\x81\xAF\xE4\xBB\x96\xE3\x81\xAE\xE3\x82\xB5\xE3\x83\xBC\xE3\x83\x93\xE3\x82\xB9\xE3\x82\x92\xE3\x81\x82\xE3\x81\xAA\xE3\x81\x9F\xE3\x81\xAE\xE3\x83\x9B\xE3\x83\xBC\xE3\x83\xA0\xE3\x83\x8D\xE3\x83\x83\xE3\x83\x88\xE3\x83\xAF\xE3\x83\xBC\xE3\x82\xAF\xE3\x81\x8B\xE3\x82\x89\xE5\x88\xA9\xE7\x94\xA8\xE3\x81\xA7\xE3\x81\x8D\xE3\x81\xBE\xE3\x81\x99\xEF\xBC\x88\xE3\x82\x82\xE3\x81\x97\xE3\x81\x8A\xE6\x80\xA5\xE3\x81\x8E\xE3\x81\xAE\xE5\xA0\xB4\xE5\x90\x88\xE3\x81\xAF\xE3\x80\x81\xEF\xBC\xA9\xEF\xBC\xB2\xEF\xBC\xA3\xE3\x83\x81\xE3\x83\xA3\xE3\x83\x8D\xE3\x83\xAB\xE3\x81\xAB\xE8\x81\x9E\xE3\x81\x8F\xE3\x81\x8Bwiki\xE3\x81\xA7\xE6\xA4\x9C\xE7\xB4\xA2\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xEF\xBC\x89\xE3\x80\x82"
-  settings: !binary |
-    6Kit5a6a
-
-  a_single_number_0_254_to_point_to_a_given_machine: "\xE3\x81\x82\xE3\x81\xAA\xE3\x81\x9F\xE3\x81\xAE\xE3\x83\x8D\xE3\x83\x83\xE3\x83\x88\xE3\x83\xAF\xE3\x83\xBC\xE3\x82\xAF\xE4\xB8\x8A\xE3\x81\xAB\xE3\x81\x82\xE3\x82\x8B\xE4\xB8\x80\xE3\x81\xA4\xE3\x81\xAE\xE3\x83\x9E\xE3\x82\xB7\xE3\x83\xB3\xE3\x82\x92\xE6\x8C\x87\xE3\x81\x99(0-254)\xE3\x81\xAE\xE6\x95\xB0\xE5\xAD\x97"
+    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>)　に使用できます。技術系のユーザーはウェブサイトのホスティング、ゲームサーバー、あるいは他のサービスをあなたのホームネットワークから利用できます（もしお急ぎの場合は、ＩＲＣチャネルに聞くかwikiで検索してください）。"
+  settings: "設定"
+  a_single_number_0_254_to_point_to_a_given_machine: "あなたのネットワーク上にある一つのマシンを指す(0-254)の数字"
   new_static_ip: ""
   this_shares_files_deleted: ""
-  help: !binary |
-    44OY44Or44OX
-
-  network_gateway: !binary |
-    44ON44OD44OI44Ov44O844Kv44Ky44O844OI44Km44Kn44Kk
-
+  help: "ヘルプ"
+  network_gateway: "ネットワークゲートウェイ"
   router_setting_failed: ""
-  alias_is_taken_already: !binary |
-    44Ko44Kk44Oq44Ki44K544GM44GZ44Gn44Gr5a2Y5Zyo44GZ44KL44GL5LqI
-    57SE44GV44KM44Gm44GE44G+44GZ
-
-  file_server_samba: "\xE3\x83\x95\xE3\x82\xA1\xE3\x82\xA4\xE3\x83\xAB\xE3\x82\xB5\xE3\x83\xBC\xE3\x83\x90\xE3\x83\xBC\xEF\xBC\x88Samba\xEF\xBC\x89"
-  share: !binary |
-    5YWx5pyJ
-
-  confirmation_must_match: !binary |
-    56K66KqN44Gn44GN44G+44Gb44KT
-
-  create_alias: !binary |
-    44Ko44Kk44Oq44Ki44K544Gu5L2c5oiQ
-
+  alias_is_taken_already: "エイリアスがすでに存在するか予約されています"
+  file_server_samba: "ファイルサーバー（Samba）"
+  share: "共有"
+  confirmation_must_match: "確認できません"
+  create_alias: "エイリアスの作成"
   rule_type: ""
-  create_your_hda_profile: !binary |
-    44GC44Gq44Gf44Gu77yo77yk77yh44OX44Ot44OV44Kh44Kk44Or44Gu5L2c
-    5oiQ
-
-  firewall_url_filter_message: !binary |
-    44GT44Gu44OG44O844OW44Or44Gu44Ko44Oz44OI44Oq44Gv44Ky44O844OI
-    44Km44Ko44Kk57WM55Sx44Gu77y177yy77ys44KS5Yi26ZmQ44GZ44KL44Gf
-    44KB44Gr55So44GE44G+44GZ
-
+  create_your_hda_profile: "あなたのＨＤＡプロファイルの作成"
+  firewall_url_filter_message: "このテーブルのエントリはゲートウエイ経由のＵＲＬを制限するために用います"
   special_instructions: ""
-  music: !binary |
-    6Z+z5qW9
-
+  music: "音楽"
   news_about_applications: ""
-  language: !binary |
-    6KiA6Kqe
-
-  files: !binary |
-    44OV44Kh44Kk44Or
-
+  language: "言語"
+  files: "ファイル"
   to_recover_your_password: ""
   router_control: ""
   this_could_be_due_to_lack_of_network_connectivity: ""
-  images: !binary |
-    55S75YOP
-
-  firewall: !binary |
-    44OV44Kh44Kk44Ki44O844Km44Kq44O844Or
-
-  is_being_monitored_24x7: !binary |
-    44Gv5bi45pmC55uj6KaW44GV44KM44G+44GZ
-
-  username_cannot_be_blank: !binary |
-    44Om44O844K244O85ZCN44Gv56m655m944Gr44Gn44GN44G+44Gb44KT
-
+  images: "画像"
+  firewall: "ファイアーウオール"
+  is_being_monitored_24x7: "は常時監視されます"
+  username_cannot_be_blank: "ユーザー名は空白にできません"
   new_alias: ""
   the_name_you_input_above_will_be_added_to_the_DNS_server: ""
   not_a_valid_user_or_password: ""
-  change: !binary |
-    5aSJ5pu0
-
+  change: "変更"
   there_are_no_calendars_available_see_wiki: ""
   new_firewall_rule: ""
-  disk_pool_copies: !binary |
-    5L2Z5YiG44Gq44Kz44OU44O8
-
+  disk_pool_copies: "余分なコピー"
   stop_it: ""
   rebooting: ""
   there_are_no_static_dhcp_leases: ""
-  disk: !binary |
-    44OH44Kj44K544Kv
-
+  disk: "ディスク"
   transmission_bittorrent_server: ""
-  are_you_sure_share: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\xE5\x85\xB1\xE6\x9C\x89\"%{share}\"\xE3\x82\x92\xE5\x89\x8A\xE9\x99\xA4\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
-  confirm_email: !binary |
-    44Oh44O844Or44Gu56K66KqN
-
-  home: !binary |
-    44Ob44O844Og
-
+  are_you_sure_share: "本当に共有\"%{share}\"を削除しますか?"
+  confirm_email: "メールの確認"
+  home: "ホーム"
   sign_out: ""
-  are_you_sure_advanced_features: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xABAdvanced Features\xE3\x82\x92\xE6\x9C\x89\xE5\x8A\xB9\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
-  gallery: !binary |
-    44Ku44Oj44Op44Oq44O8
-
+  are_you_sure_advanced_features: "本当にAdvanced Featuresを有効にしますか?"
+  gallery: "ギャラリー"
   sign_up_here: ""
-  edit_and_rate_beta_apps: !binary |
-    44OZ44O844K/44Ki44OX44Oq44Kx44O844K344On44Oz44Gu57eo6ZuG44Go
-    5qC85LuY44GR
-
+  edit_and_rate_beta_apps: "ベータアプリケーションの編集と格付け"
   themes: ""
   user_name_is_not_available: ""
-  address_looks_good: !binary |
-    44Ki44OJ44Os44K544Gv77yv77yr44Gn44GZ
-
-  mac_address_of_the_device: "\xE3\x81\x93\xE3\x81\xAE\xE3\x83\x87\xE3\x83\x90\xE3\x82\xA4\xE3\x82\xB9\xE3\x81\xAE\xEF\xBC\xAD\xEF\xBC\xA1\xEF\xBC\xA3\xE3\x82\xA2\xE3\x83\x89\xE3\x83\xAC\xE3\x82\xB9 (\xE4\xBE\x8B\xE3\x80\x8000:11:22:33:44:55)"
-  installed_paren: "(\xE3\x82\xA4\xE3\x83\xB3\xE3\x82\xB9\xE3\x83\x88\xE3\x83\xBC\xE3\x83\xAB\xE6\xB8\x88\xE3\x81\xBF)"
+  address_looks_good: "アドレスはＯＫです"
+  mac_address_of_the_device: "このデバイスのＭＡＣアドレス (例　00:11:22:33:44:55)"
+  installed_paren: "(インストール済み)"
   there_are_no_firewall_rules_defined: ""
   there_are_no_servers_available: ""
   ushare_upnp_media_server: ""
@@ -209,160 +126,86 @@ ja:
   thanks_for_visiting: ""
   upcoming: ""
   this_file_was_automatically_generated_on: ""
-  name_looks_good: !binary |
-    5ZCN5YmN44Gv5q2j5bi444Gn44GZ
-
+  name_looks_good: "名前は正常です"
   your_home_dns_domain: ""
-  app_logs: !binary |
-    44Ki44OX44Oq44Kx44O844K344On44Oz44Ot44Kw
-
+  app_logs: "アプリケーションログ"
   the_watchdog_is_a_critical_setting: ""
-  username: !binary |
-    44Om44O844K244O85ZCN
-
+  username: "ユーザー名"
   tour: ""
   recover: ""
   stopped: ""
-  firewall_port_filter_message: !binary |
-    44Od44O844OI44OV44Kj44Or44K/44Or44O844Or44Gv44GC44Gq44Gf44Gu
-    44Ot44O844Kr44Or44ON44OD44OI44Ov44O844Kv44GL44KJ44Kk44Oz44K/
-    44O844ON44OD44OI44Gr5Ye644Gm44KG44GP44OH44O844K/44OR44Kx44OD
-    44OI44Gu5Yi26ZmQ44Gr5L2/55So44GX44G+44GZ
-
-  dhcp_ip_address: "DHCP IP \xE3\x82\xA2\xE3\x83\x89\xE3\x83\xAC\xE3\x82\xB9"
-  name_is_taken_already_or_is_reserved: !binary |
-    5ZCN5YmN44GM44GZ44Gn44Gr55m76Yyy44GV44KM44Gm44GE44KL44GL5LqI
-    57SE44GV44KM44Gm44GE44G+44GZ
-
+  firewall_port_filter_message: "ポートフィルタルールはあなたのローカルネットワークからインターネットに出てゆくデータパケットの制限に使用します"
+  dhcp_ip_address: "DHCP IP アドレス"
+  name_is_taken_already_or_is_reserved: "名前がすでに登録されているか予約されています"
   support_win_95_98: ""
-  enabling_pdc_is_a_major_share_change: "\xEF\xBC\xB0\xEF\xBC\xA4\xEF\xBC\xA3\xE3\x83\xA2\xE3\x83\xBC\xE3\x83\x89\xE3\x81\xAF\xE5\x85\xB1\xE6\x9C\x89\xE3\x81\xAE\xE3\x82\xAA\xE3\x83\x9A\xE3\x83\xAC\xE3\x83\xBC\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\xB3\xE6\x89\x8B\xE6\xB3\x95\xE3\x81\xAB\xE5\xA4\xA7\xE3\x81\x8D\xE3\x81\xAA\xE5\xA4\x89\xE6\x9B\xB4\xE3\x82\x92\xE3\x82\x82\xE3\x81\x9F\xE3\x82\x89\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\xE3\x81\x93\xE3\x82\x8C\xE3\x81\xAF\xE3\x83\x89\xE3\x83\xA1\xE3\x82\xA4\xE3\x83\xB3\xE3\x83\xA2\xE3\x83\xBC\xE3\x83\x89\xE3\x82\x92\xE8\xB5\xB7\xE5\x8B\x95\xE3\x81\x97\xE3\x80\x81\xE3\x83\xAF\xE3\x83\xBC\xE3\x82\xAF\xE3\x82\xB0\xE3\x83\xAB\xE3\x83\xBC\xE3\x83\x97\xE3\x82\x92\xE5\x81\x9C\xE6\xAD\xA2\xE3\x81\x97\xE3\x80\x81\xE3\x81\xBE\xE3\x81\x9F\xE3\x81\x99\xE3\x81\xB9\xE3\x81\xA6\xE3\x81\xAE\xE3\x83\x9E\xE3\x82\xB7\xE3\x83\xB3\xE3\x81\x8C\xE3\x82\xA8\xE3\x83\xB3\xE3\x82\xBF\xE3\x83\xBC\xE3\x83\x97\xE3\x83\xA9\xE3\x82\xA4\xE3\x82\xBA\xEF\xBC\x88\xE3\x81\x82\xE3\x82\x8B\xE3\x81\x84\xE3\x81\xAF\"PRO\"\xEF\xBC\x89\xE3\x83\x9E\xE3\x82\xB7\xE3\x83\xB3\xE3\x81\xA7\xE3\x81\x82\xE3\x82\x8B\xE5\xBF\x85\xE8\xA6\x81\xE3\x81\x8C\xE3\x81\x82\xE3\x82\x8A\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\xE3\x81\x93\xE3\x82\x8C\xE3\x81\xAF\xE3\x82\xA8\xE3\x83\xB3\xE3\x82\xBF\xE3\x83\xBC\xE3\x83\x97\xE3\x83\xA9\xE3\x82\xA4\xE3\x82\xBA\xE3\x83\x8D\xE3\x83\x83\xE3\x83\x88\xE3\x83\xAF\xE3\x83\xBC\xE3\x82\xAF\xE7\x94\xA8\xE3\x81\xAE\xE3\x82\x82\xE3\x81\xAE\xE3\x81\xA7\xE3\x81\x99\xE3\x80\x82\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\xEF\xBC\xB0\xEF\xBC\xA4\xEF\xBC\xA3\xE3\x83\xA2\xE3\x83\xBC\xE3\x83\x89\xE3\x82\x92\xE8\xB5\xB7\xE5\x8B\x95\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B\xEF\xBC\x9F"
-  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "\xE3\x83\x87\xE3\x83\x90\xE3\x83\x83\xE3\x82\xB0\xE3\x82\x92\xE3\x82\xA4\xE3\x83\x8D\xE3\x83\xBC\xE3\x83\x96\xE3\x83\xAB\xE3\x81\xAB\xE3\x81\x99\xE3\x82\x8B\xE3\x81\xA8\xE9\x9D\x9E\xE5\xB8\xB8\xE3\x81\xAB\xE5\xA4\xA7\xE3\x81\x8D\xE3\x81\xAA\xE3\x83\xAD\xE3\x82\xB0\xE3\x83\x95\xE3\x82\xA1\xE3\x82\xA4\xE3\x83\xAB\xE3\x81\x8C\xE7\x94\x9F\xE6\x88\x90\xE3\x81\x95\xE3\x82\x8C\xE3\x82\x8B\xE5\x8F\xAF\xE8\x83\xBD\xE6\x80\xA7\xE3\x81\x8C\xE3\x81\x82\xE3\x82\x8A\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xABSamba\xE3\x81\xAE\xE3\x83\x87\xE3\x83\x90\xE3\x83\x83\xE3\x82\xB0\xE3\x82\x92\xE3\x82\xA4\xE3\x83\x8D\xE3\x83\xBC\xE3\x83\x96\xE3\x83\xAB\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B\xEF\xBC\x9F"
+  enabling_pdc_is_a_major_share_change: "ＰＤＣモードは共有のオペレーション手法に大きな変更をもたらします。これはドメインモードを起動し、ワークグループを停止し、またすべてのマシンがエンタープライズ（あるいは\"PRO\"）マシンである必要があります。これはエンタープライズネットワーク用のものです。本当にＰＤＣモードを起動しますか？"
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "デバッグをイネーブルにすると非常に大きなログファイルが生成される可能性があります。本当にSambaのデバッグをイネーブルにしますか？"
   the_boot_option_is_a_critical_setting: ""
-  installed: !binary |
-    44Kk44Oz44K544OI44O844Or5riI44G/
-
-  check_the_features_take_the_tour: "\xE7\x8F\xBE\xE5\x9C\xA8\xE4\xBD\xBF\xE7\x94\xA8\xE5\x8F\xAF\xE8\x83\xBD\xE3\x81\xAA\xE6\xA9\x9F\xE8\x83\xBD\xE3\x81\xAE\xE7\xA2\xBA\xE8\xAA\x8D\xE3\x80\x81\xE3\x83\x84\xE3\x82\xA2\xE3\x83\xBC\xE3\x82\x92\xE8\xA6\x8B\xE3\x82\x8B\xE3\x80\x81\xE3\x81\x82\xE3\x82\x8B\xE3\x81\x84\xE3\x81\xAF\xE5\xBE\x85\xE3\x81\xA6\xE3\x81\xAA\xE3\x81\x84\xE5\xA0\xB4\xE5\x90\x88\xE3\x80\x80-"
-  general_amahi_news: "\xE4\xB8\x80\xE8\x88\xAC\xE7\x9A\x84\xE3\x81\xAA\xE3\x81\x93\xE3\x81\xA8\xE3\x81\xAB\xE9\x96\xA2\xE3\x81\x99\xE3\x82\x8BAmahi\xE3\x83\x8B\xE3\x83\xA5\xE3\x83\xBC\xE3\x82\xB9"
-  mac_filtering: !binary |
-    77yt77yh77yj44OV44Kj44Or44K/44O8
-
+  installed: "インストール済み"
+  check_the_features_take_the_tour: "現在使用可能な機能の確認、ツアーを見る、あるいは待てない場合　-"
+  general_amahi_news: "一般的なことに関するAmahiニュース"
+  mac_filtering: "ＭＡＣフィルター"
   webapps: ""
-  disk_pooling_enabled: !binary |
-    44Om44O844K244O844OX44O844Or
-
+  disk_pooling_enabled: "ユーザープール"
   this_path_is_not_valid: ""
-  manage_your_contributed_apps: !binary |
-    44GC44Gq44Gf44Gu44Ki44OX44Oq44Kx44O844K344On44Oz44Gu566h55CG
-
+  manage_your_contributed_apps: "あなたのアプリケーションの管理"
   this_users_files_deleted: ""
   share_path_is_available: ""
-  feedback: !binary |
-    44OV44Kj44O844OJ44OQ44OD44Kv
-
-  computer: !binary |
-    44Kz44Oz44OU44Ol44O844K/
-
+  feedback: "フィードバック"
+  computer: "コンピュータ"
   powering_off: ""
   url_filtering: ""
   used_space: ""
-  get_started: !binary |
-    44Gv44GY44KB44KI44GG77yB
-
-  dns_server: !binary |
-    77yk77yu77yz44K144O844OQ44O8
-
-  advanced_settings: !binary |
-    5LiK57Sa6ICF5ZCR44GR44Gu6Kit5a6a
-
-  control_panel: !binary |
-    44Kz44Oz44OI44Ot44O844Or44OR44ON44Or
-
-  create_share: !binary |
-    44GT44Gu5YWx5pyJ44KS5L2c5oiQ44GZ44KL
-
-  shares: !binary |
-    5YWx5pyJ
-
+  get_started: "はじめよう！"
+  dns_server: "ＤＮＳサーバー"
+  advanced_settings: "上級者向けの設定"
+  control_panel: "コントロールパネル"
+  create_share: "この共有を作成する"
+  shares: "共有"
   tracker: ""
-  networking: !binary |
-    44ON44OD44OI44Ov44O844Kv
-
-  create: !binary |
-    5L2c5oiQ
-
-  are_you_sure_you_want_to_delete_the_static_ip: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\xE3\x82\xB9\xE3\x82\xBF\xE3\x83\x86\xE3\x82\xA3\xE3\x83\x83\xE3\x82\xAF\xEF\xBC\xA9\xEF\xBC\xB0'%{name}' \xE3\x82\x92\xE5\x89\x8A\xE9\x99\xA4\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
-  are_you_sure_you_want_to_stop_the_server: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB'%{name}' \xE3\x82\x92\xE5\x81\x9C\xE6\xAD\xA2\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
+  networking: "ネットワーク"
+  create: "作成"
+  are_you_sure_you_want_to_delete_the_static_ip: "本当にスタティックＩＰ'%{name}' を削除しますか?"
+  are_you_sure_you_want_to_stop_the_server: "本当に'%{name}' を停止しますか?"
   system_info: ""
   sign_in: ""
-  name: !binary |
-    5ZCN5YmN
-
+  name: "名前"
   start_at_boot_time: ""
-  configured: !binary |
-    44Kz44Oz44OV44Kj44Ku44Ol44Os44O844K344On44Oz44GV44KM44Gf
-
-  computer_name: !binary |
-    44Kz44Oz44OU44Ol44O844K/44Gu5ZCN5YmN
-
+  configured: "コンフィギュレーションされた"
+  computer_name: "コンピュータの名前"
   warning_this_application_is_in_testing: ""
-  finalize_settings: !binary |
-    6Kit5a6a44Gu5a6M5LqG
-
-  initial_password: !binary |
-    44OR44K544Ov44O844OJ
-
+  finalize_settings: "設定の完了"
+  initial_password: "パスワード"
   new_share: ""
-  dashboard: !binary |
-    44OA44OD44K344Ol44Oc44O844OJ
-
+  dashboard: "ダッシュボード"
   there_are_no_webapps: ""
   uninstall: ""
-  manage_themes: !binary |
-    44OG44O844Oe44Gu566h55CG
-
-  login: !binary |
-    44Ot44Kw44Kk44Oz
-
-  support: "arraywords_connector\xE3\x81\xA8two_words_connector\xE3\x81\xA8skip_last_commatruesentence_connector\xE3\x81\xA8last_word_connector\xE3\x81\xA8selectprompt\xE9\x81\xB8\xE6\x8A\x9E\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
+  manage_themes: "テーマの管理"
+  login: "ログイン"
+  support: "arraywords_connectorとtwo_words_connectorとskip_last_commatruesentence_connectorとlast_word_connectorとselectprompt選択してください。"
   the_alias_name_you_input_will_be_added: ""
-  details: !binary |
-    6Kmz57Sw
-
-  it_will_be_restarted_by_the_watchdog: "(\xE3\x82\xA6\xE3\x82\xAA\xE3\x83\x83\xE3\x83\x81\xE3\x83\x89\xE3\x83\x83\xE3\x82\xB0\xE3\x81\xAB\xE3\x82\x88\xE3\x81\xA3\xE3\x81\xA6\xE5\x86\x8D\xE8\xB5\xB7\xE5\x8B\x95\xE3\x81\x95\xE3\x82\x8C\xE3\x81\xBE\xE3\x81\x99)"
+  details: "詳細"
+  it_will_be_restarted_by_the_watchdog: "(ウオッチドッグによって再起動されます)"
   router_firewall_settings: ""
-  are_you_sure_you_would_like_to_delete_calendar: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB%{calendar} \xE3\x82\x92\xE5\x89\x8A\xE9\x99\xA4\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
-  edit_web_app: !binary |
-    44Km44Kn44OW44Ki44OX44Oq44Kx44O844K344On44Oz44Gu57eo6ZuG
-
-  movies: !binary |
-    44Og44O844OT44O8
-
+  are_you_sure_you_would_like_to_delete_calendar: "本当に%{calendar} を削除しますか?"
+  edit_web_app: "ウェブアプリケーションの編集"
+  movies: "ムービー"
   unleash_the_power_of_your_home_network: ""
   rule: ""
-  efficiently_manage_your_network: "\xE3\x82\xB3\xE3\x83\xB3\xE3\x83\x94\xE3\x83\xA5\xE3\x83\xBC\xE3\x82\xBF\xE3\x80\x81\xE3\x82\xB2\xE3\x83\xBC\xE3\x83\xA0\xE3\x82\xB3\xE3\x83\xB3\xE3\x82\xBD\xE3\x83\xBC\xE3\x83\xAB\xE3\x80\x81\xE3\x81\x8A\xE3\x82\x88\xE3\x81\xB3\xE3\x83\x8D\xE3\x83\x83\xE3\x83\x88\xE3\x83\xAF\xE3\x83\xBC\xE3\x82\xAF\xE4\xB8\x8A\xE3\x81\xAB\xE3\x81\x82\xE3\x82\x8B\xE4\xBB\x96\xE3\x81\xAE\xE3\x83\x87\xE3\x83\x90\xE3\x82\xA4\xE3\x82\xB9\xE3\x81\xAE\xE7\xAE\xA1\xE7\x90\x86\xE3\x82\x84\xE3\x83\x90\xE3\x83\x83\xE3\x82\xAF\xE3\x82\xA2\xE3\x83\x83\xE3\x83\x97\xE3\x82\x92\xE3\x81\xAF\xE3\x81\x98\xE3\x82\x81\xE3\x80\x81\xE3\x82\xA4\xE3\x83\xB3\xE3\x82\xBF\xE3\x83\xBC\xE3\x83\x8D\xE3\x83\x83\xE3\x83\x88\xE3\x81\x8B\xE3\x82\x89\xE5\xAE\x89\xE5\x85\xA8\xE3\x81\xAB\xE3\x81\x82\xE3\x81\xAA\xE3\x81\x9F\xE3\x81\xAE\xE3\x83\x8D\xE3\x83\x83\xE3\x83\x88\xE3\x83\xAF\xE3\x83\xBC\xE3\x82\xAF\xE3\x81\xAB\xE3\x82\xA2\xE3\x82\xAF\xE3\x82\xBB\xE3\x82\xB9\xE3\x81\xA7\xE3\x81\x8D\xE3\x82\x8B\xE3\x81\x93\xE3\x81\xA8\xE3\x81\xAA\xE3\x81\xA9\xE3\x81\xAF\xE3\x80\x81Amahi\xE3\x81\xA7\xE3\x81\xA7\xE3\x81\x8D\xE3\x82\x8B\xE3\x81\x93\xE3\x81\xA8\xE3\x81\xAE\xE3\x81\xBB\xE3\x82\x93\xE3\x81\xAE\xE4\xB8\x80\xE9\x83\xA8\xE3\x81\xAB\xE3\x81\x99\xE3\x81\x8E\xE3\x81\xBE\xE3\x81\x9B\xE3\x82\x93\r\n"
-  are_you_sure_webapp: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\"%{webapp}\"\xE3\x82\x92\xE5\x89\x8A\xE9\x99\xA4\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
-  name_is_taken_already: !binary |
-    5ZCN5YmN44GM44GZ44Gn44Gr55m76Yyy44GV44KM44Gm44GE44G+44GZ
-
-  audio: !binary |
-    6Z+z5aOw
-
+  efficiently_manage_your_network: "コンピュータ、ゲームコンソール、およびネットワーク上にある他のデバイスの管理やバックアップをはじめ、インターネットから安全にあなたのネットワークにアクセスできることなどは、Amahiでできることのほんの一部にすぎません\r\n"
+  are_you_sure_webapp: "本当に\"%{webapp}\"を削除しますか?"
+  name_is_taken_already: "名前がすでに登録されています"
+  audio: "音声"
   time: 
-    am: !binary |
-      5Y2I5YmN
-
+    am: "午前"
     formats: 
       default: "%Y/%m/%d %H:%M:%S"
       short: "%y/%m/%d %H:%M"
-      long: "%Y\xE5\xB9\xB4%m\xE6\x9C\x88%d\xE6\x97\xA5(%a) %H\xE6\x99\x82%M\xE5\x88\x86%S\xE7\xA7\x92 %Z"
-    pm: !binary |
-      5Y2I5b6M
-
-  disks: !binary |
-    44OH44Kj44K544Kv
-
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %Z"
+    pm: "午後"
+  disks: "ディスク"
   this_path_is_not_available: ""
-  greyhole_not_installed: "\xE8\xAD\xA6\xE5\x91\x8A: \xE3\x82\xB0\xE3\x83\xAC\xE3\x83\xBC\xE3\x83\x9B\xE3\x83\xBC\xE3\x83\xAB\xE3\x81\xAF\xE3\x81\x93\xE3\x81\xAE\xE3\x82\xB7\xE3\x82\xB9\xE3\x83\x86\xE3\x83\xA0\xE3\x81\xAB\xE3\x82\xA4\xE3\x83\xB3\xE3\x82\xB9\xE3\x83\x88\xE3\x83\xBC\xE3\x83\xAB\xE3\x81\x95\xE3\x82\x8C\xE3\x81\xA6\xE3\x81\x84\xE3\x81\xBE\xE3\x81\x9B\xE3\x82\x93\xEF\xBC\x81"
+  greyhole_not_installed: "警告: グレーホールはこのシステムにインストールされていません！"
   number: 
     format: 
       separator: .
@@ -375,21 +218,11 @@ ja:
       storage_units: 
         format: "%n%u"
         units: 
-          kb: !binary |
-            44Kt44Ot44OQ44Kk44OI
-
-          tb: !binary |
-            44OG44Op44OQ44Kk44OI
-
-          gb: !binary |
-            44Ku44Ks44OQ44Kk44OI
-
-          byte: !binary |
-            44OQ44Kk44OI
-
-          mb: !binary |
-            44Oh44Ks44OQ44Kk44OI
-
+          kb: "キロバイト"
+          tb: "テラバイト"
+          gb: "ギガバイト"
+          byte: "バイト"
+          mb: "メガバイト"
     percentage: 
       format: 
         delimiter: ""
@@ -399,47 +232,23 @@ ja:
     currency: 
       format: 
         format: "%n%u"
-        unit: !binary |
-          5YaG
-
+        unit: "円"
         separator: .
         delimiter: ","
         precision: 0
-  calendars: !binary |
-    44Kr44Os44Oz44OA44O8
-
+  calendars: "カレンダー"
   the_url_is_invalid: ""
-  users: !binary |
-    44Om44O844K244O8
-
+  users: "ユーザー"
   start_building_a_new_hda: ""
-  application_uninstalled: !binary |
-    44Ki44OX44Oq44Kx44O844K344On44Oz44GM44Kk44Oz44K544OI44O844Or
-    44GV44KM44Gm44GE44G+44Gb44KT
-
+  application_uninstalled: "アプリケーションがインストールされていません"
   warning: ""
-  debug: !binary |
-    44OH44OQ44OD44Kw
-
-  global_settings: !binary |
-    44Kw44Ot44O844OQ44Or6Kit5a6a
-
+  debug: "デバッグ"
+  global_settings: "グローバル設定"
   web_apps: ""
-  firewall_mac_address_filter_info: !binary |
-    44GT44Gu44OG44O844OW44Or44Gu44Ko44Oz44OI44Oq44Gv44GC44Gq44Gf
-    44Gu44Ot44O844Kr44Or44ON44OD44OI44Ov44O844Kv44GL44KJ44Ky44O8
-    44OI44Km44Ko44Kk44KS57WM55Sx44GX44Gm44Kk44Oz44K/44O844ON44OD
-    44OI44Gr5Ye644Gm44KG44GP44GC44KL54m55a6a44Gu44OH44O844K/44OR
-    44Kx44OD44OI44KS5Yi26ZmQ44GX44G+44GZ44CC44GT44Gu44KI44GG44Gq
-    44OV44Kj44Or44K/44KS5L2/44GG44GT44Go44Gn44GC44Gq44Gf44Gu44Ot
-    44O844Kr44Or44ON44OD44OI44Ov44O844Kv44Gr5Yi26ZmQ44KS5LiO44GI
-    44CB5a6I44KL44GT44Go44Gr5b2556uL44Gh44G+44GZ44CC
-
+  firewall_mac_address_filter_info: "このテーブルのエントリはあなたのローカルネットワークからゲートウエイを経由してインターネットに出てゆくある特定のデータパケットを制限します。このようなフィルタを使うことであなたのローカルネットワークに制限を与え、守ることに役立ちます。"
   testimonials: ""
-  application: !binary |
-    44Ki44OX44Oq44Kx44O844K344On44Oz
-
-  amahi_dyndns_updater: "Amahi Dynamic DNS \xE3\x82\xA2\xE3\x83\x83\xE3\x83\x97\xE3\x83\x87\xE3\x83\xBC\xE3\x82\xBF"
+  application: "アプリケーション"
+  amahi_dyndns_updater: "Amahi Dynamic DNS アップデータ"
   user_name_is_not_valid: ""
   nickname: ""
   this_application_install_ended_with_an_error_please_uninstall_status_is: ""
@@ -447,528 +256,272 @@ ja:
   activerecord: 
     errors: 
       messages: 
-        taken: !binary |
-          44Gv44GZ44Gn44Gr5a2Y5Zyo44GX44G+44GZ44CC
-
-        accepted: !binary |
-          44KS5Y+X6Ku+44GX44Gm44GP44Gg44GV44GE44CC
-
-        not_a_number: !binary |
-          44Gv5pWw5YCk44Gn5YWl5Yqb44GX44Gm44GP44Gg44GV44GE44CC
-
-        greater_than_or_equal_to: "\xE3\x81\xAF%{count}\xE4\xBB\xA5\xE4\xB8\x8A\xE3\x81\xAE\xE5\x80\xA4\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
-        record_invalid: "\xE3\x83\x90\xE3\x83\xAA\xE3\x83\x87\xE3\x83\xBC\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\xB3\xE3\x81\xAB\xE5\xA4\xB1\xE6\x95\x97\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x97\xE3\x81\x9F\xE3\x80\x82 %{errors}"
-        blank: !binary |
-          44KS5YWl5Yqb44GX44Gm44GP44Gg44GV44GE44CC
-
-        confirmation: !binary |
-          44GM5LiA6Ie044GX44G+44Gb44KT44CC
-
-        less_than_or_equal_to: "\xE3\x81\xAF%{count}\xE4\xBB\xA5\xE4\xB8\x8B\xE3\x81\xAE\xE5\x80\xA4\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
-        exclusion: !binary |
-          44Gv5LqI57SE44GV44KM44Gm44GE44G+44GZ44CC
-
-        odd: !binary |
-          44Gv5aWH5pWw44Gr44GX44Gm44GP44Gg44GV44GE44CC
-
-        invalid: !binary |
-          44Gv5LiN5q2j44Gq5YCk44Gn44GZ44CC
-
-        too_short: "\xE3\x81\xAF%{count}\xE6\x96\x87\xE5\xAD\x97\xE4\xBB\xA5\xE4\xB8\x8A\xE3\x81\xA7\xE5\x85\xA5\xE5\x8A\x9B\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
-        wrong_length: "\xE3\x81\xAF%{count}\xE6\x96\x87\xE5\xAD\x97\xE3\x81\xA7\xE5\x85\xA5\xE5\x8A\x9B\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
-        empty: !binary |
-          44KS5YWl5Yqb44GX44Gm44GP44Gg44GV44GE44CC
-
-        too_long: "\xE3\x81\xAF%{count}\xE6\x96\x87\xE5\xAD\x97\xE4\xBB\xA5\xE5\x86\x85\xE3\x81\xA7\xE5\x85\xA5\xE5\x8A\x9B\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
-        less_than: "\xE3\x81\xAF%{count}\xE3\x82\x88\xE3\x82\x8A\xE5\xB0\x8F\xE3\x81\x95\xE3\x81\x84\xE5\x80\xA4\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
-        even: !binary |
-          44Gv5YG25pWw44Gr44GX44Gm44GP44Gg44GV44GE44CC
-
-        equal_to: "\xE3\x81\xAF%{count}\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
-        inclusion: !binary |
-          44Gv5LiA6Kan44Gr44GC44KK44G+44Gb44KT44CC
-
-        greater_than: "\xE3\x81\xAF%{count}\xE3\x82\x88\xE3\x82\x8A\xE5\xA4\xA7\xE3\x81\x8D\xE3\x81\x84\xE5\x80\xA4\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84\xE3\x80\x82"
+        taken: "はすでに存在します。"
+        accepted: "を受諾してください。"
+        not_a_number: "は数値で入力してください。"
+        greater_than_or_equal_to: "は%{count}以上の値にしてください。"
+        record_invalid: "バリデーションに失敗しました。 %{errors}"
+        blank: "を入力してください。"
+        confirmation: "が一致しません。"
+        less_than_or_equal_to: "は%{count}以下の値にしてください。"
+        exclusion: "は予約されています。"
+        odd: "は奇数にしてください。"
+        invalid: "は不正な値です。"
+        too_short: "は%{count}文字以上で入力してください。"
+        wrong_length: "は%{count}文字で入力してください。"
+        empty: "を入力してください。"
+        too_long: "は%{count}文字以内で入力してください。"
+        less_than: "は%{count}より小さい値にしてください。"
+        even: "は偶数にしてください。"
+        equal_to: "は%{count}にしてください。"
+        inclusion: "は一覧にありません。"
+        greater_than: "は%{count}より大きい値にしてください。"
       template: 
-        body: !binary |
-          5qyh44Gu6aCF55uu44KS56K66KqN44GX44Gm44GP44Gg44GV44GE44CC
-
+        body: "次の項目を確認してください。"
         header: 
-          one: "%{model}\xE3\x81\xAB\xE3\x82\xA8\xE3\x83\xA9\xE3\x83\xBC\xE3\x81\x8C\xE7\x99\xBA\xE7\x94\x9F\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x97\xE3\x81\x9F\xE3\x80\x82"
-          other: "%{model}\xE3\x81\xAB%{count}\xE3\x81\xA4\xE3\x81\xAE\xE3\x82\xA8\xE3\x83\xA9\xE3\x83\xBC\xE3\x81\x8C\xE7\x99\xBA\xE7\x94\x9F\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x97\xE3\x81\x9F\xE3\x80\x82"
+          one: "%{model}にエラーが発生しました。"
+          other: "%{model}に%{count}つのエラーが発生しました。"
       full_messages: 
         format: "%{attribute}%{message}"
-  are_you_sure_you_would_like_to_uninstall: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\xE3\x81\x93\xE3\x81\xAE\xE3\x82\xA2\xE3\x83\x97\xE3\x83\xAA\xE3\x82\xB1\xE3\x83\xBC\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\xB3\xE3\x82\x92\xE3\x82\xA2\xE3\x83\xB3\xE3\x82\xA4\xE3\x83\xB3\xE3\x82\xB9\xE3\x83\x88\xE3\x83\xBC\xE3\x83\xAB\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?\r\n\
-    \xE3\x81\x93\xE3\x81\xAE\xE3\x82\xA2\xE3\x83\x97\xE3\x83\xAA\xE3\x82\xB1\xE3\x83\xBC\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\xB3\xE3\x81\xAB\xE9\x96\xA2\xE9\x80\xA3\xE3\x81\x99\xE3\x82\x8B\xE3\x83\x87\xE3\x83\xBC\xE3\x82\xBF\xE3\x81\xAF\xE3\x81\x99\xE3\x81\xB9\xE3\x81\xA6\xE5\x89\x8A\xE9\x99\xA4\xE3\x81\x95\xE3\x82\x8C\xE3\x81\xBE\xE3\x81\x99"
-  docs: !binary |
-    44OJ44Kt44Ol44Oh44Oz44OI
-
+  are_you_sure_you_would_like_to_uninstall: "本当にこのアプリケーションをアンインストールしますか?\r\n\
+    このアプリケーションに関連するデータはすべて削除されます"
+  docs: "ドキュメント"
   this_application_is_not_installed_please_refresh: ""
-  delete_alias: !binary |
-    44Ko44Kk44Oq44Ki44K544KS5YmK6Zmk
-
+  delete_alias: "エイリアスを削除"
   this_will_reboot: ""
-  core: !binary |
-    44Kz44Ki
-
-  disk_pool_replication: !binary |
-    6KSH6KO9
-
+  core: "コア"
+  disk_pool_replication: "複製"
   web: ""
-  making_home_networking_simple: !binary |
-    44Ob44O844Og44ON44OD44OI44Ov44O844Kv44KS44K344Oz44OX44Or44Gr
-    44GZ44KL
-
-  is_now_uninstalled: !binary |
-    44Gv44Ki44Oz44Kk44Oz44K544OI44O844Or44GV44KM44G+44GX44Gf
-
+  making_home_networking_simple: "ホームネットワークをシンプルにする"
+  is_now_uninstalled: "はアンインストールされました"
   the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: ""
-  is_now_installed: !binary |
-    44Gv44Kk44Oz44K544OI44O844Or44GV44KM44G+44GX44Gf
-
-  delete_this_rule: !binary |
-    44GT44Gu44Or44O844Or44KS5YmK6Zmk
-
-  available: !binary |
-    5Y+v6IO9
-
-  ip_filtering: !binary |
-    77yp77yw44OV44Kj44Or44K/44O8
-
+  is_now_installed: "はインストールされました"
+  delete_this_rule: "このルールを削除"
+  available: "可能"
+  ip_filtering: "ＩＰフィルター"
   the_ip_must_be_1_to_254: ""
-  close: !binary |
-    6ZaJ44GY44KL
-
-  all_users: !binary |
-    44GZ44G544Gm44Gu44Om44O844K244O8
-
-  about: !binary |
-    44Gr44Gk44GE44Gm
-
-  log_in: !binary |
-    44Ot44Kw44CA44Kk44Oz
-
+  close: "閉じる"
+  all_users: "すべてのユーザー"
+  about: "について"
+  log_in: "ログ　イン"
   the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: ""
-  applications: !binary |
-    44Ki44OX44Oq44Kx44O844K344On44Oz
-
+  applications: "アプリケーション"
   theme: ""
-  delete_web_app: !binary |
-    44Km44Kn44OW44Ki44OX44Oq44Kx44O844K344On44Oz44KS5YmK6Zmk
-
+  delete_web_app: "ウェブアプリケーションを削除"
   running: ""
   refresh_status: ""
-  check_the_calendars_wiki_for_more_details: "\xE3\x82\xAB\xE3\x83\xAC\xE3\x83\xB3\xE3\x83\x80\xE3\x83\xBC\xE3\x81\xAE\xE4\xBD\xBF\xE7\x94\xA8\xE6\x96\xB9\xE6\xB3\x95\xE3\x81\x8A\xE3\x82\x88\xE3\x81\xB3\xE3\x82\xB3\xE3\x83\xB3\xE3\x83\x91\xE3\x83\x81\xE3\x83\x96\xE3\x83\xAB\xE3\x81\xAA\xE3\x82\xAF\xE3\x83\xA9\xE3\x82\xA4\xE3\x82\xA2\xE3\x83\xB3\xE3\x83\x88\xE3\x81\xAB\xE9\x96\xA2\xE3\x81\x99\xE3\x82\x8B\xE3\x82\x88\xE3\x82\x8A\xE8\xA9\xB3\xE7\xB4\xB0\xE3\x81\xAA\xE6\x83\x85\xE5\xA0\xB1\xE3\x81\xAF\xE3\x80\x81<a href=\"http://wiki.amahi.org/index.php/Calendars\">calendar wiki</a>\xE3\x82\x92\xE3\x82\xAF\xE3\x83\xAA\xE3\x83\x83\xE3\x82\xAF\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84"
+  check_the_calendars_wiki_for_more_details: "カレンダーの使用方法およびコンパチブルなクライアントに関するより詳細な情報は、<a href=\"http://wiki.amahi.org/index.php/Calendars\">calendar wiki</a>をクリックしてください"
   the_mac_is_invalid: ""
-  share_name_cannot_be_blank: !binary |
-    5YWx5pyJ5ZCN44Gv56m655m944Gr44Gn44GN44G+44Gb44KT
-
-  disk_pool_details: "\xE3\x82\xB9\xE3\x83\x88\xE3\x83\xAC\xE3\x83\xBC\xE3\x82\xB8\xE3\x83\x97\xE3\x83\xBC\xE3\x83\xAB%{greyhole}\xE3\x81\xAE\xE4\xB8\xAD\xE3\x81\xAB\xE5\x90\xAB\xE3\x82\x81\xE3\x81\x9F\xE3\x81\x84\xE3\x83\x91\xE3\x83\xBC\xE3\x83\x86\xE3\x82\xA3\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\xB3\xE3\x82\x92\xE9\x81\xB8\xE6\x8A\x9E\xE3\x81\x97\xE3\x80\x81%{shares}\xE3\x81\xAB\xE3\x82\xB9\xE3\x83\x88\xE3\x83\xAC\xE3\x83\xBC\xE3\x82\xB8\xE3\x83\x97\xE3\x83\xBC\xE3\x83\xAB\xE3\x82\x92\xE4\xBD\xBF\xE7\x94\xA8\xE3\x81\x95\xE3\x81\x9B\xE3\x81\xA6\xE3\x81\x8F\xE3\x81\xA0\xE3\x81\x95\xE3\x81\x84"
+  share_name_cannot_be_blank: "共有名は空白にできません"
+  disk_pool_details: "ストレージプール%{greyhole}の中に含めたいパーティションを選択し、%{shares}にストレージプールを使用させてください"
   there_is_no_undo: ""
   there_are_no_dynamic_dhcp_leases_outstanding: ""
-  dhcp_leases: "DHCP\xE3\x83\xAA\xE3\x83\xBC\xE3\x82\xB9"
-  extra_parameters: !binary |
-    5L2Z5YiG44Gq44OR44Op44Oh44O844K/
-
-  an_external_ip_address_to_make_the_alias: "\xE3\x81\x9D\xE3\x81\xAEIP\xE3\x82\xA2\xE3\x83\x89\xE3\x83\xAC\xE3\x82\xB9\xE3\x82\x92\xE6\x8C\x87\xE3\x81\x99\xE3\x81\x9F\xE3\x82\x81\xE3\x81\xAE\xE5\xA4\x96\xE9\x83\xA8\xE3\x81\xAEIP\xE3\x82\xA2\xE3\x83\x89\xE3\x83\xAC\xE3\x82\xB9"
+  dhcp_leases: "DHCPリース"
+  extra_parameters: "余分なパラメータ"
+  an_external_ip_address_to_make_the_alias: "そのIPアドレスを指すための外部のIPアドレス"
   next: ""
-  confirm_password: !binary |
-    44OR44K544Ov44O844OJ44Gu56K66KqN
-
+  confirm_password: "パスワードの確認"
   video: ""
-  delete_user: !binary |
-    44Om44O844K244O844KS5YmK6Zmk
-
+  delete_user: "ユーザーを削除"
   visible: ""
   router_ip: ""
-  new: !binary |
-    5paw6KaP
-
-  mysql_database_server: "MySQL DB \xE3\x82\xB5\xE3\x83\xBC\xE3\x83\x90\xE3\x83\xBC"
-  logout: !binary |
-    44Ot44Kw44Ki44Km44OI
-
-  automated_install: !binary |
-    6Ieq5YuV44Kk44Oz44K544OI44O844Or
-
-  install_code: !binary |
-    44Kk44Oz44K544OI44O844Or44Kz44O844OJ
-
-  create_a_new_user: !binary |
-    5paw44GX44GE44Om44O844K244O844Gu5L2c5oiQ
-
-  edit_alias: !binary |
-    44Ko44Kk44Oq44Ki44K544Gu5aSJ5pu0
-
-  full_name_looks_good: !binary |
-    44OV44Or44ON44O844Og44Gv5ZWP6aGM44GC44KK44G+44Gb44KT
-
-  dhcp_server: "DHCP\xE3\x82\xB5\xE3\x83\xBC\xE3\x83\x90"
-  done_final_check: "\xE6\x9C\x80\xE7\xB5\x82\xE3\x83\x81\xE3\x82\xA7\xE3\x83\x83\xE3\x82\xAF\xE3\x81\xAE\xE7\xB5\x82\xE4\xBA\x86!"
+  new: "新規"
+  mysql_database_server: "MySQL DB サーバー"
+  logout: "ログアウト"
+  automated_install: "自動インストール"
+  install_code: "インストールコード"
+  create_a_new_user: "新しいユーザーの作成"
+  edit_alias: "エイリアスの変更"
+  full_name_looks_good: "フルネームは問題ありません"
+  dhcp_server: "DHCPサーバ"
+  done_final_check: "最終チェックの終了!"
   there_are_no_applications_available: ""
-  are_you_sure_you_want_to_start_the_server: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB'%{name}' \xE3\x82\x92\xE8\xB5\xB7\xE5\x8B\x95\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
+  are_you_sure_you_want_to_start_the_server: "本当に'%{name}' を起動しますか?"
   root_path: ""
   press: ""
-  home_domain: !binary |
-    44Ob44O844Og44OJ44Oh44Kk44Oz
-
-  edit_static_ip: !binary |
-    44K544K/44OG44Kj44OD44Kv77yp77yw44Gu5aSJ5pu0
-
-  address_already_allocated: !binary |
-    44Ki44OJ44Os44K544GM44GZ44Gn44Gr5LiO44GI44KJ44KM44Gm44GE44G+
-    44GZ
-
-  setup: !binary |
-    44K744OD44OI44Ki44OD44OX
-
+  home_domain: "ホームドメイン"
+  edit_static_ip: "スタティックＩＰの変更"
+  address_already_allocated: "アドレスがすでに与えられています"
+  setup: "セットアップ"
   tags: ""
   this_name_is_not_available: ""
-  are_you_sure_user: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\"%{user}\"\xE3\x82\x92\xE5\x89\x8A\xE9\x99\xA4\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
+  are_you_sure_user: "本当に\"%{user}\"を削除しますか?"
   there_are_no_shares_created: ""
-  mac_address_to_be_filtered_in_format: "\xE3\x83\x95\xE3\x82\xA3\xE3\x83\xAB\xE3\x82\xBF\xE3\x83\xBC\xE3\x81\x99\xE3\x82\x8B\xEF\xBC\xAD\xEF\xBC\xA1\xEF\xBC\xA3\xE3\x82\xA2\xE3\x83\x89\xE3\x83\xAC\xE3\x82\xB9 (\xE4\xBE\x8B\xE3\x80\x8000:11:22:33:44:55)"
-  seconds: !binary |
-    56eS
-
+  mac_address_to_be_filtered_in_format: "フィルターするＭＡＣアドレス (例　00:11:22:33:44:55)"
+  seconds: "秒"
   watchdog: ""
-  live_help: !binary |
-    44Op44Kk44OW44OY44Or44OX
-
-  delete: !binary |
-    5YmK6Zmk
-
-  mac_already_allocated: !binary |
-    77yt77yh77yj44Gv44GZ44Gn44Gr5oyH5a6a44GV44KM44Gm44GE44G+44GZ
-
+  live_help: "ライブヘルプ"
+  delete: "削除"
+  mac_already_allocated: "ＭＡＣはすでに指定されています"
   there_are_no_aliases_defined: ""
   videos: ""
   static_ip_address: ""
-  comment: !binary |
-    44Kz44Oh44Oz44OI
-
-  need_help_logging_in: !binary |
-    44Ot44Kw44Kk44Oz44Gu44OY44Or44OX44GM5b+F6KaB44Gn44GZ44GL77yf
-
-  mac_looks_good: !binary |
-    77yt77yh77yj44Gv5q2j5bi444Gn44GZ
-
+  comment: "コメント"
+  need_help_logging_in: "ログインのヘルプが必要ですか？"
+  mac_looks_good: "ＭＡＣは正常です"
   read_only: ""
-  delete_share: !binary |
-    5YWx5pyJ44KS5YmK6Zmk
-
-  device: !binary |
-    44OH44OQ44Kk44K5
-
+  delete_share: "共有を削除"
+  device: "デバイス"
   never_email_me: ""
-  dns_aliases: !binary |
-    77yk77yu77yz44Ko44Kk44Oq44Ki44K5
-
-  disabling_pdc_will_enable_workgroup_mode: "\xEF\xBC\xB0\xEF\xBC\xA4\xEF\xBC\xA3\xE3\x83\xA2\xE3\x83\xBC\xE3\x83\x89\xE3\x82\x92\xE5\x81\x9C\xE6\xAD\xA2\xE3\x81\x99\xE3\x82\x8B\xE3\x81\xA8Workgroup\xE3\x83\xA2\xE3\x83\xBC\xE3\x83\x89\xE3\x81\xAB\xE5\x88\x87\xE3\x82\x8A\xE6\x9B\xBF\xE3\x82\x8F\xE3\x82\x8A\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\r\n\
-    \xE3\x81\x93\xE3\x82\x8C\xE3\x81\xAF\xE5\x85\xB1\xE6\x9C\x89\xE3\x81\xAE\xE5\x8F\x96\xE3\x82\x8A\xE6\x89\xB1\xE3\x81\x84\xE6\x89\x8B\xE6\xB3\x95\xE3\x81\xA8\xE3\x81\x97\xE3\x81\xA6\xE3\x81\xAE\xE5\xA4\xA7\xE3\x81\x8D\xE3\x81\xAA\xE5\xA4\x89\xE6\x9B\xB4\xE3\x81\xAB\xE3\x81\xAA\xE3\x82\x8A\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\xE3\x81\x93\xE3\x82\x8C\xE3\x81\xAF\xE3\x83\x9B\xE3\x83\xBC\xE3\x83\xA0\xE3\x83\x8D\xE3\x83\x83\xE3\x83\x88\xE3\x83\xAF\xE3\x83\xBC\xE3\x82\xAF\xE3\x81\xAE\xE3\x81\x9F\xE3\x82\x81\xE3\x81\xA7\xE3\x81\x99\xE3\x80\x82 (wiki\xE3\x82\x92\xE5\x8F\x82\xE7\x85\xA7)\r\n\
-    \xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\xEF\xBC\xB0\xEF\xBC\xA4\xEF\xBC\xA3\xE3\x83\xA2\xE3\x83\xBC\xE3\x83\x89\xE3\x82\x92\xE5\x81\x9C\xE6\xAD\xA2\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
-  avanced_settings_is_for_developers: !binary |
-    44Ki44OJ44OQ44Oz44K544OJ5qmf6IO944Gv5LiK57Sa6ICF44GC44KL44GE
-    44Gv6ZaL55m66ICF5ZCR44GR44Gn44GZ
-
+  dns_aliases: "ＤＮＳエイリアス"
+  disabling_pdc_will_enable_workgroup_mode: "ＰＤＣモードを停止するとWorkgroupモードに切り替わります。\r\n\
+    これは共有の取り扱い手法としての大きな変更になります。これはホームネットワークのためです。 (wikiを参照)\r\n\
+    本当にＰＤＣモードを停止しますか?"
+  avanced_settings_is_for_developers: "アドバンスド機能は上級者あるいは開発者向けです"
   poweroff: ""
-  available_for_installation: !binary |
-    77yI44Kk44Oz44K544OI44O844Or5Y+v6IO977yJ
-
-  back: !binary |
-    5oi744KL
-
-  alias_is_not_valid: !binary |
-    44Ko44Kk44Oq44Ki44K544GM54Sh5Yq544Gn44GZ
-
+  available_for_installation: "（インストール可能）"
+  back: "戻る"
+  alias_is_not_valid: "エイリアスが無効です"
   protocol: ""
-  storage: !binary |
-    44K544OI44Os44O844K4
-
+  storage: "ストレージ"
   results_found: ""
-  beta_apps: !binary |
-    44OZ44O844K/44Ki44OX44Oq44Kx44O844K344On44Oz
-
+  beta_apps: "ベータアプリケーション"
   this_feature_is_under_heavy_development: ""
   translate_amahi: ""
-  more: !binary |
-    44KC44Gj44Go
-
-  alias_looks_good: "\xE3\x82\xA8\xE3\x82\xA4\xE3\x83\xAA\xE3\x82\xA2\xE3\x82\xB9\xE3\x81\xAFOK\xE3\x81\xA7\xE3\x81\x99"
+  more: "もっと"
+  alias_looks_good: "エイリアスはOKです"
   preparing_to_uninstall: ""
-  control_panel_for_your_amahi_hdas: "\xE3\x81\x82\xE3\x81\xAA\xE3\x81\x9F\xE3\x81\xAEAmahi HDAs\xE3\x81\xAE\xE3\x82\xB3\xE3\x83\xB3\xE3\x83\x88\xE3\x83\xAD\xE3\x83\xBC\xE3\x83\xAB\xE3\x83\x91\xE3\x83\x8D\xE3\x83\xAB"
+  control_panel_for_your_amahi_hdas: "あなたのAmahi HDAsのコントロールパネル"
   total_space: ""
   valid_email_required_for_service: ""
   there_are_no_applications_installed: ""
-  name_is_not_valid: !binary |
-    5ZCN5YmN44GM5q2j44GX44GP44GC44KK44G+44Gb44KT
-
-  by_signing_up_you_agree_to_the_terms_of_service: "<a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">our terms of service</a>\xE3\x82\x92\xE8\xAA\xAD\xE3\x81\xBF\xE5\x90\x8C\xE6\x84\x8F\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99"
+  name_is_not_valid: "名前が正しくありません"
+  by_signing_up_you_agree_to_the_terms_of_service: "<a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">our terms of service</a>を読み同意します"
   the_url_looks_good: ""
-  mac_address: !binary |
-    77yt77yh77yj44Ki44OJ44Os44K5
-
-  initial_user: !binary |
-    44Om44O844K244O85ZCN
-
-  disk_pooling: !binary |
-    44K544OI44Os44O844K444OX44O844Or
-
-  confirmation_matches: !binary |
-    56K66KqN44Gn44GN44G+44GX44Gf
-
-  cancel: !binary |
-    44Kt44Oj44Oz44K744Or
-
-  enabling_lan_manager_is_less_secure: "Windows 95/98 \xE3\x81\xAEmode authentication\xE3\x81\xAF\xE5\xAE\x89\xE5\x85\xA8\xE3\x81\xA7\xE3\x81\xAF\xE3\x81\xAA\xE3\x81\x8F\xE5\x8F\xA4\xE3\x81\x84\xE3\x82\xB3\xE3\x83\xB3\xE3\x83\x94\xE3\x83\xA5\xE3\x83\xBC\xE3\x82\xBF\xE3\x81\xAB\xE3\x82\x88\xE3\x82\x8B\xE3\x82\xA2\xE3\x82\xAF\xE3\x82\xBB\xE3\x82\xB9\xE3\x82\x92\xE5\x8F\xAF\xE8\x83\xBD\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xA6\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x84\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\r\n\
-    \xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xABWindows 95/98 LanManager authentication\xE3\x82\x92\xE3\x82\xA4\xE3\x83\x8D\xE3\x83\xBC\xE3\x83\x96\xE3\x83\xAB\xE3\x81\xAB\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B\xEF\xBC\x9F"
+  mac_address: "ＭＡＣアドレス"
+  initial_user: "ユーザー名"
+  disk_pooling: "ストレージプール"
+  confirmation_matches: "確認できました"
+  cancel: "キャンセル"
+  enabling_lan_manager_is_less_secure: "Windows 95/98 のmode authenticationは安全ではなく古いコンピュータによるアクセスを可能にしてしまいます。\r\n\
+    本当にWindows 95/98 LanManager authenticationをイネーブルにしますか？"
   url_to_filter: ""
   this_ip_address_will_always_be_statically_associated_to_the_mac_address: ""
-  are_you_sure_you_want_to_restart_the_server: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB'%{name}' \xE3\x82\x92\xE5\x86\x8D\xE8\xB5\xB7\xE5\x8B\x95\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
-  features: !binary |
-    5qmf6IO9
-
-  calendar_name: !binary |
-    44Kr44Os44Oz44OA44O844Gu5ZCN5YmN
-
+  are_you_sure_you_want_to_restart_the_server: "本当に'%{name}' を再起動しますか?"
+  features: "機能"
+  calendar_name: "カレンダーの名前"
   static_ips: ""
-  edit_share: !binary |
-    5YWx5pyJ44Gu5aSJ5pu0
-
-  disabling_lan_manager_will_not_allow_older_machines: "\xE3\x82\xA6\xE3\x82\xA4\xE3\x83\xB3\xE3\x83\x89\xE3\x82\xA6\xE3\x82\xBA95/98 LanManager\xE3\x81\xAE\xE7\x9B\xA3\xE8\xA6\x96\xE3\x82\x92\xE5\x81\x9C\xE6\xAD\xA2\xE3\x81\x99\xE3\x82\x8B\xE3\x81\xA8\xE5\x8F\xA4\xE3\x81\x84\xE3\x82\xB3\xE3\x83\xB3\xE3\x83\x94\xE3\x83\xA5\xE3\x83\xBC\xE3\x82\xBF\xE3\x82\x92\xE5\x85\xB1\xE6\x9C\x89\xE3\x81\xA7\xE3\x81\x8D\xE3\x81\xAA\xE3\x81\x8F\xE3\x81\xAA\xE3\x82\x8A\xE3\x81\xBE\xE3\x81\x99\xE3\x80\x82\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\xE3\x82\xA6\xE3\x82\xA3\xE3\x83\xB3\xE3\x83\x89\xE3\x82\xA6\xE3\x82\xBA95/98\xE3\x81\xAE\xE7\x9B\xA3\xE8\xA6\x96\xE3\x83\xA2\xE3\x83\xBC\xE3\x83\x89\xE3\x82\x92\xE5\x81\x9C\xE6\xAD\xA2\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
+  edit_share: "共有の変更"
+  disabling_lan_manager_will_not_allow_older_machines: "ウインドウズ95/98 LanManagerの監視を停止すると古いコンピュータを共有できなくなります。本当にウィンドウズ95/98の監視モードを停止しますか?"
   this_path_exists_already: ""
-  dhcp_lease: "DHCP\xE3\x83\xAA\xE3\x83\xBC\xE3\x82\xB9"
-  network_settings: !binary |
-    44ON44OD44OI44Ov44O844Kv44Gu6Kit5a6a
-
+  dhcp_lease: "DHCPリース"
+  network_settings: "ネットワークの設定"
   subscribe: ""
-  location: !binary |
-    5aC05omA
-
-  forums: !binary |
-    44OV44Kp44O844Op44Og
-
+  location: "場所"
+  forums: "フォーラム"
   system: ""
-  mac_is_invalid: !binary |
-    77yt77yh77yj44GM5q2j44GX44GP44GC44KK44G+44Gb44KT
-
+  mac_is_invalid: "ＭＡＣが正しくありません"
   url: ""
-  install_code_info: !binary |
-    44GT44Gu44Kk44Oz44K544OI44O844Or44Kz44O844OJ44Gv44GC44Gq44Gf
-    44Gu77yo77yk77yh44Gu6Kit5a6a5oOF5aCx44KS44GZ44G544Gm6Kqt44G/
-    6L6844G/44CB77yo77yk77yh44Gu44Kk44Oz44K544OI44O844Or44Gu5pyA
-    57WC44K544OG44OD44OX44Go44GX44Gm5LiA5bqm44Gg44GR5L2/55So44GX
-    44G+44GZ44CC77yS44Gk5Lul5LiK44Gu44K344K544OG44Og44Gn44Gu5YaN
-    5Yip55So44Gv5rG644GX44Gm44GX44Gq44GE44Gn44GP44Gg44GV44GE44CC
-    44GT44KM44Gv44OA44Kk44OK44Of44OD44Kv77yk77yu77yz44Go77y277yw
-    77yu44Gu5pWF6Zqc5Y6f5Zug44Gr44Gq44KK44G+44GZ44CC5a6f6KGM5Lit
-    44Gu77yo77yk77yh44Gd44KM44Ge44KM44Gr5LiA44Gk44Ga44Gk44OX44Ot
-    44OV44Kh44Kk44Or44KS5L2c5oiQ44GX44Gm44GP44Gg44GV44GE44CC
-
-  logs: !binary |
-    44Ot44Kw
-
-  is_not_being_monitored_24x7: "\xE3\x81\xAF\xE5\xB8\xB8\xE6\x99\x82\xE7\x9B\xA3\xE8\xA6\x96<b>\xE3\x81\x95\xE3\x82\x8C\xE3\x81\xBE\xE3\x81\x9B\xE3\x82\x93</b> "
+  install_code_info: "このインストールコードはあなたのＨＤＡの設定情報をすべて読み込み、ＨＤＡのインストールの最終ステップとして一度だけ使用します。２つ以上のシステムでの再利用は決してしないでください。これはダイナミックＤＮＳとＶＰＮの故障原因になります。実行中のＨＤＡそれぞれに一つずつプロファイルを作成してください。"
+  logs: "ログ"
+  is_not_being_monitored_24x7: "は常時監視<b>されません</b> "
   stop: ""
-  full_name: !binary |
-    44OV44Or44ON44O844Og
-
+  full_name: "フルネーム"
   suggest: ""
   the_ip_looks good: ""
-  changelog: !binary |
-    5pu05paw5bGl5q20
-
+  changelog: "更新履歴"
   new_web_app: ""
   news: ""
   state: ""
-  discussion_forum_for: !binary |
-    44Gu44Gf44KB44Gu44OH44Kj44K544Kr44OD44K344On44Oz44OV44Kp44O8
-    44Op44Og
-
-  all_you_need: !binary |
-    5b+F6KaB44Gq44KC44Gu44GZ44G544Gm
-
+  discussion_forum_for: "のためのディスカッションフォーラム"
+  all_you_need: "必要なものすべて"
   this_application_is_installed: ""
-  are_you_sure: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB\xE5\xAE\x9F\xE8\xA1\x8C\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
-  firewall_port_forward_message: !binary |
-    44GT44KM44KJ44Gu44Or44O844Or44Gr44KI44KK44ON44OD44OI44Ov44O8
-    44Kv44K144O844OT44K544Gu44Od44O844OI44KS44OV44Kh44Kk44Ki44Km
-    44Kq44O844Or5YaF44Gu54m55a6a44Gu44Oe44K344Oz44Gr6Ieq5YuV55qE
-    44Gr44Oq44OA44Kk44Os44Kv44OI44GZ44KL44GT44Go44GM44Gn44GN44G+
-    44GZ44CC44GT44KM44KJ44Gu6Kit5a6a44Gv44CB44OV44Kh44Kk44Ki44Km
-    44Kq44O844Or5YaF44Gu44Ot44O844Kr44Or44ON44OD44OI44Ov44O844Kv
-    5LiK44Gn44Km44Ko44OW44KE44Oh44O844Or44Gq44Gp44Gu44K144O844OQ
-    44O844KS44Ob44K544OI44GZ44KL5aC05ZCI44Gr44Gu44G/5b+F6KaB44Gn
-    44GZ44CC
-
-  contribute: !binary |
-    6LKi54yu
-
+  are_you_sure: "本当に実行しますか?"
+  firewall_port_forward_message: "これらのルールによりネットワークサービスのポートをファイアウオール内の特定のマシンに自動的にリダイレクトすることができます。これらの設定は、ファイアウオール内のローカルネットワーク上でウエブやメールなどのサーバーをホストする場合にのみ必要です。"
+  contribute: "貢献"
   start_now: ""
   reboot: ""
   the_mac_looks_good: ""
-  ip_address: !binary |
-    77yp77yw44Ki44OJ44Os44K5
-
-  change_your_account_settings: !binary |
-    44GC44Gq44Gf44Gu44Ki44Kr44Km44Oz44OI44Gu6Kit5a6a5aSJ5pu0
-
+  ip_address: "ＩＰアドレス"
+  change_your_account_settings: "あなたのアカウントの設定変更"
   this_application_is_installed_already_please_refresh: ""
-  address_is_not_valid: !binary |
-    44Ki44OJ44Os44K544GM5q2j44GX44GP44GC44KK44G+44Gb44KT
-
-  control: !binary |
-    44Kz44Oz44OI44Ot44O844Or
-
+  address_is_not_valid: "アドレスが正しくありません"
+  control: "コントロール"
   date: 
     order: 
     - :year
     - :month
     - :day
     abbr_day_names: 
-    - !binary |
-      5pel
-
-    - !binary |
-      5pyI
-
-    - !binary |
-      54Gr
-
-    - !binary |
-      5rC0
-
-    - !binary |
-      5pyo
-
-    - !binary |
-      6YeR
-
-    - !binary |
-      5Zyf
-
+    - "日"
+    - "月"
+    - "火"
+    - "水"
+    - "木"
+    - "金"
+    - "土"
     formats: 
       default: "%Y/%m/%d"
       short: "%m/%d"
-      long: "%Y\xE5\xB9\xB4%m\xE6\x9C\x88%d\xE6\x97\xA5(%a)"
+      long: "%Y年%m月%d日(%a)"
     abbr_month_names: 
     - 
-    - "1\xE6\x9C\x88"
-    - "2\xE6\x9C\x88"
-    - "3\xE6\x9C\x88"
-    - "4\xE6\x9C\x88"
-    - "5\xE6\x9C\x88"
-    - "6\xE6\x9C\x88"
-    - "7\xE6\x9C\x88"
-    - "8\xE6\x9C\x88"
-    - "9\xE6\x9C\x88"
-    - "10\xE6\x9C\x88"
-    - "11\xE6\x9C\x88"
-    - "12\xE6\x9C\x88"
+    - "1月"
+    - "2月"
+    - "3月"
+    - "4月"
+    - "5月"
+    - "6月"
+    - "7月"
+    - "8月"
+    - "9月"
+    - "10月"
+    - "11月"
+    - "12月"
     month_names: 
     - 
-    - "1\xE6\x9C\x88"
-    - "2\xE6\x9C\x88"
-    - "3\xE6\x9C\x88"
-    - "4\xE6\x9C\x88"
-    - "5\xE6\x9C\x88"
-    - "6\xE6\x9C\x88"
-    - "7\xE6\x9C\x88"
-    - "8\xE6\x9C\x88"
-    - "9\xE6\x9C\x88"
-    - "10\xE6\x9C\x88"
-    - "11\xE6\x9C\x88"
-    - "12\xE6\x9C\x88"
+    - "1月"
+    - "2月"
+    - "3月"
+    - "4月"
+    - "5月"
+    - "6月"
+    - "7月"
+    - "8月"
+    - "9月"
+    - "10月"
+    - "11月"
+    - "12月"
     day_names: 
-    - !binary |
-      5pel5puc5pel
-
-    - !binary |
-      5pyI5puc5pel
-
-    - !binary |
-      54Gr5puc5pel
-
-    - !binary |
-      5rC05puc5pel
-
-    - !binary |
-      5pyo5puc5pel
-
-    - !binary |
-      6YeR5puc5pel
-
-    - !binary |
-      5Zyf5puc5pel
-
-  email_me: !binary |
-    44Oh44O844Or44KS6YCB44Gj44Gm44GP44Gg44GV44GE
-
+    - "日曜日"
+    - "月曜日"
+    - "火曜日"
+    - "水曜日"
+    - "木曜日"
+    - "金曜日"
+    - "土曜日"
+  email_me: "メールを送ってください"
   powerful_simple_home_networking: ""
   there_are_no_users: ""
-  create_a_new_share: !binary |
-    5paw44GX44GE5YWx5pyJ44Gu5L2c5oiQ
-
-  my_account: !binary |
-    6Ieq5YiG44Gu44Ki44Kr44Km44Oz44OI
-
+  create_a_new_share: "新しい共有の作成"
+  my_account: "自分のアカウント"
   status: ""
-  network: !binary |
-    44ON44OD44OI44Ov44O844Kv
-
+  network: "ネットワーク"
   dhcp: DHCP
-  new_user: !binary |
-    5paw44GX44GE44Om44O844K244O8
-
-  servers: !binary |
-    44K144O844OQ44O8
-
-  confirm: !binary |
-    56K66KqN
-
-  installation_instructions: !binary |
-    44Kk44Oz44K544OI44O844Or44Gu5pa55rOV
-
-  access: !binary |
-    44Ki44Kv44K744K5
-
+  new_user: "新しいユーザー"
+  servers: "サーバー"
+  confirm: "確認"
+  installation_instructions: "インストールの方法"
+  access: "アクセス"
   this_looks_like_a_database_corruption_please_report_it: ""
-  created: !binary |
-    5L2c5oiQ44Gn44GN44G+44GX44Gf
-
+  created: "作成できました"
   new_dns_alias: ""
   static_ip_address_for_your_hda: ""
-  model: !binary |
-    44Oi44OH44Or
-
+  model: "モデル"
   setting_dmz_failed: ""
-  create_a_new_webapp: !binary |
-    5paw44GX44GE44Km44Kn44OW44Ki44OX44Oq44Kx44O844K344On44Oz44Gu
-    5L2c5oiQ
-
-  community: !binary |
-    44Kz44Of44Ol44OL44OG44Kj
-
-  dynamic_dns: !binary |
-    44OA44Kk44OK44Of44OD44Kv77yk77yu77yz
-
-  are_you_sure_you_want_to_delete_alias: "\xE6\x9C\xAC\xE5\xBD\x93\xE3\x81\xAB'%{name}' \xE3\x81\xAE\xE3\x82\xA8\xE3\x82\xA4\xE3\x83\xAA\xE3\x82\xA2\xE3\x82\xB9\xE3\x82\x92\xE5\x89\x8A\xE9\x99\xA4\xE3\x81\x97\xE3\x81\xBE\xE3\x81\x99\xE3\x81\x8B?"
+  create_a_new_webapp: "新しいウェブアプリケーションの作成"
+  community: "コミュニティ"
+  dynamic_dns: "ダイナミックＤＮＳ"
+  are_you_sure_you_want_to_delete_alias: "本当に'%{name}' のエイリアスを削除しますか?"
   username_or_email: ""
-  my_apps: !binary |
-    6Ieq5YiG44Gu44Ki44OX44Oq44Kx44O844K344On44Oz
-
-  edit_user: "[\xE3\x83\xA6\xE3\x83\xBC\xE3\x82\xB6\xE3\x81\xAE\xE7\xB7\xA8\xE9\x9B\x86"
-  email: !binary |
-    44Oh44O844Or
-
+  my_apps: "自分のアプリケーション"
+  edit_user: "[ユーザの編集"
+  email: "メール"
   the_ip_address_can_be: ""
   the_name_cannot_be_blank: ""
   the_ip_address_cannot_be_empty: ""
   submit_for_debug: ""
-  delete_profile: !binary |
-    44Gu44OX44Ot44OV44Kh44Kk44Or44KS5YmK6Zmk
-
-  delete_static_ip: "\xE3\x82\xB9\xE3\x82\xBF\xE3\x83\x86\xE3\x82\xA3\xE3\x83\x83\xE3\x82\xAFIP\xE3\x82\x92\xE5\x89\x8A\xE9\x99\xA4"
-  apache_web_server: !binary |
-    44Ki44OR44OD44OB44CA44Km44Kn44OW44CA44K144O844OQ44O8
-
-  awake_this_device_via_wol: このデバイスの電源をオン
+  delete_profile: "のプロファイルを削除"
+  delete_static_ip: "スタティックIPを削除"
+  apache_web_server: "アパッチ　ウェブ　サーバー"
+  awake_this_device_via_wol: "このデバイスの電源をオン"
