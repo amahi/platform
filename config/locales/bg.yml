@@ -1,806 +1,223 @@
 --- 
 bg: 
-  new_user: !binary |
-    0J3QvtCyINCf0L7RgtGA0LXQsdC40YLQtdC7
-
-  alias_is_taken_already: !binary |
-    0JjQt9Cx0YDQsNC90LjRj9GCINC/0YHQtdCy0LTQvtC90LjQvCDQstC10YfQ
-    tSDQtSDQt9Cw0LXRgiDQuNC70Lgg0LUg0YDQtdC30LXRgNCy0LjRgNCw0L0=
-
-  storage: !binary |
-    0KHRgtC+0YDQuNC00LY=
-
-  user_name_is_not_available: !binary |
-    0J/QvtGC0YDQtdCx0LjRgtC10LvRgdC60L7RgtC+INC40LzQtSDQvdC1INC1
-    INGB0LLQvtCx0L7QtNC90L4=
-
-  platform: !binary |
-    0J/Qu9Cw0YLRhNC+0YDQvNCw
-
-  are_you_sure_share: !binary |
-    0KHQuNCz0YPRgNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1
-    INC00LAg0LjQt9GC0YDQuNC10YLQtSDRgdC/0L7QtNC10LvQtdC90LjRjyDQ
-    tNGP0LsgInt7c2hhcmV9fSI/
-
-  these_rules_are_used_to_restrict_ips: !binary |
-    0KLQtdC30Lgg0L/RgNCw0LLQuNC70LAg0YHQtSDQuNC30L/QvtC70LfQstCw
-    0YIsINC30LAg0L7Qs9GA0LDQvdC40YfQsNCy0LDQvdC1INC90LAg0L/QsNC6
-    0LXRgtC40YLQtSDRgSDQtNCw0L3QvdC4INC+0YIgSVAg0LDQtNGA0LXRgSDQ
-    vtGCINC70L7QutCw0LvQvdCw0YLQsCDQstC4INC80YDQtdC20LAg0LrRitC8
-    INCY0L3RgtC10YDQvdC10YIuDQrQo9C/0L7RgtGA0LXQsdCw0YLQsCDQvdCw
-    INGC0LDQutC40LLQsCDRhNC40LvRgtGA0Lgg0LzQvtC20LUg0LTQsCDQsdGK
-    0LTQtSDQv9C+0LvQtdC30L3QsCDQv9GA0Lgg0LfQsNGJ0LjRgtCw0YLQsCDQ
-    uNC70Lgg0L/QvtGB0YLQsNCy0Y/QvdC10YLQviDQvdCwINC+0LPRgNCw0L3Q
-    uNGH0LXQvdC40Y8g0L3QsCDQstCw0YjQsNGC0LAg0LvQvtC60LDQu9C90LAg
-    0LzRgNC10LbQsC4=
-
-  this_looks_like_a_database_corruption_please_report_it: !binary |
-    0JjQt9Cz0LvQtdC20LTQsCDQuNC80LAg0L/QvtCy0YDQtdC00LAg0LIg0LHQ
-    sNC30LDRgtCwINC+0YIg0LTQsNC90L3QuCDQuNC70Lgg0LUg0L3Rj9C60LDQ
-    utGK0LIg0LHRitCzICjQvNC+0LvRjywgPGEgaHJlZj0iaHR0cDovL2J1Z3Mu
-    YW1haGkub3JnIj7QtNC+0LrQu9Cw0LTQstCw0LnRgtC1INC90Lgg0LPQvjwv
-    YT4pLg==
-
-  mac_looks_good: !binary |
-    TUFDINC40LfQs9C70LXQttC00LAg0LTQvtCx0YDQtQ==
-
-  wiki: !binary |
-    0KPQuNC60Lg=
-
-  confirm_email: !binary |
-    0J/QvtGC0LLRitGA0LTQtdGC0LUg0LDQtNGA0LXRgdCwINC90LAg0LXQu9C1
-    0LrRgtGA0L7QvdC90LDRgtCwINC/0L7RidCw
-
-  last_login: !binary |
-    0J/QvtGB0LvQtdC00L3QviDQstC70LjQt9Cw0L3QtQ==
-
-  setup: !binary |
-    0JjQvdGB0YLQsNC70LDRhtC40Y8=
-
-  start_at_boot_time: !binary |
-    0JfQsNGA0LXQtNC4INC/0YDQuCDRgdGC0LDRgNGC0LjRgNCw0L3QtSDQvdCw
-    INGB0LjRgdGC0LXQvNCw0YLQsA==
-
-  news_about_applications: !binary |
-    0J3QvtCy0LjQvdC4INC30LAg0L/RgNC40LvQvtC20LXQvdC40Y8sINC60L7Q
-    uNGC0L4g0YDQsNCx0L7RgtGP0YIg0YEgQW1haGk=
-
-  delete_user: !binary |
-    0JjQt9GC0YDQuNC5INC/0L7RgtGA0LXQsdC40YLQtdC70Y8=
-
-  delete_profile: !binary |
-    0JjQt9GC0YDQuNCy0LDQvdC1INC90LAg0L/RgNC+0YTQuNC70LAg0L3QsA==
-
-  running: !binary |
-    0JjQt9C/0YrQu9C90Y/QstCwINGB0LU=
-
-  start_building_a_new_hda: !binary |
-    0JjQt9Cz0YDQsNC00Lgg0L3QvtCyIEhEQSE=
-
-  delete: !binary |
-    0JjQt9GC0YDQuNC5
-
-  name_is_taken_already: !binary |
-    0JjQvNC10YLQviDQstC10YfQtSDQtSDQt9Cw0LXRgtC+
-
-  unleash_the_power_of_your_home_network: !binary |
-    0J7RgdCy0L7QsdC+0LTQtdGC0LUg0LzQvtGJ0YLQsCDQvdCwINC00L7QvNCw
-    0YjQvdCw0YLQsCDRgdC4INC80YDQtdC20LAu
-
-  are_you_sure_webapp: !binary |
-    0KHQuNCz0YPRgNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1
-    INC00LAg0LjQt9GC0YDQuNC10YLQtSDQvNGA0LXQttC+0LLQvtGC0L4g0L/R
-    gNC40LvQvtC20LXQvdC40LUgInt7d2ViYXBwfX0/
-
-  automated_install: !binary |
-    0JDQstGC0L7QvNCw0YLQuNC30LjRgNCw0L3QsCDQuNC90YHRgtCw0LvQsNGG
-    0LjRjw==
-
-  need_help_logging_in: !binary |
-    0J3Rg9C20LTQsNC10YLQtSDRgdC1INC+0YIg0L/QvtC80L7RiSwg0LfQsCDQ
-    tNCwINCy0LvQtdC30LXRgtC1Pw==
-
-  confirm_password: !binary |
-    0J/QvtGC0LLRitGA0LTQtdGC0LUg0L/QsNGA0L7Qu9Cw0YLQsA==
-
-  installed_paren: !binary |
-    KNCY0L3RgdGC0LDQu9C40YDQsNC9KQ==
-
-  tour: !binary |
-    0J7QsdC40LrQvtC70LrQsA==
-
-  address_already_allocated: !binary |
-    0JDQtNGA0LXRgdGK0YIg0LLQtdGH0LUg0LUg0YDQsNC30LTQsNC00LXQvQ==
-
-  new: !binary |
-    0J3QvtCy
-
-  are_you_sure_you_want_to_stop_the_server: !binary |
-    0J3QsNC40YHRgtC40L3QsCDQu9C4INC40YHQutCw0YLQtSDQtNCwINGB0L/R
-    gNC10YLQtSB7e25hbWV9fT8=
-
-  disabling_pdc_will_enable_workgroup_mode: !binary |
-    0JTQtdCw0LrRgtC40LLQuNGA0LDQvdC10YLQviBQREMg0YDQtdC20LjQvNCw
-    INGJ0LUg0YDQsNC30YDQtdGI0Lgg0YDQtdC20LjQvNCwIFdvcmtncm91cC4N
-    CtCi0L7QstCwINC1INCX0J3QkNCn0JjQotCV0JvQndCQINC/0YDQvtC80Y/Q
-    vdCwINCyINC90LDRh9C40L3QsCwg0L/QviDQutC+0LnRgtC+INGA0LDQsdC+
-    0YLRj9GCINGB0L/QvtC00LXQu9C10L3QuNGC0LUg0LTRj9C70L7QstC1LiDQ
-    otC+0LLQsCDQtSDQv9GA0LXQtNC90LDQt9C90LDRh9C10L3QviDQt9CwINC0
-    0L7QvNCw0YjQvdC4INC80YDQtdC20LggKNC/0YDQvtCy0LXRgNC10YLQtSDR
-    g9C40LrQuC3RgtC+INC30LAg0L/QvtCy0LXRh9C1KS4gDQrQodC40LPRg9GA
-    0L3QuCDQu9C4INGB0YLQtSwg0YfQtSDQuNGB0LrQsNGC0LUg0LTQsCDQuNC3
-    0LrQu9GO0YfQuNGC0LUg0YDQtdC20LjQvNCwIFBEQz8=
-
-  address_looks_good: !binary |
-    0JDQtNGA0LXRgdGK0YIg0LjQt9Cz0LvQtdC20LTQsCDQtNC+0LHRgNC1
-
-  finalize_settings: !binary |
-    0KTQuNC90LDQu9C40LfQuNGA0LDQvdC1INC90LAg0J3QsNGB0YLRgNC+0LnQ
-    utC40YLQtQ==
-
-  confirmation_must_match: !binary |
-    0J/QvtGC0LLRitGA0LbQtNC10L3QuNC10YLQviDRgtGA0Y/QsdCy0LAg0LTQ
-    sCDRgdGK0LLQv9Cw0LTQsA==
-
-  stopped: !binary |
-    0KHQv9GA0Y/QvQ==
-
-  applications: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40Y8=
-
-  this_ip_address_will_always_be_statically_associated_to_the_mac_address: !binary |
-    0KLQvtC30LggSVAgKDEte3ttYXh9fSkg0LDQtNGA0LXRgSDQstC40L3QsNCz
-    0Lgg0YnQtSDQsdGK0LTQtSDRgdGC0LDRgtC40YfQvdC+INCw0YHQvtGG0LjQ
-    uNGA0LDQvSDRgSBNQUMg0LDQtNGA0LXRgdCwINC/0L4t0LTQvtC70YMu
-
-  this_path_exists_already: !binary |
-    0KLQvtC30Lgg0L/RitGCINCy0LXRh9C1INGB0YrRidC10YHRgtCy0YPQstCw
-
-  poweroff: !binary |
-    0JjQt9C60LvRjtGH0LLQsNC90LU=
-
-  router_control: !binary |
-    0KPQv9GA0LDQstC70LXQvdC40LUg0L3QsCDQoNGD0YLQtdGA0LA=
-
-  are_you_sure_you_would_like_to_delete_calendar: !binary |
-    0J3QsNC40YHRgtC40L3QsCDQu9C4INC40YHQutCw0YLQtSDQtNCwINC40LfR
-    gtGA0LjQtdGC0LUge3tjYWxlbmRhcn19Pw==
-
-  port_range_looks_good: !binary |
-    0JfQsNC00LDQtNC10L3QuNGP0YIg0LTQuNCw0L/QsNC30L7QvSDQvtGCINC/
-    0L7RgNGC0L7QstC1INC40LfQs9C70LXQttC00LAg0LTQvtCx0YDQtQ==
-
-  pictures: !binary |
-    0KHQvdC40LzQutC4
-
-  disk: !binary |
-    0JTQuNGB0Lo=
-
-  location: !binary |
-    0JzQtdGB0YLQvtC/0L7Qu9C+0LbQtdC90LjQtQ==
-
-  require_login: !binary |
-    0J3QtdC+0LHRhdC+0LTQuNC80L4g0LUg0LTQsCDQstC70LXQt9C10YLQtQ==
-
-  theme: !binary |
-    0KLQtdC80LA=
-
-  disks: !binary |
-    0JTQuNGB0LrQvtCy0LU=
-
-  rule: !binary |
-    0J/RgNCw0LLQuNC70LA=
-
-  static_ips: !binary |
-    0KHRgtCw0YLQuNGH0L3QuCBJUCDQsNC00YDQtdGB0Lg=
-
-  mac_address_to_be_filtered_in_format: !binary |
-    TUFDINCw0LTRgNC10YEsINC60L7QudGC0L4g0LTQsCDQsdGK0LTQtSDRhNC4
-    0LvRgtGA0LjRgNCw0L0gKNCy0YrQsiDRhNC+0YDQvNCw0YLQsCAwMDoxMToy
-    MjozMzo0NDo1NSku
-
-  my_apps: !binary |
-    0JzQvtC40YLQtSDQn9GA0LjQu9C+0LbQtdC90LjRjw==
-
-  disk_pool_copies: !binary |
-    0JTQvtC/0YrQu9C90LjRgtC10LvQvdC4INC60L7Qv9C40Y8=
-
-  cancel: !binary |
-    0J7RgtC60LDQtw==
-
-  port_range_ports_must_be_increasing_order: !binary |
-    0J/RitGA0LLQuNGP0YIg0L/QvtGA0YIg0YLRgNGP0LHQstCwINC00LAg0LUg
-    0L/Qvi3QvNCw0LvRitC6INC40LvQuCDRgNCw0LLQtdC9INC90LAg0LLRgtC+
-    0YDQuNGP
-
-  password_is_too_short: !binary |
-    0J/QsNGA0L7Qu9Cw0YLQsCDQtSDRgtCy0YrRgNC00LUg0LrRgNCw0YLQutCw
-
-  preparing_to_install: !binary |
-    0J/QvtC00LPQvtGC0L7QstC60LAg0LfQsCDQuNC90YHRgtCw0LvQuNGA0LDQ
-    vdC1IC4uLg==
-
-  model: !binary |
-    0JzQvtC00LXQuw==
-
-  are_you_sure_you_want_to_start_the_server: !binary |
-    0J3QsNC40YHRgtC40L3QsCDQu9C4INC40YHQutCw0YLQtSDQtNCwINGB0YLQ
-    sNGA0YLQuNGA0LDRgtC1IHt7bmFtZX19Pw==
-
-  nickname_info: !binary |
-    ItCf0YHQtdCy0LTQvtC90LjQvNGK0YIiINC1INGD0L3QuNC60LDQu9C90L4g
-    0LjQvNC1INC30LAg0LjQtNC10L3RgtC40YTQuNC60LDRhtC40Y8g0L3QsCDQ
-    stCw0YjQuNGPIEhEQSAoSG9tZSBEaWdpdGFsIEFzc2lzdGFudCAtINCU0L7Q
-    vNCw0YjQtdC9INCm0LjRhNGA0L7QsiDQkNGB0LjRgdGC0LXQvdGCKS4NCtCi
-    0L7QuSDRidC1INCy0Lgg0LUg0L3Rg9C20LXQvSwg0LrQvtCz0LDRgtC+INGB
-    0LUg0YHQstGK0YDQt9Cy0LDRgtC1INC60YrQvCDQstCw0YjQuNGPIDxhIHRh
-    cmdldD0iX2JsYW5rIiBocmVmPSJodHRwOi8vd2lraS5hbWFoaS5vcmcvaW5k
-    ZXgucGhwL1ZQTiI+VlBOPC9hPiDQv9GA0LXQtyA8YSB0YXJnZXQ9Il9ibGFu
-    ayIgaHJlZj0iaHR0cDovL3dpa2kuYW1haGkub3JnL2luZGV4LnBocC9WUE5X
-    aW5kb3dzIj5XaW5kb3dzINC60LvQuNC10L3RgjwvYT4gKNC30LDQtdC00L3Q
-    viDRgSDQv9C+0YLRgNC10LHQuNGC0LXQu9GB0LrQviDQuNC80LUg0Lgg0L/Q
-    sNGA0L7Qu9CwLCDQvtGC0L7RgNC40LfQuNGA0LDQvdC4INCyINC00L7QvNCw
-    0YjQvdCw0YLQsCDQstC4INC80YDQtdC20LApLiA=
-
-  files: !binary |
-    0KTQsNC50LvQvtCy0LU=
-
-  by_signing_up_you_agree_to_the_terms_of_service: !binary |
-    0KEg0LLQv9C40YHQstCw0L3QtdGC0L4g0YHQuCDQsiDRgdC40YHRgtC10LzQ
-    sNGC0LAsINCS0LjQtSDQtNC10LrQu9Cw0YDQuNGA0LDRgtC1LCDRh9C1INGB
-    0YLQtSDQv9GA0L7Rh9C10LvQuCDQuCDRgdC1INGB0YrQs9C70LDRgdGP0LLQ
-    sNGC0LUg0YEgPGEgaHJlZj0iaHR0cDovL3d3dy5hbWFoaS5vcmcvaG9tZS90
-    b3MiIHRhcmdldD0iX2JsYW5rIj7QvdCw0YjQuNGC0LUg0KPRgdC70L7QstC4
-    0Y8g0LfQsCDQv9C+0LvQt9Cy0LDQvdC1PC9hPg==
-
-  the_url_looks_good: !binary |
-    VVJMINCw0LTRgNC10YHRitGCLCDQuNC30LPQu9C10LbQtNCwINC00L7QsdGA
-    0LU=
-
-  application_uninstalled: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40LXRgtC+INCx0LXRiNC1INC00LXQuNC90YHR
-    gtCw0LvQuNGA0LDQvdC+Lg==
-
-  delete_web_app: !binary |
-    0JjQt9GC0YDQuNC5INCj0LXQsSDQn9GA0LjQu9C+0LbQtdC90LjQtdGC0L4=
-
-  free_space: !binary |
-    0KHQstC+0LHQvtC00L3QuA==
-
+  new_user: "Нов Потребител"
+  alias_is_taken_already: "Избраният псевдоним вече е зает или е резервиран"
+  storage: "Сторидж"
+  user_name_is_not_available: "Потребителското име не е свободно"
+  platform: "Платформа"
+  are_you_sure_share: "Сигурни ли сте, че искате да изтриете споделения дял \"{{share}}\"?"
+  these_rules_are_used_to_restrict_ips: "Тези правила се използват, за ограничаване на пакетите с данни от IP адрес от локалната ви мрежа към Интернет.\r\n\
+    Употребата на такива филтри може да бъде полезна при защитата или поставянето на ограничения на вашата локална мрежа."
+  this_looks_like_a_database_corruption_please_report_it: "Изглежда има повреда в базата от данни или е някакъв бъг (моля, <a href=\"http://bugs.amahi.org\">докладвайте ни го</a>)."
+  mac_looks_good: "MAC изглежда добре"
+  wiki: "Уики"
+  confirm_email: "Потвърдете адреса на електронната поща"
+  last_login: "Последно влизане"
+  setup: "Инсталация"
+  start_at_boot_time: "Зареди при стартиране на системата"
+  news_about_applications: "Новини за приложения, които работят с Amahi"
+  delete_user: "Изтрий потребителя"
+  delete_profile: "Изтриване на профила на"
+  running: "Изпълнява се"
+  start_building_a_new_hda: "Изгради нов HDA!"
+  delete: "Изтрий"
+  name_is_taken_already: "Името вече е заето"
+  unleash_the_power_of_your_home_network: "Освободете мощта на домашната си мрежа."
+  are_you_sure_webapp: "Сигурни ли сте, че искате да изтриете мрежовото приложение \"{{webapp}}?"
+  automated_install: "Автоматизирана инсталация"
+  need_help_logging_in: "Нуждаете се от помощ, за да влезете?"
+  confirm_password: "Потвърдете паролата"
+  installed_paren: "(Инсталиран)"
+  tour: "Обиколка"
+  address_already_allocated: "Адресът вече е раздаден"
+  new: "Нов"
+  are_you_sure_you_want_to_stop_the_server: "Наистина ли искате да спрете {{name}}?"
+  disabling_pdc_will_enable_workgroup_mode: "Деактивирането PDC режима ще разреши режима Workgroup.\r\n\
+    Това е ЗНАЧИТЕЛНА промяна в начина, по който работят споделените дялове. Това е предназначено за домашни мрежи (проверете уики-то за повече). \r\n\
+    Сигурни ли сте, че искате да изключите режима PDC?"
+  address_looks_good: "Адресът изглежда добре"
+  finalize_settings: "Финализиране на Настройките"
+  confirmation_must_match: "Потвърждението трябва да съвпада"
+  stopped: "Спрян"
+  applications: "Приложения"
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: "Този IP (1-{{max}}) адрес винаги ще бъде статично асоцииран с MAC адреса по-долу."
+  this_path_exists_already: "Този път вече съществува"
+  poweroff: "Изключване"
+  router_control: "Управление на Рутера"
+  are_you_sure_you_would_like_to_delete_calendar: "Наистина ли искате да изтриете {{calendar}}?"
+  port_range_looks_good: "Зададеният диапазон от портове изглежда добре"
+  pictures: "Снимки"
+  disk: "Диск"
+  location: "Местоположение"
+  require_login: "Необходимо е да влезете"
+  theme: "Тема"
+  disks: "Дискове"
+  rule: "Правила"
+  static_ips: "Статични IP адреси"
+  mac_address_to_be_filtered_in_format: "MAC адрес, който да бъде филтриран (във формата 00:11:22:33:44:55)."
+  my_apps: "Моите Приложения"
+  disk_pool_copies: "Допълнителни копия"
+  cancel: "Отказ"
+  port_range_ports_must_be_increasing_order: "Първият порт трябва да е по-малък или равен на втория"
+  password_is_too_short: "Паролата е твърде кратка"
+  preparing_to_install: "Подготовка за инсталиране ..."
+  model: "Модел"
+  are_you_sure_you_want_to_start_the_server: "Наистина ли искате да стартирате {{name}}?"
+  nickname_info: "\"Псевдонимът\" е уникално име за идентификация на вашия HDA (Home Digital Assistant - Домашен Цифров Асистент).\r\n\
+    Той ще ви е нужен, когато се свързвате към вашия <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> през <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows клиент</a> (заедно с потребителско име и парола, оторизирани в домашната ви мрежа). "
+  files: "Файлове"
+  by_signing_up_you_agree_to_the_terms_of_service: "С вписването си в системата, Вие декларирате, че сте прочели и се съгласявате с <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">нашите Условия за ползване</a>"
+  the_url_looks_good: "URL адресът, изглежда добре"
+  application_uninstalled: "Приложението беше деинсталирано."
+  delete_web_app: "Изтрий Уеб Приложението"
+  free_space: "Свободни"
   url: URL
-  are_you_sure_you_would_like_to_uninstall: !binary |
-    0J3QsNC40YHRgtC40L3QsCDQu9C4INC40YHQutCw0YLQtSDQtNCwINC00LXQ
-    uNC90YHRgtCw0LvQuNGA0LDRgtC1INGC0L7QstCwINC/0YDQuNC70L7QttC1
-    0L3QuNC1Pw0K0JLRgdC40YfQutC4INC00LDQvdC90LgsINGB0LLRitGA0LfQ
-    sNC90Lgg0YEg0L/RgNC40LvQvtC20LXQvdC40LXRgtC+INGJ0LUg0LHRitC0
-    0LDRgiDQuNC30YLRgNC40YLQuC4=
-
-  temperature: !binary |
-    0KLQtdC80L/QtdGA0LDRgtGD0YDQsA==
-
-  users: !binary |
-    0J/QvtGC0YDQtdCx0LjRgtC10LvQuA==
-
-  debug: !binary |
-    0J/RgNC+0YHQu9C10LTQuA==
-
-  the_ip_address_can_be: !binary |
-    SVAg0LDQtNGA0LXRgdGK0YIg0LzQvtC20LUg0LTQsCDQsdGK0LTQtQ==
-
-  read_only: !binary |
-    0KHQsNC80L4g0LfQsCDRh9C10YLQtdC90LU=
-
-  install_code_info: !binary |
-    0KLQvtC30Lgg0LjQvdGB0YLQsNC70LDRhtC40L7QvdC10L0g0LrQvtC0INC+
-    0LHRhdCy0LDRidCwINCy0YHQuNGH0LrQuCDQvdCw0YHRgtGA0L7QudC60Lgg
-    0L3QsCDQstCw0YjQtdGC0L4gSERBINC4INGB0LUg0LjQt9C/0L7Qu9C30LLQ
-    sCDQtdC00L3QvtC60YDQsNGC0L3Qviwg0LIg0L/QvtGB0LvQtdC00L3QsNGC
-    0LAg0YHRgtGK0L/QutCwINC+0YIg0LjQvdGB0YLQsNC70LjRgNCw0L3QtdGC
-    0L4g0L3QsCDQstCw0YjQtdGC0L4gSERBLiDQndCVINCi0KDQr9CR0JLQkCDQ
-    tNCwINCz0L4g0LjQt9C/0L7Qu9C30LLQsNGC0LUg0L3QsCDQtNCy0LUg0LjQ
-    u9C4INC/0L7QstC10YfQtSDRgNCw0LHQvtGC0LXRidC4INGB0LjRgdGC0LXQ
-    vNC4LCDRgtGK0Lkg0LrQsNGC0L4g0YLQvtCy0LAg0YnQtSDRgNCw0LfRgNGD
-    0YjQuCDQlNC40L3QsNC80LjRh9C90LjRjyBETlMg0LggVlBOLdCwLiDQodGK
-    0LfQtNCw0LnRgtC1INC+0YLQtNC10LvQtdC9INC/0YDQvtGE0LjQuyDQt9Cw
-    INCy0YHRj9C60L4gSERBLCDQutC+0LXRgtC+INC40LfQv9C+0LvQt9Cy0LDR
-    gtC1Lg==
-
-  url_filtering: !binary |
-    VVJMINGE0LjQu9GC0YDQuNGA0LDQvdC1
-
-  available: !binary |
-    0J3QsCDRgNCw0LfQv9C+0LvQvtC20LXQvdC40LU=
-
-  this_will_power_off: !binary |
-    0KLQvtCy0LAg0YnQtSDQuNC30LrQu9GO0YfQtdGC0LUg0LLQsNGI0LjRjyBI
-    REEuDQrQkNC60L4g0YHRgtC1INC40LfQv9C+0LvQt9Cy0LDQu9C4IEhEQSDQ
-    t9CwIERIQ1Ag0YHRitGA0LLRitGALCDRidC1INGC0YDRj9Cx0LLQsCDQtNCw
-    INCy0LrQu9GO0YfQuNGC0LUg0YTRg9C90LrRhtC40Y/RgtCwIERIQ1Ag0YHR
-    itGA0LLRitGAINC90LAg0YDRg9GC0LXRgNCwINGB0LguIA0K0KHQuNCz0YPR
-    gNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1INC00LAg0L/R
-    gNC+0LTRitC70LbQuNGC0LU/
-
-  edit_static_ip: !binary |
-    0KDQtdC00LDQutGC0LjRgNCw0L3QtSDQvdCwINCh0YLQsNGC0LjRh9C10L0g
-    SVA=
-
-  add_extra_parameters: !binary |
-    KNC00L7QsdCw0LLQtdGC0LUg0LTQvtC/0YrQu9C90LjRgtC10LvQvdC4INC/
-    0LDRgNCw0LzQtdGC0YDQuCk=
-
-  system_info: !binary |
-    0KHQuNGB0YLQtdC80L3QsCDQuNC90YTQvtGA0LzQsNGG0LjRjw==
-
-  this_path_is_not_available: !binary |
-    0KLQvtC30Lgg0L/RitGCINC90LUg0LUg0LTQvtGB0YLRitC/0LXQvQ==
-
-  firewall_port_filter_message: !binary |
-    0J/RgNCw0LLQuNC70LDRgtCwINC30LAg0YTQuNC70YLRgNC40YDQsNC90LUg
-    0L3QsCDQv9C+0YDRgtC+0LLQtSDRgdC1INC40LfQv9C+0LvQt9Cy0LDRgiDQ
-    t9CwINC+0LPRgNCw0L3QuNGH0LDQstCw0L3QtSDQvdCwINC/0LDQutC10YLQ
-    uNGC0LUg0YEg0LTQsNC90L3QuCDQvtGCINC70L7QutCw0LvQvdCw0YLQsCDQ
-    vNGA0LXQttCwINC60YrQvCDQmNC90YLQtdGA0L3QtdGCLg==
-
-  press: !binary |
-    0J3QsNGC0LjRgdC90LXRgtC1
-
-  share_path_cannot_be_blank: !binary |
-    0J/RitGC0Y/RgiDQtNC+INGB0L/QvtC00LXQu9C10L3QuNGPINC00Y/QuyDQ
-    vdC1INC80L7QttC1INC00LAg0LHRitC00LUg0L/RgNCw0LfQtdC9
-
-  address_is_not_valid: !binary |
-    0JDQtNGA0LXRgdGK0YIg0LUg0L3QtdCy0LDQu9C40LTQtdC9
-
-  create_alias: !binary |
-    0KHRitC30LTQsNCy0LDQvdC1INC90LAg0J/RhtC10LLQtNC+0L3QuNC8
-
-  web: !binary |
-    0KPQtdCx
-
-  delete_alias: !binary |
-    0JjQt9GC0YDQuNC5INCf0YHQtdCy0LTQvtC90LjQvNCw
-
-  recover: !binary |
-    0JLRitC30YHRgtCw0L3QvtCy0Y/QstCw0L3QtQ==
-
-  installed: !binary |
-    0JjQvdGB0YLQsNC70LjRgNCw0L0=
-
-  core: !binary |
-    0K/QtNGA0L4=
-
-  start_now: !binary |
-    0J3QsNGH0LDQu9C+
-
-  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40LXRgtC+INGB0LUg0L3QsNGC0YrQutC90LAg
-    0L3QsCDQs9GA0LXRiNC60LAuINCh0LvQtdC0INC80LDQu9C60L4g0YnQtSDQ
-    sdGK0LTQtdGC0LUg0L/RgNC10L3QsNGB0L7Rh9C10L3QuCDQutGK0Lwg0YHR
-    gtGA0LDQvdC40YbQsNGC0LAg0YEg0LTQvdC10LLQvdC40LrQsCDQvdCwINCz
-    0YDQtdGI0LrQuNGC0LUu
-
-  application: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40LU=
-
-  advanced_settings: !binary |
-    0KDQsNC30YjQuNGA0LXQvdC4INC90LDRgdGC0YDQvtC50LrQuA==
-
-  check_the_features_take_the_tour: !binary |
-    0JfQsNC/0L7Qt9C90LDQudGC0LUg0YHQtSDRgSDQvdCw0LvQuNGH0L3QuNGC
-    0LUg0YTRg9C90LrRhtC40LjRgtC1LCDQt9Cw0L/QvtGH0L3QtdGC0LUg0YDQ
-    sNC30YXQvtC00LrQsNGC0LAg0LjQu9C4LCDQsNC60L4g0YHRgtC1INC90LXR
-    gtGK0YDQv9C10LvQuNCy0LggLS0=
-
-  this_will_stop_the_server_permanently: !binary |
-    0KLQvtCy0LAg0YnQtSDRgdC/0YDQtSB7e25hbWV9fSDQntCa0J7QndCn0JDQ
-    otCV0JvQndCeLg==
-
-  your_control_panel: !binary |
-    0JLQsNGI0LjRj9GCINCa0L7QvdGC0YDQvtC70LXQvSDRhtC10L3RgtGK0YA=
-
-  full_name: !binary |
-    0J/RitC70L3QviDQuNC80LU=
-
-  shares: !binary |
-    0KHQv9C+0LTQtdC70LXQvdC4
-
-  manage_themes: !binary |
-    0KPQv9GA0LDQstC70Y/QstCw0L3QtSDQvdCwINGC0LXQvNC4
-
-  discussion_forum_for: !binary |
-    0JTQuNGB0LrRg9GB0LjQvtC90LXQvSDRhNC+0YDRg9C8INC90LAg0YLQtdC8
-    0LA=
-
-  tracker: !binary |
-    0KLRgNCw0LrQtdGA
-
-  rule_type: !binary |
-    0KLQuNC/0L7QstC1INC/0YDQsNCy0LjQu9Cw
-
-  aliases: !binary |
-    0J/RgdC10LLQtNC+0L3QuNC80Lg=
-
-  network: !binary |
-    0JzRgNC10LbQsA==
-
-  change_your_account_settings: !binary |
-    0J/RgNC+0LzQtdC90LXRgtC1INC90LDRgdGC0YDQvtC50LrQuNGC0LUg0L3Q
-    sCDQv9GA0L7RhNC40LvQsCDRgdC4
-
-  port_range_ports_must_be_0_to_64k: !binary |
-    0J/QvtGA0YLQvtCy0LXRgtC1INGC0YDRj9Cx0LLQsNC00LAg0YHQsCDQsiDQ
-    tNC40LDQv9Cw0LfQvtC90LAgMC02NTUzNQ==
-
-  share_path_is_available: !binary |
-    0J/RitGC0Y/RgiDQtNC+INGB0L/QvtC00LXQu9C10L3QuNGPINC00Y/QuyDQ
-    tSDQtNC+0YHRgtGK0L/QtdC9
-
-  this_could_be_due_to_lack_of_network_connectivity: !binary |
-    0KLQvtCy0LAg0LHQuCDQvNC+0LPQu9C+INC00LAg0YHQtSDQtNGK0LvQttC4
-    INC90LAg0LvQuNC/0YHQsNGC0LAg0L3QsCDQstGA0YrQt9C60LAg0YEg0LzR
-    gNC10LbQsNGC0LAu
-
-  enabling_lan_manager_is_less_secure: !binary |
-    0KDQsNC30YDQtdGI0LDQstCw0L3QtdGC0L4g0L3QsCBXaW5kb3dzIDk1Lzk4
-    INGA0LXQttC40LzQsCDQt9CwINCw0LLRgtC10L3RgtC40LrQsNGG0LjRjyDR
-    idC1INC/0L7QvdC40LbQuCDRgdC40LPRg9GA0L3QvtGB0YLRgtCwICDQuCDQ
-    vNC+0LbQtSDQtNCwINC/0L7QvNC+0LPQvdC1INC90LAg0LTQvtGB0YLRitC/
-    0LAg0YEg0L7RgiDQv9C+LdGB0YLQsNGA0Lgg0LzQsNGI0LjQvdC4Lg0K0KHQ
-    uNCz0YPRgNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1INC0
-    0LAg0LDQutGC0LjQstC40YDQsNGC0LUgV2luZG93cyA5NS85OCBMYW5NYW5h
-    Z2VyINCw0LLRgtC10L3RgtC40LrQsNGG0LjRjz8=
-
-  special_instructions: !binary |
-    0KHQv9C10YbQuNCw0LvQvdC4INC40L3RgdGC0YDRg9C60YbQuNC4
-
-  there_are_no_dynamic_dhcp_leases_outstanding: !binary |
-    0JLRgdC1INC+0YnQtSDQvdGP0LzQsCDRgNCw0LfQtNCw0LTQtdC90Lgg0LTQ
-    uNC90LDQvNC40YfQvdC4IERIQ1Ag0LDQtNGA0LXRgdC4Lg==
-
-  login: !binary |
-    0JLQu9C10Lc=
-
-  edit_share: !binary |
-    0KDQtdC00LDQutGC0LjRgNCw0L3QtSDQvdCwINGB0L/QvtC00LXQu9C10L0g
-    0LTRj9C7
-
-  dhcp_lease: !binary |
-    REhDUCDQoNCw0LfQtNCw0LLQsNC90LU=
-
-  change: !binary |
-    0J/RgNC+0LzQtdC90Lg=
-
-  status: !binary |
-    0KHRitGB0YLQvtGP0L3QuNC1
-
-  not_updating: !binary |
-    0J3QtSDRgdC1INCQ0LrRgtGD0LDQu9C40LfQuNGA0LA=
-
-  videos: !binary |
-    0JLQuNC00LXQviDRhNCw0LnQu9C+0LLQtQ==
-
-  dhcp_active: !binary |
-    0JDQutGC0LjQstC10L0=
-
-  restart: !binary |
-    0KDQtdGB0YLQsNGA0YLQuNGA0LDQvdC1
-
-  confirm: !binary |
-    0J/QvtGC0LLRitGA0LTQuA==
-
-  name_is_not_valid: !binary |
-    0JjQvNC10YLQviDQvdC1INC1INCy0LDQu9C40LTQvdC+
-
-  sign_out: !binary |
-    0JjQt9GF0L7QtA==
-
-  this_application_is_installed_already_please_refresh: !binary |
-    0KLQvtCy0LAg0L/RgNC40LvQvtC20LXQvdC40LUg0LLQtdGH0LUg0LUg0LjQ
-    vdGB0YLQsNC70LjRgNCw0L3Qvi4g0JzQvtC70Y8sINC/0YDQtdC30LDRgNC1
-    0LTQtdGC0LUg0YLQsNC30Lgg0YHRgtGA0LDQvdC40YbQsC4=
-
-  state: !binary |
-    0KHRgtCw0YLRg9GB
-
-  new_web_app: !binary |
-    0J3QvtCy0L4g0KPQtdCxINCf0YDQuNC70L7QttC10L3QuNC1
-
+  are_you_sure_you_would_like_to_uninstall: "Наистина ли искате да деинсталирате това приложение?\r\n\
+    Всички данни, свързани с приложението ще бъдат изтрити."
+  temperature: "Температура"
+  users: "Потребители"
+  debug: "Проследи"
+  the_ip_address_can_be: "IP адресът може да бъде"
+  read_only: "Само за четене"
+  install_code_info: "Този инсталационен код обхваща всички настройки на вашето HDA и се използва еднократно, в последната стъпка от инсталирането на вашето HDA. НЕ ТРЯБВА да го използвате на две или повече работещи системи, тъй като това ще разруши Динамичния DNS и VPN-а. Създайте отделен профил за всяко HDA, което използвате."
+  url_filtering: "URL филтриране"
+  available: "На разположение"
+  this_will_power_off: "Това ще изключете вашия HDA.\r\n\
+    Ако сте използвали HDA за DHCP сървър, ще трябва да включите функцията DHCP сървър на рутера си. \r\n\
+    Сигурни ли сте, че искате да продължите?"
+  edit_static_ip: "Редактиране на Статичен IP"
+  add_extra_parameters: "(добавете допълнителни параметри)"
+  system_info: "Системна информация"
+  this_path_is_not_available: "Този път не е достъпен"
+  firewall_port_filter_message: "Правилата за филтриране на портове се използват за ограничаване на пакетите с данни от локалната мрежа към Интернет."
+  press: "Натиснете"
+  share_path_cannot_be_blank: "Пътят до споделения дял не може да бъде празен"
+  address_is_not_valid: "Адресът е невалиден"
+  create_alias: "Създаване на Пцевдоним"
+  web: "Уеб"
+  delete_alias: "Изтрий Псевдонима"
+  recover: "Възстановяване"
+  installed: "Инсталиран"
+  core: "Ядро"
+  start_now: "Начало"
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: "Приложението се натъкна на грешка. След малко ще бъдете пренасочени към страницата с дневника на грешките."
+  application: "Приложение"
+  advanced_settings: "Разширени настройки"
+  check_the_features_take_the_tour: "Запознайте се с наличните функциите, започнете разходката или, ако сте нетърпеливи --"
+  this_will_stop_the_server_permanently: "Това ще спре {{name}} ОКОНЧАТЕЛНО."
+  your_control_panel: "Вашият Контролен център"
+  full_name: "Пълно име"
+  shares: "Споделени"
+  manage_themes: "Управляване на теми"
+  discussion_forum_for: "Дискусионен форум на тема"
+  tracker: "Тракер"
+  rule_type: "Типове правила"
+  aliases: "Псевдоними"
+  network: "Мрежа"
+  change_your_account_settings: "Променете настройките на профила си"
+  port_range_ports_must_be_0_to_64k: "Портовете трябвада са в диапазона 0-65535"
+  share_path_is_available: "Пътят до споделения дял е достъпен"
+  this_could_be_due_to_lack_of_network_connectivity: "Това би могло да се дължи на липсата на връзка с мрежата."
+  enabling_lan_manager_is_less_secure: "Разрешаването на Windows 95/98 режима за автентикация ще понижи сигурността  и може да помогне на достъпа с от по-стари машини.\r\n\
+    Сигурни ли сте, че искате да активирате Windows 95/98 LanManager автентикация?"
+  special_instructions: "Специални инструкции"
+  there_are_no_dynamic_dhcp_leases_outstanding: "Все още няма раздадени динамични DHCP адреси."
+  login: "Влез"
+  edit_share: "Редактиране на споделен дял"
+  dhcp_lease: "DHCP Раздаване"
+  change: "Промени"
+  status: "Състояние"
+  not_updating: "Не се Актуализира"
+  videos: "Видео файлове"
+  dhcp_active: "Активен"
+  restart: "Рестартиране"
+  confirm: "Потвърди"
+  name_is_not_valid: "Името не е валидно"
+  sign_out: "Изход"
+  this_application_is_installed_already_please_refresh: "Това приложение вече е инсталирано. Моля, презаредете тази страница."
+  state: "Статус"
+  new_web_app: "Ново Уеб Приложение"
   email: Email
-  full_name_looks_good: !binary |
-    0JjQvNC10YLQviDQuNC30LPQu9C10LbQtNCwINC00L7QsdGA0LU=
-
-  workgroup_name: !binary |
-    0JjQvNC1INC90LAg0KDQsNCx0L7RgtC90LDRgtCwINCz0YDRg9C/0LA=
-
-  name_looks_good: !binary |
-    0JjQvNC10YLQviDQuNC30LPQu9C10LbQtNCwINC00L7QsdGA0LU=
-
-  new_alias: !binary |
-    0J3QvtCyINCf0YHQtdCy0LTQvtC90LjQvA==
-
-  must_be_logged_in: !binary |
-    0JfQsCDQtNC+0YHRgtGK0L8g0LTQviDRgtCw0LfQuCDRgdC10LrRhtC40Y8g
-    0LUg0L3Rg9C20L3QviDQtNCwINGB0YLQtSDQstC70LXQt9C70Lgg0LIg0YHQ
-    uNGB0YLQtdC80LDRgtCwLg==
-
-  rebooting: !binary |
-    0J/QvtC00LPQvtGC0LLRj9C8INGB0LUg0LfQsCDRgNC10YHRgtCw0YDRgtC4
-    0YDQsNC90LUgLi4u
-
-  uptime: !binary |
-    0JLRgNC10LzQtSDQvtGCINC/0L7RgdC70LXQtNC90LjRjyDRgdGC0LDRgNGC
-
-  disk_pooling: !binary |
-    0KHRgtC+0YDQuNC00LY=
-
-  this_will_reboot: !binary |
-    0KHQuNCz0YPRgNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1
-    INC00LAg0L/RgNC+0LTRitC70LbQuNGC0LU/
-
-  dns_aliases: !binary |
-    RE5TINCf0YHQtdCy0LTQvtC90LjQvNC4
-
-  used_space: !binary |
-    0JjQt9C/0L7Qu9C30LLQsNC90Lg=
-
-  static_ip_address_for_your_hda: !binary |
-    0KHRgtCw0YLQuNGH0LXQvSBJUCDQsNC00YDQtdGBINC30LAg0LLQsNGI0LjR
-    jyBIREE=
-
-  comment: !binary |
-    0JrQvtC80LXQvdGC0LDRgA==
-
-  the_alias_name_you_input_will_be_added: !binary |
-    0JjQvNC10YLQviwg0LrQvtC10YLQviDQstGK0LLQtdGC0LUg0L/Qvi3Qs9C+
-    0YDQtSwg0YnQtSDQsdGK0LTQtSDQtNC+0LHQsNCy0LXQvdC+INC60YrQvCBE
-    TlMg0YHRitGA0LLRitGA0LAg0LrQsNGC0L4g0L/RgNGP0LrQvtGAINC90LAg
-    SVAg0LDQtNGA0LXRgdCwINC/0L4t0LTQvtC70YMu
-
-  root_path: !binary |
-    0J/RitGCINC00L4gUm9vdA==
-
-  search: !binary |
-    0KLRitGA0YHQuA==
-
-  upcoming: !binary |
-    0J/RgNC10LTRgdGC0L7Rj9GJ0Lg=
-
-  username_or_email: !binary |
-    0J/QvtGC0YDQtdCx0LjRgtC10LvRgdC60L4g0LjQvNC1INC40LvQuCDQuNC8
-    0LXQudC7
-
-  network_settings: !binary |
-    0JzRgNC10LbQvtCy0Lgg0L3QsNGB0YLRgNC+0LnQutC4
-
-  no_documents_found: !binary |
-    0J3QtSDRgdCwINC90LDQvNC10YDQtdC90Lgg0LTQvtC60YPQvNC10L3RgtC4
-
-  visible: !binary |
-    0JLQuNC00LjQvA==
-
-  create_a_new_share: !binary |
-    0KHRitC30LTQsNCy0LDQvdC1INC90LAg0L3QvtCyINGB0L/QvtC00LXQu9C1
-    0L0g0LTRj9C7
-
-  enabling_pdc_is_a_major_share_change: !binary |
-    0KDQsNC30YDQtdGI0LDQstCw0L3QtdGC0L4g0L3QsCBQREMg0YDQtdC20LjQ
-    vNCwINCy0L7QtNC4INC00L4g0JfQndCQ0KfQmNCi0JXQm9Cd0JAg0L/RgNC+
-    0LzRj9C90LAg0LIg0L3QsNGH0LjQvdCwLCDQv9C+INC60L7QudGC0L4g0YDQ
-    sNCx0L7RgtGP0YIg0YHQv9C+0LTQtdC70LXQvdC40YLQtSDQtNGP0LvQvtCy
-    0LUuDQrQotC+0LLQsCDRidC1INGA0LDQt9GA0LXRiNC4INCU0L7QvNC10LnQ
-    vSDRgNC10LbQuNC80LAg0Lgg0YnQtSDQt9Cw0LHRgNCw0L3QuCDRgNC10LbQ
-    uNC8YSBXb3JrZ3JvdXAsINC60L7QtdGC0L4g0LjQt9C40YHQutCy0LAg0JLQ
-    odCY0KfQmtCYINC80LDRiNC40L3QuCDQtNCwINGB0LAgRW50ZXJwcmlzZSAo
-    0LjQu9C4ICJQUk8iKSDQvNCw0YjQuNC90LgsINC60L7QuNGC0L4g0LjQt9C/
-    0L7Qu9C30LLQsNGCINC/0L7QtNGF0L7QtNGP0YnQuCDQv9GA0LDQstC+0LzQ
-    vtGJ0LjRjy4g0KLQvtC5INC1INC/0YDQtdC00L3QsNC30L3QsNGH0LXQvSDQ
-    t9CwINC60L7RgNC/0L7RgNCw0YLQuNCy0L3QuCDQvNGA0LXQttC4Lg0K0KHQ
-    uNCz0YPRgNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1INC0
-    0LAg0YDQsNC30YDQtdGI0LjRgtC1IFBEQyDRgNC10LbQuNC80LA/
-
-  all_users: !binary |
-    0JLRgdC40YfQutC4INC/0L7RgtGA0LXQsdC40YLQtdC70Lg=
-
-  delete_static_ip: !binary |
-    0JjQt9GC0YDQuNCy0LDQvdC1INC90LAg0KHRgtCw0YLQuNGH0L3QviBJUA==
-
-  audio: !binary |
-    0JfQstGD0Lo=
-
-  dashboard: !binary |
-    0KLQsNCx0LvQvg==
-
-  this_ip_will_be_filtered: !binary |
-    0KLQvtC30LggSVAg0LDQtNGA0LXRgSDRidC1INCx0YrQtNCw0YIg0YTQuNC7
-    0YLRgNC40YDQsNC90Lgu
-
-  dns_alias: !binary |
-    RE5TINCf0YHQtdCy0LTQvtC90LjQvA==
-
-  url_to_filter: !binary |
-    VVJMINC30LAg0YTQuNC70YLRgNC40YDQsNC90LU=
-
-  the_boot_option_is_a_critical_setting: !binary |
-    0J7Qv9GG0LjQuNGC0LUg0L/RgNC4INGB0YLQsNGA0YLQuNGA0LDQvdC1INGB
-    0LAg0L7RgiDQmtCg0JjQotCY0KfQndCeINC30L3QsNGH0LXQvdC40LUuINCg
-    0LXRiNC10L3QuNC10YLQviDQtNCwINC90LUg0YHRgtCw0YDRgtC40YDQsNGC
-    0LUg0YHRitGA0LLRitGA0LXQvSDQv9GA0L7RhtC10YEg0LUg0JjQl9Ca0JvQ
-    rtCn0JjQotCV0JvQndCeINCd0JXQltCV0JvQkNCi0JXQm9Cd0J4uINCY0LTQ
-    tdGP0YLQsCDQvdCwINGC0L7QstCwINC1INGD0YHQu9GD0LPQuNGC0LUsINC/
-    0L7QtNC00YrRgNC20LDRidC4INCy0LDRiNC10YLQviBIREEgINC00LAg0YHQ
-    tSDQt9Cw0YDQtdC20LTQsNGCINC+0YnQtSDQv9GA0Lgg0YHRgtCw0YDRgtC4
-    0YDQsNGC0LXQvdC+LiDQo9Cy0LXRgNC10L3QuCDQu9C4INGB0YLQtSwg0YfQ
-    tSDQvdC1INC20LXQu9Cw0LXRgtC1INGC0L7Qt9C4INC/0YDQvtGG0LXRgSDQ
-    tNCwINGB0LUg0YHRgtCw0YDRgtC40YDQsCDQv9C+INCy0YDQtdC80LUg0L3Q
-    sCDQvdCw0YfQsNC70L3QvtGC0L4g0LfQsNGA0LXQttC00LDQvdC1INC90LAg
-    0YHQuNGB0YLQtdC80LDRgtCwPw==
-
-  greyhole_not_installed: !binary |
-    0JLQndCY0JzQkNCd0JjQlTogR3JleWhvbGUg0L3QtSDQtSDQuNC90YHRgtCw
-    0LvQuNGA0LDQvSDQvdCwINGC0LDQt9C4INGB0LjRgdGC0LXQvNCwIQ==
-
-  must_be_admin: !binary |
-    0JfQsCDQtNC+0YHRgtGK0L8g0LTQviDRgtCw0LfQuCDRgdC10LrRhtC40Y8g
-    0YHQsCDQvdGD0LbQvdC4INCw0LTQvNC40L3QuNGB0YLRgNCw0YLQuNCy0L3Q
-    uCDQv9GA0LjQstC40LvQtdCz0LjQuC4=
-
-  valid_email_required_for_service: !binary |
-    0J3Rg9C20LXQvSDQtSDQstCw0LvQuNC00LXQvSBlLW1haWwg0LDQtNGA0LXR
-    gSDQt9CwINCw0LrRgtC40LLQsNGG0LjRjy4g0J7QsdC10YnQsNCy0LDQvNC1
-    LCDRh9C1INC90Y/QvNCwINC00LAg0LLQuCDQuNC30L/RgNCw0YnQsNC80LUg
-    0KHQn9CQ0Jwt0LzQtdC50LvQuC4=
-
-  are_you_sure_you_want_to_delete_alias: !binary |
-    0KHQuNCz0YPRgNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1
-    INC00LAg0LjQt9GC0YDQuNC10YLQtSDQv9GB0LXQstC00L7QvdC40LzQsCDQ
-    t9CwICJ7e25hbWV9fSI/
-
-  is_not_being_monitored_24x7: !binary |
-    PGI+0L3QtSDRgdC1PC9iPiDQvdCw0LHQu9GO0LTQsNCy0LAgMjR4Nw==
-
+  full_name_looks_good: "Името изглежда добре"
+  workgroup_name: "Име на Работната група"
+  name_looks_good: "Името изглежда добре"
+  new_alias: "Нов Псевдоним"
+  must_be_logged_in: "За достъп до тази секция е нужно да сте влезли в системата."
+  rebooting: "Подготвям се за рестартиране ..."
+  uptime: "Време от последния старт"
+  disk_pooling: "Сторидж"
+  this_will_reboot: "Сигурни ли сте, че искате да продължите?"
+  dns_aliases: "DNS Псевдоними"
+  used_space: "Използвани"
+  static_ip_address_for_your_hda: "Статичен IP адрес за вашия HDA"
+  comment: "Коментар"
+  the_alias_name_you_input_will_be_added: "Името, което въвете по-горе, ще бъде добавено към DNS сървъра като прякор на IP адреса по-долу."
+  root_path: "Път до Root"
+  search: "Търси"
+  upcoming: "Предстоящи"
+  username_or_email: "Потребителско име или имейл"
+  network_settings: "Мрежови настройки"
+  no_documents_found: "Не са намерени документи"
+  visible: "Видим"
+  create_a_new_share: "Създаване на нов споделен дял"
+  enabling_pdc_is_a_major_share_change: "Разрешаването на PDC режима води до ЗНАЧИТЕЛНА промяна в начина, по който работят споделените дялове.\r\n\
+    Това ще разреши Домейн режима и ще забрани режимa Workgroup, което изисква ВСИЧКИ машини да са Enterprise (или \"PRO\") машини, които използват подходящи правомощия. Той е предназначен за корпоративни мрежи.\r\n\
+    Сигурни ли сте, че искате да разрешите PDC режима?"
+  all_users: "Всички потребители"
+  delete_static_ip: "Изтриване на Статично IP"
+  audio: "Звук"
+  dashboard: "Табло"
+  this_ip_will_be_filtered: "Този IP адрес ще бъдат филтрирани."
+  dns_alias: "DNS Псевдоним"
+  url_to_filter: "URL за филтриране"
+  the_boot_option_is_a_critical_setting: "Опциите при стартиране са от КРИТИЧНО значение. Решението да не стартирате сървърен процес е ИЗКЛЮЧИТЕЛНО НЕЖЕЛАТЕЛНО. Идеята на това е услугите, поддържащи вашето HDA  да се зареждат още при стартиратено. Уверени ли сте, че не желаете този процес да се стартира по време на началното зареждане на системата?"
+  greyhole_not_installed: "ВНИМАНИЕ: Greyhole не е инсталиран на тази система!"
+  must_be_admin: "За достъп до тази секция са нужни административни привилегии."
+  valid_email_required_for_service: "Нужен е валиден e-mail адрес за активация. Обещаваме, че няма да ви изпращаме СПАМ-мейли."
+  are_you_sure_you_want_to_delete_alias: "Сигурни ли сте, че искате да изтриете псевдонима за \"{{name}}\"?"
+  is_not_being_monitored_24x7: "<b>не се</b> наблюдава 24x7"
   activerecord: 
     errors: 
       messages: 
-        greater_than_or_equal_to: !binary |
-          0YLRgNGP0LHQstCwINC00LAg0LUg0YHRitGBINGB0YLQvtC50L3QvtGB0YIs
-          INC/0L4t0LPQvtC70Y/QvNCwINC40LvQuCDRgNCw0LLQvdCwINC90LAge3tj
-          b3VudH19
-
-        record_invalid: !binary |
-          0J3QtdGD0YHQv9C10YjQvdC+INGD0YLQstGK0YDQttC00LDQstCw0L3QtTog
-          e3tlcnJvcnN9fQ==
-
-        confirmation: !binary |
-          0L3QtSDRgdGK0L7RgtCy0LXRgtGB0YLQstCwINC90LAg0L/QvtGC0LLRitGA
-          0LbQtNC10L3QuNC10YLQvg==
-
-        less_than_or_equal_to: !binary |
-          0YLRgNGP0LHQstCwINC00LAg0LUg0YHRitGBINGB0YLQvtC50L3QvtGB0YIs
-          INC/0L4t0LPQvtC70Y/QvNCwINC40LvQuCDRgNCw0LLQvdCwINC90LAge3tj
-          b3VudH19
-
-        blank: !binary |
-          0L3QtSDQvNC+0LbQtSDQtNCwINC1INCx0LXQtyDRgdGC0L7QudC90L7RgdGC
-
-        exclusion: !binary |
-          0YHRitC00YrRgNC20LAg0L/RgNC10LTQstCw0YDQuNGC0LXQu9C90L4g0LfQ
-          sNC00LDQtNC10L3QsCAo0LfQsNC/0LDQt9C10L3QsCkg0YHRgtC+0LnQvdC+
-          0YHRgg==
-
-        invalid: !binary |
-          0YHRitC00YrRgNC20LAg0L3QtdCy0Y/RgNC90LAg0YHRgtC+0LnQvdC+0YHR
-          gg==
-
-        odd: !binary |
-          0YLRgNGP0LHQstCwINC00LAg0LUg0LXQtNC40L3RgdGC0LLQtdC90L4g0YfQ
-          tdGC0L3Qvg==
-
-        even: !binary |
-          0LzQvtC20LUg0LTQsCDQtSDQtdC00LjQvdGB0YLQstC10L3QviDQvdC10YfQ
-          tdGC0L3Qvg==
-
-        too_short: !binary |
-          0LUg0YLQstGK0YDQtNC1INC60YDQsNGC0LrQviAo0LzQuNC90LjQvNCw0LvQ
-          vdC+INC00L7Qv9GD0YHRgtC40LzQuCDRgdCwIHt7Y291bnR9fSDRgdC40LzQ
-          stC+0LvQsCk=
-
-        wrong_length: !binary |
-          0LUg0YEg0L3QtdC/0YDQsNCy0LjQu9C90LAg0LTRitC70LbQuNC90LAgKNGC
-          0YDRj9Cx0LLQsCDQtNCwINC1IHt7Y291bnR9fSDRgdC40LzQstC+0LvQsCk=
-
-        empty: !binary |
-          0L3QtSDQvNC+0LbQtSDQtNCwINC1INC/0YDQsNC30L3Qvg==
-
-        less_than: !binary |
-          0YLRgNGP0LHQstCwINC00LAg0LUg0YHRitGBINGB0YLQvtC50L3QvtGB0YIs
-          INC/0L4t0LzQsNC70LrQsCDQvtGCIHt7Y291bnR9fQ==
-
-        greater_than: !binary |
-          0YLRgNGP0LHQstCwINC00LAg0LUg0YHRitGBINGB0YLQvtC50L3QvtGB0YIs
-          INC/0L4t0LPQvtC70Y/QvNCwINC+0YIge3tjb3VudH19
-
-        equal_to: !binary |
-          0LzQvtC20LUg0LTQsCDQtSDQtdC00LjQvdGB0YLQstC10L3QviDRgdGK0YEg
-          0YHRgtC+0LnQvdC+0YHRgiwg0YDQsNCy0L3QsCDQvdCwIHt7Y291bnR9fQ==
-
-        too_long: !binary |
-          0LUg0YLQstGK0YDQtNC1INC00YrQu9Cz0L4gKNC80LDQutGB0LjQvNCw0LvQ
-          vdC+INC00L7Qv9GD0YHRgtC40LzQuCDRgdCwIHt7Y291bnR9fSDRgdC40LzQ
-          stC+0LvQsCk=
-
-        taken: !binary |
-          0LLQtdGH0LUg0LUg0LfQsNC10YLQvg==
-
-        accepted: !binary |
-          0YLRgNGP0LHQstCwINC00LAg0L/QvtGC0LLRitGA0LTQuNGC0LU=
-
-        inclusion: !binary |
-          0YHRitC00YrRgNC20LAg0L3QtdC/0YDQtdC00LLQuNC00LXQvdCwINGB0YLQ
-          vtC50L3QvtGB0YI=
-
-        not_a_number: !binary |
-          0L3QtSDQtSDRh9C40YHQu9C+
-
+        greater_than_or_equal_to: "трябва да е със стойност, по-голяма или равна на {{count}}"
+        record_invalid: "Неуспешно утвърждаване: {{errors}}"
+        confirmation: "не съответства на потвърждението"
+        less_than_or_equal_to: "трябва да е със стойност, по-голяма или равна на {{count}}"
+        blank: "не може да е без стойност"
+        exclusion: "съдържа предварително зададена (запазена) стойност"
+        invalid: "съдържа невярна стойност"
+        odd: "трябва да е единствено четно"
+        even: "може да е единствено нечетно"
+        too_short: "е твърде кратко (минимално допустими са {{count}} символа)"
+        wrong_length: "е с неправилна дължина (трябва да е {{count}} символа)"
+        empty: "не може да е празно"
+        less_than: "трябва да е със стойност, по-малка от {{count}}"
+        greater_than: "трябва да е със стойност, по-голяма от {{count}}"
+        equal_to: "може да е единствено със стойност, равна на {{count}}"
+        too_long: "е твърде дълго (максимално допустими са {{count}} символа)"
+        taken: "вече е заето"
+        accepted: "трябва да потвърдите"
+        inclusion: "съдържа непредвидена стойност"
+        not_a_number: "не е число"
       full_messages: 
         format: "%{attribute} %{message}"
       template: 
-        body: !binary |
-          0JLRitC30L3QuNC60L3QsNGF0LAg0L/RgNC+0LHQu9C10LzQuCDQv9GA0Lgg
-          0YHQu9C10LTQvdC40YLQtSDQv9C+0LvQtdGC0LA6
-
+        body: "Възникнаха проблеми при следните полета:"
         header: 
-          few: !binary |
-            e3ttb2RlbH19OiDQt9Cw0L/QuNGB0LAg0L3QtdGD0YHQv9C10YjQtdC9INC3
-            0LDRgNCw0LTQuCB7e2NvdW50fX0g0LPRgNC10YjQutC4
-
-          many: !binary |
-            e3ttb2RlbH19OiDQt9Cw0L/QuNGB0LAg0L3QtdGD0YHQv9C10YjQtdC9INC3
-            0LDRgNCw0LTQuCB7e2NvdW50fX0g0LPRgNC10YjQutC4
-
-          one: !binary |
-            0JLRitC30L3QuNC60L3QsCAxINCz0YDQtdGI0LrQsCwg0LrQvtGP0YLQviDQ
-            v9C+0L/RgNC10YfQuCDQvdCwINGC0L7Qt9C4IHt7bW9kZWx9fSDQtNCwINCx
-            0YrQtNC1INC30LDQv9Cw0LfQtdC9
-
-          other: !binary |
-            0JLRitC30L3QuNC60L3QsNGF0LAge3tjb3VudH19INCz0YDQtdGI0LrQuCwg
-            0LrQvtC40YLQviDQv9C+0L/RgNC10YfQuNGF0LAg0L3QsCDRgtC+0LfQuCB7
-            e21vZGVsfX0g0LTQsCDQsdGK0LTQtSDQt9Cw0L/QsNC30LXQvQ==
-
-  there_are_no_static_dhcp_leases: !binary |
-    0JLRgdC1INC+0YnQtSDQvdGP0LzQsCDRgNCw0LfQtNCw0LTQtdC90Lgg0YHR
-    gtCw0YLQuNGH0L3QuCBESENQINCw0LTRgNC10YHQuC4=
-
-  live_help: !binary |
-    0J/QvtC80L7RiSDQvdCw0LbQuNCy0L4=
-
-  edit_user: !binary |
-    0KDQtdC00LDQutGC0LjRgNCw0L3QtSDQvdCwINC/0L7RgtGA0LXQsdC40YLQ
-    tdC7
-
-  control_panel: !binary |
-    0JrQvtC90YLRgNC+0LvQtdC9INGG0LXQvdGC0YrRgA==
-
-  share_name_cannot_be_blank: !binary |
-    0JjQvNC10YLQviDQvdCwINCh0L/QvtC00LXQu9C10L3QuNGPINC00Y/QuyDQ
-    vdC1INC80L7QttC1INC00LAg0LUg0L/RgNCw0LfQvdC+
-
-  get_started: !binary |
-    0JTQsCDQt9Cw0L/QvtGH0LLQsNC80LUh
-
-  my_account: !binary |
-    0JzQvtGP0YIg0L/RgNC+0YTQuNC7
-
-  gallery: !binary |
-    0JPQsNC70LXRgNC40Y8=
-
-  transmission_bittorrent_server: !binary |
-    0JrQvtC80YPQvdC40LrQsNGG0LjRjyBCaXR0b3JyZW50INCh0YrRgNCy0YrR
-    gC4=
-
-  ip_address: !binary |
-    SVAg0LDQtNGA0LXRgQ==
-
+          few: "{{model}}: записа неуспешен заради {{count}} грешки"
+          many: "{{model}}: записа неуспешен заради {{count}} грешки"
+          one: "Възникна 1 грешка, която попречи на този {{model}} да бъде запазен"
+          other: "Възникнаха {{count}} грешки, които попречиха на този {{model}} да бъде запазен"
+  there_are_no_static_dhcp_leases: "Все още няма раздадени статични DHCP адреси."
+  live_help: "Помощ наживо"
+  edit_user: "Редактиране на потребител"
+  control_panel: "Контролен център"
+  share_name_cannot_be_blank: "Името на Споделения дял не може да е празно"
+  get_started: "Да започваме!"
+  my_account: "Моят профил"
+  gallery: "Галерия"
+  transmission_bittorrent_server: "Комуникация Bittorrent Сървър."
+  ip_address: "IP адрес"
   number: 
     format: 
       separator: .
@@ -813,954 +230,300 @@ bg:
       storage_units: 
         format: "%n %u"
         units: 
-          kb: !binary |
-            0JrQkQ==
-
-          tb: !binary |
-            0KLQkQ==
-
+          kb: "КБ"
+          tb: "ТБ"
           gb: GB
           byte: 
-            few: !binary |
-              0LHQsNC50YLQsA==
-
-            many: !binary |
-              0LHQsNC50YI=
-
-            one: !binary |
-              0LHQsNC50YI=
-
-            other: !binary |
-              0LHQsNC50YLQsA==
-
-          mb: !binary |
-            0JzQkQ==
-
+            few: "байта"
+            many: "байт"
+            one: "байт"
+            other: "байта"
+          mb: "МБ"
     percentage: 
       format: 
         delimiter: ""
     currency: 
       format: 
         format: "%n %u"
-        unit: !binary |
-          0LvQsi4=
-
+        unit: "лв."
         separator: .
         precision: 2
         delimiter: ","
     precision: 
       format: 
         delimiter: ""
-  mysql_database_server: !binary |
-    TXlTUUwg0JHQlCDQodGK0YDQstGK0YA=
-
-  edit_and_rate_beta_apps: !binary |
-    0KDQtdC00LDQutGC0LjRgNCw0L3QtSDQuCDQvtGG0LXQvdC60LAg0L3QsCDQ
-    kdC10YLQsCDQv9GA0LjQu9C+0LbQtdC90LjRjw==
-
-  or_view_each_one_separately_below: !binary |
-    0LjQu9C4INC00LAg0L/RgNC10LPQu9C10LTQsNGC0LUg0LLRgdGP0LrQsCDQ
-    tdC00L3QsCDQv9C+0L7RgtC00LXQu9C90L4g0L/Qvi3QtNC+0LvRgy4=
-
-  username: !binary |
-    0J/QvtGC0YDQtdCx0LjRgtC10LvRgdC60L4g0LjQvNC1
-
-  are_you_sure_you_want_to_restart_the_server: !binary |
-    0J3QsNC40YHRgtC40L3QsCDQu9C4INC40YHQutCw0YLQtSDQtNCwINGA0LXR
-    gdGC0LDRgNGC0LjRgNCw0YLQtSB7e25hbWV9fT8=
-
-  done_final_check: !binary |
-    0JPQvtGC0L7QstC+ISDQn9C+0YHQu9C10LTQvdCwINC/0YDQvtCy0LXRgNC6
-    0LA=
-
-  this_application_is_not_installed_please_refresh: !binary |
-    0KLQvtCy0LAg0L/RgNC40LvQvtC20LXQvdC40LUg0L3QtSDQtSDQuNC90YHR
-    gtCw0LvQuNGA0LDQvdC+LiDQnNC+0LvRjywg0L7QsdC90L7QstC10YLQtSDR
-    gtCw0LfQuCDRg9C10LEg0YHRgtGA0LDQvdC40YbQsC4=
-
-  user_name_is_available: !binary |
-    0J/QvtGC0YDQtdCx0LjRgtC10LvRgdC60L4g0LjQvNC1INC1INGB0LLQvtCx
-    0L7QtNC90L4=
-
-  first_time_admin_setup: !binary |
-    0J/RitGA0LLQvtC90LDRh9Cw0LvQvdC4INCw0LTQvNC40L3QuNGB0YLRgNCw
-    0YLQuNCy0L3QuCDQvdCw0YHRgtGA0L7QudC60LguINCc0L7Qu9GPLCDRgdGK
-    0LfQtNCw0LnRgtC1INC+0YLQvdC+0LLQviDQv9Cw0YDQvtC70LAg0LfQsCDQ
-    v9C+0YLRgNC10LHQuNGC0LXQu9GPINGB0Lgu
-
-  news: !binary |
-    0J3QvtCy0LjQvdC4
-
-  password: !binary |
-    0J/QsNGA0L7Qu9Cw
-
-  access: !binary |
-    0JTQvtGB0YLRitC/
-
-  avanced_settings_is_for_developers: !binary |
-    0KDQsNC30YDQtdGI0LDQstCw0L3QtdGC0L4g0L3QsCDQoNCw0LfRiNC40YDQ
-    tdC90LjRgtC1INGE0YPQvdC60YbQuNC4INC1INGB0LDQvNC+INC30LAg0L3Q
-    sNC/0YDQtdC00L3QsNC70LggLyDRgtC10YXQvdC40YfQtdGB0LrQuCDQv9C+
-    0YLRgNC10LHQuNGC0LXQu9C4INC4INGA0LDQt9GA0LDQsdC+0YLRh9C40YbQ
-    uC4=
-
-  there_are_no_shares_created: !binary |
-    0JLRgdC1INC+0YnQtSDQsiDRgdC40YHRgtC10LzQsNGC0LAg0LLQuCDQvdGP
-    0LzQsCDQt9Cw0LTQsNC00LXQvdC4INGB0L/QvtC00LXQu9C10L3QuCDQtNGP
-    0LvQvtCy0LUu
-
-  created: !binary |
-    0KHRitC30LTQsNC00LXQvQ==
-
-  watchdog: !binary |
-    0J/QsNC30LjRgtC10Ls=
-
-  stop: !binary |
-    0KHQv9GA0Lg=
-
-  device: !binary |
-    0KPRgdGC0YDQvtC50YHRgtCy0L4=
-
-  initial_user: !binary |
-    0J/QvtGC0YDQtdCx0LjRgtC10LvRgdC60L4g0LjQvNC1
-
-  admin_setup_worked: !binary |
-    0JDQtNC80LjQvdC40YHRgtGA0LDRgtC40LLQvdC40YLQtSDQvdCw0YHRgtGA
-    0L7QudC60Lgg0LHRj9GF0LAg0YPRgdC/0LXRiNC90LguINCc0L7Qu9GPLCDQ
-    stC70LXRh9GC0LUg0LIg0YHQuNGB0YLQtdC80LDRgtCwLg==
-
-  preparing_to_uninstall: !binary |
-    0J/QvtC00LPQvtGC0L7QstC60LAg0LfQsCDQtNC10LjQvdGB0YLQsNC70LjR
-    gNCw0L3QtSAuLi4=
-
+  mysql_database_server: "MySQL БД Сървър"
+  edit_and_rate_beta_apps: "Редактиране и оценка на Бета приложения"
+  or_view_each_one_separately_below: "или да прегледате всяка една поотделно по-долу."
+  username: "Потребителско име"
+  are_you_sure_you_want_to_restart_the_server: "Наистина ли искате да рестартирате {{name}}?"
+  done_final_check: "Готово! Последна проверка"
+  this_application_is_not_installed_please_refresh: "Това приложение не е инсталирано. Моля, обновете тази уеб страница."
+  user_name_is_available: "Потребителско име е свободно"
+  first_time_admin_setup: "Първоначални административни настройки. Моля, създайте отново парола за потребителя си."
+  news: "Новини"
+  password: "Парола"
+  access: "Достъп"
+  avanced_settings_is_for_developers: "Разрешаването на Разширените функции е само за напреднали / технически потребители и разработчици."
+  there_are_no_shares_created: "Все още в системата ви няма зададени споделени дялове."
+  created: "Създаден"
+  watchdog: "Пазител"
+  stop: "Спри"
+  device: "Устройство"
+  initial_user: "Потребителско име"
+  admin_setup_worked: "Административните настройки бяха успешни. Моля, влечте в системата."
+  preparing_to_uninstall: "Подготовка за деинсталиране ..."
   time: 
-    am: !binary |
-      0L/RgNC10LTQuCDQvtCx0Y/QtA==
-
+    am: "преди обяд"
     formats: 
       default: "%a, %d %b %Y, %H:%M:%S %z"
       short: "%d %b, %H:%M"
       long: "%d %B %Y, %H:%M"
-    pm: !binary |
-      0YHQu9C10LTQvtCx0LXQtA==
-
-  dns_server: !binary |
-    RE5TINCh0YrRgNCy0YrRgA==
-
-  sign_up_here: !binary |
-    0KDQtdCz0LjRgdGC0YDQuNGA0LDQudGC0LUg0YHQtSDQvtGCINGC0YPQug==
-
-  servers: !binary |
-    0KHRitGA0LLRitGA0Lg=
-
-  router_ip: !binary |
-    0KDRg9GC0LXRgCBJUA==
-
-  general_amahi_news: !binary |
-    0J7QsdGJ0LggQW1haGkg0L3QvtCy0LjQvdC4
-
-  feedback: !binary |
-    0J7QsdGA0LDRgtC90LAg0LLRgNGK0LfQutCw
-
-  name: !binary |
-    0JjQvNC1
-
-  awake_this_device_via_wol: !binary |
-    0JLQutC70Y7Rh9Cy0LDQvdC1INC90LAg0YLQvtCy0LAg0YPRgdGC0YDQvtC5
-    0YHRgtCy0L4=
-
-  port_forwarding: !binary |
-    0J/RgNC10L3QsNGB0L7Rh9Cy0LDQvdC1INC90LAg0J/QvtGA0YLQvtCy0LU=
-
+    pm: "следобед"
+  dns_server: "DNS Сървър"
+  sign_up_here: "Регистрирайте се от тук"
+  servers: "Сървъри"
+  router_ip: "Рутер IP"
+  general_amahi_news: "Общи Amahi новини"
+  feedback: "Обратна връзка"
+  name: "Име"
+  awake_this_device_via_wol: "Включване на това устройство"
+  port_forwarding: "Пренасочване на Портове"
   datetime: 
     prompts: 
-      minute: !binary |
-        0JzQuNC90YPRgtC4
-
-      second: !binary |
-        0KHQtdC60YPQvdC00Lg=
-
-      month: !binary |
-        0JzQtdGB0LXRhg==
-
-      hour: !binary |
-        0KfQsNGB0LA=
-
-      day: !binary |
-        0JTQtdC9
-
-      year: !binary |
-        0JPQvtC00LjQvdCw
-
+      minute: "Минути"
+      second: "Секунди"
+      month: "Месец"
+      hour: "Часа"
+      day: "Ден"
+      year: "Година"
     distance_in_words: 
       less_than_x_minutes: 
-        few: !binary |
-          0L/Qvi3QvNCw0LvQutC+INC+0YIge3tjb3VudH19INC80LjQvdGD0YLQuA==
-
-        many: !binary |
-          0L/Qvi3QvNCw0LvQutC+INC+0YIge3tjb3VudH19INC80LjQvdGD0YLQuA==
-
-        one: !binary |
-          0L/Qvi3QvNCw0LvQutC+INC+0YIge3tjb3VudH19INC80LjQvdGD0YLQsA==
-
-        other: !binary |
-          0L/Qvi3QvNCw0LvQutC+INC+0YIge3tjb3VudH19INC80LjQvdGD0YLQuA==
-
+        few: "по-малко от {{count}} минути"
+        many: "по-малко от {{count}} минути"
+        one: "по-малко от {{count}} минута"
+        other: "по-малко от {{count}} минути"
       x_days: 
-        few: !binary |
-          e3tjb3VudH19INC00L3QuA==
-
-        many: !binary |
-          e3tjb3VudH19INC00L3QuA==
-
-        one: !binary |
-          e3tjb3VudH19INC00LXQvQ==
-
-        other: !binary |
-          e3tjb3VudH19INC00LXQvdCw
-
+        few: "{{count}} дни"
+        many: "{{count}} дни"
+        one: "{{count}} ден"
+        other: "{{count}} дена"
       x_seconds: 
-        few: !binary |
-          e3tjb3VudH19INGB0LXQutGD0L3QtNC4
-
-        many: !binary |
-          e3tjb3VudH19INGB0LXQutGD0L3QtNC4
-
-        one: !binary |
-          e3tjb3VudH19INGB0LXQutGD0L3QtNCw
-
-        other: !binary |
-          e3tjb3VudH19INGB0LXQutGD0L3QtNC4
-
+        few: "{{count}} секунди"
+        many: "{{count}} секунди"
+        one: "{{count}} секунда"
+        other: "{{count}} секунди"
       about_x_hours: 
-        few: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0YfQsNGB0LA=
-
-        many: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0YfQsNGB0LA=
-
-        one: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0YfQsNGB
-
-        other: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0YfQsNGB0LA=
-
+        few: "около {{count}} часа"
+        many: "около {{count}} часа"
+        one: "около {{count}} час"
+        other: "около {{count}} часа"
       less_than_x_seconds: 
-        few: !binary |
-          0L/Qvi3QvNCw0LvQutC+INC+0YIge3tjb3VudH19INGB0LXQutGD0L3QtNC4
-
-        many: !binary |
-          0L/Qvi3QvNCw0LvQutC+INC+0YIge3tjb3VudH19INGB0LXQutGD0L3QtNC4
-
-        one: !binary |
-          0L/Qvi3QvNCw0LvQutC+INC+0YIge3tjb3VudH19INGB0LXQutGD0L3QtNC4
-
-        other: !binary |
-          0L/Qvi3QvNCw0LvQutC+INC+0YIge3tjb3VudH19INGB0LXQutGD0L3QtNC4
-
+        few: "по-малко от {{count}} секунди"
+        many: "по-малко от {{count}} секунди"
+        one: "по-малко от {{count}} секунди"
+        other: "по-малко от {{count}} секунди"
       x_months: 
-        few: !binary |
-          e3tjb3VudH19INC80LXRgdC10YbQsA==
-
-        many: !binary |
-          e3tjb3VudH19INC80LXRgdC10YbQuA==
-
-        one: !binary |
-          e3tjb3VudH19INC80LXRgdC10YY=
-
-        other: !binary |
-          e3tjb3VudH19INC80LXRgdC10YbQsA==
-
+        few: "{{count}} месеца"
+        many: "{{count}} месеци"
+        one: "{{count}} месец"
+        other: "{{count}} месеца"
       x_minutes: 
-        few: !binary |
-          e3tjb3VudH19INC80LjQvdGD0YLQuA==
-
-        many: !binary |
-          e3tjb3VudH19INC80LjQvdGD0YLQuA==
-
-        one: !binary |
-          e3tjb3VudH19INC80LjQvdGD0YLQsA==
-
-        other: !binary |
-          e3tjb3VudH19INC80LjQvdGD0YLQuA==
-
+        few: "{{count}} минути"
+        many: "{{count}} минути"
+        one: "{{count}} минута"
+        other: "{{count}} минути"
       about_x_years: 
-        few: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LPQvtC00LjQvdC4
-
-        many: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LPQvtC00LjQvdC4
-
-        one: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LPQvtC00LjQvdCw
-
-        other: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LPQvtC00LjQvdC4
-
+        few: "около {{count}} години"
+        many: "около {{count}} години"
+        one: "около {{count}} година"
+        other: "около {{count}} години"
       about_x_months: 
-        few: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LzQtdGB0LXRhtCw
-
-        many: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LzQtdGB0LXRhtCw
-
-        one: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LzQtdGB0LXRhtCw
-
-        other: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LzQtdGB0LXRhtCw
-
+        few: "около {{count}} месеца"
+        many: "около {{count}} месеца"
+        one: "около {{count}} месеца"
+        other: "около {{count}} месеца"
       over_x_years: 
-        few: !binary |
-          0L3QsNC0IHt7Y291bnR9fSDQs9C+0LTQuNC90Lg=
-
-        many: !binary |
-          0L3QsNC0IHt7Y291bnR9fSDQs9C+0LTQuNC90Lg=
-
-        one: !binary |
-          0L3QsNC0IHt7Y291bnR9fSDQs9C+0LTQuNC90LA=
-
-        other: !binary |
-          0L3QsNC0IHt7Y291bnR9fSDQs9C+0LTQuNC90Lg=
-
-      half_a_minute: !binary |
-        0L/Qvi3QvNCw0LvQutC+INC+0YIg0LzQuNC90YPRgtCw
-
-  nickname: !binary |
-    0J/RgdC10LLQtNC+0L3QuNC8
-
-  check_the_calendars_wiki_for_more_details: !binary |
-    0JfQsNC/0L7Qt9C90LDQudGC0LUg0YHQtSDRgSDQo9C40LrQuC3RgtC+INC3
-    0LAg0LrQsNC70LXQvdC00LDRgNC4INC30LAg0L/QvtCy0LXRh9C1INC40L3R
-    hNC+0YDQvNCw0YbQuNGPINC30LAg0YLQvtCy0LAg0LrQsNC6INC00LAg0YPQ
-    v9GA0LDQstC70Y/QstCw0YLQtSDQutCw0LvQtdC90LTQsNGA0Lgg0Lgg0LrQ
-    vtC4INGB0LAg0YHRitCy0LzQtdGB0YLQuNC80LjRgtC1INC60LvQuNC10L3R
-    gtC4Lg==
-
-  pooled: !binary |
-    0JjQt9GC0LXQs9C70LXQvdC4
-
-  edit_web_app: !binary |
-    0KDQtdC00LDQutGC0LjRgNCw0L3QtSDQvdCwINCj0LXQsSDQn9GA0LjQu9C+
-    0LbQtdC90LjQtQ==
-
-  movies: !binary |
-    0KTQuNC70LzQuA==
-
-  mac_already_allocated: !binary |
-    TUFDINCy0LXRh9C1INC1INGA0LDQt9C/0YDQtdC00LXQu9C10L0=
-
-  dyndns_info: !binary |
-    QW1haGkg0L/RgNC10LTQvtGB0YLQsNCy0Y8g0LHQtdC30L/Qu9Cw0YLQtdC9
-    LCDQvdGD0LvQtdCy0LAg0LrQvtC90YTQuNCz0YPRgNCw0YbQuNGPINC00LjQ
-    vdCw0LzQuNGH0LXQvSBETlMg0LDQtNGA0LXRgSDQt9CwINCy0LDRgS4g0KLQ
-    vtC5INC1INCy0YrQvdGI0LXQvSDQt9CwINCy0LDRiNCw0YLQsCDQtNC+0LzQ
-    sNGI0L3QsCDQvNGA0LXQttCwLiDQnNC+0LbQtdGC0LUg0LTQsCDQs9C+INC4
-    0LfQv9C+0LvQt9Cy0LDRgtC1INC30LAgPGEgdGFyZ2V0PSJfYmxhbmsiDQpo
-    cmVmPSJodHRwOi8vd2lraS5hbWFoaS5vcmcvaW5kZXgucGhwL1ZQTiI+TWFj
-    PC9hPiDQuNC70LggPGEgdGFyZ2V0PSJfYmxhbmsiDQpocmVmPSJodHRwOi8v
-    d2lraS5hbWFoaS5vcmcvaW5kZXgucGhwL1ZQTkxpbnV4Ij5MaW51eDwvYT4g
-    PGENCnRhcmdldD0iX2JsYW5rIiBocmVmPSJodHRwOi8vd2lraS5hbWFoaS5v
-    cmcvaW5kZXgucGhwL1ZQTiI+VlBOPC9hPiDQutC70LjQtdC90YLQuCAo0YLQ
-    tdGF0L3QuNGH0LXRgdC60LjRgtC1INC/0L7RgtGA0LXQsdC40YLQtdC70Lgg
-    0LzQvtCz0LDRgiDQtNCwINCz0L4g0LjQt9C/0L7Qu9C30LLQsNGCINC30LAg
-    0LLQu9C40LfQsNC90LUg0LIg0YHQuNGB0YLQtdC80LDRgtCwINGBIDxhIHRh
-    cmdldD0iX2JsYW5rIg0KaHJlZj0iaHR0cDovL3dpa2kuYW1haGkub3JnL2lu
-    ZGV4LnBocC9Tc2gtcG9ydHMiPlNTSDwvYT4pLiDQotC10YXQvdC40YfQtdGB
-    0LrQuNGC0LUg0L/QvtGC0YDQtdCx0LjRgtC10LvQuCDQvNC+0LPQsNGCINC0
-    0LAg0LPQviDQuNC30L/QvtC70LfQstCw0YIg0LfQsCDRhdC+0YHRgtC40L3Q
-    syDQvdCwINGD0LXQsSDRgdCw0LnRgtC+0LLQtSwg0LPQtdC50Lwg0YHRitGA
-    0LLRitGA0Lgg0LjQu9C4INC00YDRg9Cz0Lgg0YPRgdC70YPQs9C4INC+0YIg
-    0LTQvtC80LDRiNC90LDRgtCwINGB0Lgg0LzRgNC10LbQsCAo0LDQutC+INGB
-    0LAg0LIg0YLRgNC10YHQutCwINC00LAg0L7Qv9C40YLQsNGC0LUsINC/0YDQ
-    vtGB0YLQviDQv9C+0L/QuNGC0LDQudGC0LUg0LIgSVJDINC60LDQvdCw0LvQ
-    sCDQuNC70Lgg0L/QvtGC0YrRgNGB0LXRgtC1INCyIFdpa2kt0YLQviku
-
-  confirmation_matches: !binary |
-    0J/QvtGC0LLRitGA0LbQtNC10L3QuNC10YLQviDRgdGK0LLQv9Cw0LTQsA==
-
-  setting_dmz_failed: !binary |
-    0J3QsNGB0YLRgNC+0LnQutCw0YLQsCDQvdCwIERNWiDQtSDQvdC10YPRgdC/
-    0LXRiNC90LAuINCc0L7Qu9GPLCDQv9GA0L7QstC10YDQtdGC0LUg0L3QsNGB
-    0YLRgNC+0LnQutC40YLQtSDRgdC4Lg==
-
-  logs: !binary |
-    0JTQvdC10LLQvdC40YbQuA==
-
-  this_name_is_not_available: !binary |
-    0KLQvtCy0LAg0LjQvNC1INC90LUg0LUg0YHQstC+0LHQvtC00L3Qvg==
-
-  password_changed_successfully: !binary |
-    0J/QsNGA0L7Qu9Cw0YLQsCDQsdC10YjQtSDQv9GA0L7QvNC10L3QtdC90LAg
-    0YPRgdC/0LXRiNC90L4=
-
-  will_start_at_boot_time: !binary |
-    0LTQsCDRgdC1INC30LDRgNC10LbQtNCwINC/0YDQuCDRgdGC0LDRgNGC0LjR
-    gNCw0L3QtQ==
-
-  calendar_name: !binary |
-    0JjQvNC1INC90LAg0LrQsNC70LXQvdC00LDRgNCw
-
-  this_application_install_ended_with_an_error_please_uninstall_status_is: !binary |
-    0JjQvdGB0YLQsNC70LDRhtC40L7QvdC90LjRj9GCINC/0YDQvtGG0LXRgSDQ
-    vdCwINGC0L7QstCwINC/0YDQuNC70L7QttC10L3QuNC1INC/0YDQuNC60LvR
-    jtGH0Lgg0YEg0LPRgNC10YjQutCwLiDQnNC+0LvRjywg0LTQtdC40L3RgdGC
-    0LDQu9C40YDQsNC50YLQtSDQs9C+INC4INC+0L/QuNGC0LDQudGC0LUg0L7R
-    gtC90L7QstC+LiDQodGC0LDRgtGD0YHRitGCINC90LAg0L/RgNC40LvQvtC2
-    0LXQvdC40LXRgtC+INC1IA==
-
-  mac_filtering: !binary |
-    TUFDINCk0LjQu9GC0YDQuNGA0LDQvdC1
-
-  tags: !binary |
-    0JXRgtC40LrQtdGC0Lg=
-
-  router_firewall_settings: !binary |
-    0J3QsNGB0YLRgNC+0LnQutC4INC90LAg0KDRg9GC0LXRgNCwL9CX0LDRidC4
-    0YLQvdCw0YLQsCDRgdGC0LXQvdCw
-
-  firewall_mac_address_filter_info: !binary |
-    0JLQv9C40YHQuNGC0LUg0LIg0YLQsNC30Lgg0YLQsNCx0LvQuNGG0LAg0YHQ
-    tSDQuNC30L/QvtC70LfQstCw0YIg0LfQsCDQvtCz0YDQsNC90LjRh9Cw0LLQ
-    sNC90LUg0L3QsCDQvdGP0LrQvtC4INGC0LjQv9C+0LLQtSDQv9Cw0LrQtdGC
-    0LjRgtC1INGBINC00LDQvdC90Lgg0L7RgiDQu9C+0LrQsNC70L3QsNGC0LAg
-    0LLQuCDQvNGA0LXQttCwINC60YrQvCDQmNC90YLQtdGA0L3QtdGCINGH0YDQ
-    tdC3IEdhdGV3YXkuINCj0L/QvtGC0YDQtdCx0LDRgtCwINC90LAg0YLQsNC6
-    0LjQstCwINGE0LjQu9GC0YDQuCDQvNC+0LbQtSDQtNCwINCx0YrQtNC1INC/
-    0L7Qu9C10LfQvdCwINC/0YDQuCDQt9Cw0YnQuNGC0LDRgtCwINC40LvQuCDQ
-    vtCz0YDQsNC90LjRh9Cw0LLQsNC90LXRgtC+INC90LAg0LLQsNGI0LDRgtCw
-    INC70L7QutCw0LvQvdCwINC80YDQtdC20LAu
-
-  static_ip_address: !binary |
-    0KHRgtCw0YLQuNGH0LXQvSBJUCDQsNC00YDQtdGB
-
-  are_you_sure_advanced_features: !binary |
-    0J3QsNC40YHRgtC40L3QsCDQu9C4INC40YHQutCw0YLQtSDQtNCwINGA0LDQ
-    t9GA0LXRiNC40YLQtSDQoNCw0LfRiNC40YDQtdC90LjRgtC1INGE0YPQvdC6
-    0YbQuNC4Pw==
-
-  dhcp_server: !binary |
-    REhDUCDQodGK0YDQstGK0YA=
-
-  app_logs: !binary |
-    QXBwINC00L3QtdCy0L3QuNGG0Lg=
-
-  changelog: !binary |
-    0JTQvdC10LLQvdC40Log0L3QsCDQv9GA0L7QvNC10L3QuNGC0LU=
-
-  contribute: !binary |
-    0JTQvtC/0YDQuNC90LXRgdC10YLQtQ==
-
-  back: !binary |
-    0J3QsNC30LDQtA==
-
-  notifications_from_amahi: !binary |
-    0JjQt9Cy0LXRgdGC0LjRjyDQvtGCIEFtYWhp
-
-  support_win_95_98: !binary |
-    0J/QvtC00LTRgNGK0LbQutCwINC90LAgV2luZG93cyA5NS85OCAtINGA0LDQ
-    t9GA0LXRiNCw0LLQsCAo0L3QtdGB0LjQs9GD0YDQvW8pIExhbk1hbmFnZXIg
-    0YPQtNC+0YHRgtC+0LLQtdGA0Y/QstCw0L3QtS4=
-
-  there_are_no_calendars_available_see_wiki: !binary |
-    0JLRgdC1INC+0YnQtSDQvdGP0LzQsCDQutCw0LvQtdC90LTQsNGA0Lgg0L3Q
-    sCDRgdGK0YDQstGK0YDQsC4g0KHRitC30LTQsNC50YLQtSDQs9C4INGBINC/
-    0L7QvNC+0YnRgtCwINC90LAg0LrQu9C40LXQvdGCINC30LAg0LrQsNC70LXQ
-    vdC00LDRgNC4LiDQoNCw0LfQs9C70LXQtNCw0LnRgtC1IDxhIGhyZWY9Imh0
-    dHA6Ly93aWtpLmFtYWhpLm9yZy9pbmRleC5waHAvQ2FsZW5kYXJzIj7Qo9C4
-    0LrQuC3RgtC+PC9hPiDQt9CwINC60LDQu9C10L3QtNCw0YDQuC4=
-
-  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: !binary |
-    0JDQutC+INGA0LDQt9GA0LXRiNC40YLQtSDQv9GA0L7RgdC70LXQtNGP0LLQ
-    sNC90LXRgtC+INC30LAg0LPRgNC10YjQutC4IChEZWJ1ZyksINGC0L7QstCw
-    INC1INGC0LLRitGA0LTQtSDQstC10YDQvtGP0YLQvdC+INC00LAg0LTQvtCy
-    0LXQtNC1INC00L4g0LPQtdC90LXRgNC40YDQsNC90LXRgtC+INC90LAg0LPQ
-    vtC70LXQvNC4INGE0LDQudC70L7QstC1INC30LAg0LTQvdC10LLQvdC40YbQ
-    uC4gDQrQodC40LPRg9GA0L3QuCDQu9C4INGB0YLQtSwg0YfQtSDQuNGB0LrQ
-    sNGC0LUg0LTQsCDRgNCw0LfRgNC10YjQuNGC0LUgU2FtYmEg0L/RgNC+0YHQ
-    tdC00Y/QstCw0L3QtSDQvdCwINCz0YDQtdGI0LrQuCAoRNC10LHRg9Cz0LPQ
-    uNC90LMpPw==
-
-  the_mac_is_invalid: !binary |
-    0JzQkNChINCw0LTRgNC10YHRitGCINC1INC90LXQstCw0LvQuNC00LXQvQ==
-
-  making_home_networking_simple: !binary |
-    0J/RgNCw0LLQuCDQlNC+0LzQsNGI0L3QsNGC0LAg0LzRgNC10LbQsCDQu9C1
-    0YHQvdCwINGA0LDQsdC+0YLQsA==
-
-  disk_pool_details: !binary |
-    0JjQt9Cx0LXRgNC10YLQtSDQtNGP0LvQvtCy0LXRgtC1LCDQutC+0LjRgtC+
-    INC40YHQutCw0YLQtSDQtNCwINCy0LrQu9GO0YfQuNGC0LUg0LIge3tncmV5
-    aG9sZX19INGB0YLQvtGA0LjQtNC2LCDQuCDRgdC70LXQtCDRgtC+0LLQsCDQ
-    t9Cw0LTQsNC50YLQtSDQutC+0Lgge3tzaGFyZXN9fSDQtNCwINC40LfQv9C+
-    0LvQt9Cy0LDRgiDRgdGC0L7RgNC40LTQttCwLg==
-
-  calendars: !binary |
-    0JrQsNC70LXQvdC00LDRgNC4
-
-  a_single_number_0_254_to_point_to_a_given_machine: !binary |
-    0KfQuNGB0LvQviAoMC0yNTQpLCDQutC+0LXRgtC+INC00LAg0L7RgtCz0L7Q
-    stCw0YDRjyDQvdCwINC00LDQtNC10L3QsCDQvNCw0YjQuNC90LAg0LIg0LzR
-    gNC10LbQsNGC0LAg0LLQuA==
-
-  writeable: !binary |
-    0KDQsNC30YDQtdGI0LXQvSDQt9CwINC/0LjRgdCw0L3QtQ==
-
-  port_range_ports_must_be_numbers: !binary |
-    0J/QvtGA0YLQvtCy0LXRgtC1INGC0YDRj9Cx0LLQsCDQtNCwINCx0YrQtNCw
-    0YIg0L7RgiDRhtC40YTRgNC4
-
-  help: !binary |
-    0J/QvtC80L7RiQ==
-
-  new_firewall_rule: !binary |
-    0J3QvtCy0L4g0L/RgNCw0LLQuNC70L4g0LIg0JfRidC40YLQvdCw0YLQsCDR
-    gdGC0LXQvdCw
-
-  video: !binary |
-    0JLQuNC00LXQvg==
-
-  thanks_for_visiting: !binary |
-    0JHQu9Cw0LPQvtC00LDRgNC40Lwg0LfQsCDQv9C+0YHQtdGJ0LXQvdC40LUu
-    INCf0L7QtNC60YDQtdC/0LXRgtC1INC90LDRiNC40YLQtSDRgdC/0L7QvdGB
-    0L7RgNC4IQ==
-
-  install_code: !binary |
-    0JjQvdGB0YLQsNC70LDRhtC40L7QvdC10L0g0JrQvtC0
-
-  new_static_ip: !binary |
-    0J3QvtCyINGB0YLQsNGC0LjRh9C10L0gSVA=
-
-  this_share_name_is_not_valid: !binary |
-    0JjQvNC10YLQviDQvdCwINGC0L7Qt9C4INGB0L/QvtC00LXQu9C10L0g0LTR
-    j9C7INC90LUg0LUg0LLQsNC70LjQtNC90L4=
-
-  there_are_no_applications_available: !binary |
-    0JLRgdC1INC+0YnQtSDQvdGP0LzQsCDQvdCw0LvQuNGH0L3QuCDQv9GA0LjQ
-    u9C+0LbQtdC90LjRjy4=
-
-  ip_filtering: !binary |
-    SVAg0YTQuNC70YLRgNC40YDQsNC90LU=
-
-  create: !binary |
-    0KHRitC30LTQsNC5
-
-  guest_dashboard: !binary |
-    0JrQvtC90YLRgNC+0LvQtdC9INC/0LDQvdC10Lsg0LfQsCDQk9C+0YHRgtC4
-
-  view_all_calendars_simultaneously: !binary |
-    0J/RgNC10LPQu9C10LQg0L3QsCDQstGB0LjRh9C60Lgg0LrQsNC70LXQvdC0
-    0LDRgNC4INC10LTQvdC+0LLRgNC10LzQtdC90L3Qvg==
-
-  music: !binary |
-    0JzRg9C30LjQutCw
-
-  permissions: !binary |
-    0KDQsNC30YDQtdGI0LXQvdC40Y8=
-
-  initial_password: !binary |
-    0J/QsNGA0L7Qu9Cw
-
-  your_domain_info: !binary |
-    0KLQvtCy0LAg0LUg0LTQvtC80LXQudC90YrRgiDQvdCwINC00L7QvNCw0YjQ
-    vdCw0YLQsCDQstC4INC80YDQtdC20LAuINCi0L7QuSDQtSDQtNC+0YHRgtGK
-    0L/QtdC9IDxiPtC10LTQuNC90YHRgtCy0LXQvdC+PC9iPiDQsiDQtNC+0LzQ
-    sNGI0L3QsNGC0LAg0LLQuCDQvNGA0LXQttCwLiANCtCX0LAg0L/QvtCy0LXR
-    h9C1INC40L3RhNC+0YDQvNCw0YbQuNGPINC+0YLQvdC+0YHQvdC+INGC0L7Q
-    stCwLCDQv9GA0LXQs9C70LXQtNCw0LnRgtC1IDxhIHRhcmdldD0iX2JsYW5r
-    IiBocmVmPSJodHRwOi8vd3d3LmFtYWhpLm9yZy9mYXEjd2hhdC1ob21lLWRv
-    bWFpbi1zaG91bGQtaS11c2UiPiDQktGK0L/RgNC+0YHQuCDQuCDQvtGC0LPQ
-    vtCy0L7RgNC4PC9hPi4g
-
-  there_are_no_firewall_rules_defined: !binary |
-    0JLRgdC1INC+0YnQtSDQvdGP0LzQsCDQt9Cw0LTQsNC00LXQvdC4INC/0YDQ
-    sNCy0LjQu9CwINC30LAg0JfQsNGJ0LjRgtC90LDRgtCwINGB0YLQtdC90LAu
-
-  firewall_url_filter_message: !binary |
-    0JLQv9C40YHQstCw0L3QuNGP0YLQsCDQsiDRgtCw0LfQuCDRgtCw0LHQu9C4
-    0YbQsCDRgdC1INC40LfQv9C+0LvQt9Cy0LDRgiDQt9CwINC30LDQsdGA0LDQ
-    vdCwINC90LAgVVJMINCw0LTRgNC10YHQuCDQv9GA0LXQtyBHYXRld2F5Lg==
-
-  dhcp_leases: !binary |
-    REhDUCDQoNCw0LfQtNCw0LLQsNC90LjRjw==
-
-  dynamic_dns: !binary |
-    0JTQuNC90LDQvNC40YfQtdC9IEROUw==
-
-  the_ip_must_be_1_to_254: !binary |
-    SVAg0LDQtNGA0LXRgdGK0YIg0YLRgNGP0LHQstCwINC00LAg0LUg0LIg0LTQ
-    uNCw0L/QsNC30L7QvdCwIDEtMjU0
-
-  not_a_valid_user_or_password: !binary |
-    0JPRgNC10YjQutCwOiDQvdC10L/RgNCw0LLQuNC70L3QuCDQuNC80LUg0LjQ
-    u9C4INC/0LDRgNC+0LvQsA==
-
-  create_your_hda_profile: !binary |
-    0KHRitC30LTQsNC50YLQtSDRgdCy0L7RjyBIREEg0J/RgNC+0YTQuNC7
-
-  your_home_dns_domain: !binary |
-    0JLQsNGI0LjRj9GCINCd0LDRh9Cw0LvQtdC9IEROUyDQlNC+0YPQvNC10LnQ
-    vQ==
-
-  theme_by: !binary |
-    0KLQtdC80LAg0L7Rgg==
-
-  forums: !binary |
-    0KTQvtGA0YPQvNC4
-
-  there_are_no_aliases_defined: !binary |
-    0JLRgdC1INC+0YnQtSDQvdC1INGB0LAg0LfQsNC00LDQtNC10L3QuCDQvdC4
-    0LrQsNC60LLQuCDQv9GB0LXQstC00L7QvdC40LzQuC4=
-
-  user_name_is_not_valid: !binary |
-    0J/QvtGC0YDQtdCx0LjRgtC10LvRgdC60L7RgtC+INC40LzQtSDQvdC1INC1
-    INCy0LDQu9C40LTQvdC+
-
-  all_you_need: !binary |
-    0JLRgdC40YfQutC+LCDQutC+0LXRgtC+INCy0Lgg0LUg0L3Rg9C20L3QviE=
-
-  system: !binary |
-    0KHQuNGB0YLQtdC80LA=
-
-  name_is_taken_already_or_is_reserved: !binary |
-    0JjQvNC10YLQviDQstC10YfQtSDQtSDQt9Cw0LXRgtC+INC40LvQuCDQtSDR
-    gNC10LfQtdGA0LLQuNGA0LDQvQ==
-
-  webapps: !binary |
-    0KPQtdCx0J/RgNC40LvQvtC20LXQvdC40Y8=
-
-  submit_for_debug: !binary |
-    0J/QvtC00LDQuSDQt9CwINC+0YLRgdGC0YDQsNC90Y/QstCw0L3QtSDQvdCw
-    INCz0YDQtdGI0LrQuA==
-
-  more: !binary |
-    0L7RidC1
-
-  protocol: !binary |
-    0J/RgNC+0YLQvtC60L7Quw==
-
-  no_account_yet: !binary |
-    0JLRgdC1INC+0YnQtSDQvdGP0LzQsNGC0LUg0L/RgNC+0YTQuNC7Pw==
-
-  delete_this_rule: !binary |
-    0JjQt9GC0YDQuNC5INGC0L7QstCwINC/0YDQsNCy0LjQu9C+
-
-  images: !binary |
-    0JjQt9C+0LHRgNCw0LbQtdC90LjRjw==
-
-  language: !binary |
-    0JXQt9C40Lo=
-
-  this_application_is_installed: !binary |
-    0KLQvtCy0LAg0L/RgNC40LvQvtC20LXQvdC40LUg0LUg0LjQvdGB0YLQsNC7
-    0LjRgNCw0L3Qvi4=
-
-  share: !binary |
-    0KHQv9C+0LTQtdC70LXQvSDQtNGP0Ls=
-
-  partitions: !binary |
-    0JTRj9C70L7QstC1
-
-  router_setting_failed: !binary |
-    0J3QsNGB0YLRgNC+0LnQstCw0L3QtdGC0L4g0L3QsCDQoNGD0YLQtdGA0LAg
-    0LHQtdGI0LUg0L3QtdGD0YHQv9C10YjQvdC+LiDQnNC+0LvRjywg0L/RgNC+
-    0LLQtdGA0LXRgtC1INC90LDRgdGC0YDQvtC50LrQuNGC0LUu
-
-  global_settings_for_shares: !binary |
-    0J7QsdGJ0Lgg0L3QsNGB0YLRgNC+0LnQutC4INC30LAg0KHQv9C+0LTQtdC7
-    0LXQvdC4INC00Y/Qu9C+0LLQtQ==
-
-  the_watchdog_is_a_critical_setting: !binary |
-    0J/QsNC30LjRgtC10LvRj9GCINC1INC90LDRgdGC0YDQvtC50LrQsCDQvtGC
-    INCa0KDQmNCi0JjQp9Cd0J4g0LfQvdCw0YfQtdC90LjQtS4g0KHQv9C40YDQ
-    sNC90LXRgtC+INC90LAg0LzQvtC90LjRgtC+0YDQuNC90LPQsCDQvdCwINGB
-    0YrRgNCy0YrRgNC10L0g0L/RgNC+0YbQtdGBINC1INCh0JjQm9Cd0J4g0J3Q
-    ldCW0JXQm9CQ0KLQldCb0J3Qni4g0JjQtNC10Y/RgtCwINC90LAg0YLQsNC3
-    0Lgg0L3QsNGB0YLRgNC+0LnQutCwINC1INC00LAg0L/RgNC+0LTRitC70LbQ
-    uCDQvdCw0LTQtdC20LTQvdC+0YLQviDQuNC30L/RitC70L3QtdC90LjQtSDQ
-    vdCwINGD0YHQu9GD0LPQuNGC0LUg0LLRitCyINCy0LDRiNC40Y8gSERBINC0
-    0L7RgNC4INC/0YDQuCDQvdCw0LvQuNGH0LjQtdGC0L4g0L3QsCDRgdGA0LjQ
-    stC+0LLQtS4g0J3QsNC40YHRgtC40L3QsCDQu9C4INC40YHQutCw0YLQtSDQ
-    tNCwINGB0L/RgNC10YLQtSDQn9Cw0LfQuNGC0LXQu9GPINC90LAg0YLQvtC3
-    0Lgg0YHRitGA0LLRitGAPw==
-
-  warning_this_application_is_in_testing: !binary |
-    0JLQndCY0JzQkNCd0JjQlTog0KLQvtCy0LAg0L/RgNC40LvQvtC20LXQvdC4
-    0LUg0LUg0LIg0YLQtdGB0YLQvtCy0LAg0YTQsNC30LAg0L3QsCDRgNCw0LfR
-    gNCw0LHQvtGC0LrQsNGC0LAg0YHQuCE=
-
-  is_being_monitored_24x7: !binary |
-    0YHQtSDQvdCw0LHQu9GO0LTQsNCy0LAgMjR4Nw==
-
-  computer: !binary |
-    0JrQvtC80L/RjtGC0YrRgA==
-
-  an_external_ip_address_to_make_the_alias: !binary |
-    0JLRitC90YjQtdC9IElQINCw0LTRgNC10YEsINC60L7QudGC0L4g0LTQsCDQ
-    sdGK0LTQtSDQv9GA0LXQvdCw0YHQvtGH0LXQvSDQutGK0Lwg0L7Qv9GA0LXQ
-    tNC10LvQtdC9IElQINCw0LTRgNGB
-
-  file_server_samba: !binary |
-    0KTQsNC50LvQvtCyINGB0YrRgNCy0YrRgCAoU2FtYmEp
-
-  mac_is_invalid: !binary |
-    TUFDINC1INC90LXQstCw0LvQuNC00LXQvQ==
-
-  edit_alias: !binary |
-    0KDQtdC00LDQutGC0LjRgNCw0L3QtSDQvdCwINCf0YHQtdCy0LTQvtC90LjQ
-    vA==
-
-  port_range_ports_are_already_allocated: !binary |
-    0J/QvtGA0YLQvtCy0LXRgtC1INGBINGC0L7Qt9C4INC00LjQsNC/0LDQt9C+
-    0L0g0LLQtdGH0LUg0YHQsCDQt9Cw0LTQsNC00LXQvdC4
-
-  please_double_check_the_settings: !binary |
-    0JzQvtC70Y8sIDxzdHJvbmc+0L/RgNC+0LLQtdGA0LXRgtC1INC/0L7QstGC
-    0L7RgNC90L4g0Lgg0LLQvdC40LzQsNGC0LXQu9C90L4g0YLQtdC30Lgg0L3Q
-    sNGB0YLRgNC+0LnQutC4PC9zdHJvbmc+LCDRgtGK0Lkg0LrQsNGC0L4g0YLQ
-    tSDRgdCwINGA0LXRiNCw0LLQsNGJ0Lgg0LfQsCDQtNCwINC90LDQutCw0YDQ
-    sNGC0LUg0LLQsNGI0LXRgtC+IEhEQSDQtNCwINGA0LDQsdC+0YLQuCDQvdCw
-    0L/RgNCw0LLQviDRgdC70LXQtCDQutCw0YLQviDQs9C+INC40LfQstCw0LTQ
-    uNGC0LUg0L7RgiDQutGD0YLQuNGP0YLQsC4=
-
-  otherwise_you_can_go_to_the_error_log: !binary |
-    0JjQu9C4INC80L7QttC10YLQtSDQtNCwINC+0YLQuNC00LXRgtC1INC00LjR
-    gNC10LrRgtC90L4g0L3QsCA8YSBocmVmPSIvc2V0dXA/dGFiPWRlYnVnIj7Q
-    lNC90LXQstC90LjQutCwINC90LAg0LPRgNC10YjQutC40YLQtTwvYT4u
-
-  description: !binary |
-    0J7Qv9C40YHQsNC90LjQtQ==
-
-  there_are_no_users: !binary |
-    0JIg0YLQvtC30Lgg0LzQvtC80LXQvdGCINC90Y/QvNCwINC/0L7RgtGA0LXQ
-    sdC40YLQtdC70Lgg0LIg0YHQuNGB0YLQtdC80LDRgtCwINCy0Lgu
-
-  are_you_sure: !binary |
-    0KHQuNCz0YPRgNC90Lgg0LvQuCDRgdGC0LU/
-
-  efficiently_manage_your_network: !binary |
-    0JXRhNC10LrRgtC40LLQvdC+INGD0L/RgNCw0LLQu9C10L3QuNC1INC90LAg
-    0LzRgNC10LbQsCDQuCDQsNGA0YXQuNCy0LjRgNCw0L3QtSDQvdCwINCy0YHQ
-    uNGH0LrQuCDQutC+0LzQv9GO0YLRgNC4LCDQuNCz0YDQvtCy0Lgg0LrQvtC9
-    0LfQvtC70Lgg0Lgg0LTRgNGD0LPQuCDRg9GB0YLRgNC+0LnRgdGC0LLQsCDQ
-    siDQvNGA0LXQttCw0YLQsCDRgdC4LCDQuCDRgdC40LPRg9GA0L3QviDQt9Cw
-    INC00L7RgdGC0YrQvyDQtNC+INC80YDQtdC20LDRgtCwINGB0Lgg0L7RgiDQ
-    uNC90YLQtdGA0L3QtdGCLiDQotC+0LLQsCDQtSDRgdCw0LzQviDQvdCw0YfQ
-    sNC70L7RgtC+INC90LAg0YLQvtCy0LAsINC60L7QtdGC0L4g0YnQtSDQsdGK
-    0LTQtSDQsiDRgdGK0YHRgtC+0Y/QvdC40LUg0LTQsCDQvdCw0L/RgNCw0LLQ
-    uCDRgSBBbWFoaS4=
-
-  port_range_field_cannot_be_empty: !binary |
-    0J/QvtC70LXRgtCw0YLQsCDQvdC1INC80L7QttC1INC00LAg0LHRitC00LDR
-    giDQv9GA0LDQt9C90Lg=
-
-  available_for_installation: !binary |
-    KNCd0LAg0YDQsNC30L/QvtC70L7QttC10L3QuNC1INC30LAg0LjQvdGB0YLQ
-    sNC70LjRgNCw0L3QtSk=
-
-  create_share: !binary |
-    0KHRitC30LTQsNC5INGC0L7Qt9C4INGB0L/QvtC00LXQu9C10L0g0LTRj9C7
-
-  apps: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40Y8=
-
-  translate_amahi: !binary |
-    0J/RgNC10LLQvtC00LXRgtC1IEFtYWhp
-
-  alias_looks_good: !binary |
-    0J/RgdC10LLQtNC+0L3QuNC80YrRgiDQuNC30LPQu9C10LbQtNCwINC00L7Q
-    sdGA0LU=
-
+        few: "над {{count}} години"
+        many: "над {{count}} години"
+        one: "над {{count}} година"
+        other: "над {{count}} години"
+      half_a_minute: "по-малко от минута"
+  nickname: "Псевдоним"
+  check_the_calendars_wiki_for_more_details: "Запознайте се с Уики-то за календари за повече информация за това как да управлявате календари и кои са съвместимите клиенти."
+  pooled: "Изтеглени"
+  edit_web_app: "Редактиране на Уеб Приложение"
+  movies: "Филми"
+  mac_already_allocated: "MAC вече е разпределен"
+  dyndns_info: "Amahi предоставя безплатен, нулева конфигурация динамичен DNS адрес за вас. Той е външен за вашата домашна мрежа. Можете да го използвате за <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/VPN\">Mac</a> или <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a> <a\r\n\
+    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a> клиенти (техническите потребители могат да го използват за влизане в системата с <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>). Техническите потребители могат да го използват за хостинг на уеб сайтове, гейм сървъри или други услуги от домашната си мрежа (ако са в треска да опитате, просто попитайте в IRC канала или потърсете в Wiki-то)."
+  confirmation_matches: "Потвърждението съвпада"
+  setting_dmz_failed: "Настройката на DMZ е неуспешна. Моля, проверете настройките си."
+  logs: "Дневници"
+  this_name_is_not_available: "Това име не е свободно"
+  password_changed_successfully: "Паролата беше променена успешно"
+  will_start_at_boot_time: "да се зарежда при стартиране"
+  calendar_name: "Име на календара"
+  this_application_install_ended_with_an_error_please_uninstall_status_is: "Инсталационният процес на това приложение приключи с грешка. Моля, деинсталирайте го и опитайте отново. Статусът на приложението е "
+  mac_filtering: "MAC Филтриране"
+  tags: "Етикети"
+  router_firewall_settings: "Настройки на Рутера/Защитната стена"
+  firewall_mac_address_filter_info: "Вписите в тази таблица се използват за ограничаване на някои типове пакетите с данни от локалната ви мрежа към Интернет чрез Gateway. Употребата на такива филтри може да бъде полезна при защитата или ограничаването на вашата локална мрежа."
+  static_ip_address: "Статичен IP адрес"
+  are_you_sure_advanced_features: "Наистина ли искате да разрешите Разширените функции?"
+  dhcp_server: "DHCP Сървър"
+  app_logs: "App дневници"
+  changelog: "Дневник на промените"
+  contribute: "Допринесете"
+  back: "Назад"
+  notifications_from_amahi: "Известия от Amahi"
+  support_win_95_98: "Поддръжка на Windows 95/98 - разрешава (несигурнo) LanManager удостоверяване."
+  there_are_no_calendars_available_see_wiki: "Все още няма календари на сървъра. Създайте ги с помощта на клиент за календари. Разгледайте <a href=\"http://wiki.amahi.org/index.php/Calendars\">Уики-то</a> за календари."
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Ако разрешите проследяването за грешки (Debug), това е твърде вероятно да доведе до генерирането на големи файлове за дневници. \r\n\
+    Сигурни ли сте, че искате да разрешите Samba проседяване на грешки (Dебуггинг)?"
+  the_mac_is_invalid: "МАС адресът е невалиден"
+  making_home_networking_simple: "Прави Домашната мрежа лесна работа"
+  disk_pool_details: "Изберете дяловете, които искате да включите в {{greyhole}} сторидж, и след това задайте кои {{shares}} да използват сториджа."
+  calendars: "Календари"
+  a_single_number_0_254_to_point_to_a_given_machine: "Число (0-254), което да отговаря на дадена машина в мрежата ви"
+  writeable: "Разрешен за писане"
+  port_range_ports_must_be_numbers: "Портовете трябва да бъдат от цифри"
+  help: "Помощ"
+  new_firewall_rule: "Ново правило в Зщитната стена"
+  video: "Видео"
+  thanks_for_visiting: "Благодарим за посещение. Подкрепете нашите спонсори!"
+  install_code: "Инсталационен Код"
+  new_static_ip: "Нов статичен IP"
+  this_share_name_is_not_valid: "Името на този споделен дял не е валидно"
+  there_are_no_applications_available: "Все още няма налични приложения."
+  ip_filtering: "IP филтриране"
+  create: "Създай"
+  guest_dashboard: "Контролен панел за Гости"
+  view_all_calendars_simultaneously: "Преглед на всички календари едновременно"
+  music: "Музика"
+  permissions: "Разрешения"
+  initial_password: "Парола"
+  your_domain_info: "Това е домейнът на домашната ви мрежа. Той е достъпен <b>единствено</b> в домашната ви мрежа. \r\n\
+    За повече информация относно това, прегледайте <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\"> Въпроси и отговори</a>. "
+  there_are_no_firewall_rules_defined: "Все още няма зададени правила за Защитната стена."
+  firewall_url_filter_message: "Вписванията в тази таблица се използват за забрана на URL адреси през Gateway."
+  dhcp_leases: "DHCP Раздавания"
+  dynamic_dns: "Динамичен DNS"
+  the_ip_must_be_1_to_254: "IP адресът трябва да е в диапазона 1-254"
+  not_a_valid_user_or_password: "Грешка: неправилни име или парола"
+  create_your_hda_profile: "Създайте своя HDA Профил"
+  your_home_dns_domain: "Вашият Начален DNS Доумейн"
+  theme_by: "Тема от"
+  forums: "Форуми"
+  there_are_no_aliases_defined: "Все още не са зададени никакви псевдоними."
+  user_name_is_not_valid: "Потребителското име не е валидно"
+  all_you_need: "Всичко, което ви е нужно!"
+  system: "Система"
+  name_is_taken_already_or_is_reserved: "Името вече е заето или е резервиран"
+  webapps: "УебПриложения"
+  submit_for_debug: "Подай за отстраняване на грешки"
+  more: "още"
+  protocol: "Протокол"
+  no_account_yet: "Все още нямате профил?"
+  delete_this_rule: "Изтрий това правило"
+  images: "Изображения"
+  language: "Език"
+  this_application_is_installed: "Това приложение е инсталирано."
+  share: "Споделен дял"
+  partitions: "Дялове"
+  router_setting_failed: "Настройването на Рутера беше неуспешно. Моля, проверете настройките."
+  global_settings_for_shares: "Общи настройки за Споделени дялове"
+  the_watchdog_is_a_critical_setting: "Пазителят е настройка от КРИТИЧНО значение. Спирането на мониторинга на сървърен процес е СИЛНО НЕЖЕЛАТЕЛНО. Идеята на тази настройка е да продължи надеждното изпълнение на услугите във вашия HDA дори при наличието на сривове. Наистина ли искате да спрете Пазителя на този сървър?"
+  warning_this_application_is_in_testing: "ВНИМАНИЕ: Това приложение е в тестова фаза на разработката си!"
+  is_being_monitored_24x7: "се наблюдава 24x7"
+  computer: "Компютър"
+  an_external_ip_address_to_make_the_alias: "Външен IP адрес, който да бъде пренасочен към определен IP адрс"
+  file_server_samba: "Файлов сървър (Samba)"
+  mac_is_invalid: "MAC е невалиден"
+  edit_alias: "Редактиране на Псевдоним"
+  port_range_ports_are_already_allocated: "Портовете с този диапазон вече са зададени"
+  please_double_check_the_settings: "Моля, <strong>проверете повторно и внимателно тези настройки</strong>, тъй като те са решаващи за да накарате вашето HDA да работи направо след като го извадите от кутията."
+  otherwise_you_can_go_to_the_error_log: "Или можете да отидете директно на <a href=\"/setup?tab=debug\">Дневника на грешките</a>."
+  description: "Описание"
+  there_are_no_users: "В този момент няма потребители в системата ви."
+  are_you_sure: "Сигурни ли сте?"
+  efficiently_manage_your_network: "Ефективно управление на мрежа и архивиране на всички компютри, игрови конзоли и други устройства в мрежата си, и сигурно за достъп до мрежата си от интернет. Това е само началото на това, което ще бъде в състояние да направи с Amahi."
+  port_range_field_cannot_be_empty: "Полетата не може да бъдат празни"
+  available_for_installation: "(На разположение за инсталиране)"
+  create_share: "Създай този споделен дял"
+  apps: "Приложения"
+  translate_amahi: "Преводете Amahi"
+  alias_looks_good: "Псевдонимът изглежда добре"
   support: 
     array: 
       words_connector: ", "
-      last_word_connector: !binary |
-        INC4IA==
-
-      two_words_connector: !binary |
-        INC4IA==
-
+      last_word_connector: " и "
+      two_words_connector: " и "
       skip_last_comma: true
-      sentence_connector: !binary |
-        0Lg=
-
-  delete_share: !binary |
-    0JjQt9GC0YDQuNCy0LDQvdC1INC90LAg0YHQv9C+0LTQtdC70LXQvSDQtNGP
-    0Ls=
-
-  ushare_upnp_media_server: !binary |
-    VXNoYXJlIFVQblAg0JzQtdC00LjQsCDQodGK0YDQstGK0YA=
-
-  sign_in: !binary |
-    0JLRhdC+0LQ=
-
-  disk_pooling_enabled: !binary |
-    0KPQv9C+0YLRgNC10LHQsA==
-
-  new_dns_alias: !binary |
-    0J3QvtCyIEROUyDQn9GB0LXQstC00L7QvdC40Lw=
-
-  community: !binary |
-    0J7QsdGJ0L3QvtGB0YLRgtCw
-
-  create_a_new_user: !binary |
-    0KHRitC30LTQsNCy0LDQvdC1INC90LAg0L3QvtCyINC/0L7RgtGA0LXQsdC4
-    0YLQtdC7
-
-  suggest: !binary |
-    0J/RgNC10LTQu9C+0LbQuCE=
-
-  port_filtering: !binary |
-    0KTQuNC70YLRgNC40YDQsNC90LUg0L3QsCDQn9C+0YDRgtC+0LLQtQ==
-
-  results_found: !binary |
-    0L3QsNC80LXRgNC10L3QuCDRgNC10LfRg9C70YLQsNGC0Lg=
-
-  the_mac_looks_good: !binary |
-    TUFDINCw0LTRgNC10YHRitGCINC40LfQs9C70LXQttC00LAg0LTQvtCx0YDQ
-    tQ==
-
-  when_there_are_major_announcements: !binary |
-    0JrQvtCz0LDRgtC+INGB0LAg0L3QsNC70LjRh9C90Lgg0LfQvdCw0YfQuNC8
-    0Lgg0YPQstC10LTQvtC80LvQtdC90LjRjw==
-
-  no_description_supplied: !binary |
-    0J3Rj9C80LAg0L7Qv9C40YHQsNC90LjQtSE=
-
-  manage_your_contributed_apps: !binary |
-    0KPQv9GA0LDQstC70LXQvdC40LUg0L3QsCDQv9GA0LjQu9C+0LbQtdC90LjR
-    j9GC0LAsINGBINC60L7QuNGC0L4g0LLQuNC1INGB0YLQtSDQtNC+0L/RgNC4
-    0L3QtdGB0LvQuA==
-
-  global_settings: !binary |
-    0J7QsdGJ0Lgg0L3QsNGB0YLRgNC+0LnQutC4
-
-  networking: !binary |
-    0JzRgNC10LbQuA==
-
-  firewall: !binary |
-    0JfQsNGJ0LjRgtC90LAg0YHRgtC10L3QsA==
-
-  there_are_no_servers_available: !binary |
-    0JLRgdC1INC+0YnQtSDQvdC1INGB0LAg0L3QsNC70LjRh9C90Lgg0YHRitGA
-    0LLRitGA0Lgu
-
-  port_range: !binary |
-    0JTQuNCw0L/QsNC30L7QvSDQvtGCINCf0L7RgNGC0L7QstC1
-
-  network_gateway: !binary |
-    0JzRgNC10LbQvtCyIEdhdGV3YXk=
-
-  path_looks_good: !binary |
-    0J/RitGC0Y/RgiDQuNC30LPQu9C10LbQtNCwINC00L7QsdGA0LU=
-
-  please_select: !binary |
-    0JzQvtC70Y8sINC40LfQsdC10YDQtdGC0LUgLi4u
-
-  subscribe: !binary |
-    0JDQsdC+0L3QuNGA0LDQuSDQvNC1
-
-  mac_address: !binary |
-    TUFDINCw0LTRgNC10YE=
-
-  anonymous_guests: !binary |
-    0JPQvtGB0YLQuA==
-
-  settings: !binary |
-    0J3QsNGB0YLRgNC+0LnQutC4
-
-  initial_user_info: !binary |
-    0J3QsNGH0LDQu9C10L0g0L/QvtGC0YDQtdCx0LjRgtC10Ls=
-
-  control: !binary |
-    0JrQvtC90YLRgNC+0Ls=
-
-  disk_pool_replication: !binary |
-    0KDQtdC/0LvQuNC60LjRgNCw0L3QtQ==
-
+      sentence_connector: "и"
+  delete_share: "Изтриване на споделен дял"
+  ushare_upnp_media_server: "Ushare UPnP Медиа Сървър"
+  sign_in: "Вход"
+  disk_pooling_enabled: "Употреба"
+  new_dns_alias: "Нов DNS Псевдоним"
+  community: "Общността"
+  create_a_new_user: "Създаване на нов потребител"
+  suggest: "Предложи!"
+  port_filtering: "Филтриране на Портове"
+  results_found: "намерени резултати"
+  the_mac_looks_good: "MAC адресът изглежда добре"
+  when_there_are_major_announcements: "Когато са налични значими уведомления"
+  no_description_supplied: "Няма описание!"
+  manage_your_contributed_apps: "Управление на приложенията, с които вие сте допринесли"
+  global_settings: "Общи настройки"
+  networking: "Мрежи"
+  firewall: "Защитна стена"
+  there_are_no_servers_available: "Все още не са налични сървъри."
+  port_range: "Диапазон от Портове"
+  network_gateway: "Мрежов Gateway"
+  path_looks_good: "Пътят изглежда добре"
+  please_select: "Моля, изберете ..."
+  subscribe: "Абонирай ме"
+  mac_address: "MAC адрес"
+  anonymous_guests: "Гости"
+  settings: "Настройки"
+  initial_user_info: "Начален потребител"
+  control: "Контрол"
+  disk_pool_replication: "Репликиране"
   date: 
     month_names: 
     - 
-    - !binary |
-      0K/QvdGD0LDRgNC4
-
-    - !binary |
-      0KTQtdCy0YDRg9Cw0YDQuA==
-
-    - !binary |
-      0JzQsNGA0YI=
-
-    - !binary |
-      0JDQv9GA0LjQuw==
-
-    - !binary |
-      0JzQsNC5
-
-    - !binary |
-      0K7QvdC4
-
-    - !binary |
-      0K7Qu9C4
-
-    - !binary |
-      0JDQstCz0YPRgdGC
-
-    - !binary |
-      0KHQtdC/0YLQtdC80LLRgNC4
-
-    - !binary |
-      0J7QutGC0L7QvNCy0YDQuA==
-
-    - !binary |
-      0J3QvtC10LzQstGA0Lg=
-
-    - !binary |
-      0JTQtdC60LXQvNCy0YDQuA==
-
+    - "Януари"
+    - "Февруари"
+    - "Март"
+    - "Април"
+    - "Май"
+    - "Юни"
+    - "Юли"
+    - "Август"
+    - "Септември"
+    - "Октомври"
+    - "Ноември"
+    - "Декември"
     standalone_day_names: 
-    - !binary |
-      0J3QtdC00LXQu9GP
-
-    - !binary |
-      0J/QvtC90LXQtNC10LvQvdC40Lo=
-
-    - !binary |
-      0JLRgtC+0YDQvdC40Lo=
-
-    - !binary |
-      0KHRgNGP0LTQsA==
-
-    - !binary |
-      0KfQtdGC0LLRitGA0YLRitC6
-
-    - !binary |
-      0J/QtdGC0YrQug==
-
-    - !binary |
-      0KHRitCx0L7RgtCw
-
+    - "Неделя"
+    - "Понеделник"
+    - "Вторник"
+    - "Сряда"
+    - "Четвъртък"
+    - "Петък"
+    - "Събота"
     abbr_day_names: 
-    - !binary |
-      0J3QtA==
-
-    - !binary |
-      0J/QvQ==
-
-    - !binary |
-      0JLRgg==
-
-    - !binary |
-      0KHRgA==
-
-    - !binary |
-      0KfRgg==
-
-    - !binary |
-      0J/Rgg==
-
-    - !binary |
-      0KHQsQ==
-
+    - "Нд"
+    - "Пн"
+    - "Вт"
+    - "Ср"
+    - "Чт"
+    - "Пт"
+    - "Сб"
     order: 
     - :day
     - :month
@@ -1770,359 +533,103 @@ bg:
       short: "%d %b"
       long: "%d %B %Y"
     day_names: 
-    - !binary |
-      0L3QtdC00LXQu9GP
-
-    - !binary |
-      0L/QvtC90LXQtNC10LvQvdC40Lo=
-
-    - !binary |
-      0LLRgtC+0YDQvdC40Lo=
-
-    - !binary |
-      0YHRgNGP0LTQsA==
-
-    - !binary |
-      0YfQtdGC0LLRitGA0YLRitC6
-
-    - !binary |
-      0L/QtdGC0YrQug==
-
-    - !binary |
-      0YHRitCx0L7RgtCw
-
+    - "неделя"
+    - "понеделник"
+    - "вторник"
+    - "сряда"
+    - "четвъртък"
+    - "петък"
+    - "събота"
     abbr_month_names: 
     - 
-    - !binary |
-      0Y/QvdGDLg==
-
-    - !binary |
-      0YTQtdCyLg==
-
-    - !binary |
-      0LzQsNGA0YI=
-
-    - !binary |
-      0LDQv9GALg==
-
-    - !binary |
-      0LzQsNC5
-
-    - !binary |
-      0Y7QvdC4
-
-    - !binary |
-      0Y7Qu9C4
-
-    - !binary |
-      0LDQstCzLg==
-
-    - !binary |
-      0YHQtdC/Lg==
-
-    - !binary |
-      0L7QutGCLg==
-
-    - !binary |
-      0L3QvtC10Lwu
-
-    - !binary |
-      0LTQtdC6Lg==
-
-  username_cannot_be_blank: !binary |
-    0J/QvtGC0YDQtdCx0LjRgtC10LvRgdC60L7RgtC+INC40LzQtSDQvdC1INC8
-    0L7QttC1INC00LAg0LHRitC00LUg0L/RgNCw0LfQvdC+
-
-  reboot: !binary |
-    0KDQtdGB0YLQsNGA0YLQuNGA0LDQvdC1
-
-  this_feature_is_under_heavy_development: !binary |
-    0YLQsNC30Lgg0YTRg9C90LrRhtC40Y8g0LUg0LIg0L/RgNC+0YbQtdGBINC9
-    0LAg0YHQtdGA0LjQvtC30L3QsCDRgNCw0LfRgNCw0LHQvtGC0LrQsA==
-
-  there_are_no_webapps: !binary |
-    0JLRgdC1INC+0YnQtSDQsiDRgdC40YHRgtC10LzQsNGC0LAg0LLQuCDQvdGP
-    0LzQsCDQutC+0L3RhNC40LPRg9GA0LjRgNCw0L3QuCDQo9C10LEg0L/RgNC4
-    0LvQvtC20LXQvdC40Y8u
-
-  are_you_sure_you_want_to_delete_the_static_ip: !binary |
-    0KHQuNCz0YPRgNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1
-    INC00LAg0LjQt9GC0YDQuNC10YLQtSDRgdGC0LDRgtC40YfQvdC40Y/RgiBJ
-    UCAie3tuYW1lfX0iPw==
-
-  the_ip_looks good: !binary |
-    SVAg0LDQtNGA0LXRgdGK0YIg0LjQt9Cz0LvQtdC20LTQsCDQtNC+0LHRgNC1
-
-  the_name_cannot_be_blank: !binary |
-    0JjQvNC10YLQviDQvdC1INC80L7QttC1INC00LAg0LHRitC00LUg0L/RgNCw
-    0LfQvdC+
-
-  uninstall: !binary |
-    0JTQtdC40L3RgdGC0LDQu9C40YDQsNC5
-
-  details: !binary |
-    0JTQtdGC0LDQudC70Lg=
-
-  is_now_uninstalled: !binary |
-    0LLQtdGH0LUg0LUg0JTQtdC40L3RgdGC0LDQu9C40YDQsNC9
-
-  themes: !binary |
-    0KLQtdC80Lg=
-
-  the_name_you_input_above_will_be_added_to_the_DNS_server: !binary |
-    0JjQvNC10YLQviwg0LrQvtC10YLQviDQstGK0LLQtdC00LXRgtC1INC/0L4t
-    0LPQvtGA0LUg0YnQtSAg0LHRitC00LUg0LTQvtCx0LDQstC10L3QviDQutGK
-    0LwgRE5TINGB0YrRgNCy0YrRgNCwINC4INGJ0LUg0LHRitC00LUg0LDRgdC+
-    0YbQuNC40YDQsNC90L4g0YEgTUFDINC4IElQINCw0LTRgNC10YHQuNGC0LUg
-    0L/Qvi3QtNC+0LvRgy4=
-
-  new_share: !binary |
-    0J3QvtCyINCh0L/QvtC00LXQu9C10L0g0LTRj9C7
-
-  this_path_is_not_valid: !binary |
-    0KLQvtC30Lgg0L/RitGCINC90LUg0LUg0LLQsNC70LjQtNC10L0=
-
-  log_in: !binary |
-    0JLRhdC+0LQ=
-
-  are_you_sure_user: !binary |
-    0KHQuNCz0YPRgNC90Lgg0LvQuCDRgdGC0LUsINGH0LUg0LjRgdC60LDRgtC1
-    INC00LAg0LjQt9GC0YDQuNC10YLQtSDQv9C+0YLRgNC10LHQuNGC0LXQu9GP
-    ICJ7e3VzZXJ9fT8=
-
-  extra_parameters: !binary |
-    0JTQvtC/0YrQu9C90LjRgtC10LvQvdC4INC/0LDRgNCw0LzQtdGC0YDQuA==
-
-  try_installing_some_apps: !binary |
-    0JjQvdGB0YLQsNC70LjRgNCw0LnRgtC1INC90Y/QutCw0LrQstC4INC/0YDQ
-    uNC70L7QttC10L3QuNGP
-
-  testimonials: !binary |
-    0J/RgNC10L/QvtGA0YrQutC4
-
-  version: !binary |
-    0JLQtdGA0YHQuNGP
-
-  powering_off: !binary |
-    0J/QvtC00LPQvtGC0LLRj9C8INGB0LUg0LfQsCDQuNC30LrQu9GO0YfQstCw
-    0L3QtSAuLi4=
-
-  get_involved: !binary |
-    0JLQutC70Y7Rh9C4INGB0LUh
-
-  stop_it: !binary |
-    0KHQv9GA0Lg=
-
+    - "яну."
+    - "фев."
+    - "март"
+    - "апр."
+    - "май"
+    - "юни"
+    - "юли"
+    - "авг."
+    - "сеп."
+    - "окт."
+    - "ноем."
+    - "дек."
+  username_cannot_be_blank: "Потребителското име не може да бъде празно"
+  reboot: "Рестартиране"
+  this_feature_is_under_heavy_development: "тази функция е в процес на сериозна разработка"
+  there_are_no_webapps: "Все още в системата ви няма конфигурирани Уеб приложения."
+  are_you_sure_you_want_to_delete_the_static_ip: "Сигурни ли сте, че искате да изтриете статичният IP \"{{name}}\"?"
+  the_ip_looks good: "IP адресът изглежда добре"
+  the_name_cannot_be_blank: "Името не може да бъде празно"
+  uninstall: "Деинсталирай"
+  details: "Детайли"
+  is_now_uninstalled: "вече е Деинсталиран"
+  themes: "Теми"
+  the_name_you_input_above_will_be_added_to_the_DNS_server: "Името, което въведете по-горе ще  бъде добавено към DNS сървъра и ще бъде асоциирано с MAC и IP адресите по-долу."
+  new_share: "Нов Споделен дял"
+  this_path_is_not_valid: "Този път не е валиден"
+  log_in: "Вход"
+  are_you_sure_user: "Сигурни ли сте, че искате да изтриете потребителя \"{{user}}?"
+  extra_parameters: "Допълнителни параметри"
+  try_installing_some_apps: "Инсталирайте някакви приложения"
+  testimonials: "Препоръки"
+  version: "Версия"
+  powering_off: "Подготвям се за изключване ..."
+  get_involved: "Включи се!"
+  stop_it: "Спри"
   home_domain: Home Domain
-  total_space: !binary |
-    0J7QsdGJ0L4g0L/RgNC+0YHRgtGA0LDQvdGB0YLQstC+
-
-  never_email_me: !binary |
-    0J3QuNC60L7Qs9CwINC90LUg0LzQuCDQuNC30L/RgNCw0YnQsNC50YLQtSBl
-    LW1haWw=
-
-  is_now_installed: !binary |
-    0LLQtdGH0LUg0LUg0LjQvdGB0YLQsNC70LjRgNCw0L0=
-
-  this_shares_files_deleted: !binary |
-    0KLQvtC30Lgg0YHQv9C+0LTQtdC70LXQvSDQtNGP0Lsg0LLQtdGH0LUg0L3R
-    j9C80LAg0LTQsCDQsdGK0LTQtSDQvdCwINGA0LDQt9C/0L7Qu9C+0LbQtdC9
-    0LjQtSAo0YTQsNC50LvQvtCy0LUg0LIg0L3QtdCz0L4g0J3Qr9Cc0JAg0LTQ
-    sCDQsdGK0LTQsNGCINC40LfRgtGA0LjRgtC4KS4=
-
-  alias_is_not_valid: !binary |
-    0J/RgdC10LLQtNC+0L3QuNC80YrRgiDQvdC1INC1INCy0LDQu9C40LTQtdC9
-
-  mac_address_of_the_device: !binary |
-    TUFDINCw0LTRgNC10YHQsCDQvdCwINGD0YHRgtGA0L7QudGB0YLQstC+0YLQ
-    viAo0LLRitCyINGE0L7RgNC80LDRgtCwIDAwOjExOjIyOjMzOjQ0OjU1KQ==
-
-  next: !binary |
-    0KHQu9C10LTQstCw0Yk=
-
-  web_apps: !binary |
-    0KPQtdCxINCf0YDQuNC70L7QttC10L3QuNGP
-
-  remember_me: !binary |
-    0JfQsNC/0L7QvNC90Lgg0LzQtQ==
-
-  password_looks_good: !binary |
-    0J/QsNGA0L7Qu9Cw0YLQsCDQuNC30LPQu9C10LbQtNCwINC00L7QsdGA0LU=
-
-  docs: !binary |
-    0JTQvtC60YPQvNC10L3RgtC4
-
-  the_ip_address_cannot_be_empty: !binary |
-    SVAg0LDQtNGA0LXRgdGK0YIg0L3QtSDQvNC+0LbQtSDQtNCwINCx0YrQtNC1
-    INC/0YDQsNC30LXQvQ==
-
+  total_space: "Общо пространство"
+  never_email_me: "Никога не ми изпращайте e-mail"
+  is_now_installed: "вече е инсталиран"
+  this_shares_files_deleted: "Този споделен дял вече няма да бъде на разположение (файлове в него НЯМА да бъдат изтрити)."
+  alias_is_not_valid: "Псевдонимът не е валиден"
+  mac_address_of_the_device: "MAC адреса на устройството (във формата 00:11:22:33:44:55)"
+  next: "Следващ"
+  web_apps: "Уеб Приложения"
+  remember_me: "Запомни ме"
+  password_looks_good: "Паролата изглежда добре"
+  docs: "Документи"
+  the_ip_address_cannot_be_empty: "IP адресът не може да бъде празен"
   pdc_primary_domain_controller: PDC - Primary Domain Controller
-  computer_name: !binary |
-    0JjQvNC1INC90LAg0LrQvtC80L/RjtGC0YrRgNCw
-
-  close: !binary |
-    0JfQsNGC0LLQvtGA0Lg=
-
-  this_file_was_automatically_generated_on: !binary |
-    IyDQotC+0LfQuCDRhNCw0LnQuyDQsdC10YjQtSDQsNCy0YLQvtC80LDRgtC4
-    0YfQvdC+INCz0LXQvdC10YDQuNGA0LDQvSDQvdCwIHt7dGltZX19IC0g0JLQ
-    ndCY0JzQkNCd0JjQlSAtINCy0YHQuNGH0LrQuCDRgNGK0YfQvdC4INGA0LXQ
-    tNCw0LrRhtC40Lgg0L3Rj9C80LAg0LTQsCDQsdGK0LTQsNGCINGB0YrRhdGA
-    0LDQvdC10L3QuC4=
-
-  installation_instructions: !binary |
-    0KPQutCw0LfQsNC90LjRjyDQt9CwINC40L3RgdGC0LDQu9C40YDQsNC90LU=
-
-  control_panel_for_your_amahi_hdas: !binary |
-    0JrQvtC90YLRgNC+0LvQvdC40Y/RgiDRhtC10L3RgtGK0YAg0LfQsCDQstCw
-    0YjQuNGC0LUgQW1haGkgSERBcw==
-
-  please_select_the_type_of_rule_you_want: !binary |
-    0JzQvtC70Y8sINC40LfQsdC10YDQtdGC0LUg0LLQuNC00LAg0L3QsCDQv9GA
-    0LDQstC40LvQvtGC0L4sINC60L7QtdGC0L4g0LjRgdC60LDRgtC1INC00LAg
-    0LTQvtCx0LDQstC40YLQtS4=
-
-  create_a_new_webapp: !binary |
-    0KHRitC30LTQsNCy0LDQvdC1INC90LAg0L3QvtCy0L4g0KPQtdCxINCf0YDQ
-    uNC70L7QttC10L3QuNC1
-
-  refresh_status: !binary |
-    0J7QsdC90L7QstC4INGB0YLQsNGC0YPRgdCw
-
-  home: !binary |
-    0J3QsNGH0LDQu9C+
-
-  will_not_start_at_boot_time: !binary |
-    0LTQsCA8Yj7QndCVPC9iPiDRgdC1INC30LDRgNC10LbQtNCwINC/0YDQuCDR
-    gdGC0LDRgNGC0LjRgNCw0L3QtQ==
-
-  there_are_no_static_ips_defined: !binary |
-    0JLRgdC1INC+0YnQtSDQvdGP0LzQsCDQt9Cw0LTQsNC00LXQvdC4INGE0LjQ
-    utGB0LjRgNCw0L3QuCBJUCDQsNC00YDQtdGB0Lgu
-
-  share_name_is_available: !binary |
-    0JjQvNC10YLQviDQvdCwINCh0L/QvtC00LXQu9C10L3QuNGPINC00Y/QuyDQ
-    tSDRgdCy0L7QsdC+0LTQvdC+
-
-  powerful_simple_home_networking: !binary |
-    0JzQvtGJ0L3QsCwg0L/RgNC+0YHRgtCwLCDQlNC+0LzQsNGI0L3QsCDQnNGA
-    0LXQttCw
-
-  about: !binary |
-    0L7QutC+0LvQvg==
-
-  email_me: !binary |
-    0JjQt9C/0YDQsNGC0LXRgtC1INC80LggZS1tYWls
-
-  there_are_no_applications_installed: !binary |
-    0JLRgdC1INC+0YnQtSDQvdGP0LzQsCDQuNC90YHRgtCw0LvQuNGA0LDQvdC4
-    INC/0YDQuNC70L7QttC10L3QuNGPLg==
-
-  firewall_port_forward_message: !binary |
-    0KLQtdC30Lgg0L/RgNCw0LLQuNC70LAg0L/QvtC30LLQvtC70Y/QstCw0YIg
-    0LDQstGC0L7QvNCw0YLQuNGH0L3QviDQv9GA0LXQvdCw0YHQvtGH0LLQsNC9
-    0LUg0L3QsCDQv9C+0YDRgtC+0LLQtSDQt9CwINC80YDQtdC20L7QstC4INGD
-    0YHQu9GD0LPQuCDQutGK0Lwg0LrQvtC90LrRgNC10YLQvdCwINC80LDRiNC4
-    0L3QsCDQsiDRgNCw0LzQutC40YLQtSDQvdCwINC30LDRidC40YLQvdCw0YLQ
-    sCDRgdGC0LXQvdCwLiDQotC10LfQuCDQvdCw0YHRgtGA0L7QudC60Lgg0YHQ
-    sCDQvdC10L7QsdGF0L7QtNC40LzQuCDRgdCw0LzQviDQsNC60L4g0LjRgdC6
-    0LDRgtC1INC00LAg0YXQvtGB0YLQstCw0YLQtSDQvdGP0LrQsNC60YrQsiDR
-    gdGK0YDQstGK0YAg0LrQsNGC0L4g0YPQtdCxINGB0YrRgNCy0YrRgCDQuNC7
-    0Lgg0YHRitGA0LLRitGAINC30LAg0LXQu9C10LrRgtGA0L7QvdC90LAg0L/Q
-    vtGJ0LAg0LIg0LvQvtC60LDQu9C90LDRgtCwINGB0Lgg0LzRgNC10LbQsCDQ
-    stGK0LIg0LLRitGC0YDQtdGI0L3QvtGB0YLRgtCwINC90LAg0LfQsNGJ0LjR
-    gtC90LDRgtCwINGB0YLQtdC90LAu
-
-  to_recover_your_password: !binary |
-    0JfQsCDQtNCwINCy0YrQt9GB0YLQsNC90L7QstC40YLQtSDQv9Cw0YDQvtC7
-    0LDRgtCwINGB0Lgg0LjQu9C4INGB0YrQvtCx0YnQtdC90LjQtdGC0L4g0LfQ
-    sCDQsNC60YLQuNCy0LDRhtC40Y8sINC80L7Qu9GPLCDQstGK0LLQtdC00LXR
-    gtC1INCy0LDRiNC40Y8g0LjQvNC10LnQuyDQv9C+LdC00L7Qu9GD
-
-  apache_web_server: !binary |
-    QXBhY2hlINGD0LXQsSDRgdGK0YDQstGK0YA=
-
-  seconds: !binary |
-    0YHQtdC60YPQvdC00Lg=
-
-  partition: !binary |
-    0JTRj9C7
-
+  computer_name: "Име на компютъра"
+  close: "Затвори"
+  this_file_was_automatically_generated_on: "# Този файл беше автоматично генериран на {{time}} - ВНИМАНИЕ - всички ръчни редакции няма да бъдат съхранени."
+  installation_instructions: "Указания за инсталиране"
+  control_panel_for_your_amahi_hdas: "Контролният център за вашите Amahi HDAs"
+  please_select_the_type_of_rule_you_want: "Моля, изберете вида на правилото, което искате да добавите."
+  create_a_new_webapp: "Създаване на ново Уеб Приложение"
+  refresh_status: "Обнови статуса"
+  home: "Начало"
+  will_not_start_at_boot_time: "да <b>НЕ</b> се зарежда при стартиране"
+  there_are_no_static_ips_defined: "Все още няма зададени фиксирани IP адреси."
+  share_name_is_available: "Името на Споделения дял е свободно"
+  powerful_simple_home_networking: "Мощна, проста, Домашна Мрежа"
+  about: "около"
+  email_me: "Изпратете ми e-mail"
+  there_are_no_applications_installed: "Все още няма инсталирани приложения."
+  firewall_port_forward_message: "Тези правила позволяват автоматично пренасочване на портове за мрежови услуги към конкретна машина в рамките на защитната стена. Тези настройки са необходими само ако искате да хоствате някакъв сървър като уеб сървър или сървър за електронна поща в локалната си мрежа във вътрешността на защитната стена."
+  to_recover_your_password: "За да възстановите паролата си или съобщението за активация, моля, въведете вашия имейл по-долу"
+  apache_web_server: "Apache уеб сървър"
+  seconds: "секунди"
+  partition: "Дял"
   dhcp: DHCP
-  dhcp_free: !binary |
-    0J3QtdCw0LrRgtC40LLQtdC9
-
-  this_users_files_deleted: !binary |
-    0KTQsNC50LvQvtCy0LXRgtC1INCyINC00L7QvNCw0YjQvdCw0YLQsCDQv9Cw
-    0L/QutCwINC90LAg0YLQvtC30Lgg0L/QvtGC0YDQtdCx0LjRgtC10Lsg0KnQ
-    lSDQkdCq0JTQkNCiINCY0JfQotCg0JjQotCY
-
-  configured: !binary |
-    0JrQvtC90YTQuNCz0YPRgNC40YDQsNC90Lg=
-
-  disabling_lan_manager_will_not_allow_older_machines: !binary |
-    0JTQtdCw0LrRgtC40LLQuNGA0LDQvdC10YLQviDQvdCwIFdpbmRvd3MgOTUv
-    OTggTGFuTWFuYWdlciDQsNCy0YLQtdC90YLQuNC60LDRhtC40Y/RgtCwINC9
-    0Y/QvNCwINC00LAg0L/QvtC30LLQvtC70Lgg0L3QsCDQv9C+LdGB0YLQsNGA
-    0Lgg0LzQsNGI0LjQvdC4INC00LAg0LjQt9C/0L7Qu9C30LLQsNGCINGB0L/Q
-    vtC00LXQu9C10L3QuNGC0LUg0LTRj9C70L7QstC1LiDQndCw0LjRgdGC0LjQ
-    vdCwINC70Lgg0LjRgdC60LDRgtC1INC00LAg0LjQt9C60LvRjtGH0LjRgtC1
-    IFdpbmRvd3MgOTUvOTgg0YDQtdC20LjQvNCwINC30LAg0LDQstGC0LXQvdGC
-    0LjQutCw0YbQuNGPPw==
-
-  you_have_been_logged_out: !binary |
-    0JjQt9C70Y/Qt9C+0YXRgtC1INGD0YHQv9C10YjQvdC+
-
-  permanently: !binary |
-    0L/QvtGB0YLQvtGP0L3QvdC+
-
-  the_url_is_invalid: !binary |
-    VVJMINCw0LTRgNC10YHRitGCINC90LUg0LUg0LLQsNC70LjQtNC10L0=
-
-  it_will_be_restarted_by_the_watchdog: !binary |
-    KNGJ0LUg0LHRitC00LUg0YDQtdGB0YLQsNGA0YLQuNGA0LDQvSDQvtGCINC/
-    0LDQt9C40YLQtdC70Y8p
-
-  amahi_dyndns_updater: !binary |
-    QW1haGkg0LTQuNC90LDQvNC40YfQtdC9IEROUyDQntCx0L3QvtCy0LjRgtC1
-    0Ls=
-
-  pdc_domain: !binary |
-    UERDINCU0L7QvNC10LnQvQ==
-
-  path: !binary |
-    0J/RitGC
-
-  features: !binary |
-    0KXQsNGA0LDQutGC0LXRgNC40YHRgtC40LrQuA==
-
-  password_cannot_be_blank: !binary |
-    0J/QsNGA0L7Qu9Cw0YLQsCDQvdC1INC80L7QttC1INC00LAg0LHRitC00LUg
-    0L/RgNCw0LfQvdCw
-
-  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: !binary |
-    0JfQkNCR0JXQm9CV0JbQmtCQOiDQn9Cw0LfQuNGC0LXQu9GP0YIg0KDQkNCR
-    0J7QotCYINC4INGJ0LUg0YDQtdGB0YLQsNGA0YLQuNGA0LAg0YHQu9C10LQg
-    0L3Rj9C60L7Qu9C60L4g0YHQtdC60YPQvdC00Lgu
-
-  your_existing_network_gatweay: !binary |
-    0JLQsNGI0LjRj9GCINGB0YrRidC10YHRgtCy0YPQstCw0Ykg0LzRgNC10LbQ
-    vtCy0LggR2F0ZXdheSAvIFJvdXRlcg==
-
-  warning: !binary |
-    0JLQndCY0JzQkNCd0JjQlQ==
-
-  dhcp_ip_address: !binary |
-    REhDUCBJUCDQsNC00YDQtdGB
-
-  beta_apps: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40Y8g0LIg0LHQtdGC0LAg0YLQtdGB0YLQvtCy
-    0LAg0YTQsNC30LA=
-
-  logout: !binary |
-    0JjQt9GF0L7QtA==
-
-  there_is_no_undo: !binary |
-    0J3QtSDQtSDQstGK0LfQvNC+0LbQvdC+INCS0KrQl9Ch0KLQkNCd0J7QktCv
-    0JLQkNCd0JUg0KHQldCUINCi0J7QktCQINCY0JfQotCg0JjQktCQ0J3QlS4=
-
+  dhcp_free: "Неактивен"
+  this_users_files_deleted: "Файловете в домашната папка на този потребител ЩЕ БЪДАТ ИЗТРИТИ"
+  configured: "Конфигурирани"
+  disabling_lan_manager_will_not_allow_older_machines: "Деактивирането на Windows 95/98 LanManager автентикацията няма да позволи на по-стари машини да използват споделените дялове. Наистина ли искате да изключите Windows 95/98 режима за автентикация?"
+  you_have_been_logged_out: "Излязохте успешно"
+  permanently: "постоянно"
+  the_url_is_invalid: "URL адресът не е валиден"
+  it_will_be_restarted_by_the_watchdog: "(ще бъде рестартиран от пазителя)"
+  amahi_dyndns_updater: "Amahi динамичен DNS Обновител"
+  pdc_domain: "PDC Домейн"
+  path: "Път"
+  features: "Характеристики"
+  password_cannot_be_blank: "Паролата не може да бъде празна"
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "ЗАБЕЛЕЖКА: Пазителят РАБОТИ и ще рестартира след няколко секунди."
+  your_existing_network_gatweay: "Вашият съществуващ мрежови Gateway / Router"
+  warning: "ВНИМАНИЕ"
+  dhcp_ip_address: "DHCP IP адрес"
+  beta_apps: "Приложения в бета тестова фаза"
+  logout: "Изход"
+  there_is_no_undo: "Не е възможно ВЪЗСТАНОВЯВАНЕ СЕД ТОВА ИЗТРИВАНЕ."

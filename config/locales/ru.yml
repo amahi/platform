@@ -1,1969 +1,753 @@
 --- 
 ru: 
-  new_user: !binary |
-    0J3QvtCy0YvQuSDQv9C+0LvRjNC30L7QstCw0YLQtdC70Yw=
-
-  alias_is_taken_already: !binary |
-    0J/RgdC10LLQtNC+0L3QuNC8INGD0LbQtSDQuNGB0L/QvtC70YzQt9C+0LLQ
-    sNC9INC40LvQuCDQt9Cw0YDQtdC30LXRgNCy0LjRgNC+0LLQsNC9
-
-  storage: !binary |
-    0KXRgNCw0L3QuNC70LjRidC1
-
-  user_name_is_not_available: !binary |
-    0JjQvNGPINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjyDQvdC10LTQvtGB0YLR
-    g9C/0L3Qvg==
-
-  platform: !binary |
-    0J/Qu9Cw0YLRhNC+0YDQvNCw
-
-  are_you_sure_share: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0YPQtNCw0LvQuNGC0Ywg0L7QsdGJ0LjQuSDRgNC10YHRg9GA0YEgInt7c2hh
-    cmV9fSI/
-
-  these_rules_are_used_to_restrict_ips: !binary |
-    0K3RgtC4INC/0YDQsNCy0LjQu9CwINC40YHQv9C+0LvRjNC30YPRjtGC0YHR
-    jyDQtNC70Y8g0LfQsNC/0YDQtdGC0LAg0L/QsNC60LXRgtC+0LIg0LTQsNC9
-    0L3Ri9GFINC+0YIgCklQLdCw0LTRgNC10YHQsCDQsiDQktCw0YjQtdC5INC7
-    0L7QutCw0LvRjNC90L7QuSDRgdC10YLQuCDQsiDQmNC90YLQtdGA0L3QtdGC
-    LgrQmNGB0L/QvtC70YzQt9C+0LLQsNC90LjQtSDRgtCw0LrQuNGFINGE0LjQ
-    u9GM0YLRgNC+0LIg0LzQvtC20LXRgiDQsdGL0YLRjCAK0L/QvtC70LXQt9C9
-    0YvQvCDQsiDQt9Cw0YnQuNGC0LUg0LjQu9C4INC+0LPRgNCw0L3QuNGH0LXQ
-    vdC40Lgg0LLQsNGI0LXQuSAK0LvQvtC60LDQu9GM0L3QvtC5INGB0LXRgtC4
-    Lg==
-
-  this_looks_like_a_database_corruption_please_report_it: !binary |
-    0K3RgtC+INC/0L7RhdC+0LbQtSDQvdCwINC/0L7QstGA0LXQttC00LXQvdC4
-    0LUg0LHQsNC30Ysg0LjQu9C4INCx0LDQsy4gKNCf0L7QttCw0LvRg9C50YHR
-    gtCwIDxhIGhyZWY9Imh0dHA6Ly9idWdzLmFtYWhpLm9yZyI+0YHQvtC+0LHR
-    idC40YLQtSDQvtCxINC+0YjQuNCx0LrQtTwvYT4pLg==
-
-  mac_looks_good: !binary |
-    TUFDLdCw0LTRgNC10YEg0LLQtdGA0LXQvQ==
-
+  new_user: "Новый пользователь"
+  alias_is_taken_already: "Псевдоним уже использован или зарезервирован"
+  storage: "Хранилище"
+  user_name_is_not_available: "Имя пользователя недоступно"
+  platform: "Платформа"
+  are_you_sure_share: "Вы действительно хотите удалить общий ресурс \"{{share}}\"?"
+  these_rules_are_used_to_restrict_ips: "Эти правила используются для запрета пакетов данных от \n\
+    IP-адреса в Вашей локальной сети в Интернет.\n\
+    Использование таких фильтров может быть \n\
+    полезным в защите или ограничении вашей \n\
+    локальной сети."
+  this_looks_like_a_database_corruption_please_report_it: "Это похоже на повреждение базы или баг. (Пожалуйста <a href=\"http://bugs.amahi.org\">сообщите об ошибке</a>)."
+  mac_looks_good: "MAC-адрес верен"
   wiki: Wiki
-  confirm_email: !binary |
-    0J/QvtC00YLQstC10YDQtNC40YLRjCBlLW1haWw=
-
-  setup: !binary |
-    0J3QsNGB0YLRgNC+0LnQutCw
-
-  start_at_boot_time: !binary |
-    0JfQsNC/0YPRgdC60LDRgtGMINC/0YDQuCDQt9Cw0LPRgNGD0LfQutC1
-
-  news_about_applications: !binary |
-    0J3QvtCy0L7RgdGC0Lgg0L4g0L/RgNC40LvQvtC20LXQvdC40Y/RhSwg0YDQ
-    sNCx0L7RgtCw0Y7RidC40YUg0L3QsCBBbWFoaQ==
-
-  delete_user: !binary |
-    0KPQtNCw0LvQuNGC0Ywg0L/QvtC70YzQt9C+0LLQsNGC0LXQu9GP
-
-  delete_profile: !binary |
-    0KPQtNCw0LvQuNGC0Ywg0L/RgNC+0YTQuNC70Ywg0LTQu9GP
-
-  running: !binary |
-    0KDQsNCx0L7RgtCw0LXRgg==
-
-  start_building_a_new_hda: !binary |
-    0J3QsNGH0L3QuCDRgdC+0LfQtNCw0LLQsNGC0Ywg0L3QvtCy0YvQuSBIREEh
-
-  delete: !binary |
-    0KPQtNCw0LvQuNGC0Yw=
-
-  name_is_taken_already: !binary |
-    0JjQvNGPINGD0LbQtSDQt9Cw0L3Rj9GC0L4=
-
-  unleash_the_power_of_your_home_network: !binary |
-    0J7RgtC60YDQvtC50YLQtSDQstC10YHRjCDQv9C+0YLQtdC90YbQuNCw0Lsg
-    0JLQsNGI0LXQuSDRgdC10YLQuC4=
-
-  are_you_sure_webapp: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0YPQtNCw0LvQuNGC0YwgV2ViLdC/0YDQuNC70L7QttC10L3QuNC1ICJ7e3dl
-    YmFwcH19Ij8=
-
-  automated_install: !binary |
-    0JDQstGC0L7QvNCw0YLQuNGH0LXRgdC60LDRjyDRg9GB0YLQsNC90L7QstC6
-    0LA=
-
-  need_help_logging_in: !binary |
-    0J3QtdC+0LHRhdC+0LTQuNC80LAg0L/QvtC80L7RidGMPw==
-
-  confirm_password: !binary |
-    0J/QvtC00YLQstC10YDQtNC40YLRjCDQv9Cw0YDQvtC70Yw=
-
-  installed_paren: !binary |
-    KNCj0YHRgtCw0L3QvtCy0LvQtdC90L4p
-
-  tour: !binary |
-    0KLRg9GA
-
-  address_already_allocated: !binary |
-    0JDQtNGA0LXRgSDRg9C20LUg0LfQsNC90Y/Rgg==
-
-  new: !binary |
-    0J3QvtCy0YvQuQ==
-
-  are_you_sure_you_want_to_stop_the_server: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0LLRi9C60LvRjtGH0LjRgtGMIHt7bmFtZX19Pw==
-
-  disabling_pdc_will_enable_workgroup_mode: !binary |
-    0J7RgtC60LvRjtGH0LXQvdC40LUg0YDQtdC20LjQvNCwIFBEQyAo0KbQtdC9
-    0YLRgNCw0LvRjNC90L7Qs9C+INCa0L7QvdGC0YDQvtC70LvQtdGA0LAg0JTQ
-    vtC80LXQvdCwKSDQstC60LvRjtGH0LjRgiDRgNC10LbQuNC8INCg0LDQsdC+
-    0YfQtdC5INCT0YDRg9C/0L/Riy4NCg0K0K3RgtC+INC/0YDQuNCy0LXQtNC1
-    0YIg0Log0YHQuNC70YzQvdGL0Lwg0LjQt9C80LXQvdC10L3QuNGP0Lwg0LIg
-    0YHQv9C+0YHQvtCx0LUg0YDQsNCx0L7RgtGLINC+0LHRidC40YUg0L/QsNC/
-    0L7Qui4g0JTQsNC90L3QvtC1INC00LXQudGB0YLQstC40LUg0L/RgNC10LTQ
-    vdCw0LfQvdCw0YfQtdC90L4g0LTQu9GPINC00L7QvNCw0YjQvdC40YUg0L/Q
-    vtC70YzQt9C+0LLQsNGC0LXQu9C10LkgKNC00L7Qv9C+0LvQvdC40YLQtdC7
-    0YzQvdCw0Y8g0LjQvdGE0L7RgNC80LDRhtC40Y8g0LIgV2lraSkuDQoNCtCS
-    0Ysg0LTQtdC50YHRgtCy0LjRgtC10LvRjNC90L4g0YXQvtGC0LjRgtC1INC+
-    0YLQutC70Y7Rh9C40YLRjCDRgNC10LbQuNC8IFBEQz8=
-
-  finalize_settings: !binary |
-    0JfQsNCy0LXRgNGI0LjRgtGMINC90LDRgdGC0YDQvtC50LrRgw==
-
-  address_looks_good: !binary |
-    0JDQtNGA0LXRgSDQsiDQv9C+0YDRj9C00LrQtQ==
-
-  confirmation_must_match: !binary |
-    0KHRgtGA0L7QutC4INC00L7Qu9C20L3RiyDRgdC+0LLQv9Cw0LTQsNGC0Yw=
-
-  stopped: !binary |
-    0J7RgdGC0LDQvdC+0LLQu9C10L0=
-
-  applications: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40Y8=
-
-  this_ip_address_will_always_be_statically_associated_to_the_mac_address: !binary |
-    0K3RgtC+0YIgSVAg0LDQtNGA0LXRgSAoMS17e21heH19KSDQstGB0LXQs9C0
-    0LAg0LHRg9C00LXRgiDRgdCy0Y/Qt9Cw0L0g0YEgTUFDLdCw0LTRgNC10YHQ
-    vtC8LCDRg9C60LDQt9Cw0L3QvdGL0Lwg0L3QuNC20LUu
-
-  this_path_exists_already: !binary |
-    0K3RgtC+0YIg0L/Rg9GC0Ywg0YPQttC1INGB0YPRidC10YHRgtCy0YPQtdGC
-
-  poweroff: !binary |
-    0JLRi9C60LvRjtGH0LXQvdC40LU=
-
-  router_control: !binary |
-    0KPQv9GA0LDQstC70LXQvdC40LUg0LzQsNGA0YjRgNGD0YLQuNC30LDRgtC+
-    0YDQvtC8
-
-  are_you_sure_you_would_like_to_delete_calendar: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0YPQtNCw0LvQuNGC0Ywge3tjYWxlbmRhcn19Pw==
-
-  openvpn_server: !binary |
-    0KHQtdGA0LLQtdGAIE9wZW5WUE4=
-
-  port_range_looks_good: !binary |
-    0JTQuNCw0L/QsNC30L7QvSDQv9C+0YDRgtC+0LIg0LLQtdGA0LXQvQ==
-
-  pictures: !binary |
-    0JjQt9C+0LHRgNCw0LbQtdC90LjRjw==
-
-  disk: !binary |
-    0JTQuNGB0Lo=
-
-  location: !binary |
-    0KDQsNGB0L/QvtC70L7QttC10L3QuNC1
-
-  require_login: !binary |
-    0KLRgNC10LHRg9C10YIg0LLRhdC+0LTQsA==
-
-  theme: !binary |
-    0KLQtdC80LA=
-
-  disks: !binary |
-    0JTQuNGB0LrQuA==
-
-  rule: !binary |
-    0J/RgNCw0LLQuNC70L4=
-
-  static_ips: !binary |
-    0KHRgtCw0YLQuNGH0LXRgdC60LjQtSBJUC3QsNC00YDQtdGB0LA=
-
-  mac_address_to_be_filtered_in_format: !binary |
-    TUFDLdCw0LTRgNC10YEg0LTQu9GPINGE0LjQu9GM0YLRgNCwKNCyINCy0LjQ
-    tNC1IDAwOjExOjIyOjMzOjQ0OjU1KS4=
-
-  my_apps: !binary |
-    0JzQvtC4INC/0YDQuNC70L7QttC10L3QuNGP
-
-  disk_pool_copies: !binary |
-    0JTQvtC/0L7Qu9C90LjRgtC10LvRjNC90YvQtSDQutC+0L/QuNC4
-
-  cancel: !binary |
-    0J7RgtC80LXQvdCw
-
-  port_range_ports_must_be_increasing_order: !binary |
-    0J/QtdGA0LLRi9C5INC/0L7RgNGCINC00L7Qu9C20LXQvSDQsdGL0YLRjCDQ
-    vNC10L3RjNGI0LUg0LvQuNCx0L4g0YDQsNCy0LXQvSDQstGC0L7RgNC+0LzR
-    gyDQv9C+0YDRgtGD
-
-  password_is_too_short: !binary |
-    0J/QsNGA0L7Qu9GMINGB0LvQuNGI0LrQvtC8INC60L7RgNC+0YLQutC40Lk=
-
-  preparing_to_install: !binary |
-    0J/QvtC00LPQvtGC0L7QstC60LAg0Log0YPRgdGC0LDQvdC+0LLQutC1IC4u
-    Lg==
-
-  model: !binary |
-    0JzQvtC00LXQu9GM
-
-  are_you_sure_you_want_to_start_the_server: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0LfQsNC/0YPRgdGC0LjRgtGMIHt7bmFtZX19Pw==
-
-  nickname_info: !binary |
-    ItCY0LzRjyIgLSDRg9C90LjQutCw0LvRjNC90YvQuSDQuNC00LXQvdGC0LjR
-    hNC40LrQsNGC0L7RgCDQstCw0YjQtdCz0L4gSERBLg0K0J7QvdC+INC90LXQ
-    vtCx0YXQvtC00LjQvNC+INCy0LDQvCDQtNC70Y8g0LDQstGC0L7RgNC40LfQ
-    sNGG0LjQuCDQsiDQstCw0YjQtdC5IDxhIHRhcmdldD0iX2JsYW5rIiBocmVm
-    PSJodHRwOi8vd2lraS5hbWFoaS5vcmcvaW5kZXgucGhwL1ZQTiI+VlBOPC9h
-    Pg0K0L/RgNC4INC/0L7QvNC+0YnQuCA8YSB0YXJnZXQ9Il9ibGFuayIgaHJl
-    Zj0iaHR0cDovL3dpa2kuYW1haGkub3JnL2luZGV4LnBocC9WUE5XaW5kb3dz
-    Ij5XaW5kb3dzPC9hPi3QutC70LjQtdC90YLQsA0KKNC4INCw0LrRgtC40LLQ
-    vdC+0LPQviDQv9C+0LvRjNC30L7QstCw0YLQtdC70Y8g0Lgg0LXQs9C+INC/
-    0LDRgNC+0LvRjyDQstCw0YjQtdC5INC00L7QvNCw0YjQvdC10Lkg0YHQtdGC
-    0LgpLg==
-
-  files: !binary |
-    0KTQsNC50LvRiw==
-
-  by_signing_up_you_agree_to_the_terms_of_service: !binary |
-    0KDQtdCz0LjRgdGC0YDQuNGA0YPRj9GB0YwsINCy0Ysg0YHQvtCz0LvQsNGI
-    0LDQtdGC0LXRgdGMINGBINGC0LXQvCwg0YfRgtC+INC/0YDQvtGH0LjRgtCw
-    0LvQuCDQvdCw0YjQuCA8YSBocmVmPSJodHRwOi8vYWRtaW4uYW1haGkub3Jn
-    L2hvbWUvdG9zIiB0YXJnZXQ9Il9ibGFuayI+0YPRgdC70L7QstC40Y8g0L/R
-    gNC10LTQvtGB0YLQsNCy0LvQtdC90LjRjyDRg9GB0LvRg9CzPC9hPg==
-
-  the_url_looks_good: !binary |
-    VVJMINCy0LXRgNC10L0=
-
-  application_uninstalled: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40LUg0YPQtNCw0LvQtdC90L4u
-
-  delete_web_app: !binary |
-    0KPQtNCw0LvQuNGC0YwgV2ViLdC/0YDQuNC70L7QttC10L3QuNC1
-
-  free_space: !binary |
-    0KHQstC+0LHQvtC00L3Qvg==
-
+  confirm_email: "Подтвердить e-mail"
+  setup: "Настройка"
+  start_at_boot_time: "Запускать при загрузке"
+  news_about_applications: "Новости о приложениях, работающих на Amahi"
+  delete_user: "Удалить пользователя"
+  delete_profile: "Удалить профиль для"
+  running: "Работает"
+  start_building_a_new_hda: "Начни создавать новый HDA!"
+  delete: "Удалить"
+  name_is_taken_already: "Имя уже занято"
+  unleash_the_power_of_your_home_network: "Откройте весь потенциал Вашей сети."
+  are_you_sure_webapp: "Вы действительно хотите удалить Web-приложение \"{{webapp}}\"?"
+  automated_install: "Автоматическая установка"
+  need_help_logging_in: "Необходима помощь?"
+  confirm_password: "Подтвердить пароль"
+  installed_paren: "(Установлено)"
+  tour: "Тур"
+  address_already_allocated: "Адрес уже занят"
+  new: "Новый"
+  are_you_sure_you_want_to_stop_the_server: "Вы действительно хотите выключить {{name}}?"
+  disabling_pdc_will_enable_workgroup_mode: "Отключение режима PDC (Центрального Контроллера Домена) включит режим Рабочей Группы.\r\n\
+    \r\n\
+    Это приведет к сильным изменениям в способе работы общих папок. Данное действие предназначено для домашних пользователей (дополнительная информация в Wiki).\r\n\
+    \r\n\
+    Вы действительно хотите отключить режим PDC?"
+  finalize_settings: "Завершить настройку"
+  address_looks_good: "Адрес в порядке"
+  confirmation_must_match: "Строки должны совпадать"
+  stopped: "Остановлен"
+  applications: "Приложения"
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: "Этот IP адрес (1-{{max}}) всегда будет связан с MAC-адресом, указанным ниже."
+  this_path_exists_already: "Этот путь уже существует"
+  poweroff: "Выключение"
+  router_control: "Управление маршрутизатором"
+  are_you_sure_you_would_like_to_delete_calendar: "Вы действительно хотите удалить {{calendar}}?"
+  openvpn_server: "Сервер OpenVPN"
+  port_range_looks_good: "Диапазон портов верен"
+  pictures: "Изображения"
+  disk: "Диск"
+  location: "Расположение"
+  require_login: "Требует входа"
+  theme: "Тема"
+  disks: "Диски"
+  rule: "Правило"
+  static_ips: "Статические IP-адреса"
+  mac_address_to_be_filtered_in_format: "MAC-адрес для фильтра(в виде 00:11:22:33:44:55)."
+  my_apps: "Мои приложения"
+  disk_pool_copies: "Дополнительные копии"
+  cancel: "Отмена"
+  port_range_ports_must_be_increasing_order: "Первый порт должен быть меньше либо равен второму порту"
+  password_is_too_short: "Пароль слишком короткий"
+  preparing_to_install: "Подготовка к установке ..."
+  model: "Модель"
+  are_you_sure_you_want_to_start_the_server: "Вы действительно хотите запустить {{name}}?"
+  nickname_info: "\"Имя\" - уникальный идентификатор вашего HDA.\r\n\
+    Оно необходимо вам для авторизации в вашей <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a>\r\n\
+    при помощи <a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows</a>-клиента\r\n\
+    (и активного пользователя и его пароля вашей домашней сети)."
+  files: "Файлы"
+  by_signing_up_you_agree_to_the_terms_of_service: "Регистрируясь, вы соглашаетесь с тем, что прочитали наши <a href=\"http://admin.amahi.org/home/tos\" target=\"_blank\">условия предоставления услуг</a>"
+  the_url_looks_good: "URL верен"
+  application_uninstalled: "Приложение удалено."
+  delete_web_app: "Удалить Web-приложение"
+  free_space: "Свободно"
   url: URL
-  are_you_sure_you_would_like_to_uninstall: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0YPQtNCw0LvQuNGC0Ywg0Y3RgtC+INC/0YDQuNC70L7QttC10L3QuNC1Pw0K
-    DQrQktCh0JUg0LTQsNC90L3Ri9C1LCDRgdCy0Y/Qt9Cw0L3QvdGL0LUg0YEg
-    0Y3RgtC40Lwg0L/RgNC40LvQvtC20LXQvdC40LXQvCwg0LHRg9C00YPRgiDR
-    g9C00LDQu9C10L3Riy4=
-
-  temperature: !binary |
-    0KLQtdC80L/QtdGA0LDRgtGD0YDQsA==
-
-  users: !binary |
-    0J/QvtC70YzQt9C+0LLQsNGC0LXQu9C4
-
-  debug: !binary |
-    0J7RgtC70LDQtNC60LA=
-
-  the_ip_address_can_be: !binary |
-    SVAt0LDQtNGA0LXRgSDQvNC+0LbQtdGCINCx0YvRgtGM
-
-  read_only: !binary |
-    0KLQvtC70YzQutC+INGH0YLQtdC90LjQtQ==
-
-  install_code_info: !binary |
-    0K3RgtC+0YIg0JrQvtC0INGD0YHRgtCw0L3QvtCy0LrQuCDQuNGB0L/QvtC7
-    0YzQt9GD0LXRgtGB0Y8g0LTQu9GPINGF0YDQsNC90LXQvdC40Y8g0LLRgdC1
-    0YUg0L3QsNGB0YLRgNC+0LXQuiDQktCw0YjQtdCz0L4gSERBINC4INCy0LLQ
-    vtC00LjRgtGB0Y8g0L7QtNC40L0g0YDQsNC3INCyINC60LDRh9C10YHRgtCy
-    0LUNCtC/0L7RgdC70LXQtNC90LXQs9C+INGI0LDQs9CwINGD0YHRgtCw0L3Q
-    vtCy0LrQuCDQktCw0YjQtdCz0L4gSERBLiDQndC1INGA0LXQutC+0LzQtdC9
-    0LTRg9C10YLRgdGPINC40YHQv9C+0LvRjNC30L7QstCw0YLRjCDQtdCz0L4g
-    0LTQu9GPINC00LLRg9GFINC40LvQuCDQsdC+0LvQtdC1INGA0LDQsdC+0YfQ
-    uNGFINGB0LjRgdGC0LXQvCwNCtGCLtC6LiDRjdGC0L4g0L3QsNGA0YPRiNC4
-    0YIg0YDQsNCx0L7RgtGDINCU0LjQvdCw0LzQuNGH0LXRgdC60L7Qs9C+IERO
-    UyDQuCBWUE4uINCh0L7Qt9C00LDQstCw0LnRgtC1INC+0YLQtNC10LvRjNC9
-    0YvRhSDQv9GA0L7RhNC40LvRjCDQtNC70Y8g0LrQsNC20LTQvtCz0L4gSERB
-    INC60L7RgtC+0YDRi9C5INCS0Ysg0YHQvtC30LTQsNC10YLQtS4=
-
-  url_filtering: !binary |
-    0KTQuNC70YzRgtGA0YsgVVJM
-
-  available: !binary |
-    0JTQvtGB0YLRg9C/0L3Qvg==
-
-  this_will_power_off: !binary |
-    0J3QsNC20LDRgtC40LUg0Y3RgtC+0Lkg0LrQvdC+0L/QutC4INC/0YDQuNCy
-    0LXQtNC10YIg0Log0LLRi9C60LvRjtGH0LXQvdC40Y4g0LLQsNGI0LXQs9C+
-    IEFtYWhpLg0K0JXRgdC70Lgg0LLRiyDQuNGB0L/QvtC70YzQt9C+0LLQsNC7
-    0LggREhDUC3RgdC10YDQstC10YAg0LLQsNGI0LXQs9C+IEFtYWhpLCDRgNC1
-    0LrQvtC80LXQvdC00YPQtdGC0YHRjyDQstC60LvRjtGH0LjRgtGMIERIQ1At
-    0YHQtdGA0LLQtdGAINC80LDRgNGI0YDRg9GC0LjQt9Cw0YLQvtGA0LAuDQoN
-    CtCf0YDQvtC00L7Qu9C20LjRgtGMPw==
-
-  edit_static_ip: !binary |
-    0KDQtdC00LDQutGC0LjRgNC+0LLQsNC90LjQtSDRgdGC0LDRgtC40YfQtdGB
-    0LrQvtCz0L4gSVAt0LDQtNGA0LXRgdCw
-
-  add_extra_parameters: !binary |
-    KNC00L7QsdCw0LLRjNGC0LUg0LTQvtC/0L7Qu9C90LjRgtC10LvRjNC90YvQ
-    tSDQv9Cw0YDQsNC80LXRgtGA0Ysp
-
-  system_info: !binary |
-    0JjQvdGE0L7RgNC80LDRhtC40Y8g0L4g0YHQuNGB0YLQtdC80LU=
-
-  this_path_is_not_available: !binary |
-    0K3RgtC+0YIg0L/Rg9GC0Ywg0L3QtdC00L7RgdGC0YPQv9C10L0=
-
-  firewall_port_filter_message: !binary |
-    0J/RgNCw0LLQuNC70LAg0KTQuNC70YzRgtGA0LAg0L/QvtGA0YLQvtCyINGB
-    0LvRg9C20LDRgiDQtNC70Y8g0LfQsNC/0YDQtdGC0LAg0L7Qv9GA0LXQtNC1
-    0LvQtdC90L3Ri9GFINC/0LDQutC10YLQvtCyINC00LDQvdC90YvRhSDQuNC3
-    INCy0LDRiNC10Lkg0LvQvtC60LDQu9GM0L3QvtC5INGB0LXRgtC4INCyINCY
-    0L3RgtC10YDQvdC10YIu
-
-  press: !binary |
-    0J/RgNC10YHRgdCw
-
-  share_path_cannot_be_blank: !binary |
-    0J/Rg9GC0Ywg0L7QsdGJ0LXQs9C+INGA0LXRgdGD0YDRgdCwINC90LUg0LzQ
-    vtC20LXRgiDQsdGL0YLRjCDQv9GD0YHRgtGL0Lw=
-
-  address_is_not_valid: !binary |
-    0JDQtNGA0LXRgSDQvdC10LLQtdGA0LXQvQ==
-
-  create_alias: !binary |
-    0KHQvtC30LTQsNGC0Ywg0L/RgdC10LLQtNC+0L3QuNC8
-
-  web: !binary |
-    0KHQtdGC0Yw=
-
-  delete_alias: !binary |
-    0KPQtNCw0LvQuNGC0Ywg0L/RgdC10LLQtNC+0L3QuNC8
-
-  recover: !binary |
-    0JLQvtGB0YHRgtCw0L3QvtCy0LjRgtGM
-
-  installed: !binary |
-    0KPRgdGC0LDQvdC+0LLQu9C10L3Qvg==
-
-  core: !binary |
-    0K/QtNGA0L4=
-
-  start_now: !binary |
-    0J3QsNGH0LDRgtGM
-
-  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: !binary |
-    0JIg0L/RgNC40LvQvtC20LXQvdC40Lgg0L/RgNC+0LjQt9C+0YjQu9CwINC+
-    0YjQuNCx0LrQsC4g0JLRiyDQsdGD0LTQtdGC0LUg0L/QtdGA0LXQvdCw0L/R
-    gNCw0LLQu9C10L3RiyDQvdCwINGB0YLRgNCw0L3QuNGG0YMg0YEg0LbRg9GA
-    0L3QsNC70L7QvCDQvtGI0LjQsdC+0Lou
-
-  application: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40LU=
-
-  advanced_settings: !binary |
-    0JTQvtC/0L7Qu9C90LjRgtC10LvRjNC90YvQtSDQvdCw0YHRgtGA0L7QudC6
-    0Lg=
-
-  check_the_features_take_the_tour: !binary |
-    0JjQt9GD0YfQuNGC0LUg0LTQvtGB0YLRg9C/0L3Ri9C1INCy0L7Qt9C80L7Q
-    ttC90L7RgdGC0LgsINC/0L7RgdC10YLQuNGC0LUg0YLRg9GALCDQuNC70Lgs
-    INC10YHQu9C4INCy0Ysg0L3QtSDQvNC+0LbQtdGC0LUg0LbQtNCw0YLRjCwg
-    0YLQviAt
-
+  are_you_sure_you_would_like_to_uninstall: "Вы действительно хотите удалить это приложение?\r\n\
+    \r\n\
+    ВСЕ данные, связанные с этим приложением, будут удалены."
+  temperature: "Температура"
+  users: "Пользователи"
+  debug: "Отладка"
+  the_ip_address_can_be: "IP-адрес может быть"
+  read_only: "Только чтение"
+  install_code_info: "Этот Код установки используется для хранения всех настроек Вашего HDA и вводится один раз в качестве\r\n\
+    последнего шага установки Вашего HDA. Не рекомендуется использовать его для двух или более рабочих систем,\r\n\
+    т.к. это нарушит работу Динамического DNS и VPN. Создавайте отдельных профиль для каждого HDA который Вы создаете."
+  url_filtering: "Фильтры URL"
+  available: "Доступно"
+  this_will_power_off: "Нажатие этой кнопки приведет к выключению вашего Amahi.\r\n\
+    Если вы использовали DHCP-сервер вашего Amahi, рекомендуется включить DHCP-сервер маршрутизатора.\r\n\
+    \r\n\
+    Продолжить?"
+  edit_static_ip: "Редактирование статического IP-адреса"
+  add_extra_parameters: "(добавьте дополнительные параметры)"
+  system_info: "Информация о системе"
+  this_path_is_not_available: "Этот путь недоступен"
+  firewall_port_filter_message: "Правила Фильтра портов служат для запрета определенных пакетов данных из вашей локальной сети в Интернет."
+  press: "Пресса"
+  share_path_cannot_be_blank: "Путь общего ресурса не может быть пустым"
+  address_is_not_valid: "Адрес неверен"
+  create_alias: "Создать псевдоним"
+  web: "Сеть"
+  delete_alias: "Удалить псевдоним"
+  recover: "Восстановить"
+  installed: "Установлено"
+  core: "Ядро"
+  start_now: "Начать"
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: "В приложении произошла ошибка. Вы будете перенаправлены на страницу с журналом ошибок."
+  application: "Приложение"
+  advanced_settings: "Дополнительные настройки"
+  check_the_features_take_the_tour: "Изучите доступные возможности, посетите тур, или, если вы не можете ждать, то -"
   this_will_stop_the_server_permanently: This will stop the %{name} PERMANENTLY.
-  your_control_panel: !binary |
-    0JLQsNGI0LAg0L/QsNC90LXQu9GMINGD0L/RgNCw0LLQu9C10L3QuNGP
-
-  full_name: !binary |
-    0J/QvtC70L3QvtC1INC40LzRjw==
-
-  shares: !binary |
-    0J7QsdGJ0LjQtSDRgNC10YHRg9GA0YHRiw==
-
-  manage_themes: !binary |
-    0KPQv9GA0LDQstC70LXQvdC40LUg0YLQtdC80LDQvNC4
-
-  discussion_forum_for: !binary |
-    0KTQvtGA0YPQvCDQvtCx0YHRg9C20LTQtdC90LjRjyDQtNC70Y8=
-
-  tracker: !binary |
-    0JHQsNCz0YLRgNC10LrQtdGA
-
-  rule_type: !binary |
-    0KLQuNC/INC/0YDQsNCy0LjQu9Cw
-
-  aliases: !binary |
-    0J/RgdC10LLQtNC+0L3QuNC80Ys=
-
-  network: !binary |
-    0KHQtdGC0Yw=
-
-  change_your_account_settings: !binary |
-    0JjQt9C80LXQvdC40YLRjCDQvdCw0YHRgtGA0L7QudC60Lgg0YPRh9C10YLQ
-    vdC+0Lkg0LfQsNC/0LjRgdC4
-
-  port_range_ports_must_be_0_to_64k: !binary |
-    0J/QvtGA0YLRiyDQtNC+0LvQttC90Ysg0LHRi9GC0Ywg0LIg0LTQuNCw0L/Q
-    sNC30L7QvdC1IDAtNjU1MzY=
-
-  share_path_is_available: !binary |
-    0J/Rg9GC0Ywg0L7QsdGJ0LXQs9C+INGA0LXRgdGD0YDRgdCwINC00L7RgdGC
-    0YPQv9C10L0=
-
-  this_could_be_due_to_lack_of_network_connectivity: !binary |
-    0K3RgtC+INC80L7QttC10YIg0LHRi9GC0Ywg0YHQstGP0LfQsNC90L4g0YEg
-    0L7RgtGB0YPRgtGB0YLQstC40LXQvCDQv9C+0LTQutC70Y7Rh9C10L3QuNGP
-    INC/0L4g0YHQtdGC0Lgu
-
-  enabling_lan_manager_is_less_secure: !binary |
-    0JLQutC70Y7Rh9C10L3QuNC1INGA0LXQttC40LzQsCDQsNCy0YLQvtGA0LjQ
-    t9Cw0YbQuNC4IFdpbmRvd3MgOTUvOTgg0LzQtdC90LXQtSDQsdC10LfQvtC/
-    0LDRgdC90L4g0Lgg0L/QvtC30LLQvtC70LjRgiDQv9C+0LTQutC70Y7Rh9Cw
-    0YLRjNGB0Y8g0YHQviDRgdGC0LDRgNGL0YUg0J/Qmi4NCg0K0JLRiyDQtNC1
-    0LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg0LLQutC70Y7R
-    h9C40YLRjCDRgNC10LbQuNC8INCw0LLRgtC+0YDQuNC30LDRhtC40LggV2lu
-    ZG93cyA5NS85OD8=
-
-  special_instructions: !binary |
-    0J7RgdC+0LHRi9C1INC40L3RgdGC0YDRg9C60YbQuNC4
-
-  there_are_no_dynamic_dhcp_leases_outstanding: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINCy0YvQtNCw0L3QvdGL
-    0LUg0LDQtNGA0LXRgdCwIERIQ1Ag0L7RgtGB0YPRgtGB0YLQstGD0Y7Rgi4=
-
-  login: !binary |
-    0JLQvtC50YLQuA==
-
-  edit_share: !binary |
-    0KDQtdC00LDQutGC0LjRgNC+0LLQsNC90LjQtSDQvtCx0YnQtdCz0L4g0YDQ
-    tdGB0YPRgNGB0LA=
-
-  dhcp_lease: !binary |
-    0JDRgNC10L3QtNCwIERIQ1A=
-
-  change: !binary |
-    0JjQt9C80LXQvdC40YLRjA==
-
-  status: !binary |
-    0KHRgtCw0YLRg9GB
-
-  not_updating: !binary |
-    0J3QtSDQvtCx0L3QvtCy0LvRj9C10YLRgdGP
-
-  videos: !binary |
-    0JLQuNC00LXQvg==
-
-  dhcp_active: !binary |
-    0JDQutGC0LjQstC10L0=
-
-  restart: !binary |
-    0J/QtdGA0LXQt9Cw0L/Rg9GB0YLQuNGC0Yw=
-
-  confirm: !binary |
-    0J/QvtC00YLQstC10YDQtNC40YLRjA==
-
-  name_is_not_valid: !binary |
-    0JjQvNGPINC90LUg0LTQvtC/0YPRgdGC0LjQvNC+
-
-  sign_out: !binary |
-    0JLRi9C50YLQuA==
-
-  this_application_is_installed_already_please_refresh: !binary |
-    0K3RgtC+INC/0YDQuNC70L7QttC10L3QuNC1INGD0LbQtSDRg9GB0YLQsNC9
-    0L7QstC70LXQvdC+LiDQn9C+0LbQsNC70YPQudGB0YLQsCwg0L7QsdC90L7Q
-    stC40YLQtSDRjdGC0YMg0YHRgtGA0LDQvdC40YbRgy4=
-
-  state: !binary |
-    0KHQvtGB0YLQvtGP0L3QuNC1
-
-  new_web_app: !binary |
-    0J3QvtCy0L7QtSBXZWIt0L/RgNC40LvQvtC20LXQvdC40LU=
-
+  your_control_panel: "Ваша панель управления"
+  full_name: "Полное имя"
+  shares: "Общие ресурсы"
+  manage_themes: "Управление темами"
+  discussion_forum_for: "Форум обсуждения для"
+  tracker: "Багтрекер"
+  rule_type: "Тип правила"
+  aliases: "Псевдонимы"
+  network: "Сеть"
+  change_your_account_settings: "Изменить настройки учетной записи"
+  port_range_ports_must_be_0_to_64k: "Порты должны быть в диапазоне 0-65536"
+  share_path_is_available: "Путь общего ресурса доступен"
+  this_could_be_due_to_lack_of_network_connectivity: "Это может быть связано с отсутствием подключения по сети."
+  enabling_lan_manager_is_less_secure: "Включение режима авторизации Windows 95/98 менее безопасно и позволит подключаться со старых ПК.\r\n\
+    \r\n\
+    Вы действительно хотите включить режим авторизации Windows 95/98?"
+  special_instructions: "Особые инструкции"
+  there_are_no_dynamic_dhcp_leases_outstanding: "На данный момент выданные адреса DHCP отсутствуют."
+  login: "Войти"
+  edit_share: "Редактирование общего ресурса"
+  dhcp_lease: "Аренда DHCP"
+  change: "Изменить"
+  status: "Статус"
+  not_updating: "Не обновляется"
+  videos: "Видео"
+  dhcp_active: "Активен"
+  restart: "Перезапустить"
+  confirm: "Подтвердить"
+  name_is_not_valid: "Имя не допустимо"
+  sign_out: "Выйти"
+  this_application_is_installed_already_please_refresh: "Это приложение уже установлено. Пожалуйста, обновите эту страницу."
+  state: "Состояние"
+  new_web_app: "Новое Web-приложение"
   email: Email
-  full_name_looks_good: !binary |
-    0J/QvtC70L3QvtC1INC40LzRjyDQsiDQv9C+0YDRj9C00LrQtQ==
-
-  workgroup_name: !binary |
-    0KDQsNCx0L7Rh9Cw0Y8g0LPRgNGD0L/Qv9Cw
-
-  name_looks_good: !binary |
-    0JjQvNGPINC00L7RgdGC0YPQv9C90L4=
-
-  new_alias: !binary |
-    0J3QvtCy0YvQuSDQv9GB0LXQstC00L7QvdC40Lw=
-
-  rebooting: !binary |
-    0J/QtdGA0LXQt9Cw0LPRgNGD0LbQsNGO0YHRjCAuLi4=
-
-  uptime: !binary |
-    0JDQv9GC0LDQudC8
-
-  disk_pooling: !binary |
-    0J/Rg9C7INGF0YDQsNC90LXQvdC40Y8=
-
-  this_will_reboot: !binary |
-    0J3QsNC20LDRgtC40LUg0Y3RgtC+0Lkg0LrQvdC+0L/QutC4INC/0YDQuNCy
-    0LXQtNC10YIg0Log0L/QtdGA0LXQt9Cw0LPRgNGD0LfQutC1LgoK0J/RgNC+
-    0LTQvtC70LbQuNGC0Yw/
-
-  dns_aliases: !binary |
-    RE5TLdC/0YHQtdCy0LTQvtC90LjQvNGL
-
-  used_space: !binary |
-    0JfQsNC90Y/RgtC+
-
-  static_ip_address_for_your_hda: !binary |
-    0KHRgtCw0YLQuNGH0LXRgdC60LjQuSBJUC3QsNC00YDQtdGBINCy0LDRiNC1
-    0LPQviBIREE=
-
-  comment: !binary |
-    0JrQvtC80LzQtdC90YLQsNGA0LjQuQ==
-
-  the_alias_name_you_input_will_be_added: !binary |
-    0JjQvNGPLCDRg9C60LDQt9Cw0L3QvdC+0LUg0LLRi9GI0LUsINCx0YPQtNC1
-    0YIg0LTQvtCx0LDQstC70LXQvdC+INCyIEROUy3RgdC10YDQstC10YAg0LIg
-    0LrQsNGH0LXRgdGC0LLQtSDQv9GB0LXQstC00L7QvdC40LzQsCDQtNC70Y8g
-    SVAt0LDQtNGA0LXRgdCwINC90LjQttC1Lg==
-
-  root_path: !binary |
-    0JrQvtGA0L3QtdCy0L7QuSZuYnNwO9C/0YPRgtGM
-
-  search: !binary |
-    0J/QvtC40YHQug==
-
-  upcoming: !binary |
-    0KHQutC+0YDQvg==
-
-  username_or_email: !binary |
-    0JjQvNGPINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjyDQuNC70LggZS1tYWls
-
-  network_settings: !binary |
-    0KHQtdGC0LXQstGL0LUg0L3QsNGB0YLRgNC+0LnQutC4
-
-  no_documents_found: !binary |
-    0J3QuNGH0LXQs9C+INC90LUg0L3QsNC50LTQtdC90L4u
-
-  visible: !binary |
-    0JLQuNC00LjQvNGL0Lk=
-
-  create_a_new_share: !binary |
-    0KHQvtC30LTQsNGC0Ywg0L3QvtCy0YvQuSDQvtCx0YnQuNC5INGA0LXRgdGD
-    0YDRgQ==
-
-  enabling_pdc_is_a_major_share_change: !binary |
-    0JLQutC70Y7Rh9C10L3QuNC1INGA0LXQttC40LzQsCBQREMgKNCm0LXQvdGC
-    0YDQsNC70YzQvdC+0LPQviDQmtC+0L3RgtGA0L7Qu9C10YDQsCDQlNC+0LzQ
-    tdC90LApINC/0YDQuNCy0LXQtNC10YIg0Log0YHQuNC70YzQvdGL0Lwg0LjQ
-    t9C80LXQvdC10L3QuNGP0Lwg0LIg0YHQv9C+0YHQvtCx0LUg0YDQsNCx0L7R
-    gtGLINC+0LHRidC40YUg0L/QsNC/0L7Qui4NCg0K0K3RgtC+INCy0LrQu9GO
-    0YfQuNGCINGA0LXQttC40Lwg0JTQvtC80LXQvdCwINC4INC+0YLQutC70Y7R
-    h9C40YIg0YDQtdC20LjQvCDQoNCw0LHQvtGH0LXQuSDQk9GA0YPQv9C/0Ysg
-    0Lgg0YLRgNC10LHRg9C10YIsINGH0YLQvtCx0Ysg0LLRgdC1INCf0Jog0LHR
-    i9C70Lgg0LrQvtGA0L/QvtGA0LDRgtC40LLQvdGL0LzQuCwg0YEg0YHQvtC+
-    0YLQstC10YLRgdGC0LLRg9GO0YnQuNC80Lgg0LDQstGC0L7RgNC40LfQsNGG
-    0LjQvtC90L3Ri9C80Lgg0LTQsNC90L3Ri9C80LguINCf0YDQtdC00L3QsNC3
-    0L3QsNGH0LDQtdGC0YHRjyDQtNC70Y8g0LrQvtGA0L/QvtGA0LDRgtC40LLQ
-    vdGL0YUg0YHQtdGC0LXQuS4NCg0K0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQ
-    u9GM0L3QviDRhdC+0YLQuNGC0LUg0LLQutC70Y7Rh9C40YLRjCDRgNC10LbQ
-    uNC8IFBEQz8=
-
-  all_users: !binary |
-    0JLRgdC1INC/0L7Qu9GM0LfQvtCy0LDRgtC10LvQuA==
-
-  delete_static_ip: !binary |
-    0KPQtNCw0LvQuNGC0Ywg0YHRgtCw0YLQuNGH0LXRgdC60LjQuSBJUA==
-
-  audio: !binary |
-    0JDRg9C00LjQvg==
-
-  dashboard: !binary |
-    0JrQvtC90YHQvtC70Yw=
-
-  this_ip_will_be_filtered: !binary |
-    0K3RgtC+0YIgSVAt0LDQtNGA0LXRgSDQsdGD0LTQtdGCINC+0YLRhNC40LvR
-    jNGC0YDQvtCy0LDQvS4=
-
-  dns_alias: !binary |
-    RE5TLdC/0YHQtdCy0LTQvtC90LjQvA==
-
-  url_to_filter: !binary |
-    VVJMINCyINGE0LjQu9GM0YLRgA==
-
+  full_name_looks_good: "Полное имя в порядке"
+  workgroup_name: "Рабочая группа"
+  name_looks_good: "Имя доступно"
+  new_alias: "Новый псевдоним"
+  rebooting: "Перезагружаюсь ..."
+  uptime: "Аптайм"
+  disk_pooling: "Пул хранения"
+  this_will_reboot: "Нажатие этой кнопки приведет к перезагрузке.\n\n\
+    Продолжить?"
+  dns_aliases: "DNS-псевдонимы"
+  used_space: "Занято"
+  static_ip_address_for_your_hda: "Статический IP-адрес вашего HDA"
+  comment: "Комментарий"
+  the_alias_name_you_input_will_be_added: "Имя, указанное выше, будет добавлено в DNS-сервер в качестве псевдонима для IP-адреса ниже."
+  root_path: "Корневой&nbsp;путь"
+  search: "Поиск"
+  upcoming: "Скоро"
+  username_or_email: "Имя пользователя или e-mail"
+  network_settings: "Сетевые настройки"
+  no_documents_found: "Ничего не найдено."
+  visible: "Видимый"
+  create_a_new_share: "Создать новый общий ресурс"
+  enabling_pdc_is_a_major_share_change: "Включение режима PDC (Центрального Контролера Домена) приведет к сильным изменениям в способе работы общих папок.\r\n\
+    \r\n\
+    Это включит режим Домена и отключит режим Рабочей Группы и требует, чтобы все ПК были корпоративными, с соответствующими авторизационными данными. Предназначается для корпоративных сетей.\r\n\
+    \r\n\
+    Вы действительно хотите включить режим PDC?"
+  all_users: "Все пользователи"
+  delete_static_ip: "Удалить статический IP"
+  audio: "Аудио"
+  dashboard: "Консоль"
+  this_ip_will_be_filtered: "Этот IP-адрес будет отфильтрован."
+  dns_alias: "DNS-псевдоним"
+  url_to_filter: "URL в фильтр"
   the_boot_option_is_a_critical_setting: The boot option is a CRITICAL setting. Not starting a server process is STRONGLY DISCOURAGED. This is designed to start services in your HDA at every boot. Are you sure you want to not start this process at boot time?
-  greyhole_not_installed: !binary |
-    0J/QoNCV0JTQo9Cf0KDQldCW0JTQldCd0JjQlTogR3JleWhvbGUg0L3QtSDR
-    g9GB0YLQsNC90L7QstC70LXQvSE=
-
-  valid_email_required_for_service: !binary |
-    0JTQu9GPINCw0LrRgtC40LLQsNGG0LjQuCDQvdC10L7QsdGF0L7QtNC40Lwg
-    0YHRg9GJ0LXRgdGC0LLRg9GO0YnQuNC5IGUtbWFpbCDQsNC00YDQtdGBLiDQ
-    nNGLIDxhIGhyZWY9Imh0dHA6Ly9hZG1pbi5hbWFoaS5vcmcvcHJpdmFjeSIg
-    dGFyZ2V0PSJfYmxhbmsiPtC90LUg0LHRg9C00LXQvCDQvtGC0L/RgNCw0LLQ
-    u9GP0YLRjCDQutCw0LrRg9GOLdC70LjQsdC+INGA0LXQutC70LDQvNGDPC9h
-    Pg==
-
-  are_you_sure_you_want_to_delete_alias: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0YPQtNCw0LvQuNGC0Ywg0L/RgdC10LLQtNC+0L3QuNC8INC00LvRjyAie3tu
-    YW1lfX0iPw==
-
-  is_not_being_monitored_24x7: !binary |
-    PGI+0L3QtTwvYj4g0L3QsNCx0LvRjtC00LDQtdGC0YHRjyAyNHg3
-
+  greyhole_not_installed: "ПРЕДУПРЕЖДЕНИЕ: Greyhole не установлен!"
+  valid_email_required_for_service: "Для активации необходим существующий e-mail адрес. Мы <a href=\"http://admin.amahi.org/privacy\" target=\"_blank\">не будем отправлять какую-либо рекламу</a>"
+  are_you_sure_you_want_to_delete_alias: "Вы действительно хотите удалить псевдоним для \"{{name}}\"?"
+  is_not_being_monitored_24x7: "<b>не</b> наблюдается 24x7"
   activerecord: 
     errors: 
+      template: 
+        header: 
+          one: "%{model}: сохранение не удалось из-за %{count} ошибки"
+          few: "%{model}: сохранение не удалось из-за %{count} ошибок"
+          many: "%{model}: сохранение не удалось из-за %{count} ошибок"
+          other: "%{model}: сохранение не удалось из-за %{count} ошибки"
+        body: "Проблемы возникли со следующими полями:"
       messages: 
-        greater_than_or_equal_to: !binary |
-          0LTQvtC70LbQvdC+INCx0YvRgtGMINCx0L7Qu9GM0YjQtSDQuNC70Lgg0YDQ
-          sNCy0L3QviB7e2NvdW50fX0=
-
-        record_invalid: !binary |
-          0J3QtSDQv9GA0L7RiNC70L4g0L/RgNC+0LLQtdGA0LrRgzoge3tlcnJvcnN9
-          fQ==
-
-        confirmation: !binary |
-          0L/QvtC00YLQstC10YDQttC00LXQvdC40LUg0L3QtdCy0LXRgNC90L4=
-
-        less_than_or_equal_to: !binary |
-          0LTQvtC70LbQvdC+INCx0YvRgtGMINC80LXQvdGM0YjQtSDQuNC70Lgg0YDQ
-          sNCy0L3QviB7e2NvdW50fX0=
-
-        blank: !binary |
-          0L3QtSDQvNC+0LbQtdGCINCx0YvRgtGMINC/0YPRgdGC0YvQvA==
-
-        exclusion: !binary |
-          0LfQsNC90Y/RgtC+
-
-        invalid: !binary |
-          0L3QtdCy0LXRgNC90L4=
-
-        odd: !binary |
-          0LTQvtC70LbQvdC+INCx0YvRgtGMINC90LXRh9C10YLQvdGL0Lw=
-
-        even: !binary |
-          0LTQvtC70LbQvdGLINGB0L7QstC/0LDQtNCw0YLRjA==
-
-        too_short: !binary |
-          0YHQu9C40YjQutC+0Lwg0LrQvtGA0L7RgtC60L7QtSAo0LzQuNC90LjQvNCw
-          0LvRjNC90LDRjyDQtNC70LjQvdCwIHt7Y291bnR9fSDRgdC40LzQsi4p
-
-        wrong_length: !binary |
-          0L3QtdCy0LXRgNC90L7QuSDQtNC70LjQvdGLICjQtNC+0LvQttC90L4g0LHR
-          i9GC0Ywge3tjb3VudH19INGB0LjQvNCyLik=
-
-        empty: !binary |
-          0L3QtSDQvNC+0LbQtdGCINCx0YvRgtGMINC/0YPRgdGC0YvQvA==
-
-        less_than: !binary |
-          0LTQvtC70LbQvdC+INCx0YvRgtGMINC80LXQvdGM0YjQtSB7e2NvdW50fX0=
-
-        greater_than: !binary |
-          0LTQvtC70LbQvdC+INCx0YvRgtGMINCx0L7Qu9GM0YjQtSB7e2NvdW50fX0=
-
-        equal_to: !binary |
-          0LTQvtC70LbQvdC+INCx0YvRgtGMINGA0LDQstC90L4ge3tjb3VudH19
-
-        too_long: !binary |
-          0YHQu9C40YjQutC+0Lwg0LTQu9C40L3QvdC+0LUgKNC80LDQutGB0LjQvNCw
-          0LvRjNC90LDRjyDQtNC70LjQvdCwIHt7Y291bnR9fSDRgdC40LzQsi4p
-
-        taken: !binary |
-          0YPQttC1INC30LDQvdGP0YLQvg==
-
-        accepted: !binary |
-          0L3QtdC+0LHRhdC+0LTQuNC80L4g0L/RgNC40L3Rj9GC0Yw=
-
-        inclusion: !binary |
-          0L3QtSDQstC60LvRjtGH0LXQvdC+INCyINGB0L/QuNGB0L7Qug==
-
-        not_a_number: !binary |
-          0L3QtSDRj9Cy0LvRj9C10YLRgdGPINGH0LjRgdC70L7QvA==
-
+        inclusion: "имеет непредусмотренное значение"
+        exclusion: "имеет зарезервированное значение"
+        invalid: "имеет неверное значение"
+        confirmation: "не совпадает с подтверждением"
+        accepted: "нужно подтвердить"
+        empty: "не может быть пустым"
+        blank: "не может быть пустым"
+        too_long: 
+          one: "слишком большой длины (не может быть больше чем %{count} символ)"
+          few: "слишком большой длины (не может быть больше чем %{count} символа)"
+          many: "слишком большой длины (не может быть больше чем %{count} символов)"
+          other: "слишком большой длины (не может быть больше чем %{count} символа)"
+        too_short: 
+          one: "недостаточной длины (не может быть меньше %{count} символа)"
+          few: "недостаточной длины (не может быть меньше %{count} символов)"
+          many: "недостаточной длины (не может быть меньше %{count} символов)"
+          other: "недостаточной длины (не может быть меньше %{count} символа)"
+        wrong_length: 
+          one: "неверной длины (может быть длиной ровно %{count} символ)"
+          few: "неверной длины (может быть длиной ровно %{count} символа)"
+          many: "неверной длины (может быть длиной ровно %{count} символов)"
+          other: "неверной длины (может быть длиной ровно %{count} символа)"
+        taken: "уже существует"
+        not_a_number: "не является числом"
+        greater_than: "может иметь значение большее %{count}"
+        greater_than_or_equal_to: "может иметь значение большее или равное %{count}"
+        equal_to: "может иметь лишь значение, равное %{count}"
+        less_than: "может иметь значение меньшее чем %{count}"
+        less_than_or_equal_to: "может иметь значение меньшее или равное %{count}"
+        odd: "может иметь лишь четное значение"
+        even: "может иметь лишь нечетное значение"
+        record_invalid: "Возникли ошибки: %{errors}"
       full_messages: 
         format: "%{attribute} %{message}"
-      template: 
-        body: !binary |
-          0KHQviDRgdC70LXQtNGD0Y7RidC40LzQuCDQv9C+0LvRj9C80Lgg0LLQvtC3
-          0L3QuNC60LvQuCDQv9GA0L7QsdC70LXQvNGLOg==
-
-        header: 
-          one: !binary |
-            0J7QtNC90LAg0L7RiNC40LHQutCwINC/0YDQtdGA0LLQsNC70LAg0YHQvtGF
-            0YDQsNC90LXQvdC40LUge3ttb2RlbH19
-
-          other: !binary |
-            0J7RiNC40LHQutC4LCDQv9GA0LXRgNCy0LDQstGI0LjQtSDRgdC+0YXRgNCw
-            0L3QtdC90LjQtSB7e21vZGVsfX0gLSB7e2NvdW50fX0g
-
-  there_are_no_static_dhcp_leases: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINCy0YvQtNCw0L3QvdGL
-    0LUg0YHRgtCw0YLQuNGH0LXRgdC60LjQtSDQsNC00YDQtdGB0LAg0L7RgtGB
-    0YPRgtGB0YLQstGD0Y7Rgi4=
-
-  live_help: !binary |
-    0J/QvtC80L7RidGM
-
-  edit_user: !binary |
-    0KDQtdC00LDQutGC0LjRgNC+0LLQsNC90LjQtSDQv9C+0LvRjNC30L7QstCw
-    0YLQtdC70Y8=
-
-  control_panel: !binary |
-    0J/QsNC90LXQu9GMINGD0L/RgNCw0LLQu9C10L3QuNGP
-
-  share_name_cannot_be_blank: !binary |
-    0JjQvNGPINC+0LHRidC10LPQviDRgNC10YHRg9GA0YHQsCDQvdC1INC80L7Q
-    ttC10YIg0LHRi9GC0Ywg0L/Rg9GB0YLRi9C8
-
-  get_started: !binary |
-    0J/QvtGA0LAg0L3QsNGH0LjQvdCw0YLRjCE=
-
-  my_account: !binary |
-    0JzQvtGPINGD0YfQtdGC0L3QsNGPINC30LDQv9C40YHRjA==
-
-  gallery: !binary |
-    0JPQsNC70LXRgNC10Y8=
-
-  transmission_bittorrent_server: !binary |
-    0KHQtdGA0LLQtdGAIFRyYW5zbWlzc2lvbiBCaXR0b3JyZW50
-
-  ip_address: !binary |
-    SVAt0LDQtNGA0LXRgQ==
-
+  there_are_no_static_dhcp_leases: "На данный момент выданные статические адреса отсутствуют."
+  live_help: "Помощь"
+  edit_user: "Редактирование пользователя"
+  control_panel: "Панель управления"
+  share_name_cannot_be_blank: "Имя общего ресурса не может быть пустым"
+  get_started: "Пора начинать!"
+  my_account: "Моя учетная запись"
+  gallery: "Галерея"
+  transmission_bittorrent_server: "Сервер Transmission Bittorrent"
+  ip_address: "IP-адрес"
   number: 
     format: 
       separator: .
-      delimiter: ","
-    human: 
-      storage_units: 
-        format: "%n %u"
-        units: 
-          kb: !binary |
-            0JrQsQ==
-
-          tb: !binary |
-            0KLQsQ==
-
-          gb: !binary |
-            0JPQsQ==
-
-          byte: 
-            one: !binary |
-              0JHQsNC50YI=
-
-            other: !binary |
-              0JHQsNC50YLQvtCy
-
-          mb: !binary |
-            0JzQsQ==
-
-    currency: 
-      format: 
-        format: "%u%n"
-        unit: $
-        separator: .
-        delimiter: ","
-  mysql_database_server: !binary |
-    0KHQtdGA0LLQtdGAIE15U1FMIERC
-
-  edit_and_rate_beta_apps: !binary |
-    0KDQtdC00LDQutGC0LjRgNC+0LLQsNGC0Ywg0Lgg0L7RhtC10L3QuNGC0Ywg
-    0JHQtdGC0LAt0L/RgNC40LvQvtC20LXQvdC40Y8=
-
-  or_view_each_one_separately_below: !binary |
-    0LjQu9C4INC/0YDQvtGB0LzQvtGC0YDQtdGC0Ywg0LrQsNC20LTRi9C5INC/
-    0L4g0L7RgtC00LXQu9GM0L3QvtGB0YLQuCDQvdC40LbQtS4=
-
-  username: !binary |
-    0JjQvNGPINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjw==
-
-  are_you_sure_you_want_to_restart_the_server: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0L/QtdGA0LXQt9Cw0L/Rg9GB0YLQuNGC0Ywge3tuYW1lfX0/
-
-  done_final_check: !binary |
-    0JPQvtGC0L7QstC+ISDQn9C+0YHQu9C10LTQvdGP0Y8g0L/RgNC+0LLQtdGA
-    0LrQsA==
-
-  this_application_is_not_installed_please_refresh: !binary |
-    0K3RgtC+INC/0YDQuNC70L7QttC10L3QuNC1INC90LUg0YPRgdGC0LDQvdC+
-    0LLQu9C10L3Qvi4g0J/QvtC20LDQu9GD0LnRgdGC0LAsINC+0LHQvdC+0LLQ
-    uNGC0LUg0Y3RgtGDINGB0YLRgNCw0L3QuNGG0YMu
-
-  user_name_is_available: !binary |
-    0JjQvNGPINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjyDQtNC+0YHRgtGD0L/Q
-    vdC+
-
-  first_time_admin_setup: !binary |
-    0J3QsNGH0LDQu9GM0L3QsNGPINC90LDRgdGC0YDQvtC50LrQsCDQsNC00LzQ
-    uNC90LjRgdGC0YDQsNGC0L7RgNCwLiDQn9C+0LbQsNC70YPQudGB0YLQsCwg
-    0YHQvtC30LTQsNC50YLQtSDQvdC+0LLRi9C5INC/0LDRgNC+0LvRjC4=
-
-  news: !binary |
-    0J3QvtCy0L7RgdGC0Lg=
-
-  password: !binary |
-    0J/QsNGA0L7Qu9GM
-
-  access: !binary |
-    0JTQvtGB0YLRg9C/
-
-  avanced_settings_is_for_developers: !binary |
-    0JLQutC70Y7Rh9C10L3QuNC1INC00L7Qv9C+0LvQvdC40YLQtdC70YzQvdGL
-    0YUg0LLQvtC30LzQvtC20L3QvtGB0YLQtdC5INC/0YDQtdC00YPRgdC80L7R
-    gtGA0LXQvdC+INGC0L7Qu9GM0LrQviDQtNC70Y8g0L7Qv9GL0YLQvdGL0YUg
-    0L/QvtC70YzQt9C+0LLQsNGC0LXQu9C10Lkg0Lgg0YDQsNC30YDQsNCx0L7R
-    gtGH0LjQutC+0LIu
-
-  there_are_no_shares_created: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINCyINCy0LDRiNC10Lkg
-    0YHQuNGB0YLQtdC80LUg0L3QtdGCINC+0LHRidC40YUg0YDQtdGB0YPRgNGB
-    0L7Qsi4=
-
-  created: !binary |
-    0KHQvtC30LTQsNC90L4=
-
-  watchdog: Watchdog
-  stop: !binary |
-    0J7RgdGC0LDQvdC+0LLQuNGC0Yw=
-
-  device: !binary |
-    0KPRgdGC0YDQvtC50YHRgtCy0L4=
-
-  initial_user: !binary |
-    0JjQvNGPINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjw==
-
-  preparing_to_uninstall: !binary |
-    0J/QvtC00LPQvtGC0L7QstC60LAg0Log0YPQtNCw0LvQtdC90LjRjiAuLi4=
-
-  time: 
-    am: am
-    formats: 
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      short: "%d %b %H:%M"
-      long: "%B %d, %Y %H:%M"
-    pm: pm
-  dns_server: !binary |
-    RE5TINGB0LXRgNCy0LXRgA==
-
-  sign_up_here: !binary |
-    0JfQsNGA0LXQs9C40YHRgtGA0LjRgNC+0LLQsNGC0YzRgdGP
-
-  servers: !binary |
-    0KHQtdGA0LLQtdGA0Ys=
-
-  router_ip: !binary |
-    SVAt0LDQtNGA0LXRgSDQvNCw0YDRiNGA0YPRgtC40LfQsNGC0L7RgNCw
-
-  general_amahi_news: !binary |
-    0J7QsdGJ0LjQtSDQvdC+0LLQvtGB0YLQuCBBbWFoaQ==
-
-  feedback: !binary |
-    0J7QsdGA0LDRgtC90LDRjyDRgdCy0Y/Qt9GM
-
-  name: !binary |
-    0JjQvNGP
-
-  awake_this_device_via_wol: !binary |
-    0J/RgNC+0LHRg9C00LjRgtGMINGD0YHRgtGA0L7QudGB0YLQstC+
-
-  port_forwarding: !binary |
-    0J/QtdGA0LXQvdCw0L/RgNCw0LLQu9C10L3QuNC1INC/0L7RgNGC0L7Qsg==
-
-  datetime: 
-    prompts: 
-      minute: !binary |
-        0Jwu
-
-      second: !binary |
-        0KHQtdC6Lg==
-
-      month: !binary |
-        0JzQtdGB0Y/Rhg==
-
-      hour: !binary |
-        0Kcu
-
-      day: !binary |
-        0JTQtdC90Yw=
-
-      year: !binary |
-        0JPQvtC0
-
-    distance_in_words: 
-      less_than_x_minutes: 
-        one: !binary |
-          0LzQtdC90YzRiNC1INC80LjQvdGD0YLRiyDQvdCw0LfQsNC0
-
-        other: !binary |
-          0LzQtdC90YzRiNC1IHt7Y291bnR9fSDQvNC40L0uINC90LDQt9Cw0LQ=
-
-      x_days: 
-        one: !binary |
-          0LTQtdC90Ywg0L3QsNC30LDQtA==
-
-        other: !binary |
-          e3tjb3VudH19INC00L0uINC90LDQt9Cw0LQ=
-
-      x_seconds: 
-        one: !binary |
-          0YHQtdC60YPQvdC00YMg0L3QsNC30LDQtA==
-
-        other: !binary |
-          e3tjb3VudH19INGB0LXQui4g0L3QsNC30LDQtA==
-
-      about_x_hours: 
-        one: !binary |
-          0L7QutC+0LvQviDRh9Cw0YHQsCDQvdCw0LfQsNC0
-
-        other: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0YcuINC90LDQt9Cw0LQ=
-
-      less_than_x_seconds: 
-        one: !binary |
-          0LzQtdC90YzRiNC1INGB0LXQutGD0L3QtNGLINC90LDQt9Cw0LQ=
-
-        other: !binary |
-          0LzQtdC90YzRiNC1IHt7Y291bnR9fSDRgdC10LouINC90LDQt9Cw0LQ=
-
-      x_months: 
-        one: !binary |
-          0LzQtdGB0Y/RhiDQvdCw0LfQsNC0
-
-        other: !binary |
-          e3tjb3VudH19INC80LXRgS4g0L3QsNC30LDQtA==
-
-      x_minutes: 
-        one: !binary |
-          0LzQuNC90YPRgtGDINC90LDQt9Cw0LQ=
-
-        other: !binary |
-          e3tjb3VudH19INC80LjQvS4g0L3QsNC30LDQtA==
-
-      about_x_years: 
-        one: !binary |
-          0L7QutC+0LvQviDQs9C+0LTQsCDQvdCw0LfQsNC0
-
-        other: !binary |
-          0L/RgNC+0YjQu9C+INC70LXRgjoge3tjb3VudH19
-
-      about_x_months: 
-        one: !binary |
-          0L7QutC+0LvQviDQvNC10YHRj9GG0LAg0L3QsNC30LDQtA==
-
-        other: !binary |
-          0L7QutC+0LvQviB7e2NvdW50fX0g0LzQtdGBLiDQvdCw0LfQsNC0
-
-      over_x_years: 
-        one: !binary |
-          0LHQvtC70YzRiNC1INCz0L7QtNCwINC90LDQt9Cw0LQ=
-
-        other: !binary |
-          0L/RgNC+0YjQu9C+INC70LXRgjoge3tjb3VudH19
-
-      half_a_minute: !binary |
-        0L/QvtC70LzQuNC90YPRgtGLINC90LDQt9Cw0LQ=
-
-  nickname: !binary |
-    0JjQvNGP
-
-  check_the_calendars_wiki_for_more_details: !binary |
-    0J/QvtGB0LXRgtC40YLQtSB3aWtpINC+INC60LDQu9C10L3QtNCw0YDRj9GF
-    INC00LvRjyDQsdC+0LvQtdC1INC/0L7QtNGA0L7QsdC90L7QuSDQuNC90YTQ
-    vtGA0LzQsNGG0LjQuCDQvtCxINGD0L/RgNCw0LLQu9C10L3QuNC4INC60LDQ
-    u9C10L3QtNCw0YDRj9C80Lgg0Lgg0YHQvtCy0LzQtdGB0YLQuNC80L7RgdGC
-    0Lgg0LrQu9C40LXQvdGC0L7Qsi4=
-
-  pooled: !binary |
-    0JjRgdC/0L7Qu9GM0LfQvtCy0LDRgtGMINC00LvRjyDQv9GD0LvQsCDRhdGA
-    0LDQvdC10L3QuNGP
-
-  edit_web_app: !binary |
-    0KDQtdC00LDQutGC0LjRgNC+0LLQsNC90LjQtSBXZWIt0L/RgNC40LvQvtC2
-    0LXQvdC40Y8=
-
-  movies: !binary |
-    0KTQuNC70YzQvNGL
-
-  mac_already_allocated: !binary |
-    TUFDLdCw0LTRgNC10YEg0YPQttC1INC40YHQv9C+0LvRjNC30L7QstCw0L0=
-
-  dyndns_info: !binary |
-    QW1haGkg0L/RgNC10LTQvtGB0YLQsNCy0LvRj9C10YIg0LLQsNC8INCx0LXR
-    gdC/0LvQsNGC0L3Ri9C5LCDQvdC1INGC0YDQtdCx0YPRjtGJ0LjQuSDQvdCw
-    0YHRgtGA0L7QudC60LgsINC00LjQvdCw0LzQuNGH0LXRgdC60LjQuSDQsNC0
-    0YDQtdGBIEROUy4g0J7QvSDRj9Cy0LvRj9C10YLRgdGPINCy0L3QtdGI0L3Q
-    uNC8INC00LvRjyDQstCw0YjQtdC5DQrQtNC+0LzQsNGI0L3QtdC5INGB0LXR
-    gtC4LiDQktGLINC80L7QttC10YLQtSDQuNGB0L/QvtC70YzQt9C+0LLQsNGC
-    0Ywg0LXQs9C+INC00LvRjyDQtNC+0YHRgtGD0L/QsCDRgSDQv9C+0LzQvtGJ
-    0YzRjiA8YSB0YXJnZXQ9Il9ibGFuayINCmhyZWY9Imh0dHA6Ly93aWtpLmFt
-    YWhpLm9yZy9pbmRleC5waHAvVlBOIj5NYWM8L2E+INC40LvQuCA8YSB0YXJn
-    ZXQ9Il9ibGFuayINCmhyZWY9Imh0dHA6Ly93aWtpLmFtYWhpLm9yZy9pbmRl
-    eC5waHAvVlBOTGludXgiPkxpbnV4PC9hPiA8YQ0KdGFyZ2V0PSJfYmxhbmsi
-    IGhyZWY9Imh0dHA6Ly93aWtpLmFtYWhpLm9yZy9pbmRleC5waHAvVlBOIj5W
-    UE48L2E+LdC60LvQuNC10L3RgtC+0LIgKNGB0L/QtdGG0LjQsNC70LjRgdGC
-    0Ysg0LzQvtCz0YPRgiDQuNGB0L/QvtC70YzQt9C+0LLQsNGC0Ywg0LXQs9C+
-    INC00LvRjyDQv9C+0LTQutC70Y7Rh9C10L3QuNGPINGBINC/0L7QvNC+0YnR
-    jNGOIDxhIHRhcmdldD0iX2JsYW5rIg0KaHJlZj0iaHR0cDovL3dpa2kuYW1h
-    aGkub3JnL2luZGV4LnBocC9Tc2gtcG9ydHMiPlNTSDwvYT4pLg0K0KHQv9C1
-    0YbQuNCw0LvQuNGB0YLRiyDQvNC+0LPRg9GCINC40YHQv9C+0LvRjNC30L7Q
-    stCw0YLRjCDQtdCz0L4g0LTQu9GPINGA0LDQt9C80LXRidC10L3QuNGPIHdl
-    Yi3RgdCw0LnRgtC+0LIsINC40LPRgNC+0LLRi9GFINGB0LXRgNCy0LXRgNC+
-    0LIgDQrQuNC70Lgg0LTRgNGD0LPQuNGFINGB0LvRg9C20LEg0LjQtyDQstCw
-    0YjQtdC5INC00L7QvNCw0YjQvdC10Lkg0YHQtdGC0LggKNC10YHQu9C4INCy
-    0Ysg0YXQvtGC0LjRgtC1INC/0L7Qv9GA0L7QsdC+0LLQsNGC0YwgLSANCtC+
-    0LHRgNCw0YLQuNGC0LXRgdGMINCyIElSQy3QutCw0L3QsNC7INC40LvQuCDQ
-    uiBXaWtpKS4=
-
-  confirmation_matches: !binary |
-    0KHRgtGA0L7QutC4INGB0L7QstC/0LDQtNCw0Y7Rgg==
-
-  setting_dmz_failed: !binary |
-    0J3QsNGB0YLRgNC+0LnQutCwIERNWiDQv9GA0L7QstCw0LvQuNC70LDRgdGM
-    LiDQn9GA0L7QstC10YDRjNGC0LUg0L3QsNGB0YLRgNC+0LnQutC4Lg==
-
-  logs: !binary |
-    0JbRg9GA0L3QsNC70Ys=
-
-  this_name_is_not_available: !binary |
-    0K3RgtC+INC40LzRjyDQvdC10LTQvtGB0YLRg9C/0L3Qvg==
-
-  password_changed_successfully: !binary |
-    0J/QsNGA0L7Qu9GMINGD0YHQv9C10YjQvdC+INC40LfQvNC10L3QtdC9
-
-  will_start_at_boot_time: !binary |
-    0LHRg9C00LXRgiDQt9Cw0L/Rg9GB0LrQsNGC0YzRgdGPINC/0YDQuCDQt9Cw
-    0LPRgNGD0LfQutC1INGB0LjRgdGC0LXQvNGL
-
-  calendar_name: !binary |
-    0JjQvNGPINC60LDQu9C10L3QtNCw0YDRjw==
-
-  this_application_install_ended_with_an_error_please_uninstall_status_is: !binary |
-    0KPRgdGC0LDQvdC+0LLQutCwINGN0YLQvtCz0L4g0L/RgNC40LvQvtC20LXQ
-    vdC40Y8g0LfQsNCy0LXRgNGI0LjQu9Cw0YHRjCDQvtGI0LjQsdC60L7QuS4g
-    0J/QvtC20LDQu9GD0LnRgdGC0LAsINGD0LTQsNC70LjRgtC1INC10LPQviDQ
-    uCDQv9C+0L/RgNC+0LHRg9C50YLQtSDRg9GB0YLQsNC90L7QstC40YLRjCDQ
-    tdGJ0LUg0YDQsNC3LiDQodGC0LDRgtGD0YEg0L/RgNC40LvQvtC20LXQvdC4
-    0Y8gLQ==
-
-  mac_filtering: !binary |
-    0KTQuNC70YzRgtGA0YsgTUFD
-
-  tags: !binary |
-    0KLQtdCz0Lg=
-
-  router_firewall_settings: !binary |
-    0J3QsNGB0YLRgNC+0LnQutCwINC80LDRgNGI0YDRg9GC0LjQt9Cw0YLQvtGA
-    0LAv0YHQtdGC0LXQstC+0LPQviDRjdC60YDQsNC90LA=
-
-  firewall_mac_address_filter_info: !binary |
-    0JTQsNC90L3Ri9C1INCyINGN0YLQvtC5INGC0LDQsdC70LjRhtC1INC40YHQ
-    v9C+0LvRjNC30YPRjtGC0YHRjyDQtNC70Y8g0L7Qs9GA0LDQvdC40YfQtdC9
-    0LjRjyDQvtC/0YDQtdC00LXQu9C10L3QvdGL0YUgCtC/0LDQutC10YLQvtCy
-    INC00LDQvdC90YvRhSDQuNC3INCy0LDRiNC10Lkg0LvQvtC60LDQu9GM0L3Q
-    vtC5INGB0LXRgtC4INCyINCY0L3RgtC10YDQvdC10YIg0YfQtdGA0LXQtyAK
-    0KjQu9GO0LcuINCY0YHQv9C+0LvRjNC30L7QstCw0L3QuNC1INGC0LDQutC4
-    0YUg0YTQuNC70YzRgtGA0L7QsiDQvNC+0LbQtdGCINC/0YDQuNCz0L7QtNC4
-    0YLRjNGB0Y8gCtCyINC+0LHQtdGB0L/QtdGH0LXQvdC40Lgg0LHQtdC30L7Q
-    v9Cw0YHQvdC+0YHRgtC4INC40LvQuCDQvtCz0YDQsNC90LjRh9C10L3QuNC4
-    INCy0LDRiNC10LkgCtC70L7QutCw0LvRjNC90L7QuSDRgdC10YLQuC4=
-
-  static_ip_address: !binary |
-    0KHRgtCw0YLQuNGH0LXRgdC60LjQuSBJUC3QsNC00YDQtdGB
-
-  are_you_sure_advanced_features: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0LLQutC70Y7Rh9C40YLRjCDQtNC+0L/QvtC70L3QuNGC0LXQu9GM0L3Ri9C1
-    INCy0L7Qt9C80L7QttC90L7RgdGC0Lg/
-
-  dhcp_server: !binary |
-    0KHQtdGA0LLQtdGAIERIQ1A=
-
-  app_logs: !binary |
-    0JbRg9GA0L3QsNC70Ysg0L/RgNC40LvQvtC20LXQvdC40Lk=
-
-  contribute: !binary |
-    0KHQvtGC0YDRg9C00L3QuNGH0LXRgdGC0LLQvg==
-
-  back: !binary |
-    0J3QsNC30LDQtA==
-
-  changelog: !binary |
-    0JjQt9C80LXQvdC10L3QuNGP
-
-  notifications_from_amahi: !binary |
-    0KPQstC10LTQvtC80LvQtdC90LjRjyDQvtGCIEFtYWhp
-
-  support_win_95_98: !binary |
-    0J/QvtC00LTQtdGA0LbQutCwIFdpbmRvd3MgOTUvOTgg4oCUINC+0YLQutGA
-    0YvQstCw0LXRgiDQtNC+0YHRgtGD0L8g0LTQu9GPINCf0Jog0YEg0Y3RgtC+
-    0Lkg0J7QoQ==
-
-  there_are_no_calendars_available_see_wiki: !binary |
-    0J3QsCDRgdC10YDQstC10YDQtSDQvdC10YIg0LTQvtGB0YLRg9C/0L3Ri9GF
-    INC60LDQu9C10L3QtNCw0YDQtdC5LiDQodC+0LfQtNCw0LnRgtC1INC40YUg
-    0L/RgNC4INC/0L7QvNC+0YnQuCDQutC70LjQtdC90YLQsCDQutCw0LvQtdC9
-    0LTQsNGA0Y8uIDxhIGhyZWY9Imh0dHA6Ly93aWtpLmFtYWhpLm9yZy9pbmRl
-    eC5waHAvQ2FsZW5kYXJzIj5XaWtpPC9hPi4=
-
-  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: !binary |
-    0JLQutC70Y7Rh9C10L3QuNC1INC+0YLQu9Cw0LTQutC4INC80L7QttC10YIg
-    0L/RgNC40LLQtdGB0YLQuCDQuiDRgdC+0LfQtNCw0L3QuNGOINC+0YfQtdC9
-    0Ywg0LHQvtC70YzRiNC40YUg0YTQsNC50LvQvtCyINC70L7Qs9C+0LIuCtCS
-    0Ysg0LTQtdC50YHRgtCy0LjRgtC10LvRjNC90L4g0YXQvtGC0LjRgtC1INCy
-    0LrQu9GO0YfQuNGC0Ywg0L7RgtC70LDQtNC60YMgU2FtYmE/
-
-  the_mac_is_invalid: !binary |
-    TUFDLdCw0LTRgNC10YEg0L3QtdCy0LXRgNC10L0=
-
-  making_home_networking_simple: !binary |
-    0JTQvtC80LDRiNC90LjQtSDRgdC10YLQuCAtINC/0YDQvtGJ0LUg0L3QtSDQ
-    sdGL0LLQsNC10YI=
-
-  disk_pool_details: !binary |
-    0JLRi9Cx0LXRgNC40YLQtSDRgNCw0LfQtNC10LvRiywg0LrQvtGC0L7RgNGL
-    0LUg0LLRiyDRhdC+0YLQuNGC0LUg0LLQutC70Y7Rh9C40YLRjCDQsiDQv9GD
-    0Lsg0YXRgNCw0L3QtdC90LjRjyB7e2dyZXlob2xlfX0sINCwINC30LDRgtC1
-    0Lwg0YDQsNC30YDQtdGI0LjRgtC1INC+0LHRidC40Lwg0YDQtdGB0YPRgNGB
-    0LDQvCDQuNGB0L/QvtC70YzQt9C+0LLQsNGC0Ywg0Y3RgtC+0YIg0L/Rg9C7
-    ICh7e3NoYXJlc319KQ==
-
-  calendars: !binary |
-    0JrQsNC70LXQvdC00LDRgNC4
-
-  a_single_number_0_254_to_point_to_a_given_machine: !binary |
-    0J7QtNC90L4g0YfQuNGB0LvQviAoMC0yNTQpINC00LvRjyDRg9C60LDQt9Cw
-    0L3QuNGPINC90LAg0L7Qv9GA0LXQtNC10LvQtdC90L3Rg9GOINC80LDRiNC4
-    0L3RgyDQsiDQstCw0YjQtdC5INGB0LXRgtC4Lg==
-
-  writeable: !binary |
-    0KDQsNC30YDQtdGI0LjRgtGMINC30LDQv9C40YHRjA==
-
-  port_range_ports_must_be_numbers: !binary |
-    0J/QvtGA0YIg0LTQvtC70LbQtdC9INCx0YvRgtGMINGH0LjRgdC70L7QstGL
-    0Lw=
-
-  help: !binary |
-    0KHQv9GA0LDQstC60LA=
-
-  new_firewall_rule: !binary |
-    0J3QvtCy0L7QtSDQv9GA0LDQstC40LvQviDRgdC10YLQtdCy0L7Qs9C+INGN
-    0LrRgNCw0L3QsA==
-
-  video: !binary |
-    0JLQuNC00LXQvg==
-
-  thanks_for_visiting: !binary |
-    VGhhbmtzIGZvciB2aXNpdGluZy4g0J/QvtC00LTQtdGA0LbQuNGC0LUg0L3Q
-    sNGI0LjRhSDRgdC/0L7QvdGB0L7RgNC+0LIh
-
-  install_code: !binary |
-    0JrQvtC0INGD0YHRgtCw0L3QvtCy0LrQuA==
-
-  new_static_ip: !binary |
-    0J3QvtCy0YvQuSDRgdGC0LDRgtC40YfQtdGB0LrQuNC5IElQ
-
-  this_share_name_is_not_valid: !binary |
-    0JjQvNGPINGN0YLQvtCz0L4g0L7QsdGJ0LXQs9C+INGA0LXRgdGD0YDRgdCw
-    INC90LXQstC10YDQvdC+
-
-  there_are_no_applications_available: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINC90LXRgiDQtNC+0YHR
-    gtGD0L/QvdGL0YUg0L/RgNC40LvQvtC20LXQvdC40Lku
-
-  ip_filtering: !binary |
-    0KTQuNC70YzRgtGA0YsgSVA=
-
-  create: !binary |
-    0KHQvtC30LTQsNGC0Yw=
-
-  guest_dashboard: !binary |
-    0JPQvtGB0YLQtdCy0LDRjyDQv9Cw0L3QtdC70Yw=
-
-  view_all_calendars_simultaneously: !binary |
-    0J/RgNC+0YHQvNC+0YLRgNC10YLRjCDQstGB0LUg0LrQsNC70LXQvdC00LDR
-    gNC4INC+0LTQvdC+0LLRgNC10LzQtdC90L3Qvg==
-
-  music: !binary |
-    0JzRg9C30YvQutCw
-
-  permissions: !binary |
-    0KDQsNC30YDQtdGI0LXQvdC40Y8=
-
-  initial_password: !binary |
-    0J/QsNGA0L7Qu9GM
-
-  your_domain_info: !binary |
-    0K3RgtC+INCy0LDRiCDQtNC+0LzQtdC9INC00L7QvNCw0YjQvdC10Lkg0YHQ
-    tdGC0LguINCe0L0g0LTQvtGB0YLRg9C/0LXQvSA8Yj7RgtC+0LvRjNC60L48
-    L2I+INCy0L3Rg9GC0YDQuCDQstCw0YjQtdC5INC00L7QvNCw0YjQvdC10Lkg
-    0YHQtdGC0LguDQrQl9CwINC/0L7QtNGA0L7QsdC90L7QuSDQuNC90YTQvtGA
-    0LzQsNGG0LjQtdC5INC+0LHRgNCw0YnQsNC50YLQtdGB0Ywg0LIgPGEgdGFy
-    Z2V0PSJfYmxhbmsiIGhyZWY9Imh0dHA6Ly93d3cuYW1haGkub3JnL2ZhcSN3
-    aGF0LWhvbWUtZG9tYWluLXNob3VsZC1pLXVzZSI+RkFRPC9hPi4=
-
-  there_are_no_firewall_rules_defined: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINC90LXRgiDQt9Cw0LTQ
-    sNC90L3Ri9GFINC/0YDQsNCy0LjQuyDRgdC10YLQtdCy0L7Qs9C+INGN0LrR
-    gNCw0L3QsA==
-
-  firewall_url_filter_message: !binary |
-    0JTQsNC90L3Ri9C1INCyINGN0YLQvtC5INGC0LDQsdC70LjRhtC1INC40YHQ
-    v9C+0LvRjNC30YPRjtGC0YHRjyDQtNC70Y8g0L7Qs9GA0LDQvdC40YfQtdC9
-    0LjRjyBVUkwg0YfQtdGA0LXQtyDQqNC70Y7Qty4=
-
-  dhcp_leases: !binary |
-    0JLRi9C00LDQvdC90YvQtSDQsNC00YDQtdGB0LAgREhDUA==
-
-  dynamic_dns: !binary |
-    0JTQuNC90LDQvNC40YfQtdGB0LrQuNC5IEROUw==
-
-  the_ip_must_be_1_to_254: !binary |
-    SVAt0LDQtNGA0LXRgSDQtNC+0LvQttC10L0g0LHRi9GC0Ywg0LIg0LTQuNCw
-    0L/QsNC30L7QvdC1IDEtMjU0
-
-  not_a_valid_user_or_password: !binary |
-    0J7RiNC40LHQutCwOiDQvdC10LLQtdGA0L3QvtC1INC40LzRjyDQuNC70Lgg
-    0L/QsNGA0L7Qu9GM
-
-  create_your_hda_profile: !binary |
-    0KHQvtC30LTQsNGC0Ywg0LLQsNGIINC/0YDQvtGE0LjQu9GMIEhEQQ==
-
-  your_home_dns_domain: !binary |
-    0JLQsNGIINC00L7QvNCw0YjQvdC40LkgRE5TINC00L7QvNC10L0=
-
-  theme_by: !binary |
-    0JDQstGC0L7RgCDRgtC10LzRiyAt
-
-  forums: !binary |
-    0KTQvtGA0YPQvNGL
-
-  there_are_no_aliases_defined: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINC30LDQtNCw0L3QvdGL
-    0LUg0L/RgdC10LLQtNC+0L3QuNC80Ysg0L7RgtGB0YPRgtGB0YLQstGD0Y7R
-    gi4=
-
-  user_name_is_not_valid: !binary |
-    0JjQvNGPINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjyDQvdC1INC/0L7QtNGF
-    0L7QtNC40YI=
-
-  all_you_need: !binary |
-    0JLRgdC1LCDRh9GC0L4g0LLQsNC8INC90YPQttC90L4h
-
-  system: !binary |
-    0KHQuNGB0YLQtdC80LA=
-
-  name_is_taken_already_or_is_reserved: !binary |
-    0JjQvNGPINGD0LbQtSDQt9Cw0L3Rj9GC0L4g0LjQu9C4INC30LDRgNC10LfQ
-    tdGA0LLQuNGA0L7QstCw0L3Qvg==
-
-  webapps: !binary |
-    V2ViLdC/0YDQuNC70L7QttC10L3QuNGP
-
-  submit_for_debug: !binary |
-    0J7RgtC/0YDQsNCy0LjRgtGMINC00LvRjyDQvtGC0LvQsNC00LrQuA==
-
-  more: !binary |
-    0LXRidC1
-
-  protocol: !binary |
-    0J/RgNC+0YLQvtC60L7Quw==
-
-  no_account_yet: !binary |
-    0J3QtdGCINGD0YfQtdGC0L3QvtC5INC30LDQv9C40YHQuD8=
-
-  delete_this_rule: !binary |
-    0KPQtNCw0LvQuNGC0Ywg0Y3RgtC+INC/0YDQsNCy0LjQu9C+
-
-  images: !binary |
-    0JjQt9C+0LHRgNCw0LbQtdC90LjRjw==
-
-  language: !binary |
-    0K/Qt9GL0Lo=
-
-  this_application_is_installed: !binary |
-    0K3RgtC+INC/0YDQuNC70L7QttC10L3QuNC1INGD0YHRgtCw0L3QvtCy0LvQ
-    tdC90L4u
-
-  share: !binary |
-    0J7QsdGJ0LjQuSDRgNC10YHRg9GA0YE=
-
-  partitions: !binary |
-    0KDQsNC30LTQtdC70Ys=
-
-  router_setting_failed: !binary |
-    0JzQsNGA0YjRgNGD0YLQuNC30LDRgtC+0YAg0L3QtSDQvdCw0YHRgtGA0L7Q
-    tdC9LiDQn9GA0L7QstC10YDRjNGC0LUg0L3QsNGB0YLRgNC+0LnQutC4Lg==
-
-  global_settings_for_shares: !binary |
-    0JPQu9C+0LHQsNC70YzQvdGL0LUg0L3QsNGB0YLRgNC+0LnQutC4INC+0LHR
-    idC40YUg0YDQtdGB0YPRgNGB0L7Qsg==
-
-  the_watchdog_is_a_critical_setting: The watchdog is a CRITICAL setting. Stopping monitoring a server process is STRONGLY DISCOURAGED. This is designed to keep services in your HDA running reliably even in the presence of glitches. Are you sure you want to stop the watchdog in this server?
-  warning_this_application_is_in_testing: !binary |
-    0JLQndCY0JzQkNCd0JjQlTog0J/RgNC40LvQvtC20LXQvdC40LUg0YLQtdGB
-    0YLQuNGA0YPQtdGC0YHRjyE=
-
-  is_being_monitored_24x7: !binary |
-    0L3QsNCx0LvRjtC00LDQtdGC0YHRjyAyNHg3
-
-  computer: !binary |
-    0JrQvtC80L/RjNGO0YLQtdGA
-
-  an_external_ip_address_to_make_the_alias: !binary |
-    0J/RgNC40LLRj9C30LDRgtGMINCy0L3QtdGI0L3QuNC5IElQLdCw0LTRgNC1
-    0YEg0LTQu9GPINGD0LrQsNC30LDQvdC40Y8g0L3QsCDQvtC/0YDQtdC00LXQ
-    u9C10L3QvdGL0LkgSVAt0LDQtNGA0LXRgSDRgdC10YLQuC4=
-
-  file_server_samba: !binary |
-    0KTQsNC50LvQvtCy0YvQuSDRgdC10YDQstC10YAgKFNhbWJhKQ==
-
-  mac_is_invalid: !binary |
-    TUFDLdCw0LTRgNC10YEg0L3QtdCy0LXRgNC10L0=
-
-  edit_alias: !binary |
-    0JjQt9C80LXQvdC10L3QuNC1INC/0YHQtdCy0LTQvtC90LjQvNCw
-
-  port_range_ports_are_already_allocated: !binary |
-    0J/QvtGA0YLRiyDQsiDQtNCw0L3QvdC+0Lwg0LTQuNCw0L/QsNC30L7QvdC1
-    INGD0LbQtSDQuNGB0L/QvtC70YzQt9C+0LLQsNC90Ys=
-
-  please_double_check_the_settings: !binary |
-    0J/QvtC20LDQu9GD0LnRgdGC0LAgPHN0cm9uZz7Qv9C10YDQtdC/0YDQvtCy
-    0LXRgNGM0YLQtSDRjdGC0Lgg0L3QsNGB0YLRgNC+0LnQutC4PC9zdHJvbmc+
-    LCDRgi7Qui4g0L7QvdC4INGP0LLQu9GP0Y7RgtGB0Y8g0LrRgNC40YLQuNGH
-    0LXRgdC60LjQvNC4INC00LvRjyDQutC+0YDRgNC10LrRgtC90L7Qs9C+INC3
-    0LDQv9GD0YHQutCwINCy0LDRiNC10LPQviBIREEu
-
-  otherwise_you_can_go_to_the_error_log: !binary |
-    0JIg0L/RgNC+0YLQuNCy0L3QvtC8INGB0LvRg9GH0LDQtSDQstGLINC80L7Q
-    ttC10YLQtSDQv9C10YDQtdC50YLQuCDQv9GA0Y/QvNC+INC6IDxhIGhyZWY9
-    Ii9zZXR1cD90YWI9ZGVidWciPtC20YPRgNC90LDQu9GDINC+0YjQuNCx0L7Q
-    ujwvYT4u
-
-  description: !binary |
-    0J7Qv9C40YHQsNC90LjQtQ==
-
-  there_are_no_users: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINCyINCy0LDRiNC10Lkg
-    0YHQuNGB0YLQtdC80LUg0L3QtdGCINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvQ
-    tdC5Lg==
-
-  are_you_sure: !binary |
-    0JLRiyDRg9Cy0LXRgNC10L3Riz8=
-
-  efficiently_manage_your_network: !binary |
-    0K3RhNGE0LXQutGC0LjQstC90L4g0YPQv9GA0LDQstC70Y/QudGC0LUg0YHQ
-    tdGC0YzRjiDQuCDRgNC10LfQtdGA0LLQvdGL0Lwg0LrQvtC/0LjRgNC+0LLQ
-    sNC90LjQtdC8INCy0YHQtdGFINC60L7QvNC/0YzRjtGC0LXRgNC+0LIsINC4
-    0LPRgNC+0LLRi9GFINC60L7QvdGB0L7Qu9C10Lkg0Lgg0LTRgNGD0LPQuNGF
-    INGD0YHRgtGA0L7QudGB0YLQsiDQsiDQstCw0YjQtdC5INGB0LXRgtC4LCDQ
-    sCDRgtCw0LrQttC1INCx0LXQt9C+0L/QsNGB0L3QviDQv9C+0LTQutC70Y7R
-    h9Cw0LnRgtC10YHRjCDQuiDQvdC10Lkg0YfQtdGA0LXQtyDQmNC90YLQtdGA
-    0L3QtdGCLiDQmCDRjdGC0L4g0LLRgdC10LPQviDQu9C40YjRjCDQv9C10YDQ
-    stGL0LUg0YjQsNCz0Lgg0LIg0YLQvtC8LCDRh9GC0L4g0LLRiyDRgdC80L7Q
-    ttC10YLQtSDQtNC10LvQsNGC0Ywg0L/RgNC4INC/0L7QvNC+0YnQuCDQstCw
-    0YjQtdCz0L4gQW1haGku
-
-  port_range_field_cannot_be_empty: !binary |
-    0J/QvtC70Y8g0L3QtSDQvNC+0LPRg9GCINCx0YvRgtGMINC/0YPRgdGC0YvQ
-    vNC4
-
-  available_for_installation: !binary |
-    KNCU0L7RgdGC0YPQv9C90L4g0LTQu9GPINGD0YHRgtCw0L3QvtCy0LrQuCk=
-
-  create_share: !binary |
-    0KHQvtC30LTQsNGC0Ywg0L7QsdGJ0LjQuSDRgNC10YHRg9GA0YE=
-
-  apps: !binary |
-    0J/RgNC40LvQvtC20LXQvdC40Y8=
-
-  translate_amahi: !binary |
-    0J/QtdGA0LXQstC10YHRgtC4IEFtYWhp
-
-  alias_looks_good: !binary |
-    0J/RgdC10LLQtNC+0L3QuNC8INC/0L7QtNGF0L7QtNC40YI=
-
-  support: !binary |
-    0J/QvtC00LTQtdGA0LbQutCw
-
-  delete_share: !binary |
-    0KPQtNCw0LvQuNGC0Ywg0L7QsdGJ0LjQuSDRgNC10YHRg9GA0YE=
-
-  ushare_upnp_media_server: !binary |
-    0JzQtdC00LjQsC3RgdC10YDQstC10YAgVXNoYXJlIFVQblA=
-
-  sign_in: !binary |
-    0JLRhdC+0LQ=
-
-  disk_pooling_enabled: !binary |
-    0JjRgdC/0L7Qu9GM0LfQvtCy0LDRgtGMINC/0YPQuyDRhdGA0LDQvdC10L3Q
-    uNGP
-
-  new_dns_alias: !binary |
-    0J3QvtCy0YvQuSBETlMt0L/RgdC10LLQtNC+0L3QuNC8
-
-  community: !binary |
-    0JrQvtC80LzRjNGO0L3QuNGC0Lg=
-
-  create_a_new_user: !binary |
-    0KHQvtC30LTQsNC90LjQtSDQvdC+0LLQvtCz0L4g0L/QvtC70YzQt9C+0LLQ
-    sNGC0LXQu9GP
-
-  suggest: !binary |
-    0J/RgNC10LTQu9C+0LbQuNGC0Ywh
-
-  port_filtering: !binary |
-    0KTQuNC70YzRgtGA0Ysg0L/QvtGA0YLQvtCy
-
-  results_found: !binary |
-    KNC90LDQudC00LXQvdC+KQ==
-
-  the_mac_looks_good: !binary |
-    TUFDLdCw0LTRgNC10YEg0LLQtdGA0LXQvQ==
-
-  when_there_are_major_announcements: !binary |
-    0JrRgNGD0L/QvdGL0LUg0L7QsdGK0Y/QstC70LXQvdC40Y8=
-
-  no_description_supplied: !binary |
-    0J3QtdGCINC+0L/QuNGB0LDQvdC40Y8h
-
-  manage_your_contributed_apps: !binary |
-    0KPQv9GA0LDQstC70LXQvdC40LUg0JLQsNGI0LjQvNC4INC/0YDQuNC70L7Q
-    ttC10L3QuNGP0LzQuA==
-
-  global_settings: !binary |
-    0J7QsdGJ0LjQtSDQvdCw0YHRgtGA0L7QudC60Lg=
-
-  networking: !binary |
-    0KHQtdGC0Yw=
-
-  firewall: !binary |
-    0KHQtdGC0LXQstC+0Lkg0Y3QutGA0LDQvQ==
-
-  there_are_no_servers_available: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINC90LXRgiDQtNC+0YHR
-    gtGD0L/QvdGL0YUg0YHQtdGA0LLQtdGA0L7Qsi4=
-
-  port_range: !binary |
-    0JTQuNCw0L/QsNC30L7QvSDQv9C+0YDRgtC+0LI=
-
-  network_gateway: !binary |
-    0KHQtdGC0LXQstC+0Lkg0KjQu9GO0Lc=
-
-  path_looks_good: !binary |
-    0J/Rg9GC0Ywg0LLQtdGA0LXQvQ==
-
-  please_select: !binary |
-    0JLRi9Cx0LXRgNC40YLQtSAuLi4=
-
-  subscribe: !binary |
-    0J/QvtC00L/QuNGB0LDRgtGM0YHRjw==
-
-  mac_address: !binary |
-    TUFDLdCw0LTRgNC10YE=
-
-  settings: !binary |
-    0J3QsNGB0YLRgNC+0LnQutC4
-
-  initial_user_info: !binary |
-    0J3QsNGH0LDQu9GM0L3Ri9C5INC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjA==
-
-  control: !binary |
-    0KPQv9GA0LDQstC70LXQvdC40LU=
-
-  disk_pool_replication: !binary |
-    0KDQtdC/0LvQuNC60LDRhtC40Y8=
-
-  date: 
-    formats: 
-      default: "%d.%m.%Y"
-      short: "%b %d"
-      long: "%B %d, %Y"
-  username_cannot_be_blank: !binary |
-    0JjQvNGPINC/0L7Qu9GM0LfQvtCy0LDRgtC10LvRjyDQvdC1INC80L7QttC1
-    0YIg0LHRi9GC0Ywg0L/Rg9GB0YLRi9C8
-
-  reboot: !binary |
-    0J/QtdGA0LXQt9Cw0LPRgNGD0LfQutCw
-
-  this_feature_is_under_heavy_development: !binary |
-    0K3RgtC+0YIg0YTRg9C90LrRhtC40L7QvdCw0Lsg0L3QsNGF0L7QtNC40YLR
-    gdGPINCyINCw0LrRgtC40LLQvdC+0Lkg0YDQsNC30YDQsNCx0L7RgtC60LU=
-
-  there_are_no_webapps: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINCyINCS0LDRiNC10Lkg
-    0YHQuNGB0YLQtdC80LUg0L3QtdGCINC90LDRgdGC0YDQvtC10L3QvdGL0YUg
-    V2ViLdC/0YDQuNC70L7QttC10L3QuNC5Lg==
-
-  are_you_sure_you_want_to_delete_the_static_ip: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0YPQtNCw0LvQuNGC0Ywg0YHRgtCw0YLQuNGH0LXRgdC60LjQuSBJUCAie3tu
-    YW1lfX0iPw==
-
-  the_ip_looks good: !binary |
-    SVAt0LDQtNGA0LXRgSDQstC10YDQtdC9
-
-  the_name_cannot_be_blank: !binary |
-    0JjQvNGPINC90LUg0LzQvtC20LXRgiDQsdGL0YLRjCDQv9GD0YHRgtGL0Lw=
-
-  uninstall: !binary |
-    0KPQtNCw0LvQuNGC0Yw=
-
-  details: !binary |
-    0J/QvtC00YDQvtCx0L3QvtGB0YLQuA==
-
-  is_now_uninstalled: !binary |
-    0YLQtdC/0LXRgNGMINGD0LTQsNC70LXQvdC+
-
-  themes: !binary |
-    0KLQtdC80Ys=
-
-  the_name_you_input_above_will_be_added_to_the_DNS_server: !binary |
-    0JjQvNGPLCDRh9GC0L4g0JLRiyDRg9C60LDQt9Cw0LvQuCDQstGL0YjQtSwg
-    0LHRg9C00LXRgiDQtNC+0LHQsNCy0LvQtdC90L4g0LIgRE5TLdGB0LXRgNCy
-    0LXRgCDQuCDRgdCy0Y/Qt9Cw0L3QviDRgSBNQUMg0LggSVAg0LDQtNGA0LXR
-    gdCw0LzQuCDRg9C60LDQt9Cw0L3QvdGL0LzQuCDQvdC40LbQtS4=
-
-  new_share: !binary |
-    0J3QvtCy0YvQuSDQvtCx0YnQuNC5INGA0LXRgdGD0YDRgQ==
-
-  this_path_is_not_valid: !binary |
-    0K3RgtC+0YIg0L/Rg9GC0Ywg0L3QtdCy0LXRgNC90YvQuQ==
-
-  log_in: !binary |
-    0JLQvtC50YLQuA==
-
-  are_you_sure_user: !binary |
-    0JLRiyDQtNC10LnRgdGC0LLQuNGC0LXQu9GM0L3QviDRhdC+0YLQuNGC0LUg
-    0YPQtNCw0LvQuNGC0Ywg0L/QvtC70YzQt9C+0LLQsNGC0LXQu9GPICJ7e3Vz
-    ZXJ9fSI/
-
-  extra_parameters: !binary |
-    0JTQvtC/0L7Qu9C90LjRgtC10LvRjNC90YvQtSDQv9Cw0YDQsNC80LXRgtGA
-    0Ys=
-
-  try_installing_some_apps: !binary |
-    0J/QvtC/0YDQvtCx0YPQudGC0LUg0YPRgdGC0LDQvdC+0LLQuNGC0Ywg0L3Q
-    tdGB0LrQvtC70YzQutC+INC/0YDQuNC70L7QttC10L3QuNC5
-
-  testimonials: !binary |
-    0J7RgtC30YvQstGL
-
-  version: !binary |
-    0JLQtdGA0YHQuNGP
-
-  powering_off: !binary |
-    0JLRi9C60LvRjtGH0LDRjtGB0YwgLi4u
-
-  get_involved: !binary |
-    0J/RgNC40L3Rj9GC0Ywg0YPRh9Cw0YHRgtC40LUh
-
-  stop_it: !binary |
-    0J7RgdGC0LDQvdC+0LLQuNGC0Yw=
-
-  home_domain: !binary |
-    0JTQvtC80LDRiNC90LjQuSDQlNC+0LzQtdC9
-
-  total_space: !binary |
-    0JLRgdC10LPQvg==
-
-  never_email_me: !binary |
-    0J3QtSDQvtGC0L/RgNCw0LLQu9GP0YLRjCDQvNC90LU=
-
-  is_now_installed: !binary |
-    0YLQtdC/0LXRgNGMINGD0YHRgtCw0L3QvtCy0LvQtdC90L4=
-
-  this_shares_files_deleted: !binary |
-    0K3RgtC+0YIg0L7QsdGJ0LjQuSDRgNC10YHRg9GA0YEg0LHRg9C00LXRgiDQ
-    sdC+0LvQtdC1INC90LUg0LTQvtGB0YLRg9C/0LXQvSAo0KTQsNC50LvRiyDQ
-    siDQvdC10Lwg0L3QtSDQsdGD0LTRg9GCINGD0LTQsNC70LXQvdGLKS4=
-
-  alias_is_not_valid: !binary |
-    0J/RgdC10LLQtNC+0L3QuNC8INC90LXQstC10YDQtdC9
-
-  mac_address_of_the_device: !binary |
-    TUFDLdCw0LTRgNC10YEg0YPRgdGC0YDQvtC50YHRgtCy0LAgKNCyINCy0LjQ
-    tNC1IDAwOjExOjIyOjMzOjQ0OjU1KQ==
-
-  next: !binary |
-    0JTQsNC70LXQtQ==
-
-  web_apps: !binary |
-    V2ViLdC/0YDQuNC70L7QttC10L3QuNGP
-
-  remember_me: !binary |
-    0JfQsNC/0L7QvNC90LjRgtGM
-
-  password_looks_good: !binary |
-    0J/QsNGA0L7Qu9GMINCyINC/0L7RgNGP0LTQutC1
-
-  docs: !binary |
-    0JTQvtC60YPQvNC10L3RgtGL
-
-  the_ip_address_cannot_be_empty: !binary |
-    SVAt0LDQtNGA0LXRgSDQvdC1INC80L7QttC10YIg0LHRi9GC0Ywg0L/Rg9GB
-    0YLRi9C8
-
-  pdc_primary_domain_controller: !binary |
-    UERDICZtZGFzaDsg0KbQtdC90YLRgNCw0LvRjNC90YvQuSDQutC+0L3RgtGA
-    0L7Qu9C70LXRgCDQtNC+0LzQtdC90LA=
-
-  computer_name: !binary |
-    0JjQvNGPINC60L7QvNC/0YzRjtGC0LXRgNCw
-
-  close: !binary |
-    0LfQsNC60YDRi9GC0Yw=
-
-  this_file_was_automatically_generated_on: !binary |
-    IyDQrdGC0L7RgiDRhNCw0LnQuyDQsdGL0Lsg0LDQstGC0L7QvNCw0YLQuNGH
-    0LXRgdC60Lgg0YHQvtC30LTQsNC9IHt7dGltZX19IC0g0JLQndCY0JzQkNCd
-    0JjQlSAtINCy0YHQtSDRgNGD0YfQvdGL0LUg0LjRgdC/0YDQsNCy0LvQtdC9
-    0LjRjyDQsdGD0LTRg9GCINGD0YLQtdGA0Y/QvdGLIQ==
-
-  installation_instructions: !binary |
-    0JjQvdGB0YLRgNGD0LrRhtC40Y8g0L/QviDRg9GB0YLQsNC90L7QstC60LU=
-
-  control_panel_for_your_amahi_hdas: !binary |
-    0J/QsNC90LXQu9GMINGD0L/RgNCw0LLQu9C10L3QuNGPINC00LvRjyDQstCw
-    0YjQuNGFIEFtYWhpIEhEQQ==
-
-  please_select_the_type_of_rule_you_want: !binary |
-    0JLRi9Cx0LXRgNC40YLQtSDRgtC40L8g0L/RgNCw0LLQuNC70LAg0LTQu9GP
-    INC00L7QsdCw0LLQu9C10L3QuNGPLg==
-
-  create_a_new_webapp: !binary |
-    0KHQvtC30LTQsNGC0Ywg0L3QvtCy0L7QtSBXZWIt0L/RgNC40LvQvtC20LXQ
-    vdC40LU=
-
-  refresh_status: !binary |
-    0J7QsdC90L7QstC40YLRjCDRgdGC0LDRgtGD0YE=
-
-  home: !binary |
-    0JTQvtC80L7QuQ==
-
-  will_not_start_at_boot_time: !binary |
-    PGI+0L3QtTwvYj4g0LHRg9C00LXRgiDQt9Cw0L/Rg9GB0LrQsNGC0YzRgdGP
-    INC/0YDQuCDQt9Cw0LPRgNGD0LfQutC1INGB0LjRgdGC0LXQvNGL
-
-  there_are_no_static_ips_defined: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINC30LDQtNCw0L3QvdGL
-    0LUg0YHRgtCw0YLQuNGH0LXRgdC60LjQtSDQsNC00YDQtdGB0LAg0L7RgtGB
-    0YPRgtGB0YLQstGD0Y7Rgi4=
-
-  share_name_is_available: !binary |
-    0JjQvNGPINC+0LHRidC10LPQviDRgNC10YHRg9GA0YHQsCDRgdCy0L7QsdC+
-    0LTQvdC+
-
-  powerful_simple_home_networking: Powerful, Simple, Home Networking
-  about: About
-  email_me: !binary |
-    0J7RgtC/0YDQsNCy0LvRj9GC0Ywg0LzQvdC1
-
-  there_are_no_applications_installed: !binary |
-    0J3QsCDQtNCw0L3QvdGL0Lkg0LzQvtC80LXQvdGCINC90LXRgiDRg9GB0YLQ
-    sNC90L7QstC70LXQvdC90YvRhSDQv9GA0LjQu9C+0LbQtdC90LjQuS4=
-
-  firewall_port_forward_message: !binary |
-    0K3RgtC4INC/0YDQsNCy0LjQu9CwINC/0L7Qt9Cy0L7Qu9GP0Y7RgiDQstCw
-    0LwK0LDQstGC0L7QvNCw0YLQuNGH0LXRgdC60Lgg0L/QtdGA0LXQvdCw0L/R
-    gNCw0LLQu9GP0YLRjCDQv9C+0YDRgtGLINC00LvRjyDRgdC10YLQtdCy0YvR
-    hSDRgdC70YPQttCxINC90LAg0L7Qv9GA0LXQtNC10LvQtdC90L3Ri9C5CtC6
-    0L7QvNC/0YzRjtGC0LXRgCDQt9CwINGB0LXRgtC10LLRi9C8INGN0LrRgNCw
-    0L3QvtC8LiDQrdGC0Lgg0L3QsNGB0YLRgNC+0LnQutC4INC90LXQvtCx0YXQ
-    vtC00LjQvNGLINGC0L7Qu9GM0LrQvgrQtdGB0LvQuCDQstGLINGF0L7RgtC4
-    0YLQtSDRgNCw0LfQvNC10YHRgtC40YLRjCDQutCw0LrQvtC5LdC70LjQsdC+
-    INGB0LXRgNCy0LXRgCAod2ViLSDQuNC70Lgg0L/QvtGH0YLQvtCy0YvQuSDR
-    gdC10YDQstC10YApCtCyINGH0LDRgdGC0L3QvtC5INC70L7QutCw0LvRjNC9
-    0L7QuSDRgdC10YLQuCDQt9CwINGB0LXRgtC10LLRi9C8INGN0LrRgNCw0L3Q
-    vtC8Lg==
-
-  to_recover_your_password: !binary |
-    0JTQu9GPINCy0L7RgdGB0YLQsNC90L7QstC70LXQvdC40Y8g0JLQsNGI0LXQ
-    s9C+INC/0LDRgNC+0LvRjyDQuNC70Lgg0L/QuNGB0YzQvNCwINCw0LrRgtC4
-    0LLQsNGG0LjQuCDQv9C+0LbQsNC70YPQudGB0YLQsCwg0LLQstC10LTQuNGC
-    0LUg0JLQsNGIIGVtYWlsINC90LjQttC1
-
-  apache_web_server: Apache Web Server
-  dhcp_free: !binary |
-    0J3QtdCw0LrRgtC40LLQtdC9
-
-  seconds: !binary |
-    0YHQtdC6Lg==
-
-  partition: !binary |
-    0KDQsNC30LTQtdC7
-
-  dhcp: DHCP
-  this_users_files_deleted: !binary |
-    0KTQsNC50LvRiyDQsiDQtNC+0LzQsNGI0L3QtdC5INC/0LDQv9C60LUg0Y3R
-    gtC+0LPQviDQv9C+0LvRjNC30L7QstCw0YLQtdC70Y8g0LHRg9C00YPRgiDR
-    g9C00LDQu9C10L3RiyE=
-
-  configured: !binary |
-    0J3QsNGB0YLRgNC+0LXQvQ==
-
-  disabling_lan_manager_will_not_allow_older_machines: !binary |
-    0J7RgtC60LvRjtGH0LXQvdC40LUg0LDQstGC0L7RgNC40LfQsNGG0LjQuCDR
-    gdC10YLQtdCy0L7Qs9C+INC80LXQvdC10LTQttC10YDQsCBXaW5kb3dzIDk1
-    Lzk4INC30LDQutGA0L7QtdGCINC00L7RgdGC0YPQvyDQuiDQvtCx0YnQuNC8
-    INC/0LDQv9C60LDQvCDQtNC70Y8g0YHRgtCw0YDRi9GFINC60L7QvNC/0YzR
-    jtGC0LXRgNC+0LIuDQoNCtCS0Ysg0LTQtdC50YHRgtCy0LjRgtC10LvRjNC9
-    0L4g0YXQvtGC0LjRgtC1INC+0YLQutC70Y7Rh9C40YLRjCDRgNC10LbQuNC8
-    INCw0LLRgtC+0YDQuNC30LDRhtC40LggV2luZG93cyA5NS85OD8=
-
-  you_have_been_logged_out: !binary |
-    0JLRiyDQstGL0YjQu9C4INC40Lcg0YHQuNGB0YLQtdC80Ysu
-
-  permanently: !binary |
-    0L/QvtGB0YLQvtGP0L3QvdC+
-
-  the_url_is_invalid: !binary |
-    VVJMINC90LXQstC10YDQtdC9
-
-  it_will_be_restarted_by_the_watchdog: !binary |
-    KNCx0YPQtNC10YIg0LDQstGC0L7QvNCw0YLQuNGH0LXRgdC60Lgg0L/QtdGA
-    0LXQt9Cw0L/Rg9GJ0LXQvSk=
-
-  amahi_dyndns_updater: !binary |
-    0JDQstGC0L7QvNCw0YLQuNGH0LXRgdC60L7QtSDQvtCx0L3QvtCy0LvQtdC9
-    0LjQtSBBbWFoaSBEeW5hbWljIEROUw==
-
-  pdc_domain: !binary |
-    0JTQvtC80LXQvSBQREM=
-
-  path: !binary |
-    0J/Rg9GC0Yw=
-
-  features: !binary |
-    0JLQvtC30LzQvtC20L3QvtGB0YLQuA==
-
-  password_cannot_be_blank: !binary |
-    0J/QsNGA0L7Qu9GMINC90LUg0LzQvtC20LXRgiDQsdGL0YLRjCDQv9GD0YHR
-    gtGL0Lw=
-
-  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "NOTE: The watchdog is RUNNING and will restart it in a few seconds."
-  your_existing_network_gatweay: !binary |
-    0JLQsNGIINGB0YPRidC10YHRgtCy0YPRjtGJ0LjQuSDRgdC10YLQtdCy0L7Q
-    uSDRiNC70Y7Qty/QvNCw0YDRiNGA0YPRgtC40LfQsNGC0L7RgA==
-
-  warning: !binary |
-    0J/QoNCV0JTQo9Cf0KDQldCW0JTQldCd0JjQlQ==
-
-  dhcp_ip_address: !binary |
-    SVAt0LDQtNGA0LXRgSBESENQ
-
-  beta_apps: !binary |
-    0JHQtdGC0LAt0L/RgNC40LvQvtC20LXQvdC40Y8=
-
-  logout: !binary |
-    0JLRi9C50YLQuA==
-
-  there_is_no_undo: !binary |
-    0JTQsNC90L3Rg9GOINC+0L/QtdGA0LDRhtC40Y4g0L3QtdC70YzQt9GPINC+
-    0YLQvNC10L3QuNGC0Ywh
-
-  date:
-    formats:
-      default: "%d.%m.%Y"
-      short: "%d %b"
-      long: "%d %B %Y"
-
-    day_names: [воскресенье, понедельник, вторник, среда, четверг, пятница, суббота]
-    standalone_day_names: [Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота]
-    abbr_day_names: [Вс, Пн, Вт, Ср, Чт, Пт, Сб]
-
-    month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
-    # see russian gem for info on "standalone" day names
-    standalone_month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
-    abbr_month_names: [~, янв., февр., марта, апр., мая, июня, июля, авг., сент., окт., нояб., дек.]
-    standalone_abbr_month_names: [~, янв., февр., март, апр., май, июнь, июль, авг., сент., окт., нояб., дек.]
-
-    order:
-      - :day
-      - :month
-      - :year
-
-  time:
-    formats:
-      default: "%a, %d %b %Y, %H:%M:%S %z"
-      short: "%d %b, %H:%M"
-      long: "%d %B %Y, %H:%M"
-
-    am: "утра"
-    pm: "вечера"
-
-  number:
-    format:
-      separator: "."
       delimiter: " "
       precision: 3
       significant: false
       strip_insignificant_zeros: false
-      
-    currency:
-      format:
+    currency: 
+      format: 
         format: "%n %u"
         unit: "руб."
-        separator: "."
+        separator: .
         delimiter: " "
         precision: 2
         significant: false
         strip_insignificant_zeros: false
-        
-    percentage:
-      format:
+    percentage: 
+      format: 
         delimiter: ""
-        
-    precision:
-      format:
+    precision: 
+      format: 
         delimiter: ""
-        
-    human:
-      format:
+    human: 
+      format: 
         delimiter: ""
         precision: 1
         significant: false
         strip_insignificant_zeros: false
-        
-      # Rails 2.2
-      # storage_units: [байт, КБ, МБ, ГБ, ТБ]
-
-      # Rails 2.3
-      storage_units:
-        # Storage units output formatting.
-        # %u is the storage unit, %n is the number (default: 2 MB)
+      storage_units: 
         format: "%n %u"
-        units:
-          byte:
-            one:   "байт"
-            few:   "байта"
-            many:  "байт"
+        units: 
+          byte: 
+            one: "байт"
+            few: "байта"
+            many: "байт"
             other: "байта"
           kb: "КБ"
           mb: "МБ"
           gb: "ГБ"
           tb: "ТБ"
-      
-      # Rails 3
-      decimal_units:
+      decimal_units: 
         format: "%n %u"
-        units:
+        units: 
           unit: ""
-          thousand:
+          thousand: 
             one: "Тысяча"
             few: "Тысяч"
             many: "Тысяч"
-            other: "Тысяч"              
+            other: "Тысяч"
           million: 
             one: "Миллион"
             few: "Миллионов"
             many: "Миллионов"
             other: "Миллионов"
-          billion:
+          billion: 
             one: "Миллиард"
             few: "Миллиардов"
             many: "Миллиардов"
             other: "Миллиардов"
-          trillion:
+          trillion: 
             one: "Триллион"
             few: "Триллионов"
             many: "Триллионов"
             other: "Триллионов"
-          quadrillion:
+          quadrillion: 
             one: "Квадриллион"
             few: "Квадриллионов"
             many: "Квадриллионов"
             other: "Квадриллионов"
-
-  datetime:
-    distance_in_words:
+  mysql_database_server: "Сервер MySQL DB"
+  edit_and_rate_beta_apps: "Редактировать и оценить Бета-приложения"
+  or_view_each_one_separately_below: "или просмотреть каждый по отдельности ниже."
+  username: "Имя пользователя"
+  are_you_sure_you_want_to_restart_the_server: "Вы действительно хотите перезапустить {{name}}?"
+  done_final_check: "Готово! Последняя проверка"
+  this_application_is_not_installed_please_refresh: "Это приложение не установлено. Пожалуйста, обновите эту страницу."
+  user_name_is_available: "Имя пользователя доступно"
+  first_time_admin_setup: "Начальная настройка администратора. Пожалуйста, создайте новый пароль."
+  news: "Новости"
+  password: "Пароль"
+  access: "Доступ"
+  avanced_settings_is_for_developers: "Включение дополнительных возможностей предусмотрено только для опытных пользователей и разработчиков."
+  there_are_no_shares_created: "На данный момент в вашей системе нет общих ресурсов."
+  created: "Создано"
+  watchdog: Watchdog
+  stop: "Остановить"
+  device: "Устройство"
+  initial_user: "Имя пользователя"
+  preparing_to_uninstall: "Подготовка к удалению ..."
+  time: 
+    formats: 
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      short: "%d %b, %H:%M"
+      long: "%d %B %Y, %H:%M"
+    am: "утра"
+    pm: "вечера"
+  dns_server: "DNS сервер"
+  sign_up_here: "Зарегистрироваться"
+  servers: "Серверы"
+  router_ip: "IP-адрес маршрутизатора"
+  general_amahi_news: "Общие новости Amahi"
+  feedback: "Обратная связь"
+  name: "Имя"
+  awake_this_device_via_wol: "Пробудить устройство"
+  port_forwarding: "Перенаправление портов"
+  datetime: 
+    distance_in_words: 
       half_a_minute: "меньше минуты"
-      less_than_x_seconds:
-        one:   "меньше %{count} секунды"
-        few:   "меньше %{count} секунд"
-        many:  "меньше %{count} секунд"
+      less_than_x_seconds: 
+        one: "меньше %{count} секунды"
+        few: "меньше %{count} секунд"
+        many: "меньше %{count} секунд"
         other: "меньше %{count} секунды"
-      x_seconds:
-        one:   "%{count} секунда"
-        few:   "%{count} секунды"
-        many:  "%{count} секунд"
+      x_seconds: 
+        one: "%{count} секунда"
+        few: "%{count} секунды"
+        many: "%{count} секунд"
         other: "%{count} секунды"
-      less_than_x_minutes:
-        one:   "меньше %{count} минуты"
-        few:   "меньше %{count} минут"
-        many:  "меньше %{count} минут"
+      less_than_x_minutes: 
+        one: "меньше %{count} минуты"
+        few: "меньше %{count} минут"
+        many: "меньше %{count} минут"
         other: "меньше %{count} минуты"
-      x_minutes:
-        one:   "%{count} минуту"
-        few:   "%{count} минуты"
-        many:  "%{count} минут"
+      x_minutes: 
+        one: "%{count} минуту"
+        few: "%{count} минуты"
+        many: "%{count} минут"
         other: "%{count} минуты"
-      about_x_hours:
-        one:   "около %{count} часа"
-        few:   "около %{count} часов"
-        many:  "около %{count} часов"
+      about_x_hours: 
+        one: "около %{count} часа"
+        few: "около %{count} часов"
+        many: "около %{count} часов"
         other: "около %{count} часа"
-      x_days:
-        one:   "%{count} день"
-        few:   "%{count} дня"
-        many:  "%{count} дней"
+      x_days: 
+        one: "%{count} день"
+        few: "%{count} дня"
+        many: "%{count} дней"
         other: "%{count} дня"
-      about_x_months:
-        one:   "около %{count} месяца"
-        few:   "около %{count} месяцев"
-        many:  "около %{count} месяцев"
+      about_x_months: 
+        one: "около %{count} месяца"
+        few: "около %{count} месяцев"
+        many: "около %{count} месяцев"
         other: "около %{count} месяца"
-      x_months:
-        one:   "%{count} месяц"
-        few:   "%{count} месяца"
-        many:  "%{count} месяцев"
+      x_months: 
+        one: "%{count} месяц"
+        few: "%{count} месяца"
+        many: "%{count} месяцев"
         other: "%{count} месяца"
-      about_x_years:
-        one:   "около %{count} года"
-        few:   "около %{count} лет"
-        many:  "около %{count} лет"
+      about_x_years: 
+        one: "около %{count} года"
+        few: "около %{count} лет"
+        many: "около %{count} лет"
         other: "около %{count} лет"
-      over_x_years:
-        one:   "больше %{count} года"
-        few:   "больше %{count} лет"
-        many:  "больше %{count} лет"
+      over_x_years: 
+        one: "больше %{count} года"
+        few: "больше %{count} лет"
+        many: "больше %{count} лет"
         other: "больше %{count} лет"
-      almost_x_years:
-        one:   "почти 1 год"
+      almost_x_years: 
+        one: "почти 1 год"
         other: "почти %{count} лет"
-
-    prompts:
+    prompts: 
       year: "Год"
       month: "Месяц"
       day: "День"
       hour: "Часов"
       minute: "Минут"
       second: "Секунд"
-
-  helpers:
-    select:
-      # Default value for :prompt => true in FormOptionsHelper
+  nickname: "Имя"
+  check_the_calendars_wiki_for_more_details: "Посетите wiki о календарях для более подробной информации об управлении календарями и совместимости клиентов."
+  pooled: "Использовать для пула хранения"
+  edit_web_app: "Редактирование Web-приложения"
+  movies: "Фильмы"
+  mac_already_allocated: "MAC-адрес уже использован"
+  dyndns_info: "Amahi предоставляет вам бесплатный, не требующий настройки, динамический адрес DNS. Он является внешним для вашей\r\n\
+    домашней сети. Вы можете использовать его для доступа с помощью <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/VPN\">Mac</a> или <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a> <a\r\n\
+    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a>-клиентов (специалисты могут использовать его для подключения с помощью <a target=\"_blank\"\r\n\
+    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>).\r\n\
+    Специалисты могут использовать его для размещения web-сайтов, игровых серверов \r\n\
+    или других служб из вашей домашней сети (если вы хотите попробовать - \r\n\
+    обратитесь в IRC-канал или к Wiki)."
+  confirmation_matches: "Строки совпадают"
+  setting_dmz_failed: "Настройка DMZ провалилась. Проверьте настройки."
+  logs: "Журналы"
+  this_name_is_not_available: "Это имя недоступно"
+  password_changed_successfully: "Пароль успешно изменен"
+  will_start_at_boot_time: "будет запускаться при загрузке системы"
+  calendar_name: "Имя календаря"
+  this_application_install_ended_with_an_error_please_uninstall_status_is: "Установка этого приложения завершилась ошибкой. Пожалуйста, удалите его и попробуйте установить еще раз. Статус приложения -"
+  mac_filtering: "Фильтры MAC"
+  tags: "Теги"
+  router_firewall_settings: "Настройка маршрутизатора/сетевого экрана"
+  firewall_mac_address_filter_info: "Данные в этой таблице используются для ограничения определенных \n\
+    пакетов данных из вашей локальной сети в Интернет через \n\
+    Шлюз. Использование таких фильтров может пригодиться \n\
+    в обеспечении безопасности или ограничении вашей \n\
+    локальной сети."
+  static_ip_address: "Статический IP-адрес"
+  are_you_sure_advanced_features: "Вы действительно хотите включить дополнительные возможности?"
+  dhcp_server: "Сервер DHCP"
+  app_logs: "Журналы приложений"
+  contribute: "Сотрудничество"
+  back: "Назад"
+  changelog: "Изменения"
+  notifications_from_amahi: "Уведомления от Amahi"
+  support_win_95_98: "Поддержка Windows 95/98 — открывает доступ для ПК с этой ОС"
+  there_are_no_calendars_available_see_wiki: "На сервере нет доступных календарей. Создайте их при помощи клиента календаря. <a href=\"http://wiki.amahi.org/index.php/Calendars\">Wiki</a>."
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Включение отладки может привести к созданию очень больших файлов логов.\n\
+    Вы действительно хотите включить отладку Samba?"
+  the_mac_is_invalid: "MAC-адрес неверен"
+  making_home_networking_simple: "Домашние сети - проще не бывает"
+  disk_pool_details: "Выберите разделы, которые вы хотите включить в пул хранения {{greyhole}}, а затем разрешите общим ресурсам использовать этот пул ({{shares}})"
+  calendars: "Календари"
+  a_single_number_0_254_to_point_to_a_given_machine: "Одно число (0-254) для указания на определенную машину в вашей сети."
+  writeable: "Разрешить запись"
+  port_range_ports_must_be_numbers: "Порт должен быть числовым"
+  help: "Справка"
+  new_firewall_rule: "Новое правило сетевого экрана"
+  video: "Видео"
+  thanks_for_visiting: "Thanks for visiting. Поддержите наших спонсоров!"
+  install_code: "Код установки"
+  new_static_ip: "Новый статический IP"
+  this_share_name_is_not_valid: "Имя этого общего ресурса неверно"
+  there_are_no_applications_available: "На данный момент нет доступных приложений."
+  ip_filtering: "Фильтры IP"
+  create: "Создать"
+  guest_dashboard: "Гостевая панель"
+  view_all_calendars_simultaneously: "Просмотреть все календари одновременно"
+  music: "Музыка"
+  permissions: "Разрешения"
+  initial_password: "Пароль"
+  your_domain_info: "Это ваш домен домашней сети. Он доступен <b>только</b> внутри вашей домашней сети.\r\n\
+    За подробной информацией обращайтесь в <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">FAQ</a>."
+  there_are_no_firewall_rules_defined: "На данный момент нет заданных правил сетевого экрана"
+  firewall_url_filter_message: "Данные в этой таблице используются для ограничения URL через Шлюз."
+  dhcp_leases: "Выданные адреса DHCP"
+  dynamic_dns: "Динамический DNS"
+  the_ip_must_be_1_to_254: "IP-адрес должен быть в диапазоне 1-254"
+  not_a_valid_user_or_password: "Ошибка: неверное имя или пароль"
+  create_your_hda_profile: "Создать ваш профиль HDA"
+  your_home_dns_domain: "Ваш домашний DNS домен"
+  theme_by: "Автор темы -"
+  forums: "Форумы"
+  there_are_no_aliases_defined: "На данный момент заданные псевдонимы отсутствуют."
+  user_name_is_not_valid: "Имя пользователя не подходит"
+  all_you_need: "Все, что вам нужно!"
+  system: "Система"
+  name_is_taken_already_or_is_reserved: "Имя уже занято или зарезервировано"
+  webapps: "Web-приложения"
+  submit_for_debug: "Отправить для отладки"
+  more: "еще"
+  protocol: "Протокол"
+  no_account_yet: "Нет учетной записи?"
+  delete_this_rule: "Удалить это правило"
+  images: "Изображения"
+  language: "Язык"
+  this_application_is_installed: "Это приложение установлено."
+  share: "Общий ресурс"
+  partitions: "Разделы"
+  router_setting_failed: "Маршрутизатор не настроен. Проверьте настройки."
+  global_settings_for_shares: "Глобальные настройки общих ресурсов"
+  the_watchdog_is_a_critical_setting: The watchdog is a CRITICAL setting. Stopping monitoring a server process is STRONGLY DISCOURAGED. This is designed to keep services in your HDA running reliably even in the presence of glitches. Are you sure you want to stop the watchdog in this server?
+  warning_this_application_is_in_testing: "ВНИМАНИЕ: Приложение тестируется!"
+  is_being_monitored_24x7: "наблюдается 24x7"
+  computer: "Компьютер"
+  an_external_ip_address_to_make_the_alias: "Привязать внешний IP-адрес для указания на определенный IP-адрес сети."
+  file_server_samba: "Файловый сервер (Samba)"
+  mac_is_invalid: "MAC-адрес неверен"
+  edit_alias: "Изменение псевдонима"
+  port_range_ports_are_already_allocated: "Порты в данном диапазоне уже использованы"
+  please_double_check_the_settings: "Пожалуйста <strong>перепроверьте эти настройки</strong>, т.к. они являются критическими для корректного запуска вашего HDA."
+  otherwise_you_can_go_to_the_error_log: "В противном случае вы можете перейти прямо к <a href=\"/setup?tab=debug\">журналу ошибок</a>."
+  description: "Описание"
+  there_are_no_users: "На данный момент в вашей системе нет пользователей."
+  are_you_sure: "Вы уверены?"
+  efficiently_manage_your_network: "Эффективно управляйте сетью и резервным копированием всех компьютеров, игровых консолей и других устройств в вашей сети, а также безопасно подключайтесь к ней через Интернет. И это всего лишь первые шаги в том, что вы сможете делать при помощи вашего Amahi."
+  port_range_field_cannot_be_empty: "Поля не могут быть пустыми"
+  available_for_installation: "(Доступно для установки)"
+  create_share: "Создать общий ресурс"
+  apps: "Приложения"
+  translate_amahi: "Перевести Amahi"
+  alias_looks_good: "Псевдоним подходит"
+  support: 
+    select: 
       prompt: "Выберите: "
-
-    # Default translation keys for submit FormHelper
-    submit:
-      create: 'Создать %{model}'
-      update: 'Сохранить %{model}'
-      submit: 'Сохранить %{model}'
-
-  # In rails 3 errors is top-level namespace
-  errors:
+    array: 
+      sentence_connector: "и"
+      skip_last_comma: true
+      words_connector: ", "
+      two_words_connector: " и "
+      last_word_connector: " и "
+  delete_share: "Удалить общий ресурс"
+  ushare_upnp_media_server: "Медиа-сервер Ushare UPnP"
+  sign_in: "Вход"
+  disk_pooling_enabled: "Использовать пул хранения"
+  new_dns_alias: "Новый DNS-псевдоним"
+  community: "Коммьюнити"
+  create_a_new_user: "Создание нового пользователя"
+  suggest: "Предложить!"
+  port_filtering: "Фильтры портов"
+  results_found: "(найдено)"
+  the_mac_looks_good: "MAC-адрес верен"
+  when_there_are_major_announcements: "Крупные объявления"
+  no_description_supplied: "Нет описания!"
+  manage_your_contributed_apps: "Управление Вашими приложениями"
+  global_settings: "Общие настройки"
+  networking: "Сеть"
+  firewall: "Сетевой экран"
+  there_are_no_servers_available: "На данный момент нет доступных серверов."
+  port_range: "Диапазон портов"
+  network_gateway: "Сетевой Шлюз"
+  path_looks_good: "Путь верен"
+  please_select: "Выберите ..."
+  subscribe: "Подписаться"
+  mac_address: "MAC-адрес"
+  settings: "Настройки"
+  initial_user_info: "Начальный пользователь"
+  control: "Управление"
+  disk_pool_replication: "Репликация"
+  date: 
+    formats: 
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%d %B %Y"
+    day_names: 
+    - "воскресенье"
+    - "понедельник"
+    - "вторник"
+    - "среда"
+    - "четверг"
+    - "пятница"
+    - "суббота"
+    standalone_day_names: 
+    - "Воскресенье"
+    - "Понедельник"
+    - "Вторник"
+    - "Среда"
+    - "Четверг"
+    - "Пятница"
+    - "Суббота"
+    abbr_day_names: 
+    - "Вс"
+    - "Пн"
+    - "Вт"
+    - "Ср"
+    - "Чт"
+    - "Пт"
+    - "Сб"
+    month_names: 
+    - 
+    - "января"
+    - "февраля"
+    - "марта"
+    - "апреля"
+    - "мая"
+    - "июня"
+    - "июля"
+    - "августа"
+    - "сентября"
+    - "октября"
+    - "ноября"
+    - "декабря"
+    standalone_month_names: 
+    - 
+    - "Январь"
+    - "Февраль"
+    - "Март"
+    - "Апрель"
+    - "Май"
+    - "Июнь"
+    - "Июль"
+    - "Август"
+    - "Сентябрь"
+    - "Октябрь"
+    - "Ноябрь"
+    - "Декабрь"
+    abbr_month_names: 
+    - 
+    - "янв."
+    - "февр."
+    - "марта"
+    - "апр."
+    - "мая"
+    - "июня"
+    - "июля"
+    - "авг."
+    - "сент."
+    - "окт."
+    - "нояб."
+    - "дек."
+    standalone_abbr_month_names: 
+    - 
+    - "янв."
+    - "февр."
+    - "март"
+    - "апр."
+    - "май"
+    - "июнь"
+    - "июль"
+    - "авг."
+    - "сент."
+    - "окт."
+    - "нояб."
+    - "дек."
+    order: 
+    - :day
+    - :month
+    - :year
+  username_cannot_be_blank: "Имя пользователя не может быть пустым"
+  reboot: "Перезагрузка"
+  this_feature_is_under_heavy_development: "Этот функционал находится в активной разработке"
+  there_are_no_webapps: "На данный момент в Вашей системе нет настроенных Web-приложений."
+  are_you_sure_you_want_to_delete_the_static_ip: "Вы действительно хотите удалить статический IP \"{{name}}\"?"
+  the_ip_looks good: "IP-адрес верен"
+  the_name_cannot_be_blank: "Имя не может быть пустым"
+  uninstall: "Удалить"
+  details: "Подробности"
+  is_now_uninstalled: "теперь удалено"
+  themes: "Темы"
+  the_name_you_input_above_will_be_added_to_the_DNS_server: "Имя, что Вы указали выше, будет добавлено в DNS-сервер и связано с MAC и IP адресами указанными ниже."
+  new_share: "Новый общий ресурс"
+  this_path_is_not_valid: "Этот путь неверный"
+  log_in: "Войти"
+  are_you_sure_user: "Вы действительно хотите удалить пользователя \"{{user}}\"?"
+  extra_parameters: "Дополнительные параметры"
+  try_installing_some_apps: "Попробуйте установить несколько приложений"
+  testimonials: "Отзывы"
+  version: "Версия"
+  powering_off: "Выключаюсь ..."
+  get_involved: "Принять участие!"
+  stop_it: "Остановить"
+  home_domain: "Домашний Домен"
+  total_space: "Всего"
+  never_email_me: "Не отправлять мне"
+  is_now_installed: "теперь установлено"
+  this_shares_files_deleted: "Этот общий ресурс будет более не доступен (Файлы в нем не будут удалены)."
+  alias_is_not_valid: "Псевдоним неверен"
+  mac_address_of_the_device: "MAC-адрес устройства (в виде 00:11:22:33:44:55)"
+  next: "Далее"
+  web_apps: "Web-приложения"
+  remember_me: "Запомнить"
+  password_looks_good: "Пароль в порядке"
+  docs: "Документы"
+  the_ip_address_cannot_be_empty: "IP-адрес не может быть пустым"
+  pdc_primary_domain_controller: "PDC &mdash; Центральный контроллер домена"
+  computer_name: "Имя компьютера"
+  close: "закрыть"
+  this_file_was_automatically_generated_on: "# Этот файл был автоматически создан {{time}} - ВНИМАНИЕ - все ручные исправления будут утеряны!"
+  installation_instructions: "Инструкция по установке"
+  control_panel_for_your_amahi_hdas: "Панель управления для ваших Amahi HDA"
+  please_select_the_type_of_rule_you_want: "Выберите тип правила для добавления."
+  create_a_new_webapp: "Создать новое Web-приложение"
+  refresh_status: "Обновить статус"
+  home: "Домой"
+  will_not_start_at_boot_time: "<b>не</b> будет запускаться при загрузке системы"
+  there_are_no_static_ips_defined: "На данный момент заданные статические адреса отсутствуют."
+  share_name_is_available: "Имя общего ресурса свободно"
+  powerful_simple_home_networking: Powerful, Simple, Home Networking
+  about: About
+  email_me: "Отправлять мне"
+  there_are_no_applications_installed: "На данный момент нет установленных приложений."
+  firewall_port_forward_message: "Эти правила позволяют вам\n\
+    автоматически перенаправлять порты для сетевых служб на определенный\n\
+    компьютер за сетевым экраном. Эти настройки необходимы только\n\
+    если вы хотите разместить какой-либо сервер (web- или почтовый сервер)\n\
+    в частной локальной сети за сетевым экраном."
+  to_recover_your_password: "Для восстановления Вашего пароля или письма активации пожалуйста, введите Ваш email ниже"
+  apache_web_server: Apache Web Server
+  dhcp_free: "Неактивен"
+  seconds: "сек."
+  partition: "Раздел"
+  dhcp: DHCP
+  this_users_files_deleted: "Файлы в домашней папке этого пользователя будут удалены!"
+  configured: "Настроен"
+  disabling_lan_manager_will_not_allow_older_machines: "Отключение авторизации сетевого менеджера Windows 95/98 закроет доступ к общим папкам для старых компьютеров.\r\n\
+    \r\n\
+    Вы действительно хотите отключить режим авторизации Windows 95/98?"
+  you_have_been_logged_out: "Вы вышли из системы."
+  permanently: "постоянно"
+  the_url_is_invalid: "URL неверен"
+  it_will_be_restarted_by_the_watchdog: "(будет автоматически перезапущен)"
+  amahi_dyndns_updater: "Автоматическое обновление Amahi Dynamic DNS"
+  pdc_domain: "Домен PDC"
+  path: "Путь"
+  features: "Возможности"
+  password_cannot_be_blank: "Пароль не может быть пустым"
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "NOTE: The watchdog is RUNNING and will restart it in a few seconds."
+  your_existing_network_gatweay: "Ваш существующий сетевой шлюз/маршрутизатор"
+  warning: "ПРЕДУПРЕЖДЕНИЕ"
+  dhcp_ip_address: "IP-адрес DHCP"
+  beta_apps: "Бета-приложения"
+  logout: "Выйти"
+  there_is_no_undo: "Данную операцию нельзя отменить!"
+  helpers: 
+    select: 
+      prompt: "Выберите: "
+    submit: 
+      create: "Создать %{model}"
+      update: "Сохранить %{model}"
+      submit: "Сохранить %{model}"
+  errors: 
     format: "%{attribute} %{message}"
-
-    messages:
+    messages: 
       inclusion: "имеет непредусмотренное значение"
       exclusion: "имеет зарезервированное значение"
       invalid: "имеет неверное значение"
@@ -1971,20 +755,20 @@ ru:
       accepted: "нужно подтвердить"
       empty: "не может быть пустым"
       blank: "не может быть пустым"
-      too_long:
-        one:   "слишком большой длины (не может быть больше чем %{count} символ)"
-        few:   "слишком большой длины (не может быть больше чем %{count} символа)"
-        many:  "слишком большой длины (не может быть больше чем %{count} символов)"
+      too_long: 
+        one: "слишком большой длины (не может быть больше чем %{count} символ)"
+        few: "слишком большой длины (не может быть больше чем %{count} символа)"
+        many: "слишком большой длины (не может быть больше чем %{count} символов)"
         other: "слишком большой длины (не может быть больше чем %{count} символа)"
-      too_short:
-        one:   "недостаточной длины (не может быть меньше %{count} символа)"
-        few:   "недостаточной длины (не может быть меньше %{count} символов)"
-        many:  "недостаточной длины (не может быть меньше %{count} символов)"
+      too_short: 
+        one: "недостаточной длины (не может быть меньше %{count} символа)"
+        few: "недостаточной длины (не может быть меньше %{count} символов)"
+        many: "недостаточной длины (не может быть меньше %{count} символов)"
         other: "недостаточной длины (не может быть меньше %{count} символа)"
-      wrong_length:
-        one:   "неверной длины (может быть длиной ровно %{count} символ)"
-        few:   "неверной длины (может быть длиной ровно %{count} символа)"
-        many:  "неверной длины (может быть длиной ровно %{count} символов)"
+      wrong_length: 
+        one: "неверной длины (может быть длиной ровно %{count} символ)"
+        few: "неверной длины (может быть длиной ровно %{count} символа)"
+        many: "неверной длины (может быть длиной ровно %{count} символов)"
         other: "неверной длины (может быть длиной ровно %{count} символа)"
       taken: "уже существует"
       not_a_number: "не является числом"
@@ -1997,66 +781,3 @@ ru:
       odd: "может иметь лишь четное значение"
       even: "может иметь лишь нечетное значение"
       record_invalid: "Возникли ошибки: %{errors}"
-
-  activerecord:
-    errors:
-      template:
-        header:
-          one:   "%{model}: сохранение не удалось из-за %{count} ошибки"
-          few:   "%{model}: сохранение не удалось из-за %{count} ошибок"
-          many:  "%{model}: сохранение не удалось из-за %{count} ошибок"
-          other: "%{model}: сохранение не удалось из-за %{count} ошибки"
-
-        body: "Проблемы возникли со следующими полями:"
-
-      messages:
-        inclusion: "имеет непредусмотренное значение"
-        exclusion: "имеет зарезервированное значение"
-        invalid: "имеет неверное значение"
-        confirmation: "не совпадает с подтверждением"
-        accepted: "нужно подтвердить"
-        empty: "не может быть пустым"
-        blank: "не может быть пустым"
-        too_long:
-          one:   "слишком большой длины (не может быть больше чем %{count} символ)"
-          few:   "слишком большой длины (не может быть больше чем %{count} символа)"
-          many:  "слишком большой длины (не может быть больше чем %{count} символов)"
-          other: "слишком большой длины (не может быть больше чем %{count} символа)"
-        too_short:
-          one:   "недостаточной длины (не может быть меньше %{count} символа)"
-          few:   "недостаточной длины (не может быть меньше %{count} символов)"
-          many:  "недостаточной длины (не может быть меньше %{count} символов)"
-          other: "недостаточной длины (не может быть меньше %{count} символа)"
-        wrong_length:
-          one:   "неверной длины (может быть длиной ровно %{count} символ)"
-          few:   "неверной длины (может быть длиной ровно %{count} символа)"
-          many:  "неверной длины (может быть длиной ровно %{count} символов)"
-          other: "неверной длины (может быть длиной ровно %{count} символа)"
-        taken: "уже существует"
-        not_a_number: "не является числом"
-        greater_than: "может иметь значение большее %{count}"
-        greater_than_or_equal_to: "может иметь значение большее или равное %{count}"
-        equal_to: "может иметь лишь значение, равное %{count}"
-        less_than: "может иметь значение меньшее чем %{count}"
-        less_than_or_equal_to: "может иметь значение меньшее или равное %{count}"
-        odd: "может иметь лишь четное значение"
-        even: "может иметь лишь нечетное значение"
-        record_invalid: "Возникли ошибки: %{errors}"
-        
-      full_messages:
-        format: "%{attribute} %{message}"
-        
-
-  support:
-    select:
-      prompt: "Выберите: "
-
-    array:
-      # Rails 2.2
-      sentence_connector: "и"
-      skip_last_comma: true
-      
-      # Rails 2.3
-      words_connector: ", "
-      two_words_connector: " и "
-      last_word_connector: " и "

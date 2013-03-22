@@ -1,367 +1,163 @@
 --- 
 zh: 
-  firewall_port_forward_message: "\xE8\xBF\x99\xE4\xBA\x9B\xE8\xA7\x84\xE5\x88\x99\xE5\x85\x81\xE8\xAE\xB8\xE6\x82\xA8\xE8\x87\xAA\xE5\x8A\xA8\xE9\x87\x8D\xE5\xAE\x9A\xE5\x90\x91\xE7\xBD\x91\xE7\xBB\x9C\xE6\x9C\x8D\xE5\x8A\xA1\xE7\x9A\x84\xE7\xAB\xAF\xE5\x8F\xA3\xE5\x88\xB0\xE9\x98\xB2\xE7\x81\xAB\xE5\xA2\x99\xE5\x86\x85\xE7\x89\xB9\xE5\xAE\x9A\xE7\x9A\x84\xE6\x9C\xBA\xE5\x99\xA8\xE3\x80\x82\xE5\xA6\x82\xE6\x9E\x9C\xE4\xBD\xA0\xE6\x83\xB3\xE6\x9E\xB6\xE8\xAE\xBE\xE4\xB8\x80\xE4\xBA\x9B\xE9\x98\xB2\xE7\x81\xAB\xE5\xA2\x99\xE5\x86\x85\xE7\x9A\x84\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE4\xBE\x8B\xE5\xA6\x82Web\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE6\x88\x96\xE9\x82\xAE\xE4\xBB\xB6\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xEF\xBC\x8C\xE4\xBD\xA0\xE9\x9C\x80\xE8\xA6\x81\xE8\xBF\x99\xE4\xBA\x9B\xE9\x85\x8D\xE7\xBD\xAE\xE3\x80\x82"
+  firewall_port_forward_message: "这些规则允许您自动重定向网络服务的端口到防火墙内特定的机器。如果你想架设一些防火墙内的服务器例如Web服务器或邮件服务器，你需要这些配置。"
   dhcp: DHCP
-  this_users_files_deleted: "\xE8\xBF\x99\xE4\xB8\xAA\xE7\x94\xA8\xE6\x88\xB7\xE7\x9A\x84\xE6\x96\x87\xE4\xBB\xB6\xE5\xB0\x86\xE8\xA2\xAB\xE5\x88\xA0\xE9\x99\xA4."
-  configured: !binary |
-    5bey6YWN572u
-
-  finalize_settings: !binary |
-    5a6M5oiQ6K6+572u
-
-  are_you_sure_share: "\xE4\xBD\xA0\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x88\xA0\xE9\x99\xA4\xE8\xBF\x99\xE4\xB8\xAA\xE5\x88\x86\xE4\xBA\xAB'%{share}'?"
-  applications: !binary |
-    5bqU55So
-
-  mac_looks_good: "MAC\xE5\x8F\xAF\xE4\xBB\xA5\xE4\xBD\xBF\xE7\x94\xA8"
-  wiki: !binary |
-    57u05a6i
-
-  confirm_email: !binary |
-    56Gu6K6k55S15a2Q6YKu5Lu2
-
-  router_control: !binary |
-    6Lev55Sx5Zmo5o6n5Yi2
-
-  openvpn_server: "OpenVPN\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8"
-  port_range_looks_good: !binary |
-    56uv5Y+j6IyD5Zu05ZCI6YCC
-
-  setup: !binary |
-    5a6J6KOF
-
-  amahi_dyndns_updater: "Amahi\xE5\x8A\xA8\xE6\x80\x81DNS\xE6\x9B\xB4\xE6\x96\xB0"
-  start_at_boot_time: !binary |
-    5Zyo5byA5py65pe26Ze05ZCv5Yqo
-
-  news_about_applications: "\xE5\x85\xB3\xE4\xBA\x8E\xE5\x9C\xA8Amahi\xE4\xB8\x8A\xE8\xBF\x90\xE8\xA1\x8C\xE7\x9A\x84\xE5\xBA\x94\xE7\x94\xA8\xE7\xA8\x8B\xE5\xBA\x8F\xE7\x9A\x84\xE6\x96\xB0\xE9\x97\xBB"
-  password_cannot_be_blank: !binary |
-    5a+G56CB5LiN6IO95Li656m6
-
-  delete_user: !binary |
-    5Yig6Zmk55So5oi3
-
-  running: !binary |
-    5q2j5Zyo6L+Q6KGM
-
-  require_login: !binary |
-    6ZyA6KaB55m75b2V
-
-  warning: !binary |
-    6K2m5ZGK
-
-  start_building_a_new_hda: "\xE5\xBC\x80\xE5\xA7\x8B\xE5\xBB\xBA\xE7\xAB\x8B\xE4\xB8\x80\xE4\xB8\xAA\xE6\x96\xB0\xE7\x9A\x84HDA\xEF\xBC\x81"
-  name_is_taken_already: !binary |
-    55So5oi35ZCN5bey57uP6KKr5L2/55So
-
-  my_apps: !binary |
-    5oiR55qE5bqU55So
-
-  need_help_logging_in: !binary |
-    55m75b2V6ZyA6KaB5biu5Yqp77yf
-
-  confirm_password: !binary |
-    56Gu6K6k5a+G56CB
-
-  cancel: !binary |
-    5Y+W5raI
-
-  address_already_allocated: !binary |
-    5Zyw5Z2A5bey57uP5YiG6YWN
-
-  new: !binary |
-    5paw5bu6
-
-  are_you_sure_you_want_to_stop_the_server: "\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x81\x9C\xE6\xAD\xA2%{name}\xEF\xBC\x9F"
-  disabling_pdc_will_enable_workgroup_mode: "\xE7\xA6\x81\xE7\x94\xA8PDC\xE6\xA8\xA1\xE5\xBC\x8F\xE5\xB0\x86\xE5\x90\xAF\xE7\x94\xA8\xE5\xB7\xA5\xE4\xBD\x9C\xE7\xBB\x84\xE6\xA8\xA1\xE5\xBC\x8F\xE3\x80\x82\xE5\xAF\xB9\xE4\xBA\x8E\xE5\xAE\xB6\xE5\xBA\xAD\xE7\xBD\x91\xE7\xBB\x9C\xE6\x9D\xA5\xE8\xAF\xB4\xE8\xBF\x99\xE6\x98\xAF\xE5\x85\xB1\xE4\xBA\xAB\xE6\x96\xB9\xE5\xBC\x8F\xE7\x9A\x84\xE9\x87\x8D\xE5\xA4\xA7\xE6\x94\xB9\xE5\x8F\x98\xE3\x80\x82\xEF\xBC\x88\xE6\x9F\xA5\xE7\x9C\x8B\xE7\xBB\xB4\xE5\x9F\xBA\xE8\x8E\xB7\xE5\xBE\x97\xE6\x9B\xB4\xE5\xA4\x9A\xEF\xBC\x89\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE7\xA6\x81\xE7\x94\xA8PDC\xE6\xA8\xA1\xE5\xBC\x8F\xEF\xBC\x9F"
-  user_name_is_not_available: !binary |
-    55So5oi35ZCN5LiN5Y+v55So
-
-  address_looks_good: !binary |
-    5Zyw5Z2A5Y+v5Lul5L2/55So
-
-  confirmation_must_match: !binary |
-    56Gu6K6k5b+F6aG75Yy56YWN
-
-  this_looks_like_a_database_corruption_please_report_it: "\xE8\xBF\x99\xE7\x9C\x8B\xE8\xB5\xB7\xE6\x9D\xA5\xE6\x98\xAF\xE6\x95\xB0\xE6\x8D\xAE\xE5\xBA\x93\xE6\x8D\x9F\xE5\x9D\x8F\xE6\x88\x96\xE9\x94\x99\xE8\xAF\xAF\xEF\xBC\x88\xE8\xAF\xB7 <a href=\"http://bugs.amahi.org\">\xE6\x8A\xA5\xE5\x91\x8A\xE8\xAF\xA5\xE9\x94\x99\xE8\xAF\xAF</a>\xEF\xBC\x89\xE3\x80\x82"
-  this_ip_address_will_always_be_statically_associated_to_the_mac_address: "\xE8\xAF\xA5IP\xE5\x9C\xB0\xE5\x9D\x80(1-%{max}) \xE5\xB0\x86\xE4\xB8\x80\xE7\x9B\xB4\xE8\xA2\xAB\xE9\x9D\x99\xE6\x80\x81\xE7\x9A\x84\xE7\xBB\x91\xE5\xAE\x9A\xE5\x88\xB0\xE4\xB8\x8B\xE9\x9D\xA2\xE7\x9A\x84mac\xE5\x9C\xB0\xE5\x9D\x80\xE3\x80\x82"
-  are_you_sure_you_would_like_to_delete_calendar: "\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x88\xA0\xE9\x99\xA4%{calendar}\xEF\xBC\x9F"
-  are_you_sure_you_would_like_to_uninstall: "\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x8D\xB8\xE8\xBD\xBD\xE6\xAD\xA4\xE7\xA8\x8B\xE5\xBA\x8F\xEF\xBC\x9F\r\n\
-    \xE4\xBB\xBB\xE4\xBD\x95\xE4\xB8\x8E\xE8\xAF\xA5\xE5\xBA\x94\xE7\x94\xA8\xE7\xA8\x8B\xE5\xBA\x8F\xE7\x9B\xB8\xE5\x85\xB3\xE7\x9A\x84\xE6\x95\xB0\xE6\x8D\xAE\xE5\xB0\x86\xE8\xA2\xAB\xE5\x88\xA0\xE9\x99\xA4\xE3\x80\x82"
-  pictures: !binary |
-    5Zu+54mH
-
-  delete_profile: !binary |
-    5Yig6Zmk6YWN572u
-
-  delete: !binary |
-    5Yig6Zmk
-
-  theme: !binary |
-    5Li76aKY
-
-  disks: !binary |
-    56OB55uY
-
-  are_you_sure_webapp: "\xE4\xBD\xA0\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x88\xA0\xE9\x99\xA4Web\xE5\xBA\x94\xE7\x94\xA8'%{webapp}'?"
-  rule: !binary |
-    6KeE5YiZ
-
-  unleash_the_power_of_your_home_network: !binary |
-    6YeK5pS+5oKo55qE5a625bqt572R57uc55qE5p2D5Yqb44CC
-
-  static_ips: "\xE9\x9D\x99\xE6\x80\x81 IPs"
-  mac_address_to_be_filtered_in_format: "MAC\xE5\x9C\xB0\xE5\x9D\x80\xE8\xBF\x87\xE6\xBB\xA4(\xE4\xBB\xA500:11:22:33:44:55\xE7\x9A\x84\xE5\xBD\xA2\xE5\xBC\x8F)\xE3\x80\x82"
-  tour: !binary |
-    5ZCR5a+8
-
-  the_ip_address_can_be: "IP\xE5\x9C\xB0\xE5\x9D\x80\xE5\x8F\xAF\xE4\xBB\xA5"
-  port_range_ports_must_be_increasing_order: !binary |
-    56ys5LiA5Liq56uv5Y+j5b+F6aG75bCP5LqO5oiW562J5LqO56ys5LqM5Liq
-    56uv5Y+j
-
-  read_only: !binary |
-    5Y+q6K+7
-
-  url_filtering: "URL\xE8\xBF\x87\xE6\xBB\xA4"
-  password_is_too_short: !binary |
-    5a+G56CB5aSq55+t
-
-  edit_static_ip: "\xE4\xBF\xAE\xE6\x94\xB9\xE9\x9D\x99\xE6\x80\x81IP"
-  are_you_sure_you_want_to_start_the_server: "\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x90\xAF\xE5\x8A\xA8%{name}\xEF\xBC\x9F"
-  nickname_info: "\xE2\x80\x9C\xE6\x98\xB5\xE7\xA7\xB0\xE2\x80\x9D\xE6\x98\xAF\xE6\x82\xA8HDA\xE7\x9A\x84\xE5\x94\xAF\xE4\xB8\x80\xE6\xA0\x87\xE8\xAF\x86\xE7\xAC\xA6\xE3\x80\x82\xE6\x82\xA8\xE9\x9C\x80\xE8\xA6\x81\xE4\xBD\xBF\xE7\x94\xA8<a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows \xE5\xAE\xA2\xE6\x88\xB7\xE7\xAB\xAF</a>\xE7\x99\xBB\xE5\xBD\x95\xE5\x88\xB0\xE6\x82\xA8\xE7\x9A\x84<a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a>\xEF\xBC\x88\xE4\xBD\xBF\xE7\x94\xA8\xE6\x82\xA8\xE5\xAE\xB6\xE5\xBA\xAD\xE7\xBD\x91\xE7\xBB\x9C\xE4\xB8\xAD\xE4\xB8\x80\xE5\xAF\xB9\xE6\x8E\x88\xE6\x9D\x83\xE4\xBA\x86\xE7\x9A\x84\xE7\x94\xA8\xE6\x88\xB7\xE5\x90\x8D\xE5\x92\x8C\xE5\xAF\x86\xE7\xA0\x81\xEF\xBC\x89\xE3\x80\x82"
-  stopped: !binary |
-    5bey5YGc5q2i
-
+  this_users_files_deleted: "这个用户的文件将被删除."
+  configured: "已配置"
+  finalize_settings: "完成设置"
+  are_you_sure_share: "你确定要删除这个分享'%{share}'?"
+  applications: "应用"
+  mac_looks_good: "MAC可以使用"
+  wiki: "维客"
+  confirm_email: "确认电子邮件"
+  router_control: "路由器控制"
+  openvpn_server: "OpenVPN服务器"
+  port_range_looks_good: "端口范围合适"
+  setup: "安装"
+  amahi_dyndns_updater: "Amahi动态DNS更新"
+  start_at_boot_time: "在开机时间启动"
+  news_about_applications: "关于在Amahi上运行的应用程序的新闻"
+  password_cannot_be_blank: "密码不能为空"
+  delete_user: "删除用户"
+  running: "正在运行"
+  require_login: "需要登录"
+  warning: "警告"
+  start_building_a_new_hda: "开始建立一个新的HDA！"
+  name_is_taken_already: "用户名已经被使用"
+  my_apps: "我的应用"
+  need_help_logging_in: "登录需要帮助？"
+  confirm_password: "确认密码"
+  cancel: "取消"
+  address_already_allocated: "地址已经分配"
+  new: "新建"
+  are_you_sure_you_want_to_stop_the_server: "您确定要停止%{name}？"
+  disabling_pdc_will_enable_workgroup_mode: "禁用PDC模式将启用工作组模式。对于家庭网络来说这是共享方式的重大改变。（查看维基获得更多）您确定要禁用PDC模式？"
+  user_name_is_not_available: "用户名不可用"
+  address_looks_good: "地址可以使用"
+  confirmation_must_match: "确认必须匹配"
+  this_looks_like_a_database_corruption_please_report_it: "这看起来是数据库损坏或错误（请 <a href=\"http://bugs.amahi.org\">报告该错误</a>）。"
+  this_ip_address_will_always_be_statically_associated_to_the_mac_address: "该IP地址(1-%{max}) 将一直被静态的绑定到下面的mac地址。"
+  are_you_sure_you_would_like_to_delete_calendar: "您确定要删除%{calendar}？"
+  are_you_sure_you_would_like_to_uninstall: "您确定要卸载此程序？\r\n\
+    任何与该应用程序相关的数据将被删除。"
+  pictures: "图片"
+  delete_profile: "删除配置"
+  delete: "删除"
+  theme: "主题"
+  disks: "磁盘"
+  are_you_sure_webapp: "你确定要删除Web应用'%{webapp}'?"
+  rule: "规则"
+  unleash_the_power_of_your_home_network: "释放您的家庭网络的权力。"
+  static_ips: "静态 IPs"
+  mac_address_to_be_filtered_in_format: "MAC地址过滤(以00:11:22:33:44:55的形式)。"
+  tour: "向导"
+  the_ip_address_can_be: "IP地址可以"
+  port_range_ports_must_be_increasing_order: "第一个端口必须小于或等于第二个端口"
+  read_only: "只读"
+  url_filtering: "URL过滤"
+  password_is_too_short: "密码太短"
+  edit_static_ip: "修改静态IP"
+  are_you_sure_you_want_to_start_the_server: "您确定要启动%{name}？"
+  nickname_info: "“昵称”是您HDA的唯一标识符。您需要使用<a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPNWindows\">Windows 客户端</a>登录到您的<a target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a>（使用您家庭网络中一对授权了的用户名和密码）。"
+  stopped: "已停止"
   add_extra_parameters: ""
-  this_path_exists_already: !binary |
-    6Lev5b6E5bey57uP5a2Y5Zyo
-
-  by_signing_up_you_agree_to_the_terms_of_service: "\xE9\x80\x9A\xE8\xBF\x87\xE7\xAD\xBE\xE7\xBA\xA6\xEF\xBC\x8C\xE6\x82\xA8\xE5\x90\x8C\xE6\x84\x8F\xE5\xB9\xB6\xE5\xB7\xB2\xE9\x98\x85\xE8\xAF\xBB <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">\xE6\x88\x91\xE4\xBB\xAC\xE7\x9A\x84\xE6\x9C\x8D\xE5\x8A\xA1\xE6\x9D\xA1\xE6\xAC\xBE</a>\r\n"
+  this_path_exists_already: "路径已经存在"
+  by_signing_up_you_agree_to_the_terms_of_service: "通过签约，您同意并已阅读 <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">我们的服务条款</a>\r\n"
   poweroff: ""
-  application_uninstalled: !binary |
-    5bqU55So56iL5bqP5bey5Y246L2944CC
-
-  free_space: !binary |
-    56m66Zey56m66Ze0
-
+  application_uninstalled: "应用程序已卸载。"
+  free_space: "空闲空间"
   url: URL
-  location: !binary |
-    5L2N572u
-
-  press: !binary |
-    5paw6Ze7
-
-  disk: !binary |
-    56OB55uY
-
+  location: "位置"
+  press: "新闻"
+  disk: "磁盘"
   temperature: ""
-  users: !binary |
-    55So5oi3
-
-  debug: !binary |
-    6LCD6K+V
-
+  users: "用户"
+  debug: "调试"
   disk_pool_copies: ""
-  full_name: !binary |
-    5YWo5ZCN
-
-  install_code_info: "\xE6\xAD\xA4\xE5\xAE\x89\xE8\xA3\x85\xE4\xBB\xA3\xE7\xA0\x81\xE6\x8D\x95\xE8\x8E\xB7\xE6\x89\x80\xE6\x9C\x89\xE6\x82\xA8\xE7\x9A\x84HDA\xE8\xAE\xBE\xE7\xBD\xAE\xE5\x92\x8C\xE5\xAE\x83\xE7\x94\xA8\xE4\xBD\x9C\xE5\x9C\xA8\xE5\xAE\x89\xE8\xA3\x85\xE6\x82\xA8\xE7\x9A\x84HDA\xE7\x9A\x84\xE6\x9C\x80\xE5\x90\x8E\xE4\xB8\x80\xE6\xAD\xA5\xE3\x80\x82\xE8\xAF\xB7\xE4\xB8\x8D\xE8\xA6\x81\xE5\x9C\xA8\xE4\xB8\xA4\xE4\xB8\xAA\xE6\x88\x96\xE6\x9B\xB4\xE5\xA4\x9A\xE6\xAD\xA3\xE5\x9C\xA8\xE8\xBF\x90\xE8\xA1\x8C\xE7\x9A\x84\xE7\xB3\xBB\xE7\xBB\x9F\xE4\xB8\xAD\xE9\x87\x8D\xE5\xA4\x8D\xE4\xBD\xBF\xE7\x94\xA8\xEF\xBC\x8C\xE5\x9B\xA0\xE4\xB8\xBA\xE8\xBF\x99\xE5\xB0\x86\xE6\x89\x93\xE7\xA0\xB4\xE5\x8A\xA8\xE6\x80\x81DNS\xE5\x92\x8CVPN\xE3\x80\x82\xE4\xB8\xBA\xE6\xAF\x8F\xE4\xB8\xAAHDA\xE5\x88\x9B\xE5\xBB\xBA\xE4\xB8\x80\xE4\xB8\xAA\xE9\x85\x8D\xE7\xBD\xAE\xE6\x96\x87\xE4\xBB\xB6\xE3\x80\x82"
-  available: !binary |
-    5Y+v55So
-
+  full_name: "全名"
+  install_code_info: "此安装代码捕获所有您的HDA设置和它用作在安装您的HDA的最后一步。请不要在两个或更多正在运行的系统中重复使用，因为这将打破动态DNS和VPN。为每个HDA创建一个配置文件。"
+  available: "可用"
   this_will_power_off: ""
   model: ""
-  system_info: !binary |
-    57O757uf5L+h5oGv
-
-  preparing_to_install: "\xE5\x87\x86\xE5\xA4\x87\xE5\xAE\x89\xE8\xA3\x85..."
-  the_url_looks_good: "URL\xE5\x8F\xAF\xE4\xBB\xA5\xE4\xBD\xBF\xE7\x94\xA8"
-  delete_web_app: "\xE5\x88\xA0\xE9\x99\xA4Web\xE5\xBA\x94\xE7\x94\xA8"
-  firewall_port_filter_message: !binary |
-    56uv5Y+j6L+H5ruk6KeE5YiZ5p2l6ZmQ5Yi25L2g55qE5bGA5Z+f572R5Yiw
-    5LqS6IGU572R55qE5pWw5o2u5YyF44CC
-
-  files: !binary |
-    5paH5Lu2
-
-  enabling_lan_manager_is_less_secure: "\xE5\x90\xAF\xE7\x94\xA8Windows 95/98\xE8\xBA\xAB\xE4\xBB\xBD\xE9\xAA\x8C\xE8\xAF\x81\xE6\xA8\xA1\xE5\xBC\x8F\xE7\x9A\x84\xE5\xAE\x89\xE5\x85\xA8\xE6\x80\xA7\xE8\xBE\x83\xE4\xBD\x8E\xEF\xBC\x8C\xE5\xB9\xB6\xE5\x8F\xAF\xE8\x83\xBD\xE5\xB8\xAE\xE5\x8A\xA9\xE6\x97\xA7\xE6\x9C\xBA\xE5\x99\xA8\xE8\xAE\xBF\xE9\x97\xAE\xE3\x80\x82\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x90\xAF\xE7\x94\xA8Windows 95/98 LanManager\xE8\xAE\xA4\xE8\xAF\x81\xEF\xBC\x9F"
-  create_alias: !binary |
-    5Yib5bu65Yir5ZCN
-
-  status: !binary |
-    54q25oCB
-
-  web: !binary |
-    572R56uZ
-
-  delete_alias: !binary |
-    5Yig6Zmk5Yir5ZCN
-
-  recover: !binary |
-    5oGi5aSN
-
-  application: !binary |
-    5bqU55So56iL5bqP
-
-  start_now: !binary |
-    56uL5Y2z5byA5aeL
-
-  not_updating: !binary |
-    5rKh5pyJ5Zyo5pu05paw
-
-  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: !binary |
-    5bqU55So56iL5bqP6YGH5Yiw5LiA5Liq6ZSZ6K+v44CC5bCG6L2s5Y+R5Yiw
-    572R6aG15pi+56S66ZSZ6K+v5pel5b+X44CC
-
-  core: !binary |
-    5qC45b+D
-
-  advanced_settings: !binary |
-    6auY57qn6K6+572u
-
-  check_the_features_take_the_tour: "\xE6\xA3\x80\xE6\x9F\xA5\xE7\x8E\xB0\xE6\x9C\x89\xE7\x9A\x84\xE5\x8A\x9F\xE8\x83\xBD\xEF\xBC\x8C\xE6\x88\x96\xE8\x80\x85\xE5\xA6\x82\xE6\x9E\x9C\xE6\x82\xA8\xE4\xB8\x8D\xE8\x83\xBD\xE7\xAD\x89\xE5\xBE\x85\xE6\x9F\xA5\xE7\x9C\x8B\xE5\x90\x91\xE5\xAF\xBC-"
-  this_will_stop_the_server_permanently: "\xE8\xBF\x99\xE5\xB0\x86\xE6\xB0\xB8\xE4\xB9\x85\xE5\x81\x9C\xE6\xAD\xA2%{name}\xE3\x80\x82"
-  this_application_is_installed_already_please_refresh: !binary |
-    5bqU55So56iL5bqP5bey57uP5a6J6KOF44CC6K+35Yi35paw5q2k572R6aG1
-    44CC
-
-  sign_out: !binary |
-    5rOo6ZSA
-
-  your_control_panel: !binary |
-    5L2g55qE5o6n5Yi26Z2i5p2/
-
-  this_path_is_not_available: !binary |
-    6Lev5b6E5LiN5Y+v55So
-
-  tracker: !binary |
-    6L+96Liq
-
-  rule_type: !binary |
-    6KeE5YiZ57G75Z6L
-
-  workgroup_name: !binary |
-    5bel5L2c57uE5ZCN56ew
-
-  aliases: !binary |
-    5Yir5ZCN
-
-  port_range_ports_must_be_0_to_64k: "\xE7\xAB\xAF\xE5\x8F\xA3\xE5\xBF\x85\xE9\xA1\xBB\xE5\x9C\xA80-65535\xE8\x8C\x83\xE5\x9B\xB4\xE4\xB9\x8B\xE5\x86\x85"
-  share_path_is_available: !binary |
-    5YWx5Lqr6Lev5b6E5Y+v55So
-
-  this_could_be_due_to_lack_of_network_connectivity: !binary |
-    6L+Z5Y+v6IO95piv55Sx5LqO57y65LmP572R57uc6L+e5o6l44CC
-
-  share_path_cannot_be_blank: !binary |
-    5YWx5Lqr6Lev5b6E5LiN6IO956m655m9
-
-  address_is_not_valid: !binary |
-    5Zyw5Z2A5piv5peg5pWI55qE
-
-  there_are_no_dynamic_dhcp_leases_outstanding: "\xE6\xAD\xA4\xE6\x97\xB6\xE6\xB2\xA1\xE6\x9C\x89\xE6\x98\x8E\xE6\x98\xBE\xE7\x9A\x84\xE5\x8A\xA8\xE6\x80\x81DHCP leases\xE3\x80\x82"
-  login: !binary |
-    55m75b2V
-
+  system_info: "系统信息"
+  preparing_to_install: "准备安装..."
+  the_url_looks_good: "URL可以使用"
+  delete_web_app: "删除Web应用"
+  firewall_port_filter_message: "端口过滤规则来限制你的局域网到互联网的数据包。"
+  files: "文件"
+  enabling_lan_manager_is_less_secure: "启用Windows 95/98身份验证模式的安全性较低，并可能帮助旧机器访问。您确定要启用Windows 95/98 LanManager认证？"
+  create_alias: "创建别名"
+  status: "状态"
+  web: "网站"
+  delete_alias: "删除别名"
+  recover: "恢复"
+  application: "应用程序"
+  start_now: "立即开始"
+  not_updating: "没有在更新"
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: "应用程序遇到一个错误。将转发到网页显示错误日志。"
+  core: "核心"
+  advanced_settings: "高级设置"
+  check_the_features_take_the_tour: "检查现有的功能，或者如果您不能等待查看向导-"
+  this_will_stop_the_server_permanently: "这将永久停止%{name}。"
+  this_application_is_installed_already_please_refresh: "应用程序已经安装。请刷新此网页。"
+  sign_out: "注销"
+  your_control_panel: "你的控制面板"
+  this_path_is_not_available: "路径不可用"
+  tracker: "追踪"
+  rule_type: "规则类型"
+  workgroup_name: "工作组名称"
+  aliases: "别名"
+  port_range_ports_must_be_0_to_64k: "端口必须在0-65535范围之内"
+  share_path_is_available: "共享路径可用"
+  this_could_be_due_to_lack_of_network_connectivity: "这可能是由于缺乏网络连接。"
+  share_path_cannot_be_blank: "共享路径不能空白"
+  address_is_not_valid: "地址是无效的"
+  there_are_no_dynamic_dhcp_leases_outstanding: "此时没有明显的动态DHCP leases。"
+  login: "登录"
   rebooting: ""
-  dhcp_lease: "DHCP\xE8\xA7\x84\xE8\x8C\x83"
-  edit_share: !binary |
-    57yW6L6R5YWx5Lqr
-
-  installed: !binary |
-    5bey5a6J6KOF
-
-  change: !binary |
-    5L+u5pS5
-
+  dhcp_lease: "DHCP规范"
+  edit_share: "编辑共享"
+  installed: "已安装"
+  change: "修改"
   restart: ""
-  shares: !binary |
-    5YWx5Lqr
-
-  state: !binary |
-    54q25oCB
-
-  manage_themes: !binary |
-    566h55CG5Li76aKY
-
-  search: !binary |
-    5pCc57Si
-
-  email: !binary |
-    55S15a2Q6YKu5Lu2
-
-  username_or_email: !binary |
-    55So5oi35ZCN5oiW55S15a2Q6YKu5Lu2
-
-  discussion_forum_for: !binary |
-    6K6o6K6655qE6K665Z2b
-
-  full_name_looks_good: !binary |
-    5YWo5ZCN55yL6LW35p2l5LiN6ZSZ
-
-  name_looks_good: !binary |
-    55So5oi35ZCN5Y+v5Lul5L2/55So
-
-  network: !binary |
-    572R57uc
-
-  change_your_account_settings: !binary |
-    5pu05pS55biQ5oi36K6+572u
-
-  visible: !binary |
-    5Y+v6KeB55qE
-
-  special_instructions: !binary |
-    54m55q6K6K+05piO
-
+  shares: "共享"
+  state: "状态"
+  manage_themes: "管理主题"
+  search: "搜索"
+  email: "电子邮件"
+  username_or_email: "用户名或电子邮件"
+  discussion_forum_for: "讨论的论坛"
+  full_name_looks_good: "全名看起来不错"
+  name_looks_good: "用户名可以使用"
+  network: "网络"
+  change_your_account_settings: "更改帐户设置"
+  visible: "可见的"
+  special_instructions: "特殊说明"
   uptime: ""
   disk_pooling: ""
   this_will_reboot: ""
-  this_ip_will_be_filtered: "\xE8\xBF\x99\xE4\xB8\xAAIP\xE5\x9C\xB0\xE5\x9D\x80\xE5\xB0\x86\xE8\xA2\xAB\xE8\xBF\x87\xE6\xBB\xA4\xE3\x80\x82"
-  dns_aliases: "DNS \xE5\x88\xAB\xE5\x90\x8D"
-  videos: !binary |
-    6KeG6aKR
-
-  used_space: !binary |
-    5bey55So56m66Ze0
-
-  dns_alias: "DNS\xE5\x88\xAB\xE5\x90\x8D"
-  confirm: !binary |
-    56Gu6K6k
-
-  name_is_not_valid: !binary |
-    55So5oi35ZCN5peg5pWI
-
-  new_web_app: "\xE6\x96\xB0\xE5\xBB\xBAWeb\xE5\xBA\x94\xE7\x94\xA8"
-  the_alias_name_you_input_will_be_added: "\xE6\x82\xA8\xE4\xB8\x8A\xE9\x9D\xA2\xE8\xBE\x93\xE5\x85\xA5\xE7\x9A\x84\xE5\x90\x8D\xE5\xAD\x97\xE4\xBC\x9A\xE8\xA2\xAB\xE6\xB7\xBB\xE5\x8A\xA0\xE4\xB8\xBA\xE4\xB8\x8B\xE9\x9D\xA2\xE7\x9A\x84IP\xE5\x9C\xB0\xE5\x9D\x80\xE7\x9A\x84DNS\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE7\x9A\x84\xE5\x88\xAB\xE5\x90\x8D\xE3\x80\x82"
-  there_are_no_static_dhcp_leases: "\xE6\xAD\xA4\xE6\x97\xB6\xE6\xB2\xA1\xE6\x9C\x89\xE6\x98\x8E\xE6\x98\xBE\xE7\x9A\x84\xE9\x9D\x99\xE6\x80\x81DHCP leases \xE3\x80\x82"
-  no_documents_found: !binary |
-    5om+5LiN5Yiw5Lu75L2V5paH5Lu2
-
-  new_alias: !binary |
-    5paw5bu65Yir5ZCN
-
-  live_help: !binary |
-    5Zyo57q/5biu5Yqp
-
-  edit_user: !binary |
-    57yW6L6R55So5oi3
-
-  enabling_pdc_is_a_major_share_change: "\xE5\x90\xAF\xE7\x94\xA8PDC\xE7\x9A\x84\xE6\xA8\xA1\xE5\xBC\x8F\xE6\x98\xAF\xE5\x85\xB1\xE4\xBA\xAB\xE5\xB7\xA5\xE4\xBD\x9C\xE6\x96\xB9\xE5\xBC\x8F\xE7\x9A\x84\xE9\x87\x8D\xE5\xA4\xA7\xE6\x94\xB9\xE5\x8F\x98\xE3\x80\x82\xE8\xBF\x99\xE5\xB0\x86\xE5\x90\xAF\xE5\x8A\xA8\xE5\x9F\x9F\xE6\xA8\xA1\xE5\xBC\x8F\xE5\x92\x8C\xE7\xA6\x81\xE7\x94\xA8\xE5\xB7\xA5\xE4\xBD\x9C\xE7\xBB\x84\xE6\xA8\xA1\xE5\xBC\x8F\xEF\xBC\x8C\xE5\xB9\xB6\xE8\xA6\x81\xE6\xB1\x82\xE6\x89\x80\xE6\x9C\x89\xE7\x9A\x84\xE6\x9C\xBA\xE5\x99\xA8\xE9\x83\xBD\xE6\x98\xAF\xE4\xBC\x81\xE4\xB8\x9A\xE7\x89\x88\xEF\xBC\x88\xE6\x88\x96\xE2\x80\x9C\xE4\xB8\x93\xE4\xB8\x9A\xE2\x80\x9D\xEF\xBC\x89\xE7\x9A\x84\xE6\x9C\xBA\xE5\x99\xA8\xEF\xBC\x8C\xE4\xBD\xBF\xE7\x94\xA8\xE6\xAD\xA3\xE7\xA1\xAE\xE7\x9A\x84\xE5\x87\xAD\xE6\x8D\xAE\xE3\x80\x82\xE5\xAE\x83\xE7\x9A\x84\xE6\x84\x8F\xE6\x80\x9D\xE6\x98\xAF\xE4\xBC\x81\xE4\xB8\x9A\xE7\xBD\x91\xE7\xBB\x9C\xE3\x80\x82\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x90\xAF\xE7\x94\xA8PDC\xE7\x9A\x84\xE6\xA8\xA1\xE5\xBC\x8F\xEF\xBC\x9F"
-  audio: !binary |
-    6Z+z6aKR
-
-  dashboard: !binary |
-    5Luq6KGo55uY
-
-  url_to_filter: "\xE8\xA6\x81\xE8\xBF\x87\xE6\xBB\xA4\xE7\x9A\x84URL"
-  static_ip_address_for_your_hda: "\xE6\x82\xA8HDA\xE7\x9A\x84\xE9\x9D\x99\xE6\x80\x81IP\xE5\x9C\xB0\xE5\x9D\x80"
-  comment: !binary |
-    6K+E6K66
-
-  root_path: "Root \xE8\xB7\xAF\xE5\xBE\x84"
-  valid_email_required_for_service: "\xE9\x9C\x80\xE8\xA6\x81\xE6\xBF\x80\xE6\xB4\xBB\xE6\x9C\x89\xE6\x95\x88\xE7\x9A\x84\xE7\x94\xB5\xE5\xAD\x90\xE9\x82\xAE\xE4\xBB\xB6\xE3\x80\x82<a href=\"http://www.amahi.org/privacy\" target=\"_blank\">\xE6\x88\x91\xE4\xBB\xAC\xE4\xB8\x8D\xE4\xBC\x9A\xE5\x8F\x91\xE5\x9E\x83\xE5\x9C\xBE\xE9\x82\xAE\xE4\xBB\xB6\xE7\xBB\x99\xE6\x82\xA8</a>"
+  this_ip_will_be_filtered: "这个IP地址将被过滤。"
+  dns_aliases: "DNS 别名"
+  videos: "视频"
+  used_space: "已用空间"
+  dns_alias: "DNS别名"
+  confirm: "确认"
+  name_is_not_valid: "用户名无效"
+  new_web_app: "新建Web应用"
+  the_alias_name_you_input_will_be_added: "您上面输入的名字会被添加为下面的IP地址的DNS服务器的别名。"
+  there_are_no_static_dhcp_leases: "此时没有明显的静态DHCP leases 。"
+  no_documents_found: "找不到任何文件"
+  new_alias: "新建别名"
+  live_help: "在线帮助"
+  edit_user: "编辑用户"
+  enabling_pdc_is_a_major_share_change: "启用PDC的模式是共享工作方式的重大改变。这将启动域模式和禁用工作组模式，并要求所有的机器都是企业版（或“专业”）的机器，使用正确的凭据。它的意思是企业网络。您确定要启用PDC的模式？"
+  audio: "音频"
+  dashboard: "仪表盘"
+  url_to_filter: "要过滤的URL"
+  static_ip_address_for_your_hda: "您HDA的静态IP地址"
+  comment: "评论"
+  root_path: "Root 路径"
+  valid_email_required_for_service: "需要激活有效的电子邮件。<a href=\"http://www.amahi.org/privacy\" target=\"_blank\">我们不会发垃圾邮件给您</a>"
   number: 
     format: 
       separator: .
@@ -390,846 +186,397 @@ zh:
     currency: 
       format: 
         format: "%u %n"
-        unit: "CN\xC2\xA5"
+        unit: "CN¥"
         separator: .
         delimiter: ","
         precision: 2
-  upcoming: !binary |
-    5Y2z5bCG
-
-  network_settings: !binary |
-    572R57uc6K6+572u
-
-  are_you_sure_you_want_to_restart_the_server: "\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE9\x87\x8D\xE6\x96\xB0\xE5\x90\xAF\xE5\x8A\xA8%{name}\xEF\xBC\x9F"
+  upcoming: "即将"
+  network_settings: "网络设置"
+  are_you_sure_you_want_to_restart_the_server: "您确定要重新启动%{name}？"
   activerecord: 
     errors: 
       messages: 
-        taken: !binary |
-          5bey57uP6KKr5L2/55So
-
-        accepted: !binary |
-          5b+F6aG75piv5Y+v6KKr5o6l5Y+X55qE
-
-        not_a_number: !binary |
-          5LiN5piv5pWw5a2X
-
-        blank: !binary |
-          5LiN6IO95Li656m65a2X56ym
-
-        record_invalid: "\xE9\xAA\x8C\xE8\xAF\x81\xE5\xA4\xB1\xE8\xB4\xA5\xEF\xBC\x9A%{errors}"
-        greater_than_or_equal_to: "\xE5\xBF\x85\xE9\xA1\xBB\xE5\xA4\xA7\xE4\xBA\x8E\xE6\x88\x96\xE7\xAD\x89\xE4\xBA\x8E %{count}"
-        confirmation: !binary |
-          5LiO56Gu6K6k5YC85LiN5Yy56YWN
-
-        less_than_or_equal_to: "\xE5\xBF\x85\xE9\xA1\xBB\xE5\xB0\x8F\xE4\xBA\x8E\xE6\x88\x96\xE7\xAD\x89\xE4\xBA\x8E %{count}"
-        exclusion: !binary |
-          5piv5L+d55WZ5YWz6ZSu5a2X
-
-        odd: !binary |
-          5b+F6aG75Li65Y2V5pWw
-
-        invalid: !binary |
-          5piv5peg5pWI55qE
-
-        too_short: "\xE8\xBF\x87\xE7\x9F\xAD\xEF\xBC\x88\xE6\x9C\x80\xE7\x9F\xAD\xE4\xB8\xBA %{count} \xE4\xB8\xAA\xE5\xAD\x97\xE7\xAC\xA6\xEF\xBC\x89"
-        wrong_length: "\xE9\x95\xBF\xE5\xBA\xA6\xE9\x9D\x9E\xE6\xB3\x95\xEF\xBC\x88\xE5\xBF\x85\xE9\xA1\xBB\xE4\xB8\xBA %{count} \xE4\xB8\xAA\xE5\xAD\x97\xE7\xAC\xA6\xEF\xBC\x89"
-        empty: !binary |
-          5LiN6IO955WZ56m6
-
-        too_long: "\xE8\xBF\x87\xE9\x95\xBF\xEF\xBC\x88\xE6\x9C\x80\xE9\x95\xBF\xE4\xB8\xBA %{count} \xE4\xB8\xAA\xE5\xAD\x97\xE7\xAC\xA6\xEF\xBC\x89"
-        less_than: "\xE5\xBF\x85\xE9\xA1\xBB\xE5\xB0\x8F\xE4\xBA\x8E %{count}"
-        even: !binary |
-          5b+F6aG75Li65Y+M5pWw
-
-        greater_than: "\xE5\xBF\x85\xE9\xA1\xBB\xE5\xA4\xA7\xE4\xBA\x8E %{count}"
-        equal_to: "\xE5\xBF\x85\xE9\xA1\xBB\xE7\xAD\x89\xE4\xBA\x8E %{count}"
-        inclusion: !binary |
-          5LiN5YyF5ZCr5LqO5YiX6KGo5Lit
-
+        taken: "已经被使用"
+        accepted: "必须是可被接受的"
+        not_a_number: "不是数字"
+        blank: "不能为空字符"
+        record_invalid: "验证失败：%{errors}"
+        greater_than_or_equal_to: "必须大于或等于 %{count}"
+        confirmation: "与确认值不匹配"
+        less_than_or_equal_to: "必须小于或等于 %{count}"
+        exclusion: "是保留关键字"
+        odd: "必须为单数"
+        invalid: "是无效的"
+        too_short: "过短（最短为 %{count} 个字符）"
+        wrong_length: "长度非法（必须为 %{count} 个字符）"
+        empty: "不能留空"
+        too_long: "过长（最长为 %{count} 个字符）"
+        less_than: "必须小于 %{count}"
+        even: "必须为双数"
+        greater_than: "必须大于 %{count}"
+        equal_to: "必须等于 %{count}"
+        inclusion: "不包含于列表中"
       template: 
-        body: !binary |
-          5aaC5LiL5a2X5q615Ye6546w6ZSZ6K+v77ya
-
+        body: "如下字段出现错误："
         header: 
-          one: "\xE6\x9C\x89 1 \xE4\xB8\xAA\xE9\x94\x99\xE8\xAF\xAF\xE5\x8F\x91\xE7\x94\x9F\xE5\xAF\xBC\xE8\x87\xB4\xE3\x80\x8C%{model}\xE3\x80\x8D\xE6\x97\xA0\xE6\xB3\x95\xE8\xA2\xAB\xE4\xBF\x9D\xE5\xAD\x98\xE3\x80\x82"
-          other: "\xE6\x9C\x89 %{count} \xE4\xB8\xAA\xE9\x94\x99\xE8\xAF\xAF\xE5\x8F\x91\xE7\x94\x9F\xE5\xAF\xBC\xE8\x87\xB4\xE3\x80\x8C%{model}\xE3\x80\x8D\xE6\x97\xA0\xE6\xB3\x95\xE8\xA2\xAB\xE4\xBF\x9D\xE5\xAD\x98\xE3\x80\x82"
+          one: "有 1 个错误发生导致「%{model}」无法被保存。"
+          other: "有 %{count} 个错误发生导致「%{model}」无法被保存。"
       full_messages: 
         format: "%{attribute} %{message}"
-  create_a_new_share: !binary |
-    5Yib5bu65LiA5Liq5paw55qE5YWx5Lqr
-
-  all_users: !binary |
-    5omA5pyJ55So5oi3
-
-  delete_static_ip: "\xE5\x88\xA0\xE9\x99\xA4\xE9\x9D\x99\xE6\x80\x81IP"
-  control_panel: !binary |
-    5o6n5Yi26Z2i5p2/
-
-  share_name_cannot_be_blank: !binary |
-    5YWx5Lqr5ZCN56ew5LiN6IO95Li656m6
-
-  the_boot_option_is_a_critical_setting: "\xE5\x90\xAF\xE5\x8A\xA8\xE9\x80\x89\xE9\xA1\xB9\xE6\x98\xAF\xE5\x85\xB3\xE9\x94\xAE\xE7\x9A\x84\xE8\xAE\xBE\xE7\xBD\xAE\xE3\x80\x82\xE5\xBC\xBA\xE7\x83\x88\xE5\xBB\xBA\xE8\xAE\xAE\xE5\x90\xAF\xE5\x8A\xA8\xE4\xB8\x80\xE4\xB8\xAA\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE8\xBF\x9B\xE7\xA8\x8B\xE3\x80\x82\xE8\xBF\x99\xE6\x98\xAF\xE4\xB8\xBA\xE4\xBA\x86\xE5\x9C\xA8\xE6\x82\xA8\xE7\x9A\x84HDA\xE7\x9A\x84\xE6\xAF\x8F\xE6\xAC\xA1\xE5\x90\xAF\xE5\x8A\xA8\xE6\x97\xB6\xE5\x90\xAF\xE5\x8A\xA8\xE6\x9C\x8D\xE5\x8A\xA1\xE3\x80\x82\xE4\xBD\xA0\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE4\xB8\x8D\xE8\xA6\x81\xE5\x9C\xA8\xE5\xBC\x95\xE5\xAF\xBC\xE6\x97\xB6\xE5\x90\xAF\xE5\x8A\xA8\xE8\xBF\x99\xE4\xB8\x80\xE8\xBF\x9B\xE7\xA8\x8B\xEF\xBC\x9F"
-  my_account: !binary |
-    5oiR55qE5biQ5oi3
-
+  create_a_new_share: "创建一个新的共享"
+  all_users: "所有用户"
+  delete_static_ip: "删除静态IP"
+  control_panel: "控制面板"
+  share_name_cannot_be_blank: "共享名称不能为空"
+  the_boot_option_is_a_critical_setting: "启动选项是关键的设置。强烈建议启动一个服务器进程。这是为了在您的HDA的每次启动时启动服务。你确定要不要在引导时启动这一进程？"
+  my_account: "我的帐户"
   greyhole_not_installed: ""
-  gallery: !binary |
-    55S75buK
-
-  transmission_bittorrent_server: "\xE4\xBC\xA0\xE8\xBE\x93BitTorrent\xE7\x9A\x84\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8"
-  are_you_sure_you_want_to_delete_alias: "\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x88\xA0\xE9\x99\xA4%{name}\xE7\x9A\x84\xE5\x88\xAB\xE5\x90\x8D\xEF\xBC\x9F"
-  ip_address: "IP\xE5\x9C\xB0\xE5\x9D\x80"
-  is_not_being_monitored_24x7: "\xE4\xB8\x8D\xE4\xBB\xA524x7\xE6\x98\xBE\xE7\xA4\xBA"
-  mysql_database_server: "MySQL\xE6\x95\xB0\xE6\x8D\xAE\xE5\xBA\x93\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8"
-  edit_and_rate_beta_apps: !binary |
-    57yW6L6R5ZKM5rWL6K+V5bqU55So
-
-  feedback: !binary |
-    5Y+N6aaI
-
-  username: !binary |
-    55So5oi35ZCN
-
-  done_final_check: !binary |
-    5a6M5oiQ77yB5pyA5ZCO5qOA5p+l
-
-  this_application_is_not_installed_please_refresh: !binary |
-    5bqU55So56iL5bqP5rKh5pyJ5a6J6KOF44CC6K+35Yi35paw5q2k572R6aG1
-    44CC
-
-  user_name_is_available: !binary |
-    55So5oi35ZCN5Y+v55So
-
-  password: !binary |
-    5a+G56CB
-
-  access: !binary |
-    6K6/6Zeu
-
-  news: !binary |
-    5paw6Ze7
-
-  avanced_settings_is_for_developers: "\xE5\x8F\xAA\xE6\x9C\x89\xE9\xAB\x98\xE7\xBA\xA7/\xE6\x8A\x80\xE6\x9C\xAF\xE7\x94\xA8\xE6\x88\xB7\xE5\x92\x8C\xE5\xBC\x80\xE5\x8F\x91\xE4\xBA\xBA\xE5\x91\x98\xE6\x89\x8D\xE8\x83\xBD\xE5\x90\xAF\xE7\x94\xA8\xE9\xAB\x98\xE7\xBA\xA7\xE5\x8A\x9F\xE8\x83\xBD\xE3\x80\x82"
+  gallery: "画廊"
+  transmission_bittorrent_server: "传输BitTorrent的服务器"
+  are_you_sure_you_want_to_delete_alias: "您确定要删除%{name}的别名？"
+  ip_address: "IP地址"
+  is_not_being_monitored_24x7: "不以24x7显示"
+  mysql_database_server: "MySQL数据库服务器"
+  edit_and_rate_beta_apps: "编辑和测试应用"
+  feedback: "反馈"
+  username: "用户名"
+  done_final_check: "完成！最后检查"
+  this_application_is_not_installed_please_refresh: "应用程序没有安装。请刷新此网页。"
+  user_name_is_available: "用户名可用"
+  password: "密码"
+  access: "访问"
+  news: "新闻"
+  avanced_settings_is_for_developers: "只有高级/技术用户和开发人员才能启用高级功能。"
   pooled: ""
-  there_are_no_shares_created: !binary |
-    55uu5YmN5Zyo5oKo57O757uf5Lit5rKh5pyJ5Yib5bu65LqG55qE5YWx5Lqr
-    44CC
-
-  movies: !binary |
-    55S15b2x
-
-  get_started: !binary |
-    5byA5aeL5ZCn77yB
-
-  stop: !binary |
-    5YGc5q2i
-
-  confirmation_matches: !binary |
-    56Gu6K6k5Yy56YWN
-
+  there_are_no_shares_created: "目前在您系统中没有创建了的共享。"
+  movies: "电影"
+  get_started: "开始吧！"
+  stop: "停止"
+  confirmation_matches: "确认匹配"
   device: ""
   initial_user: ""
-  preparing_to_uninstall: "\xE5\x87\x86\xE5\xA4\x87\xE5\x8D\xB8\xE8\xBD\xBD..."
-  servers: !binary |
-    5pyN5Yqh5Zmo
-
-  will_start_at_boot_time: !binary |
-    5bCG5Zyo5byV5a+85pe25ZCv5Yqo
-
-  this_application_install_ended_with_an_error_please_uninstall_status_is: !binary |
-    5bqU55So56iL5bqP5a6J6KOF5pe26YGH5Yiw5LiA5Liq6ZSZ6K+v6ICM57uT
-    5p2f44CC6K+35Y246L295a6D77yM54S25ZCO5YaN6K+V5LiA5qyh77yB5bqU
-    55So56iL5bqP54q25oCB
-
-  mac_filtering: "MAC\xE8\xBF\x87\xE6\xBB\xA4"
-  or_view_each_one_separately_below: !binary |
-    5oiW5YiG5Yir5p+l55yL5LiL6Z2i5q+P5LiA5Liq44CC
-
-  firewall_mac_address_filter_info: !binary |
-    5pys6KGo5Lit55qE5p2h55uu55So5LqO6ZmQ5Yi25LuO5pys5Zyw572R57uc
-    6YCa6L+H572R5YWz5Yiw6L6+5Zug54m5572R55qE5pWw5o2u5YyF55qE5p+Q
-    5Lqb57G75Z6L44CC5L2/55So6L+Z56eN6L+H5ruk5Zmo5Y+v5L+d6K+B5pys
-    5Zyw572R57uc55qE5a6J5YWo5oiW6ZmQ5Yi25oKo55qE5pys5Zyw572R57uc
-    44CC
-
-  name: !binary |
-    5aeT5ZCN
-
-  are_you_sure_advanced_features: !binary |
-    5oKo56Gu5a6a6KaB5ZCv55So6auY57qn5Yqf6IO977yf
-
+  preparing_to_uninstall: "准备卸载..."
+  servers: "服务器"
+  will_start_at_boot_time: "将在引导时启动"
+  this_application_install_ended_with_an_error_please_uninstall_status_is: "应用程序安装时遇到一个错误而结束。请卸载它，然后再试一次！应用程序状态"
+  mac_filtering: "MAC过滤"
+  or_view_each_one_separately_below: "或分别查看下面每一个。"
+  firewall_mac_address_filter_info: "本表中的条目用于限制从本地网络通过网关到达因特网的数据包的某些类型。使用这种过滤器可保证本地网络的安全或限制您的本地网络。"
+  name: "姓名"
+  are_you_sure_advanced_features: "您确定要启用高级功能？"
   datetime: 
     distance_in_words: 
       less_than_x_minutes: 
-        one: !binary |
-          5LiN5Yiw5LiA5YiG6ZKf
-
-        other: "\xE4\xB8\x8D\xE5\x88\xB0 %{count} \xE5\x88\x86\xE9\x92\x9F"
+        one: "不到一分钟"
+        other: "不到 %{count} 分钟"
       x_days: 
-        one: !binary |
-          5LiA5aSp
-
-        other: "%{count} \xE5\xA4\xA9"
+        one: "一天"
+        other: "%{count} 天"
       x_seconds: 
-        one: !binary |
-          5LiA56eS
-
-        other: "%{count} \xE7\xA7\x92"
+        one: "一秒"
+        other: "%{count} 秒"
       x_minutes: 
-        one: !binary |
-          5LiA5YiG6ZKf
-
-        other: "%{count} \xE5\x88\x86\xE9\x92\x9F"
+        one: "一分钟"
+        other: "%{count} 分钟"
       about_x_hours: 
-        one: !binary |
-          5aSn57qm5LiA5bCP5pe2
-
-        other: "\xE5\xA4\xA7\xE7\xBA\xA6 %{count} \xE5\xB0\x8F\xE6\x97\xB6"
+        one: "大约一小时"
+        other: "大约 %{count} 小时"
       less_than_x_seconds: 
-        one: !binary |
-          5LiN5Yiw5LiA56eS
-
-        other: "\xE4\xB8\x8D\xE5\x88\xB0 %{count} \xE7\xA7\x92"
+        one: "不到一秒"
+        other: "不到 %{count} 秒"
       x_months: 
-        one: !binary |
-          5LiA5Liq5pyI
-
-        other: "%{count} \xE4\xB8\xAA\xE6\x9C\x88"
+        one: "一个月"
+        other: "%{count} 个月"
       about_x_months: 
-        one: !binary |
-          5aSn57qm5LiA5Liq5pyI
-
-        other: "\xE5\xA4\xA7\xE7\xBA\xA6 %{count} \xE4\xB8\xAA\xE6\x9C\x88"
+        one: "大约一个月"
+        other: "大约 %{count} 个月"
       about_x_years: 
-        one: !binary |
-          5aSn57qm5LiA5bm0
-
-        other: "\xE5\xA4\xA7\xE7\xBA\xA6 %{count} \xE5\xB9\xB4"
+        one: "大约一年"
+        other: "大约 %{count} 年"
       over_x_years: 
-        one: !binary |
-          5LiA5bm05aSa
-
-        other: "%{count} \xE5\xB9\xB4\xE5\xA4\x9A"
-      half_a_minute: !binary |
-        5Y2K5YiG6ZKf
-
+        one: "一年多"
+        other: "%{count} 年多"
+      half_a_minute: "半分钟"
     prompts: 
-      month: !binary |
-        5pyI
-
-      second: !binary |
-        56eS
-
-      minute: !binary |
-        5YiG
-
-      hour: !binary |
-        5pe2
-
-      day: !binary |
-        5pel
-
-      year: !binary |
-        5bm0
-
-  nickname: !binary |
-    5pi156ew
-
-  the_mac_is_invalid: "MAC\xE5\x9C\xB0\xE5\x9D\x80\xE6\x98\xAF\xE6\x97\xA0\xE6\x95\x88\xE7\x9A\x84"
-  making_home_networking_simple: !binary |
-    5L2/5a625bqt572R57uc5pu05Yqg5a655piT
-
-  edit_web_app: "\xE7\xBC\x96\xE8\xBE\x91Web\xE5\xBA\x94\xE7\x94\xA8"
-  created: !binary |
-    5bey5Yib5bu6
-
-  watchdog: !binary |
-    55uR6KeG6ICF
-
-  mac_already_allocated: "MAC\xE5\xB7\xB2\xE7\xBB\x8F\xE8\xA2\xAB\xE5\x8D\xA0\xE6\x9C\x89"
-  video: !binary |
-    6KeG6aKR
-
-  dyndns_info: "Amahi\xE6\x8F\x90\xE4\xBE\x9B\xE5\x85\x8D\xE8\xB4\xB9\xE7\x9A\x84\xEF\xBC\x8C\xE9\x9B\xB6\xE9\x85\x8D\xE7\xBD\xAE\xE7\x9A\x84\xE4\xBB\x8E\xE5\xA4\x96\xE9\x83\xA8\xE5\x88\xB0\xE5\xAE\xB6\xE5\xBA\xAD\xE7\xBD\x91\xE7\xBB\x9C\xE7\x9A\x84\xE5\x8A\xA8\xE6\x80\x81DNS\xE5\x9C\xB0\xE5\x9D\x80\xE3\x80\x82\xE6\x82\xA8\xE5\x8F\xAF\xE4\xBB\xA5\xE4\xBD\xBF\xE7\x94\xA8\xE7\x9A\x84<a target=\"_blank\" \r\n\
-    href=\"http://wiki.amahi.org/index.php/VPN\">\xE8\x8B\xB9\xE6\x9E\x9C</a>\xE6\x88\x96<a target=\"_blank\" \r\n\
-    href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a>\xE7\x9A\x84 a \r\n\
-    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a>\xE7\x9A\x84\xE5\xAE\xA2\xE6\x88\xB7\xE7\xAB\xAF\xEF\xBC\x88\xE4\xB8\x93\xE4\xB8\x9A\xE7\x94\xA8\xE6\x88\xB7\xE5\x8F\xAF\xE4\xBB\xA5\xE4\xBD\xBF\xE7\x94\xA8<a target=\"_blank\" \r\n\
-    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>\xE6\x9D\xA5\xE7\x99\xBB\xE5\xBD\x95\xEF\xBC\x89\xE3\x80\x82\xE4\xB8\x93\xE4\xB8\x9A\xE7\x94\xA8\xE6\x88\xB7\xE5\x8F\xAF\xE4\xBB\xA5\xE5\x9C\xA8\xE5\xAE\xB6\xE5\xBA\xAD\xE7\xBD\x91\xE7\xBB\x9C\xE7\x9A\x84\xE7\xBD\x91\xE7\xAB\x99\xEF\xBC\x8C\xE6\xB8\xB8\xE6\x88\x8F\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE6\x88\x96\xE5\x85\xB6\xE4\xBB\x96\xE6\x9C\x8D\xE5\x8A\xA1\xE4\xBD\xBF\xE7\x94\xA8\xE5\xAE\x83\xEF\xBC\x88\xE5\xA6\x82\xE6\x9E\x9C\xE4\xBD\xA0\xE6\x83\xB3\xE5\x8F\x8A\xE6\x97\xA9\xE5\xB0\x9D\xE8\xAF\x95\xEF\xBC\x8C\xE5\x8F\xAA\xE8\xA6\x81\xE5\x9C\xA8IRC\xE9\xA2\x91\xE9\x81\x93\xE9\x81\x93\xE6\xB1\x82\xE5\x8A\xA9\xE6\x88\x96\xE6\x90\x9C\xE7\xB4\xA2\xE7\xBB\xB4\xE5\x9F\xBA\xEF\xBC\x89\xE3\x80\x82"
-  setting_dmz_failed: "\xE8\xAE\xBE\xE7\xBD\xAEDMZ\xE5\x8C\xBA\xE5\xA4\xB1\xE8\xB4\xA5\xE3\x80\x82\xE8\xAF\xB7\xE6\xA3\x80\xE6\x9F\xA5\xE6\x82\xA8\xE7\x9A\x84\xE8\xAE\xBE\xE7\xBD\xAE\xE3\x80\x82"
-  logs: !binary |
-    5pel5b+X
-
-  this_name_is_not_available: !binary |
-    5q2k5ZCN56ew5LiN5Y+v55So
-
-  install_code: !binary |
-    5a6J6KOF5Luj56CB
-
-  drives: !binary |
-    6amx5Yqo
-
+      month: "月"
+      second: "秒"
+      minute: "分"
+      hour: "时"
+      day: "日"
+      year: "年"
+  nickname: "昵称"
+  the_mac_is_invalid: "MAC地址是无效的"
+  making_home_networking_simple: "使家庭网络更加容易"
+  edit_web_app: "编辑Web应用"
+  created: "已创建"
+  watchdog: "监视者"
+  mac_already_allocated: "MAC已经被占有"
+  video: "视频"
+  dyndns_info: "Amahi提供免费的，零配置的从外部到家庭网络的动态DNS地址。您可以使用的<a target=\"_blank\" \r\n\
+    href=\"http://wiki.amahi.org/index.php/VPN\">苹果</a>或<a target=\"_blank\" \r\n\
+    href=\"http://wiki.amahi.org/index.php/VPNLinux\">Linux</a>的 a \r\n\
+    target=\"_blank\" href=\"http://wiki.amahi.org/index.php/VPN\">VPN</a>的客户端（专业用户可以使用<a target=\"_blank\" \r\n\
+    href=\"http://wiki.amahi.org/index.php/Ssh-ports\">SSH</a>来登录）。专业用户可以在家庭网络的网站，游戏服务器或其他服务使用它（如果你想及早尝试，只要在IRC频道道求助或搜索维基）。"
+  setting_dmz_failed: "设置DMZ区失败。请检查您的设置。"
+  logs: "日志"
+  this_name_is_not_available: "此名称不可用"
+  install_code: "安装代码"
+  drives: "驱动"
   time: 
-    am: !binary |
-      5LiK5Y2I
-
+    am: "上午"
     formats: 
-      default: "%Y\xE5\xB9\xB4%b%d\xE6\x97\xA5 %A %H:%M:%S %Z"
-      short: "%b%d\xE6\x97\xA5 %H:%M"
-      long: "%Y\xE5\xB9\xB4%b%d\xE6\x97\xA5 %H:%M"
-    pm: !binary |
-      5LiL5Y2I
-
-  dns_server: "DNS\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8"
-  calendar_name: !binary |
-    5pel5Y6G5ZCN56ew
-
-  router_ip: "\xE8\xB7\xAF\xE7\x94\xB1\xE5\x99\xA8IP"
-  general_amahi_news: "Amahi\xE6\x96\xB0\xE9\x97\xBB"
-  sign_up_here: !binary |
-    5Zyo6L+Z6YeM5rOo5YaM
-
-  static_ip_address: "\xE9\x9D\x99\xE6\x80\x81IP\xE5\x9C\xB0\xE5\x9D\x80"
-  port_forwarding: !binary |
-    56uv5Y+j6L2s5Y+R
-
-  app_logs: !binary |
-    5bqU55So5pel5b+X
-
-  view_all_calendars_simultaneously: !binary |
-    5ZCM5pe25p+l55yL5omA5pyJ5pel5Y6G
-
-  contribute: !binary |
-    6LSh54yu
-
-  back: !binary |
-    5ZCO6YCA
-
-  check_the_calendars_wiki_for_more_details: "\xE6\x9F\xA5\xE7\x9C\x8B\xE6\x9B\xB4\xE5\xA4\x9A\xE6\x97\xA5\xE5\x8E\x86\xE7\x9A\x84\xE7\xBB\xB4\xE5\x9F\xBA\xE5\x85\xB3\xE4\xBA\x8E\xE5\xA6\x82\xE4\xBD\x95\xE7\xAE\xA1\xE7\x90\x86\xE6\x97\xA5\xE5\x8E\x86\xEF\xBC\x8C\xE5\x93\xAA\xE4\xBA\x9B\xE5\xAE\xA2\xE6\x88\xB7\xE5\x85\xBC\xE5\xAE\xB9\xE6\x97\xA5\xE5\x8E\x86 \xE3\x80\x82"
+      default: "%Y年%b%d日 %A %H:%M:%S %Z"
+      short: "%b%d日 %H:%M"
+      long: "%Y年%b%d日 %H:%M"
+    pm: "下午"
+  dns_server: "DNS服务器"
+  calendar_name: "日历名称"
+  router_ip: "路由器IP"
+  general_amahi_news: "Amahi新闻"
+  sign_up_here: "在这里注册"
+  static_ip_address: "静态IP地址"
+  port_forwarding: "端口转发"
+  app_logs: "应用日志"
+  view_all_calendars_simultaneously: "同时查看所有日历"
+  contribute: "贡献"
+  back: "后退"
+  check_the_calendars_wiki_for_more_details: "查看更多日历的维基关于如何管理日历，哪些客户兼容日历 。"
   initial_password: ""
-  support_win_95_98: "\xE6\x94\xAF\xE6\x8C\x81Windows 95/98 \xE5\x92\x8Cmdash;\xE5\x90\xAF\xE7\x94\xA8LanManager\xE8\xAE\xA4\xE8\xAF\x81\xEF\xBC\x88\xE4\xB8\x8D\xE5\xAE\x89\xE5\x85\xA8\xEF\xBC\x89"
-  there_are_no_calendars_available_see_wiki: "\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE4\xB8\x8A\xE6\xB2\xA1\xE6\x9C\x89\xE5\x8F\xAF\xE7\x94\xA8\xE7\x9A\x84\xE6\x97\xA5\xE5\x8E\x86\xE3\x80\x82\xE7\x94\xA8\xE6\x97\xA5\xE5\x8E\x86\xE5\xAE\xA2\xE6\x88\xB7\xE7\xAB\xAF\xE6\x9D\xA5\xE5\x88\x9B\xE5\xBB\xBA\xE4\xBB\x96\xE4\xBB\xAC\xE3\x80\x82\xE5\x8F\x82\xE8\xA7\x81\xE5\x85\xB3\xE4\xBA\x8E<a href=\"http://wiki.amahi.org/index.php/Calendars\">\xE6\x97\xA5\xE5\x8E\x86\xE7\x9A\x84\xE7\xBB\xB4\xE5\x9F\xBA</a>\xE3\x80\x82"
-  dhcp_leases: "DHCP\xE8\xA7\x84\xE8\x8C\x83"
+  support_win_95_98: "支持Windows 95/98 和mdash;启用LanManager认证（不安全）"
+  there_are_no_calendars_available_see_wiki: "服务器上没有可用的日历。用日历客户端来创建他们。参见关于<a href=\"http://wiki.amahi.org/index.php/Calendars\">日历的维基</a>。"
+  dhcp_leases: "DHCP规范"
   disk_pool_details: ""
-  calendars: !binary |
-    5pel5Y6G
-
-  a_single_number_0_254_to_point_to_a_given_machine: "\xE4\xB8\x80\xE4\xB8\xAA\xE6\x95\xB0\xE5\xAD\x97\xEF\xBC\x880-254\xEF\xBC\x89\xE6\x8C\x87\xE5\x90\x91\xE5\x9C\xA8\xE6\x82\xA8\xE7\x9A\x84\xE7\xBD\x91\xE7\xBB\x9C\xE4\xB8\xAD\xE7\x9A\x84\xE7\x89\xB9\xE5\xAE\x9A\xE6\x9C\xBA\xE5\x99\xA8"
-  port_range_ports_must_be_numbers: !binary |
-    6K+l56uv5Y+j5b+F6aG75piv5pWw5a2X
-
-  help: !binary |
-    5biu5Yqp
-
-  there_are_no_applications_available: !binary |
-    55uu5YmN5rKh5pyJ5Y+v5Lul5L2/55So55qE5bqU55So56iL5bqP44CC
-
-  ip_filtering: "IP\xE8\xBF\x87\xE6\xBB\xA4"
-  password_changed_successfully: !binary |
-    5a+G56CB5L+u5pS55oiQ5Yqf
-
-  tags: !binary |
-    5qCH562+
-
-  router_firewall_settings: "\xE8\xB7\xAF\xE7\x94\xB1\xE5\x99\xA8/\xE9\x98\xB2\xE7\x81\xAB\xE5\xA2\x99\xE8\xAE\xBE\xE7\xBD\xAE"
-  submit_for_debug: !binary |
-    5o+Q5Lqk6LCD6K+V
-
-  dhcp_server: "DHCP\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8"
-  name_is_taken_already_or_is_reserved: !binary |
-    55So5oi35ZCN5piv5L+d55WZ55qE5oiW5bey57uP6KKr5L2/55So
-
-  changelog: !binary |
-    5pu05paw5pel5b+X
-
-  notifications_from_amahi: "Amahi\xE9\x80\x9A\xE7\x9F\xA5"
-  permissions: !binary |
-    6K645Y+v
-
-  your_domain_info: "\xE8\xBF\x99\xE6\x98\xAF\xE6\x82\xA8\xE7\x9A\x84\xE5\xAE\xB6\xE5\xBA\xAD\xE7\xBD\x91\xE7\xBB\x9C\xE5\x9F\x9F\xE3\x80\x82\xE8\xBF\x99\xE6\x98\xAF\xE5\x8F\xAA\xE9\x80\x82\xE7\x94\xA8\xE5\x9C\xA8\xE4\xBD\xA0\xE7\x9A\x84\xE5\xAE\xB6\xE5\xBA\xAD\xE7\xBD\x91\xE7\xBB\x9C\xE3\x80\x82\xE5\x85\xB3\xE4\xBA\x8E\xE6\xAD\xA4\xE7\x9A\x84\xE6\x9B\xB4\xE5\xA4\x9A\xE7\xBB\x86\xE8\x8A\x82\xE8\xAF\xB7\xE5\x8F\x82\xE8\x80\x83<a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">the FAQ</a>."
-  there_are_no_firewall_rules_defined: !binary |
-    55uu5YmN5rKh5pyJ5a6a5LmJ5LqG55qE6Ziy54Gr5aKZ6KeE5YiZ44CC
-
-  firewall_url_filter_message: "\xE6\x9C\xAC\xE8\xA1\xA8\xE4\xB8\xAD\xE7\x9A\x84\xE6\x9D\xA1\xE7\x9B\xAE\xE6\x98\xAF\xE7\x94\xA8\xE6\x9D\xA5\xE9\x99\x90\xE5\x88\xB6\xE9\x80\x9A\xE8\xBF\x87\xE7\xBD\x91\xE5\x85\xB3\xE7\x9A\x84URL\xE3\x80\x82"
-  the_ip_must_be_1_to_254: "IP\xE5\xBF\x85\xE9\xA1\xBB\xE5\x9C\xA81-254\xE8\x8C\x83\xE5\x9B\xB4\xE5\x86\x85"
-  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "\xE5\x90\xAF\xE7\x94\xA8\xE8\xB0\x83\xE8\xAF\x95\xE5\xB0\x86\xE6\x9C\x89\xE5\x8F\xAF\xE8\x83\xBD\xE4\xBA\xA7\xE7\x94\x9F\xE9\x9D\x9E\xE5\xB8\xB8\xE5\xA4\xA7\xE7\x9A\x84\xE6\x97\xA5\xE5\xBF\x97\xE6\x96\x87\xE4\xBB\xB6\xE3\x80\x82\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x90\xAF\xE7\x94\xA8Samba\xE8\xB0\x83\xE8\xAF\x95\xEF\xBC\x9F"
-  not_a_valid_user_or_password: !binary |
-    6ZSZ6K+v77ya5LiN5q2j56Gu55qE55So5oi35ZCN5oiW5a+G56CB
-
-  create_your_hda_profile: "\xE5\xBB\xBA\xE7\xAB\x8B\xE6\x82\xA8\xE7\x9A\x84HDA\xE9\x85\x8D\xE7\xBD\xAE"
-  share: !binary |
-    5YiG5Lqr
-
-  forums: !binary |
-    6K665Z2b
-
-  writeable: !binary |
-    5Y+v5YaZ55qE
-
-  there_are_no_aliases_defined: !binary |
-    55uu5YmN5rKh5pyJ5a6a5LmJ5Yir5ZCN
-
-  user_name_is_not_valid: !binary |
-    55So5oi35ZCN5peg5pWI
-
-  computer: !binary |
-    6K6h566X5py6
-
-  new_firewall_rule: !binary |
-    5paw5bu66Ziy54Gr5aKZ6KeE5YiZ
-
-  file_server_samba: "\xE6\x96\x87\xE4\xBB\xB6\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8(Samba)"
-  thanks_for_visiting: !binary |
-    5oSf6LCi6K6/6Zeu44CC5pSv5oyB5oiR5Lus55qE6LWe5Yqp5ZWG77yB
-
-  new_static_ip: "\xE6\x96\xB0\xE5\xBB\xBA\xE9\x9D\x99\xE6\x80\x81IP"
-  this_share_name_is_not_valid: !binary |
-    5YWx5Lqr5ZCN5piv5peg5pWI55qE
-
-  create: !binary |
-    5Yib5bu6
-
-  all_you_need: !binary |
-    5omA5pyJ5L2g6ZyA6KaB55qE77yB
-
-  system: !binary |
-    57O757uf
-
-  webapps: "Web\xE5\xBA\x94\xE7\x94\xA8"
-  more: !binary |
-    5pu05aSa
-
-  no_account_yet: !binary |
-    6L+Y5rKh5pyJ5biQ5oi377yf
-
-  images: !binary |
-    5Zu+54mH
-
-  music: !binary |
-    6Z+z5LmQ
-
-  dynamic_dns: "\xE5\x8A\xA8\xE6\x80\x81DNS"
-  this_application_is_installed: !binary |
-    5bqU55So56iL5bqP5bey5a6J6KOF44CC
-
-  your_home_dns_domain: "\xE6\x82\xA8\xE7\x9A\x84\xE4\xB8\xBB\xE9\xA1\xB5DNS\xE5\x9F\x9F"
-  router_setting_failed: !binary |
-    6Lev55Sx5Zmo6K6+572u5aSx6LSl44CC6K+35qOA5p+l5oKo55qE6K6+572u
-    44CC
-
+  calendars: "日历"
+  a_single_number_0_254_to_point_to_a_given_machine: "一个数字（0-254）指向在您的网络中的特定机器"
+  port_range_ports_must_be_numbers: "该端口必须是数字"
+  help: "帮助"
+  there_are_no_applications_available: "目前没有可以使用的应用程序。"
+  ip_filtering: "IP过滤"
+  password_changed_successfully: "密码修改成功"
+  tags: "标签"
+  router_firewall_settings: "路由器/防火墙设置"
+  submit_for_debug: "提交调试"
+  dhcp_server: "DHCP服务器"
+  name_is_taken_already_or_is_reserved: "用户名是保留的或已经被使用"
+  changelog: "更新日志"
+  notifications_from_amahi: "Amahi通知"
+  permissions: "许可"
+  your_domain_info: "这是您的家庭网络域。这是只适用在你的家庭网络。关于此的更多细节请参考<a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">the FAQ</a>."
+  there_are_no_firewall_rules_defined: "目前没有定义了的防火墙规则。"
+  firewall_url_filter_message: "本表中的条目是用来限制通过网关的URL。"
+  the_ip_must_be_1_to_254: "IP必须在1-254范围内"
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "启用调试将有可能产生非常大的日志文件。您确定要启用Samba调试？"
+  not_a_valid_user_or_password: "错误：不正确的用户名或密码"
+  create_your_hda_profile: "建立您的HDA配置"
+  share: "分享"
+  forums: "论坛"
+  writeable: "可写的"
+  there_are_no_aliases_defined: "目前没有定义别名"
+  user_name_is_not_valid: "用户名无效"
+  computer: "计算机"
+  new_firewall_rule: "新建防火墙规则"
+  file_server_samba: "文件服务器(Samba)"
+  thanks_for_visiting: "感谢访问。支持我们的赞助商！"
+  new_static_ip: "新建静态IP"
+  this_share_name_is_not_valid: "共享名是无效的"
+  create: "创建"
+  all_you_need: "所有你需要的！"
+  system: "系统"
+  webapps: "Web应用"
+  more: "更多"
+  no_account_yet: "还没有帐户？"
+  images: "图片"
+  music: "音乐"
+  dynamic_dns: "动态DNS"
+  this_application_is_installed: "应用程序已安装。"
+  your_home_dns_domain: "您的主页DNS域"
+  router_setting_failed: "路由器设置失败。请检查您的设置。"
   support: 
     array: 
-      last_word_connector: ", \xE5\x92\x8C "
+      last_word_connector: ", 和 "
       words_connector: ", "
-      two_words_connector: " \xE5\x92\x8C "
-  the_watchdog_is_a_critical_setting: "\xE7\x9B\x91\xE8\xA7\x86\xE8\x80\x85\xE6\x98\xAF\xE4\xB8\x80\xE4\xB8\xAA\xE5\x85\xB3\xE9\x94\xAE\xE7\x9A\x84\xE8\xAE\xBE\xE7\xBD\xAE\xE3\x80\x82\xE5\xBC\xBA\xE7\x83\x88\xE5\xBB\xBA\xE8\xAE\xAE\xE4\xB8\x8D\xE8\xA6\x81\xE5\x81\x9C\xE6\xAD\xA2\xE7\x9B\x91\xE8\xA7\x86\xE6\x9C\x8D\xE5\x8A\xA1\xE3\x80\x82\xE8\xBF\x99\xE6\x98\xAF\xE4\xB8\xBA\xE4\xBA\x86\xE4\xBF\x9D\xE6\x8C\x81\xE4\xBD\xA0\xE7\x9A\x84HDA\xE4\xB8\xAD\xE7\x9A\x84\xE6\x9C\x8D\xE5\x8A\xA1\xE8\xBF\x90\xE8\xA1\x8C\xE7\x9A\x84\xE5\x8F\xAF\xE9\x9D\xA0\xE6\x80\xA7\xEF\xBC\x8C\xE5\x8D\xB3\xE4\xBD\xBF\xE5\x9C\xA8\xE6\x95\x85\xE9\x9A\x9C\xE5\x87\xBA\xE7\x8E\xB0\xE6\x83\x85\xE5\x86\xB5\xE4\xB8\x8B\xE7\x9A\x84\xE6\x9C\x8D\xE5\x8A\xA1\xE8\xBF\x90\xE8\xA1\x8C\xE7\x9A\x84\xE5\x8F\xAF\xE9\x9D\xA0\xE6\x80\xA7\xE3\x80\x82\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x81\x9C\xE6\xAD\xA2\xE5\x9C\xA8\xE8\xAF\xA5\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE7\x9A\x84\xE7\x9B\x91\xE8\xA7\x86\xE8\x80\x85\xEF\xBC\x9F"
-  an_external_ip_address_to_make_the_alias: "\xE4\xB8\x80\xE4\xB8\xAA\xE5\xA4\x96\xE9\x83\xA8IP\xE5\x9C\xB0\xE5\x9D\x80\xE4\xBD\xBF\xE5\x85\xB6\xE6\x8C\x87\xE5\x90\x91\xE4\xB8\x80\xE4\xB8\xAA\xE7\x89\xB9\xE5\xAE\x9A\xE7\x9A\x84IP\xE5\x9C\xB0\xE5\x9D\x80"
-  ushare_upnp_media_server: "\xE5\x88\xA0\xE9\x99\xA4 UPnP\xE5\xAA\x92\xE4\xBD\x93\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE5\x85\xB1\xE4\xBA\xAB"
-  mac_is_invalid: "MAC\xE6\x98\xAF\xE6\x97\xA0\xE6\x95\x88\xE7\x9A\x84"
-  edit_alias: !binary |
-    57yW6L6R5Yir5ZCN
-
-  port_range_ports_are_already_allocated: !binary |
-    5Zyo6L+Z5Liq6IyD5Zu05YaF55qE56uv5Y+j5bey57uP5YiG6YWN
-
-  otherwise_you_can_go_to_the_error_log: "\xE5\x90\xA6\xE5\x88\x99\xEF\xBC\x8C\xE4\xBD\xA0\xE5\x8F\xAF\xE4\xBB\xA5\xE7\x9B\xB4\xE6\x8E\xA5\xE8\xBF\x9B\xE5\x85\xA5<a href=\"/setup?tab=debug\">\xE9\x94\x99\xE8\xAF\xAF\xE6\x97\xA5\xE5\xBF\x97</a>\xE3\x80\x82"
-  suggest: !binary |
-    5o6o6I2Q77yB
-
-  there_are_no_users: !binary |
-    55uu5YmN5oKo55qE57O757uf5Lit5rKh5pyJ55So5oi344CC
-
-  the_mac_looks_good: "MAC\xE5\x9C\xB0\xE5\x9D\x80\xE5\x8F\xAF\xE4\xBB\xA5\xE4\xBD\xBF\xE7\x94\xA8"
-  protocol: !binary |
-    5Y2P6K6u
-
-  delete_this_rule: !binary |
-    5Yig6Zmk5q2k6KeE5YiZ
-
-  partitions: !binary |
-    5YiG5Yy6
-
-  create_share: !binary |
-    5Yib5bu65q2k5YWx5Lqr
-
-  no_description_supplied: !binary |
-    5rKh5pyJ5o+Q5L6b6K+05piO77yB
-
-  language: !binary |
-    6K+t6KiA
-
-  apps: !binary |
-    5bqU55So56iL5bqP
-
-  warning_this_application_is_in_testing: !binary |
-    6K2m5ZGK77ya5q2k5bqU55So5q2j5Zyo5rWL6K+V77yB
-
-  translate_amahi: "\xE7\xBF\xBB\xE8\xAF\x91Amahi"
-  alias_looks_good: !binary |
-    5Yir5ZCN5Y+v5Lul5L2/55So
-
-  there_are_no_servers_available: !binary |
-    5aKT5YmN5rKh5pyJ5Y+v55So55qE5pyN5Yqh5Zmo44CC
-
-  global_settings_for_shares: !binary |
-    5YWx5Lqr55qE5YWo5bGA6K6+572u
-
-  subscribe: !binary |
-    6K6i6ZiF
-
-  delete_share: !binary |
-    5Yig6Zmk5YWx5Lqr
-
-  is_being_monitored_24x7: "\xE4\xBB\xA524x7\xE6\x98\xBE\xE7\xA4\xBA"
+      two_words_connector: " 和 "
+  the_watchdog_is_a_critical_setting: "监视者是一个关键的设置。强烈建议不要停止监视服务。这是为了保持你的HDA中的服务运行的可靠性，即使在故障出现情况下的服务运行的可靠性。您确定要停止在该服务器的监视者？"
+  an_external_ip_address_to_make_the_alias: "一个外部IP地址使其指向一个特定的IP地址"
+  ushare_upnp_media_server: "删除 UPnP媒体服务器共享"
+  mac_is_invalid: "MAC是无效的"
+  edit_alias: "编辑别名"
+  port_range_ports_are_already_allocated: "在这个范围内的端口已经分配"
+  otherwise_you_can_go_to_the_error_log: "否则，你可以直接进入<a href=\"/setup?tab=debug\">错误日志</a>。"
+  suggest: "推荐！"
+  there_are_no_users: "目前您的系统中没有用户。"
+  the_mac_looks_good: "MAC地址可以使用"
+  protocol: "协议"
+  delete_this_rule: "删除此规则"
+  partitions: "分区"
+  create_share: "创建此共享"
+  no_description_supplied: "没有提供说明！"
+  language: "语言"
+  apps: "应用程序"
+  warning_this_application_is_in_testing: "警告：此应用正在测试！"
+  translate_amahi: "翻译Amahi"
+  alias_looks_good: "别名可以使用"
+  there_are_no_servers_available: "墓前没有可用的服务器。"
+  global_settings_for_shares: "共享的全局设置"
+  subscribe: "订阅"
+  delete_share: "删除共享"
+  is_being_monitored_24x7: "以24x7显示"
   reboot: ""
   disk_pool_replication: ""
-  sign_in: !binary |
-    55m75b2V
-
-  please_double_check_the_settings: "\xE8\xAF\xB7<strong>\xE4\xBB\x94\xE7\xBB\x86\xE6\xA3\x80\xE6\x9F\xA5\xE8\xBF\x99\xE4\xBA\x9B\xE8\xAE\xBE\xE7\xBD\xAE</strong> \xEF\xBC\x8C\xE5\x9B\xA0\xE4\xB8\xBA\xE5\xAE\x83\xE4\xBB\xAC\xE6\x98\xAF\xE4\xBD\xBF\xE6\x82\xA8\xE7\x9A\x84HDA\xE7\x94\xA8\xE5\xAE\x8C\xE7\xAE\xB1\xE5\xAD\x90\xE7\x9A\x84\xE5\x85\xB3\xE9\x94\xAE\xE3\x80\x82"
-  community: !binary |
-    56S+5Yy6
-
-  new_dns_alias: "\xE6\x96\xB0\xE5\xBB\xBADNS\xE5\x88\xAB\xE5\x90\x8D"
-  create_a_new_user: !binary |
-    5Yib5bu65LiA5Liq5paw55So5oi3
-
-  there_are_no_webapps: "\xE7\x9B\xAE\xE5\x89\x8D\xE5\x9C\xA8\xE6\x82\xA8\xE7\x9A\x84\xE7\xB3\xBB\xE7\xBB\x9F\xE4\xB8\xAD\xE6\xB2\xA1\xE6\x9C\x89\xE9\x85\x8D\xE7\xBD\xAE\xE4\xBA\x86WEB\xE5\xBA\x94\xE7\x94\xA8\xE3\x80\x82"
-  are_you_sure_you_want_to_delete_the_static_ip: "\xE6\x82\xA8\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x88\xA0\xE9\x99\xA4\xE9\x9D\x99\xE6\x80\x81IP%{name}\xEF\xBC\x9F"
-  description: !binary |
-    5o+P6L+w
-
-  are_you_sure: !binary |
-    5L2g56Gu5a6a5ZCX77yf
-
-  port_filtering: !binary |
-    56uv5Y+j6L+H5ruk
-
-  results_found: !binary |
-    5Y+R546w57uT5p6c
-
-  efficiently_manage_your_network: "\xE6\x9C\x89\xE6\x95\x88\xE5\x9C\xB0\xE7\xAE\xA1\xE7\x90\x86\xE7\xBD\x91\xE7\xBB\x9C\xE5\x92\x8C\xE6\x89\x80\xE6\x9C\x89\xE8\xAE\xA1\xE7\xAE\x97\xE6\x9C\xBA\xE7\x9A\x84\xE5\xA4\x87\xE4\xBB\xBD\xEF\xBC\x8C\xE6\xB8\xB8\xE6\x88\x8F\xE6\x9C\xBA\xE6\x8E\xA7\xE5\x88\xB6\xE5\x99\xA8\xE5\x92\x8C\xE7\xBD\x91\xE7\xBB\x9C\xE4\xB8\xAD\xE7\x9A\x84\xE5\x85\xB6\xE4\xBB\x96\xE8\xAE\xBE\xE5\xA4\x87\xEF\xBC\x8C\xE5\xB9\xB6\xE5\xAE\x89\xE5\x85\xA8\xE5\x9C\xB0\xE4\xBB\x8E\xE4\xBA\x92\xE8\x81\x94\xE7\xBD\x91\xE8\xAE\xBF\xE9\x97\xAE\xE6\x82\xA8\xE7\x9A\x84\xE7\xBD\x91\xE7\xBB\x9C\xE3\x80\x82\xE8\xBF\x99\xE4\xBB\x85\xE4\xBB\x85\xE6\x98\xAF\xE5\xBC\x80\xE5\xA7\x8B\xEF\xBC\x8CAmahi\xE8\xBF\x98\xE5\x8F\xAF\xE4\xBB\xA5\xE5\x81\x9A\xE7\x9A\x84\xE6\x9B\xB4\xE5\xA4\x9A\xE3\x80\x82"
-  uninstall: !binary |
-    5Y246L29
-
-  port_range_field_cannot_be_empty: !binary |
-    6K+l5a2X5q615LiN6IO95Li656m6
-
-  available_for_installation: !binary |
-    77yI5Y+v5a6J6KOF77yJ
-
-  when_there_are_major_announcements: !binary |
-    6YeN6KaB6YCa55+l
-
-  manage_your_contributed_apps: !binary |
-    566h55CG5oKo5Yib5bu655qE5bqU55So56iL5bqP
-
-  are_you_sure_user: "\xE4\xBD\xA0\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE5\x88\xA0\xE9\x99\xA4\xE7\x94\xA8\xE6\x88\xB7 '%{user}'?"
+  sign_in: "登录"
+  please_double_check_the_settings: "请<strong>仔细检查这些设置</strong> ，因为它们是使您的HDA用完箱子的关键。"
+  community: "社区"
+  new_dns_alias: "新建DNS别名"
+  create_a_new_user: "创建一个新用户"
+  there_are_no_webapps: "目前在您的系统中没有配置了WEB应用。"
+  are_you_sure_you_want_to_delete_the_static_ip: "您确定要删除静态IP%{name}？"
+  description: "描述"
+  are_you_sure: "你确定吗？"
+  port_filtering: "端口过滤"
+  results_found: "发现结果"
+  efficiently_manage_your_network: "有效地管理网络和所有计算机的备份，游戏机控制器和网络中的其他设备，并安全地从互联网访问您的网络。这仅仅是开始，Amahi还可以做的更多。"
+  uninstall: "卸载"
+  port_range_field_cannot_be_empty: "该字段不能为空"
+  available_for_installation: "（可安装）"
+  when_there_are_major_announcements: "重要通知"
+  manage_your_contributed_apps: "管理您创建的应用程序"
+  are_you_sure_user: "你确定要删除用户 '%{user}'?"
   extra_parameters: ""
-  log_in: !binary |
-    55m75b2V
-
-  port_range: !binary |
-    56uv5Y+j6IyD5Zu0
-
-  network_gateway: !binary |
-    572R5YWz
-
-  please_select: "\xE8\xAF\xB7\xE9\x80\x89\xE6\x8B\xA9..."
+  log_in: "登录"
+  port_range: "端口范围"
+  network_gateway: "网关"
+  please_select: "请选择..."
   powering_off: ""
-  monitor: !binary |
-    5pi+56S65Zmo
-
-  settings: !binary |
-    6K6+572u
-
+  monitor: "显示器"
+  settings: "设置"
   initial_user_info: ""
-  control: !binary |
-    5o6n5Yi2
-
+  control: "控制"
   disk_pooling_enabled: ""
-  username_cannot_be_blank: !binary |
-    55So5oi35ZCN5LiN6IO95Li656m6
-
-  this_feature_is_under_heavy_development: !binary |
-    5q2k5Yqf6IO95piv5aSn6YeP55qE5byA5Y+R
-
-  alias_is_not_valid: !binary |
-    5Yir5ZCN5piv5peg5pWI55qE
-
-  details: !binary |
-    6K+m57uG5L+h5oGv
-
-  is_now_uninstalled: !binary |
-    5bey57uP5Y246L295a6M5oiQ
-
-  global_settings: !binary |
-    5YWo5bGA6K6+572u
-
-  pdc_primary_domain_controller: "PDC\xE5\x92\x8Cmdash;\xE4\xB8\xBB\xE5\x9F\x9F\xE6\x8E\xA7\xE5\x88\xB6\xE5\x99\xA8"
-  networking: !binary |
-    572R57uc
-
-  themes: !binary |
-    5Li76aKY
-
-  the_name_you_input_above_will_be_added_to_the_DNS_server: "\xE6\x82\xA8\xE4\xB8\x8A\xE9\x9D\xA2\xE8\xBE\x93\xE5\x85\xA5\xE7\x9A\x84\xE5\x90\x8D\xE7\xA7\xB0\xE5\xB0\x86\xE8\xA2\xAB\xE6\xB7\xBB\xE5\x8A\xA0\xE5\x88\xB0\xE4\xB8\x8B\xE9\x9D\xA2\xE7\x9A\x84DNS\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE5\x92\x8C\xE7\x9B\xB8\xE5\x85\xB3\xE7\x9A\x84MAC\xE5\x92\x8CIP\xE5\x9C\xB0\xE5\x9D\x80\xE3\x80\x82"
-  installation_instructions: !binary |
-    5a6J6KOF6K+05piO
-
-  testimonials: !binary |
-    6KSS5aWW
-
-  firewall: !binary |
-    6Ziy54Gr5aKZ
-
-  version: !binary |
-    54mI5pys
-
-  path_looks_good: !binary |
-    6Lev5b6E5LiN6ZSZ
-
-  get_involved: !binary |
-    6b2Q5p2l5Y+C5LiO77yB
-
-  mac_address: "MAC\xE5\x9C\xB0\xE5\x9D\x80"
-  refresh_status: !binary |
-    5Yi35paw54q25oCB
-
-  this_shares_files_deleted: "\xE8\xBF\x99\xE4\xB8\xAA\xE5\x85\xB1\xE4\xBA\xAB\xE7\x9A\x84\xE6\x96\x87\xE4\xBB\xB6\xE5\xB0\x86\xE8\xA2\xAB\xE5\x88\xA0\xE9\x99\xA4."
+  username_cannot_be_blank: "用户名不能为空"
+  this_feature_is_under_heavy_development: "此功能是大量的开发"
+  alias_is_not_valid: "别名是无效的"
+  details: "详细信息"
+  is_now_uninstalled: "已经卸载完成"
+  global_settings: "全局设置"
+  pdc_primary_domain_controller: "PDC和mdash;主域控制器"
+  networking: "网络"
+  themes: "主题"
+  the_name_you_input_above_will_be_added_to_the_DNS_server: "您上面输入的名称将被添加到下面的DNS服务器和相关的MAC和IP地址。"
+  installation_instructions: "安装说明"
+  testimonials: "褒奖"
+  firewall: "防火墙"
+  version: "版本"
+  path_looks_good: "路径不错"
+  get_involved: "齐来参与！"
+  mac_address: "MAC地址"
+  refresh_status: "刷新状态"
+  this_shares_files_deleted: "这个共享的文件将被删除."
   date: 
     order: 
     - :year
     - :month
     - :day
     abbr_day_names: 
-    - !binary |
-      5pel
-
-    - !binary |
-      5LiA
-
-    - !binary |
-      5LqM
-
-    - !binary |
-      5LiJ
-
-    - !binary |
-      5Zub
-
-    - !binary |
-      5LqU
-
-    - !binary |
-      5YWt
-
+    - "日"
+    - "一"
+    - "二"
+    - "三"
+    - "四"
+    - "五"
+    - "六"
     formats: 
       default: "%Y-%m-%d"
-      short: "%b%d\xE6\x97\xA5"
-      long: "%Y\xE5\xB9\xB4%b%d\xE6\x97\xA5"
+      short: "%b%d日"
+      long: "%Y年%b%d日"
     day_names: 
-    - !binary |
-      5pif5pyf5pel
-
-    - !binary |
-      5pif5pyf5LiA
-
-    - !binary |
-      5pif5pyf5LqM
-
-    - !binary |
-      5pif5pyf5LiJ
-
-    - !binary |
-      5pif5pyf5Zub
-
-    - !binary |
-      5pif5pyf5LqU
-
-    - !binary |
-      5pif5pyf5YWt
-
+    - "星期日"
+    - "星期一"
+    - "星期二"
+    - "星期三"
+    - "星期四"
+    - "星期五"
+    - "星期六"
     abbr_month_names: 
     - 
-    - "1\xE6\x9C\x88"
-    - "2\xE6\x9C\x88"
-    - "3\xE6\x9C\x88"
-    - "4\xE6\x9C\x88"
-    - "5\xE6\x9C\x88"
-    - "6\xE6\x9C\x88"
-    - "7\xE6\x9C\x88"
-    - "8\xE6\x9C\x88"
-    - "9\xE6\x9C\x88"
-    - "10\xE6\x9C\x88"
-    - "11\xE6\x9C\x88"
-    - "12\xE6\x9C\x88"
+    - "1月"
+    - "2月"
+    - "3月"
+    - "4月"
+    - "5月"
+    - "6月"
+    - "7月"
+    - "8月"
+    - "9月"
+    - "10月"
+    - "11月"
+    - "12月"
     month_names: 
     - 
-    - !binary |
-      5LiA5pyI
-
-    - !binary |
-      5LqM5pyI
-
-    - !binary |
-      5LiJ5pyI
-
-    - !binary |
-      5Zub5pyI
-
-    - !binary |
-      5LqU5pyI
-
-    - !binary |
-      5YWt5pyI
-
-    - !binary |
-      5LiD5pyI
-
-    - !binary |
-      5YWr5pyI
-
-    - !binary |
-      5Lmd5pyI
-
-    - !binary |
-      5Y2B5pyI
-
-    - !binary |
-      5Y2B5LiA5pyI
-
-    - !binary |
-      5Y2B5LqM5pyI
-
-  will_not_start_at_boot_time: !binary |
-    5LiN5Lya5Zyo5byV5a+85pe25ZCv5Yqo
-
-  there_are_no_static_ips_defined: "\xE7\x9B\xAE\xE5\x89\x8D\xE6\xB2\xA1\xE6\x9C\x89\xE5\xAE\x9A\xE4\xB9\x89\xE7\x9A\x84\xE9\x9D\x99\xE6\x80\x81IP\xE3\x80\x82"
-  there_are_no_applications_installed: !binary |
-    55uu5YmN5rKh5pyJ5a6J6KOF5LqG55qE5bqU55So44CC
-
-  the_ip_looks good: "IP\xE5\x8F\xAF\xE4\xBB\xA5\xE4\xBD\xBF\xE7\x94\xA8"
-  email_me: !binary |
-    5Y+R55S15a2Q6YKu5Lu257uZ5oiR
-
-  next: !binary |
-    5LiL5LiA5Liq
-
-  web_apps: "Web\xE5\xBA\x94\xE7\x94\xA8"
-  the_name_cannot_be_blank: !binary |
-    6K+l5ZCN56ew5LiN6IO956m655m9
-
-  apache_web_server: "Apache Web\xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8"
-  password_looks_good: !binary |
-    5a+G56CB5Y+v5Lul5L2/55So
-
-  to_recover_your_password: !binary |
-    6KaB5oGi5aSN5oKo55qE5a+G56CB5oiW5r+A5rS76YKu5Lu277yM6K+35Zyo
-    5LiL6Z2i6L6T5YWl5oKo55qE55S15a2Q6YKu5Lu25Zyw5Z2A
-
-  the_ip_address_cannot_be_empty: "IP\xE5\x9C\xB0\xE5\x9D\x80\xE4\xB8\x8D\xE8\x83\xBD\xE4\xB8\xBA\xE7\xA9\xBA"
-  seconds: !binary |
-    56eS
-
-  partition: !binary |
-    5YiG5Yy6
-
-  new_share: !binary |
-    5paw5bu65YiG5Lqr
-
-  computer_name: !binary |
-    6K6h566X5py65ZCN56ew
-
-  this_path_is_not_valid: !binary |
-    6Lev5b6E5piv5peg5pWI55qE
-
-  disabling_lan_manager_will_not_allow_older_machines: "\xE7\xA6\x81\xE7\x94\xA8Windows 95/98 LanManager\xE8\xAE\xA4\xE8\xAF\x81\xE5\xB0\x86\xE4\xB8\x8D\xE5\x85\x81\xE8\xAE\xB8\xE6\x97\xA7\xE6\x9C\xBA\xE5\x99\xA8\xE4\xBD\xBF\xE7\x94\xA8\xE5\x85\xB1\xE4\xBA\xAB\xE3\x80\x82\xE4\xBD\xA0\xE7\xA1\xAE\xE5\xAE\x9A\xE8\xA6\x81\xE7\xA6\x81\xE7\x94\xA8Windows 95/98\xE8\xBA\xAB\xE4\xBB\xBD\xE9\xAA\x8C\xE8\xAF\x81\xE6\xA8\xA1\xE5\xBC\x8F\xEF\xBC\x9F"
-  close: !binary |
-    5YWz6Zet
-
-  this_file_was_automatically_generated_on: "\xEF\xBC\x83\xE8\xBF\x99\xE4\xB8\xAA\xE6\x96\x87\xE4\xBB\xB6\xE6\x98\xAF\xE5\x9C\xA8%{time}\xE8\x87\xAA\xE5\x8A\xA8\xE7\x94\x9F\xE6\x88\x90\xE7\x9A\x84 -\xE8\xAD\xA6\xE5\x91\x8A-\xE5\xB0\x86\xE4\xB8\xA2\xE5\xA4\xB1\xE4\xBB\xBB\xE4\xBD\x95\xE6\x89\x8B\xE5\x8A\xA8\xE7\xBC\x96\xE8\xBE\x91\xEF\xBC\x81"
-  please_select_the_type_of_rule_you_want: !binary |
-    6K+36YCJ5oup6KaB5re75Yqg55qE6KeE5YiZ57G75Z6L44CC
-
-  create_a_new_webapp: "\xE5\x88\x9B\xE5\xBB\xBA\xE4\xB8\x80\xE4\xB8\xAA\xE6\x96\xB0\xE7\x9A\x84Web\xE5\xBA\x94\xE7\x94\xA8"
-  pdc_domain: "PDC\xE7\x9A\x84\xE5\x9F\x9F"
-  home_domain: !binary |
-    6aaW6aG15Z+f5ZCN
-
-  you_have_been_logged_out: !binary |
-    5oKo5bey5rOo6ZSA44CC
-
-  home: !binary |
-    5Li76aG1
-
-  stop_it: !binary |
-    5YGc5q2i5a6D
-
-  total_space: !binary |
-    5oC76K6h56m66Ze0
-
-  never_email_me: !binary |
-    5LiN6KaB5Y+R6YCB6YKu5Lu257uZ5oiR
-
-  path: !binary |
-    6Lev5b6E
-
-  is_now_installed: !binary |
-    5bey57uP5a6J6KOF5a6M5oiQ
-
-  share_name_is_available: !binary |
-    5YWx5Lqr5ZCN5Y+v55So
-
-  powerful_simple_home_networking: !binary |
-    5Yqf6IO95by65aSn77yM566A5Y2V77yM5a625bqt572R57uc
-
-  beta_apps: !binary |
-    5rWL6K+V54mI5bqU55So
-
-  logout: !binary |
-    5rOo6ZSA
-
-  about: !binary |
-    5YWz5LqO
-
-  mac_address_of_the_device: "\xE8\xAE\xBE\xE5\xA4\x87\xE7\x9A\x84MAC\xE5\x9C\xB0\xE5\x9D\x80(\xE4\xBB\xA500:11:22:33:44:55\xE7\x9A\x84\xE5\xBD\xA2\xE5\xBC\x8F)"
-  new_user: !binary |
-    5paw5bu655So5oi3
-
-  docs: !binary |
-    5paH5qGj
-
-  remember_me: !binary |
-    6K6w5L2P5oiR
-
-  alias_is_taken_already: !binary |
-    5L+d55WZ55qE5Yir5ZCN5oiW5bey57uP5L2/55So5LqG55qE5Yir5ZCN
-
-  storage: !binary |
-    5a2Y5YKo
-
-  platform: !binary |
-    5bmz5Y+w
-
-  control_panel_for_your_amahi_hdas: "Amahi HDAs \xE6\x8E\xA7\xE5\x88\xB6\xE9\x9D\xA2\xE6\x9D\xBF "
-  these_rules_are_used_to_restrict_ips: "\xE8\xBF\x99\xE4\xBA\x9B\xE8\xA7\x84\xE5\x88\x99\xE6\x98\xAF\xE7\x94\xA8\xE6\x9D\xA5\xE9\x99\x90\xE5\x88\xB6\xE5\x9C\xA8\xE6\x82\xA8\xE7\x9A\x84\xE6\x9C\xAC\xE5\x9C\xB0\xE7\xBD\x91\xE7\xBB\x9C\xE7\x9A\x84IP\xE5\x88\xB0\xE8\xBE\xBE\xE4\xBA\x92\xE8\x81\x94\xE7\xBD\x91\xE6\x95\xB0\xE6\x8D\xAE\xE5\x8C\x85\xE3\x80\x82\xE4\xBD\xBF\xE7\x94\xA8\xE8\xBF\x99\xE7\xA7\x8D\xE8\xBF\x87\xE6\xBB\xA4\xE5\x99\xA8\xE5\x8F\xAF\xE4\xBF\x9D\xE8\xAF\x81\xE6\x9C\xAC\xE5\x9C\xB0\xE7\xBD\x91\xE7\xBB\x9C\xE7\x9A\x84\xE5\xAE\x89\xE5\x85\xA8\xE6\x88\x96\xE9\x99\x90\xE5\x88\xB6\xE6\x82\xA8\xE7\x9A\x84\xE6\x9C\xAC\xE5\x9C\xB0\xE7\xBD\x91\xE7\xBB\x9C\xE3\x80\x82"
-  permanently: !binary |
-    5rC45LmF
-
-  the_url_is_invalid: "URL\xE6\x98\xAF\xE6\x97\xA0\xE6\x95\x88\xE7\x9A\x84"
-  it_will_be_restarted_by_the_watchdog: "(\xE5\xB0\x86\xE8\xA2\xAB\xE7\x9B\x91\xE8\xA7\x86\xE8\x80\x85\xE9\x87\x8D\xE6\x96\xB0\xE5\x90\xAF\xE5\x8A\xA8)"
-  features: !binary |
-    54m55b6B
-
-  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: !binary |
-    5rOo5oSP77ya55uR6KeG6ICF5q2j5Zyo6L+Q6KGM77yM5bm25LiU5bCG5Zyo
-    5Yeg56eS6ZKf6YeN5paw5ZCv5Yqo44CC
-
-  your_existing_network_gatweay: "\xE6\x82\xA8\xE7\x8E\xB0\xE6\x9C\x89\xE7\x9A\x84\xE7\xBD\x91\xE5\x85\xB3/\xE8\xB7\xAF\xE7\x94\xB1\xE5\x99\xA8"
-  automated_install: !binary |
-    6Ieq5Yqo5a6J6KOF
-
-  there_is_no_undo: "\xE6\xAD\xA4\xE6\xAC\xA1\xE5\x88\xA0\xE9\x99\xA4\xE4\xB8\x8D\xE5\x8F\xAF\xE6\x81\xA2\xE5\xA4\x8D."
-  dhcp_ip_address: "DHCP IP \xE5\x9C\xB0\xE5\x9D\x80"
-  installed_paren: "(\xE5\xB7\xB2\xE5\xAE\x89\xE8\xA3\x85)"
-  awake_this_device_via_wol: 打开此设备
+    - "一月"
+    - "二月"
+    - "三月"
+    - "四月"
+    - "五月"
+    - "六月"
+    - "七月"
+    - "八月"
+    - "九月"
+    - "十月"
+    - "十一月"
+    - "十二月"
+  will_not_start_at_boot_time: "不会在引导时启动"
+  there_are_no_static_ips_defined: "目前没有定义的静态IP。"
+  there_are_no_applications_installed: "目前没有安装了的应用。"
+  the_ip_looks good: "IP可以使用"
+  email_me: "发电子邮件给我"
+  next: "下一个"
+  web_apps: "Web应用"
+  the_name_cannot_be_blank: "该名称不能空白"
+  apache_web_server: "Apache Web服务器"
+  password_looks_good: "密码可以使用"
+  to_recover_your_password: "要恢复您的密码或激活邮件，请在下面输入您的电子邮件地址"
+  the_ip_address_cannot_be_empty: "IP地址不能为空"
+  seconds: "秒"
+  partition: "分区"
+  new_share: "新建分享"
+  computer_name: "计算机名称"
+  this_path_is_not_valid: "路径是无效的"
+  disabling_lan_manager_will_not_allow_older_machines: "禁用Windows 95/98 LanManager认证将不允许旧机器使用共享。你确定要禁用Windows 95/98身份验证模式？"
+  close: "关闭"
+  this_file_was_automatically_generated_on: "＃这个文件是在%{time}自动生成的 -警告-将丢失任何手动编辑！"
+  please_select_the_type_of_rule_you_want: "请选择要添加的规则类型。"
+  create_a_new_webapp: "创建一个新的Web应用"
+  pdc_domain: "PDC的域"
+  home_domain: "首页域名"
+  you_have_been_logged_out: "您已注销。"
+  home: "主页"
+  stop_it: "停止它"
+  total_space: "总计空间"
+  never_email_me: "不要发送邮件给我"
+  path: "路径"
+  is_now_installed: "已经安装完成"
+  share_name_is_available: "共享名可用"
+  powerful_simple_home_networking: "功能强大，简单，家庭网络"
+  beta_apps: "测试版应用"
+  logout: "注销"
+  about: "关于"
+  mac_address_of_the_device: "设备的MAC地址(以00:11:22:33:44:55的形式)"
+  new_user: "新建用户"
+  docs: "文档"
+  remember_me: "记住我"
+  alias_is_taken_already: "保留的别名或已经使用了的别名"
+  storage: "存储"
+  platform: "平台"
+  control_panel_for_your_amahi_hdas: "Amahi HDAs 控制面板 "
+  these_rules_are_used_to_restrict_ips: "这些规则是用来限制在您的本地网络的IP到达互联网数据包。使用这种过滤器可保证本地网络的安全或限制您的本地网络。"
+  permanently: "永久"
+  the_url_is_invalid: "URL是无效的"
+  it_will_be_restarted_by_the_watchdog: "(将被监视者重新启动)"
+  features: "特征"
+  the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "注意：监视者正在运行，并且将在几秒钟重新启动。"
+  your_existing_network_gatweay: "您现有的网关/路由器"
+  automated_install: "自动安装"
+  there_is_no_undo: "此次删除不可恢复."
+  dhcp_ip_address: "DHCP IP 地址"
+  installed_paren: "(已安装)"
+  awake_this_device_via_wol: "打开此设备"

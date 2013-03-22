@@ -58,7 +58,7 @@ nl:
   static_ips: Statische IP adressen
   mac_address_to_be_filtered_in_format: MAC adres dat gefilterd moet worden (in de vorm 11:22:33:44:55)
   my_apps: Mijn toepassingen
-  disk_pool_copies: "Extra copi\xC3\xABen"
+  disk_pool_copies: "Extra copiëen"
   cancel: Annuleren
   port_range_ports_must_be_increasing_order: De eerste poort moet minder of gelijk zijn aan de tweede poort
   password_is_too_short: Wachtwoord is te kort
@@ -83,7 +83,7 @@ nl:
   debug: Debuggen
   the_ip_address_can_be: Het IP adres kan zijn
   read_only: Alleen lezen
-  install_code_info: "De installatie code bekijkt alle instellingen voor uw HDA en word eenmalig gebruikt als laatste stap tijdens de installatie van uw HDA. U kunt het beter NIET op meerdere systemen gebruiken, dit zorgt voor fouten in de dynamische DNS en VPN. Cre\xC3\xABer een nieuw profiel voor elke HDA die u heeft."
+  install_code_info: "De installatie code bekijkt alle instellingen voor uw HDA en word eenmalig gebruikt als laatste stap tijdens de installatie van uw HDA. U kunt het beter NIET op meerdere systemen gebruiken, dit zorgt voor fouten in de dynamische DNS en VPN. Creëer een nieuw profiel voor elke HDA die u heeft."
   url_filtering: URL Filtering
   available: Beschikbaar
   this_will_power_off: |-
@@ -98,7 +98,7 @@ nl:
   press: Pers
   share_path_cannot_be_blank: Pad van gedeelde map kan niet leeg zijn.
   address_is_not_valid: Adres is niet geldig
-  create_alias: "Cre\xC3\xABer alias"
+  create_alias: "Creëer alias"
   web: Web
   delete_alias: Verwijder alias
   recover: achterhalen
@@ -140,7 +140,7 @@ nl:
   restart: Herstart
   confirm: Bevestigen
   sign_out: Afmelden
-  this_application_is_installed_already_please_refresh: "Deze toepassing is al ge\xC3\xAFnstalleerd. Vernieuw deze webpagina."
+  this_application_is_installed_already_please_refresh: "Deze toepassing is al geïnstalleerd. Vernieuw deze webpagina."
   state: Toestand
   new_web_app: Nieuwe web applicatie
   email: Email
@@ -244,9 +244,7 @@ nl:
     currency: 
       format: 
         format: "%u %n"
-        unit: !binary |
-          4oKs
-
+        unit: "€"
         separator: .
         precision: 2
         delimiter: .
@@ -256,7 +254,7 @@ nl:
   username: Gebruikersnaam
   are_you_sure_you_want_to_restart_the_server: Weet u zeker dat u %{name} opnieuw wil starten?
   done_final_check: Klaar! laatste check
-  this_application_is_not_installed_please_refresh: "Deze toepassing is niet ge\xC3\xAFnstalleerd. Vernieuw deze webpagina."
+  this_application_is_not_installed_please_refresh: "Deze toepassing is niet geïnstalleerd. Vernieuw deze webpagina."
   user_name_is_available: Gebruikersnaam is beschikbaar
   first_time_admin_setup: Eerste Admin setup. Creeer aub nogmaals uw wachtwoord.
   news: Nieuws
@@ -304,7 +302,7 @@ nl:
       year: jaar
     distance_in_words: 
       less_than_x_minutes: 
-        one: "minder dan \xC3\xA9\xC3\xA9n minuut"
+        one: "minder dan één minuut"
         other: minder dan %{count} minuten
       x_days: 
         one: 1 dag
@@ -313,10 +311,10 @@ nl:
         one: 1 seconde
         other: "%{count} seconden"
       about_x_hours: 
-        one: "ongeveer \xC3\xA9\xC3\xA9n uur"
+        one: "ongeveer één uur"
         other: ongeveer %{count} uur
       less_than_x_seconds: 
-        one: "minder dan \xC3\xA9\xC3\xA9n seconde"
+        one: "minder dan één seconde"
         other: minder dan %{count} seconden
       x_months: 
         one: 1 maand
@@ -325,13 +323,13 @@ nl:
         one: 1 minuut
         other: "%{count} minuten"
       about_x_years: 
-        one: "ongeveer \xC3\xA9\xC3\xA9n jaar"
+        one: "ongeveer één jaar"
         other: ongeveer %{count} jaren
       about_x_months: 
-        one: "ongeveer \xC3\xA9\xC3\xA9n maand"
+        one: "ongeveer één maand"
         other: ongeveer %{count} maanden
       over_x_years: 
-        one: "langer dan \xC3\xA9\xC3\xA9n jaar"
+        one: "langer dan één jaar"
         other: langer %{count} jaar
       half_a_minute: halve minuut
   nickname: Gebruikersnaam
@@ -367,7 +365,7 @@ nl:
   back: Terug
   notifications_from_amahi: Notificaties van amahi
   support_win_95_98: Ondersteuning Windows 95/98 - schakeld onveilige LanManager authenticatie in
-  there_are_no_calendars_available_see_wiki: "Er zijn geen agenda's beschikbaar op de server. Maak ze met een kalender cli\xC3\xABnt. Zie de <a href=\"http://wiki.amahi.org/index.php/Calendars\">Kalenders wiki</a>."
+  there_are_no_calendars_available_see_wiki: "Er zijn geen agenda's beschikbaar op de server. Maak ze met een kalender cliënt. Zie de <a href=\"http://wiki.amahi.org/index.php/Calendars\">Kalenders wiki</a>."
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: |-
     Inschakelen van debug zorgt mogenlijk voor grote log bestanden.
     Weet je zeker dat je samba debug in wil schakelen?
@@ -387,7 +385,7 @@ nl:
   this_share_name_is_not_valid: Deze gedeelde map naam is niet geldig
   there_are_no_applications_available: Er zijn geen toepassingen beschikbaar op dit moment.
   ip_filtering: IP filtering
-  create: "Cre\xC3\xABer"
+  create: "Creëer"
   guest_dashboard: Gasten Dashboard
   view_all_calendars_simultaneously: Alle kalenders tegelijk bekijken
   music: Muziek
@@ -402,7 +400,7 @@ nl:
   dynamic_dns: Dynamische DNS
   the_ip_must_be_1_to_254: "Het IP adres moet in de volgende bereik liggen: 1-254"
   not_a_valid_user_or_password: "Fout: Ongeldige gebruikersnaam of ongeldig wachtwoord"
-  create_your_hda_profile: "cre\xC3\xABer uw HDA profiel"
+  create_your_hda_profile: "creëer uw HDA profiel"
   your_home_dns_domain: Uw thuis DNS Domein
   theme_by: Thema door
   forums: Forums
@@ -419,7 +417,7 @@ nl:
   delete_this_rule: Verwijder deze regel
   images: Afbeeldingen
   language: Taal
-  this_application_is_installed: "Deze Toepassing is ge\xC3\xAFnstalleerd."
+  this_application_is_installed: "Deze Toepassing is geïnstalleerd."
   share: Gedeelde map
   partitions: Partities
   router_setting_failed: Router instellen mislukt. Bekijk uw instellingen.
@@ -443,7 +441,7 @@ nl:
   efficiently_manage_your_network: Beheer efficient het netwerk en backup alle computers, console's en andere apparaten op uw netwerk, en bereik uw netwerk op afstand via een beveiligde verbinding. Dit is enkel het begin van wat u allemaal kunt doen met Amahi!
   port_range_field_cannot_be_empty: Deze velden kunnen niet leeg zijn
   available_for_installation: (Beschikbaar voor installatie)
-  create_share: "Cre\xC3\xABer deze gedeelde map"
+  create_share: "Creëer deze gedeelde map"
   apps: Toepassingen
   translate_amahi: Vertaal Amahi
   alias_looks_good: Alias ziet er goed uit
@@ -579,7 +577,7 @@ nl:
   installation_instructions: Installatie instructies
   control_panel_for_your_amahi_hdas: Configuratiescherm voor uw Amahi HDA
   please_select_the_type_of_rule_you_want: Selecteer alstublieft het type regel dat u toe wil voegen.
-  create_a_new_webapp: "Cre\xC3\xABer een nieuwe web toepassing"
+  create_a_new_webapp: "Creëer een nieuwe web toepassing"
   refresh_status: Vernieuwen status
   home: Start
   will_not_start_at_boot_time: Zal <b>niet</b> gestart worden tijdens het opstarten

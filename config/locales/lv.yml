@@ -1,191 +1,171 @@
 --- 
 lv: 
-  new_user: "Jauns lietot\xC4\x81js"
-  alias_is_taken_already: "Aizst\xC4\x81jv\xC4\x81rds ir jau aiz\xC5\x86emts vai rezerv\xC4\x93ts"
-  storage: "Kr\xC4\x81tuve"
-  user_name_is_not_available: "Lietot\xC4\x81jv\xC4\x81rds nav pieejams"
+  new_user: "Jauns lietotājs"
+  alias_is_taken_already: "Aizstājvārds ir jau aizņemts vai rezervēts"
+  storage: "Krātuve"
+  user_name_is_not_available: "Lietotājvārds nav pieejams"
   are_you_sure_share: ""
   this_looks_like_a_database_corruption_please_report_it: ""
-  mac_looks_good: "MAC izskat\xC4\x81s labi"
+  mac_looks_good: "MAC izskatās labi"
   wiki: Wiki
   these_rules_are_used_to_restrict_ips: ""
-  confirm_email: "Apstiprin\xC4\x81t e-pastu"
-  last_login: !binary |
-    UMSTZMSTasSBIHBpZXNsxJNnxaFhbsSBcw==
-
+  confirm_email: "Apstiprināt e-pastu"
+  last_login: "Pēdējā pieslēgšanās"
   setup: Iestatne
   start_at_boot_time: ""
   news_about_applications: ""
-  delete_profile: "Dz\xC4\x93st profilu"
-  delete_user: "Dz\xC4\x93st lietot\xC4\x81ju"
+  delete_profile: "Dzēst profilu"
+  delete_user: "Dzēst lietotāju"
   running: Darbojas
-  start_building_a_new_hda: "S\xC4\x81kt b\xC5\xABv\xC4\x93t jaunu HDA!"
-  delete: !binary |
-    RHrEk3N0
-
-  name_is_taken_already: "V\xC4\x81rds jau ir aiz\xC5\x86emts"
+  start_building_a_new_hda: "Sākt būvēt jaunu HDA!"
+  delete: "Dzēst"
+  name_is_taken_already: "Vārds jau ir aizņemts"
   are_you_sure_webapp: ""
   unleash_the_power_of_your_home_network: ""
-  installed_paren: "(Instal\xC4\x93ts)"
-  automated_install: "Automatiz\xC4\x93t\xC4\x81 instal\xC4\x81cija"
-  need_help_logging_in: "Vajag pal\xC4\xABdz\xC4\xABbu piesl\xC4\x93gties?"
-  confirm_password: "Apstiprin\xC4\x81t paroli"
+  installed_paren: "(Instalēts)"
+  automated_install: "Automatizētā instalācija"
+  need_help_logging_in: "Vajag palīdzību pieslēgties?"
+  confirm_password: "Apstiprināt paroli"
   tour: ""
-  address_already_allocated: "Adrese jau ir pie\xC5\xA1\xC4\xB7irta"
+  address_already_allocated: "Adrese jau ir piešķirta"
   new: Jauns
   are_you_sure_you_want_to_stop_the_server: ""
   disabling_pdc_will_enable_workgroup_mode: ""
-  finalize_settings: "Pabeigt iestat\xC4\xABjumus"
-  address_looks_good: "Adrese izskat\xC4\x81s labi"
-  confirmation_must_match: "Apstiprin\xC4\x81jumam j\xC4\x81sakr\xC4\xABt"
-  stopped: !binary |
-    QXBzdMSBZGluxIF0cw==
-
-  applications: "Aplik\xC4\x81cijas"
+  finalize_settings: "Pabeigt iestatījumus"
+  address_looks_good: "Adrese izskatās labi"
+  confirmation_must_match: "Apstiprinājumam jāsakrīt"
+  stopped: "Apstādināts"
+  applications: "Aplikācijas"
   this_ip_address_will_always_be_statically_associated_to_the_mac_address: ""
   this_path_exists_already: ""
-  poweroff: "Izsl\xC4\x93gt"
-  router_control: !binary |
-    TWFyxaFydXTEk3TEgWphIHZhZMSrYmE=
-
+  poweroff: "Izslēgt"
+  router_control: "Maršrutētāja vadība"
   are_you_sure_you_would_like_to_delete_calendar: ""
   openvpn_server: ""
   port_range_looks_good: ""
   disk: Disks
   location: Vieta
-  require_login: "Pras\xC4\xABt piesl\xC4\x93g\xC5\xA1anos"
-  theme: !binary |
-    VMSTbWE=
-
+  require_login: "Prasīt pieslēgšanos"
+  theme: "Tēma"
   disks: Diski
   rule: ""
-  static_ips: "Statisk\xC4\x81s IP"
-  mac_address_to_be_filtered_in_format: "MAC adreses filtr\xC4\x93\xC5\xA1ani (form\xC4\x81 00:11:22:33:44:55)"
+  static_ips: "Statiskās IP"
+  mac_address_to_be_filtered_in_format: "MAC adreses filtrēšani (formā 00:11:22:33:44:55)"
   my_apps: ""
   disk_pool_copies: Papildus kopijas
   cancel: Atcelt
   port_range_ports_must_be_increasing_order: ""
-  password_is_too_short: "Parole ir par \xC4\xABsu"
-  preparing_to_install: "Gatavojas instal\xC4\x81cijai..."
+  password_is_too_short: "Parole ir par īsu"
+  preparing_to_install: "Gatavojas instalācijai..."
   model: Modelis
   are_you_sure_you_want_to_start_the_server: ""
   nickname_info: ""
   files: Faili
   by_signing_up_you_agree_to_the_terms_of_service: ""
-  the_url_looks_good: "URL izskat\xC4\x81s labi"
-  application_uninstalled: "Aplik\xC4\x81cija atinstal\xC4\x93ta."
+  the_url_looks_good: "URL izskatās labi"
+  application_uninstalled: "Aplikācija atinstalēta."
   delete_web_app: ""
-  free_space: "Br\xC4\xABva vieta"
+  free_space: "Brīva vieta"
   url: URL
   are_you_sure_you_would_like_to_uninstall: ""
-  temperature: "Temperat\xC5\xABra"
-  users: "Lietot\xC4\x81ji"
-  debug: !binary |
-    QXRrxLzFq2RvxaFhbmE=
-
-  the_ip_address_can_be: "IP adrese var b\xC5\xABt"
-  read_only: "Tikai las\xC4\x81ms"
+  temperature: "Temperatūra"
+  users: "Lietotāji"
+  debug: "Atkļūdošana"
+  the_ip_address_can_be: "IP adrese var būt"
+  read_only: "Tikai lasāms"
   install_code_info: ""
-  url_filtering: "URL filtr\xC4\x93\xC5\xA1ana"
+  url_filtering: "URL filtrēšana"
   available: Pieejams
   this_will_power_off: ""
-  edit_static_ip: "Redi\xC4\xA3\xC4\x93t statisko IP"
+  edit_static_ip: "Rediģēt statisko IP"
   add_extra_parameters: (pievienot papildus parametrus)
-  system_info: "Sist\xC4\x93mas info"
+  system_info: "Sistēmas info"
   this_path_is_not_available: ""
   firewall_port_filter_message: ""
   press: Nospiest
   share_path_cannot_be_blank: ""
-  address_is_not_valid: "Adrese ir neder\xC4\xABga"
-  create_alias: "Izveidot aizst\xC4\x81jv\xC4\x81rdu"
-  installed: "Instal\xC4\x93ts"
+  address_is_not_valid: "Adrese ir nederīga"
+  create_alias: "Izveidot aizstājvārdu"
+  installed: "Instalēts"
   helpers: 
     submit: 
-      submit: "Saglab\xC4\x81t %{model}"
+      submit: "Saglabāt %{model}"
       create: Izveidot %{model}
-      update: "Atjaunin\xC4\x81t %{model}"
+      update: "Atjaunināt %{model}"
     select: 
-      prompt: "L\xC5\xABdzu izv\xC4\x93lies"
-  web: !binary |
-    VMSrbWVrbMSr
-
-  delete_alias: "Dz\xC4\x93st aizst\xC4\x81jv\xC4\x81rdu"
-  recover: !binary |
-    QXRnxat0
-
-  start_now: "S\xC4\x81kt tagad"
+      prompt: "Lūdzu izvēlies"
+  web: "Tīmeklī"
+  delete_alias: "Dzēst aizstājvārdu"
+  recover: "Atgūt"
+  start_now: "Sākt tagad"
   the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: ""
   core: ""
-  application: "Aplik\xC4\x81cija"
-  advanced_settings: "Papildu iestat\xC4\xABjumi"
+  application: "Aplikācija"
+  advanced_settings: "Papildu iestatījumi"
   check_the_features_take_the_tour: ""
   this_will_stop_the_server_permanently: ""
-  your_control_panel: "J\xC5\xABsu vad\xC4\xABbas panelis"
-  full_name: "Pilns v\xC4\x81rds"
-  shares: "Koplieto\xC5\xA1ana"
-  manage_themes: !binary |
-    UMSBcnZhbGTEq3QgdMSTbWFz
-
+  your_control_panel: "Jūsu vadības panelis"
+  full_name: "Pilns vārds"
+  shares: "Koplietošana"
+  manage_themes: "Pārvaldīt tēmas"
   tracker: ""
   discussion_forum_for: Diskusiju forums
   rule_type: ""
-  aliases: "Aizst\xC4\x81jv\xC4\x81rdi"
-  network: !binary |
-    VMSra2xz
-
-  change_your_account_settings: "Main\xC4\xABt sava konta iestat\xC4\xABjumus"
+  aliases: "Aizstājvārdi"
+  network: "Tīkls"
+  change_your_account_settings: "Mainīt sava konta iestatījumus"
   port_range_ports_must_be_0_to_64k: ""
   share_path_is_available: ""
   this_could_be_due_to_lack_of_network_connectivity: ""
   enabling_lan_manager_is_less_secure: ""
-  special_instructions: "\xC4\xAApa\xC5\xA1as instrukcijas"
+  special_instructions: "Īpašas instrukcijas"
   there_are_no_dynamic_dhcp_leases_outstanding: ""
-  login: "Piesl\xC4\x93gties"
+  login: "Pieslēgties"
   edit_share: ""
   dhcp_lease: ""
-  change: "Izmain\xC4\xABt"
+  change: "Izmainīt"
   status: Status
-  dhcp_active: "Akt\xC4\xABvs"
+  dhcp_active: "Aktīvs"
   not_updating: ""
   videos: Video
-  restart: "Restart\xC4\x93t"
-  confirm: "Apstiprin\xC4\x81t"
-  name_is_not_valid: "V\xC4\x81rds nav der\xC4\xABgs"
-  sign_out: "Atsl\xC4\x93gties"
+  restart: "Restartēt"
+  confirm: "Apstiprināt"
+  name_is_not_valid: "Vārds nav derīgs"
+  sign_out: "Atslēgties"
   this_application_is_installed_already_please_refresh: ""
-  state: "St\xC4\x81voklis"
+  state: "Stāvoklis"
   new_web_app: ""
   email: E-pasts
-  full_name_looks_good: "Pilns v\xC4\x81rds izskat\xC4\x81s labi"
+  full_name_looks_good: "Pilns vārds izskatās labi"
   workgroup_name: Darbgrupas nosaukums
-  name_looks_good: "V\xC4\x81rds izskat\xC4\x81s labi"
-  new_alias: "Jauns aizst\xC4\x81jv\xC4\x81rds"
+  name_looks_good: "Vārds izskatās labi"
+  new_alias: "Jauns aizstājvārds"
   must_be_logged_in: ""
   rebooting: Notiek restarts...
-  uptime: "Darbsp\xC4\x93jas laiks"
+  uptime: "Darbspējas laiks"
   disk_pooling: ""
-  this_will_reboot: "HDA tiks restart\xC4\x93ts.\r\n Vai esat p\xC4\x81rliecin\xC4\x81ts, ka v\xC4\x93laties turpin\xC4\x81t?"
+  this_will_reboot: "HDA tiks restartēts.\r\n Vai esat pārliecināts, ka vēlaties turpināt?"
   dns_aliases: ""
-  used_space: "Izmantot\xC4\x81 vieta"
-  static_ip_address_for_your_hda: "J\xC5\xABsu HDA statisk\xC4\x81 IP adrese"
-  comment: "Koment\xC4\x81rs"
+  used_space: "Izmantotā vieta"
+  static_ip_address_for_your_hda: "Jūsu HDA statiskā IP adrese"
+  comment: "Komentārs"
   the_alias_name_you_input_will_be_added: ""
-  root_path: "Saknes&nbsp;ce\xC4\xBC\xC5\xA1"
-  search: "Mekl\xC4\x93t"
-  upcoming: "Gaid\xC4\x81ms"
-  username_or_email: "Lietot\xC4\x81jv\xC4\x81rds vai e-pasts"
-  network_settings: "T\xC4\xABkla iestat\xC4\xABjumi"
+  root_path: "Saknes&nbsp;ceļš"
+  search: "Meklēt"
+  upcoming: "Gaidāms"
+  username_or_email: "Lietotājvārds vai e-pasts"
+  network_settings: "Tīkla iestatījumi"
   no_documents_found: ""
-  all_users: "Visi lietot\xC4\x81ji"
+  all_users: "Visi lietotāji"
   visible: Redzams
   create_a_new_share: ""
   enabling_pdc_is_a_major_share_change: ""
-  delete_static_ip: "Dz\xC4\x93st statisko IP"
+  delete_static_ip: "Dzēst statisko IP"
   audio: Audio
   dashboard: Panelis
   this_ip_will_be_filtered: ""
-  dns_alias: "DNS aizst\xC4\x81jv\xC4\x81rds"
-  url_to_filter: "Filtr\xC4\x93jamais URL"
+  dns_alias: "DNS aizstājvārds"
+  url_to_filter: "Filtrējamais URL"
   the_boot_option_is_a_critical_setting: ""
   greyhole_not_installed: ""
   must_be_admin: ""
@@ -195,40 +175,38 @@ lv:
   activerecord: 
     errors: 
       messages: 
-        greater_than_or_equal_to: "ir j\xC4\x81b\xC5\xABt liel\xC4\x81kam vai vien\xC4\x81dam ar %{count}"
-        record_invalid: "P\xC4\x81rbaude neizdev\xC4\x81s: %{errors}"
-        confirmation: "nesakr\xC4\xABt ar apstiprin\xC4\x81jumu"
-        less_than_or_equal_to: "ir j\xC4\x81b\xC5\xABt maz\xC4\x81kam vai vien\xC4\x81dam ar %{count}"
-        not_an_integer: "ir j\xC4\x81b\xC5\xABt veselam skaitlim"
-        blank: "ir j\xC4\x81b\xC5\xABt aizpild\xC4\xABtam"
+        greater_than_or_equal_to: "ir jābūt lielākam vai vienādam ar %{count}"
+        record_invalid: "Pārbaude neizdevās: %{errors}"
+        confirmation: "nesakrīt ar apstiprinājumu"
+        less_than_or_equal_to: "ir jābūt mazākam vai vienādam ar %{count}"
+        not_an_integer: "ir jābūt veselam skaitlim"
+        blank: "ir jābūt aizpildītam"
         exclusion: nav pieejams
-        invalid: "nav der\xC4\xABgs"
-        odd: "ir j\xC4\x81b\xC5\xABt nep\xC4\x81ra skaitlim"
-        even: "ir j\xC4\x81b\xC5\xABt p\xC4\x81ra skaitlim"
-        too_short: "ir par \xC4\xABsu (minimums ir %{count} z\xC4\xABmes)"
-        wrong_length: "ir nepareizs garums (j\xC4\x81b\xC5\xABt %{count} z\xC4\xABm\xC4\x93m)"
-        empty: "ir j\xC4\x81b\xC5\xABt aizpild\xC4\xABtam"
-        less_than: "ir j\xC4\x81b\xC5\xABt maz\xC4\x81kam par %{count}"
-        greater_than: "ir j\xC4\x81b\xC5\xABt liel\xC4\x81kam par %{count}"
-        equal_to: "ir j\xC4\x81b\xC5\xABt vien\xC4\x81dam ar %{count}"
-        too_long: "ir par garu (maksimums ir %{count} z\xC4\xABmes)"
-        taken: "ir jau aiz\xC5\x86emts"
-        accepted: "ir j\xC4\x81piekr\xC4\xABt"
-        inclusion: "nav iek\xC4\xBCauts sarakst\xC4\x81"
+        invalid: "nav derīgs"
+        odd: "ir jābūt nepāra skaitlim"
+        even: "ir jābūt pāra skaitlim"
+        too_short: "ir par īsu (minimums ir %{count} zīmes)"
+        wrong_length: "ir nepareizs garums (jābūt %{count} zīmēm)"
+        empty: "ir jābūt aizpildītam"
+        less_than: "ir jābūt mazākam par %{count}"
+        greater_than: "ir jābūt lielākam par %{count}"
+        equal_to: "ir jābūt vienādam ar %{count}"
+        too_long: "ir par garu (maksimums ir %{count} zīmes)"
+        taken: "ir jau aizņemts"
+        accepted: "ir jāpiekrīt"
+        inclusion: "nav iekļauts sarakstā"
         not_a_number: nav skaitlis
       full_messages: 
         format: "%{attribute}%{message}"
       template: 
-        body: "Probl\xC4\x93mas ir \xC5\xA1ajos ievades laukos:"
+        body: "Problēmas ir šajos ievades laukos:"
         header: 
-          one: "D\xC4\x93\xC4\xBC 1 k\xC4\xBC\xC5\xABdas \xC5\xA1is %{model} netika saglab\xC4\x81ts"
-          other: "D\xC4\x93\xC4\xBC %{count} k\xC4\xBC\xC5\xABd\xC4\x81m \xC5\xA1is %{model} netika saglab\xC4\x81ts"
+          one: "Dēļ 1 kļūdas šis %{model} netika saglabāts"
+          other: "Dēļ %{count} kļūdām šis %{model} netika saglabāts"
   there_are_no_static_dhcp_leases: ""
-  live_help: !binary |
-    RHrEq3bEgSBwYWzEq2R6xKtiYQ==
-
-  edit_user: "Redi\xC4\xA3\xC4\x93t lietot\xC4\x81ju"
-  control_panel: "Vad\xC4\xABbas panelis"
+  live_help: "Dzīvā palīdzība"
+  edit_user: "Rediģēt lietotāju"
+  control_panel: "Vadības panelis"
   share_name_cannot_be_blank: ""
   get_started: ""
   transmission_bittorrent_server: Transmission Bittorrent serveris
@@ -266,7 +244,7 @@ lv:
           quadrillion: Kvadriljons
           million: Miljons
           unit: ""
-          thousand: "T\xC5\xABkstotis"
+          thousand: "Tūkstotis"
     percentage: 
       format: 
         delimiter: ""
@@ -285,61 +263,55 @@ lv:
   mysql_database_server: MySQL DB serveris
   edit_and_rate_beta_apps: ""
   or_view_each_one_separately_below: ""
-  username: "Lietot\xC4\x81jv\xC4\x81rds"
+  username: "Lietotājvārds"
   are_you_sure_you_want_to_restart_the_server: ""
-  done_final_check: !binary |
-    RGFyxKt0cyEgTm9zbMSTZHpvxaHEgSBwxIFyYmF1ZGU=
-
+  done_final_check: "Darīts! Noslēdzošā pārbaude"
   this_application_is_not_installed_please_refresh: ""
-  user_name_is_available: "Lietot\xC4\x81jv\xC4\x81rds ir pieejams"
+  user_name_is_available: "Lietotājvārds ir pieejams"
   first_time_admin_setup: ""
   password: Parole
-  access: "Piek\xC4\xBCuve"
+  access: "Piekļuve"
   news: Jaunumi
   avanced_settings_is_for_developers: ""
   there_are_no_shares_created: ""
   created: Izveidots
   watchdog: Sargsuns
   stop: Stop
-  device: "Iek\xC4\x81rta"
-  preparing_to_uninstall: "Gatavojas atinstal\xC4\x93t..."
-  initial_user: "Lietot\xC4\x81jv\xC4\x81rds"
+  device: "Iekārta"
+  preparing_to_uninstall: "Gatavojas atinstalēt..."
+  initial_user: "Lietotājvārds"
   admin_setup_worked: ""
   time: 
-    am: "priek\xC5\xA1pusdiena"
+    am: "priekšpusdiena"
     formats: 
       default: "%Y. gada %e. %B, %H:%M"
       short: "%d.%m.%Y., %H:%M"
       long: "%Y. gada %e. %B, %H:%M:%S"
-    pm: "p\xC4\x93cpusdiena"
+    pm: "pēcpusdiena"
   dns_server: DNS serveris
-  sign_up_here: "Piere\xC4\xA3istr\xC4\x93ties \xC5\xA1eit"
+  sign_up_here: "Piereģistrēties šeit"
   servers: Serveri
-  router_ip: !binary |
-    TWFyxaFydXTEk3TEgWphIElQ
-
-  general_amahi_news: "Visp\xC4\x81r\xC4\x93jas Amahi zi\xC5\x86as"
+  router_ip: "Maršrutētāja IP"
+  general_amahi_news: "Vispārējas Amahi ziņas"
   feedback: Atsauksmes
-  name: !binary |
-    VsSBcmRz
-
-  awake_this_device_via_wol: "Pamodin\xC4\x81t \xC5\xA1o ier\xC4\xABci"
+  name: "Vārds"
+  awake_this_device_via_wol: "Pamodināt šo ierīci"
   port_forwarding: ""
   datetime: 
     prompts: 
-      minute: "min\xC5\xABte"
+      minute: "minūte"
       second: sekunde
-      month: "m\xC4\x93nesis"
+      month: "mēnesis"
       hour: stunda
       day: diena
       year: gads
     distance_in_words: 
       less_than_x_minutes: 
-        one: "maz\xC4\x81k par vienu min\xC5\xABti"
-        other: "maz\xC4\x81k par %{count} min\xC5\xABt\xC4\x93m"
+        one: "mazāk par vienu minūti"
+        other: "mazāk par %{count} minūtēm"
       almost_x_years: 
-        one: "gandr\xC4\xABz 1 gads"
-        other: "gandr\xC4\xABz %{count} gadi"
+        one: "gandrīz 1 gads"
+        other: "gandrīz %{count} gadi"
       x_days: 
         one: 1 diena
         other: "%{count} dienas"
@@ -347,227 +319,200 @@ lv:
         one: 1 sekunde
         other: "%{count} sekundes"
       about_x_hours: 
-        one: "apm\xC4\x93ram 1 stunda"
-        other: "apm\xC4\x93ram %{count} stundas"
+        one: "apmēram 1 stunda"
+        other: "apmēram %{count} stundas"
       less_than_x_seconds: 
-        one: "maz\xC4\x81k par vienu sekundi"
-        other: "maz\xC4\x81k par %{count} sekund\xC4\x93m"
+        one: "mazāk par vienu sekundi"
+        other: "mazāk par %{count} sekundēm"
       x_months: 
-        one: "1 m\xC4\x93nesis"
-        other: "%{count} m\xC4\x93ne\xC5\xA1i"
+        one: "1 mēnesis"
+        other: "%{count} mēneši"
       x_minutes: 
-        one: "1 min\xC5\xABte"
-        other: "%{count} min\xC5\xABtes"
+        one: "1 minūte"
+        other: "%{count} minūtes"
       about_x_years: 
-        one: "apm\xC4\x93ram 1 gads"
-        other: "apm\xC4\x93ram %{count} gadi"
+        one: "apmēram 1 gads"
+        other: "apmēram %{count} gadi"
       about_x_months: 
-        one: "apm\xC4\x93ram 1 m\xC4\x93nesis"
-        other: "apm\xC4\x93ram %{count} m\xC4\x93ne\xC5\xA1i"
+        one: "apmēram 1 mēnesis"
+        other: "apmēram %{count} mēneši"
       over_x_years: 
-        one: "vair\xC4\x81k k\xC4\x81 gads"
-        other: "vair\xC4\x81k k\xC4\x81 %{count} gadi"
-      half_a_minute: "pusmin\xC5\xABte"
+        one: "vairāk kā gads"
+        other: "vairāk kā %{count} gadi"
+      half_a_minute: "pusminūte"
   nickname: Iesauka
   check_the_calendars_wiki_for_more_details: ""
   pooled: ""
   edit_web_app: ""
   movies: Filmas
-  mac_already_allocated: "MAC jau pie\xC5\xA1\xC4\xB7irta"
+  mac_already_allocated: "MAC jau piešķirta"
   dyndns_info: ""
-  confirmation_matches: "Apstiprin\xC4\x81jums sakr\xC4\xABt"
+  confirmation_matches: "Apstiprinājums sakrīt"
   setting_dmz_failed: ""
-  logs: !binary |
-    xb11cm7EgWxp
-
-  this_name_is_not_available: "V\xC4\x81rds nav pieejams"
-  password_changed_successfully: "Parole veikm\xC4\xABgi nomain\xC4\xABta"
+  logs: "Žurnāli"
+  this_name_is_not_available: "Vārds nav pieejams"
+  password_changed_successfully: "Parole veikmīgi nomainīta"
   will_start_at_boot_time: ""
-  calendar_name: "Kalend\xC4\x81ra nosaukums"
+  calendar_name: "Kalendāra nosaukums"
   this_application_install_ended_with_an_error_please_uninstall_status_is: ""
-  mac_filtering: "MAC filtr\xC4\x93\xC5\xA1ana"
+  mac_filtering: "MAC filtrēšana"
   tags: Birkas
-  router_firewall_settings: "Mar\xC5\xA1rut\xC4\x93t\xC4\x81ja/Ugunsm\xC5\xABra iestat\xC4\xABjumi"
+  router_firewall_settings: "Maršrutētāja/Ugunsmūra iestatījumi"
   firewall_mac_address_filter_info: ""
   static_ip_address: Statiska IP adrese
   are_you_sure_advanced_features: ""
   dhcp_server: DHCP serveris
   app_logs: ""
-  contribute: "Dot ieguld\xC4\xABjumu"
-  back: "Atpaka\xC4\xBC"
+  contribute: "Dot ieguldījumu"
+  back: "Atpakaļ"
   changelog: ""
-  notifications_from_amahi: "Zi\xC5\x86ojumi no Amahi"
+  notifications_from_amahi: "Ziņojumi no Amahi"
   support_win_95_98: ""
   there_are_no_calendars_available_see_wiki: ""
-  the_mac_is_invalid: "MAC adrese ir neder\xC4\xABga"
+  the_mac_is_invalid: "MAC adrese ir nederīga"
   making_home_networking_simple: ""
   disk_pool_details: ""
-  calendars: "Kalend\xC4\x81ri"
+  calendars: "Kalendāri"
   a_single_number_0_254_to_point_to_a_given_machine: ""
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: ""
-  writeable: "Rakst\xC4\x81ms"
+  writeable: "Rakstāms"
   port_range_ports_must_be_numbers: ""
-  help: !binary |
-    UGFsxKtkesSrYmE=
-
+  help: "Palīdzība"
   new_firewall_rule: ""
   video: Video
   errors: 
     format: "%{attribute} %{message}"
     messages: 
-      greater_than_or_equal_to: "ir j\xC4\x81b\xC5\xABt liel\xC4\x81kam vai vien\xC4\x81dam ar %{count}"
-      confirmation: "nesakr\xC4\xABt ar apstiprin\xC4\x81jumu"
-      less_than_or_equal_to: "ir j\xC4\x81b\xC5\xABt maz\xC4\x81kam vai vien\xC4\x81dam ar %{count}"
-      not_an_integer: "ir j\xC4\x81b\xC5\xABt veselam skaitlim"
-      blank: "ir j\xC4\x81b\xC5\xABt aizpild\xC4\xABtam"
+      greater_than_or_equal_to: "ir jābūt lielākam vai vienādam ar %{count}"
+      confirmation: "nesakrīt ar apstiprinājumu"
+      less_than_or_equal_to: "ir jābūt mazākam vai vienādam ar %{count}"
+      not_an_integer: "ir jābūt veselam skaitlim"
+      blank: "ir jābūt aizpildītam"
       exclusion: nav pieejams
-      invalid: "nav der\xC4\xABgs"
-      odd: "ir j\xC4\x81b\xC5\xABt nep\xC4\x81ra skaitlim"
-      even: "ir j\xC4\x81b\xC5\xABt p\xC4\x81ra skaitlim"
-      too_short: "ir par \xC4\xABsu (minimums ir %{count} z\xC4\xABmes)"
-      wrong_length: "ir nepareizs garums (j\xC4\x81b\xC5\xABt %{count} z\xC4\xABm\xC4\x93m)"
-      empty: "ir j\xC4\x81b\xC5\xABt aizpild\xC4\xABtam"
-      less_than: "ir j\xC4\x81b\xC5\xABt maz\xC4\x81kam par %{count}"
-      greater_than: "ir j\xC4\x81b\xC5\xABt liel\xC4\x81kam par %{count}"
-      equal_to: "ir j\xC4\x81b\xC5\xABt vien\xC4\x81dam ar %{count}"
-      too_long: "ir par garu (maksimums ir %{count} z\xC4\xABmes)"
-      taken: "ir jau aiz\xC5\x86emts"
-      accepted: "ir j\xC4\x81piekr\xC4\xABt"
-      inclusion: "nav iek\xC4\xBCauts sarakst\xC4\x81"
+      invalid: "nav derīgs"
+      odd: "ir jābūt nepāra skaitlim"
+      even: "ir jābūt pāra skaitlim"
+      too_short: "ir par īsu (minimums ir %{count} zīmes)"
+      wrong_length: "ir nepareizs garums (jābūt %{count} zīmēm)"
+      empty: "ir jābūt aizpildītam"
+      less_than: "ir jābūt mazākam par %{count}"
+      greater_than: "ir jābūt lielākam par %{count}"
+      equal_to: "ir jābūt vienādam ar %{count}"
+      too_long: "ir par garu (maksimums ir %{count} zīmes)"
+      taken: "ir jau aizņemts"
+      accepted: "ir jāpiekrīt"
+      inclusion: "nav iekļauts sarakstā"
       not_a_number: nav skaitlis
   there_are_no_applications_available: ""
-  thanks_for_visiting: "Paldies par apmekl\xC4\x93jumu! Atbalstiet m\xC5\xABsu sponsorus!"
-  install_code: "Instal\xC4\x81cijas kods"
-  new_static_ip: "Jauna statisk\xC4\x81 IP"
+  thanks_for_visiting: "Paldies par apmeklējumu! Atbalstiet mūsu sponsorus!"
+  install_code: "Instalācijas kods"
+  new_static_ip: "Jauna statiskā IP"
   this_share_name_is_not_valid: ""
-  ip_filtering: "IP filtr\xC4\x93\xC5\xA1ana"
+  ip_filtering: "IP filtrēšana"
   create: Izveidot
   guest_dashboard: Viesu panelis
-  view_all_calendars_simultaneously: "Skat\xC4\xABt visus kalend\xC4\x81rus vienlaikus"
-  music: "M\xC5\xABzika"
+  view_all_calendars_simultaneously: "Skatīt visus kalendārus vienlaikus"
+  music: "Mūzika"
   initial_password: Parole
   your_domain_info: ""
   there_are_no_firewall_rules_defined: ""
   firewall_url_filter_message: ""
   dhcp_leases: ""
   dynamic_dns: Dinamiskais DNS
-  the_ip_must_be_1_to_254: "IP j\xC4\x81b\xC5\xABt diapazon\xC4\x81 1-254"
-  not_a_valid_user_or_password: "K\xC4\xBC\xC5\xABda: Nepareizs lietot\xC4\x81jv\xC4\x81rds vai parole"
-  create_your_hda_profile: "Izveidot j\xC5\xABsu HDA profilu"
-  your_home_dns_domain: "J\xC5\xABsu m\xC4\x81jas DNS dom\xC4\x93ns"
-  theme_by: "T\xC4\x93mas autors"
+  the_ip_must_be_1_to_254: "IP jābūt diapazonā 1-254"
+  not_a_valid_user_or_password: "Kļūda: Nepareizs lietotājvārds vai parole"
+  create_your_hda_profile: "Izveidot jūsu HDA profilu"
+  your_home_dns_domain: "Jūsu mājas DNS domēns"
+  theme_by: "Tēmas autors"
   forums: Forumi
   there_are_no_aliases_defined: ""
-  user_name_is_not_valid: "Lietot\xC4\x81jv\xC4\x81rds ir neder\xC4\xABgs"
+  user_name_is_not_valid: "Lietotājvārds ir nederīgs"
   all_you_need: Viss ko vajag!
-  system: "Sist\xC4\x93ma"
-  name_is_taken_already_or_is_reserved: "V\xC4\x81rds jau ir aiz\xC5\x86emts vai rezerv\xC4\x93ts"
+  system: "Sistēma"
+  name_is_taken_already_or_is_reserved: "Vārds jau ir aizņemts vai rezervēts"
   webapps: ""
   submit_for_debug: ""
-  more: "vair\xC4\x81k"
+  more: "vairāk"
   protocol: Protokols
-  no_account_yet: "V\xC4\x93l nav konta?"
-  delete_this_rule: !binary |
-    RHrEk3N0IMWhbyBrxIFydHVsdQ==
-
-  images: "Att\xC4\x93li"
+  no_account_yet: "Vēl nav konta?"
+  delete_this_rule: "Dzēst šo kārtulu"
+  images: "Attēli"
   language: Valoda
   this_application_is_installed: ""
   share: ""
-  partitions: "Nodal\xC4\xABjumi"
+  partitions: "Nodalījumi"
   router_setting_failed: ""
   global_settings_for_shares: ""
   the_watchdog_is_a_critical_setting: ""
-  warning_this_application_is_in_testing: !binary |
-    QlLEqkRJTsSASlVNUzogxaDEqyBhcGxpa8SBY2lqYSBpciB0ZXN0xJPFoWFu
-    xIEh
-
+  warning_this_application_is_in_testing: "BRĪDINĀJUMS: Šī aplikācija ir testēšanā!"
   an_external_ip_address_to_make_the_alias: ""
-  is_being_monitored_24x7: "tiek uzraudz\xC4\xABts 24x7"
+  is_being_monitored_24x7: "tiek uzraudzīts 24x7"
   computer: Dators
   file_server_samba: Failu serveris (Samba)
   port_range_ports_are_already_allocated: ""
-  mac_is_invalid: "MAC ir neder\xC4\xABga"
+  mac_is_invalid: "MAC ir nederīga"
   edit_alias: ""
   please_double_check_the_settings: ""
   otherwise_you_can_go_to_the_error_log: ""
   description: Apraksts
   there_are_no_users: ""
-  are_you_sure: "Vai esat p\xC4\x81rliecin\xC4\x81ts?"
+  are_you_sure: "Vai esat pārliecināts?"
   efficiently_manage_your_network: ""
   port_range_field_cannot_be_empty: ""
-  available_for_installation: "(Pieejams instal\xC4\x81cijai)"
+  available_for_installation: "(Pieejams instalācijai)"
   create_share: ""
   apps: ""
   translate_amahi: Tulkot Amahi
-  alias_looks_good: "Aizst\xC4\x81jv\xC4\x81rds izskat\xC4\x81s labi"
+  alias_looks_good: "Aizstājvārds izskatās labi"
   support: 
     array: 
       words_connector: ", "
       last_word_connector: " un "
       two_words_connector: " un "
     select: 
-      prompt: "L\xC5\xABdzu izv\xC4\x93lies"
+      prompt: "Lūdzu izvēlies"
   delete_share: ""
   ushare_upnp_media_server: Ushare UPnP Mediju serveris
-  sign_in: "Piesl\xC4\x93gties"
+  sign_in: "Pieslēgties"
   disk_pooling_enabled: ""
   community: Kopiena
-  new_dns_alias: "Jauns DNS aizst\xC4\x81jv\xC4\x81rds"
-  create_a_new_user: "Izveidot jaunu lietot\xC4\x81ju"
+  new_dns_alias: "Jauns DNS aizstājvārds"
+  create_a_new_user: "Izveidot jaunu lietotāju"
   suggest: Ierosini!
   port_filtering: ""
   results_found: ""
-  the_mac_looks_good: "MAC izskat\xC4\x81s labi"
+  the_mac_looks_good: "MAC izskatās labi"
   when_there_are_major_announcements: ""
   no_description_supplied: ""
   manage_your_contributed_apps: ""
-  global_settings: "Visp\xC4\x81r\xC4\x93jie iestat\xC4\xABjumi"
-  networking: !binary |
-    VMSra2xz
-
-  firewall: "Ugunsm\xC5\xABris"
-  there_are_no_servers_available: "Pa\xC5\xA1laik nav pieejams neviens serveris."
+  global_settings: "Vispārējie iestatījumi"
+  networking: "Tīkls"
+  firewall: "Ugunsmūris"
+  there_are_no_servers_available: "Pašlaik nav pieejams neviens serveris."
   port_range: ""
-  network_gateway: "T\xC4\xABkla v\xC4\x81rteja"
+  network_gateway: "Tīkla vārteja"
   subscribe: ""
   mac_address: MAC adrese
   anonymous_guests: Viesi
-  settings: "Iestat\xC4\xABjumi"
-  initial_user_info: "S\xC4\x81kotn\xC4\x93jais lietot\xC4\x81js"
-  control: !binary |
-    VmFkxKt0
-
-  disk_pool_replication: "Replik\xC4\x81cija"
+  settings: "Iestatījumi"
+  initial_user_info: "Sākotnējais lietotājs"
+  control: "Vadīt"
+  disk_pool_replication: "Replikācija"
   date: 
     month_names: 
     - 
-    - !binary |
-      amFudsSBcsSr
-
-    - !binary |
-      ZmVicnXEgXLEqw==
-
-    - !binary |
-      bWFydMSB
-
-    - !binary |
-      YXByxKtsxKs=
-
-    - !binary |
-      bWFpasSB
-
-    - !binary |
-      asWrbmlqxIE=
-
-    - !binary |
-      asWrbGlqxIE=
-
-    - "august\xC4\x81"
-    - "septembr\xC4\xAB"
-    - "oktobr\xC4\xAB"
-    - "novembr\xC4\xAB"
-    - "decembr\xC4\xAB"
+    - "janvārī"
+    - "februārī"
+    - "martā"
+    - "aprīlī"
+    - "maijā"
+    - "jūnijā"
+    - "jūlijā"
+    - "augustā"
+    - "septembrī"
+    - "oktobrī"
+    - "novembrī"
+    - "decembrī"
     abbr_day_names: 
     - Sv.
     - P.
@@ -585,10 +530,10 @@ lv:
       short: "%e. %B"
       long: "%Y. gada %e. %B"
     day_names: 
-    - "sv\xC4\x93tdiena"
+    - "svētdiena"
     - pirmdiena
     - otrdiena
-    - "tre\xC5\xA1diena"
+    - "trešdiena"
     - ceturtdiena
     - piektdiena
     - sestdiena
@@ -599,99 +544,85 @@ lv:
     - Marts
     - Apr
     - Maijs
-    - !binary |
-      SsWrbg==
-
-    - !binary |
-      SsWrbA==
-
+    - "Jūn"
+    - "Jūl"
     - Aug
     - Sept
     - Okt
     - Nov
     - Dec
-  username_cannot_be_blank: "Lietot\xC4\x81jv\xC4\x81rds nevar b\xC5\xABt tuk\xC5\xA1s"
-  reboot: "Restart\xC4\x93t"
+  username_cannot_be_blank: "Lietotājvārds nevar būt tukšs"
+  reboot: "Restartēt"
   this_feature_is_under_heavy_development: ""
   there_are_no_webapps: ""
   are_you_sure_you_want_to_delete_the_static_ip: ""
-  the_ip_looks good: "IP adrese izskat\xC4\x81s labi"
-  the_name_cannot_be_blank: "V\xC4\x81rds nevar b\xC5\xABt tuk\xC5\xA1"
-  uninstall: "Atinstal\xC4\x93t"
-  details: "Deta\xC4\xBCas"
+  the_ip_looks good: "IP adrese izskatās labi"
+  the_name_cannot_be_blank: "Vārds nevar būt tukš"
+  uninstall: "Atinstalēt"
+  details: "Detaļas"
   the_name_you_input_above_will_be_added_to_the_DNS_server: ""
   is_now_uninstalled: ""
-  themes: !binary |
-    VMSTbWFz
-
+  themes: "Tēmas"
   new_share: ""
   this_path_is_not_valid: ""
   are_you_sure_user: ""
   extra_parameters: Papildus parametri
-  log_in: "Piesl\xC4\x93gties"
+  log_in: "Pieslēgties"
   try_installing_some_apps: ""
   testimonials: Atsauksmes
   version: Versija
   powering_off: ""
   get_involved: Iesaisties!
-  stop_it: !binary |
-    QXBzdMSBZGluxIF0
-
-  home_domain: "M\xC4\x81jas dom\xC4\x93ns"
-  total_space: !binary |
-    S29wxJNqxIEgaWV0aWxwxKtiYQ==
-
-  never_email_me: "Nekad nes\xC5\xABt\xC4\xABt man e-pastu"
+  stop_it: "Apstādināt"
+  home_domain: "Mājas domēns"
+  total_space: "Kopējā ietilpība"
+  never_email_me: "Nekad nesūtīt man e-pastu"
   is_now_installed: ""
   this_shares_files_deleted: ""
-  alias_is_not_valid: "Aizst\xC4\x81jv\xC4\x81rds ir neder\xC4\xABgs"
-  mac_address_of_the_device: "Ier\xC4\xABces MAC adrese (form\xC4\x81 00:11:22:33:44:55)"
-  next: !binary |
-    VMSBbMSBaw==
-
+  alias_is_not_valid: "Aizstājvārds ir nederīgs"
+  mac_address_of_the_device: "Ierīces MAC adrese (formā 00:11:22:33:44:55)"
+  next: "Tālāk"
   web_apps: ""
   remember_me: Atceries mani
-  password_looks_good: "Parole izskat\xC4\x81s labi"
+  password_looks_good: "Parole izskatās labi"
   docs: Dokumenti
-  the_ip_address_cannot_be_empty: "IP adrese nevar b\xC5\xABt tuk\xC5\xA1a"
+  the_ip_address_cannot_be_empty: "IP adrese nevar būt tukša"
   computer_name: Datora nosaukums
-  close: "aizv\xC4\x93rt"
+  close: "aizvērt"
   this_file_was_automatically_generated_on: ""
-  installation_instructions: "Instal\xC4\x81cijas instrukcijas"
-  control_panel_for_your_amahi_hdas: "J\xC5\xABsu HDA vad\xC4\xABbas panelis"
+  installation_instructions: "Instalācijas instrukcijas"
+  control_panel_for_your_amahi_hdas: "Jūsu HDA vadības panelis"
   please_select_the_type_of_rule_you_want: ""
   create_a_new_webapp: ""
   refresh_status: ""
-  home: "S\xC4\x81kums"
+  home: "Sākums"
   share_name_is_available: ""
   will_not_start_at_boot_time: ""
   there_are_no_static_ips_defined: ""
-  powerful_simple_home_networking: "Jaud\xC4\xABgs, Vienk\xC4\x81r\xC5\xA1, M\xC4\x81jas t\xC4\xABkls"
+  powerful_simple_home_networking: "Jaudīgs, Vienkārš, Mājas tīkls"
   about: Par
-  email_me: "Ats\xC5\xABt\xC4\xABt man e-pastu"
+  email_me: "Atsūtīt man e-pastu"
   there_are_no_applications_installed: ""
   firewall_port_forward_message: ""
-  to_recover_your_password: "Lai atg\xC5\xABtu savu paroli vai aktiv\xC4\x81cijas e-pastu, l\xC5\xABdzu, ievadiet zem\xC4\x81k j\xC5\xABsu e-pastu"
-  apache_web_server: "Apache t\xC4\xABmek\xC4\xBCa serveris"
+  to_recover_your_password: "Lai atgūtu savu paroli vai aktivācijas e-pastu, lūdzu, ievadiet zemāk jūsu e-pastu"
+  apache_web_server: "Apache tīmekļa serveris"
   seconds: sekundes
-  partition: "Nodal\xC4\xABjums"
+  partition: "Nodalījums"
   dhcp: DHCP
-  dhcp_free: "Neakt\xC4\xABvs"
+  dhcp_free: "Neaktīvs"
   this_users_files_deleted: ""
-  configured: "Konfigur\xC4\x93ts"
+  configured: "Konfigurēts"
   disabling_lan_manager_will_not_allow_older_machines: ""
-  you_have_been_logged_out: "J\xC5\xABs tik\xC4\x81t atsl\xC4\x93gti"
-  the_url_is_invalid: "URL ir neder\xC4\xABgs"
+  you_have_been_logged_out: "Jūs tikāt atslēgti"
+  the_url_is_invalid: "URL ir nederīgs"
   it_will_be_restarted_by_the_watchdog: ""
   amahi_dyndns_updater: ""
-  features: "Iesp\xC4\x93jas"
-  password_cannot_be_blank: "Parole nevar b\xC5\xABt tuk\xC5\xA1a"
+  features: "Iespējas"
+  password_cannot_be_blank: "Parole nevar būt tukša"
   the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: ""
   your_existing_network_gatweay: ""
-  warning: !binary |
-    QlLEqkRJTsSASlVNUw==
-
+  warning: "BRĪDINĀJUMS"
   beta_apps: ""
-  logout: "Atsl\xC4\x93gties"
+  logout: "Atslēgties"
   there_is_no_undo: ""
   dhcp_ip_address: DHCP IP adrese

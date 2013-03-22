@@ -1,176 +1,166 @@
 --- 
 pl: 
-  new_user: "Nowy u\xC5\xBCytkownik"
-  alias_is_taken_already: "Alias jest ju\xC5\xBC zaj\xC4\x99ty lub zarezerwowany"
-  storage: "Pami\xC4\x99\xC4\x87 masowa"
-  user_name_is_not_available: "Nazwa u\xC5\xBCytkownika jest niedost\xC4\x99pna"
+  new_user: "Nowy użytkownik"
+  alias_is_taken_already: "Alias jest już zajęty lub zarezerwowany"
+  storage: "Pamięć masowa"
+  user_name_is_not_available: "Nazwa użytkownika jest niedostępna"
   platform: Platforma
-  are_you_sure_share: "Czy na pewno chcesz usun\xC4\x85\xC4\x87 '%{share}'?"
+  are_you_sure_share: "Czy na pewno chcesz usunąć '%{share}'?"
   these_rules_are_used_to_restrict_ips: ""
   this_looks_like_a_database_corruption_please_report_it: ""
   mac_looks_good: MAC jest dobry
   wiki: Wiki
-  confirm_email: "Potwierd\xC5\xBA e-mail"
+  confirm_email: "Potwierdź e-mail"
   last_login: Ostatnie logowanie
   setup: Konfiguracja
   start_at_boot_time: Start w czasie rozruchu
-  news_about_applications: "Wiadomo\xC5\x9Bci o Aplikacjach dzia\xC5\x82aj\xC4\x85cych na Amahi"
-  delete_user: "Usu\xC5\x84 u\xC5\xBCytkownika"
-  delete_profile: "Usu\xC5\x84 profil dla"
+  news_about_applications: "Wiadomości o Aplikacjach działających na Amahi"
+  delete_user: "Usuń użytkownika"
+  delete_profile: "Usuń profil dla"
   running: Uruchomione
-  start_building_a_new_hda: "Utw\xC3\xB3rz nowe HDA!"
-  delete: !binary |
-    VXN1xYQ=
-
-  name_is_taken_already: "Nazwa jest ju\xC5\xBC zaj\xC4\x99ta"
+  start_building_a_new_hda: "Utwórz nowe HDA!"
+  delete: "Usuń"
+  name_is_taken_already: "Nazwa jest już zajęta"
   unleash_the_power_of_your_home_network: ""
-  are_you_sure_webapp: "Czy na pewno chcesz usun\xC4\x85\xC4\x87 web app: %{webapp}'?"
+  are_you_sure_webapp: "Czy na pewno chcesz usunąć web app: %{webapp}'?"
   automated_install: Automaczyna instalacja
-  need_help_logging_in: "Nie mo\xC5\xBCesz si\xC4\x99 zalogowa\xC4\x87?"
-  confirm_password: "Potwierd\xC5\xBA Has\xC5\x82o"
+  need_help_logging_in: "Nie możesz się zalogować?"
+  confirm_password: "Potwierdź Hasło"
   installed_paren: (Zainstalowane)
   tour: Przewodnik
-  address_already_allocated: "Adres jest ju\xC5\xBC przydzielony"
+  address_already_allocated: "Adres jest już przydzielony"
   new: Nowy
-  are_you_sure_you_want_to_stop_the_server: "Czy na pewno chcesz zatrzyma\xC4\x87 '%{name}'?"
-  disabling_pdc_will_enable_workgroup_mode: "Wy\xC5\x82\xC4\x85czenie trybu PDC w\xC5\x82\xC4\x85czy tryb Workgroup. \r\n\
-    Jest to kluczowa operacja dla Shares (sprawd\xC5\xBA wiki, aby dowiedzie\xC4\x87 si\xC4\x99 wi\xC4\x99cej).\r\n\
-    Na pewno wy\xC5\x82\xC4\x85czy\xC4\x87 tryb PDC?"
-  address_looks_good: "Adres wygl\xC4\x85da na prawid\xC5\x82owy"
-  finalize_settings: "Finalizacja ustawie\xC5\x84"
-  confirmation_must_match: "Potwierdzenie musi pasowa\xC4\x87"
+  are_you_sure_you_want_to_stop_the_server: "Czy na pewno chcesz zatrzymać '%{name}'?"
+  disabling_pdc_will_enable_workgroup_mode: "Wyłączenie trybu PDC włączy tryb Workgroup. \r\n\
+    Jest to kluczowa operacja dla Shares (sprawdź wiki, aby dowiedzieć się więcej).\r\n\
+    Na pewno wyłączyć tryb PDC?"
+  address_looks_good: "Adres wygląda na prawidłowy"
+  finalize_settings: "Finalizacja ustawień"
+  confirmation_must_match: "Potwierdzenie musi pasować"
   stopped: Zatrzymane
   applications: Aplikacje
   this_ip_address_will_always_be_statically_associated_to_the_mac_address: ""
-  this_path_exists_already: "Ta \xC5\x9Bcie\xC5\xBCka jest zaj\xC4\x99ta"
-  poweroff: !binary |
-    V3nFgsSFY3o=
-
+  this_path_exists_already: "Ta ścieżka jest zajęta"
+  poweroff: "Wyłącz"
   router_control: Kontrolowanie routera
-  are_you_sure_you_would_like_to_delete_calendar: "Czy na pewno chcesz usun\xC4\x85\xC4\x87 %{calendar}"
+  are_you_sure_you_would_like_to_delete_calendar: "Czy na pewno chcesz usunąć %{calendar}"
   openvpn_server: OpenVPN Serwer
-  port_range_looks_good: "Zakres port\xC3\xB3w wygl\xC4\x85da dobrze"
-  pictures: "Zdj\xC4\x99cia"
+  port_range_looks_good: "Zakres portów wygląda dobrze"
+  pictures: "Zdjęcia"
   disk: Dysk
   location: Lokalizacj
   require_login: Wymagany login
   theme: Motyw
   disks: Dyski
-  rule: "Regu\xC5\x82a"
+  rule: "Reguła"
   static_ips: Statyczne IPs
   mac_address_to_be_filtered_in_format: adres MAC do filtrowania (w postaci 00:11:22:33:44:55).
   my_apps: Moje aplikacje
   disk_pool_copies: Dodatkowe kopie
   cancel: Anuluj
-  port_range_ports_must_be_increasing_order: "Pierwszy port musi by\xC4\x87 mniejszy lub r\xC3\xB3wny drugiemu portowi"
-  password_is_too_short: "Has\xC5\x82o jest zbyt kr\xC3\xB3tkie"
+  port_range_ports_must_be_increasing_order: "Pierwszy port musi być mniejszy lub równy drugiemu portowi"
+  password_is_too_short: "Hasło jest zbyt krótkie"
   preparing_to_install: Przygotowanie do instalacji ...
   model: Model
-  are_you_sure_you_want_to_start_the_server: "Czy na pewno chcesz uruchomi\xC4\x87 '%{name}'?"
+  are_you_sure_you_want_to_start_the_server: "Czy na pewno chcesz uruchomić '%{name}'?"
   nickname_info: ""
   files: Pliki
-  by_signing_up_you_agree_to_the_terms_of_service: "Rejestruj\xC4\x85c si\xC4\x99, zgadzasz si\xC4\x99 z <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">nasz\xC4\x85 polityk\xC4\x85 prywatno\xC5\x9Bci</a>"
+  by_signing_up_you_agree_to_the_terms_of_service: "Rejestrując się, zgadzasz się z <a href=\"http://www.amahi.org/home/tos\" target=\"_blank\">naszą polityką prywatności</a>"
   the_url_looks_good: URL jest poprawny
   application_uninstalled: Aplikacja odinstalowana
-  delete_web_app: "Usu\xC5\x84 Web App"
+  delete_web_app: "Usuń Web App"
   free_space: Wolne miejsce
   url: URL
-  are_you_sure_you_would_like_to_uninstall: "Czy na pewno chcesz usun\xC4\x85\xC4\x87 aplikacj\xC4\x99?\r\n\
-    Wszystkie powi\xC4\x85zane z t\xC4\x85 aplikacj\xC4\x85 dane ZOSTAN\xC4\x84 USUNI\xC4\x98TE"
+  are_you_sure_you_would_like_to_uninstall: "Czy na pewno chcesz usunąć aplikację?\r\n\
+    Wszystkie powiązane z tą aplikacją dane ZOSTANĄ USUNIĘTE"
   temperature: Temperature
-  users: "U\xC5\xBCytkownicy"
+  users: "Użytkownicy"
   debug: Debugguj
-  the_ip_address_can_be: "Adres IP mo\xC5\xBCe by\xC4\x87"
+  the_ip_address_can_be: "Adres IP może być"
   read_only: Tylko do odczytu
   install_code_info: ""
-  url_filtering: "Filtrowanie adres\xC3\xB3w URL"
-  available: "Dost\xC4\x99pny"
+  url_filtering: "Filtrowanie adresów URL"
+  available: "Dostępny"
   this_will_power_off: ""
   add_extra_parameters: (dodaj dodatkowe parametry)
   edit_static_ip: Edytuj Statyczne IP
   system_info: Informacje o systemie
-  this_path_is_not_available: "Ta \xC5\x9Bcie\xC5\xBCka nie jest dost\xC4\x99pna"
+  this_path_is_not_available: "Ta ścieżka nie jest dostępna"
   firewall_port_filter_message: ""
   press: Prasa
-  share_path_cannot_be_blank: "\xC5\x9Acie\xC5\xBCka dla Share nie mo\xC5\xBCe by\xC4\x87 pusta"
-  address_is_not_valid: "Adres nie jest prawid\xC5\x82owy"
-  create_alias: "Stw\xC3\xB3rz Alias"
+  share_path_cannot_be_blank: "Ścieżka dla Share nie może być pusta"
+  address_is_not_valid: "Adres nie jest prawidłowy"
+  create_alias: "Stwórz Alias"
   web: Web
-  delete_alias: "Usu\xC5\x84 Alias"
+  delete_alias: "Usuń Alias"
   recover: Odzyskaj
   installed: Zainstalowane
   core: Core
   start_now: Zacznij Teraz
-  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: "Aplikacja napotka\xC5\x82a b\xC5\x82\xC4\x85d. Niebawem nast\xC4\x85pi przkeierowanie na stron\xC4\x99 z dziennikiem b\xC5\x82\xC4\x99du."
+  the_amahi_platform_has_encountered_an_error_you_will_be_forwarded: "Aplikacja napotkała błąd. Niebawem nastąpi przkeierowanie na stronę z dziennikiem błędu."
   application: Aplikacja
   advanced_settings: Opcje zaawansowane
-  check_the_features_take_the_tour: "Sprawd\xC5\xBA dost\xC4\x99pne funkcje, zobacz przewodnik, a je\xC5\x9Bli nie chcesz czeka\xC4\x87 -"
+  check_the_features_take_the_tour: "Sprawdź dostępne funkcje, zobacz przewodnik, a jeśli nie chcesz czekać -"
   this_will_stop_the_server_permanently: ""
   your_control_panel: Panel Sterowania
-  full_name: "Imi\xC4\x99 i nazwisko"
+  full_name: "Imię i nazwisko"
   shares: Shares
-  manage_themes: "Zarz\xC4\x85dzaj tematami"
+  manage_themes: "Zarządzaj tematami"
   discussion_forum_for: Forum dyskusyjne o
   tracker: Tracker
-  rule_type: "Typ regu\xC5\x82y"
+  rule_type: "Typ reguły"
   aliases: Aliasy
-  network: !binary |
-    U2llxIc=
-
-  change_your_account_settings: "Zmie\xC5\x84 ustawienia konta"
-  port_range_ports_must_be_0_to_64k: "Porty musz\xC4\x85 by\xC4\x87 w przedziale 0-65535"
-  share_path_is_available: "\xC5\x9Acie\xC5\xBCka dla Share jest dost\xC4\x99pna"
-  this_could_be_due_to_lack_of_network_connectivity: "Mo\xC5\xBCe to by\xC4\x87 spowodowane brakiem dost\xC4\x99pu do sieci."
-  enabling_lan_manager_is_less_secure: "W\xC5\x82\xC4\x85czenie uwierzytelniania dla Windows 95/98 jest mniej bezpiecznie, mo\xC5\xBCe jednak umo\xC5\xBCliwi\xC4\x87 dost\xC4\x99p starszym komputerom.\r\n\
-    Na pewno chcesz w\xC5\x82\xC4\x85czy\xC4\x87 uwierzytelnianie?"
+  network: "Sieć"
+  change_your_account_settings: "Zmień ustawienia konta"
+  port_range_ports_must_be_0_to_64k: "Porty muszą być w przedziale 0-65535"
+  share_path_is_available: "Ścieżka dla Share jest dostępna"
+  this_could_be_due_to_lack_of_network_connectivity: "Może to być spowodowane brakiem dostępu do sieci."
+  enabling_lan_manager_is_less_secure: "Włączenie uwierzytelniania dla Windows 95/98 jest mniej bezpiecznie, może jednak umożliwić dostęp starszym komputerom.\r\n\
+    Na pewno chcesz włączyć uwierzytelnianie?"
   special_instructions: Specjalne instrukcje
   there_are_no_dynamic_dhcp_leases_outstanding: ""
   login: Login
   edit_share: Edytuj Share
   dhcp_lease: DHCP Lease
-  change: !binary |
-    Wm1pZcWE
-
+  change: "Zmień"
   status: Status
   not_updating: Nie aktualizuje
   videos: Wideo
   dhcp_active: Aktywne
   restart: Restart
-  confirm: "Potwierd\xC5\xBA"
+  confirm: "Potwierdź"
   name_is_not_valid: Nazwa jest niepoprawne
-  sign_out: "Wyloguj si\xC4\x99"
+  sign_out: "Wyloguj się"
   this_application_is_installed_already_please_refresh: ""
   state: Status
   new_web_app: Nowa aplikacja webowa
   email: Email
-  full_name_looks_good: "Imi\xC4\x99 i nazwisko - poprawne"
+  full_name_looks_good: "Imię i nazwisko - poprawne"
   workgroup_name: Nazwa grupy roboczej
   name_looks_good: Nazwa poprawna
   new_alias: Nowy Alias
-  must_be_logged_in: "Musisz by\xC4\x87 zalogowany aby uzyska\xC4\x87 dost\xC4\x99p do tego obszaru"
+  must_be_logged_in: "Musisz być zalogowany aby uzyskać dostęp do tego obszaru"
   rebooting: Restart w toku ...
   uptime: ""
-  disk_pooling: "Pula pami\xC4\x99ci masowej"
+  disk_pooling: "Pula pamięci masowej"
   this_will_reboot: "To spowoduje restart twojego HDA\r\n\
-    Na pewno chcesz kontynuowa\xC4\x87?"
+    Na pewno chcesz kontynuować?"
   dns_aliases: Aliasy DNS
   used_space: Wykorzystane
   static_ip_address_for_your_hda: Statyczne IP dla twojego HDA
   comment: Komentarz
   the_alias_name_you_input_will_be_added: ""
-  root_path: !binary |
-    xZpjaWXFvGthIGfFgsOzd25h
-
+  root_path: "Ścieżka główna"
   search: Szukaj
-  upcoming: "Nadchodz\xC4\x85ce"
-  username_or_email: "Nazwa u\xC5\xBCytkownika lub email"
+  upcoming: "Nadchodzące"
+  username_or_email: "Nazwa użytkownika lub email"
   network_settings: Ustawienia Sieci
-  no_documents_found: "Nie znaleziono dokument\xC3\xB3w"
+  no_documents_found: "Nie znaleziono dokumentów"
   visible: Widoczny
-  create_a_new_share: "Stw\xC3\xB3rz nowy Share"
+  create_a_new_share: "Stwórz nowy Share"
   enabling_pdc_is_a_major_share_change: ""
-  all_users: "Wszyscy u\xC5\xBCytkownicy"
-  delete_static_ip: "Usu\xC5\x84 Statyczne IP"
+  all_users: "Wszyscy użytkownicy"
+  delete_static_ip: "Usuń Statyczne IP"
   audio: Audio
   dashboard: Dashboard
   this_ip_will_be_filtered: ""
@@ -178,47 +168,45 @@ pl:
   url_to_filter: URL do filtrowania
   the_boot_option_is_a_critical_setting: ""
   greyhole_not_installed: "UWAGA: Greyhole nie jest zainstalowany!"
-  must_be_admin: "Musisz mie\xC4\x87 uprawnienia administratora aby uzyska\xC4\x87 dost\xC4\x99p do tego obszaru"
-  valid_email_required_for_service: "Prawid\xC5\x82owy e-mail wymagany w celu aktywacji.   <a href=\"http://www.amahi.org/privacy\" target=\"_blank\"> Nie b\xC4\x99dziemy Ci\xC4\x99 spamowa\xC4\x87</a>"
-  are_you_sure_you_want_to_delete_alias: "Czy na pewno chcesz usun\xC4\x85\xC4\x87 alias dla '%{name}'?"
+  must_be_admin: "Musisz mieć uprawnienia administratora aby uzyskać dostęp do tego obszaru"
+  valid_email_required_for_service: "Prawidłowy e-mail wymagany w celu aktywacji.   <a href=\"http://www.amahi.org/privacy\" target=\"_blank\"> Nie będziemy Cię spamować</a>"
+  are_you_sure_you_want_to_delete_alias: "Czy na pewno chcesz usunąć alias dla '%{name}'?"
   is_not_being_monitored_24x7: <b>nie</b> jest monitorowane 24x7
   activerecord: 
     errors: 
       messages: 
-        greater_than_or_equal_to: "musi by\xC4\x87 wi\xC4\x99ksze lub r\xC3\xB3wne %{count}"
+        greater_than_or_equal_to: "musi być większe lub równe %{count}"
         record_invalid: "Nieudana walidacja: %{errors}"
-        confirmation: "nie zgadza si\xC4\x99 z potwierdzeniem"
-        less_than_or_equal_to: "musi by\xC4\x87 mniejsze lub r\xC3\xB3wne %{count}"
-        blank: "nie mo\xC5\xBCe by\xC4\x87 puste"
-        exclusion: "znajduje si\xC4\x99 na li\xC5\x9Bcie zabronionych warto\xC5\x9Bci"
-        invalid: "jest nieprawid\xC5\x82owe"
-        odd: "musi by\xC4\x87 nieparzyste"
-        even: "musi by\xC4\x87 parzyste"
-        too_short: "jest za kr\xC3\xB3tkie (minimalnie %{count} znak\xC3\xB3w)"
-        wrong_length: "jest nieprawid\xC5\x82owej d\xC5\x82ugo\xC5\x9Bci (powinna wynosi\xC4\x87 %{count} znak\xC3\xB3w)"
-        empty: "nie mo\xC5\xBCe by\xC4\x87 puste"
-        less_than: "musie by\xC4\x87 mniejsze ni\xC5\xBC %{count}"
-        greater_than: "musi by\xC4\x87 wi\xC4\x99ksze ni\xC5\xBC %{count}"
-        equal_to: "musi by\xC4\x87 r\xC3\xB3wne %{count}"
-        too_long: "jest za d\xC5\x82ugie (maksymalnie %{count} znak\xC3\xB3w)"
-        taken: "zosta\xC5\x82o ju\xC5\xBC zaj\xC4\x99te"
-        accepted: "musi by\xC4\x87 zaakceptowane"
-        inclusion: "nie znajduje si\xC4\x99 na li\xC5\x9Bcie dopuszczalnych warto\xC5\x9Bci"
-        not_a_number: "nie jest liczb\xC4\x85"
+        confirmation: "nie zgadza się z potwierdzeniem"
+        less_than_or_equal_to: "musi być mniejsze lub równe %{count}"
+        blank: "nie może być puste"
+        exclusion: "znajduje się na liście zabronionych wartości"
+        invalid: "jest nieprawidłowe"
+        odd: "musi być nieparzyste"
+        even: "musi być parzyste"
+        too_short: "jest za krótkie (minimalnie %{count} znaków)"
+        wrong_length: "jest nieprawidłowej długości (powinna wynosić %{count} znaków)"
+        empty: "nie może być puste"
+        less_than: "musie być mniejsze niż %{count}"
+        greater_than: "musi być większe niż %{count}"
+        equal_to: "musi być równe %{count}"
+        too_long: "jest za długie (maksymalnie %{count} znaków)"
+        taken: "zostało już zajęte"
+        accepted: "musi być zaakceptowane"
+        inclusion: "nie znajduje się na liście dopuszczalnych wartości"
+        not_a_number: "nie jest liczbą"
       full_messages: 
         format: "%{attribute} %{message}"
       template: 
-        body: !binary |
-          QsWCxJlkeSBkb3R5Y3rEhSBuYXN0xJlwdWrEhWN5Y2ggcMOzbDo=
-
+        body: "Błędy dotyczą następujących pól:"
         header: 
-          one: "%{model} nie zosta\xC5\x82 zachowany z powodu jednego b\xC5\x82\xC4\x99du"
-          other: "%{model} nie zosta\xC5\x82 zachowany z powodu %{count} b\xC5\x82\xC4\x99d\xC3\xB3w"
+          one: "%{model} nie został zachowany z powodu jednego błędu"
+          other: "%{model} nie został zachowany z powodu %{count} błędów"
   there_are_no_static_dhcp_leases: ""
   live_help: Live Help
-  edit_user: "Edytuj u\xC5\xBCytkownika"
+  edit_user: "Edytuj użytkownika"
   control_panel: Panel sterowania
-  share_name_cannot_be_blank: "Nazwa Share nie mo\xC5\xBCe by\xC4\x87 pusta"
+  share_name_cannot_be_blank: "Nazwa Share nie może być pusta"
   get_started: Zaczynamy!
   my_account: Moje Konto
   gallery: Galeria
@@ -256,98 +244,90 @@ pl:
       format: 
         delimiter: ""
   mysql_database_server: MySQL DB Serwer
-  edit_and_rate_beta_apps: "Edytuj i oce\xC5\x84 Beta apps"
+  edit_and_rate_beta_apps: "Edytuj i oceń Beta apps"
   or_view_each_one_separately_below: ""
-  username: "Nazwa u\xC5\xBCytkownika"
-  are_you_sure_you_want_to_restart_the_server: "Czy na pewno chcesz zrestartowa\xC4\x87 '%{name}'?"
+  username: "Nazwa użytkownika"
+  are_you_sure_you_want_to_restart_the_server: "Czy na pewno chcesz zrestartować '%{name}'?"
   done_final_check: Zrobione! Testowanie
-  this_application_is_not_installed_please_refresh: "Ta aplikacja nie jest zainstalowana. Od\xC5\x9Bwie\xC5\xBC t\xC4\x99 stron\xC4\x99."
-  user_name_is_available: "Nazwa u\xC5\xBCytkownika jest poprawna"
-  first_time_admin_setup: "Pierwsze ustawienie konta administratora. Porsz\xC4\x99 utw\xC3\xB3rz swoje has\xC5\x82o u\xC5\xBCytkownika."
-  news: "Aktualno\xC5\x9Bci"
-  password: !binary |
-    SGFzxYJv
-
-  access: "Dost\xC4\x99p"
-  avanced_settings_is_for_developers: "W\xC5\x82\xC4\x85czenie Zaawansowanych Funkcji dost\xC4\x99pne tylko dla zaawansowanych u\xC5\xBCytkownik\xC3\xB3w i deweloper\xC3\xB3w."
+  this_application_is_not_installed_please_refresh: "Ta aplikacja nie jest zainstalowana. Odśwież tę stronę."
+  user_name_is_available: "Nazwa użytkownika jest poprawna"
+  first_time_admin_setup: "Pierwsze ustawienie konta administratora. Porszę utwórz swoje hasło użytkownika."
+  news: "Aktualności"
+  password: "Hasło"
+  access: "Dostęp"
+  avanced_settings_is_for_developers: "Włączenie Zaawansowanych Funkcji dostępne tylko dla zaawansowanych użytkowników i deweloperów."
   there_are_no_shares_created: ""
   created: Stworzony
   watchdog: ""
-  stop: "Zako\xC5\x84cz"
-  device: "Urz\xC4\x85dzenie"
-  initial_user: "nazwa u\xC5\xBCytkownika"
-  admin_setup_worked: "Konfiguracja konta Admin powiod\xC5\x82a si\xC4\x99. Prosz\xC4\x99 zaloguj si\xC4\x99 teraz."
+  stop: "Zakończ"
+  device: "Urządzenie"
+  initial_user: "nazwa użytkownika"
+  admin_setup_worked: "Konfiguracja konta Admin powiodła się. Proszę zaloguj się teraz."
   preparing_to_uninstall: Przygotowanie do odinstalowania...
   time: 
-    am: "przed po\xC5\x82udniem"
+    am: "przed południem"
     formats: 
       default: "%a, %d %b %Y, %H:%M:%S %z"
       short: "%d %b, %H:%M"
       long: "%d %B %Y, %H:%M"
-    pm: "po po\xC5\x82udniu"
+    pm: "po południu"
   dns_server: Serwer DNS
-  sign_up_here: "Zarejestruj si\xC4\x99"
+  sign_up_here: "Zarejestruj się"
   servers: Serwery
   router_ip: Router IP
-  general_amahi_news: "Nowo\xC5\x9Bci na Amahi"
+  general_amahi_news: "Nowości na Amahi"
   feedback: Opinie
   name: Nazwa
-  awake_this_device_via_wol: !binary |
-    V8WCxIVjeiB1cnrEhWR6ZW5pZQ==
-
-  port_forwarding: "Przekierowanie port\xC3\xB3w"
+  awake_this_device_via_wol: "Włącz urządzenie"
+  port_forwarding: "Przekierowanie portów"
   datetime: 
     prompts: 
       minute: Minuta
       second: Sekundy
-      month: "Miesi\xC4\x85c"
+      month: "Miesiąc"
       hour: Godzina
-      day: !binary |
-        RHppZcWE
-
+      day: "Dzień"
       year: Rok
     distance_in_words: 
       less_than_x_minutes: 
-        few: "mniej ni\xC5\xBC %{count} minuty"
-        one: "mniej ni\xC5\xBC minut\xC4\x99"
-        other: "mniej ni\xC5\xBC %{count} minut"
+        few: "mniej niż %{count} minuty"
+        one: "mniej niż minutę"
+        other: "mniej niż %{count} minut"
       x_days: 
-        one: "1 dzie\xC5\x84"
+        one: "1 dzień"
         other: "%{count} dni"
       x_seconds: 
         few: "%{count} sekundy"
-        one: "sekund\xC4\x99"
+        one: "sekundę"
         other: "%{count} sekund"
       about_x_hours: 
-        one: "oko\xC5\x82o godziny"
+        one: "około godziny"
         other: about %{count} godzin
       less_than_x_seconds: 
-        few: "mniej ni\xC5\xBC %{count} sekundy"
-        one: "mniej ni\xC5\xBC sekund\xC4\x99"
-        other: "mniej ni\xC5\xBC %{count} sekund"
+        few: "mniej niż %{count} sekundy"
+        one: "mniej niż sekundę"
+        other: "mniej niż %{count} sekund"
       x_months: 
-        few: "%{count} miesi\xC4\x85ce"
-        one: "1 miesi\xC4\x85c"
-        other: "%{count} miesi\xC4\x99cy"
+        few: "%{count} miesiące"
+        one: "1 miesiąc"
+        other: "%{count} miesięcy"
       x_minutes: 
         few: "%{count} minuty"
-        one: "minut\xC4\x99"
+        one: "minutę"
         other: "%{count} minut"
       about_x_years: 
-        one: "oko\xC5\x82o roku"
-        other: "oko\xC5\x82o %{count} lat"
+        one: "około roku"
+        other: "około %{count} lat"
       about_x_months: 
-        one: "oko\xC5\x82o miesi\xC4\x85ca"
-        other: "oko\xC5\x82o %{count} miesi\xC4\x99cy"
+        one: "około miesiąca"
+        other: "około %{count} miesięcy"
       over_x_years: 
         few: ponad %{count} lata
         one: ponad rok
         other: ponad %{count} lat
-      half_a_minute: !binary |
-        cMOzxYIgbWludXR5
-
+      half_a_minute: "pół minuty"
   nickname: Nickname
-  check_the_calendars_wiki_for_more_details: "Sprawd\xC5\xBA Calendar Wiki, aby uzyska\xC4\x87 wi\xC4\x99cej informacji o zarz\xC4\x85dzaniu kalendarzami i kompatybilno\xC5\x9Bci.\r\n\
+  check_the_calendars_wiki_for_more_details: "Sprawdź Calendar Wiki, aby uzyskać więcej informacji o zarządzaniu kalendarzami i kompatybilności.\r\n\
     \r\n"
   pooled: Zbiorcze
   edit_web_app: Edytuj Web App
@@ -357,168 +337,152 @@ pl:
   confirmation_matches: Potwierdzenie pasuje
   setting_dmz_failed: ""
   logs: Logi
-  this_name_is_not_available: "Ta nazwa nie jest dost\xC4\x99pna"
-  password_changed_successfully: "Has\xC5\x82o zmienione"
-  will_start_at_boot_time: "uruchomi si\xC4\x99 przy starcie systemu"
+  this_name_is_not_available: "Ta nazwa nie jest dostępna"
+  password_changed_successfully: "Hasło zmienione"
+  will_start_at_boot_time: "uruchomi się przy starcie systemu"
   calendar_name: Nazwa kalendarza
   this_application_install_ended_with_an_error_please_uninstall_status_is: ""
-  mac_filtering: "Filtrowanie adres\xC3\xB3w MAC"
+  mac_filtering: "Filtrowanie adresów MAC"
   tags: Tagi
   router_firewall_settings: Ustawienia Router/Firewall
   firewall_mac_address_filter_info: ""
   static_ip_address: Statyczne IP
-  are_you_sure_advanced_features: "Czy na pewno chcesz w\xC5\x82\xC4\x85czy\xC4\x87 Funkcje Zaawansowane?"
+  are_you_sure_advanced_features: "Czy na pewno chcesz włączyć Funkcje Zaawansowane?"
   dhcp_server: Serwer DHCP
   app_logs: Logi aplikacji
   changelog: LogZmian
   contribute: Skomentuj
-  back: !binary |
-    V3LDs8SH
-
+  back: "Wróć"
   notifications_from_amahi: Powiadomienia od Amahi
   support_win_95_98: version
   there_are_no_calendars_available_see_wiki: ""
-  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "W\xC5\x82\xC4\x85czenie debugowania mo\xC5\xBCe spowodowa\xC4\x87 generowanie du\xC5\xBCych plik\xC3\xB3w z logami.\r\n\
-    Na pewno chcesz w\xC5\x82\xC4\x85czy\xC4\x87 debugowanie Samby?"
+  enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Włączenie debugowania może spowodować generowanie dużych plików z logami.\r\n\
+    Na pewno chcesz włączyć debugowanie Samby?"
   the_mac_is_invalid: MAC jest niepoprawny
   making_home_networking_simple: Tworzenie Prostej Sieci Domowej
-  disk_pool_details: "Wybierz partycje, kt\xC3\xB3re chcesz umie\xC5\x9Bci\xC4\x87 w puli pami\xC4\x99ci %{greyhole}, a potem ustaw %{shares}  tak by wykorzystywa\xC5\x82y t\xC4\x85 pul\xC4\x99."
+  disk_pool_details: "Wybierz partycje, które chcesz umieścić w puli pamięci %{greyhole}, a potem ustaw %{shares}  tak by wykorzystywały tą pulę."
   calendars: Kalendarze
   a_single_number_0_254_to_point_to_a_given_machine: Numer z zakresu (0-254) w celu wskazania danej maszyny w twojej sieci
   writeable: Zapisywalny
-  port_range_ports_must_be_numbers: "Porty musz\xC4\x85 by\xC4\x87 numerami"
+  port_range_ports_must_be_numbers: "Porty muszą być numerami"
   help: Pomoc
-  new_firewall_rule: "Nowa Regu\xC5\x82a Firewall'a"
+  new_firewall_rule: "Nowa Reguła Firewall'a"
   video: Wideo
-  thanks_for_visiting: "Dzi\xC4\x99ki za odwiedziny. Wesprzyj naszych sponsor\xC3\xB3w!"
+  thanks_for_visiting: "Dzięki za odwiedziny. Wesprzyj naszych sponsorów!"
   install_code: Kod instalacji
   new_static_ip: Nowy Statyczny IP
   this_share_name_is_not_valid: Nazwa dla Share jest niepoprawna
-  there_are_no_applications_available: "Brak aplikacji dost\xC4\x99pnych w tej chwili."
+  there_are_no_applications_available: "Brak aplikacji dostępnych w tej chwili."
   ip_filtering: Filtry IP
-  create: "Stw\xC3\xB3rz"
-  guest_dashboard: "Panel Go\xC5\x9Bcia"
-  view_all_calendars_simultaneously: "Poka\xC5\xBC wszystkie kalendarze jednocze\xC5\x9Bnie"
+  create: "Stwórz"
+  guest_dashboard: "Panel Gościa"
+  view_all_calendars_simultaneously: "Pokaż wszystkie kalendarze jednocześnie"
   music: Muzyka
   permissions: Uprawnienia
-  initial_password: !binary |
-    SGFzxYJv
-
+  initial_password: "Hasło"
   your_domain_info: ""
   there_are_no_firewall_rules_defined: ""
   firewall_url_filter_message: ""
   dhcp_leases: DHCP Leases
   dynamic_dns: Dynamiczne DNS
-  the_ip_must_be_1_to_254: "IP musi by\xC4\x87 z zakresu 1-254"
-  not_a_valid_user_or_password: "B\xC5\x82\xC4\x85d: niepoprawna nazwa u\xC5\xBCytkownika lub has\xC5\x82o"
-  create_your_hda_profile: "Stw\xC3\xB3rz sw\xC3\xB3j Profil HDA"
+  the_ip_must_be_1_to_254: "IP musi być z zakresu 1-254"
+  not_a_valid_user_or_password: "Błąd: niepoprawna nazwa użytkownika lub hasło"
+  create_your_hda_profile: "Stwórz swój Profil HDA"
   your_home_dns_domain: Twoja domowa domena DNS
   theme_by: Szablon autorstwa
   forums: Fora
-  there_are_no_aliases_defined: "Na ten moment brak alias\xC3\xB3w"
-  user_name_is_not_valid: "Nazwa u\xC5\xBCytkownika jest niepoprawna"
+  there_are_no_aliases_defined: "Na ten moment brak aliasów"
+  user_name_is_not_valid: "Nazwa użytkownika jest niepoprawna"
   all_you_need: Wszystko czego potrzebujesz!
   system: System
-  name_is_taken_already_or_is_reserved: "Nazwa zaj\xC4\x99ta lub zarezerwowana"
+  name_is_taken_already_or_is_reserved: "Nazwa zajęta lub zarezerwowana"
   webapps: Aplikacje webowe
-  submit_for_debug: "Prze\xC5\x9Blij do debugowania"
-  more: "wi\xC4\x99cej"
-  protocol: !binary |
-    UHJvdG9rw7PFgg==
-
+  submit_for_debug: "Prześlij do debugowania"
+  more: "więcej"
+  protocol: "Protokół"
   no_account_yet: Nie masz konta?
-  delete_this_rule: !binary |
-    VXN1xYQgdMSZIHJvbMSZ
-
+  delete_this_rule: "Usuń tę rolę"
   images: Obrazki
-  language: !binary |
-    SsSZenlr
-
+  language: "Język"
   this_application_is_installed: Ta aplikacja jest zainstalowana.
   share: Share
   partitions: Partycje
-  router_setting_failed: "Ustawienie routera nie powiod\xC5\x82o si\xC4\x99. Prosz\xC4\x99 sprawdzi\xC4\x87 ustawienia."
+  router_setting_failed: "Ustawienie routera nie powiodło się. Proszę sprawdzić ustawienia."
   global_settings_for_shares: Ustawienia globalne dla Shares
   the_watchdog_is_a_critical_setting: ""
   warning_this_application_is_in_testing: "UWAGA: Ta aplikacja jest testowana!"
   is_being_monitored_24x7: jest monitorowane 24x7
   computer: Komputer
-  an_external_ip_address_to_make_the_alias: "Zewn\xC4\x99trzny adres IP, aby wskazywa\xC4\x87 na okre\xC5\x9Blony adres IP"
-  file_server_samba: "Serwer plik\xC3\xB3w (Samba)"
+  an_external_ip_address_to_make_the_alias: "Zewnętrzny adres IP, aby wskazywać na określony adres IP"
+  file_server_samba: "Serwer plików (Samba)"
   mac_is_invalid: MAC jest niepoprawny
   edit_alias: Edytuj alias
-  port_range_ports_are_already_allocated: "Porty w tym zakresie s\xC4\x85 ju\xC5\xBC przyznane"
-  please_double_check_the_settings: "Prosz\xC4\x99 <strong>dok\xC5\x82adnie sprawdzi\xC4\x87 </strongte ustawienia, maj\xC4\x85 one zasadnicze znaczenie dla tego by twoje HDA dzia\xC5\x82a\xC5\x82o po wyj\xC4\x99ciu z pude\xC5\x82ka."
+  port_range_ports_are_already_allocated: "Porty w tym zakresie są już przyznane"
+  please_double_check_the_settings: "Proszę <strong>dokładnie sprawdzić </strongte ustawienia, mają one zasadnicze znaczenie dla tego by twoje HDA działało po wyjęciu z pudełka."
   otherwise_you_can_go_to_the_error_log: ""
   description: Opis
   there_are_no_users: ""
-  are_you_sure: "Jeste\xC5\x9B pewien?"
-  efficiently_manage_your_network: "Zarz\xC4\x85dzaj swoj\xC4\x85 sieci\xC4\x85, kopiami zapasowymi, konsolami do gier i innymi urz\xC4\x85dzeniami siecowymi, a jdenocze\xC5\x9Bnie bezpiecznie korzystaj z Internetu. To dopiero pocz\xC4\x85tek mo\xC5\xBCliwo\xC5\x9Bci Amahi."
-  port_range_field_cannot_be_empty: "Pole nie mo\xC5\xBCe by\xC4\x87 puste"
-  available_for_installation: "(Dost\xC4\x99pny do instalacji)"
-  create_share: "Stw\xC3\xB3rz Share"
+  are_you_sure: "Jesteś pewien?"
+  efficiently_manage_your_network: "Zarządzaj swoją siecią, kopiami zapasowymi, konsolami do gier i innymi urządzeniami siecowymi, a jdenocześnie bezpiecznie korzystaj z Internetu. To dopiero początek możliwości Amahi."
+  port_range_field_cannot_be_empty: "Pole nie może być puste"
+  available_for_installation: "(Dostępny do instalacji)"
+  create_share: "Stwórz Share"
   apps: Aplikacje
-  translate_amahi: "T\xC5\x82umacz Amahi"
-  alias_looks_good: "Alias wygl\xC4\x85da na prawid\xC5\x82owy"
+  translate_amahi: "Tłumacz Amahi"
+  alias_looks_good: "Alias wygląda na prawidłowy"
   support: 
     array: 
       skip_last_comma: true
       sentence_connector: i
-  delete_share: "Usu\xC5\x84 Share"
+  delete_share: "Usuń Share"
   ushare_upnp_media_server: Ushare Media Server UPnP
-  sign_in: "Zarejestruj si\xC4\x99"
-  disk_pooling_enabled: "U\xC5\xBCywa puli"
+  sign_in: "Zarejestruj się"
+  disk_pooling_enabled: "Używa puli"
   new_dns_alias: Nowy DNS Alias
-  community: !binary |
-    U3BvxYJlY3pub8WbxIc=
-
-  create_a_new_user: "Stw\xC3\xB3rz nowego u\xC5\xBCytkownika"
+  community: "Społeczność"
+  create_a_new_user: "Stwórz nowego użytkownika"
   suggest: Zaproponuj!
-  port_filtering: "Filtrowanie port\xC3\xB3w"
+  port_filtering: "Filtrowanie portów"
   results_found: znaleziono wyniki
   the_mac_looks_good: MAC jest poprawny
   when_there_are_major_announcements: ""
   no_description_supplied: Brak opisu!
   manage_your_contributed_apps: ""
   global_settings: Ustawienia globalne
-  networking: !binary |
-    U2llxIc=
-
+  networking: "Sieć"
   firewall: Firewall
   there_are_no_servers_available: ""
-  port_range: "Zakres port\xC3\xB3w"
+  port_range: "Zakres portów"
   network_gateway: Brama Siecowa
-  path_looks_good: "\xC5\x9Acie\xC5\xBCka wygl\xC4\x85da dobrze"
+  path_looks_good: "Ścieżka wygląda dobrze"
   please_select: Zaznacz
   subscribe: Opisz
   mac_address: MAC
-  anonymous_guests: "Go\xC5\x9Bcie"
+  anonymous_guests: "Goście"
   settings: Ustawienia
-  initial_user_info: "u\xC5\xBCytkownik startowy"
+  initial_user_info: "użytkownik startowy"
   control: Kontrola
   disk_pool_replication: Replikacja
   date: 
     month_names: 
     - 
-    - "Stycze\xC5\x84"
+    - "Styczeń"
     - Luty
     - Marzec
-    - "Kwiecie\xC5\x84"
+    - "Kwiecień"
     - Maj
     - Czerwiec
     - Lipiec
-    - "Sierpie\xC5\x84"
-    - "Wrzesie\xC5\x84"
-    - "Pa\xC5\xBAdziernik"
+    - "Sierpień"
+    - "Wrzesień"
+    - "Październik"
     - Listopad
-    - "Grudzie\xC5\x84"
+    - "Grudzień"
     abbr_day_names: 
     - nie
     - pon
     - wto
-    - !binary |
-      xZtybw==
-
+    - "śro"
     - czw
     - pia
     - sob
@@ -532,13 +496,11 @@ pl:
       long: "%d %B %Y"
     day_names: 
     - Niedziela
-    - "Poniedzia\xC5\x82ek"
+    - "Poniedziałek"
     - Wtorek
-    - !binary |
-      xZpyb2Rh
-
+    - "Środa"
     - Czwartek
-    - "Pi\xC4\x85tek"
+    - "Piątek"
     - Sobota
     abbr_month_names: 
     - 
@@ -551,95 +513,85 @@ pl:
     - lip
     - sie
     - wrz
-    - !binary |
-      cGHFug==
-
+    - "paź"
     - lis
     - gru
-  username_cannot_be_blank: "Nazwa u\xC5\xBCytkownika nie mo\xC5\xBCe by\xC4\x87 pusta"
+  username_cannot_be_blank: "Nazwa użytkownika nie może być pusta"
   reboot: Restart
   the_ip_looks good: IP poprawne
   this_feature_is_under_heavy_development: Ta funkcja jest w stadium intensywnego rozwoju
   there_are_no_webapps: ""
-  are_you_sure_you_want_to_delete_the_static_ip: "Czy na pewno chcesz usun\xC4\x85\xC4\x87 IP '%{name}'?"
-  the_name_cannot_be_blank: "Nazwa nie mo\xC5\xBCe by\xC4\x87 pusta"
+  are_you_sure_you_want_to_delete_the_static_ip: "Czy na pewno chcesz usunąć IP '%{name}'?"
+  the_name_cannot_be_blank: "Nazwa nie może być pusta"
   uninstall: Odinstaluj
-  details: !binary |
-    U3pjemVnw7PFgnk=
-
+  details: "Szczegóły"
   is_now_uninstalled: jest Odinstalowane
   themes: Szablony
   the_name_you_input_above_will_be_added_to_the_DNS_server: ""
   new_share: Nowy Share
-  this_path_is_not_valid: "Ta \xC5\x9Bcie\xC5\xBCka jest niepoprawna"
-  log_in: "Zaloguj si\xC4\x99"
-  are_you_sure_user: "Czy na pewno chcesz usun\xC4\x85\xC4\x87 u\xC5\xBCytkownika '%{user}'?"
+  this_path_is_not_valid: "Ta ścieżka jest niepoprawna"
+  log_in: "Zaloguj się"
+  are_you_sure_user: "Czy na pewno chcesz usunąć użytkownika '%{user}'?"
   extra_parameters: Dodatkowe parametry
-  try_installing_some_apps: "Spr\xC3\xB3buj zainstalowa\xC4\x87 aplikacje"
+  try_installing_some_apps: "Spróbuj zainstalować aplikacje"
   testimonials: Referencje
   version: Wersja
-  powering_off: "Wy\xC5\x82\xC4\x85czanie w toku ..."
-  get_involved: !binary |
-    V2XFuiB1ZHppYcWCIQ==
-
-  stop_it: "Zako\xC5\x84cz to"
+  powering_off: "Wyłączanie w toku ..."
+  get_involved: "Weź udział!"
+  stop_it: "Zakończ to"
   home_domain: Domowa domena
-  total_space: !binary |
-    xYHEhWN6bmll
-
-  never_email_me: "Nie chc\xC4\x99 otrzyma\xC4\x87 emaili"
+  total_space: "Łącznie"
+  never_email_me: "Nie chcę otrzymać emaili"
   is_now_installed: jest Zainstalowane
   this_shares_files_deleted: ""
-  alias_is_not_valid: "Alias jest nieprawid\xC5\x82owy"
-  mac_address_of_the_device: "Adres MAC urz\xC4\x85dzenia (00:11:22:33:44:55)"
-  next: "Nast\xC4\x99pny"
+  alias_is_not_valid: "Alias jest nieprawidłowy"
+  mac_address_of_the_device: "Adres MAC urządzenia (00:11:22:33:44:55)"
+  next: "Następny"
   web_apps: Aplikacje webowe
-  remember_me: "Zapami\xC4\x99taj mnie"
-  password_looks_good: "Has\xC5\x82o poprawne"
+  remember_me: "Zapamiętaj mnie"
+  password_looks_good: "Hasło poprawne"
   docs: Docs
-  the_ip_address_cannot_be_empty: "Adres IP nie mo\xC5\xBCe by\xC4\x87 pusty"
+  the_ip_address_cannot_be_empty: "Adres IP nie może być pusty"
   pdc_primary_domain_controller: PDC - podstawowy kontroler domeny
   computer_name: Nazwa komputera
   close: zamknij
-  this_file_was_automatically_generated_on: "# Ten plik zosta\xC5\x82 wygenerowany automatycznie %{time} - UWAGA - ka\xC5\xBCda r\xC4\x99czna edycja zostanie utracona!"
+  this_file_was_automatically_generated_on: "# Ten plik został wygenerowany automatycznie %{time} - UWAGA - każda ręczna edycja zostanie utracona!"
   installation_instructions: Instrukje
   control_panel_for_your_amahi_hdas: Panel sterowania dla Amahi HDAs
-  please_select_the_type_of_rule_you_want: "Wybierz typ regu\xC5\x82y, kt\xC3\xB3r\xC4\x85 chcesz doda\xC4\x87."
-  create_a_new_webapp: "Stw\xC3\xB3rz Now\xC4\x85 Aplikacj\xC4\x99 Webow\xC4\x85"
-  refresh_status: "Od\xC5\x9Bwie\xC5\xBC status"
+  please_select_the_type_of_rule_you_want: "Wybierz typ reguły, którą chcesz dodać."
+  create_a_new_webapp: "Stwórz Nową Aplikację Webową"
+  refresh_status: "Odśwież status"
   home: Home
-  will_not_start_at_boot_time: "<b>nie uruchomi </b> si\xC4\x99 przy starcie systemu"
+  will_not_start_at_boot_time: "<b>nie uruchomi </b> się przy starcie systemu"
   there_are_no_static_ips_defined: ""
-  share_name_is_available: "Nazwa dla Share jest dost\xC4\x99pna"
+  share_name_is_available: "Nazwa dla Share jest dostępna"
   powerful_simple_home_networking: ""
   about: O
   email_me: Napisz do mnie
   there_are_no_applications_installed: Brak aplikacji zainstalowanych w tej chwili.
   firewall_port_forward_message: ""
-  to_recover_your_password: "Wpisz sw\xC3\xB3j adres email, aby odzyska\xC4\x87 has\xC5\x82o lub email aktywacyjny"
+  to_recover_your_password: "Wpisz swój adres email, aby odzyskać hasło lub email aktywacyjny"
   apache_web_server: Apache Web Server
   seconds: sekundy
   partition: Partycja
   dhcp: DHCP
   dhcp_free: Nieaktywne
-  this_users_files_deleted: "Pliki w domowym folderze uzytkownika B\xC4\x98D\xC4\x84 USUNI\xC4\x98TE"
+  this_users_files_deleted: "Pliki w domowym folderze uzytkownika BĘDĄ USUNIĘTE"
   configured: Skonfigurowany
-  disabling_lan_manager_will_not_allow_older_machines: "Wy\xC5\x82\xC4\x85czenie uwierzytelniania w Windows 95/98 zablokuje Shares u\xC5\xBCytkownikom starszych komputer\xC3\xB3w. Na pewno wy\xC5\x82\xC4\x85czy\xC4\x87 uwierzytelnianie?"
-  you_have_been_logged_out: "Zosta\xC5\x82e\xC5\x9B wylogowany"
-  permanently: "na sta\xC5\x82e"
+  disabling_lan_manager_will_not_allow_older_machines: "Wyłączenie uwierzytelniania w Windows 95/98 zablokuje Shares użytkownikom starszych komputerów. Na pewno wyłączyć uwierzytelnianie?"
+  you_have_been_logged_out: "Zostałeś wylogowany"
+  permanently: "na stałe"
   the_url_is_invalid: URL jest niepoprawny
   it_will_be_restarted_by_the_watchdog: (zostanie ono wznowione przez watchdog)
   amahi_dyndns_updater: Amahi Dynamic DNS Updater
   pdc_domain: domena PDC
-  path: !binary |
-    xZpjaWXFvGth
-
+  path: "Ścieżka"
   features: Funkcje
-  password_cannot_be_blank: "Has\xC5\x82o nie mo\xC5\xBCe by\xC4\x87 puste"
+  password_cannot_be_blank: "Hasło nie może być puste"
   the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: ""
-  your_existing_network_gatweay: "Tw\xC3\xB3j obecny Router"
+  your_existing_network_gatweay: "Twój obecny Router"
   warning: UWAGA
   dhcp_ip_address: DHCP IP Adres
   beta_apps: Beta
-  logout: "Wyloguj si\xC4\x99"
+  logout: "Wyloguj się"
   there_is_no_undo: ""
