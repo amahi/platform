@@ -5,4 +5,5 @@ Settings::Engine.routes.draw do
 	match 'toggle_setting' => 'settings#toggle_setting'
 	match 'reboot' => 'settings#reboot'
 	match 'poweroff' => 'settings#poweroff'
+	match 'servers' => 'settings#servers'
 end

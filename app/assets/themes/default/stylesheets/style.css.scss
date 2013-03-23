@@ -1180,6 +1180,23 @@ td.form-action-wrap {
   text-align: left;
 }
 
+span.server_status {
+  i.stopped {
+	margin: -.3em 1em;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(../images/server/stopped.png) no-repeat;
+  }
+  i.running {
+	margin: -.3em 1em;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(../images/server/running.png) no-repeat;
+  }
+}
+
 // --------------------------------------------------
 // Misc legacy stuff to be cleaned up
 // --------------------------------------------------

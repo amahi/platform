@@ -61,4 +61,7 @@ class SettingsController < ApplicationController
 		render :text => t('powering_off')
 	end
 
+	def servers
+		@servers = Server.all
+	end
 end
