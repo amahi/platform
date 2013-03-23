@@ -27,35 +27,23 @@ var Users = {
             }
         });
 
-        // update password
-        SmartLinks.initialize({
-            open_selector: '.open-password-area',
-            close_selector: '.close-password-area',
-            onShow: function(open_link){
-               user = _this.user(open_link);
-               user_id = _this.parse_id(user.attr('id'));
-               open_link.nextAll('.messages:first').text('');
-               open_link.after(Templates.run('updatePassword', {user_id: user_id}));
-               form = open_link.next();
-               FormHelpers.focus_first(form);
-            }
-        });
-
-        $('.update-password-form').live({
+        $('.update-password').live({
             'ajax:success': function(data, results, jqXHR){
-                form = $(this);
-                form.nextAll('.messages:first').text(results['message']);
+                msg = $(this).nextAll('.messages:first');
+		msg.text(results['message']);
+		setTimeout(function() { msg.text(''); }, 8000);
             },
 
             'ajax:complete': function(data, results, jqXHR){
-                form = $(this);
-                link = form.prev();
-                form.hide('slow', function(){
-                    form.remove();
-                    link.show();
-                });
+                $(this).find('.spinner').hide();
+                $(this).find('.password-edit').hide();
+		$(this).find('input[type=password]').val('');
+            },
 
+            'ajax:beforeSend': function(data, results, jqXHR){
+                $(this).find('.spinner').show('fast');
             }
+
         });
 
         // update username
@@ -113,9 +101,7 @@ var Users = {
                 spinner.show('fast');
                 form.parent().hide();
             }
-
         });
-
 
         RemoteCheckbox.initialize({'selector': '.user_admin_checkbox', 'parentSelector': 'span:first', 'success': function(rc, checkbox) {
             _this.user(checkbox).find('.user_icons:first').toggleClass('user_admin');

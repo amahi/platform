@@ -68,10 +68,12 @@ class UsersController < ApplicationController
 	end
 
 	def update_password
+		sleep 4 if development?
 		@user = User.find(params[:id])
 		@user.update_attributes(params[:user])
 		errors = @user.errors.any?
-		render :json => { :status => errors ? :not_acceptable : :ok, :message => errors ? '' : t('password_changed_successfully') }
+		render :json => { :status => errors ? :not_acceptable : :ok,
+			:message => errors ? @user.errors.full_messages.join(', ') : t('password_changed_successfully') }
 	end
 
 	def update_name

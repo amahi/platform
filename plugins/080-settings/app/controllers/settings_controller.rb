@@ -28,6 +28,10 @@ class SettingsController < ApplicationController
 		@version[:core] = "xyz (FIXME)"
 	end
 
+	def servers
+		@servers = Server.all
+	end
+
 	def change_language
 		sleep 2 if development?
 		l = params[:locale]
@@ -61,7 +65,8 @@ class SettingsController < ApplicationController
 		render :text => t('powering_off')
 	end
 
-	def servers
-		@servers = Server.all
+	def refresh
+		raise "FIXME"
 	end
+
 end

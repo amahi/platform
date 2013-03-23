@@ -7,7 +7,7 @@
           th.settings-col1.users-col2[scope="col"]= t('full_name')
     = render @users
   - else
-    div
+    .no-users
       h2= t('there_are_no_users')
 
 = tag('input', :type => 'button', :value => t('new_user'), :class => 'open-area', :id => "new-user-to-step1",  :data => { :related => "#new-user-step1" } )
@@ -18,7 +18,5 @@
       = render 'form'
 
 = content_for(:js_templates) do
-  script[id='updatePasswordTemplate' type='text/x-jquery-tmpl']
-    = render '/js_templates/users/password_form'
   script[id='updateUsernameTemplate' type='text/x-jquery-tmpl']
     = render '/js_templates/users/username_form'

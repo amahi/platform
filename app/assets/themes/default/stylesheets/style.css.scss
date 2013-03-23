@@ -1197,6 +1197,21 @@ span.server_status {
   }
 }
 
+.user-manage {
+	i.identity {
+		width: 25px;
+		height: 26px;
+		display: inline-block;
+		background: url(../images/identity.png) no-repeat;
+	}
+	i.key {
+		width: 16px;
+		height: 16px;
+		display: inline-block;
+		background: url(../images/key.png) no-repeat;
+	}
+}
+
 // --------------------------------------------------
 // Misc legacy stuff to be cleaned up
 // --------------------------------------------------
