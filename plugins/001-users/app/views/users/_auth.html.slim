@@ -1,6 +1,6 @@
 td #{t('authentication')}
 td
-  = link_to_function content_tag('i', '', class: 'identity'), "$(this).parent().children('.pubkey-area').toggle('slow')",
+  = link_to_function content_tag('i', '', class: 'auth'), "$(this).parent().children('.pubkey-area').toggle('slow')",
     :title => t('manage_your_public_key')
   = theme_image_tag("ok.png", :class => 'ok', :style => 'display:none')
   = theme_image_tag("warning.png", :class => 'error', :style => 'display:none')

@@ -1198,17 +1198,17 @@ span.server_status {
 }
 
 .user-manage {
-	i.identity {
+	i.auth {
 		width: 25px;
 		height: 26px;
 		display: inline-block;
-		background: url(../images/identity.png) no-repeat;
+		background: url(../images/auth.png) no-repeat;
 	}
-	i.key {
+	i.password {
 		width: 16px;
 		height: 16px;
 		display: inline-block;
-		background: url(../images/key.png) no-repeat;
+		background: url(../images/password.png) no-repeat;
 	}
 }
 
