@@ -3,18 +3,15 @@
     :url => '/shares/${share_id}/update_extras',\
     :method => :put,\
     :html => {\
-      :class => 'share area update-extras-form',\
+      :class => 'share area update-extras-form form-horizontal',\
       :id => 'update-extras-form'\
     } do |f|
 
-  table
+  .control-group
+    .controls= f.text_area :extras, :rows => 10, :placeholder => t('add_extra_parameters')
+    .messages
 
-    tr
-      td= f.text_area :extras, :rows => 10, :placeholder => t('add_extra_parameters')
-      td.align-top
-        .messages
-
-    tr
-      td
-        = f.submit "#{t('change')} &raquo;".html_safe
-        = link_to t('cancel'), '#', :class => 'close-update-extras-area cancel-link'
+  .control-group
+    .controls
+      = f.submit "#{t('change')}".html_safe, :class => 'btn'
+      = link_to t('cancel'), '#', :class => 'close-update-extras-area cancel-link'

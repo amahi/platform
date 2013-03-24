@@ -1,13 +1,18 @@
-td #{t('authentication')}
-td
+td.top
+  label #{t('authentication')}
+td.top
   = link_to_function content_tag('i', '', class: 'auth'), "$(this).parent().children('.pubkey-area').toggle('slow')",
-    :title => t('manage_your_public_key')
+    :title => t('manage_your_public_key'),
+    :class => 'control-action'
   = theme_image_tag("ok.png", :class => 'ok', :style => 'display:none')
   = theme_image_tag("warning.png", :class => 'error', :style => 'display:none')
   = spinner
   div.pubkey-area[style="display:none"]
-    = form_tag users_engine.update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey' do |f|
-      = text_area_tag "public_key_#{user.id}", user.public_key, :rows => 5, :cols => 78, :placeholder => t('public_key')
-      div
-        = submit_tag t('update_key')
-        = link_to_function t('cancel'), "$(this).parents('.pubkey-area').hide('slow')", :class => 'cancel-link'
+    = form_tag users_engine.update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey form-horizontal' do |f|
+      .control-group
+        .controls
+          = text_area_tag "public_key_#{user.id}", user.public_key, :rows => 5, :cols => 78, :placeholder => t('public_key')
+      .control-group
+        .controls
+          = submit_tag t('update_key'), :class => 'btn'
+          = link_to_function t('cancel'), "$(this).parents('.pubkey-area').hide('slow')", :class => 'cancel-link'

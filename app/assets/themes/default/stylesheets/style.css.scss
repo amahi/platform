@@ -107,6 +107,87 @@ input[type="password"] {
   }
 }
 
+.form-inline {
+  @include clearfix;
+
+  &.update-password {
+    width: 600px;
+  }
+
+  .password-edit {
+    .control-group {
+      float: none;
+      margin: 0 0 10px;
+      @include clearfix;
+
+      .controls {
+        float: left;
+        margin: 0 20px 0 0;
+      }
+
+      .messages {
+
+      }
+    }
+  }
+
+  .control-group {
+    float: left;
+    margin: 0 10px 0 0;
+  }
+}
+
+.form-horizontal {
+  .control-group {
+    margin: 0 0 10px;
+  }
+}
+
+.control-group {
+
+  .controls {
+    input[type=text], input[type=password] {
+      margin: 0;
+    }
+  }
+
+  .cancel-link {
+    margin: 0 0 0 10px;
+    display: inline-block;
+  }
+}
+
+.create-form {
+
+  &.share {
+    .row:last-child { margin: 0; }
+  }
+
+  .row {
+    @include clearfix;
+
+    .control-group {
+      margin: 0 0 10px;
+      @include clearfix;
+
+      .controls { float: left; margin: 0 20px 0 0; }
+    }
+  }
+
+  .create-btn {
+    margin: 0 0 19px 20px;
+    .btn-create { margin: 0; }
+  }
+
+}
+
+.shares-fixed-tags {
+  padding: 10px 0 0;
+}
+
+.tags {
+  .form-inline { margin: 0 0 -20px -10px; }
+}
 
 // --------------------------------------------------
 // Buttons
@@ -759,7 +840,6 @@ td {
 }
 
 .password-edit {
-  margin: 0 0 -15px;
 
   input[type=password] {
     position: relative;
@@ -1103,13 +1183,6 @@ td {
   margin-bottom: 0;
 }
 
-
-#share_extras {
-  height: 110px;
-  padding: 2px 4px;
-  margin-bottom: 7px;
-}
-
 .spinner {
   margin-left: 10px;
   background: url(../images/working.gif) no-repeat left center;
@@ -1169,10 +1242,6 @@ td.form-action-wrap {
 
 .field_with_errors input {
   background-color: #fdfec3;
-}
-
-.cancel-link {
-  padding-left: 10px;
 }
 
 .more-info {

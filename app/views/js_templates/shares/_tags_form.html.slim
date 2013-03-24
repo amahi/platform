@@ -7,14 +7,15 @@
         :ok_icon_path => theme_image_path('ok.png'),\
         :error_icon_path => theme_image_path('warning.png')\
       },\
-      :class => 'share area update-tags-form',\
+      :class => 'share area update-tags-form form-inline',\
       :id => 'update-tags-form'\
     } do |f|
 
-  table
-    tr
-      td= f.text_field :tags, :size => 16, :maxlength => 255, :placeholder => '(add tags)'
-      td.form-action-wrap
-        = f.submit "#{t('change')} &raquo;".html_safe
-        = link_to t('cancel'), '#', :class => 'close-update-tags-area cancel-link'
-      td.messages
+  .control-group
+    .controls
+      = f.text_field :tags, :size => 16, :maxlength => 255, :placeholder => '(add tags)'
+  .control-group
+    .controls
+      = f.submit "#{t('change')}".html_safe, :class => 'btn'
+      = link_to t('cancel'), '#', :class => 'close-update-tags-area cancel-link'
+    .messages

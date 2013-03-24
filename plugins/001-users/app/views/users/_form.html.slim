@@ -7,32 +7,33 @@
         :ok_icon_path => theme_image_path('ok.png'), \
         :error_icon_path => theme_image_path('stop.png') \
       }, \
-      :class => 'user', \
+      :class => 'user create-form', \
       :id => 'new-user-form' \
     } do |f|
 
     fieldset
       legend &nbsp; #{t('create_a_new_user')} &nbsp;
-      div.create-new-inside
+      .create-inside
         / = render :partial => 'shared/errors', :object => @user
-        div
-          span= f.text_field :login, :size => 16, :maxlength => 20, :placeholder => t('username')
-          span.messages
+        .row
+          .control-group
+            .controls= f.text_field :login, :size => 16, :maxlength => 20, :placeholder => t('username')
+            .messages
 
-        div
-          span= f.text_field :name, :size => 16, :maxlength => 64, :placeholder => t('full_name')
-          span.messages
+          .control-group
+            .controls= f.text_field :name, :size => 16, :maxlength => 64, :placeholder => t('full_name')
+            .messages
 
-        div
-          span= f.password_field :password, :size => 16, :maxlength => 12, :placeholder => t('password')
-          span.messages
+        .row
+          .control-group
+            .controls= f.password_field :password, :size => 16, :maxlength => 12, :placeholder => t('password')
+            .messages
 
-        div
-          span= f.password_field :password_confirmation, :size => 16, :maxlength => 12, :placeholder => t('confirm')
-          span.messages
-
-        div.action-button
-          span.btn-wrap
-            = f.submit t('create'), :id => 'user_create_button'
-            = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-user-to-step1'}
-          span
+          .control-group
+            .controls= f.password_field :password_confirmation, :size => 16, :maxlength => 12, :placeholder => t('confirm')
+            .messages
+    
+    .control-group.create-btn
+      .controls
+        = f.submit t('create'), :id => 'user_create_button', :class => 'btn btn-create'
+        = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-user-to-step1'}       
