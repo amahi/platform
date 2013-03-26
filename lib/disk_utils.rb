@@ -21,7 +21,7 @@ class DiskUtils
 	# return information on hdd temperature - requires hddtemp service running!
 	class << self
 	    	def stats
-			host = '10.1.1.155'
+			host = 'localhost'
 			port = 7634
 
 			begin
