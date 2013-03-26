@@ -1,0 +1,19 @@
+.settings-table#disks-table
+  table.settings
+    thead
+      tr
+        th.settings-col1= t 'model'
+        th= t 'device'
+        th
+          = t 'temperature'
+          | (C)
+        th
+          = t 'temperature'
+          | (F)
+    tbody
+      - @disks.each do | disk |
+        tr class=cycle("odd", "even")
+          td.settings-col1= disk[:model]
+          td= disk[:device]
+          td[class=disk[:tempcolor]]= disk[:temp_c]
+          td[class=disk[:tempcolor]]= disk[:temp_f]
