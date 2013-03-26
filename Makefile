@@ -8,7 +8,7 @@ necessary-packages:
 	sudo yum -y install git rpm-build ruby ruby-devel gcc gcc-c++ mysql mysql-devel
 
 # cleanup misc files that bloat things up
-cleanup:
+clean:
 	rm -f log/development.log
 	rm -f log/test.log
 	rm -rf tmp/cache/*
@@ -16,4 +16,5 @@ cleanup:
 	rm -rf tmp/server*
 	rm -rf tmp/smb*
 	rm -rf tmp/key*
+	rm -rf tmp/capybara
 	rm -rf public/assets

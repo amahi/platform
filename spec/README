@@ -1,0 +1,12 @@
+# debugging note: you can do this for spec testing debugging:
+#
+# 1) add set this to true in spec_helper.rb
+#
+#	Capybara::Screenshot.autosave_on_failure = true
+#
+# 2) write this in a spec
+#
+#	screenshot_and_save_page
+#
+# A screenshot and the HTML of the page will be dumped in tmp/capybara/ with a timestamp
+#

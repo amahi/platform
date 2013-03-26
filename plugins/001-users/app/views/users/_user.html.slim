@@ -19,7 +19,7 @@ div.user[id="whole_user_#{user.id}"]
         .settings-actions
           = spinner
           span.delete[style="#{user.admin? ? "display:none" : ""}"]
-            = link_to t('delete_user') + ' ' + user.login,
+            = link_to t('delete') + ' ' + user.login,
                       users_engine.user_path(user),
                       :remote => true,
                       :method => :delete,
@@ -33,7 +33,7 @@ div.user[id="whole_user_#{user.id}"]
               td 
                 label #{t('name')}
               td
-                span.open-username-edit.focus= user.name
+                span.open-username-edit.focus = user.name
 
             - if advanced?
               tr

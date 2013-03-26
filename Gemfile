@@ -47,9 +47,10 @@ gem 'minitest'
 
 gem "rspec-rails", :group => [:test, :development]
 group :test do
-  gem 'sqlite3'
+  gem "sqlite3"
   gem "factory_girl_rails"
   gem "capybara"
+  gem 'capybara-screenshot'
   # FIXME: required for Fedora 18
   gem 'minitest'
   #required for javascript test in selenium
