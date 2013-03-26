@@ -80,6 +80,8 @@ legend, fieldset {
   color: darkgrey;
 }
 
+legend { padding: 0 15px; }
+
 legend b, fieldset b, .editable {
   color: black;
 }
@@ -794,7 +796,6 @@ table.apptable {
 
   legend, fieldset {
     color: darkgrey;
-    padding: 0 15px;
   }
   legend b, fieldset b {
     color: black;
