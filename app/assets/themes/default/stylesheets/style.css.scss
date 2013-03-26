@@ -1139,28 +1139,12 @@ td {
   margin-top: 25px;
 }
 
-#users-table .users-col1, #disks-table .disks-col1 {
+#users-table .users-col1 {
   span {
     float: left;
   }
   a {
     margin: 0 10px 0 0;
-  }
-}
-
-#disks-table .settings-col1 {
-  padding-left: 30px !important;
-}
-
-#disks-table{
-  td.cool {
-    color:blue;
-  }
-  td.warm{
-    color:orange;
-  }
-  td.hot {
-    color:red;
   }
 }
 
