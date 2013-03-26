@@ -10,7 +10,7 @@
     .no-users
       h2= t('there_are_no_users')
 
-= tag('input', :type => 'button', :value => t('new_user'), :class => 'open-area btn btn-create', :id => "new-user-to-step1",  :data => { :related => "#new-user-step1" } )
+= button_tag t('new_user'), :type => 'button', :class => 'open-area btn btn-create', :id => "new-user-to-step1",  :data => { :related => "#new-user-step1" }
 
 #new-user-box
   #user-new

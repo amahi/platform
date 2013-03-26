@@ -15,25 +15,23 @@
       legend &nbsp; #{t('create_a_new_user')} &nbsp;
       .create-inside
         / = render :partial => 'shared/errors', :object => @user
-        .row
-          .control-group
-            .controls= f.text_field :login, :size => 16, :maxlength => 20, :placeholder => t('username')
-            .messages
+        .control-group
+          .controls= f.text_field :login, :size => 16, :maxlength => 20, :placeholder => t('username')
+          .messages
 
-          .control-group
-            .controls= f.text_field :name, :size => 16, :maxlength => 64, :placeholder => t('full_name')
-            .messages
+        .control-group
+          .controls= f.text_field :name, :size => 16, :maxlength => 64, :placeholder => t('full_name')
+          .messages
 
-        .row
-          .control-group
-            .controls= f.password_field :password, :size => 16, :maxlength => 12, :placeholder => t('password')
-            .messages
+        .control-group
+          .controls= f.password_field :password, :size => 16, :maxlength => 12, :placeholder => t('password')
+          .messages
 
-          .control-group
-            .controls= f.password_field :password_confirmation, :size => 16, :maxlength => 12, :placeholder => t('confirm')
-            .messages
-    
-    .control-group.create-btn
-      .controls
-        = f.submit t('create'), :id => 'user_create_button', :class => 'btn btn-create'
-        = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-user-to-step1'}       
+        .control-group
+          .controls= f.password_field :password_confirmation, :size => 16, :maxlength => 12, :placeholder => t('confirm')
+          .messages
+
+        .control-group.create-btn
+          .controls
+            = button_tag t('create'), :type => 'submit', :id => 'user_create_button', :class => 'btn btn-create'
+            = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-user-to-step1'}   

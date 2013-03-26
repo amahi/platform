@@ -30,19 +30,19 @@ div.user[id="whole_user_#{user.id}"]
         .settings-fields
           table
             tr
-              td
+              td 
                 label #{t('name')}
               td
                 span.open-username-edit.focus= user.name
 
             - if advanced?
               tr
-                td
+                td 
                   label #{t('last_login')}
                 td = formatted_date(user.last_login_at)
 
             tr
-              td
+              td 
                 label #{t('admin')}
               td = simple_remote_checkbox :id => "user_admin_#{user.id}",
                                          :css_class => 'user_admin_checkbox action-checkbox',
