@@ -23,22 +23,23 @@ class UsersController < ApplicationController
 
 	def index
 		@page_title = t('users')
-		get_all_users
+		@users = User.all_users
 	end
 
 	def create
+		sleep 2 if development?
 		@user = User.new(params[:user])
 		@user.save
-		get_all_users unless @user.errors.any?
+		@users = User.all_users unless @user.errors.any?
 	end
 
 	def update
 	end
 
 	def update_pubkey
+		sleep 2 if development?
 		@user = User.find(params[:id])
 		# sleep a little to see the spinner working well
-		sleep 2 if development?
 		unless @user
 			render :json => { :status => :not_acceptable }
 		else
@@ -51,9 +52,14 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
+		sleep 2 if development?
 		@user = User.find(params[:id])
-		@user.destroy
-		render :json => {:id => @user.id}
+		id = nil
+		if @user && @user != current_user && !@user.admin?
+			@user.destroy
+			id = @user.id unless @user.errors.any?
+		end
+		render :json => { status: 'ok', id: id }
 	end
 
 	def toggle_admin
@@ -68,7 +74,7 @@ class UsersController < ApplicationController
 	end
 
 	def update_password
-		sleep 4 if development?
+		sleep 2 if development?
 		@user = User.find(params[:id])
 		@user.update_attributes(params[:user])
 		errors = @user.errors.any?
@@ -86,10 +92,6 @@ class UsersController < ApplicationController
 
 	def can_i_toggle_admin?(user)
 		current_user != user and !user.needs_auth?
-	end
-
-	def get_all_users
-		@users = User.all_users
 	end
 
 end

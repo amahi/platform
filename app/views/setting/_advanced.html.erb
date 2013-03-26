@@ -1,8 +1,0 @@
-<%= checked = setting.value == '1'
-    checkbox_to_remote checked,
-	:url => { :controller => 'setting', :action => 'toggle_setting', :id => setting, :kind => 'advanced' },
-	:before => spinner_show('global'),
-	:success => spinner_hide('global'),
-	:update => "settings-table",
-	:confirm => (checked ? nil : [t('avanced_settings_is_for_developers'), "", "", t('are_you_sure_advanced_features')].join("\n"))
-%>
