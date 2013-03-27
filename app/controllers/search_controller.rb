@@ -35,6 +35,8 @@ class SearchController < ApplicationController
 		else
 			@query = params[:query]
 			@results = hda_search(@query)
+			# NOTE: to get sample fake data, uncomment this:
+			# @results = YAML.load(Zlib::GzipReader.new(StringIO.new(File.read "db/sample-data/search-results.yml.gz")).read)
 		end
 	end
 
