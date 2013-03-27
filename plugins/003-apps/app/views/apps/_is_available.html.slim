@@ -1,0 +1,6 @@
+br
+br
+= theme_image_tag("working.gif", :class => "spinner spinner-installation", :style=> "display: none;")
+span.progress
+  span.install-button
+    = link_to("Install".html_safe, apps_engine.install_via_daemon_app_path(:id => app.identifier), :method => :post, :remote => true, :class => 'install-app-via-daemon')

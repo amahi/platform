@@ -14,4 +14,3 @@
 //= require lib/smart-links
 
 //= require models/shares
-//= require models/apps

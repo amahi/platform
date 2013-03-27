@@ -31,23 +31,6 @@ AmahiHDA::Application.routes.draw do
     end
   end
 
-
-  resources :apps do
-    collection do
-      get 'installed'
-    end
-
-    member do
-      post 'install_via_daemon'
-      get 'install_progress'
-
-      post 'uninstall_via_daemon'
-      get 'uninstall_progress'
-
-      put 'toggle_in_dashboard'
-    end
-  end
-
   resources :user_sessions, :hosts, :aliases, :firewalls
 
   match 'search/:action' => 'search', :as => :search

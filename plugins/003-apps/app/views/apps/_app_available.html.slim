@@ -1,6 +1,6 @@
 - app = app_available
 
-= content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => install_progress_app_path(app.identifier) } do
+= content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => apps_engine.install_progress_app_path(app.identifier) } do
 
   table.settings.stretchtoggle[id="app_row_#{app.identifier}"]
     tr.alt-row
