@@ -36,7 +36,6 @@ class DiskUtils
 			end
 			s.close               # Close the socket when done
 
-			#res = "|/dev/sda|Intel|32|*|" #For testing on OSX
 			disks = res.split '||'
 
 			res = []
@@ -66,17 +65,8 @@ class DiskUtils
 			res
 		end
 		def mounts
-			s = `df -BM`.split( /\r?\n/ )[1..-1] || ["","Incorrect data returned"]#Fedora and Ubuntu
-			#Test string for ue on systems with noncompatible DF
-			#s = "Filesystem                    1M-blocks   Used Available Use% Mounted on
-#rootfs                           73886M 15406M    54727M  22% /
-#udev                                10M     0M       10M   0% /dev
-#tmpfs                              387M     1M      386M   1% /run
-#/dev/mapper/netmon-root          73886M 15406M    54727M  22% /
-#tmpfs                                5M     0M        5M   0% /run/lock
-#tmpfs                              773M     1M      773M   1% /run/shm
-#/dev/sda1                          228M    49M      167M  23% /boot
-#/dev/mapper/database-database    74588M  3617M    67182M   6% /database".split( /\r?\n/ )[1..-1] #String to use for testing on OSX
+			s = `df -BM`.split( /\r?\n/ )[1..-1] || ["","Incorrect data returned"]
+
 			mount = []
 			res = []
 			s.each do |line|
