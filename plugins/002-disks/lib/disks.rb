@@ -3,7 +3,8 @@ require "disks/engine"
 
 module Disks
 	class Lib
-		# the code for your plugin library here
+		require "disks/disk_utils"
 		# or inside lib/disks/whatever.rb and required here
 	end
 end
+
