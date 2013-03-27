@@ -33,7 +33,7 @@ div.user[id="whole_user_#{user.id}"]
               td 
                 label #{t('name')}
               td
-                span.open-username-edit.focus = user.name
+                b = user.name
 
             - if advanced?
               tr
