@@ -51,34 +51,19 @@ module SearchHelper
 		return theme_image_tag(File.join('icons', extmatch(File.extname(path))))
 	end
 
+	# active class if the the controller matches
+	def active(controller)
+		action_name == controller ? 'active' : ''
+	end
+
 protected
 
 	def extmatch(ext)
 		EXT2ICON.each_pair do |type, regexp|
 			return "#{type}.png" if ext =~ /\.(#{regexp})$/i
 		end
-		# default
-		return 'text.png'
-	end
-
-	# for testing:
-	#
-	# 	define EXT2ICON
-	# 	require 'fileutils'
-	# 	make_extensions_test_folder
-	# 	sudo updatedb &
-	# 	locate extension-test
-	# 	rm -rf /var/hda/files/docs/extension-test
-	#
-	def make_extensions_test_folder
-		Dir.chdir(Share.full_path('docs')) do
-			FileUtils.mkdir_p "extension-test"
-			Dir.chdir "extension-test"
-			EXT2ICON.each_pair do |type, regexp|
-				all = regexp.split '|'
-				all.each { |e| system "touch", "test.#{e}" }
-			end
-		end
+		# fall back to text as default
+		'text.png'
 	end
 
 end
