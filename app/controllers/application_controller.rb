@@ -179,10 +179,6 @@ class ApplicationController < ActionController::Base
 		@page_title = title
 	end
 
-	def no_tabs
-		@no_tabs = true
-	end
-
 	def no_subtabs
 		@no_subtabs = true
 	end

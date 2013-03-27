@@ -17,7 +17,7 @@
 class SearchController < ApplicationController
 
 	before_filter :login_required
-	before_filter :no_tabs
+	layout 'basic'
 
 	RESULTS_PER_PAGE = 60
 
