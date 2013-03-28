@@ -1,11 +1,6 @@
 .app-store-header
-  span.app-store-count 1
-  | Get apps
-  | #{link_to image_tag('amahi-app-store-logo.png'), 'https://www.amahi.org/apps', :title => 'Amahi App Store', :target => '_blank'}
-  | &nbsp; &nbsp; &nbsp;
-  span.app-store-count 2
-  | Install here!
-  | #{link_to image_tag('install.png'), apps_path, :title => 'Refresh'}
+  = link_to 'Get apps', 'https://www.amahi.org/apps', :title => 'Amahi App Store', :target => '_blank', :id => 'btn-get-apps'
+  = link_to 'Install here!', apps_engine.apps_path, :title => 'Refresh', :id => 'btn-install-apps'
 
 #apps-table
   .setting-table

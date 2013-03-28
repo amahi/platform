@@ -34,7 +34,7 @@ $(document).on 'ajax:success', '#new-user-form', (event, results) ->
 # management of the public key area
 $(document).on 'ajax:success', '.update-pubkey', (event, results) ->
 	form = $(this)
-	spinner = form.parent().parent().children(".spinner")
+	spinner = form.parent().parent().find(".spinner")
 	spinner.hide()
 	if results["status"] is "ok"
 		image = form.parent().parent().children(".ok")
@@ -45,9 +45,9 @@ $(document).on 'ajax:success', '.update-pubkey', (event, results) ->
 
 $(document).on 'ajax:beforeSend', '.update-pubkey', ->
 	form = $(this)
-	spinner = form.parent().parent().children(".spinner")
-	spinner.show "fast"
-	form.parent().hide()
+	spinner = form.parent().parent().find(".spinner")
+	spinner.show()
+	form.parent().hide('slow')
 
 # username editing - FIXME - not working from here on to the bottom
 $(document).on 'ajax:success', '.username-form', (event, results) ->

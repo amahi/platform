@@ -140,18 +140,25 @@ input[type="password"] {
 }
 
 .form-horizontal {
+
   .control-group {
     margin: 0 0 10px;
   }
+
+  textarea { display: block; }
 }
 
 .control-group {
+  @include clearfix;
 
   .controls {
+    float: left;
     input[type=text], input[type=password] {
       margin: 0;
     }
   }
+
+  div.messages { margin-left: 180px; width: auto; }
 
   .cancel-link {
     margin: 0 0 0 10px;
@@ -188,7 +195,32 @@ input[type="password"] {
 }
 
 .tags {
-  .form-inline { margin: 0 0 -20px -10px; }
+  .form-inline { margin: 0 0 -10px 0; }
+}
+
+// --------------------------------------------------
+// Disks
+// --------------------------------------------------
+
+#disks-table {
+  thead {
+    th {
+      &:last-child { @include border-radius(0 5px 0 0); }
+    }
+  }
+
+  tbody {
+    tr {
+      &:last-child {
+        td {
+          border-bottom: 0;
+
+          &:first-child { @include border-radius(0 0 0 5px); }
+          &:last-child { @include border-radius(0 0 5px 0); }
+        }
+      }
+    }
+  }
 }
 
 // --------------------------------------------------
@@ -814,10 +846,12 @@ table.apptable {
 }
 
 .settings-fields {
-  padding-left: 15px;
   table {
+    width: 100%;
     border-collapse: collapse;
+
     td:first-child {
+      width: 110px;
       text-align: right;
       vertical-align: top;
       padding-right: 10px;
@@ -869,11 +903,6 @@ td {
 }
 
 .password-edit {
-
-  input[type=password] {
-    position: relative;
-    top: -3px;
-  }
   label {
     float: none;
   }
@@ -1065,14 +1094,44 @@ td {
   }
 }
 
-#search-number-of-results { margin-right: 15px; }
-
-
 #search-results {
+  padding: 0 15px 15px;
+  color: #4c994c;
 
-  table {
-    width: 100%;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li { margin: 0 0 8px; }
   }
+
+  .search-filename {
+    @include clearfix;
+    font-size: 13px;
+
+    img {
+      display: block;
+      float: left;
+      margin: 0 11px 0 0;
+      vertical-align: bottom;
+    }
+  }
+
+  .search-location {
+    padding: 0 0 0 31px;
+    margin: -1px 0 0;
+
+    small, em { font-size: 12px; }
+
+    em { font-style: normal; color: #6c7c80; }
+
+    .file-icon {
+      img { vertical-align: bottom; display: inline-block; }
+    }
+  }
+
+  .even { background-color: #f8f8f8; }
 
 }
 
@@ -1280,19 +1339,19 @@ td.form-action-wrap {
 
 span.server_status {
   i.stopped {
-	margin: -.3em 1em;
-	width: 16px;
-	height: 16px;
-	display: inline-block;
-	background: url(../images/server/stopped.png) no-repeat;
-  }
-  i.running {
-	margin: -.3em 1em;
-	width: 16px;
-	height: 16px;
-	display: inline-block;
-	background: url(../images/server/running.png) no-repeat;
-  }
+   margin: -.3em 1em;
+   width: 16px;
+   height: 16px;
+   display: inline-block;
+   background: url(../images/server/stopped.png) no-repeat;
+ }
+ i.running {
+   margin: -.3em 1em;
+   width: 16px;
+   height: 16px;
+   display: inline-block;
+   background: url(../images/server/running.png) no-repeat;
+ }
 }
 
 .user-manage {
