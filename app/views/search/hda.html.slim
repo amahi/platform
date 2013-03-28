@@ -13,7 +13,7 @@
 #search-results
   .results_list
     - if @results.size > 0
-      table
+      ul
         = render :partial => 'result', :collection => @results
     - else
       .myhda_empty
