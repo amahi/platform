@@ -1,4 +1,4 @@
-li
+li[class="#{cycle('odd', 'even')}"]
   .search-filename
     = file_type_to_icon(result[:type], result[:path])
     = link_to h(result[:title]), path2uri(result[:path])
