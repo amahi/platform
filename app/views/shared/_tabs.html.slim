@@ -11,5 +11,6 @@
               li[class=subtab_class(subtab.id)]
                 = link_to subtab.label, subtab.url
       li[class="#{'active' if params[:controller] == 'shares'}"]
-        = link_to t('shares'), shares_path
-        i.icon-shares
+        a href=shares_path
+          = t('shares')
+          i.icon-shares
