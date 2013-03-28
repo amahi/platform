@@ -5,7 +5,12 @@ bundle:
 
 # install necessary packages (FIXME: this is for fedora 18 only so far)
 necessary-packages:
-	sudo yum -y install git rpm-build ruby ruby-devel gcc gcc-c++ mysql mysql-devel
+	sudo yum -y install git rpm-build ruby ruby-devel gcc gcc-c++ mysql mysql-devel \
+		sqlite sqlite-devel v8 v8-devel
+
+# this is needed to package v8 for fedora 18, using the system v8
+bundle-config:
+	bundle config build.libv8 --with-system-v8
 
 # cleanup misc files that bloat things up
 clean:

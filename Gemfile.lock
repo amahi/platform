@@ -198,7 +198,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails (~> 2.1.4)
   jquery-ui-rails
-  libv8 (~> 3.11.8.4)
+  libv8
   minitest
   mysql2
   pluginfactory

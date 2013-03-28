@@ -14,7 +14,7 @@ gem "yettings"
   # # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
   # # trying libv8 to see if things work on travis ci
-  gem "libv8", "~> 3.11.8.4"
+  gem "libv8"
 
   gem 'uglifier', '>= 1.0.3'
 #end
