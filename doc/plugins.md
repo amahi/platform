@@ -26,19 +26,32 @@ Each plugin has to have a file called `config/amahi_plugin.yml` with details of 
 
 No two apps have may use the same class or url to be mounted.
 
-## Recommendations
+## Adding Tabs and Subtabs
 
-1) Contrary to most RoR engines, it is recommended that you do not namespace your plugins. By default all engines will have the following in foo_bar/lib/foo_bar/engine.rb
+To add visible tabs in a plugin, one has to do it programmatically at plugin initialization time with what in RoR is known as an initializer.
 
-	module FooBar
-		class Engine < ::Rails::Engine
-			isolate_namespace FooBar
-		end
-	end
+Example for initialization for a plugin (e.g. plugin/foo_bar/config/initializers/plugin_init.rb )
 
-it's recommended that the line with isolate_namespace in it. Otherwise, each of helpers, controllers, all views and and all of asset images, stylesheets, and javascripts will have to be namespaced, i.e., each having foo_bar/ dir in them all over the place and also, most ruby code modularized like the above engine.rb.
+```ruby
+# plugin initialization -- set up a tab by calling Tab.new:
+# - first argument to Tab.new is the controller that it will hooked up to
+# - second argument is a string, the label for the tab. This will support internationalization in the future
+# - third argument is the route it should be mounted on, example /tab/foobar
+t = Tab.new("foobar", "FooBar", "/tab/apps")
+# add any subtabs to this tab with what you need.
+# The params are
+# - controller
+# - the label
+# for example
+t.add("index", "All Foo Bars")
+t.add("advanced", "Advanced Settings for Foos")
+t.add("expert", "Expert Settings")
+t.add("other", "Other Settings")
+```
 
-2) For setup area tab plugins, it has to use this layout:
+## To Do
 
-	layout 'setup_area'
+1) Localization support for the labels and the sublabels
+
+2) Support for subtabs (and tabs?) supported only when advanced settings are enabled
 
