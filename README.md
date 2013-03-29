@@ -1,6 +1,6 @@
 # Amahi Platform
 
-[![Build Status](https://secure.travis-ci.org/amahi/platform.png)](http://travis-ci.org/amahi/platform)
+[![Build Status](https://secure.travis-ci.org/amahi/platform.png)](http://travis-ci.org/amahi/platform) [![Code Climate](https://codeclimate.com/github/amahi/platform.png)](https://codeclimate.com/github/amahi/platform)
 
 The Amahi Platform is a web-based framework that allows management of users, shares,
 apps, networking and other settings in a Linux-based PC, VM or ARM-based system.
