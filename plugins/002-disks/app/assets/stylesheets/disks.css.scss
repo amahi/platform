@@ -4,12 +4,13 @@
 
 #disks-table{
   td.cool {
-    color:blue;
+    color:green;
   }
   td.warm{
     color:orange;
   }
   td.hot {
     color:red;
+    font-weight: bold;
   }
 }
