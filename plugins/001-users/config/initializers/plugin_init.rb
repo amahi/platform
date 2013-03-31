@@ -1,3 +1,3 @@
-t = Tab.new("users", "Users", "/tab/users")
-t.add('index', "All")
-t.add('settings', "Settings")
+t = Tab.new("users", "users", "/tab/users")
+t.add('index', "details")
+t.add('settings', "settings")

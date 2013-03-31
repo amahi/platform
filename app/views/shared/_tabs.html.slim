@@ -4,12 +4,12 @@
       - @tabs.each do |tab|
         li[class=tab_class(tab)]
           a href=tab.url
-            = tab.label
+            = t tab.label
             i class="icon-#{tab.label.downcase}"
           ul
             - tab.subtabs.each do |subtab|
               li[class=subtab_class(subtab.id)]
-                = link_to subtab.label, subtab.url
+                = link_to t(subtab.label), subtab.url
       li[class="#{'active' if params[:controller] == 'shares'}"]
         a href=shares_path
           = t('shares')
