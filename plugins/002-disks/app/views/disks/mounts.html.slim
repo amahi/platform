@@ -12,12 +12,12 @@
       -if @mounts.any?
         - @mounts.each do | mount |
           tr class=cycle("odd", "even")
-            td.settings-col1= mount[:filesystem]
-            td= mount[:blocks]
-            td= mount[:used]
-            td= mount[:available]
-            td= mount[:use_percent]
-            td= mount[:mount]
+            td.settings-col1 = mount[:filesystem]
+            td = number_to_human_size mount[:bytes]
+            td = number_to_human_size mount[:used]
+            td = number_to_human_size mount[:available]
+            td = number_to_human_size mount[:use_percent]
+            td = number_to_human_size mount[:mount]
       -else
         tr
           td colspan="6"
