@@ -1,3 +1,4 @@
 t = Tab.new("users", "users", "/tab/users")
 t.add('index', "details")
-t.add('settings', "settings")
+# disable settings for now
+# t.add('settings', "settings")
