@@ -25,8 +25,6 @@ class PluginGenerator < Rails::Generators::NamedBase
 name: #{class_name}
 # class to be mounted
 class: #{class_name}
-# kind of plugin (so far we only support 'tab' plugins)
-kind: tab
 # root url where this plugin will be mounted
 url: /tab/#{plural_name}
 			FILE

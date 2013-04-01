@@ -2,7 +2,5 @@
 name: Settings
 # class to be mounted
 class: Settings
-# kind of plugin (so far we only support 'tab' plugins)
-kind: tab
 # root url where this plugin will be mounted
 url: /tab/settings
