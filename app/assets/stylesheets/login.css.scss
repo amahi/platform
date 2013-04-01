@@ -1,7 +1,15 @@
-@import "compass";
-@import "compass/css3";
-@import "compass/utilities";
-@import "compass/reset";
+// BORDER RADIUS
+@mixin border-radius($radius: 5px) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+// BOX SHADOW
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
 
 body {
 	font: 12px "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif;

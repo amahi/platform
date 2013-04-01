@@ -16,12 +16,21 @@
 
 module TabsHelper
 
-	def tab_class(controller = nil)
-		params[:controller] == controller ? 'preftabheaderActive' : 'preftabheaderInactive'
+	def tab_class(tab)
+		klass = params[:controller] == tab.id ? 'active' : ''
+		klass += " empty" unless tab.subtabs?
+		klass
 	end
 
 	def subtab_class(action = nil)
-		params[:action] == action ? 'prefsubtabheaderActive' : 'prefsubtabheaderInactive'
+		params[:action] == action ? 'active' : ''
+	end
+
+	def nav_class(tabs)
+		tabs.each do |tab|
+			return "subtab" if params[:controller] == tab.id && tab.subtabs?
+		end
+		""
 	end
 
 	def debug_tab?

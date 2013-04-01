@@ -1,0 +1,22 @@
+.settings-table#disks-table
+  table.settings
+    thead
+      tr
+        th.settings-col1= t 'model'
+        th= t 'device'
+        th
+          = t 'temperature'
+          | &nbsp;(
+          = link_to_function "F", '$("#disks-table .temperature").toggle()', class: 'temperature', style: 'display:none'
+          = link_to_function "C", '$("#disks-table .temperature").toggle()', class: 'temperature'
+          | )
+    tbody
+      - @disks.each do | disk |
+        tr class=cycle("odd", "even")
+          td.settings-col1 = disk[:model]
+          td = disk[:device]
+          td[class=disk[:tempcolor]]
+            span.temperature
+              = disk[:temp_c]
+            span.temperature[style="display:none"]
+              = disk[:temp_f]

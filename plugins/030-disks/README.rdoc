@@ -1,0 +1,3 @@
+= Amahi plugin Disks
+
+Disk information for the Amahi platform

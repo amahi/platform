@@ -11,7 +11,7 @@ feature "Users tab" do
 		fill_in "password", :with => "secret"
 		click_button "Log In"
 		page.should have_content("Setup")
-		visit users_path
+		visit users_engine.users_path
 		page.should have_content("Username")
 		page.should have_content("Full Name")
 		click_button "New User"
@@ -20,7 +20,7 @@ feature "Users tab" do
 		fill_in "user_password", :with => "secret"
 		fill_in "user_password_confirmation", :with => "secret"
 		click_button "user_create_button"
-		visit users_path
+		visit users_engine.users_path
 		page.should have_content("newuser")
 		page.should have_content("fullname")
 	end

@@ -59,6 +59,8 @@ module AmahiHDA
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.1'
 
+    # initialize tabs app variable
+    config.tabs = []
   end
 end
 

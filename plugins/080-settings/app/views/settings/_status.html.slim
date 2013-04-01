@@ -1,0 +1,23 @@
+.server-manage
+  fieldset
+    legend = server.comment
+    .settings-fields
+      table
+        tr
+          td
+            label = t 'status'
+          td = server.running? ? server_status('running') : server_status('stopped')
+        tr
+          td
+            label = t 'control'
+          td
+            = link_to t('refresh_status'),
+                  settings_engine.refresh_path(server),
+                  remote: true,
+                  class: 'btn-refresh'
+            = spinner
+            = t 'refresh_status'
+        tr
+          td
+            label = t 'settings'
+          td = server.running? ? server_status('running') : server_status('stopped')

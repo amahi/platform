@@ -14,7 +14,7 @@ gem "yettings"
   # # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
   # # trying libv8 to see if things work on travis ci
-  gem "libv8", "~> 3.11.8.4"
+  gem "libv8"
 
   gem 'uglifier', '>= 1.0.3'
 #end
@@ -24,7 +24,6 @@ gem 'ya2yaml'
 
 gem 'themes_for_rails'
 
-gem 'compass-rails'
 gem 'jquery-rails', '~> 2.1.4'
 gem 'jquery-ui-rails'
 gem 'slim'
@@ -48,9 +47,10 @@ gem 'minitest'
 
 gem "rspec-rails", :group => [:test, :development]
 group :test do
-  gem 'sqlite3'
+  gem "sqlite3"
   gem "factory_girl_rails"
   gem "capybara"
+  gem 'capybara-screenshot'
   # FIXME: required for Fedora 18
   gem 'minitest'
   #required for javascript test in selenium

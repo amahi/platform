@@ -1,14 +1,21 @@
-#search-types
-  ul#search-menu
-    li = action_name == "hda" ? t('files') : link_to(t('files'), :action => :hda, :query => @query)
-    li = action_name == "images" ? t('images') : link_to(t('images'), :action => :images, :query => @query)
-    li = action_name == "audio" ? t('audio') : link_to(t('audio'), :action => :audio, :query => @query)
-    li = action_name == "video" ? t('video') : link_to(t('video'), :action => :video, :query => @query)
-#search-results
-  .results_list
-    - if @results.size > 0
-      table
-        = render @results
-    - else
-      .myhda_empty
-        = t 'no_documents_found'
+#search-page
+  #search-types
+    ul#search-menu
+      li[class="#{active 'hda'}"]
+        = action_name == "hda" ? t('files') : link_to(t('files'), :action => :hda, :query => @query)
+      li[class="#{active 'images'}"]
+        = action_name == "images" ? t('images') : link_to(t('images'), :action => :images, :query => @query)
+      li[class="#{active 'audio'}"]
+        = action_name == "audio" ? t('audio') : link_to(t('audio'), :action => :audio, :query => @query)
+      li[class="#{active 'video'}"]
+        = action_name == "video" ? t('video') : link_to(t('video'), :action => :video, :query => @query)
+      li.results
+        = t('results_found', :count => @results.size)
+  #search-results
+    .results_list
+      - if @results.size > 0
+        ul
+          = render :partial => 'result', :collection => @results
+      - else
+        .myhda_empty
+          = t 'no_documents_found'

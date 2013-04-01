@@ -17,7 +17,7 @@
 class FrontController < ApplicationController
 
 	before_filter :login_required_unless_guest_dashboard
-	before_filter :no_tabs
+	layout 'basic'
 
 	def index
 		@page_title = t('dashboard')

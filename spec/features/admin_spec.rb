@@ -22,7 +22,7 @@ feature "Admin" do
 		fill_in "password", :with => "secret"
 		click_button "Log In"
 		page.should_not have_content("Setup")
-		visit users_path
+		visit users_engine.users_path
 		page.should have_content('You must have admin privileges to access this area')
 	end
 

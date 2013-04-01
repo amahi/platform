@@ -8,7 +8,7 @@
 
       - if @apps.length < 3
         li
-          = link_to '', apps_path, :title => t('install_apps'), :id => 'install-apps'
+          = link_to '', apps_engine.apps_path, :title => t('install_apps'), :id => 'install-apps'
 
   - if @news
     section#latest_news

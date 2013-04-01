@@ -1,20 +1,16 @@
-#preferencestabs
-  nav.preftab
+#tabs
+  nav.preftab[class=nav_class(@tabs)]
     ul
-      li[class="#{tab_class('users')}"]
-        = link_to t('users'), users_path
-        i.icon-users
-      li[class="#{tab_class('shares')}"]
-        = link_to t('shares'), shares_path
-        i.icon-shares
-      li[class="#{tab_class('apps')}"]
-        = link_to t('apps'), apps_path
-        i.icon-apps
-      - @setup_tabs.each do |name, url|
-        li[class="#{tab_class(name.downcase)}"]= link_to name, url
-      - if debug_tab?
-        li[class="#{tab_class()}"]
-          = link_to t('debug'), '#'
-          i.icon-debug
-
-    = render "#{params[:controller]}/subtabs" unless @no_subtabs
+      - @tabs.each do |tab|
+        li[class=tab_class(tab)]
+          a href=tab.url
+            = t tab.label
+            i class="icon-#{tab.label.downcase}"
+          ul
+            - tab.subtabs.each do |subtab|
+              li[class=subtab_class(subtab.id)]
+                = link_to t(subtab.label), subtab.url
+      li[class="#{'active' if params[:controller] == 'shares'}"]
+        a href=shares_path
+          = t('shares')
+          i.icon-shares

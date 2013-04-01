@@ -5,7 +5,11 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require 'capybara-screenshot/rspec'
 require 'factory_girl_rails'
+
+# turn this to true to get screenshots and html in tmp/capybara/*
+# Capybara::Screenshot.autosave_on_failure = true
 
 #reguired for using transactional fixtures with javascript driver
 ActiveRecord::ConnectionAdapters::ConnectionPool.class_eval do

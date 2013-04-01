@@ -3,15 +3,15 @@
     :url => '/shares/${share_id}/update_path',\
     :method => :put,\
     :html => {\
-      :class => 'share area update-path-form',\
+      :class => 'share area update-path-form form-inline',\
       :id => 'update-path-form'\
     } do |f|
 
-  table
-
-    tr
-      td= f.text_field :path, :size => 38, :maxlength => 128, :placeholder => t('location')
-      td
-        = f.submit "#{t('change')} &raquo;".html_safe
-        = link_to t('cancel'), '#', :class => 'close-update-path-area cancel-link'
-      td.messages
+  .control-group
+    .controls
+      = f.text_field :path, :size => 38, :maxlength => 128, :placeholder => t('location')
+  .control-group
+    .controls
+      = f.submit "#{t('change')}".html_safe, :class => 'btn'
+      = link_to t('cancel'), '#', :class => 'close-update-path-area cancel-link'
+    .messages

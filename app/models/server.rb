@@ -75,6 +75,14 @@ class Server < ActiveRecord::Base
 		c.execute
 	end
 
+	def stopped?
+		pids.empty?
+	end
+
+	def running?
+		!stopped?
+	end
+
 protected
 
 	def pid_file

@@ -15,7 +15,7 @@ header#header
             i.icon-home
         - if current_user_is_admin?
           li
-            a href=users_path
+            a href=users_engine.root_path
               = t('setup')
               i.icon-setup
           li
@@ -23,7 +23,7 @@ header#header
               = t('help')
               i.icon-help
           li
-            a href=apps_path
+            a href=apps_engine.apps_path
               = t('apps')
               i.icon-apps
         - else

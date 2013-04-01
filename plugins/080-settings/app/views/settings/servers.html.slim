@@ -1,0 +1,18 @@
+- if @servers.length < 1
+    h2
+      = t 'there_are_no_servers_available'
+- else
+    div.settings-table.server-page
+      table.settings
+        thead
+          tr
+            th scope="col" class="settings-col1 servers-col1"
+              = t 'servers'
+            th scope="col" class="settings-col2 servers-col2"
+              = t 'state'
+        tbody style="display: none"
+          tr
+            td
+            td
+
+      = render partial: 'server', collection: @servers

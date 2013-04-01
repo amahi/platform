@@ -78,6 +78,7 @@
   ip_address: IP Address
   path: Path
   install_apps: Install apps!
+  open: Open
 
   # user tab
   username: Username
@@ -390,11 +391,11 @@
   guest_dashboard: Guest Dashboard
 
   # storage area
-  free_space: Free space
+  free_space: Free
   partition: Partition
   partitions: Partitions
-  total_space: Total space
-  used_space: Used space
+  total_space: Total
+  used_space: Used
   disk: Disk
   disks: Disks
   model: Model

@@ -1,5 +1,0 @@
-<%= checkbox_to_remote setting.value == '1',
-	:url => { :controller => 'setting', :action => 'toggle_setting', :id => setting, :kind => 'firewall' },
-	:before => spinner_show('global'),
-	:success => spinner_hide('global'),
-	:update => "settings-table" -%>

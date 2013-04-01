@@ -1,6 +1,6 @@
 /* support for extra CSS for right-to-left languages */
 
-#preferencestabs tr.prefsubtab td {
+#tabs tr.prefsubtab td {
   &.prefsubtabfiller {
     border-left: 1px solid #5BA9FF;
     border-right: none;

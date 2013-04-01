@@ -1,0 +1,3 @@
+= Amahi Users plugin
+
+User control for the Amahi platform

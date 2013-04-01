@@ -17,7 +17,7 @@
 class SearchController < ApplicationController
 
 	before_filter :login_required
-	before_filter :no_tabs
+	layout 'basic'
 
 	RESULTS_PER_PAGE = 60
 
@@ -35,25 +35,27 @@ class SearchController < ApplicationController
 		else
 			@query = params[:query]
 			@results = hda_search(@query)
+			# NOTE: to get sample fake data, uncomment this:
+			# @results = SampleData.load('search')
 		end
 	end
 
 	def images
 		@query = params[:query]
 		@results = hda_search(@query, EXT_IMAGES)
-		render :template => 'search/hda'
+		render 'hda'
 	end
 
 	def audio
 		@query = params[:query]
 		@results = hda_search(@query, EXT_AUDIO)
-		render :template => 'search/hda'
+		render 'hda'
 	end
 
 	def video
 		@query = params[:query]
 		@results = hda_search(@query, EXT_VIDEO)
-		render :template => 'search/hda'
+		render 'hda'
 	end
 
 	def web

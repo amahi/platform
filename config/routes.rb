@@ -8,15 +8,6 @@ AmahiHDA::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'user_session/set_first_password/:username' => 'user_sessions#set_first_password', :as => :first_password
 
-  resources :users do
-    member do
-      put 'toggle_admin'
-      put 'update_password'
-      put 'update_name'
-      put 'update_pubkey'
-    end
-  end
-
   resources :shares do
     collection do
       get 'disk_pooling'
@@ -40,23 +31,6 @@ AmahiHDA::Application.routes.draw do
     end
   end
 
-
-  resources :apps do
-    collection do
-      get 'installed'
-    end
-
-    member do
-      post 'install_via_daemon'
-      get 'install_progress'
-
-      post 'uninstall_via_daemon'
-      get 'uninstall_progress'
-
-      put 'toggle_in_dashboard'
-    end
-  end
-
   resources :user_sessions, :hosts, :aliases, :firewalls
 
   match 'search/:action' => 'search', :as => :search
@@ -66,5 +40,4 @@ AmahiHDA::Application.routes.draw do
 
   match ':controller(/:action(/:id))(.:format)'
 
-  match '*rest' => 'setup#index'
 end

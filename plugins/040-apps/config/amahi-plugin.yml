@@ -1,0 +1,6 @@
+# human readable name (no localization supported yet)
+name: Apps
+# class to be mounted
+class: Apps
+# root url where this plugin will be mounted
+url: /tab/apps
