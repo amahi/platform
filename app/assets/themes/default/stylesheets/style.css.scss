@@ -768,15 +768,13 @@ table.apptable, thead.apptable {
 }
 
 table.settings {
-  .odd td {
-    background: #f8f8f8;
-    padding: 5px 0;
-    border-bottom: 1px solid #e8e8e8;
-  }
-  .even td {
-    padding: 5px 0;
-    border-bottom: 1px solid #e8e8e8;
-  }
+	tbody td {
+		height: 35px;
+		border-bottom: 1px solid #e8e8e8;
+	}
+	.odd td {
+		background: #f8f8f8;
+	}
 }
 
 div.no-content {
@@ -805,7 +803,6 @@ table.apptable {
 }
 
 .stretchtoggle {
-  border-top: 1px solid #e8e8e8;
   height: 33px;
   line-height: 33px;
   border-bottom-color: #dfdfdf;
@@ -824,7 +821,7 @@ table.apptable {
 }
 
 .settings-stretcher {
-  border-top: 1px solid #E8E8E8;
+  border-bottom: 1px solid #E8E8E8;
 
   legend, fieldset {
     color: darkgrey;

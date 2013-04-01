@@ -32,8 +32,8 @@ defaults: &defaults
     - ['中文', 'zh']
 
   rtl_locales:
-    - 'ar'
-    - 'he'
+    - :ar
+    - :he
 
   dummy_mode: false
 
