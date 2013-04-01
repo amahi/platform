@@ -131,11 +131,11 @@ require 'rails/engine/commands'
 		inside(root) do
 			initializer("plugin_init.rb") do
 				data = ['# plugin initialization']
-				data << "t = Tab.new(\"#{plural_name}\", \"#{class_name}\", \"/tab/#{plural_name}\")"
+				data << "t = Tab.new(\"#{plural_name}\", \"#{plural_name}\", \"/tab/#{plural_name}\")"
 				data << '# add any subtabs with what you need. params are controller and the label, for example'
-				data << 't.add("index", "All")'
-				data << 't.add("settings", "Settings")'
-				data << 't.add("advanced", "Advanced")'
+				data << 't.add("index", "details")'
+				data << 't.add("settings", "settings")'
+				data << 't.add("advanced", "advanced")'
 				data.join("\n")
 			end
 		end
