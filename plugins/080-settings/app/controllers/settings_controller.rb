@@ -23,9 +23,7 @@ class SettingsController < ApplicationController
 		@available_locales = locales_implemented
 		@advanced = Setting.find_by_name('advanced')
 		@guest = Setting.find_by_name("guest-dashboard")
-		@version = {}
-		@version[:platform] = "xyz (FIXME)"
-		@version[:core] = "xyz (FIXME)"
+		@version = Platform.platform_versions
 	end
 
 	def servers
