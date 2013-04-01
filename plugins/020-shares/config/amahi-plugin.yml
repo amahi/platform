@@ -1,0 +1,6 @@
+# human readable name (no localization supported yet)
+name: Shares
+# class to be mounted
+class: Shares
+# root url where this plugin will be mounted
+url: /tab/shares
