@@ -256,11 +256,18 @@ input[type=button], input[type=submit], .btn {
   margin: 15px 0 0;
 }
 
+#systems-result {
+  overflow: hidden;
+  text-align: center;
+  padding: 15px 345px 15px 0;
+}
+
 .btn-system {
-	display: block;
+	display: inline-block;
 	text-indent: -9999px;
 	height: 48px;
 	width: 48px;
+  margin: 0 20px;
 
 	&#btn-poweroff { background: url(../images/poweroff.png) no-repeat left center; }
 	&#btn-reboot { background: url(../images/reboot.png) no-repeat left center; }
@@ -993,6 +1000,29 @@ td {
   text-transform: uppercase;
 }
 
+
+#btn-get-apps {
+  color: #000;
+  font-size: 20px;
+  line-height: 48px;
+  font-weight: bold;
+  background: url(../images/install-app.png) no-repeat;
+  display: inline-block;
+  padding: 0 0 0 50px;
+  margin: 0 30px;
+}
+
+#btn-install-apps {
+  color: #000;
+  font-size: 20px;
+  line-height: 48px;
+  font-weight: bold;
+  background: url(../images/install.png) no-repeat;
+  display: inline-block;
+  padding: 0 0 0 50px;
+  margin: 0 30px;
+}
+
 .install-button .install-app-via-daemon {
   text-decoration: none;
 }
@@ -1386,7 +1416,7 @@ span.server_status {
 #nav{ float:right; font-size: 1em; }
 
 .app-store-count { font-size: 42px; font-weight: bold; }
-.app-store-header { font-size: 14px; padding: 5px 0 15px 0; text-align: center; }
+.app-store-header { font-size: 14px; padding: 5px 0 25px 0; text-align: center; }
 
 .focus {cursor: pointer; font-weight: bold; color: #000;}
 .no-wrap {white-space: nowrap;}
