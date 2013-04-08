@@ -49,6 +49,13 @@ t.add("expert", "Expert Settings")
 t.add("other", "Other Settings")
 ```
 
+## Principles
+
+* One folder = One plugin. This is a must. To install an Amahi plugin manually, all there needs to be done is copy a single folder into the plugins/ directory and done. It's good for manual installation, it's good for automatic installation.
+* Plugins are activated automatically. We only need to restart the server (manual if in development), or programmatically if installing in production by touching tmp/restart.txt. No need to go into the DB ahave have to set anything. Any settings needed should be auto-generated.
+* We will tend towards adding hooks to various areas to be able to override nicely in plugins.
+* Try to not override views, so that behavior changing in the main app will not break plugins.
+
 ## To Do
 
 1) Localization support for the labels and the sublabels
