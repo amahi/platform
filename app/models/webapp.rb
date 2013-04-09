@@ -4,12 +4,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -28,11 +28,11 @@ class Webapp < ActiveRecord::Base
 	after_destroy :after_destroy_hook
 	after_save :after_save_hook
 
-  before_validation :create_unique_fname, :on => :create
+	before_validation :create_unique_fname, :on => :create
 
-  validates :name, :fname, :path, :presence => true
+	validates :name, :fname, :path, :presence => true
 
-  attr_accessible :name, :fname, :path, :deletable, :custom_options, :kind
+	attr_accessible :name, :fname, :path, :deletable, :custom_options, :kind
 
 	def full_url
 		"http://#{name}.#{Setting.value_by_name('domain')}"
@@ -50,7 +50,7 @@ class Webapp < ActiveRecord::Base
 		Platform.reload(:apache)
 	end
 
-  protected
+	protected
 
 	def before_create_hook
 		# FIXME - a huuuuge amount of checks need to be
@@ -88,14 +88,14 @@ class Webapp < ActiveRecord::Base
 		domain = (Setting.get('domain') || '') rescue ''
 		self.kind = 'generic' if self.kind.nil?
 		case self.kind.downcase
-			when 'python'
-				f = File.open(BASE % "python")
-			when 'ror'
-				f = File.open(BASE % "ror")
-			when 'custom'
-				f = File.open(BASE % "custom")
-			else # generic
-				f = File.open(BASE % "generic")
+		when 'python'
+			f = File.open(BASE % "python")
+		when 'ror'
+			f = File.open(BASE % "ror")
+		when 'custom'
+			f = File.open(BASE % "custom")
+		else # generic
+			f = File.open(BASE % "generic")
 		end
 		server_aliases = self.aliases.split(/[, ]+/).select{ |s| ! (s.empty? || DnsAlias.find_by_alias(s)) }
 		server_aliases += self.webapp_aliases.map{|wa| wa.name}
@@ -119,11 +119,11 @@ class Webapp < ActiveRecord::Base
 
 	def access_conf
 		["AuthUserFile /var/hda/web-apps/htpasswd",
-		"AuthGroupFile /dev/null",
-		"AuthName \"User Login Required for This Area\"",
-		"AuthType Basic",
-		"<Limit GET POST>",
-		"\trequire valid-user",
+			"AuthGroupFile /dev/null",
+			"AuthName \"User Login Required for This Area\"",
+			"AuthType Basic",
+			"<Limit GET POST>",
+			"\trequire valid-user",
 		"</Limit>"].join("\n\t\t")
 	end
 
