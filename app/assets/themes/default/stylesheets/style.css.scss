@@ -992,14 +992,54 @@ td {
 }
 
 .install-app-via-daemon {
-  background: url(../images/install_icon.png) no-repeat left center;
-  padding: 0 2px 0 16px;
+  padding: 0 10px;
   color: #fff;
   font-size: 11px;
   font-weight: bold;
   text-transform: uppercase;
+
+  &:before {
+    content:"";
+    display: block;
+    background: url(../images/install_icon.png) no-repeat left center;
+    float: left;
+    width: 11px;
+    height: 11px;
+    margin: 4px 7px 0 0;
+  }
 }
 
+  .app-content {
+    margin: 0 0 0 340px;
+
+    ul { list-style: inside; }
+
+    .progress {
+      margin-top: 30px;
+      display: inline-block;
+    }
+  }
+
+  .app-description {
+    margin: 0;
+    color: #999999;
+    font-size: 12px;
+  }
+
+  .app-more { margin-top: 15px;
+
+    a {
+      background: url(../images/more.png) no-repeat;
+      display: inline-block;
+      text-indent: -9999px;
+      height: 24px;
+      width: 24px;
+      margin: 0 0 0 11px;
+      position:relative;
+      top: -4px;
+    }
+
+  }
 
 #btn-get-apps {
   color: #000;

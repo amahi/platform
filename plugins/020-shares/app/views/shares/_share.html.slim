@@ -20,48 +20,52 @@ div.share[id="whole_share_#{share.id}"]
         .settings-actions
           = spinner
           span.delete
-            | #{t('delete')}&nbsp;
-            b= share.name
-            | &nbsp;
-            = link_to theme_image_tag("delete.png", :title => t('delete'), :class => 'theme-image'),
+            = link_to t('delete') + ' ' + share.name,
               share_path(share),
               :method => :delete,
               :data => {:confirm => confirm_share_destroy_message(share.name)},
               :remote => true,
-              :class => 'delete-share'
+              :class => 'btn-delete'
 
         .settings-fields
           table
             tr
-              td #{t('access')}
+              td
+                label #{t('access')}
               td= render :partial => 'shares/access', :object => share
 
             tr
-              td #{t('visibility')}
+              td
+                label #{t('visibility')}
               td= simple_remote_checkbox :id => "share_visible_#{share.id}",
                                         :css_class => 'share_visible_checkbox',
                                         :url => toggle_visible_share_path(:id => share.id),
                                         :label => "#{t('visible')}",
                                         :checked => share.visible
             tr
-              td #{t('permissions')}
+              td
+                label #{t('permissions')}
               td= render :partial => 'shares/permissions', :object => share
 
             - if advanced?
               tr
-                td #{t('tags')}
-                td[colspan='8' class="tag-main-wrap"]= render :partial => 'shares/tags', :object => share
+                td.top
+                  label#{t('tags')}
+                td.top[colspan='8']= render :partial => 'shares/tags', :object => share
 
             tr
-              td #{t('location')}
+              td
+                label #{t('location')}
               td
                 span.open-update-path-area.focus= share.path
 
             - if advanced?
               tr
-                td #{t('extra_parameters')}
-                td
+                td.top
+                  label #{t('extra_parameters')}
+                td.top
                   span.open-update-extras-area.focus= share.extras.blank? ? t('add_extra_parameters') : share.extras
-                  | &nbsp; &nbsp; &nbsp; &raquo; <a href="http://wiki.amahi.org/index.php/Share_Extra_Parameters" target="_blank">#{theme_image_tag("more.png", :class => 'theme-image')}</a>
+                  |  <a href="http://wiki.amahi.org/index.php/Share_Extra_Parameters" class="extra-link" target="_blank"><i class="icon-add"></i>
+                  </a>
                   = simple_remote_select :collection => [[1, 'ok'], [2, 'no']],
                                          :selected => 2

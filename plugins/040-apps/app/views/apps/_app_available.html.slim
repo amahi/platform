@@ -15,30 +15,30 @@
         legend &nbsp; #{app.name} #{t('available_for_installation')} &nbsp;
         .settings-fields
 
-          = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
+          .img-wrap
+            = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
 
-          p
-          = app.description.try(:html_safe) || t('no_description_supplied')
-          p
+          .app-content
+            p.app-description
+              = app.description.try(:html_safe) || t('no_description_supplied')
 
-          = render 'is_available', :app => app
+            = render 'is_available', :app => app
 
-          .app-more
-            | #{t('version')}:&nbsp;#{app.version}&nbsp;&nbsp;&raquo;&nbsp;#{link_to(theme_image_tag('more.png', :title => t('more')), app.app_url, :target => '_blank')}
-            br
-            - if app.forum_url.present?
-              br
-              = link_to "#{t('discussion_forum_for')} #{app.name}", app.forum_url, :target => '_blank'
-              | &raquo;
+            .app-more
+              p
+                | #{t('version')} #{app.version}
+                = link_to t('more'), app.app_url, :target => '_blank'
 
-          - unless app.live?
-            br
-            p
-            em
-              sup*
-              = t('warning_this_application_is_in_testing')
+              - if app.forum_url.present?
+                br
+                = link_to "#{t('discussion_forum_for')} #{app.name}", app.forum_url, :target => '_blank'
+                | &raquo;
 
-          p
+            - unless app.live?
+              p
+              em
+                sup*
+                = t('warning_this_application_is_in_testing')
 
         .app-flash-notice[id="app_legend_#{app.identifier}" style="display:none;"]
           | #{app.name} #{t('is_now_uninstalled')}
