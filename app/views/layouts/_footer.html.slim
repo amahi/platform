@@ -17,6 +17,6 @@ footer#footer
 
         - if current_user
           li.logout
-            = link_to t('logout ' + current_user.login), logout_path
+            = link_to (t('logout') + " " + current_user.login), logout_path
         - else
           li = link_to t('log_in'), login_path
