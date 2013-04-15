@@ -1,5 +1,5 @@
 $(document).ready ->
-  $(".stretchtoggle").live "click", ->
+  $(".stretchtoggle").on "click", ->
     $(this).parents("div:first").find(".settings-stretcher:first").toggle()
     false
 
@@ -7,7 +7,7 @@ $(document).ready ->
     open_selector: ".open-area"
     close_selector: ".close-area"
 
-  $(".focus").live
+  $(".focus").on
     mouseenter: ->
       $(this).css "background-color", "rgb(255,255,153)"
 

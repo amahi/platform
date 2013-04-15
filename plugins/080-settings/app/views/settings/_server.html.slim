@@ -1,10 +1,11 @@
 - uid = server.id.to_s
-table id="server_row_#{uid}" class="settings stretchtoggle"
-  tr.alt-row
-    td.settings-col1.servers-col1
-      = server.comment
-    td.settings-col2.servers-col2
-      = server.stopped? ? server_status('stopped') : server_status('running')
+div.server[id="server_wrap_#{uid}"]
+  table id="server_row_#{uid}" class="settings stretchtoggle"
+    tr.alt-row
+      td.settings-col1.servers-col1
+        = server.comment
+      td.settings-col2.servers-col2
+        = server.stopped? ? server_status('stopped') : server_status('running')
 
-div.settings-stretcher id="server_info#{uid}" style="display:none"
-  = render partial: 'status', locals: { server: server }
+  div.settings-stretcher id="server_info#{uid}" style="display:none"
+    = render partial: 'status', locals: { server: server }
