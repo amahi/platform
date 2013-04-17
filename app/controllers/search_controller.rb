@@ -34,9 +34,12 @@ class SearchController < ApplicationController
 			redirect_to URI.escape("http://www.google.com/search?q=#{params[:query]}")
 		else
 			@query = params[:query]
-			@results = hda_search(@query)
-			# NOTE: to get sample fake data, uncomment this:
-			# @results = SampleData.load('search')
+			unless development?
+				@results = hda_search(@query)
+			else
+				# NOTE: this is some sample fake data for development
+				@results = SampleData.load('search')
+			end
 		end
 	end
 

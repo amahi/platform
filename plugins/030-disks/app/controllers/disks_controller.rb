@@ -3,15 +3,21 @@ class DisksController < ApplicationController
 
 	def index
 		@page_title = t('disks')
-		@disks = DiskUtils.stats
-		# NOTE: to get sample fake data, uncomment this:
-		# @disks = SampleData.load('disks')
+		unless development?
+			@disks = DiskUtils.stats
+		else
+			# NOTE: this is to get sample fake data in development
+			@disks = SampleData.load('disks')
+		end
 	end
 
 	def mounts
 		@page_title =t('disks')
-		@mounts = DiskUtils.mounts
-		# NOTE: to get sample fake data, uncomment this:
-		# @mounts = SampleData.load('mounts')
+		unless development?
+			@mounts = DiskUtils.mounts
+		else
+			# NOTE: this is to get sample fake data in development
+			@mounts = SampleData.load('mounts')
+		end
 	end
 end
