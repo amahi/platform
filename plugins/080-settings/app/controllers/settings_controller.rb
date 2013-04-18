@@ -27,9 +27,11 @@ class SettingsController < ApplicationController
 	end
 
 	def servers
+		@message = nil
 		unless development?
 			@servers = Server.all
 		else
+			@message = "NOTE: these servers are fake data! Interacting with them will not work."
 			@servers = SampleData.load('servers')
 		end
 	end
