@@ -27,7 +27,11 @@ class SettingsController < ApplicationController
 	end
 
 	def servers
-		@servers = Server.all
+		unless development?
+			@servers = Server.all
+		else
+			@servers = SampleData.load('servers')
+		end
 	end
 
 	def change_language

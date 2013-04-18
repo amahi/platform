@@ -1,4 +1,8 @@
 # class to load sample data
+
+# require the server model here because we have some Server class data being loaded
+require 'server'
+
 class SampleData
 	ROOT = "#{Rails.root}/db/sample-data/%s.yml.gz"
 
