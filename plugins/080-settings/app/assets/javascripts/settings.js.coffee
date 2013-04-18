@@ -3,6 +3,7 @@ $(document).ready ->
 		"ajax:beforeSend": () ->
 			$(this).next('.spinner').show()
 		"ajax:success": () ->
+			# reload the page because the whole language has changed
 			window.location.reload(true)
 
 	$('#advanced').live
