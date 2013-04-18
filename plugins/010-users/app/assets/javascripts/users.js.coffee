@@ -23,7 +23,6 @@ $(document).on 'ajax:beforeSend', '.update-password', ->
 # new user
 $(document).on 'ajax:success', '#new-user-form', (event, results) ->
 	form = $(this)
-	console.log results
 	unless results['status'] is 'ok'
 		form.replaceWith results["content"]
 	else
@@ -106,4 +105,3 @@ Users =
 
 $(document).ready ->
 	Users.initialize()
-	console.log Users
