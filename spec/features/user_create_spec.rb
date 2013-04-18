@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 feature "Users tab" do
-	scenario "an admin should be able to create a new user" do
+	scenario "an admin should be able to create a new user", :js => true do
 		user = create(:admin)
 		visit root_path
 		page.should have_content("Amahi Server Login")

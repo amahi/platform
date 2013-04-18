@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "Users tab" do
-	scenario "an admin should be able to create a new user" do
+	scenario "an admin should be able to create a new user", :js => true do
 		user = create(:admin)
 		visit root_path
 		page.has_text?("Amahi Server Login")
@@ -54,7 +54,7 @@ feature "Users tab" do
 		find("#whole_user_#{admin.id}").find("tr.alt-row").click_link admin.login
 		expect(page).to have_no_selector("a#delete-user-#{user.id}", :visible => true)
 	end
-	scenario "should not allow an admin user to revoke its own admin rights" do
+	scenario "should not allow an admin user to revoke its own admin rights", :js => true do
 		admin = create(:admin)
 		user = create(:user)
 		visit root_path
@@ -86,7 +86,7 @@ feature "Users tab" do
 		uncheck("checkbox-user_admin_#{user.id}");
 		expect(page).to have_unchecked_field("checkbox-user_admin_#{user.id}")
 	end
-	scenario "should allow an admin user to promote a regular user to admin" do
+	scenario "should allow an admin user to promote a regular user to admin", :js => true do
 		admin = create(:admin)
 		user = create(:user)
 		visit root_path

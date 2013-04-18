@@ -1,5 +1,5 @@
 $(document).ready ->
-  $(".stretchtoggle").on "click", ->
+  $(".preftab").on "click", ".stretchtoggle", ->
     $(this).parents("div:first").find(".settings-stretcher:first").toggle()
     false
 
