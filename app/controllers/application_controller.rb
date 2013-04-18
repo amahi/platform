@@ -193,4 +193,10 @@ class ApplicationController < ActionController::Base
 		Rails.env == 'development'
 	end
 
+	# setting here to enable we want using sample data
+	def use_sample_data?
+		# for simplicity, turn it on if running in development
+		development?
+	end
+
 end

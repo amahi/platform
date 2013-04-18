@@ -31,7 +31,7 @@ AmahiHDA::Application.routes.draw do
     end
   end
 
-  resources :user_sessions, :hosts, :aliases, :firewalls
+  resources :user_sessions, :hosts, :aliases
 
   match 'search/:action' => 'search', :as => :search
   match 'theme/*filename' => 'theme#file'

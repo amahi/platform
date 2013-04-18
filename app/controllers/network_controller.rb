@@ -14,8 +14,6 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-require 'router_driver'
-
 class NetworkController < ApplicationController
 
 	before_filter :admin_required

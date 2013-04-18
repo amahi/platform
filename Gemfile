@@ -36,20 +36,15 @@ group :development do
 	gem 'thor'
 end
 
-gem 'pluginfactory'
-
-# this is explicitly needed in fedora 18 -- somehow it's screwed up and needed for the rails console to work
-gem 'minitest'
-
 gem "rspec-rails", :group => [:test, :development]
 group :test do
   gem "sqlite3"
   gem "factory_girl_rails"
   gem "capybara"
   gem 'capybara-screenshot'
-  # FIXME: required for Fedora 18
+  # FIXME: required in Fedora 18 for some (packaging?) reason
   gem 'minitest'
-  #required for javascript test in selenium
+  # required for javascript test in selenium
   gem 'poltergeist'
 end
 

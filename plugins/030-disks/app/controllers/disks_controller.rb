@@ -3,7 +3,7 @@ class DisksController < ApplicationController
 
 	def index
 		@page_title = t('disks')
-		unless development?
+		unless use_sample_data?
 			@disks = DiskUtils.stats
 		else
 			# NOTE: this is to get sample fake data in development
@@ -13,7 +13,7 @@ class DisksController < ApplicationController
 
 	def mounts
 		@page_title =t('disks')
-		unless development?
+		unless use_sample_data?
 			@mounts = DiskUtils.mounts
 		else
 			# NOTE: this is to get sample fake data in development
