@@ -7,7 +7,9 @@ feature "Front page" do
 	end
 
 	scenario "should be the dashboard if \"guest dashboard\" is enabled" do
-		setting = create(:setting, name: "guest-dashboard", value: "1")
+		setting = Setting.find_by_name("guest-dashboard")
+		setting.value = "1"
+		setting.save
 		visit root_path
 		page.should have_content("Dashboard")
 	end
