@@ -84,15 +84,14 @@ Users =
 		(if element then $(element).parents("form:first") else $("#new-user-form"))
 
 	initialize: () ->
+		_this = this
 		SmartLinks.initialize
 			open_selector: ".open-username-edit"
 			close_selector: ".close-username-edit"
 			onShow: (open_link) ->
-				user = $(this).user(open_link)
-				user_id = $(this).parse_id(user.attr("id"))
-				open_link.after Templates.run("updateUsername",
-					user_id: user_id
-				)
+				user = _this.user(open_link)
+				user_id = _this.parse_id(user.attr("id"))
+				open_link.after Templates.run("updateUsername", user_id: user_id)
 				form = open_link.next()
 				FormHelpers.update_first form, open_link.text()
 				FormHelpers.focus_first form
@@ -100,8 +99,8 @@ Users =
 			selector: ".user_admin_checkbox"
 			parentSelector: "span:first"
 			success: (rc, checkbox) ->
-				$(this).user(checkbox).find(".user_icons:first").toggleClass "user_admin"
-				$(this).delete_area_toggle checkbox
+				_this.user(checkbox).find(".user_icons:first").toggleClass "user_admin"
+				_this.delete_area_toggle checkbox
 
 $(document).ready ->
 	Users.initialize()
