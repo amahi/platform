@@ -19,7 +19,13 @@ class UserSessionsController < ApplicationController
 	layout 'login'
 
 	def new
-		@user_session = UserSession.new
+		if Setting.get('initialized')
+			@user_session = UserSession.new
+		else
+			# if the system is not initialized, start by doing that
+			flash[:notice] = t('first_time_admin_setup')
+			render :action => :first_password
+		end
 	end
 
 	def create
@@ -87,12 +93,20 @@ class UserSessionsController < ApplicationController
 		u.add_or_passwd_change_samba_user
 		UserSession.create(u, true)
 		# create the initial server structures
-		Server.create_default_servers if Server.count < 4
+		initialize_default_settings
 		redirect_to root_url
 	end
 
 
 private
+
+	# initialize various one-time default settings
+	def initialize_default_settings
+		return if Setting.get('initialized')
+		Setting.create(name: 'initialized', value: '1')
+		Setting.create(name: 'advanced', value: '0') unless Setting.get('advanced')
+		Server.create_default_servers if Server.count < 4
+	end
 
 	def allow_root_access?
 		User.all.each do |u|
