@@ -98,15 +98,14 @@ Shares =
 				FormHelpers.update_first form, open_link.text()
 				FormHelpers.focus_first form
 
-		$(".update-path-form").live
-			"ajax:success": (data, results, jqXHR) ->
-				if results["status"] is "ok"
-					form = $(this)
-					link = form.prev()
-					value = FormHelpers.find_first(form).val()
-					link.text value
+		$(document).on "ajax:success", ".update-path-form", (data, results) ->
+			if results["status"] is "ok"
+				form = $(this)
+				link = form.prev()
+				value = FormHelpers.find_first(form).val()
+				link.text value
 
-			"ajax:complete": (data, results, jqXHR) ->
+		$(document).on "ajax:complete", ".update-path-form", ->
 				form = $(this)
 				link = form.prev()
 				form.hide "slow", ->
@@ -140,38 +139,36 @@ Shares =
 				FormHelpers.update_first form, open_link.text()
 				FormHelpers.focus_first form
 
-		$(".update-extras-form").live
-			"ajax:success": (data, results, jqXHR) ->
-				if results["status"] is "ok"
-					form = $(this)
-					link = form.prev()
-					text_area = FormHelpers.find_first(form)
-					value = $.trim(text_area.val())
-					value = (if (value is "") then text_area.attr("placeholder") else value)
-					link.text value
-
-			"ajax:complete": (data, results, jqXHR) ->
+		$(document).on "ajax:success", ".update-extras-form", (data, results) ->
+			if results["status"] is "ok"
 				form = $(this)
 				link = form.prev()
-				form.hide "slow", ->
-					form.remove()
-					link.show()
+				text_area = FormHelpers.find_first(form)
+				value = $.trim(text_area.val())
+				value = (if (value is "") then text_area.attr("placeholder") else value)
+				link.text value
+
+		$(document).on "ajax:complete", ".update-extras-form", (data, results) ->
+			form = $(this)
+			link = form.prev()
+			form.hide "slow", ->
+				form.remove()
+				link.show()
 
 
-		$(".clear-permissions").live
-			"ajax:success": (data, results, jqXHR) ->
-				link = $(this)
-				parent = link.parent()
-				if results["status"] is "ok"
-					parent.html FormHelpers.ok_icon
-				else
-					parent.html FormHelpers.error_icon
+		$(document).on "ajax:beforeSend", ".clear-permissions", (data, results) ->
+			link = $(this)
+			spinner = link.parent().children(".spinner")
+			spinner.show "fast"
+			link.hide()
 
-			"ajax:beforeSend": (data, results, jqXHR) ->
-				link = $(this)
-				spinner = link.parent().children(".spinner")
-				spinner.show "fast"
-				link.hide()
+		$(document).on "ajax:success", ".clear-permissions", (data, results) ->
+			link = $(this)
+			parent = link.parent()
+			if results["status"] is "ok"
+				parent.html FormHelpers.ok_icon
+			else
+				parent.html FormHelpers.error_icon
 
 
 	parse_id: (html_id) ->

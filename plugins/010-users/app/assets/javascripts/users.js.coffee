@@ -4,7 +4,8 @@ $(document).on 'ajax:beforeSend', '.btn-delete', ->
 
 $(document).on 'ajax:success', '.btn-delete', (event, results) ->
 	user = $("#whole_user_" + results['id'])
-	user.remove()
+	user.hide 'slow', ->
+		user.remove()
 
 # update user password
 $(document).on 'ajax:success', '.update-password', (event, results) ->
