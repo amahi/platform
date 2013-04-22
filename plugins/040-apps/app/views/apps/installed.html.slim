@@ -12,5 +12,5 @@
       = render :partial => 'apps/app_installed', :collection => @apps
     - else
       div.align-center.default-message
-        h2= t('there_are_no_applications_available')
-        p=  t('this_could_be_due_to_lack_of_network_connectivity')
+        h2 = t('there_are_no_applications_installed')
+        p = link_to(t('try_installing_some_apps'), apps_engine.root_path)
