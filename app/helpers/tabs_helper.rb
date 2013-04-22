@@ -38,7 +38,7 @@ module TabsHelper
 	end
 
 	def advanced?
-		Setting.get_by_name 'advanced'
+		(s = Setting.find_by_name 'advanced') && s.set?
 	end
 
 	def debug?
