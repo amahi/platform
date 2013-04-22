@@ -12,5 +12,3 @@
 //= require lib/application
 //= require lib/templates
 //= require lib/smart-links
-
-//= require models/shares

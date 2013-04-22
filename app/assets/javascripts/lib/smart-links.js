@@ -19,8 +19,7 @@ var SmartLinks = {
         var _this = this;
         var options = options || {};
 
-        $(options['open_selector']).live('click', function(){
-
+        $(document).on("click", options['open_selector'], function(){
 
             options['onShow'] = typeof(options['onShow']) == 'undefined' ? function(){} : options['onShow'];
 
@@ -38,7 +37,7 @@ var SmartLinks = {
             return false;
         });
 
-        $(options['close_selector']).live('click', function(){
+        $(document).on("click", options['close_selector'], function(){
 
             options['onHide'] = typeof(options['onHide']) == 'undefined' ? function(){} : options['onHide'];
             options['open_area_selector'] = typeof(options['open_area_selector']) == 'undefined' ? '.area' : options['open_area_selector'];

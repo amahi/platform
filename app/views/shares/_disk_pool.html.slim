@@ -1,7 +1,0 @@
-- share = disk_pool
-
-.disk-pool
-  = simple_remote_checkbox  :css_class => 'disk_pool_checkbox',
-                          :url => toggle_disk_pool_share_path(:id => share.id),
-                          :label => "&nbsp; #{t('disk_pooling_enabled')} &nbsp;".html_safe,
-                          :checked => share.disk_pool_copies > 0

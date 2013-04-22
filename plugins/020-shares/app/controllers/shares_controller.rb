@@ -27,12 +27,14 @@ class SharesController < ApplicationController
 	end
 
 	def create
+		params[:share][:path] = Share.default_full_path(params[:share][:name])
 		@share = Share.new(params[:share])
 		@share.save
 		get_shares unless @share.errors.any?
 	end
 
 	def destroy
+		sleep 2 if development?
 		@share.destroy
 		render :json => { :id => @share.id }
 	end

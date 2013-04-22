@@ -13,10 +13,6 @@
           .messages
 
         .control-group
-          .controls = f.text_field :path, :size => 38, :maxlength => 128, :data => {:pre => Share.full_path}, :placeholder => "Path"
-          .messages
-
-        .control-group
           .controls
             = f.check_box :visible, { :checked => true }
             = label(:visible, t('visible'))

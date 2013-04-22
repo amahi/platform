@@ -19,7 +19,7 @@ var RemoteSelect = {
         var _this = this;
         var options = options || {};
 
-        $(options['selector']).live('change', function() {
+        $(document).on("change", options['selector'], function() {
 
             options['beforeSend'] = typeof(options['beforeSend']) == 'undefined' ? function(){} : options['beforeSend'];
             options['success'] = typeof(options['success']) == 'undefined' ? function(){} : options['success'];
@@ -67,8 +67,6 @@ var RemoteSelect = {
             }
             return false;
         });
-
-
     },
 
     url : function(element) { return $(element).data('url') },
@@ -80,5 +78,4 @@ var RemoteSelect = {
     highlight_parent: function(parentSelector, element){
         $(element).parents(parentSelector).effect('highlight');
     }
-
 }

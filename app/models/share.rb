@@ -52,8 +52,8 @@ class Share < ActiveRecord::Base
 
 	# return the full path of a share (even if it does not exist!).
 	# (this is for encapsulation purposes mostly)
-	def self.full_path(path = '')
-		File.join(DEFAULT_SHARES_ROOT, path)
+	def self.default_full_path(name)
+		File.join(DEFAULT_SHARES_ROOT, name.downcase)
 	end
 
 	# save the samba config file
@@ -91,7 +91,7 @@ class Share < ActiveRecord::Base
 	def self.create_default_shares
 		DEFAULT_SHARES.each do |s|
 			sh = Share.new
-			sh.path = Share.full_path(s)
+			sh.path = Share.default_full_path(s)
 			sh.name = s
 			sh.rdonly = false
 			sh.visible = true

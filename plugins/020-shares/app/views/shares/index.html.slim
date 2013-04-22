@@ -10,13 +10,13 @@
     - else
         h2 =t('there_are_no_shares_created')
 
-= button_tag t('new_share'), :type => 'button', :class => 'open-area btn btn-create', :id => "new-share-to-step1",  :data => { :related => "#new-share-step1" }
+  = button_tag t('new_share'), :type => 'button', :class => 'open-area btn btn-create', :id => "new-share-to-step1",  :data => { :related => "#new-share-step1" }
 
-div
-  #new-share-box
-    #share-new
-      #new-share-step1.area[style="display:none;"]
-        = render 'form'
+  div
+    #new-share-box
+      #share-new
+        #new-share-step1.area[style="display:none;"]
+          = render 'form'
 
 = content_for(:js_templates) do
   script[id='updateTagsTemplate' type='text/x-jquery-tmpl']
