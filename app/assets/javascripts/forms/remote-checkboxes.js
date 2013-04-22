@@ -51,10 +51,10 @@ var RemoteCheckbox = {
 		        success: function(data) {
 				if (data['status'] == 'ok') {
 				  options['success'](_this, checkbox, data);
-				  checkbox.attr('checked', !checkbox.attr('checked'));
+				  checkbox.prop('checked', !checkbox.prop('checked'));
 				}
 				if (typeof(data['force']) != 'undefined') {
-				    checkbox.attr('checked', data['force']);
+				    checkbox.prop('checked', data['force']);
 				}
 		        },
 		        complete: function() {

@@ -182,7 +182,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capybara
   capybara-screenshot
-  coffee-rails (~> 3.2.2)
+  coffee-rails
   factory_girl_rails
   jbuilder
   jquery-rails
@@ -193,14 +193,14 @@ DEPENDENCIES
   quiet_assets
   rails (= 3.2.13)
   rspec-rails
-  sass-rails (~> 3.2.5)
+  sass-rails
   slim
   sqlite3
   themes_for_rails
   therubyracer
   thin
   thor
-  uglifier (>= 1.0.3)
+  uglifier
   unicorn
   ya2yaml
   yettings

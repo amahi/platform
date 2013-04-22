@@ -7,12 +7,12 @@ gem "yettings"
 
 # Commenting this out because we're not going to pre-compile assets for now
 #group :assets do
-  gem 'sass-rails',   '~> 3.2.5'
-  gem 'coffee-rails', '~> 3.2.2'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 #end
 
 gem 'jbuilder'

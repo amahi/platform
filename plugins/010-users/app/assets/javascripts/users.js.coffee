@@ -78,7 +78,7 @@ Users =
 	user_by_id: (id) ->
 		$ "#whole_user_" + id
 
-	delete_area_toggle: (element) ->
+	toggle_delete_area: (element) ->
 		@user(element).find(".delete:first").toggle()
 
 	form: (element) ->
@@ -91,7 +91,7 @@ Users =
 			close_selector: ".close-username-edit"
 			onShow: (open_link) ->
 				user = _this.user(open_link)
-				user_id = _this.parse_id(user.attr("id"))
+				user_id = _this.parse_id(user.prop("id"))
 				open_link.after Templates.run("updateUsername", user_id: user_id)
 				form = open_link.next()
 				FormHelpers.update_first form, open_link.text()
@@ -101,7 +101,7 @@ Users =
 			parentSelector: "span:first"
 			success: (rc, checkbox) ->
 				_this.user(checkbox).find(".user_icons:first").toggleClass "user_admin"
-				_this.delete_area_toggle checkbox
+				_this.toggle_delete_area checkbox
 
 $(document).ready ->
 	Users.initialize()
