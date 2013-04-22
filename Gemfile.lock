@@ -50,7 +50,7 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     daemons (1.1.9)
-    diff-lcs (1.2.3)
+    diff-lcs (1.2.4)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -69,7 +69,7 @@ GEM
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     journey (1.0.4)
-    jquery-rails (2.1.4)
+    jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (4.0.2)
@@ -82,8 +82,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.22)
-    minitest (4.7.2)
+    mime-types (1.23)
+    minitest (4.7.3)
     multi_json (1.7.2)
     mysql2 (0.3.11)
     nokogiri (1.5.9)
@@ -116,7 +116,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    raindrops (0.10.0)
+    raindrops (0.11.0)
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -185,7 +185,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.2)
   factory_girl_rails
   jbuilder
-  jquery-rails (~> 2.1.4)
+  jquery-rails
   jquery-ui-rails
   minitest
   mysql2
