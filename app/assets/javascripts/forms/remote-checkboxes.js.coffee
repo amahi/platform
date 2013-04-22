@@ -16,13 +16,11 @@ window.RemoteCheckbox =
 		_this = this
 		options = options or {}
 		$(document).on "click", options["selector"], ->
-			empty = ->
-
-			options["beforeSend"] = (if typeof (options["beforeSend"]) is "undefined" then empty else options["beforeSend"])
-			options["success"] = (if typeof (options["success"]) is "undefined" then empty else options["success"])
-			options["complete"] = (if typeof (options["complete"]) is "undefined" then empty else options["complete"])
-			options["spinnerParentSelector"] = (if typeof (options["spinnerParentSelector"]) is "undefined" then "span:first" else options["spinnerParentSelector"])
-			options["parentSelector"] = (if typeof (options["parentSelector"]) is "undefined" then false else options["parentSelector"])
+			options["beforeSend"] = options["beforeSend"] ? ->
+			options["success"] = options["success"] ? ->
+			options["complete"] = options["complete"] ? ->
+			options["spinnerParentSelector"] = options["spinnerParentSelector"] ? "span:first"
+			options["parentSelector"] = options["parentSelector"] ? false
 			checkbox = $(this)
 			checkbox.blur()
 			if typeof (checkbox.data("confirm")) is "undefined"
