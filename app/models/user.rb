@@ -56,12 +56,12 @@ class User < ActiveRecord::Base
 		def system_find_name_by_username(username)
 			# return [username, 500] if Yetting.dummy_mode.inspect
 			pwd = StringScanner.new(File.open('/etc/passwd').readlines.join)
-			user = Regexp.new("^#{username}:[^:]*:(\\d+):\\d+:([^:]*):", Regexp::MULTILINE)
+			user = Regexp.new("^(#{username}):[^:]*:(\\d+):\\d+:([^:]*):", Regexp::MULTILINE | Regexp::IGNORECASE)
 			pwd.scan_until user or return nil
-			uid = pwd[1].to_i
+			uid = pwd[2].to_i
 			# NOTE-cpg: in some cases (ubuntu 12), the name ends up with three commas at the end for some reason
-			name = pwd[2].gsub(/,*$/,'')
-			[name, uid]
+			name = pwd[3].gsub(/,*$/,'')
+			[name, uid, pwd[1]]
 		end
 
 		def system_all_new_users

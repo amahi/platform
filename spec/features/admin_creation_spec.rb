@@ -8,14 +8,12 @@ feature "Admin creation" do
 	end
 
 	scenario "first login for admin should see the setup page and setup first admin" do
+		(s = Setting.find_by_name('initialized')) && s.destroy
 		username = "newuser"
-		User.stub(:system_find_name_by_username) { ["New User", 500] }
-		visit root_path
-		page.should have_content("Amahi Server Login")
+		User.stub(:system_find_name_by_username) { ["New User", 1000, username] }
+		visit start_path
+		page.should have_content("Amahi initialization")
 		fill_in "username", :with => username
-		fill_in "password", :with => "secret"
-		click_button "Log In"
-		page.should have_content("First admin setup. Please re-create your user password.")
 		fill_in "password", :with => "secret"
 		fill_in "password_confirmation", :with => "secret"
 		click_button "Create"

@@ -4,7 +4,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
   head
     meta charset="utf-8"
-    title= "Amahi Server #{t('log_in')}"
+    title= @title || "Amahi Server #{t('log_in')}"
     = stylesheet_link_tag "login"
     = csrf_meta_tags
   /[ if lt IE 9 ]

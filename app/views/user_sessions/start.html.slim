@@ -6,11 +6,11 @@
   - flash.each do |name, msg|
     div[class="message-#{name}"]= msg
 
-  = form_for @user, :url => first_password_path(@user.login) do |f|
+  = form_for @user, :url => initialize_system_path(@user.login) do |f|
     p
       label[for="username"]
         = t 'username'
-      = text_field_tag 'username', @user.login, :disabled => true
+      = text_field_tag 'username', @user.login
     p
       label[for="password"]
         = t 'password'

@@ -6,7 +6,8 @@ AmahiHDA::Application.routes.draw do
 
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
-  match 'user_session/set_first_password/:username' => 'user_sessions#set_first_password', :as => :first_password
+  match 'start' => 'user_sessions#start', :as => :start
+  match 'user_sessions/initialize_system' => 'user_sessions#initialize_system', :as => :initialize_system
 
   resources :shares do
     collection do

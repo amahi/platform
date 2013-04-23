@@ -27,3 +27,4 @@ User.create(:login => 'admin', :name => 'Admin User', :password => 'admin', :pas
 Setting.set('advanced', '1')
 Setting.set('theme', 'default')
 Setting.set('guest-dashboard', '0')
+Setting.set('initialized', '1')

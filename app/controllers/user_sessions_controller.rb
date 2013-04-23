@@ -15,7 +15,7 @@
 # team at http://www.amahi.org/ under "Contact Us."
 
 class UserSessionsController < ApplicationController
-	before_filter :login_required, :except => ['new', 'create', 'set_first_password']
+	before_filter :login_required, :except => ['new', 'create', 'start', 'initialize_system']
 	layout 'login'
 
 	def new
@@ -23,8 +23,19 @@ class UserSessionsController < ApplicationController
 			@user_session = UserSession.new
 		else
 			# if the system is not initialized, start by doing that
-			flash[:notice] = t('first_time_admin_setup')
-			render :action => :first_password
+			redirect_to start_path
+		end
+	end
+
+	def start
+		if Setting.get('initialized')
+			# if the system is initialized already, go to login
+			redirect_to login_path
+		else
+			# initial system initialization
+			@user = User.new
+			flash[:notice] = t("amahi_initialization")
+			@title = t("amahi_initialization")
 		end
 	end
 
@@ -32,28 +43,6 @@ class UserSessionsController < ApplicationController
 		username = params[:username]
 		password = params[:password]
 		remember_me = params[:remember_me]
-		@user = User.find_by_login username
-		if @user == nil
-			(name, uid) = User.system_find_name_by_username(username)
-			# FIXME-cpg: hackish fedora constant for regular uid (500)
-			if name and uid and uid >= 500
-				@user = User.new(:login => username, :name => name)
-				# empty user without password created!
-				@user.save :validate => false
-				# fall through to new user below
-			else
-				flash[:error] = t 'not_a_valid_user_or_password'
-				@user_session = UserSession.new
-				render :action => 'new'
-				return
-			end
-		end
-		if @user && @user.needs_auth? and User.admins.count == 0
-			# FIXME-translate
-			flash[:notice] = t('first_time_admin_setup')
-			render :action => :first_password
-			return
-		end
 		@user_session = UserSession.new(:login => username, :password => password, :remember_me => remember_me)
 		if @user_session.save
 			redirect_to root_url
@@ -63,6 +52,7 @@ class UserSessionsController < ApplicationController
 		end
 	end
 
+	# logout - destroy the user session
 	def destroy
 		@user_session = UserSession.find
 		@user_session.destroy
@@ -71,30 +61,53 @@ class UserSessionsController < ApplicationController
 		redirect_to root_path
 	end
 
-	def set_first_password
+	# initialize the system all in one shot
+	def initialize_system
+		username = params[:username]
 		pwd = params[:password]
 		conf = params[:password_confirmation]
 		unless valid_admin_password?(pwd, conf)
+			flash[:notice] = 'one'
 			flash[:error] = t 'not_a_valid_user_or_password'
-			@user = User.find_by_login params[:username]
+			@user = User.new
 			sleep 1
-			redirect_to new_user_session_url
+			render :action => 'start'
 			return
 		end
-		u = User.find_by_login params[:username]
-		unless u.needs_auth? and User.admins.count == 0
+
+		# here we have a possible user: new in the system (truly new or the user may have
+		# mistyped a username?), or an old user
+		(name, uid, systemusername) = User.system_find_name_by_username(username)
+		# FIXME-cpg: very hackish constant for regular uid (1000)
+		unless name and uid and uid >= 1000
+			# not a system user. should we create one?
 			flash[:error] = t 'not_a_valid_user_or_password'
-			sleep 1
-			redirect_to new_user_session_url
+			flash[:notice] = 'two'
+			@user = User.new
+			render :action => 'start'
 			return
 		end
-		u.update_attributes(:password => pwd, :password_confirmation => conf, :admin => true)
-		u.add_to_users_group
-		u.add_or_passwd_change_samba_user
-		UserSession.create(u, true)
-		# create the initial server structures
-		initialize_default_settings
-		redirect_to root_url
+		# the user exists in the system .. does it exist in the database?
+		u = User.find_by_login(systemusername)
+		if u
+			@user = u
+		else
+			@user = User.new(:login => systemusername, :name => name, :password => pwd, :password_confirmation => conf, :admin => true)
+			@user.save(:validate => false)
+			@user.add_to_users_group
+			@user.add_or_passwd_change_samba_user
+		end
+		# ok we have a user, it's in the system ... start a session for it
+		@user_session = UserSession.new(:login => username, :password => pwd)
+		if @user_session.save
+			# create the initial server structures
+			initialize_default_settings
+			redirect_to root_url
+		else
+			flash[:notice] = 'three'
+			flash[:error] = t 'not_a_valid_user_or_password'
+			render :action => 'start'
+		end
 	end
 
 
@@ -103,9 +116,11 @@ private
 	# initialize various one-time default settings
 	def initialize_default_settings
 		return if Setting.get('initialized')
-		Setting.create(name: 'initialized', value: '1')
-		Setting.create(name: 'advanced', value: '0') unless Setting.get('advanced')
+		Setting.set('advanced', '0')
 		Server.create_default_servers if Server.count < 4
+		Setting.set('guest-dashboard', '0')
+		Setting.set('theme', 'default')
+		Setting.set('initialized', '1')
 	end
 
 	def allow_root_access?
