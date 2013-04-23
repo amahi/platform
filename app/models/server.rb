@@ -14,7 +14,6 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-require 'tempfile'
 require 'platform'
 
 class Server < ActiveRecord::Base
@@ -35,11 +34,14 @@ class Server < ActiveRecord::Base
 
 	def self.create_default_servers
 		Server.create(:name => 'apache', :pidfile => Platform.file_name(:apache_pid), :comment => I18n.t('apache_web_server'))
-		Server.create(:name => 'named', :pidfile => 'named/named.pid', :comment => I18n.t('dns_server'))
-		Server.create(:name => 'dhcp', :pidfile => Platform.file_name(:dhcpd_pid), :comment => I18n.t('dhcp_server'))
+		# old ISC DNS and DHCP servers
+		# Server.create(:name => 'named', :pidfile => 'named/named.pid', :comment => I18n.t('dns_server'))
+		# Server.create(:name => 'dhcp', :pidfile => Platform.file_name(:dhcpd_pid), :comment => I18n.t('dhcp_server'))
+		# new dnsmasq server
+		Server.create(:name => 'dnsmasq', :pidfile => 'dnsmasq.pid', :comment => I18n.t('dns_server'))
 		Server.create(:name => 'mysql', :pidfile => 'mysqld/mysqld.pid', :comment => I18n.t('mysql_database_server'))
 		Server.create(:name => 'smb', :pidfile => Platform.file_name(:samba_pid), :comment => I18n.t('file_server_samba'))
-		Server.create(:name => 'hda-ctl', :comment => I18n.t('amahi_dyndns_updater'))
+		# Server.create(:name => 'hda-ctl', :comment => I18n.t('amahi_dyndns_updater'))
 		r = "# WARNING - This file was automatically generated on #{Time.now}\n" \
 			"\nset daemon 30\n" \
 			"include #{Platform.file_name(:monit_dir)}/logging\n" \
