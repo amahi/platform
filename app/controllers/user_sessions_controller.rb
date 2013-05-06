@@ -82,7 +82,6 @@ class UserSessionsController < ApplicationController
 		unless name and uid and uid >= 1000
 			# not a system user. should we create one?
 			flash[:error] = t 'not_a_valid_user_or_password'
-			flash[:notice] = 'two'
 			@user = User.new
 			render :action => 'start'
 			return
