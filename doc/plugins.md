@@ -45,7 +45,8 @@ t = Tab.new("foobar", "FooBar", "/tab/apps")
 # for example
 t.add("index", "All Foo Bars")
 t.add("advanced", "Advanced Settings for Foos")
-t.add("expert", "Expert Settings")
+# this subtab has a third parameter -- denoting it's an advanced subtab
+t.add("expert", "Expert Settings", true)
 t.add("other", "Other Settings")
 ```
 

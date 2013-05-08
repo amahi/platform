@@ -2,7 +2,7 @@
 
 class Tab
 
-	attr_accessor :id, :label, :url, :subtabs
+	attr_accessor :id, :label, :url, :subtabs, :advanced
 
 	class << self
 		def all
@@ -16,23 +16,33 @@ class Tab
 	#   e.g. Users
 	# url is what full-url this tab is hooked to, e.g. '/tab/users'
 	# parent is the id (controller) of the parent tab
-	def initialize(controller, label, url, parent = nil)
+	def initialize(controller, label, url, parent = nil, advanced = false)
 		# keep stat with all existing tabs
 		self.id = controller
 		self.label = label
 		self.url = url
 		self.subtabs = []
+		self.advanced = advanced
 		push(self) unless parent
 	end
 
 	# add a subtab, with a relative url and the label for it
-	def add(action, label)
+	# advanced is only reported
+	def add(action, label, advanced = false)
 		u = (action == 'index') ? self.url : "#{self.url}/#{action}"
-		subtabs << Tab.new(action, label, u, self.id)
+		subtabs << Tab.new(action, label, u, self.id, advanced)
 	end
 
 	def subtabs?
 		subtabs.size != 0
+	end
+
+	def basic_subtabs
+		subtabs.reject { |s| s.advanced }
+	end
+
+	def advanced_subtabs
+		subtabs
 	end
 
 	private
