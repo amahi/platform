@@ -22,7 +22,8 @@ gem 'themes_for_rails'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'slim'
+# FIXME-cpg: this requirement of 1.3.8 is because bundle update forced slim to 1.0.1! (!?)
+gem 'slim', '~> 1.3.8'
 
 gem 'authlogic'
 

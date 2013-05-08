@@ -25,7 +25,7 @@ clean:
 # install necessary packages (FIXME: this is for fedora 18 only so far)
 devel-rpms:
 	sudo yum -y install git rpm-build ruby ruby-devel gcc gcc-c++ mysql mysql-devel \
-		libxml2-devel libxslt-devel sqlite sqlite-devel v8 v8-devel
+		libxml2-devel libxslt-devel sqlite sqlite-devel v8 v8-devel rubygem-bundler
 
 run-tests:
 	bundle exec rake db:test:prepare

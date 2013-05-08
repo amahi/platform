@@ -18,9 +18,8 @@ div.user[id="whole_user_#{user.id}"]
 
         .settings-actions
           = spinner
-          span.delete[style="#{user.admin? ? "display:none" : ""}"]
-            = link_to t('delete') + ' ' + user.login,
-                      users_engine.user_path(user),
+          span.delete[style="#{user.admin? ? 'display:none' : ''}"]
+            = link_to (t('delete') + ' ' + user.login), users_engine.user_path(user),
                       :remote => true,
                       :method => :delete,
                       :id => "delete-user-#{user.id}",
