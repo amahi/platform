@@ -45,21 +45,17 @@ class App < ActiveRecord::Base
 	validates :name, :presence => true
 	validates :identifier, :presence => true, :uniqueness => true
 
-
-
 	def initialize(identifier, app=nil)
 		super()
 		if app.nil?
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			app = AmahiApi::App.find(identifier)
 		end
-		# online_app_to_local_app(app)
 		self.name = app.name
 		self.screenshot_url = app.screenshot_url
 		self.identifier = app.id
 		self.description = app.description
-		self.version = app.version
-		self.app_url = app.app_url
+		self.app_url = app.url
 		self.logo_url = app.logo_url
 		self.status = app.status
 		self.installed = false
@@ -351,17 +347,6 @@ class App < ActiveRecord::Base
 
 	def mkdir(path)
 		FileUtils.mkdir_p(path)
-	end
-
-	def online_app_to_local_app(online_app)
-		name = online_app.name
-		screenshot_url = online_app.screenshot_url
-		identifier = online_app.id
-		description = online_app.description
-		version = online_app.version
-		app_url = online_app.app_url
-		logo_url = online_app.logo_url
-		installed = false
 	end
 
 	def install_pkgs(installer)

@@ -34,6 +34,9 @@ group :development do
 	gem 'quiet_assets'
 	gem 'thin'
 	gem 'thor'
+	# turn this on to enable reporting on best practices with:
+	#	rails_best_practices -f html .
+	# gem 'rails_best_practices'
 end
 
 gem "rspec-rails", :group => [:test, :development]

@@ -31,8 +31,6 @@ require 'active_resource'
 # You should read the (admittedly spare) docs at 
 # http://wiki.amahi.org/index.php/API
 
-ActiveResource::Base.format = :xml
-
 module AmahiApi
 	class Error < StandardError; end
 	class << self
@@ -54,7 +52,7 @@ module AmahiApi
 	end
 
 	self.host_format   = '%s://%s'
-	self.domain_format = 'api.amahi.org/api'
+	self.domain_format = 'api.amahi.org/api2'
 	self.protocol      = 'https'
 
 	class Base < ActiveResource::Base
