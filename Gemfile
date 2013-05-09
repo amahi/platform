@@ -27,7 +27,7 @@ gem 'slim', '~> 1.3.8'
 
 gem 'authlogic'
 
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby'
 
 gem 'unicorn'
 
