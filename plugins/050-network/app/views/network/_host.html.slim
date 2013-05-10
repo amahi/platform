@@ -1,11 +1,9 @@
 div.entry
 
   table.settings.stretchtoggle
-    tr.alt-row
+    tr
       td.settings-col1
         = link_to host.name, '#'
-      td
-        = host.mac
       td
         = @net + '.' + host.address
 
@@ -43,4 +41,4 @@ div.entry
             td
               label #{t('ip')}
             td
-              = host.address
+              = @net + '.' + host.address

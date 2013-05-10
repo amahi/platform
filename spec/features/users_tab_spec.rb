@@ -34,7 +34,7 @@ feature "Users tab" do
 		visit users_engine.users_path
 		page.has_text?("Username")
 		page.has_text?("Full Name")
-		find("#whole_user_#{user.id}").find("tr.alt-row").click_link user.login
+		find("#whole_user_#{user.id}").find("tr").click_link user.login
 		expect(page).to have_selector("a#delete-user-#{user.id}", :visible => true);
 		click_link "delete-user-#{user.id}"
 		page.has_no_text?(user.name)
@@ -51,7 +51,7 @@ feature "Users tab" do
 		visit users_engine.users_path
 		page.has_text?("Username")
 		page.has_text?("Full Name")
-		find("#whole_user_#{admin.id}").find("tr.alt-row").click_link admin.login
+		find("#whole_user_#{admin.id}").find("tr").click_link admin.login
 		expect(page).to have_no_selector("a#delete-user-#{user.id}", :visible => true)
 	end
 	scenario "should not allow an admin user to revoke its own admin rights", :js => true do
@@ -66,7 +66,7 @@ feature "Users tab" do
 		visit users_engine.users_path
 		page.has_text?("Username")
 		page.has_text?("Full Name")
-		find("#whole_user_#{admin.id}").find("tr.alt-row").click_link admin.login
+		find("#whole_user_#{admin.id}").find("tr").click_link admin.login
 		expect(page.find_by_id("checkbox_user_admin_#{admin.id}")[:disabled]).to eq 'disabled'
 	end
 	scenario "should allow an admin user to revoke admin rights to another user", :js => true do
@@ -81,7 +81,7 @@ feature "Users tab" do
 		visit users_engine.users_path
 		page.has_text?("Username")
 		page.has_text?("Full Name")
-		find("#whole_user_#{user.id}").find("tr.alt-row").click_link user.login
+		find("#whole_user_#{user.id}").find("tr").click_link user.login
 		checkbox = "#checkbox_user_admin_#{user.id}"
 		pending "FIXME: issues with JS?"
 		page.should have_checked_field(checkbox)
@@ -101,7 +101,7 @@ feature "Users tab" do
 		visit users_engine.users_path
 		page.has_text?("Username")
 		page.has_text?("Full Name")
-		find("#whole_user_#{user.id}").find("tr.alt-row").click_link user.login
+		find("#whole_user_#{user.id}").find("tr").click_link user.login
 		checkbox = "#checkbox_user_admin_#{user.id}"
 		pending "FIXME: issues with JS?"
 		page.should_not have_checked_field(checkbox)

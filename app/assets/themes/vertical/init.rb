@@ -14,7 +14,7 @@ def theme_init
 
 	ret = {}
 
-	ret[:name] = "tfr_demo"
+	ret[:name] = "vertical"
 	ret[:version] = "1.0"
 	ret[:theme_uri] = "http://www.amahi.org"
 	ret[:author] = "Solomon Seal, AKA - slm4996"

@@ -5,9 +5,7 @@
         thead
           tr
             th.settings-col1= t 'host'
-            th= t 'mac'
-            th= t 'address'
-            th
+            th= t 'ip_address'
       = render :partial => 'network/host', :collection => @hosts
     .empty-hint
       h2= t('there_are_no_hosts')
