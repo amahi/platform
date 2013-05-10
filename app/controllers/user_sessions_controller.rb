@@ -67,7 +67,6 @@ class UserSessionsController < ApplicationController
 		pwd = params[:password]
 		conf = params[:password_confirmation]
 		unless valid_admin_password?(pwd, conf)
-			flash[:notice] = 'one'
 			flash[:error] = t 'not_a_valid_user_or_password'
 			@user = User.new
 			sleep 1
@@ -103,7 +102,6 @@ class UserSessionsController < ApplicationController
 			initialize_default_settings
 			redirect_to root_url
 		else
-			flash[:notice] = 'three'
 			flash[:error] = t 'not_a_valid_user_or_password'
 			render :action => 'start'
 		end

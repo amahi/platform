@@ -1,0 +1,28 @@
+- @host = @host || Host.new
+
+= form_for @host, url: network_engine.hosts_path, remote: true, html: { class: 'host create-form', id: 'new-host-form' } do |f|
+  fieldset
+    legend &nbsp; #{t('create_a_new_host')} &nbsp;
+
+    .create-inside
+      = render partial: 'shared/errors', object: @host
+
+      .control-group
+        .controls= f.text_field :name, size: 16, maxlength: 20, placeholder: t('name')
+        .message
+
+      .control-group
+        .controls= f.text_field :mac, size: 16, maxlength: 20, placeholder: t('mac_address')
+        .message= t('host_mac_hint')
+
+      .control-group
+        .controls= f.text_field :address, size: 16, maxlength: 20, placeholder: t('ip_address')
+        .message
+          = @net + '.'
+          b#net-message = 'X'
+
+      .control-group.create-btn
+        .controls
+          = spinner
+          = button_tag t('create'), type: 'submit', id: 'host_create_button', class: 'btn btn-create'
+          = link_to t('cancel'), '#', class: 'close-area cancel-link', data: { related: '#new-host-to-step1' }

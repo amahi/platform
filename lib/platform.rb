@@ -27,6 +27,13 @@ class Platform
 	# default group for users (may change for each platform one day?)
 	DEFAULT_GROUP = "users"
 
+	# Using DNSMASQ
+	DNSMASQ = true
+
+	def self.dnsmasq?
+		DNSMASQ ? true : false
+	end
+
 	PLATFORMS=['fedora', 'centos', 'ubuntu', 'debian', 'mac']
 	SERVICES={
 		'fedora' => {
@@ -73,7 +80,7 @@ class Platform
 	FILENAMES={
 		'fedora' => {
 			:apache_pid => 'httpd/httpd.pid',
-			:dhcpleasefile => '/var/lib/dhcpd/dhcpd.leases',
+			:dhcpleasefile => dnsmasq? ? '/var/lib/dnsmasq/dnsmasq.leases' : '/var/lib/dhcpd/dhcpd.leases',
 			:samba_pid => 'smbd.pid',
 			:dhcpd_pid => 'dhcpd.pid',
 			:monit_dir => '/etc/monit.d',
@@ -83,7 +90,7 @@ class Platform
 		},
 		'ubuntu' => {
 			:apache_pid => 'apache2.pid',
-			:dhcpleasefile => '/var/lib/dhcp3/dhcpd.leases',
+			:dhcpleasefile => dnsmasq? ? '/var/lib/dnsmasq/dnsmasq.leases' : '/var/lib/dhcp3/dhcpd.leases',
 			:samba_pid => 'samba/smbd.pid',
 			:dhcpd_pid => 'dhcp-server/dhcpd.pid',
 			:monit_dir => '/etc/monit/conf.d',
@@ -103,7 +110,7 @@ class Platform
 		},
 		'centos' => {
 			:apache_pid => 'httpd/httpd.pid',
-			:dhcpleasefile => '/var/lib/dhcpd/dhcpd.leases',
+			:dhcpleasefile => dnsmasq? ? '/var/lib/dnsmasq/dnsmasq.leases' : '/var/lib/dhcpd/dhcpd.leases',
 			:samba_pid => 'smbd.pid',
 			:dhcpd_pid => nil,
 			:monit_dir => '/etc/monit.d',

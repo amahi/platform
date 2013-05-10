@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(:version => 20120803011600) do
   end
 
   create_table "hosts", :force => true do |t|
-    t.string "host",                    :null => false
+    t.string "name",                    :null => false
     t.string "mac",     :default => ""
     t.string "address"
   end

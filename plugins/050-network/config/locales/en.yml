@@ -1,0 +1,15 @@
+'en':
+  leases: DHCP Leases
+  hosts: Fixed IPs
+  aliases: Aliases
+  settings: Settings
+  expiration: Expiration
+  mac: MAC
+  ip: IP
+  host: Host
+  address: Address
+  there_are_no_hosts: There are no fixed IPs
+  new_host: New Fixed IP
+  create_a_new_host: Create a New Fixed IP
+  are_you_sure_host: Are you sure want to delete fixed ip '%{fixed_ip}'
+  host_mac_hint: "Example: '11:22:33:44:55:66'"

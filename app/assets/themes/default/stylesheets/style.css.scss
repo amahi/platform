@@ -199,6 +199,52 @@ input[type="password"] {
 }
 
 // --------------------------------------------------
+// Netwrok
+// --------------------------------------------------
+
+#leases-table {
+  thead {
+    th {
+      &:last-child { @include border-radius(0 5px 0 0); }
+    }
+  }
+
+  tbody {
+    tr {
+      &:last-child {
+        td {
+          border-bottom: 0;
+
+          &:first-child { @include border-radius(0 0 0 5px); }
+          &:last-child { @include border-radius(0 0 5px 0); }
+        }
+      }
+    }
+  }
+}
+
+#hosts-table {
+  thead {
+    th {
+      &:last-child { @include border-radius(0 5px 0 0); }
+    }
+  }
+
+  tbody {
+    tr {
+      &:last-child {
+        td {
+          border-bottom: 0;
+
+          &:first-child { @include border-radius(0 0 0 5px); }
+          &:last-child { @include border-radius(0 0 5px 0); }
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
 // Buttons
 // --------------------------------------------------
 
