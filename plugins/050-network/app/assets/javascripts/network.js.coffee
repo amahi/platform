@@ -12,14 +12,12 @@ Hosts =
     @checkAndShowNoHosts()
 
     $(document).on "ajax:success", ".btn-delete", ->
-      $(this).parents('tr').remove()
+      $(this).parents('div.entry').remove()
 
-      if $('#hosts-table').find('tr').length == 1
+      if $('#hosts-table').find('.entry').length == 0
         $('#hosts-table table').remove()
 
       _this.checkAndShowNoHosts()
-
-
 
     $(document).on "ajax:beforeSend", ".btn-delete", ->
       link = $(this)
@@ -39,7 +37,7 @@ Hosts =
       $('#net-message').text $(this).val()
 
   checkAndShowNoHosts: ->
-    if $('#hosts-table').find('table').length == 0
+    if $('#hosts-table').find('.entry').length == 0
       $('#hosts-table .no-hosts').show()
 
 $ ->

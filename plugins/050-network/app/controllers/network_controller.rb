@@ -47,7 +47,7 @@ private
   end
 
   def get_hosts
-    @hosts = Host.all
+    @hosts = Host.order('name ASC')
     @net = Setting.get 'net'
   end
 end
