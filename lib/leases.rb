@@ -29,7 +29,7 @@ class Leases
 	end
 
 	def self.active(leases)
-		leases.delete_if { |lease| Time.at(lease{:timestamp}) < Time.now }
+		leases.delete_if { |lease| Time.at(lease{:expiration}) < Time.now }
 	end
 
 	private
@@ -41,12 +41,12 @@ class Leases
 		File.foreach(file) do |line|
 			next if line =~ /^\s*\#/
 			if line =~ /^(\d+)\s+(([0-9a-f]{2}:){5}[0-9a-f]{2})\s+(\d+\.\d+\.\d+\.\d+)\s+([^\s]+)\s+/i
-				res << { :timestamp =>  $1, :mac => $2, :ip => $4, :name => $5 }
+				res << { :expiration => $1.to_i, :mac => $2, :ip => $4, :name => $5 }
 			else
 				Rails.logger.error("DNMASQ lease parser failed for line: '#{line}'")
 			end
 		end
-		res
+		res.sort { |x, y| x[:expiration] <=> y[:expiration] }
 	end
 
 	# the code below was for the ISC DHCP server, for historical purposes

@@ -1,3 +1,5 @@
-= Amahi plugin <your plugin name>
+= Amahi plugin for Network information
 
-<your plugin name> for the Amahi platform
+Network tab for the Amahi platform
+
+(C) 2013 Amahi
