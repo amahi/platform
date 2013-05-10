@@ -1,0 +1,16 @@
+tbody
+  tr class=cycle("odd", "even")
+    td.settings-col1= host.name
+    td= host.mac
+    td= @net + '.' + host.address
+    td
+      .settings-actions
+        span.delete
+          = link_to t('delete') + ' ' + host.name,
+            network_engine.destroy_host_path(host),
+            :method => :delete,
+            :data => {:confirm => confirm_host_destroy_message(host.name)},
+            :remote => true,
+            :class => 'btn-delete'
+          = spinner
+
