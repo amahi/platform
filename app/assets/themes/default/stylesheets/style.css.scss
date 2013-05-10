@@ -186,7 +186,13 @@ input[type="password"] {
 
     .controls { float: left; }
 
-    div.messages { margin-left: 180px; }
+    div.messages {
+      color: darkgrey;
+      line-height: 26px;
+      height: 26px;
+      margin-left: 10px;
+      float: left;
+    }
   }
 }
 

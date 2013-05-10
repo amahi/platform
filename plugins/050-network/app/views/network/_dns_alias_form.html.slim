@@ -1,0 +1,24 @@
+- @dns_alias = @dns_alias || DnsAlias.new
+
+= form_for @dns_alias, url: network_engine.dns_aliases_path, remote: true, html: { class: 'dns_alias create-form', id: 'new-dns-alias-form' } do |f|
+  fieldset
+    legend &nbsp; #{t('create_a_new_dns_alias')} &nbsp;
+
+    .create-inside
+      = render partial: 'shared/errors', object: @dns_alias
+
+      .control-group
+        .controls= f.text_field :name, size: 16, maxlength: 20, placeholder: t('name')
+        .messages
+
+      .control-group
+        .controls= f.text_field :address, size: 16, maxlength: 20, placeholder: t('ip_address')
+        .messages
+          = @net + '.'
+          b#net-message = 'X'
+
+      .control-group.create-btn
+        .controls
+          = spinner
+          = button_tag t('create'), type: 'submit', id: 'dns_alias_create_button', class: 'btn btn-create'
+          = link_to t('cancel'), '#', class: 'close-area cancel-link', data: { related: '#new-dns-alias-to-step1' }

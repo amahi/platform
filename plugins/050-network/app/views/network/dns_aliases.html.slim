@@ -1,0 +1,32 @@
+#dns-aliases-table
+  .settings-table
+    - if @dns_aliases.any?
+      table.settings
+        thead
+          tr
+            th.settings-col1= t 'dns'
+            th= t 'address'
+            th
+        tbody
+          - @dns_aliases.each do |dns_alias|
+            tr class=cycle("odd", "even")
+              td.settings-col1= dns_alias.name
+              td= @net + '.' + dns_alias.address
+              td
+                span.delete
+                  = link_to t('delete') + ' ' + dns_alias.name,
+                    network_engine.destroy_dns_alias_path(dns_alias),
+                    :method => :delete,
+                    :data => {:confirm => confirm_dns_alias_destroy_message(dns_alias.name)},
+                    :remote => true,
+                    :class => 'btn-delete'
+                  = spinner
+    .empty-hint
+      h2= t('there_are_no_dns_aliases')
+
+  = button_tag t('new_dns_alias'), type: 'button', class: 'open-area btn btn-create', id: 'new-dns-alias-to-step1', data: { related: '#new-dns-alias-step1' }
+
+  #new-dns-alias-box
+    #dns-alias-new
+      #new-dns-alias-step1.area[style="display:none;"]
+        = render 'dns_alias_form'

@@ -13,3 +13,8 @@
   create_a_new_host: Create a New Fixed IP
   are_you_sure_host: Are you sure want to delete fixed ip '%{fixed_ip}'
   host_mac_hint: "Example: '11:22:33:44:55:66'"
+  there_are_no_dns_aliases: There are no aliases
+  dns: DNS
+  new_dns_alias: New Alias
+  create_a_new_dns_alias: Create a New Alias
+  are_you_sure_dns_alias: Are you sure want to delete dns_alias '%{dns_alias}'

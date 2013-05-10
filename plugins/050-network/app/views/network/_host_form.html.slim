@@ -9,15 +9,15 @@
 
       .control-group
         .controls= f.text_field :name, size: 16, maxlength: 20, placeholder: t('name')
-        .message
+        .messages
 
       .control-group
         .controls= f.text_field :mac, size: 16, maxlength: 20, placeholder: t('mac_address')
-        .message= t('host_mac_hint')
+        .messages= t('host_mac_hint')
 
       .control-group
         .controls= f.text_field :address, size: 16, maxlength: 20, placeholder: t('ip_address')
-        .message
+        .messages
           = @net + '.'
           b#net-message = 'X'
 

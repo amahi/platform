@@ -4,5 +4,5 @@ t = Tab.new("network", "network", "/tab/network")
 t.add("index", "leases")
 t.add("hosts", "hosts")
 # advanced settings
-t.add("aliases", "aliases", true)
+t.add("dns_aliases", "dns_aliases", true)
 t.add("settings", "settings", true)

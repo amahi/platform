@@ -9,7 +9,7 @@
             th= t 'address'
             th
       = render :partial => 'network/host', :collection => @hosts
-    .no-hosts
+    .empty-hint
       h2= t('there_are_no_hosts')
 
   = button_tag t('new_host'), type: 'button', class: 'open-area btn btn-create', id: 'new-host-to-step1', data: { related: '#new-host-step1' }

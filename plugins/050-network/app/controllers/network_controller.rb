@@ -41,6 +41,23 @@ class NetworkController < ApplicationController
     render json: { id: @host.id }
   end
 
+  def dns_aliases
+    get_dns_aliases
+  end
+
+  def create_dns_alias
+    sleep 2 if development?
+    @dns_alias = DnsAlias.create params[:dns_alias]
+    get_dns_aliases
+  end
+
+  def destroy_dns_alias
+    sleep 2 if development?
+    @dns_alias = DnsAlias.find params[:id]
+    @dns_alias.destroy
+    render json: { id: @dns_alias.id }
+  end
+
 private
   def set_page_title
     @page_title = t('network')
@@ -48,6 +65,11 @@ private
 
   def get_hosts
     @hosts = Host.order('name ASC')
+    @net = Setting.get 'net'
+  end
+
+  def get_dns_aliases
+    @dns_aliases = DnsAlias.all
     @net = Setting.get 'net'
   end
 end
