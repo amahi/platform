@@ -4,7 +4,7 @@ div.entry
       td.settings-col1
         = link_to dns_alias.name, '#'
       td
-        = @net + '.' + dns_alias.address
+        = alias_ip(dns_alias)
 
   .settings-stretcher[style="display:none;"]
     fieldset
@@ -29,10 +29,10 @@ div.entry
             td
               label #{t('name')}
             td
-              = dns_alias.name
+              = link_to "http://#{dns_alias.name}", "http://#{dns_alias.name}"
           tr
             td
               label #{t('ip_address')}
             td
-              = @net + '.' + dns_alias.address
+              = alias_ip(dns_alias)
 
