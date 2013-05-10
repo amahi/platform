@@ -4,23 +4,9 @@
       table.settings
         thead
           tr
-            th.settings-col1= t 'dns'
-            th= t 'address'
-            th
-        tbody
-          - @dns_aliases.each do |dns_alias|
-            tr class=cycle("odd", "even")
-              td.settings-col1= dns_alias.name
-              td= @net + '.' + dns_alias.address
-              td
-                span.delete
-                  = link_to t('delete') + ' ' + dns_alias.name,
-                    network_engine.destroy_dns_alias_path(dns_alias),
-                    :method => :delete,
-                    :data => {:confirm => confirm_dns_alias_destroy_message(dns_alias.name)},
-                    :remote => true,
-                    :class => 'btn-delete'
-                  = spinner
+            th.settings-col1= t 'name'
+            th= t 'ip_address'
+      = render :partial => 'network/dns_alias', :collection => @dns_aliases
     .empty-hint
       h2= t('there_are_no_dns_aliases')
 

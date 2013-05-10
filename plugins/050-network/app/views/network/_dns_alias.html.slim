@@ -1,0 +1,38 @@
+div.entry
+  table.settings.stretchtoggle
+    tr
+      td.settings-col1
+        = link_to dns_alias.name, '#'
+      td
+        = @net + '.' + dns_alias.address
+
+  .settings-stretcher[style="display:none;"]
+    fieldset
+      legend
+        | &nbsp; &nbsp;
+        b = dns_alias.name
+        | &nbsp; &nbsp;
+
+      .settings-actions
+        span.delete
+          = link_to t('delete') + ' ' + dns_alias.name,
+            network_engine.destroy_dns_alias_path(dns_alias),
+            :method => :delete,
+            :data => {:confirm => confirm_dns_alias_destroy_message(dns_alias.name)},
+            :remote => true,
+            :class => 'btn-delete'
+          = spinner
+
+      .settings-fields
+        table
+          tr
+            td
+              label #{t('name')}
+            td
+              = dns_alias.name
+          tr
+            td
+              label #{t('ip_address')}
+            td
+              = @net + '.' + dns_alias.address
+

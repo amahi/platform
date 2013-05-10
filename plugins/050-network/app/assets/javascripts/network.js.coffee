@@ -58,9 +58,9 @@ DnsAliases =
     @checkAndShowEmptyHint()
 
     $(document).on "ajax:success", ".btn-delete", ->
-      $(this).parents('tr').remove()
+      $(this).parents('div.entry').remove()
 
-      if $('#dns-aliases-table').find('tr').length == 1
+      if $('#dns-aliases-table').find('tr').length == 0
         $('#dns-aliases-table table').remove()
 
       _this.checkAndShowEmptyHint()

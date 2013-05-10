@@ -69,7 +69,7 @@ private
   end
 
   def get_dns_aliases
-    @dns_aliases = DnsAlias.all
+    @dns_aliases = DnsAlias.order('name ASC')
     @net = Setting.get 'net'
   end
 end
