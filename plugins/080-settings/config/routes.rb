@@ -7,4 +7,6 @@ Settings::Engine.routes.draw do
 	match 'poweroff' => 'settings#poweroff'
 	match 'servers' => 'settings#servers'
 	match 'refresh' => 'settings#refresh'
+	match 'themes' => 'settings#themes'
+	match 'activate_theme' => 'settings#activate_theme'
 end

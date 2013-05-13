@@ -14,7 +14,7 @@ def theme_init
 
 	ret = {}
 
-	ret[:name] = "vertical"
+	ret[:name] = "Air Jordan Vertical"
 	ret[:version] = "1.0"
 	ret[:theme_uri] = "http://www.amahi.org"
 	ret[:author] = "Solomon Seal, AKA - slm4996"

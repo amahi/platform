@@ -35,7 +35,6 @@ AmahiHDA::Application.routes.draw do
   resources :user_sessions, :hosts, :aliases
 
   match 'search/:action' => 'search', :as => :search
-  match 'theme/*filename' => 'theme#file'
 
   root :to => 'front#index'
 

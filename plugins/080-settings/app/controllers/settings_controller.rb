@@ -73,4 +73,17 @@ class SettingsController < ApplicationController
 		raise "FIXME"
 	end
 
+	# index of all themes
+	def themes
+		@themes = Theme.available
+	end
+
+	def activate_theme
+		s = Setting.find_by_name "theme"
+		s.value = params[:id]
+		s.save!
+		# redirect rather than render, so that it re-displays with the new theme
+		redirect_to settings_engine.themes_path
+	end
+
 end
