@@ -1,19 +1,3 @@
-Network =
-  initialize: ->
-    _this = this
-
-    $(document).on "ajax:beforeSend", ".btn-delete", ->
-      link = $(this)
-      spinner = link.parents().children(".spinner")
-      spinner.show "fast"
-      link.hide()
-
-    $(document).on "ajax:beforeSend", ".create-form", ->
-      form = $(this)
-      spinner = form.find(".spinner")
-      spinner.show "fast"
-      form.find("button").hide()
-
 Hosts =
   initialize: ->
     _this = this
@@ -89,9 +73,6 @@ Settings =
         FormHelpers.update_first form, open_link.text()
         FormHelpers.focus_first form
 
-    $(document).on "ajax:beforeSend", "#update-lease-time-form", ->
-      $(this).find('.spinner').show()
-
     $(document).on "ajax:success", ".update-lease-time-form", (data, results) ->
       if results["status"] is "ok"
         form = $(this)
@@ -104,11 +85,9 @@ Settings =
       link = form.prev()
       form.hide "slow", ->
         form.remove()
-        form.find('.spinner').hide()
         link.show()
 
 $ ->
-  Network.initialize()
   Hosts.initialize()
   DnsAliases.initialize()
   Settings.initialize()

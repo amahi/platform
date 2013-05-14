@@ -33,5 +33,6 @@
 
         .control-group.create-btn
           .controls
+            = spinner
             = button_tag t('create'), :type => 'submit', :id => 'user_create_button', :class => 'btn btn-create'
-            = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-user-to-step1'}   
+            = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-user-to-step1'}

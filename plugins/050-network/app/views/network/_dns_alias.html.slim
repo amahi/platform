@@ -15,13 +15,13 @@ div.entry
 
       .settings-actions
         span.delete
+          = spinner
           = link_to t('delete') + ' ' + dns_alias.name,
             network_engine.destroy_dns_alias_path(dns_alias),
             :method => :delete,
             :data => {:confirm => confirm_dns_alias_destroy_message(dns_alias.name)},
             :remote => true,
-            :class => 'btn-delete'
-          = spinner
+            :class => 'btn-delete remote-btn'
 
       .settings-fields
         table

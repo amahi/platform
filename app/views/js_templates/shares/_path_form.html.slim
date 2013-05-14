@@ -3,7 +3,7 @@
     :url => '/shares/${share_id}/update_path',\
     :method => :put,\
     :html => {\
-      :class => 'share area update-path-form form-inline',\
+      :class => 'share area update-form update-path-form form-inline',\
       :id => 'update-path-form'\
     } do |f|
 
@@ -12,6 +12,7 @@
       = f.text_field :path, :size => 38, :maxlength => 128, :placeholder => t('location')
   .control-group
     .controls
+      = spinner
       = f.submit "#{t('change')}".html_safe, :class => 'btn'
       = link_to t('cancel'), '#', :class => 'close-update-path-area cancel-link'
     .messages

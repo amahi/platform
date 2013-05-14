@@ -155,13 +155,6 @@ Shares =
 				form.remove()
 				link.show()
 
-
-		$(document).on "ajax:beforeSend", ".clear-permissions", (data, results) ->
-			link = $(this)
-			spinner = link.parent().children(".spinner")
-			spinner.show "fast"
-			link.hide()
-
 		$(document).on "ajax:success", ".clear-permissions", (data, results) ->
 			link = $(this)
 			parent = link.parent()

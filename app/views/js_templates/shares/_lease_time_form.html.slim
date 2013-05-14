@@ -1,7 +1,7 @@
 = form_tag '/network/update_lease_time',\
     :remote => true,\
     :method => :put,\
-    :class => 'setting area update-lease-time-form form-inline',\
+    :class => 'setting area update-form update-lease-time-form form-inline',\
     :id => 'update-lease-time-form' do |f|
 
   .control-group
@@ -9,7 +9,7 @@
       = text_field_tag 'lease_time', '${lease_time}', :size => 38, :maxlength => 128, :placeholder => t('lease_time')
   .control-group
     .controls
+      = spinner
       = submit_tag t('change'), :class => 'btn'
       = link_to t('cancel'), '#', :class => 'close-update-lease-time-area cancel-link'
-      = spinner
     .messages

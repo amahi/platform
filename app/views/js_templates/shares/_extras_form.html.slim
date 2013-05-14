@@ -3,7 +3,7 @@
     :url => '/shares/${share_id}/update_extras',\
     :method => :put,\
     :html => {\
-      :class => 'share area update-extras-form form-horizontal',\
+      :class => 'share area update-form update-extras-form form-horizontal',\
       :id => 'update-extras-form'\
     } do |f|
 
@@ -13,5 +13,6 @@
 
   .control-group
     .controls
+      = spinner
       = f.submit "#{t('change')}".html_safe, :class => 'btn'
       = link_to t('cancel'), '#', :class => 'close-update-extras-area cancel-link'

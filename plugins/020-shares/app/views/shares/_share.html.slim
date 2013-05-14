@@ -18,14 +18,14 @@ div.share[id="whole_share_#{share.id}"]
           small= "#{t('created')} #{formatted_date(share.created_at)}"
 
         .settings-actions
-          = spinner
           span.delete
+            = spinner
             = link_to t('delete') + ' ' + share.name,
               share_path(share),
               :method => :delete,
               :data => {:confirm => confirm_share_destroy_message(share.name)},
               :remote => true,
-              :class => 'btn-delete'
+              :class => 'btn-delete remote-btn'
 
         .settings-fields
           table

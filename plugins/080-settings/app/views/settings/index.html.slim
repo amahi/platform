@@ -8,13 +8,14 @@ div.settings-fields.settings-wrap
           label = t 'language'
         td
           = select_tag 'locale', options_for_select(@available_locales, I18n.locale.to_s),
-            data: { remote: true, url: settings_engine.change_language_path, update: 'language' }
+            data: { remote: true, url: settings_engine.change_language_path, update: 'language' },
+            class: 'remote-select'
           = spinner
       tr
         td
           label = t 'advanced_settings'
         td
-          = tag "input", id: "advanced", type: "checkbox", checked: @advanced.set?,
+          = tag "input", id: "advanced", class: "remote-check", type: "checkbox", checked: @advanced.set?,
               data: { remote: true, url: settings_engine.toggle_setting_path(id: @advanced),
               confirm: @advanced.set? ? nil : [t('avanced_settings_is_for_developers'),
                                 '', '', t('are_you_sure_advanced_features')].join("\n") }
@@ -25,7 +26,7 @@ div.settings-fields.settings-wrap
         td
           label = t 'guest_dashboard'
         td
-          = tag "input", id: "guest", type: "checkbox", checked: @guest.set?,
+          = tag "input", id: "guest", class: "remote-check", type: "checkbox", checked: @guest.set?,
               data: { remote: true, url: settings_engine.toggle_setting_path(id: @guest) }
           = spinner
 

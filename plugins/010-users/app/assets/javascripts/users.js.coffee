@@ -1,7 +1,4 @@
 # delete a user
-$(document).on 'ajax:beforeSend', '.btn-delete', ->
-	$(this).parents('.settings-actions').find('.spinner').show()
-
 $(document).on 'ajax:success', '.btn-delete', (event, results) ->
 	user = $("#whole_user_" + results['id'])
 	user.hide 'slow', ->
@@ -14,12 +11,8 @@ $(document).on 'ajax:success', '.update-password', (event, results) ->
 	setTimeout (-> msg.text ""), 8000
 
 $(document).on 'ajax:complete', '.update-password', ->
-	$(this).find(".spinner").hide()
 	$(this).find(".password-edit").hide()
 	$(this).find("input[type=password]").val ""
-
-$(document).on 'ajax:beforeSend', '.update-password', ->
-	$(this).find(".spinner").show "fast"
 
 # new user
 $(document).on 'ajax:success', '#new-user-form', (event, results) ->
@@ -34,8 +27,6 @@ $(document).on 'ajax:success', '#new-user-form', (event, results) ->
 # management of the public key area
 $(document).on 'ajax:success', '.update-pubkey', (event, results) ->
 	form = $(this)
-	spinner = form.parent().parent().find(".spinner")
-	spinner.hide()
 	if results["status"] is "ok"
 		image = form.parent().parent().children(".ok")
 	else
@@ -45,8 +36,6 @@ $(document).on 'ajax:success', '.update-pubkey', (event, results) ->
 
 $(document).on 'ajax:beforeSend', '.update-pubkey', ->
 	form = $(this)
-	spinner = form.parent().parent().find(".spinner")
-	spinner.show()
 	form.parent().hide('slow')
 
 # username editing - FIXME - not working from here on to the bottom
