@@ -12,4 +12,5 @@ Network::Engine.routes.draw do
   delete 'dns_alias/:id' => 'network#destroy_dns_alias', as: 'destroy_dns_alias'
 
 	get 'settings' => 'network#settings'
+	put 'update_lease_time' => 'network#update_lease_time'
 end

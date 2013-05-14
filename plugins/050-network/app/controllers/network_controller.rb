@@ -58,6 +58,16 @@ class NetworkController < ApplicationController
     render json: { id: @dns_alias.id }
   end
 
+  def settings
+    @lease_time = Setting.get("lease_time") || "14400"
+  end
+
+  def update_lease_time
+    sleep 2 if development?
+    @saved = params[:lease_time].present? && params[:lease_time].to_i > 0 ? Setting.set("lease_time", params[:lease_time], Setting::NETWORK) : false
+		render :json => { :status => @saved ? :ok : :not_acceptable }
+  end
+
 private
   def set_page_title
     @page_title = t('network')

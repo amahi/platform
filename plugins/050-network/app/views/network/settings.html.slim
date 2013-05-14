@@ -1,3 +1,14 @@
-div.no-content
-  strong
-    | Settings area
+.settings-fields.settings-wrap
+  fieldset
+    legend
+      = t 'settings'
+    table
+      tr
+        td
+          label= t 'lease_time'
+        td
+          span.open-update-lease-time-area.focus= @lease_time
+
+= content_for(:js_templates) do
+  script[id='updateLeaseTimeTemplate' type='text/x-jquery-tmpl']
+    = render '/js_templates/shares/lease_time_form'

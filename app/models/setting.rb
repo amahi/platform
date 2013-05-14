@@ -16,15 +16,18 @@
 
 class Setting < ActiveRecord::Base
 
+  KINDS = [GENERAL = "general", NETWORK = "network", SHARES = "shares"]
+
 	attr_accessible :name, :value, :kind
 
 	scope :by_name, lambda{|name| where(:name => name)}
 	scope :by_kind, lambda{|kind| where(:kind => kind)}
 
-	scope :general, by_kind('general')
-	scope :network, by_kind('network')
-	scope :shares,  by_kind('shares')
+	scope :general, by_kind(GENERAL)
+	scope :network, by_kind(NETWORK)
+	scope :shares,  by_kind(SHARES)
 
+  validates :kind, inclusion: {in: KINDS}
 
 	class << self
 
@@ -41,8 +44,8 @@ class Setting < ActiveRecord::Base
 			s && s.value
 		end
 
-		def set(name, value)
-			general.find_or_create_by_name(:name => name).update_attribute(:value, value)
+		def set(name, value, kind=GENERAL)
+			self.find_or_create_by_name(:name => name).update_attributes(value: value, kind: kind)
 		end
 
 		def get_kind(kind, name)

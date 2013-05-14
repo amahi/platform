@@ -18,3 +18,4 @@
   new_dns_alias: New Alias
   create_a_new_dns_alias: Create a New Alias
   are_you_sure_dns_alias: Are you sure want to delete dns_alias '%{dns_alias}'
+  lease_time: Lease Time
