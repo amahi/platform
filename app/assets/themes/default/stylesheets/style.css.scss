@@ -599,7 +599,7 @@ nav.preftab {
     }
 
     &:hover {
-      ul { display: block;  z-index: 100; }
+      ul { z-index: 100; }
     }
 
     a {
@@ -619,7 +619,7 @@ nav.preftab {
 
       // secondary navigation
       ul {
-        display: none;
+        display: block none;
         background: #fff;
         border-top: 1px solid #e8e8e8;
         position: absolute;
@@ -629,6 +629,8 @@ nav.preftab {
         width: 958px;
         z-index: 10;
         zoom: 1;
+	// transition delay to show the subtabs
+	transition: z-index 0.5s ease 0.5s;
 
         li {
           border: 0;
@@ -645,9 +647,8 @@ nav.preftab {
           }
         }
       }
-    }// end li
-  ul.prefsubtab { display: none; }//prefsubtab
-}// end preftab
+    }
+}
 
 
 // App Content
