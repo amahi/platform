@@ -1,10 +1,10 @@
 # config file. to get your changes ignored, do this
 #
-#   git update-index --assume-unchanged  config/database.yml 
+#   git update-index --assume-unchanged  config/database.yml
 #
 # however, a git commit . or a git commit config/database.yml, will still try to commit it
 #
-#   
+#
 development:
   adapter: mysql2
   encoding: utf8
@@ -27,6 +27,20 @@ test:
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
+
+system:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  database: hda_development
+  username: amahihda
+  password: AmahiHDARulez
+  host: localhost
+  socket: <%= [
+     '/var/lib/mysql/mysql.sock', # Fedora.
+     '/var/run/mysqld/mysqld.sock', # Ubuntu, Debian.
+     '/tmp/mysqld.sock' # Mac OS X
+    ].select { |f| File.exist? f }.first %>
 
 production:
   adapter: mysql2

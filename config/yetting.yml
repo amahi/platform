@@ -45,5 +45,8 @@ test:
   <<: *defaults
   dummy_mode: true
 
+system:
+  <<: *defaults
+
 production:
   <<: *defaults

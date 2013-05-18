@@ -11,13 +11,62 @@
           td
             label = t 'control'
           td
-            = link_to t('refresh_status'),
-                  settings_engine.refresh_path(server),
-                  remote: true,
-                  class: 'btn-refresh'
-            = spinner
-            = t 'refresh_status'
+            p
+              = spinner
+              = link_to t('refresh_status'),
+                    settings_engine.refresh_path(server),
+                    remote: true,
+                    class: 'btn-refresh remote-btn'
+              | &nbsp; &mdash; &nbsp;
+              = t 'refresh_status'
+
+            p
+              - if server.running?
+                = spinner
+                = link_to t('stop_it'),
+                      settings_engine.stop_path(server),
+                      remote: true,
+                      class: 'btn-stop remote-btn',
+                      confirm: [t('are_you_sure_you_want_to_stop_the_server', :name => server.comment), "",
+                                server.monitored ? t('the_watchdog_is_running_and_will_restart_it_in_a_few_seconds') : t('this_will_stop_the_server_permanently', :name => server.comment)].join("\n")
+                | &nbsp; &mdash; &nbsp;
+                = t 'stop_it'
+                | &nbsp;
+                = server.monitored ? t('it_will_be_restarted_by_the_watchdog') : t('permanently')
+              - else
+                = spinner
+                = link_to t('start_server'),
+                      settings_engine.start_path(server),
+                      remote: true,
+                      class: 'btn-start remote-btn',
+                      confirm: t('are_you_sure_you_want_to_start_the_server', name: server.comment)
+                | &nbsp; &mdash; &nbsp;
+                = t 'start_it'
+
+            p
+              = spinner
+              = link_to t('restart_server'),
+                    settings_engine.restart_path(server),
+                    remote: true,
+                    class: 'btn-restart remote-btn',
+                    confirm: t('are_you_sure_you_want_to_restart_the_server', name: server.comment)
+              | &nbsp; &mdash; &nbsp;
+              = t 'restart'
         tr
           td
             label = t 'settings'
-          td = server.running? ? server_status('running') : server_status('stopped')
+          td
+            p
+              = simple_remote_checkbox id: "server_monitored_#{server.id}",
+                                       css_class: 'server_monitored_checkbox',
+                                       url: settings_engine.toggle_monitored_path(server),
+                                       confirm: server.monitored ? t('the_watchdog_is_a_critical_setting') : nil,
+                                       label: "&nbsp; &mdash; &nbsp; #{t('watchdog')}. #{server.comment} #{server.monitored ? t('is_being_monitored_24x7') : t('is_not_being_monitored_24x7')}",
+                                       checked: server.monitored
+            p
+              = simple_remote_checkbox id: "server_start_at_boot_#{server.id}",
+                                       css_class: 'server_start_at_boot_checkbox',
+                                       url: settings_engine.toggle_start_at_boot_path(server),
+                                       confirm: server.start_at_boot ? t('the_boot_option_is_a_critical_setting') : nil,
+                                       label: "&nbsp; &mdash; &nbsp; #{t('start_at_boot_time')}. #{server.comment} #{server.start_at_boot ? t('will_start_at_boot_time') : t('will_not_start_at_boot_time')}",
+                                       checked: server.start_at_boot

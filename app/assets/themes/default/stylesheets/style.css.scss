@@ -266,11 +266,27 @@ input[type=button], input[type=submit], .btn {
 }
 
 .btn-refresh {
+	background: url(../images/server/refresh.png) no-repeat right center;
+}
+
+.btn-start {
+	background: url(../images/server/start.png) no-repeat right center;
+}
+
+.btn-stop {
+	background: url(../images/server/stop.png) no-repeat right center;
+}
+
+.btn-restart {
+	background: url(../images/server/restart.png) no-repeat right center;
+}
+
+.btn-refresh, .btn-start, .btn-stop, .btn-restart {
 	display: inline-block;
 	height: 25px;
 	width: 25px;
-	background: url(../images/server/refresh.png) no-repeat right center;
 	text-indent: -9999px;
+  margin: 0 5px 0 10px;
 }
 
 // --------------------------------------------------

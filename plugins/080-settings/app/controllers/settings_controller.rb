@@ -4,12 +4,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -69,9 +69,46 @@ class SettingsController < ApplicationController
 		render :text => t('powering_off')
 	end
 
-	def refresh
-		raise "FIXME"
-	end
+  def refresh
+    sleep 2 if Rails.env.development?
+    @server = Server.find(params[:id])
+    render 'server_status'
+  end
+
+  def start
+    sleep 2 if Rails.env.development?
+    @server = Server.find(params[:id])
+    @server.do_start
+    render 'server_status'
+  end
+
+  def stop
+    sleep 2 if Rails.env.development?
+    @server = Server.find(params[:id])
+    @server.do_stop
+    render 'server_status'
+  end
+
+  def restart
+    sleep 2 if Rails.env.development?
+    @server = Server.find(params[:id])
+    @server.do_restart
+    render 'server_status'
+  end
+
+  def toggle_monitored
+    sleep 2 if Rails.env.development?
+    @server = Server.find(params[:id])
+    @server.toggle!(:monitored)
+    render 'server_status'
+  end
+
+  def toggle_start_at_boot
+    sleep 2 if Rails.env.development?
+    @server = Server.find(params[:id])
+    @server.toggle!(:start_at_boot)
+    render 'server_status'
+  end
 
 	# index of all themes
 	def themes
