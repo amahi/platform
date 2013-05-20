@@ -69,4 +69,5 @@
                                        url: settings_engine.toggle_start_at_boot_path(server),
                                        confirm: server.start_at_boot ? t('the_boot_option_is_a_critical_setting') : nil,
                                        label: "&nbsp; &mdash; &nbsp; #{t('start_at_boot_time')}. #{server.comment} #{server.start_at_boot ? t('will_start_at_boot_time') : t('will_not_start_at_boot_time')}",
-                                       checked: server.start_at_boot
+                                       checked: server.start_at_boot,
+                                       disabled: server.monitored

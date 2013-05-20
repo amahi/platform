@@ -52,10 +52,12 @@ module ApplicationHelper
 		parsed_options[:disabled] = 'disabled' if options[:disabled]
 
 		options[:id] = SecureRandom.hex(2) unless options[:id]
+    data_options = {:url => options[:url]}
+    data_options[:confirm] = options[:confirm] if options[:confirm]
 
 		content_tag('span', :id => options[:id]) do
 			html = ''
-			html << tag('input', {:class => options[:css_class], :id => "checkbox_#{options[:id]}", :type => 'checkbox', :data => {:url => options[:url]}}.merge(parsed_options))
+			html << tag('input', {:class => options[:css_class], :id => "checkbox_#{options[:id]}", :type => 'checkbox', :data => data_options}.merge(parsed_options))
 			html << "&nbsp;&nbsp;"
 			html << (block_given? ? yield : options[:label].to_s)
 			html << "&nbsp;"
