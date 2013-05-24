@@ -61,6 +61,10 @@ class Setting < ActiveRecord::Base
 			end
 			setting
 		end
+
+    def find_or_create_by(kind, name, value)
+      get_kind(kind, name) || create(kind: kind, name: name, value: value)
+    end
 	end
 
 	def set?

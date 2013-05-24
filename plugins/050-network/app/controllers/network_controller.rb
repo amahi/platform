@@ -59,6 +59,8 @@ class NetworkController < ApplicationController
   end
 
   def settings
+    @dnsmasq_dhcp = Setting.find_or_create_by(Setting::NETWORK, 'dnsmasq_dhcp', '1')
+    @dnsmasq_dns = Setting.find_or_create_by(Setting::NETWORK, 'dnsmasq_dns', '1')
     @lease_time = Setting.get("lease_time") || "14400"
   end
 
@@ -66,6 +68,18 @@ class NetworkController < ApplicationController
     sleep 2 if development?
     @saved = params[:lease_time].present? && params[:lease_time].to_i > 0 ? Setting.set("lease_time", params[:lease_time], Setting::NETWORK) : false
 		render :json => { :status => @saved ? :ok : :not_acceptable }
+  end
+
+  def toggle_setting
+		sleep 2 if development?
+		id = params[:id]
+		s = Setting.find id
+		s.value = (1 - s.value.to_i).to_s
+		if s.save
+			render json: { status: 'ok' }
+		else
+			render json: { status: 'error' }
+		end
   end
 
 private

@@ -5,6 +5,20 @@
     table
       tr
         td
+          label = t 'dhcp_server'
+        td
+          = simple_remote_checkbox id: "setting_dnsmasq_dhcp",
+                                   url: network_engine.toggle_setting_path(@dnsmasq_dhcp),
+                                   checked: @dnsmasq_dhcp.set?
+      tr
+        td
+          label = t 'dns_server'
+        td
+          = simple_remote_checkbox id: "setting_dnsmasq_dns",
+                                   url: network_engine.toggle_setting_path(@dnsmasq_dns),
+                                   checked: @dnsmasq_dns.set?
+      tr
+        td
           label= t 'lease_time'
         td
           span.open-update-lease-time-area.focus= @lease_time

@@ -24,6 +24,9 @@ Hosts =
     $(document).on 'keyup', '#host_address', ->
       $('#net-message').text $(this).val()
 
+    RemoteCheckbox.initialize
+      selector: "#checkbox_setting_dnsmasq_dhcp, #checkbox_setting_dnsmasq_dns"
+
   checkAndShowEmptyHint: ->
     if $('#hosts-table').find('table').length == 0
       $('#hosts-table .empty-hint').show()

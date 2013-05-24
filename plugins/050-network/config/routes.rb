@@ -13,4 +13,5 @@ Network::Engine.routes.draw do
 
 	get 'settings' => 'network#settings'
 	put 'update_lease_time' => 'network#update_lease_time'
+	put 'toggle_setting/:id' => 'network#toggle_setting', as: 'toggle_setting'
 end
