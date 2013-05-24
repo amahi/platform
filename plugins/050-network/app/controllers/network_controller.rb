@@ -67,7 +67,8 @@ class NetworkController < ApplicationController
   def update_lease_time
     sleep 2 if development?
     @saved = params[:lease_time].present? && params[:lease_time].to_i > 0 ? Setting.set("lease_time", params[:lease_time], Setting::NETWORK) : false
-		render :json => { :status => @saved ? :ok : :not_acceptable }
+    render :json => { :status => @saved ? :ok : :not_acceptable }
+    system("hda-ctl-hup")
   end
 
   def toggle_setting
@@ -77,6 +78,7 @@ class NetworkController < ApplicationController
 		s.value = (1 - s.value.to_i).to_s
 		if s.save
 			render json: { status: 'ok' }
+			system("hda-ctl-hup")
 		else
 			render json: { status: 'error' }
 		end
