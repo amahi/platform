@@ -13,9 +13,22 @@
 
 body {
 	font: 12px "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif;
-	background: url(/assets/body_bg.jpg) repeat-x #e6f5fc;
-    &.login {border-top-color: #464646;}
+	&.login {border-top-color: #464646;}
+}
 
+html {
+	background-image: url(/assets/body_bg.jpg);
+	background-clip: border-box;
+	background-color: transparent;
+	background-image: url(/assets/body_bg.jpg);
+	background-origin: padding-box;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100%;
+	background-attachment: scroll;
+	background-attachment: scroll;
+	height: 100%;
 }
 
 #nav {
@@ -67,14 +80,18 @@ a {text-decoration: none;}
 
 form {
   margin-left: 8px;
-  padding: 26px 46px 50px 46px;
+  padding: 26px 46px 74px 46px;
 
   font-weight: bold;
 
   @include border-radius(5px);
   @include box-shadow(rgba(200,200,200,1) 0 4px 18px);
 
-  background: #f4e4c3;
+  background: #28374E;
+  background: -webkit-gradient(linear, center top, center bottom, from(#4a6495), to(#1C2838));
+  background: -moz-linear-gradient(center top, #4a6495, #1C2838) repeat scroll 0 0 transparent;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4a6495', endColorstr='#1C2838');
+  border: 1px solid #444C5E;
 
   .rememberme {
     font-weight: normal;
@@ -91,10 +108,12 @@ form {
     display: block;
     text-align: left;
     vertical-align: top;
+    color: #eee;
   }
 
   input {
     color: #555;
+      background-color: #eee;
     &[disabled='disabled'] {
       color: #999;
       background-color: #eee;
@@ -110,21 +129,39 @@ form {
       margin-top: -6px;
       padding: 5px 10px 5px 10px;
 
-      background-color: #e1b65b !important;
+      background-color: #CD6B08 !important;
 
       font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif;
       font-size: 13px;
-      color: #444;
-      text-decoration: none;
+      color: #eee;
 
-      border: 1px solid #cf9820;
+      border: 0px;
       @include border-radius(6px);
 
-      cursor: default;
+	cursor: default;
+	background: -webkit-gradient(linear, center top, center bottom, from(#FAA51A), to(#F47A20));
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0 0 transparent;
+	border: 1px solid #DA7C0C;
+	color: #FEF4E9;
+
+	border-radius: 0.5em 0.5em 0.5em 0.5em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	display: inline-block;
+	font: 14px/100% Arial,Helvetica,sans-serif;
+	margin: 0 2px;
+	outline: medium none;
+	padding: 0.5em 2em 0.55em;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	vertical-align: baseline;
 
       &:hover {
-        color: #d54e21;
+	background: -webkit-gradient(linear, center top, center bottom, from(#F88E11), to(#F06015));
+	background: -moz-linear-gradient(center top , #F88E11, #F06015) repeat scroll 0 0 transparent;
         border-color: #8e6203;
+	text-decoration: none;
       }
     }
   }

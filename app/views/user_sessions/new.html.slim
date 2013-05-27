@@ -8,12 +8,8 @@
 
   = form_for @user_session do |f|
     p
-      label[for="username"]
-        = t 'username'
       = text_field_tag 'username', @login, :autofocus => true, :placeholder => t('username')
     p
-      label[for="password"]
-        = t 'password'
       = password_field_tag 'password', nil, :placeholder => t('password')
 
     p[class="rememberme"]
