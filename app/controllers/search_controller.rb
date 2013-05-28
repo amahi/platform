@@ -41,7 +41,7 @@ class SearchController < ApplicationController
 			@query = params[:query]
 			@page = (params[:page] && params[:page].to_i.abs) || 1
 			@rpp = (params[:per_page] && params[:per_page].to_i.abs) || RESULTS_PER_PAGE
-			unless false && use_sample_data?
+			unless use_sample_data?
 				@results = hda_search(@query, nil, @page, @rpp)
 			else
 				# NOTE: this is some sample fake data for development
