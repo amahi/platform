@@ -10,7 +10,13 @@
       li[class="#{active 'video'}"]
         = action_name == "video" ? t('video') : link_to(t('video'), :action => :video, :query => @query)
       li.results
-        = t('results_found', :count => @results.size)
+        = t('results_displayed', :count => @results.size)
+        '
+        ' | 
+        =link_to 50, query: @query, per_page: 50
+        '
+        ' | 
+        =link_to 100, query: @query, per_page: 100
   #search-results
     .results_list
       - if @results.size > 0
@@ -26,21 +32,20 @@
         span.previous_page =link_to t('previous'), query: @query, page: @page-1
         '
       - if @page > 5
-        =link_to "1", query: @query, rel: "next", page: 1
+        =link_to "1", query: @query, page: 1
         '
-        =link_to "2", query: @query, rel: "next", page: 2
+        =link_to "2", query: @query, page: 2
         '
         ' ..
       -(1..4).each do |p|
         - page = @page-(5-p)
         - unless page < 1
-          =link_to page, query: @query, rel: "next", page: page
+          =link_to page, query: @query, page: page
           '
       em.current = @page
-      - if @rpp == @results.count
+      - unless @results.size < @rpp
         '
         -(1..6).each do |p|
           =link_to @page+p, query: @query, rel: "next", page: @page+p
           '
         span.next_page =link_to t('next'), query: @query, page: @page+1
-

@@ -22,7 +22,7 @@ class SearchController < ApplicationController
 	before_filter :login_required
 	layout 'basic'
 
-	RESULTS_PER_PAGE = 4
+	RESULTS_PER_PAGE = 20
 
 	SEARCH_CACHE = File.join(Rails.root, 'tmp/cache/search')
 
@@ -40,9 +40,9 @@ class SearchController < ApplicationController
 		else
 			@query = params[:query]
 			@page = (params[:page] && params[:page].to_i.abs) || 1
-			@rpp = RESULTS_PER_PAGE
+			@rpp = (params[:per_page] && params[:per_page].to_i.abs) || RESULTS_PER_PAGE
 			unless false && use_sample_data?
-				@results = hda_search(@query, nil, @page)
+				@results = hda_search(@query, nil, @page, @rpp)
 			else
 				# NOTE: this is some sample fake data for development
 				@results = SampleData.load('search')
@@ -53,7 +53,7 @@ class SearchController < ApplicationController
 	def images
 		@query = params[:query]
 		@page = (params[:page] && params[:page].to_i.abs) || 1
-		@rpp = RESULTS_PER_PAGE
+		@rpp = (params[:per_page] && params[:per_page].to_i.abs) || RESULTS_PER_PAGE
 		@results = hda_search(@query, EXT_IMAGES, @page)
 		render 'hda'
 	end
@@ -61,7 +61,7 @@ class SearchController < ApplicationController
 	def audio
 		@query = params[:query]
 		@page = (params[:page] && params[:page].to_i.abs) || 1
-		@rpp = RESULTS_PER_PAGE
+		@rpp = (params[:per_page] && params[:per_page].to_i.abs) || RESULTS_PER_PAGE
 		@results = hda_search(@query, EXT_AUDIO, @page)
 		render 'hda'
 	end
@@ -69,7 +69,7 @@ class SearchController < ApplicationController
 	def video
 		@query = params[:query]
 		@page = (params[:page] && params[:page].to_i.abs) || 1
-		@rpp = RESULTS_PER_PAGE
+		@rpp = (params[:per_page] && params[:per_page].to_i.abs) || RESULTS_PER_PAGE
 		@results = hda_search(@query, EXT_VIDEO, @page)
 		render 'hda'
 	end
@@ -79,20 +79,20 @@ class SearchController < ApplicationController
 
 protected
 
-	def hda_search(term, filter = nil, page)
+	def hda_search(term, filter, page, rpp = RESULTS_PER_PAGE)
 		return [] unless term && !term.blank?
-		locate_search(term, filter && filter.join('|'), page)
+		locate_search(term, filter && filter.join('|'), page, rpp)
 	end
 
 	# FIXME: implement pagination
-	def locate_search(term, filter, page)
+	def locate_search(term, filter, page, rpp)
 		base = Share.basenames
 		# lines to skip
-		skip = (page - 1) * RESULTS_PER_PAGE
+		skip = (page - 1) * rpp
 		open locate_cache(term) do |l|
 			skipped = 0
 			res = []
-			while (file = l.gets) && res.size < RESULTS_PER_PAGE
+			while (file = l.gets) && (res.size < rpp)
 				file.strip!
 				path = pathname(file, base)
 				next unless path

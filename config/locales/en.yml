@@ -348,7 +348,7 @@
   images: Images
   news: News
   no_documents_found: No Documents Found
-  results_found: "%{count} results found"
+  results_displayed: "%{count} results displayed"
   search: Search
   video: Video
 
