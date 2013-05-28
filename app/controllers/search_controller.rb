@@ -54,7 +54,7 @@ class SearchController < ApplicationController
 		@query = params[:query]
 		@page = (params[:page] && params[:page].to_i.abs) || 1
 		@rpp = (params[:per_page] && params[:per_page].to_i.abs) || RESULTS_PER_PAGE
-		@results = hda_search(@query, EXT_IMAGES, @page)
+		@results = hda_search(@query, EXT_IMAGES, @page, @rpp)
 		render 'hda'
 	end
 
@@ -62,7 +62,7 @@ class SearchController < ApplicationController
 		@query = params[:query]
 		@page = (params[:page] && params[:page].to_i.abs) || 1
 		@rpp = (params[:per_page] && params[:per_page].to_i.abs) || RESULTS_PER_PAGE
-		@results = hda_search(@query, EXT_AUDIO, @page)
+		@results = hda_search(@query, EXT_AUDIO, @page, @rpp)
 		render 'hda'
 	end
 
@@ -70,7 +70,7 @@ class SearchController < ApplicationController
 		@query = params[:query]
 		@page = (params[:page] && params[:page].to_i.abs) || 1
 		@rpp = (params[:per_page] && params[:per_page].to_i.abs) || RESULTS_PER_PAGE
-		@results = hda_search(@query, EXT_VIDEO, @page)
+		@results = hda_search(@query, EXT_VIDEO, @page, @rpp)
 		render 'hda'
 	end
 
