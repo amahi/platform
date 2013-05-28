@@ -32,7 +32,7 @@
                                    collection: dns_select_options,
                                    url: network_engine.update_dns_path,
                                    selected: @dns.value
-          .dns-ips-area class=(@dns.value == "custom" ? "" : "hide")
+          .dns-ips-area style=(@dns.value == "custom" ? "" : "display: none")
             = form_tag network_engine.update_dns_ips_path, remote: true, method: 'put', id: 'update-dns-ips-form', class: 'update-form form-horizontal' do |f|
               .control-group
                 .controls
