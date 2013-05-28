@@ -6,3 +6,10 @@ form #host_address {
   padding: 20px 0;
   display: none;
 }
+.dns-ips-area { padding: 10px 0; }
+#update-gateway-form .control-group .messages {
+  margin-left: 40px;
+}
+#update-gateway-form .control-group input[type=text] {
+  width: 25px;
+}

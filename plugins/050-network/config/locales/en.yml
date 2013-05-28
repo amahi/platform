@@ -18,6 +18,13 @@
   new_dns_alias: New Alias
   create_a_new_dns_alias: Create a New Alias
   are_you_sure_dns_alias: Are you sure want to delete dns_alias '%{dns_alias}'
+  opendns: OpenDNS
+  goodle_dns: Google DNS
+  custom: Custom
+  dns_ip_1: DNS IP Primary
+  dns_ip_2: DNS IP Secondary
+  update_dns_ips: Update DNS IPs
   dnsmasq_dhcp: Dnsmasq DHCP
   dnsmasq_dns: Dnsmasq DNS
   lease_time: Lease Time
+  gateway: Gateway

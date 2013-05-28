@@ -1,6 +1,0 @@
-<%= checkbox_to_remote setting.value == '1',
-	:url => { :controller => 'network', :action => 'toggle_setting', :id => setting, :kind => 'vpn' },
-	:before => spinner_show('vpn'),
-	:success => spinner_hide('vpn'),
-	:update => "setting-vpn" -%>
-&nbsp; <%= spinner "vpn" %>

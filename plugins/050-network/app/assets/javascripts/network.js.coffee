@@ -24,9 +24,6 @@ Hosts =
     $(document).on 'keyup', '#host_address', ->
       $('#net-message').text $(this).val()
 
-    RemoteCheckbox.initialize
-      selector: "#checkbox_setting_dnsmasq_dhcp, #checkbox_setting_dnsmasq_dns"
-
   checkAndShowEmptyHint: ->
     if $('#hosts-table').find('table').length == 0
       $('#hosts-table .empty-hint').show()
@@ -76,19 +73,61 @@ Settings =
         FormHelpers.update_first form, open_link.text()
         FormHelpers.focus_first form
 
-    $(document).on "ajax:success", ".update-lease-time-form", (data, results) ->
+    SmartLinks.initialize
+      open_selector: ".open-update-gateway-area"
+      close_selector: ".close-update-gateway-area"
+      onShow: (open_link) ->
+        form = open_link.next()
+        gateway = open_link.text().split('.').splice(-1)[0]
+        open_link.after Templates.run("updateGateway",
+          gateway: gateway
+        )
+        FormHelpers.update_first form, open_link.text()
+        FormHelpers.focus_first form
+        $('#net-message').text gateway
+
+    $(document).on "ajax:success", ".update-lease-time-form, .update-gateway-form", (data, results) ->
       if results["status"] is "ok"
         form = $(this)
         link = form.prev()
-        value = FormHelpers.find_first(form).val()
+        value = results["data"] || FormHelpers.find_first(form).val()
         link.text value
 
-    $(document).on "ajax:complete", ".update-lease-time-form", ->
+    $(document).on "ajax:complete", ".update-lease-time-form, .update-gateway-form", ->
       form = $(this)
       link = form.prev()
       form.hide "slow", ->
         form.remove()
         link.show()
+
+    $(document).on 'keyup', '#gateway', ->
+      $('#net-message').text $(this).val()
+
+    RemoteSelect.initialize
+      selector: "#setting_dns select"
+      success: (rr, radio, data) ->
+        if radio.val() == "custom"
+          $('.dns-ips-area').show()
+        else
+          $('.dns-ips-area').hide()
+
+    $(document).on "ajax:success", "#update-dns-ips-form", (data, results) ->
+      $('#update-dns-ips-form #error_explanation').remove()
+      unless results["status"] is "ok"
+        $errorMessages = $("<div id='error_explanation'><ul></ul></div>")
+        console.log results["ip_1_saved"]
+        $errorMessages.find('ul').append('<li>Format of DNS IP Primary is wrong</li>') if results["ip_1_saved"] == false
+        $errorMessages.find('ul').append('<li>Format of DNS IP Secondary is wrong</li>') if results["ip_2_saved"] == false
+        $('#update-dns-ips-form').prepend $errorMessages
+      else
+        $('#update-dns-ips-form input[type=submit]').attr('disabled', 'disabled')
+
+    $(document).on "change", "#dns_ip_1, #dns_ip_2", ->
+      $('#update-dns-ips-form input[type=submit]').removeAttr('disabled')
+
+
+    RemoteCheckbox.initialize
+      selector: "#checkbox_setting_dnsmasq_dhcp, #checkbox_setting_dnsmasq_dns"
 
 $ ->
   Hosts.initialize()

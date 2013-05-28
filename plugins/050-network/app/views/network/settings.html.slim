@@ -22,7 +22,36 @@
           label= t 'lease_time'
         td
           span.open-update-lease-time-area.focus= @lease_time
+      tr
+        td
+          label = t 'dns_provider'
+        td
+          .dns-area
+            = simple_remote_select id: "setting_dns",
+                                   name: "setting_dns",
+                                   collection: dns_select_options,
+                                   url: network_engine.update_dns_path,
+                                   selected: @dns.value
+          .dns-ips-area class=(@dns.value == "custom" ? "" : "hide")
+            = form_tag network_engine.update_dns_ips_path, remote: true, method: 'put', id: 'update-dns-ips-form', class: 'update-form form-horizontal' do |f|
+              .control-group
+                .controls
+                  = text_field_tag "dns_ip_1", @dns_ip_1, placeholder: t('dns_ip_1')
+              .control-group
+                .controls
+                  = text_field_tag "dns_ip_2", @dns_ip_2, placeholder: t('dns_ip_2')
+              .control-group
+                .controls
+                  = spinner
+                  = submit_tag t('update_dns_ips'), class: 'btn', disabled: 'disabled'
+      tr
+        td
+          label= t 'gateway'
+        td
+          span.open-update-gateway-area.focus = @net + '.' + @gateway
 
 = content_for(:js_templates) do
   script[id='updateLeaseTimeTemplate' type='text/x-jquery-tmpl']
     = render '/js_templates/shares/lease_time_form'
+  script[id='updateGatewayTemplate' type='text/x-jquery-tmpl']
+    = render '/js_templates/shares/gateway_form'

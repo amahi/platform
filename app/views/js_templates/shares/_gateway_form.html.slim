@@ -1,0 +1,18 @@
+= form_tag '/network/update_gateway',\
+    :remote => true,\
+    :method => :put,\
+    :class => 'setting area update-form update-gateway-form form-inline',\
+    :id => 'update-gateway-form' do |f|
+
+  .control-group
+    .controls
+      = text_field_tag 'gateway', '${gateway}', :maxlength => 3, :placeholder => t('gateway')
+      .messages
+        = @net + '.'
+        b#net-message = 'X'
+  .control-group
+    .controls
+      = spinner
+      = submit_tag t('change'), :class => 'btn'
+      = link_to t('cancel'), '#', :class => 'close-update-gateway-area cancel-link'
+    .messages

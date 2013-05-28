@@ -12,7 +12,7 @@
 #	spinnerParentSelector - where should search for .spinner
 #
 # this will run within a closure wrapper, so, to expose it as a global variable, we attach it to the window object
-#		 
+#
 window.RemoteSelect =
 	initialize: (options) ->
 		_this = this
@@ -30,6 +30,8 @@ window.RemoteSelect =
 			else
 				run_request = confirm(select.data("confirm"))
 			if run_request and typeof (select.data("request")) is "undefined"
+        request_data = {}
+        request_data[select.attr('name')] = select.val()
 				$.ajax
 					beforeSend: ->
 						select.data "request", true
@@ -37,6 +39,7 @@ window.RemoteSelect =
 						options["beforeSend"] _this, select
 
 					type: "PUT"
+					data: request_data
 					url: _this.url(select)
 					success: (data) ->
 						options["success"] _this, select, data if data["status"] is "ok"
@@ -44,7 +47,7 @@ window.RemoteSelect =
 					complete: ->
 						try
 							_this.toggle_spinner options["spinnerParentSelector"], select
-							options["complete"] _this, checkbox
+							options["complete"] _this, select
 							_this.highlight_parent options["parentSelector"], select if options["parentSelector"]
 							select.removeData "request"
 

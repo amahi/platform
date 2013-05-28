@@ -66,16 +66,38 @@ module ApplicationHelper
 		end
 	end
 
+	def simple_remote_radio options
+		parsed_options = {}
+		parsed_options[:checked] = 'checked' if options[:checked]
+		parsed_options[:disabled] = 'disabled' if options[:disabled]
+
+		options[:id] = SecureRandom.hex(2) unless options[:id]
+		options[:name] = SecureRandom.hex(2) unless options[:name]
+    data_options = {:url => options[:url]}
+    data_options[:confirm] = options[:confirm] if options[:confirm]
+
+		content_tag('p', :id => options[:id]) do
+			html = ''
+			html << tag('input', {:class => options[:css_class], :id => "radio_#{options[:id]}", :name => options[:name], :value => options[:value], :type => 'radio', :data => data_options}.merge(parsed_options))
+			html << "&nbsp;&nbsp;"
+			html << (block_given? ? yield : options[:label].to_s)
+			html << "&nbsp;"
+			html << content_tag("span", '', class: "spinner theme-image", style: "display: none")
+			html.html_safe
+		end
+	end
+
 	def simple_remote_select options
 		parsed_options = {}
 		parsed_options[:disabled] = 'disabled' if options[:disabled]
 
 		options[:id] = SecureRandom.hex(2) unless options[:id]
+		options[:name] = SecureRandom.hex(2) unless options[:name]
 
 		content_tag('span', :id => options[:id]) do
 			html = ''
 			html << (block_given? ? yield : options[:label].to_s)
-			html << select_tag("select", options_from_collection_for_select(options[:collection], "first", "last", options[:selected].to_s), :data => {:url => options[:url]}.merge(parsed_options))
+			html << select_tag("select", options_from_collection_for_select(options[:collection], "first", "last", options[:selected].to_s), :name => options[:name], :data => {:url => options[:url]}.merge(parsed_options))
 			html << content_tag("span", '', class: "spinner theme-image", style: "display: none") unless options[:no_spinner]
 			html.html_safe
 		end

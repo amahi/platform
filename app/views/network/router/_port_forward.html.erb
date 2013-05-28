@@ -1,6 +1,0 @@
-<%= checkbox_to_remote setting.value == '1',
-	:url => { :controller => 'network', :action => 'toggle_setting', :id => setting, :kind => 'port_forward' },
-	:before => spinner_show('port-forward'),
-	:success => spinner_hide('port-forward'),
-	:update => "setting-port-forward" -%>
-&nbsp; <%= spinner "port-forward" %>

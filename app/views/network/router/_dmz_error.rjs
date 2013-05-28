@@ -1,6 +1,0 @@
-page[:dmz_errors].replace_html msg
-page[:dmz_errors].appear 
-page[:dmz_errors].highlight
-page[:auth].highlight
-page.visual_effect :fade, :dmz_errors, :duration => 8
-page['spinner-dmz'].hide

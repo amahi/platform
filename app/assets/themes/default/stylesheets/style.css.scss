@@ -37,7 +37,7 @@ a {
   padding: 10px;
 }
 
-#locale {
+#locale, #setting_dns select {
   border: 1px solid #cccccc;
 }
 
@@ -227,6 +227,29 @@ input[type=button], input[type=submit], .btn {
   &:active {
     top: 2px;
     @include background-gradient(#bc0332, #e8715f);
+    @include box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.6));
+  }
+}
+
+input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"] {
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  position: relative;
+  padding: 4px 12px;
+  color: #fff;
+  border: 1px solid #d4d4d4;
+  @include border-radius(4px);
+  @include background-gradient(#e8e8e8, #bdbdbd);
+  &:hover {
+    @include background-gradient(#e8e8e8, #fcfcfc);
+    @include box-shadow(inset 0 0 1px 1px rgba(255, 255, 255, 0.4));
+  }
+
+  &:active {
+    top: 2px;
+    @include background-gradient(#bdbdbd, #e8e8e8);
     @include box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.6));
   }
 }
@@ -1509,4 +1532,8 @@ textarea {border: 1px solid #ccc;}
 	display: block;
 	height: 25px;
 	width: 26px;
+}
+
+.hide {
+  display: none;
 }

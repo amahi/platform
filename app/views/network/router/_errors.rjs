@@ -1,6 +1,0 @@
-page[:router_errors].replace_html msg
-page[:router_errors].appear 
-page[:router_errors].highlight
-page[:auth].highlight
-page.visual_effect :fade, :router_errors, :duration => 8
-page['spinner-dhcp'].hide

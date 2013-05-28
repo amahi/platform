@@ -272,6 +272,12 @@
   this_application_is_not_installed_please_refresh: This application is not installed. Please refresh this web page.
   try_installing_some_apps: Try installing some Apps
 
+  # networking -> settings
+  dns_provider: DNS Provider
+  dns_google: Google Public DNS
+  dns_custom: Custom DNS
+  dns_opendns: OpenDNS
+
   # networking -> firewall
   firewall: Firewall
   port_range_field_cannot_be_empty: The fields cannot be empty

@@ -3,6 +3,7 @@
 //= require lib/jquery.ui.templates
 //= require jquery_ujs
 
+//= require forms/remote-radios
 //= require forms/remote-checkboxes
 //= require forms/remote-selects
 //= require forms/form-helper
