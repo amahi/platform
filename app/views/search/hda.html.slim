@@ -19,3 +19,28 @@
       - else
         .myhda_empty
           = t 'no_documents_found'
+
+  #search-pagination
+    .pagination
+      - if @page != 1
+        span.previous_page =link_to t('previous'), query: @query, page: @page-1
+        '
+      - if @page > 5
+        =link_to "1", query: @query, rel: "next", page: 1
+        '
+        =link_to "2", query: @query, rel: "next", page: 2
+        '
+        ' ..
+      -(1..4).each do |p|
+        - page = @page-(5-p)
+        - unless page < 1
+          =link_to page, query: @query, rel: "next", page: page
+          '
+      em.current = @page
+      - if @rpp == @results.count
+        '
+        -(1..6).each do |p|
+          =link_to @page+p, query: @query, rel: "next", page: @page+p
+          '
+        span.next_page =link_to t('next'), query: @query, page: @page+1
+
