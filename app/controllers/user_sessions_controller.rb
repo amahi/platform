@@ -117,6 +117,11 @@ private
 		Server.create_default_servers if Server.count < 4
 		Setting.set('guest-dashboard', '0')
 		Setting.set('theme', 'default')
+		Setting.set('dns', 'opendns')
+		Setting.set('dns_ip_1', '208.67.222.222')
+		Setting.set('dns_ip_2', '208.67.220.220')
+		Setting.set('dnsmasq_dns', '1')
+		Setting.set('dnsmasq_dhcp', '1')
 		Setting.set('initialized', '1')
 	end
 
