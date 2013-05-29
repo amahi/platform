@@ -1,4 +1,4 @@
-= Amahi plugin for Network information
+= Amahi plugin for Network Setup
 
 Network tab for the Amahi platform
 
