@@ -22,11 +22,13 @@ Spinner =
       form = $(this)
       form.find(".spinner").show "fast"
       form.find("button, input[type=submit]").hide()
+      form.find("a.cancel-link").hide()
 
     $(document).on "ajax:complete", ".update-form", ->
       form = $(this)
       form.find(".spinner").hide()
       form.find("button, input[type=submit]").show()
+      form.find("a.cancel-link").show()
 
 $ ->
   Spinner.initialize()

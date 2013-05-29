@@ -122,7 +122,7 @@ Settings =
       else
         $('#update-dns-ips-form input[type=submit]').attr('disabled', 'disabled')
 
-    $(document).on "change", "#dns_ip_1, #dns_ip_2", ->
+    $(document).on "keyup", "#dns_ip_1, #dns_ip_2", ->
       $('#update-dns-ips-form input[type=submit]').removeAttr('disabled')
 
 

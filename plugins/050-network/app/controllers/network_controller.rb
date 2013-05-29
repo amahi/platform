@@ -5,6 +5,7 @@
 require 'leases'
 
 class NetworkController < ApplicationController
+  KIND = Setting::NETWORK
   before_filter :admin_required
   before_filter :set_page_title
 
@@ -48,22 +49,22 @@ class NetworkController < ApplicationController
 
   def settings
     @net = Setting.get 'net'
-    @dns = Setting.find_or_create_by(Setting::NETWORK, 'dns', 'opendns')
+    @dns = Setting.find_or_create_by(KIND, 'dns', 'opendns')
     @dns_ip_1, @dns_ip_2 = DnsIpSetting.custom_dns_ips
-    @dnsmasq_dhcp = Setting.find_or_create_by(Setting::NETWORK, 'dnsmasq_dhcp', '1')
-    @dnsmasq_dns = Setting.find_or_create_by(Setting::NETWORK, 'dnsmasq_dns', '1')
+    @dnsmasq_dhcp = Setting.find_or_create_by(KIND, 'dnsmasq_dhcp', '1')
+    @dnsmasq_dns = Setting.find_or_create_by(KIND, 'dnsmasq_dns', '1')
     @lease_time = Setting.get("lease_time") || "14400"
-    @gateway = Setting.find_or_create_by(Setting::NETWORK, 'gateway', '1').value
+    @gateway = Setting.find_or_create_by(KIND, 'gateway', '1').value
   end
 
   def update_dns
     sleep 2 if development?
     case params[:setting_dns]
     when 'opendns', 'google'
-    	@saved = Setting.set("dns", params[:setting_dns], Setting::NETWORK)
-	system("hda-ctl-hup")
+      @saved = Setting.set("dns", params[:setting_dns], KIND)
+      system("hda-ctl-hup")
     else
-	@saved = true
+      @saved = true
     end
     render :json => { :status => @saved ? :ok : :not_acceptable }
   end
@@ -71,9 +72,9 @@ class NetworkController < ApplicationController
   def update_dns_ips
     sleep 2 if development?
     Setting.transaction do
-      @ip_1_saved = DnsIpSetting.set("dns_ip_1", params[:dns_ip_1], Setting::NETWORK)
-      @ip_2_saved = DnsIpSetting.set("dns_ip_2", params[:dns_ip_2], Setting::NETWORK)
-      Setting.set("dns", 'custom', Setting::NETWORK)
+      @ip_1_saved = DnsIpSetting.set("dns_ip_1", params[:dns_ip_1], KIND)
+      @ip_2_saved = DnsIpSetting.set("dns_ip_2", params[:dns_ip_2], KIND)
+      Setting.set("dns", 'custom', KIND)
       system("hda-ctl-hup")
     end
     if @ip_1_saved && @ip_2_saved
@@ -85,14 +86,14 @@ class NetworkController < ApplicationController
 
   def update_lease_time
     sleep 2 if development?
-    @saved = params[:lease_time].present? && params[:lease_time].to_i > 0 ? Setting.set("lease_time", params[:lease_time], Setting::NETWORK) : false
+    @saved = params[:lease_time].present? && params[:lease_time].to_i > 0 ? Setting.set("lease_time", params[:lease_time], KIND) : false
     render :json => { :status => @saved ? :ok : :not_acceptable }
     system("hda-ctl-hup")
   end
 
   def update_gateway
     sleep 2 if development?
-    @saved = params[:gateway].to_i > 0 && params[:gateway].to_i < 255 ? Setting.set("gateway", params[:gateway], Setting::NETWORK) : false
+    @saved = params[:gateway].to_i > 0 && params[:gateway].to_i < 255 ? Setting.set("gateway", params[:gateway], KIND) : false
     if @saved
       @net = Setting.get 'net'
       render json: { status: :ok, data: @net + '.' + params[:gateway] }
