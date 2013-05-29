@@ -113,15 +113,20 @@ private
 	# initialize various one-time default settings
 	def initialize_default_settings
 		return if Setting.get('initialized')
+		# general settings
 		Setting.set('advanced', '0')
 		Server.create_default_servers if Server.count < 4
 		Setting.set('guest-dashboard', '0')
 		Setting.set('theme', 'default')
-		Setting.set('dns', 'opendns')
-		Setting.set('dns_ip_1', '208.67.222.222')
-		Setting.set('dns_ip_2', '208.67.220.220')
-		Setting.set('dnsmasq_dns', '1')
-		Setting.set('dnsmasq_dhcp', '1')
+		# network settings
+		NETWORK = Setting::NETWORK
+		Setting.find_or_create_by(NETWORK, 'dns', 'opendns')
+		Setting.find_or_create_by(NETWORK, 'dns_ip_1', '208.67.222.222')
+		Setting.find_or_create_by(NETWORK, 'dns_ip_2', '208.67.220.220')
+		Setting.find_or_create_by(NETWORK, 'dnsmasq_dhcp', '1')
+		Setting.find_or_create_by(NETWORK, 'dnsmasq_dns', '1')
+		Setting.find_or_create_by(NETWORK, 'lease_time', '14400')
+		# set it to initialized and go!
 		Setting.set('initialized', '1')
 	end
 
