@@ -17,7 +17,7 @@
             td
               = number_to_human_size mount[:used]
               = " (#{mount[:use_percent]})"
-            td = number_to_human_size mount[:mount]
+            td = mount[:mount]
       -else
         tr
           td colspan="6"

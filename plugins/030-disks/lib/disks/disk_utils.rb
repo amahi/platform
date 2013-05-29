@@ -84,7 +84,7 @@ class DiskUtils
 				d[:mount] = key[5]
 				res.push(d) unless ['tmpfs', 'devtmpfs'].include? d[:filesystem]
 			end
-			res
+			res.sort { |x,y| x[:filesystem] <=> y[:filesystem] }
 		end
 	end
 end
