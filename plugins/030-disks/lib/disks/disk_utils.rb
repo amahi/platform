@@ -66,7 +66,7 @@ class DiskUtils
 		end
 
 		def mounts
-			s = `df`.split( /\r?\n/ )[1..-1] || ["","Incorrect data returned"]
+			s = `df -BK`.split( /\r?\n/ )[1..-1] || ["","Incorrect data returned"]
 
 			mount = []
 			res = []
@@ -77,9 +77,9 @@ class DiskUtils
 			mount.each do |key|
 				d = Hash.new
 				d[:filesystem] = key[0]
-				d[:bytes] = key[1]
-				d[:used] = key[2]
-				d[:available] = key[3]
+				d[:bytes] = key[1].to_i * 1024
+				d[:used] = key[2].to_i * 1024
+				d[:available] = key[3].to_i * 1024
 				d[:use_percent] = key[4]
 				d[:mount] = key[5]
 				res.push(d) unless ['tmpfs', 'devtmpfs'].include? d[:filesystem]
