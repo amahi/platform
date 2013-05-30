@@ -634,11 +634,14 @@ nav.preftab {
         color: #3f3f3f;
       }
 
-      > ul { display: block; }
+      > ul {
+        display: block;
+        z-index: 100;
+      }
     }
 
     &:hover {
-      ul { z-index: 100; }
+      ul { z-index: 200; }
     }
 
     a {
