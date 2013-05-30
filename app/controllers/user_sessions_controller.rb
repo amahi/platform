@@ -119,13 +119,13 @@ private
 		Setting.set('guest-dashboard', '0')
 		Setting.set('theme', 'default')
 		# network settings
-		NETWORK = Setting::NETWORK
-		Setting.find_or_create_by(NETWORK, 'dns', 'opendns')
-		Setting.find_or_create_by(NETWORK, 'dns_ip_1', '208.67.222.222')
-		Setting.find_or_create_by(NETWORK, 'dns_ip_2', '208.67.220.220')
-		Setting.find_or_create_by(NETWORK, 'dnsmasq_dhcp', '1')
-		Setting.find_or_create_by(NETWORK, 'dnsmasq_dns', '1')
-		Setting.find_or_create_by(NETWORK, 'lease_time', '14400')
+		network = Setting::NETWORK
+		Setting.find_or_create_by(network, 'dns', 'opendns')
+		Setting.find_or_create_by(network, 'dns_ip_1', '208.67.222.222')
+		Setting.find_or_create_by(network, 'dns_ip_2', '208.67.220.220')
+		Setting.find_or_create_by(network, 'dnsmasq_dhcp', '1')
+		Setting.find_or_create_by(network, 'dnsmasq_dns', '1')
+		Setting.find_or_create_by(network, 'lease_time', '14400')
 		# set it to initialized and go!
 		Setting.set('initialized', '1')
 	end
