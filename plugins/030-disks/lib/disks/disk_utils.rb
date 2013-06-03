@@ -44,7 +44,7 @@ class DiskUtils
 				i = disk.gsub(/^\||\|$/, '').split('|')
 				model = i[1].gsub(/[^A-Za-z0-9\-_\s\.]/, '') rescue "Unkown"
 				next if model == '???'
-				t = (i[2] =~ /(^\*$)|nos|err/i) ? nil : i[2].to_i
+				t = i[2].to_i rescue 0
 				tempcolor = "cool"
 				celsius = "-"
 				farenheight = "-"

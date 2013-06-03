@@ -408,6 +408,7 @@
   disks: Disks
   model: Model
   device: Device
+  devices: Devices
   temperature: Temperature
 
   # themes area
