@@ -672,8 +672,8 @@ nav.preftab {
         z-index: 10;
         zoom: 1;
 	// transition delay to show the subtabs
-	transition: z-index 1.0s ease 1.0s;
-	-webkit-transition: z-index 1.0s ease 1.0s;
+	transition: z-index 0.7s ease 0.7s;
+	-webkit-transition: z-index 0.7s ease 0.7s;
 
         li {
           border: 0;
