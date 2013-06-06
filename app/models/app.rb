@@ -243,7 +243,6 @@ class App < ActiveRecord::Base
 				end
 			end
 			self.install_status = 80
-			self.forum_url = installer.forum_url
 			self.initial_user = installer.initial_user
 			self.initial_password = installer.initial_password
 			self.special_instructions = installer.special_instructions

@@ -31,6 +31,8 @@ gem 'bcrypt-ruby'
 
 gem 'unicorn'
 
+gem 'rb-readline', require: false
+
 group :development do
 	gem 'quiet_assets'
 	gem 'thin'
