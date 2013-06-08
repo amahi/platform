@@ -154,7 +154,6 @@ class App < ActiveRecord::Base
 	def self.installation_status(identifier)
 		status = Setting.find_by_kind_and_name(identifier, 'install_status')
 		return 0 unless status
-		status.reload
 		status.value.to_i
 	end
 
@@ -166,12 +165,10 @@ class App < ActiveRecord::Base
 		end
 		if status
 			status.update_attribute(:value, value.to_s)
-			status.reload
-			return value
+		else
+			# create it dynamically if it does not exist
+			status = Setting.create(:kind => self.identifier, :name => 'install_status', :value => value.to_s)
 		end
-		# create it dynamically if it does not exist
-		status = Setting.create(:kind => self.identifier, :name => 'install_status', :value => value.to_s)
-		status.reload
 		value
 	end
 
@@ -249,7 +246,6 @@ class App < ActiveRecord::Base
 			# mark it as installed
 			self.installed = true
 			self.save!
-			self.reload
 			self.install_status = 100
 			Dir.chdir(initial_path)
 		rescue Exception => e
