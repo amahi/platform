@@ -265,6 +265,7 @@
   this_could_be_due_to_lack_of_network_connectivity: This could be due to a lack of network connectivity.
   this_looks_like_a_database_corruption_please_report_it: This looks like a database corruption or a bug (please <a href="http://bugs.amahi.org">report it</a>).
   uninstall: Uninstall
+  install: Install
   warning_this_application_is_in_testing: "WARNING: This application is in testing!"
   application_uninstalled: Application uninstalled.
   this_application_is_installed: This application is installed.
