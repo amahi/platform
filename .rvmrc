@@ -1,1 +1,2 @@
-rvm use --create 1.9.3-p429@amahi
+rvm use --create 2.0.0-p195@amahi
+
