@@ -1,3 +1,7 @@
+
+# FIXME - temporary work-around for Fedora 19
+$LOAD_PATH << '/usr/lib64/gems/ruby/psych-2.0.0/lib' << '/usr/share/gems/gems/psych-2.0.0/lib'
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
