@@ -2,7 +2,8 @@
 
 An Amahi platform plugin is an RoR engine. For simplicity we call them plugins.
 
-Plugins should be located in `plugins/` and can be generated with a generator
+
+Plugins should be located in `plugins/` and can be generated with a generator. You need to clone this `platform` code and cd to the base of it, then run:
 
 ```bash
 rails generate plugin FooBar
