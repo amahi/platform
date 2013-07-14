@@ -11,6 +11,8 @@ rails generate plugin FooBar
 
 This will generate a plugin called FooBar in the plugin/ directory of the app. The name of the directory is the class name for the plugin and it should be CamelCased for best results.
 
+It will output the files generated. You may want to remember these. You probably will have to configure some of these files to fine tune for the name of the plugin, new controllers, views, etc., etc. Each plugin is essentially a rack app that is close to a Rails app.
+
 ## Requirements
 
 Each plugin has to have a file called `config/amahi_plugin.yml` with details of the plugin, for example:
