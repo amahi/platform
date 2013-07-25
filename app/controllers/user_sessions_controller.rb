@@ -19,7 +19,7 @@ class UserSessionsController < ApplicationController
 	layout 'login'
 
 	def new
-		if Setting.get('initialized')
+		if initialized?
 			@user_session = UserSession.new
 		else
 			# if the system is not initialized, start by doing that
@@ -28,7 +28,7 @@ class UserSessionsController < ApplicationController
 	end
 
 	def start
-		if Setting.get('initialized')
+		if initialized?
 			# if the system is initialized already, go to login
 			redirect_to login_path
 		else
@@ -112,7 +112,7 @@ private
 
 	# initialize various one-time default settings
 	def initialize_default_settings
-		return if Setting.get('initialized')
+		return if initialized?
 		# general settings
 		Setting.set('advanced', '0')
 		Server.create_default_servers if Server.count < 4
@@ -150,6 +150,10 @@ private
 		return false if pwd.nil? or pwd.blank?
 		return true if conf.size > 4 and pwd == conf
 		false
+	end
+
+	def initialized?
+		Setting.get('initialized') && Setting.get('initialized') == '1'
 	end
 
 end

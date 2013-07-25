@@ -39,7 +39,8 @@ div.user[id="whole_user_#{user.id}"]
                 td
                   label #{t('last_login')}
                 td = formatted_date(user.last_login_at)
-
+              tr
+                = render partial: 'auth', locals: { user: user }
             tr
               td
                 label #{t('admin')}
@@ -49,7 +50,5 @@ div.user[id="whole_user_#{user.id}"]
                                          :label => "",
                                          :checked => user.admin?,
                                          :disabled => !can_i_toggle_admin?(user)
-            tr
-              = render partial: 'auth', locals: { user: user }
             tr
               = render partial: 'password', locals: { user: user }
