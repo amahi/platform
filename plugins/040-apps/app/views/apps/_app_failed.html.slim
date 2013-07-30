@@ -1,0 +1,32 @@
+- identifier = "unknown"
+
+= content_tag 'div', :class => 'app', :id => "app_whole_#{identifier}" do
+
+  table.settings.stretchtoggle[id="app_row_#{identifier}"]
+    tr
+      td.settings-col1.apps-col1
+        = link_to '-', '#'
+      td.settings-col2.apps-col2[id="app_ip_#{identifier}"]
+        | 
+
+  .settings-stretcher[id="app_info_#{identifier}" style="#{display_style}"]
+    .app-manage
+      fieldset
+        .settings-fields
+          p.app-description
+            | This app failed to install &nbsp; :-(  &nbsp; We REALLY HATE that.
+            | This could be due to a bug, slow failed network, app bug or other changes to the system.
+          p
+            | Please share the logs (in Linux, via terminal or SSH) using "apaste" as follows:
+              
+            code
+              | tail -600 /var/log/amahi-app-installer.log | apaste
+          p
+            | If you feel this is a bug we at the Amahi Team would like to hear from you via the &nbsp;
+            a href="https://forums.amahi.org" forums
+            | &nbsp; the &nbsp;
+            a href="https://bugs.amahi.org" bug tracker
+            | &nbsp; or the &nbsp;
+            a href="https://talk.amahi.org" IRC support channel
+            | .
+

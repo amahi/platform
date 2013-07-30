@@ -130,6 +130,7 @@ class App < ActiveRecord::Base
 		when  70 then "Creating associated server in your HDA ..."
 		when  80 then "Saving application settings ..."
 		when 100 then "Application installed."
+		when 999 then "Application failed to install (check /var/log/amahi-app-installer.log)."
 		else "Application message unknown at #{percent}% install."
 		end
 	end
@@ -158,17 +159,13 @@ class App < ActiveRecord::Base
 	end
 
 	def install_status=(value)
-		status = Setting.find_by_kind_and_name(self.identifier, 'install_status')
+		# create it dynamically if it does not exist
+		status = Setting.find_or_create_by(self.identifier, 'install_status', value)
 		if value.nil?
-			status.destroy if status
+			status && status.destroy
 			return nil
 		end
-		if status
-			status.update_attribute(:value, value.to_s)
-		else
-			# create it dynamically if it does not exist
-			status = Setting.create(:kind => self.identifier, :name => 'install_status', :value => value.to_s)
-		end
+		status.update_attribute(:value, value.to_s)
 		value
 	end
 
@@ -179,7 +176,6 @@ class App < ActiveRecord::Base
 	def install_bg
 		initial_path = Dir.pwd
 		begin
-			status = Setting.create(:kind => self.identifier, :name => 'install_status', :value => "0")
 			# see the install_message method for the meaning of the messages
 			self.install_status = 0
 			AmahiApi::api_key = Setting.value_by_name("api-key")
@@ -249,7 +245,7 @@ class App < ActiveRecord::Base
 			self.install_status = 100
 			Dir.chdir(initial_path)
 		rescue Exception => e
-			self.install_status = nil
+			self.install_status = 999
 			Dir.chdir(initial_path)
 			raise e
 		end

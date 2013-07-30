@@ -50,7 +50,7 @@ class AppsController < ApplicationController
 			@progress = App.installation_status identifier
 			@message = App.installation_message @progress
 		end
-		# we may send HTML if there app is installed
+		# we may send HTML if there app is installed or it errored out
 		before_filter_hook if @progress >= 100
 	end
 
