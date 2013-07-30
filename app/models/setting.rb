@@ -27,8 +27,6 @@ class Setting < ActiveRecord::Base
 	scope :network, by_kind(NETWORK)
 	scope :shares,  by_kind(SHARES)
 
-	validates :kind, inclusion: {in: KINDS}
-
 	class << self
 
 		def value_by_name(name)

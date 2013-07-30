@@ -40,6 +40,11 @@ group :development do
 	# turn this on to enable reporting on best practices with:
 	#	rails_best_practices -f html .
 	# gem 'rails_best_practices'
+
+	# FIXME: for Fedora only
+	if ((open('/etc/issue').grep(/fedora/i).length > 0) rescue false)
+		gem 'minitest'
+	end
 end
 
 gem "rspec-rails", :group => [:test, :development]

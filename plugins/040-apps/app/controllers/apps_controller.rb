@@ -18,8 +18,8 @@ class AppsController < ApplicationController
 
 	before_filter :admin_required
 
+	# make the JSON calls much more efficient by not invoking these filters
 	skip_filter :before_filter_hook, except: [:index, :installed]
-	skip_filter :initialize_validators, except: [:index, :installed]
 	skip_filter :prepare_plugins, except: [:index, :installed]
 
 	def index
@@ -50,6 +50,8 @@ class AppsController < ApplicationController
 			@progress = App.installation_status identifier
 			@message = App.installation_message @progress
 		end
+		# we may send HTML if there app is installed
+		before_filter_hook if @progress >= 100
 	end
 
 	def uninstall

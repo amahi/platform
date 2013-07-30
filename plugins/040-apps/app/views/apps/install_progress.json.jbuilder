@@ -1,4 +1,4 @@
-json.identifier  params[:id]
+json.identifier params[:id]
 json.content @message
 
 self.formats = [:html]
