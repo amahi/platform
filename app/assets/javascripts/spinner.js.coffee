@@ -5,9 +5,9 @@ Spinner =
       link.prev().show "fast"
       link.hide()
 
-    $(document).on "ajax:beforeSend", ".remote-select, .remote-check, .remove-radio", ->
+    $(document).on "ajax:beforeSend", ".remote-select, .remote-check, .remote-radio", ->
       $(this).next(".spinner").show()
-    $(document).on "ajax:complete", ".remote-select, .remote-check, .remove-radio", ->
+    $(document).on "ajax:complete", ".remote-select, .remote-check, .remote-radio", ->
       $(this).next(".spinner").hide()
 
     $(document).on "ajax:beforeSend", ".short-form", ->
