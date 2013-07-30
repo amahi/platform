@@ -2,11 +2,11 @@ Apps =
 	initialize: ->
 		_this = this
 
-		$(document).on "ajax:beforeSend", ".install-app-via-deamon, .uninstall-app-via-deamon", ->
+		$(document).on "ajax:beforeSend", ".install-app-in-background, .uninstall-app-in-background", ->
 				$(".install-button").hide()
 				_this.toggle_spinner this
 
-		$(document).on "ajax:success", ".install-app-via-deamon, .uninstall-app-via-deamon", (data, results) ->
+		$(document).on "ajax:success", ".install-app-in-background, .uninstall-app-in-background", (data, results) ->
 				_this.update_progress results["identifier"], results["content"]
 				_this.trace_progress results["identifier"]
 
@@ -66,7 +66,7 @@ Apps =
 				else if data["uninstalled"]
 					_this.update_uninstalled_app finder
 				else
-					setTimeout "Apps.trace_progress('" + finder + "')", 2000
+					setTimeout (-> Apps.trace_progress(finder)), 2000
 
 
 $(document).ready ->
