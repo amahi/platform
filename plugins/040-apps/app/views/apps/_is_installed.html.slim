@@ -41,6 +41,7 @@ span.progress
 - unless app.installed
   br
   p
-  b [!] #{t('warning')}:
+    b
+      | [!]#{t('warning')}:
   em #{t('this_application_install_ended_with_an_error_please_uninstall_status_is')} #{app.install_status} ("#{app.install_message}")
 
