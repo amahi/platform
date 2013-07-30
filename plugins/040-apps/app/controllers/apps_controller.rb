@@ -18,9 +18,9 @@ class AppsController < ApplicationController
 
 	before_filter :admin_required
 
-	skip_filter :before_filter_hook, except: [:index]
-	skip_filter :initialize_validators, except: [:index]
-	skip_filter :prepare_plugins, except: [:index]
+	skip_filter :before_filter_hook, except: [:index, :installed]
+	skip_filter :initialize_validators, except: [:index, :installed]
+	skip_filter :prepare_plugins, except: [:index, :installed]
 
 	def index
 		set_title t('apps')
