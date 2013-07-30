@@ -1034,12 +1034,18 @@ td {
   }
 }
 
-.install-app-via-daemon {
-  padding: 0 10px;
+.uninstall-app-in-background {
+  padding: 7px 23px;
   color: #fff;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: bold;
-  text-transform: uppercase;
+  }
+
+.install-app-in-background {
+  padding: 7px 23px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
 
   &:before {
     content:"";
@@ -1106,7 +1112,7 @@ td {
   margin: 0 30px;
 }
 
-.install-button .install-app-via-daemon {
+.install-button .install-app-in-background {
   text-decoration: none;
 }
 
