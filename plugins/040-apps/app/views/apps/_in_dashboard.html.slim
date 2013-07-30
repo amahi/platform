@@ -1,5 +1,5 @@
 = simple_remote_checkbox :id => "in_dashboard_#{app.id}",
                          :css_class => 'in_dashboard_checkbox',
-                         :url => apps_engine.toggle_in_dashboard_app_path(:id => app.identifier),
+                         :url => apps_engine.toggle_in_dashboard_path(:id => app.identifier),
                          :label => "&nbsp; List in dashboard &nbsp;",
                          :checked => app.show_in_dashboard

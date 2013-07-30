@@ -28,10 +28,10 @@ class AppsController < ApplicationController
 		@apps = App.latest_first
 	end
 
-	def install_via_daemon
+	def install
 		identifier = params[:id]
 		@app = App.find_by_identifier identifier
-		App.install_via_daemon identifier unless @app
+		App.install identifier unless @app
 	end
 
 	def install_progress
@@ -48,10 +48,10 @@ class AppsController < ApplicationController
 		end
 	end
 
-	def uninstall_via_daemon
+	def uninstall
 		identifier = params[:id]
 		@app = App.find_by_identifier identifier
-		@app.uninstall_via_daemon if @app
+		@app.uninstall if @app
 	end
 
 	def uninstall_progress

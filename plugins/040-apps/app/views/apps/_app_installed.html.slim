@@ -1,6 +1,6 @@
 - app = app_installed
 
-= content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => apps_engine.uninstall_progress_app_path(app.identifier) } do
+= content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => apps_engine.uninstall_progress_path(app.identifier) } do
 
   table.settings.stretchtoggle[id="app_row_#{app.identifier}"]
     tr

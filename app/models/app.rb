@@ -82,7 +82,7 @@ class App < ActiveRecord::Base
 		Process.detach(p)
 	end
 
-	def self.install_via_daemon(identifier)
+	def self.install(identifier)
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app --environment=#{Rails.env} #{identifier} >> #{INSTALLER_LOG} 2>&1 &")
 		c = Command.new cmd
@@ -90,7 +90,7 @@ class App < ActiveRecord::Base
 	end
 
 
-	def uninstall_via_daemon
+	def uninstall
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app -u --environment=#{Rails.env} #{self.identifier} >>  #{INSTALLER_LOG} 2>&1 &")
 		c = Command.new cmd

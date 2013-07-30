@@ -31,11 +31,11 @@ br
 br
 br
 
-= theme_image_tag("working.gif", :class => "spinner spinner-installation", :style=> "display: none;")
+= spinner
 span.progress
   - unless app.has_dependents?
     span.install-button
-      = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_via_daemon_app_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-via-daemon')
+      = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-via-daemon')
 
 
 - unless app.installed

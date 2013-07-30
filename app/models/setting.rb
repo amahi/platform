@@ -16,7 +16,7 @@
 
 class Setting < ActiveRecord::Base
 
-  KINDS = [GENERAL = "general", NETWORK = "network", SHARES = "shares"]
+	KINDS = [GENERAL = "general", NETWORK = "network", SHARES = "shares"]
 
 	attr_accessible :name, :value, :kind
 
@@ -27,7 +27,7 @@ class Setting < ActiveRecord::Base
 	scope :network, by_kind(NETWORK)
 	scope :shares,  by_kind(SHARES)
 
-  validates :kind, inclusion: {in: KINDS}
+	validates :kind, inclusion: {in: KINDS}
 
 	class << self
 
@@ -62,14 +62,13 @@ class Setting < ActiveRecord::Base
 			setting
 		end
 
-    def find_or_create_by(kind, name, value)
-      get_kind(kind, name) || create(kind: kind, name: name, value: value)
-    end
+		def find_or_create_by(kind, name, value)
+			get_kind(kind, name) || create(kind: kind, name: name, value: value)
+		end
 	end
 
 	def set?
 		value == '1' || value == 'true'
 	end
-
 
 end
