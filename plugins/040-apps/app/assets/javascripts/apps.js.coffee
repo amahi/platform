@@ -25,7 +25,7 @@ Apps =
 
 	toggle_spinner: (finder) ->
 		app = @app(finder)
-		app.find(".spinner-installation").toggle()
+		app.find(".spinner").toggle()
 
 	progress: (finder) ->
 		@app(finder).find ".progress:first"
