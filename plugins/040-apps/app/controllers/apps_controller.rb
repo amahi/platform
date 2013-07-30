@@ -18,6 +18,10 @@ class AppsController < ApplicationController
 
 	before_filter :admin_required
 
+	skip_filter :before_filter_hook, except: [:index]
+	skip_filter :initialize_validators, except: [:index]
+	skip_filter :prepare_plugins, except: [:index]
+
 	def index
 		set_title t('apps')
 		@apps = App.available
