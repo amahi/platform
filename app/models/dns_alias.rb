@@ -25,7 +25,8 @@ class DnsAlias < ActiveRecord::Base
   attr_accessible :name, :address
 
   validates :name, presence: true, uniqueness: true, format: { with: /\A[a-z][a-z0-9-]*\z/i }
-  validates :address, presence: true, uniqueness: true, numericality: { greater_than: 0, less_than: 255 }
+  # FIXME: validate this OR simply empty to point to our own address
+  #validates :address, presence: true, uniqueness: true, numericality: { greater_than: 0, less_than: 255 }
 
   protected
 
