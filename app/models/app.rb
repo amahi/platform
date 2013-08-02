@@ -205,7 +205,7 @@ class App < ActiveRecord::Base
 					self.share = sh
 				else
 					c = installer.share.capitalize
-					p = Share.full_path(installer.share)
+					p = Share.default_full_path(installer.share)
 					# FIXME - use a relative path and not harcode the share path here?
 					self.create_share(:name => c, :path => p, :rdonly => false, :visible => true, :tags => "")
 					cmd = Command.new("chmod 777 #{p}")
