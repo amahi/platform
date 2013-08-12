@@ -447,7 +447,7 @@ class App < ActiveRecord::Base
 
 	def unpack(url, fname)
 		if (url =~ /\.zip$/)
-			system("unzip #{fname}")
+			system("unzip -q #{fname}")
 		elsif (url =~ /\.(tar.gz|tgz)$/)
 			system("tar -xzf #{fname}")
 		elsif (url =~ /\.(tar.bz2)$/)
