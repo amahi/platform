@@ -61,12 +61,12 @@ class Share < ActiveRecord::Base
 		domain = Setting.value_by_name "domain"
 		debug = Setting.shares.value_by_name('debug') == '1'
 
-		smbconf = "#{TMPDIR}/smbconf-%d.%d" % [$$, rand(99999)]
+		smbconf = TempCache.unique_filename "smbconf"
 		File.open(smbconf, "w") do |l|
 			l.write(self.samba_conf(domain))
 		end
 
-		lmhosts = "#{TMPDIR}/lmhosts-%d.%d" % [$$, rand(99999)]
+		lmhosts = TempCache.unique_filename "lmhosts"
 		File.open(lmhosts, "w") do |l|
 			l.write(self.samba_lmhosts(domain))
 		end
@@ -75,12 +75,12 @@ class Share < ActiveRecord::Base
 		time = Time.now
 		c = Command.new
 		c.submit("cp /etc/samba/smb.conf \"/tmp/smb.conf.#{time}\"") if debug
-		c.submit("cp \"#{smbconf}\" /etc/samba/smb.conf")
-		c.submit("rm -f \"#{smbconf}\"")
+		c.submit("cp #{smbconf} /etc/samba/smb.conf")
+		c.submit("rm -f #{smbconf}")
 
 		c.submit("cp /etc/samba/lmhosts \"/tmp/lmhosts.#{time}\"") if debug
-		c.submit("cp \"#{lmhosts}\" /etc/samba/lmhosts")
-		c.submit("rm -f \"#{lmhosts}\"")
+		c.submit("cp #{lmhosts} /etc/samba/lmhosts")
+		c.submit("rm -f #{lmhosts}")
 
 		c.execute
 

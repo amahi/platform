@@ -1,6 +1,8 @@
-if File.exists?('/var/hda/tmp')
-	# temp dir for our own use -- in F18, /tmp is "chrooted" for apache for security
-	TMPDIR = '/var/hda/tmp'
+# temp dir for our own use
+if Rails.env == "development"
+	# used in development
+	HDA_TMP_DIR = File.join(Rails.root, 'tmp/cache/tmpfiles')
 else
-	TMPDIR = File.join(Rails.root, 'tmp')
+	HDA_TMP_DIR = '/var/hda/tmp'
 end
+FileUtils.mkdir_p HDA_TMP_DIR

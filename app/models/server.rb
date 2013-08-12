@@ -46,11 +46,11 @@ class Server < ActiveRecord::Base
 			"\nset daemon 30\n" \
 			"include #{Platform.file_name(:monit_dir)}/logging\n" \
 			"include #{Platform.file_name(:monit_dir)}/*.conf\n"
-		fname = "#{TMPDIR}/server-conf-%d.%d" % [$$, rand(9999)]
+		fname = TempCache.unique_filename "server-conf"
 		f = File.new fname, "w"
 		f.write r
-		c = Command.new("cp -f \"#{f.path}\" #{Platform.file_name(:monit_conf)}")
-		c.submit("rm -f \"#{f.path}\"")
+		c = Command.new("cp -f #{f.path} #{Platform.file_name(:monit_conf)}")
+		c.submit("rm -f #{f.path}")
 		c.submit("chmod 644 #{Platform.file_name(:monit_log)}")
 		c.submit Platform.watchdog_restart_command
 		c.execute
@@ -115,10 +115,10 @@ protected
 	end
 
 	def monit_file_add
-		fname = "#{TMPDIR}/server-#{self.name}-%d.%d" % [$$, rand(9999)]
+		fname = TempCache.unique_filename "server-#{self.name}"
 		open(fname, "w") { |f| f.write cmd_file }
-		c = Command.new "cp -f \"#{fname}\" #{File.join(Platform.file_name(:monit_dir), Platform.service_name(self.name))}.conf"
-		c.submit "rm -f \"#{fname}\""
+		c = Command.new "cp -f #{fname} #{File.join(Platform.file_name(:monit_dir), Platform.service_name(self.name))}.conf"
+		c.submit "rm -f #{fname}"
 		c.submit Platform.watchdog_restart_command
 		c.execute
 	end

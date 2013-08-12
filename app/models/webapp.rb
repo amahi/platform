@@ -39,7 +39,7 @@ class Webapp < ActiveRecord::Base
 	end
 
 	def write_conf_file
-		fname = "#{TMPDIR}/webapp-%d.%d" % [$$, rand(9999)]
+		fname = TempCache.unique_filename "webapp"
 		File.open(fname, "w") { |f| f.write(conf_file) }
 
 		# move path to the http area

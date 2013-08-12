@@ -227,7 +227,7 @@ class Platform
 		# update the public key for the user
 		def update_user_pubkey(username, key)
 			# WARNING-cpg: tested on Fedora only
-			fname = "#{TMPDIR}/key-%d.%d" % [$$, rand(9999)]
+			fname = TempCache.unique_filename "key"
 			File.open(fname, "w") { |f| f.write(key) }
 			home = "/home/#{username}"
 			c = Command.new

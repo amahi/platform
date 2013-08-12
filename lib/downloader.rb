@@ -19,7 +19,7 @@ require 'digest/sha1'
 
 class Downloader
 
-	HDA_DOWNLOAD_CACHE = "/tmp/amahi-download-cache"
+	HDA_DOWNLOAD_CACHE = File.join(HDA_TMP_DIR, "amahi-download-cache")
 	AMAHI_DOWNLOAD_CACHE_SITE = 'http://mirror.amahi.org'
 
 	class SHA1VerificationFailed < Exception; end
@@ -29,8 +29,9 @@ class Downloader
 	# check the sha1
 	def self.download_and_check_sha1(url, sha1)
 
-		FileUtils.mkdir_p(HDA_DOWNLOAD_CACHE)
 		raise SHA1VerificationFailed, "#{url}, sha1sum provided is empty!" unless sha1
+		TempCache.expire_unused_files
+		FileUtils.mkdir_p(HDA_DOWNLOAD_CACHE)
 		cached_filename = File.join(HDA_DOWNLOAD_CACHE, sha1)
 		if File.exists?(cached_filename)
 			file = nil
@@ -39,7 +40,7 @@ class Downloader
 			end
 			new_sha1 = Digest::SHA1.hexdigest(file)
 			if new_sha1 == sha1
-				puts "NOTE: file #{cached_filename} picked up from cache."
+				puts "file #{cached_filename} picked up from cache."
 				FileUtils.touch cached_filename
 				# return the file name, not the data
 				return cached_filename
@@ -64,8 +65,10 @@ class Downloader
 
 		while redirect_limit > 0
 			u = URI.parse(url)
-			req = Net::HTTP::Get.new(u.path)
-			response = Net::HTTP.start(u.host, u.port) { |http| http.request(req) }
+			http = Net::HTTP.new(u.host, u.port)
+			http.use_ssl = (u.scheme == 'https')
+			request = Net::HTTP::Get.new(u.path)
+			response = http.start { |http| http.request(request) }
 			return response.body unless response.kind_of?(Net::HTTPRedirection)
 			# it's a redirection
 			location = response['location']
@@ -86,10 +89,8 @@ class Downloader
 		begin
 
 			file = download_direct(url)
-			f = open(filename, "w:ASCII-8BIT")
-			f.write file
-			f.close
-			puts "NOTE: file #{filename} written in cache"
+			open(filename, "w:ASCII-8BIT") {|f| f.write file }
+			puts "file #{filename} written in cache"
 
 			new_sha1 = Digest::SHA1.hexdigest(file)
 		rescue => e
@@ -100,10 +101,8 @@ class Downloader
 			puts "WARNING: primary downloaded file #{filename} did not pass signature check - got #{new_sha1}, expected #{sha1}"
 			new_url = File.join(AMAHI_DOWNLOAD_CACHE_SITE, sha1)
 			file = download_direct(new_url)
-			f = open(filename, "w")
-			f.write file
-			f.close
-			puts "NOTE: new file #{filename} from Amahi's cache written in the cache"
+			open(filename, "w") { |f| f.write file }
+			puts "new file #{filename} from Amahi's cache written in the cache"
 
 			new_sha1 = Digest::SHA1.hexdigest(file)
 			raise SHA1VerificationFailed, "#{new_url} (from original #{url}), '#{new_sha1}' vs. '#{sha1}' " if new_sha1 != sha1
