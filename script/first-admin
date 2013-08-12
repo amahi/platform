@@ -20,48 +20,12 @@ require File.dirname(__FILE__) + '/../config/boot'
 # send warnings to the bit bucket
 $stderr.reopen("/dev/null", "w")
 
-#require 'optparse'
-
-# switch to apache:users first
-#uid = Etc.getpwnam("apache").uid
-#gid = Etc.getgrnam("users").gid
-#Process.gid = gid
-#Process.egid = gid
-#Process.uid = uid
-#Process.euid = uid
-
-# make things group (users) writeable
-#File.umask(0002)
-
-
-
 ENV["RAILS_ENV"] = (ENV['RAILS_ENV'] || "production").dup
 RAILS_ENV.replace(ENV['RAILS_ENV']) if defined?(RAILS_ENV)
 
 # full RoR environment!
-require RAILS_ROOT + '/config/environment'
+require File.dirname(__FILE__) + '/../config/environment'
 ROOTDIR = File.join(File.dirname(__FILE__), "..")
-#require 'active_record'
-#require 'yaml'
-#require 'erb'
-#require File.join(ROOTDIR, 'lib/greyhole')
-#require File.join(ROOTDIR, 'lib/amahi-api')
-#require File.join(ROOTDIR, 'app/models/app')
-#require File.join(ROOTDIR, 'app/models/app_dependency')
-#require File.join(ROOTDIR, 'app/models/db')
-#require File.join(ROOTDIR, 'app/models/disk_pool_partition')
-#require File.join(ROOTDIR, 'app/models/webapp')
-#require File.join(ROOTDIR, 'app/models/setting')
-#require File.join(ROOTDIR, 'app/models/server')
-#require File.join(ROOTDIR, 'app/models/share')
-#require File.join(ROOTDIR, 'app/models/cap_access')
-#require File.join(ROOTDIR, 'app/models/cap_writer')
-#require File.join(ROOTDIR, 'app/models/alias')
-#require File.join(ROOTDIR, 'app/models/host')
-#require File.join(ROOTDIR, 'app/models/theme')
-#require File.join(ROOTDIR, 'app/models/user')
-#ActiveRecord::Base.establish_connection((YAML::load(ERB.new(
-#                File.read("#{ROOTDIR}/config/database.yml")).result).symbolize_keys)[(ENV['RAILS_ENV'] || :development).to_sym])
 
 def main
 	begin
