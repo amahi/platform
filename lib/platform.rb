@@ -182,7 +182,7 @@ class Platform
 		def service_start_command(name)
 			service = service_name(name)
 			if fedora?
-				"systemctl start #{service}.service"
+				"/usr/bin/systemctl start #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl start #{service}"
 			else
@@ -195,7 +195,7 @@ class Platform
 		def service_stop_command(name)
 			service = service_name(name)
 			if fedora?
-				"systemctl stop #{service}.service"
+				"/usr/bin/systemctl stop #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl stop #{service}"
 			else
