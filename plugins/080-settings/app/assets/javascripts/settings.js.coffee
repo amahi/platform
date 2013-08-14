@@ -16,6 +16,7 @@ Servers =
 $ ->
   Servers.initialize()
 
-	$(".preftab").on "ajax:success", "#locale", ->
-		# reload the page because the whole language has changed
-		window.location.reload(true)
+# reload the page with locale change because the whole language has changed
+$ ->
+    $(".preftab").on "ajax:success", "#locale", ->
+       window.location.reload(true)
