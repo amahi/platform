@@ -126,6 +126,7 @@ private
 		Setting.find_or_create_by(network, 'dnsmasq_dhcp', '1')
 		Setting.find_or_create_by(network, 'dnsmasq_dns', '1')
 		Setting.find_or_create_by(network, 'lease_time', '14400')
+		Share.create_default_shares
 		# set it to initialized and go!
 		Setting.set('initialized', '1')
 	end

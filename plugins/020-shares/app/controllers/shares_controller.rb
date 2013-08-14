@@ -18,7 +18,6 @@ class SharesController < ApplicationController
 
 	before_filter :admin_required
 
-	before_filter :create_default
 	before_filter :get_share
 
 	def index
@@ -119,10 +118,6 @@ class SharesController < ApplicationController
 
 	def render_share_access
 		render :json => render_to_string('shares/_access') and return
-	end
-
-	def create_default
-		Share.create_default_shares if Share.count == 0
 	end
 
 	def get_share
