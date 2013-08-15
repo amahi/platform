@@ -19,7 +19,7 @@ require 'command'
 
 class User < ActiveRecord::Base
 
-	scope :admins, where(:admin => 1)
+	scope :admins, where(:admin => true)
 
 	begin
 		acts_as_authentic do |c|
