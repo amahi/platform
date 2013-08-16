@@ -20,4 +20,9 @@ FactoryGirl.define do
 	end
 
 	factory :setting
+
+	factory :share do
+		sequence(:path) { |n| "/path #{n}" }
+		sequence(:name) { |n| "name #{n}" }
+	end
 end

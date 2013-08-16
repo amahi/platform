@@ -282,6 +282,11 @@ class Share < ActiveRecord::Base
 		if guest_writeable_changed?
 			guest_writeable ? make_guest_writeable : make_guest_non_writeable
 		end
+		if everyone
+			users = User.all
+			self.users_with_share_access = users
+			self.users_with_write_access = users
+		end
 		Share.push_shares
 		# Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
 	end
