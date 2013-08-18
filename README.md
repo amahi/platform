@@ -5,7 +5,7 @@
 The Amahi Platform is a web-based framework that allows management of users, shares,
 apps, networking and other settings in a Linux-based PC, VM or ARM-based system.
 
-The Amahi Platform is part of the services provided by [Amahi](http://www.amahi.org).
+The Amahi Platform is part of Amahi and supports the services provided by [Amahi](http://www.amahi.org).
 
 # Contributing
 
