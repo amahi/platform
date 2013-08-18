@@ -205,6 +205,32 @@ class Platform
 			end
 		end
 
+		def service_enable_command(name)
+			service = service_name(name)
+			if fedora?
+				"/usr/bin/systemctl enable #{service}.service"
+			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
+				"/sbin/initctl enable #{service}"
+			else
+				# legacy fallback
+				tmp = service + " enable"
+				(tmp =~ /^\//) ? tmp : File.join(LEGACY_INIT_PATH, tmp)
+			end
+		end
+
+		def service_disable_command(name)
+			service = service_name(name)
+			if fedora?
+				"/usr/bin/systemctl enable #{service}.service"
+			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
+				"/sbin/initctl disable #{service}"
+			else
+				# legacy fallback
+				tmp = service + " disable"
+				(tmp =~ /^\//) ? tmp : File.join(LEGACY_INIT_PATH, tmp)
+			end
+		end
+
 		# watchdog restart command
 		def watchdog_restart_command
 			if fedora?

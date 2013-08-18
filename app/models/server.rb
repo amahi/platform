@@ -85,6 +85,11 @@ class Server < ActiveRecord::Base
 		!stopped?
 	end
 
+	# in some cases, some server names have many instances, named with @, e.g. openvpn@amahi
+	def clean_name
+		name.gsub /@/, '-'
+	end
+
 protected
 
 	def pid_file
@@ -100,16 +105,25 @@ protected
 		Platform.service_stop_command(name)
 	end
 
+	def enable_cmd
+		Platform.service_enable_command(name)
+	end
+
+	def disable_cmd
+		Platform.service_disable_command(name)
+	end
+
 	def destroy_hook
 		c = Command.new("rm -f #{File.join(Platform.file_name(:monit_dir), Platform.service_name(name))}.conf")
 		c.submit Platform.watchdog_restart_command
+		c.submit disable_cmd
 		c.submit stop_cmd
 		c.execute
 	end
 
 	def cmd_file
 		"# WARNING - This file was automatically generated on #{Time.now}\n" \
-		"check process #{self.name} with pidfile #{self.pid_file}\n"	\
+		"check process #{self.clean_name} with pidfile #{self.pid_file}\n"	\
         	"\tstart program = \"#{self.start_cmd}\"\n"			\
         	"\tstop  program = \"#{self.stop_cmd}\"\n"
 	end
@@ -130,17 +144,13 @@ protected
 		c.execute
 	end
 
-	def service_on
-		c = Command.new "chkconfig #{Platform.service_name name} on"
-		# new
-		# c = Command.new "systemctl enable #{Platform.service_name name}.service"
+	def service_enable
+		c = Command.new enable_cmd
 		c.execute
 	end
 
-	def service_off
-		c = Command.new "chkconfig #{Platform.service_name name} off"
-		# new
-		# c = Command.new "systemctl disable #{Platform.service_name name}.service"
+	def service_disable
+		c = Command.new disable_cmd
 		c.execute
 	end
 
@@ -150,12 +160,13 @@ protected
 			# DEBUG RAILS_DEFAULT_LOGGER.info "* * * MONITORED CHANGED to #{monitored}"
 		end
 		if start_at_boot_changed?
-			start_at_boot ? service_on : service_off
+			start_at_boot ? service_enable : service_disable
 			# DEBUG RAILS_DEFAULT_LOGGER.info "* * * START_AT_BOOT CHANGED to #{start_at_boot}"
 		end
 	end
 
 	def create_hook
+		service_enable
 		monit_file_add
 	end
 

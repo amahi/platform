@@ -217,7 +217,7 @@ class App < ActiveRecord::Base
 			if installer.server
 				servername = installer.server
 				pidfile = nil
-				if servername =~ /(\w+):(.+)/
+				if servername =~ /\s*([^\s]+):(.+)/
 					servername = $1
 					pidfile = $2 unless $2.empty?
 				end
