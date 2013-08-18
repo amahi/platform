@@ -126,7 +126,7 @@ class App < ActiveRecord::Base
 		when  20 then "Installing app dependencies ..."
 		when  30 then "Installing package dependencies ..."
 		when  40 then "Downloading application and unpacking it ..."
-		when  60 then "Installing the application in your HDA ..."
+		when  60 then "Doing application configuration ..."
 		when  70 then "Creating associated server in your HDA ..."
 		when  80 then "Saving application settings ..."
 		when 100 then "Application installed."
@@ -213,17 +213,6 @@ class App < ActiveRecord::Base
 				end
 			end
 			self.install_status = 60
-			# if it has a server, install it and associate it
-			if installer.server
-				servername = installer.server
-				pidfile = nil
-				if servername =~ /\s*([^\s]+):(.+)/
-					servername = $1
-					pidfile = $2 unless $2.empty?
-				end
-				self.create_server(:name => servername, :comment => "#{self.name} Server", :pidfile => pidfile)
-			end
-			self.install_status = 70
 			self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			self.theme = self.install_theme(installer) if installer.kind == 'theme'
 			# run the script
@@ -234,6 +223,17 @@ class App < ActiveRecord::Base
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
 					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password))
 				end
+			end
+			self.install_status = 70
+			# if it has a server, install it and associate it
+			if installer.server
+				servername = installer.server
+				pidfile = nil
+				if servername =~ /\s*([^\s]+):(.+)/
+					servername = $1
+					pidfile = $2 unless $2.empty?
+				end
+				self.create_server(:name => servername, :comment => "#{self.name} Server", :pidfile => pidfile)
 			end
 			self.install_status = 80
 			self.initial_user = installer.initial_user
