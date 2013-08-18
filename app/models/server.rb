@@ -166,7 +166,9 @@ protected
 	end
 
 	def create_hook
-		service_enable
+		c = Command.new enable_cmd
+		c.submit start_cmd
+		c.execute
 		monit_file_add
 	end
 
