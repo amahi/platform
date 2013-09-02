@@ -63,45 +63,23 @@ ARGV.delete(app_id)
 ENV["RAILS_ENV"] = options[:environment]
 
 # load the environment only after RAILS_ENV is set up
-require File.dirname(__FILE__) + '/../config/environment'
-Rails.env.replace(options[:environment]) if defined?(Rails.env)
-
+ROOTDIR = File.join(File.dirname(__FILE__), "..")
+require File.join(ROOTDIR, 'config/environment')
+Rails.env.replace(options[:environment])
 
 # load default settings
-HDA_CONFIG = YAML.load_file("#{Rails.root}/config/hda.yml")[Rails.env]
-
-ROOTDIR = File.join(File.dirname(__FILE__), "..")
-require 'active_record'
-require 'yaml'
-require 'erb'
-require File.join(ROOTDIR, 'lib/amahi_api')
-require File.join(ROOTDIR, 'app/models/app')
-require File.join(ROOTDIR, 'app/models/app_dependency')
-require File.join(ROOTDIR, 'app/models/db')
-require File.join(ROOTDIR, 'app/models/webapp_alias')
-require File.join(ROOTDIR, 'app/models/webapp')
-require File.join(ROOTDIR, 'app/models/setting')
-require File.join(ROOTDIR, 'app/models/server')
-require File.join(ROOTDIR, 'app/models/user')
-require File.join(ROOTDIR, 'app/models/share')
-require File.join(ROOTDIR, 'app/models/cap_access')
-require File.join(ROOTDIR, 'app/models/cap_writer')
-require File.join(ROOTDIR, 'app/models/dns_alias')
-require File.join(ROOTDIR, 'app/models/host')
-require File.join(ROOTDIR, 'app/models/theme')
-ActiveRecord::Base.establish_connection((YAML::load(ERB.new(
-	File.read("#{ROOTDIR}/config/database.yml")).result).symbolize_keys)[(ENV['RAILS_ENV'] || :development).to_sym])
+HDA_CONFIG = YAML.load_file("#{ROOTDIR}/config/hda.yml")[options[:environment]]
 
 def install_or_uninstall(install, app_id, app)
   if install
     puts "=======  app install begin      @  #{Time.now} =========="
-    puts "Installing   app id #{app_id} under #{Rails.root} ENV=#{Rails.env}"
+    puts "Installing   app id #{app_id} under #{ROOTDIR} ENV=#{Rails.env}"
     app.install_bg
     puts "App: #{app.name} installed"
     puts "=======  app install end        @  #{Time.now} =========="
   else
     puts "=======  app uninstall begin    @  #{Time.now} =========="
-    puts "Uninstalling app id #{app_id} under #{Rails.root} ENV=#{Rails.env}"
+    puts "Uninstalling app id #{app_id} under #{ROOTDIR} ENV=#{Rails.env}"
     app.uninstall_bg
     puts "App: #{app.name} uninstalled"
     puts "=======  app uninstall end      @  #{Time.now} =========="

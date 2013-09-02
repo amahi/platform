@@ -34,10 +34,7 @@ class Downloader
 		FileUtils.mkdir_p(HDA_DOWNLOAD_CACHE)
 		cached_filename = File.join(HDA_DOWNLOAD_CACHE, sha1)
 		if File.exists?(cached_filename)
-			file = nil
-			open cached_filename do |f|
-				file = f.read
-			end
+			file = IO.binread(cached_filename)
 			new_sha1 = Digest::SHA1.hexdigest(file)
 			if new_sha1 == sha1
 				puts "file #{cached_filename} picked up from cache."
