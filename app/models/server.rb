@@ -122,9 +122,9 @@ protected
 	end
 
 	def cmd_file
-		"# WARNING - This file was automatically generated on #{Time.now}\n" \
-		"check process #{self.clean_name} with pidfile #{self.pid_file}\n"	\
-        	"\tstart program = \"#{self.start_cmd}\"\n"			\
+		"# WARNING - This file was automatically generated on #{Time.now}\n"	\
+		"check process #{self.clean_name} with pidfile \"#{self.pid_file}\"\n"	\
+        	"\tstart program = \"#{self.start_cmd}\"\n"				\
         	"\tstop  program = \"#{self.stop_cmd}\"\n"
 	end
 
