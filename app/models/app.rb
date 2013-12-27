@@ -239,6 +239,7 @@ class App < ActiveRecord::Base
 			self.initial_user = installer.initial_user
 			self.initial_password = installer.initial_password
 			self.special_instructions = installer.special_instructions
+			self.version = installer.version || ""
 			# mark it as installed
 			self.installed = true
 			self.save!
