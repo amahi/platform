@@ -120,9 +120,9 @@ private
 		Setting.set('theme', 'default')
 		# network settings
 		network = Setting::NETWORK
-		Setting.find_or_create_by(network, 'dns', 'opendns')
-		Setting.find_or_create_by(network, 'dns_ip_1', '208.67.222.222')
-		Setting.find_or_create_by(network, 'dns_ip_2', '208.67.220.220')
+		Setting.find_or_create_by(network, 'dns', 'opennic')
+		Setting.find_or_create_by(network, 'dns_ip_1', '173.230.156.28')
+		Setting.find_or_create_by(network, 'dns_ip_2', '23.90.4.6')
 		Setting.find_or_create_by(network, 'dnsmasq_dhcp', '1')
 		Setting.find_or_create_by(network, 'dnsmasq_dns', '1')
 		Setting.find_or_create_by(network, 'lease_time', '14400')
