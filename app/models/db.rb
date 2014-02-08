@@ -23,6 +23,20 @@ class Db < ActiveRecord::Base
 
   attr_accessible :name
 
+	# stubs for name, password and hostname, in case they need changed later
+
+	def username
+		name
+	end
+
+	def password
+		name
+	end
+
+	def hostname
+		"localhost"
+	end
+
 private
 
 	def after_create_hook

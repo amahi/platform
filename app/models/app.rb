@@ -221,7 +221,7 @@ class App < ActiveRecord::Base
 			if installer.install_script
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
-					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password))
+					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password, self.db))
 				end
 			end
 			self.install_status = 70
@@ -318,7 +318,7 @@ class App < ActiveRecord::Base
 	# extra environment for install scripts
 	# *please* update the docs of variables supported at
 	# http://wiki.amahi.org/index.php/Script_variables
-	def hda_environment(user = nil, password = nil)
+	def hda_environment(user = nil, password = nil, db=nil)
 		env = {}
 		net = Setting.value_by_name('net')
 		addr = Setting.value_by_name('self-address')
@@ -330,6 +330,12 @@ class App < ActiveRecord::Base
 		user && env["HDA_APP_USERNAME"] = user
 		password && env["HDA_APP_PASSWORD"] = password
 		env["HDA_1ST_ADMIN"] = (User.admins.first.login || "no-admin" ) rescue "error"
+		if db
+			env["HDA_DB_DBNAME"] = db.name
+			env["HDA_DB_USERNAME"] = db.username
+			env["HDA_DB_PASSWORD"] = db.password
+			env["HDA_DB_HOSTNAME"] = db.hostname
+		end
 		env
 	end
 
