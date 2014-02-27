@@ -322,9 +322,9 @@ private
 				@@platform = "centos" if line.include?("CentOS")
 			elsif File.exist?('/mach_kernel')
 				@@platform = "mac"
-			else
-				@@platform = nil
 			end
+			#To ensure that @@platform is either set or nil:
+			@@platform ||= nil
 			raise "unsupported platform #{@@platform}" unless PLATFORMS.include?(@@platform)
 		end
 
