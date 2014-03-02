@@ -58,7 +58,6 @@ class Downloader
 	def self.download_direct(url)
 
 		redirect_limit = 5
-		ret = ""
 
 		while redirect_limit > 0
 			u = URI.parse(url)

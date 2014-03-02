@@ -100,15 +100,9 @@ class App < ActiveRecord::Base
 	def self.available
 		AmahiApi::api_key = Setting.value_by_name("api-key")
 		begin
-			av = AmahiApi::App.find(:all).map do |online_app|
-				a = App.find_by_identifier online_app.id
-				if a
-					nil
-				else
-					App.new(online_app.id, online_app)
-				end
-			end
-			av.compact
+			AmahiApi::App.find(:all).map do |online_app|
+				App.find_by_identifier(online_app.id) ? nil : App.new(online_app.id, online_app)
+			end.compact
 		rescue
 			[]
 		end

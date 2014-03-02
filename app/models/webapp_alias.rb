@@ -22,10 +22,10 @@ class WebappAlias < ActiveRecord::Base
 	after_destroy :save_webapp
 
 	validates :name,
-	:presence => true,
-	:uniqueness => true,
-	:length => { :within => 1..254 },
-	:format => { :with => /^[a-z0-9][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*){0,5}$/i }
+						:presence => true,
+						:uniqueness => true,
+						:length => { :within => 1..254 },
+						:format => { :with => /^[a-z0-9][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*){0,5}$/i }
 
 	def to_s
 		name
@@ -33,7 +33,7 @@ class WebappAlias < ActiveRecord::Base
 
 	private
 
-	# save the webapp so that it picsk up the serveraliases
+	# save the webapp so that it picks up the server aliases
 	def save_webapp
 		self.webapp && self.webapp.save
 	end
