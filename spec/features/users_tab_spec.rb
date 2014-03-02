@@ -82,11 +82,11 @@ feature "Users tab" do
 		page.has_text?("Username")
 		page.has_text?("Full Name")
 		find("#whole_user_#{user.id}").find("tr").click_link user.login
-		checkbox = "#checkbox_user_admin_#{user.id}"
-		pending "FIXME: issues with JS?"
+		checkbox = "checkbox_user_admin_#{user.id}"
 		page.should have_checked_field(checkbox)
-		page.uncheck(checkbox);
-		expect(page.find_by_id(checkbox)[:checked]).to neq 'checked'
+		page.uncheck(checkbox)
+		wait_for_ajax
+		expect(user.reload.admin?).to eq false
 		page.should have_unchecked_field(checkbox)
 	end
 	scenario "should allow an admin user to promote a regular user to admin", :js => true do
@@ -102,10 +102,12 @@ feature "Users tab" do
 		page.has_text?("Username")
 		page.has_text?("Full Name")
 		find("#whole_user_#{user.id}").find("tr").click_link user.login
-		checkbox = "#checkbox_user_admin_#{user.id}"
-		pending "FIXME: issues with JS?"
+		checkbox = "checkbox_user_admin_#{user.id}"
+		expect(user.admin?).to eq false
 		page.should_not have_checked_field(checkbox)
-		page.check(checkbox);
+		page.check(checkbox)
+		wait_for_ajax
+		expect(user.reload.admin?).to eq true
 		page.should have_checked_field(checkbox)
 	end
 	scenario "should allow an admin user to change his full name" do
