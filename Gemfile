@@ -57,6 +57,7 @@ group :test do
   gem 'minitest'
   # required for javascript test in selenium
   gem 'poltergeist'
+  gem 'simplecov', :require => false
 end
 
 # FIXME - temporary work-around for Fedora 19
