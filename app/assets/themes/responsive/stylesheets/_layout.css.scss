@@ -1,0 +1,171 @@
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	margin-bottom: 60px;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding:0;
+	margin: 0;
+}
+
+body > .inside {
+	padding: 60px 15px 0;
+}
+
+.inside, .inner {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+	max-width: 1170px;
+	display:table;
+	clear: both;
+	
+}
+
+.inside::after, .inside::before,.inner:after,.inside:before {
+	content: " ";
+	display: table;
+}
+	
+
+.spinner {
+	margin-left: 10px;
+	background: url(../images/working.gif) no-repeat left center;
+	padding: 16px;
+}
+
+input[type="submit"],button{
+	border: none;
+	background: #333;
+	padding: 3px 10px;
+	color: #fff;
+	text-transform: uppercase;
+	@include border-radius(5px);
+	
+}
+
+
+input[type="text"],input[type="password"] {
+	border:none;
+	border-bottom: 1px solid #999;
+	padding: 3px 10px;
+	outline: 0;
+}
+
+
+table {
+	border-collapse: separate;
+	@include border-radius(5px);
+	overflow: hidden;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	
+		tr {
+			text-align: center;
+
+			th {
+				padding: 10px;
+				background: #ddd;
+			}
+			td {
+				padding: 10px;
+				border-bottom: 1px solid #ddd;
+				
+			}
+		}
+
+
+}
+
+fieldset {
+
+	.btn-delete{
+		margin: 10px;
+	}
+
+
+	padding: 20px;
+
+	.control-group { 
+		margin: 20px 0;
+
+		input[type="text"] ,input[type="password"],textarea {
+			width: 97%;
+		}
+
+		input {
+			margin-right: 10px;
+		}
+
+		.field_with_errors {
+			label {
+				font-size: 8px;
+				color: red;
+			}
+		}
+
+		.messages {
+			font-size: 8px;
+			color: #31708f;
+			margin: 0;
+		}
+
+
+		button {
+			margin-right: 10px;
+		}
+	}
+}
+
+
+/* Responsive */
+
+
+@media all 
+and (min-width : 1224px) {
+	.inside,.inner {
+		width: 1170px;
+	}
+}
+
+
+/* Mobile */
+
+@media all 
+and (min-width : 320px) 
+and (max-width : 480px) {
+	.inside,.inner{
+		width: 290px;
+	}
+
+	fieldset {
+		legend {
+			display:none;
+		}
+	}
+}
+
+
+/* Tablets */
+
+@media all 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+	.inside,.inner {
+		width: 730px;
+	}
+}
