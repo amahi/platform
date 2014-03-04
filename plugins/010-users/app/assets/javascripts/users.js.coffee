@@ -1,8 +1,13 @@
 # delete a user
-$(document).on 'ajax:success', '.btn-delete', (event, results) ->
-	user = $("#whole_user_" + results['id'])
-	user.hide 'slow', ->
-		user.remove()
+$(document).on "ajax:success", ".btn-delete", (event, results) ->
+  user = $("#whole_user_" + results["id"])
+  unless results["status"] is "ok"
+    alert results["status"]
+    $(this).parent().find(".spinner").hide()
+    $(this).show()
+  else
+    user.hide "slow", ->
+      user.remove()
 
 # update user password
 $(document).on 'ajax:success', '.update-password', (event, results) ->
