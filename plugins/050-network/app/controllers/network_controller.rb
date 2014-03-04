@@ -27,7 +27,7 @@ class NetworkController < ApplicationController
     sleep 2 if development?
     @host = Host.find params[:id]
     @host.destroy
-    render json: { id: @host.id }
+    render json: {:status=>:ok,id: @host.id }
   end
 
   def dns_aliases
@@ -44,7 +44,7 @@ class NetworkController < ApplicationController
     sleep 2 if development?
     @dns_alias = DnsAlias.find params[:id]
     @dns_alias.destroy
-    render json: { id: @dns_alias.id }
+    render json: { :status=>:ok, id: @dns_alias.id }
   end
 
   def settings
