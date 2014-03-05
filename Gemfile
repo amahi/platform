@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rails', '3.2.17'
 
 gem 'mysql2'
 gem "yettings"
@@ -27,7 +27,7 @@ gem 'slim', '~> 1.3.8'
 
 gem 'authlogic'
 
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 
 gem 'unicorn'
 

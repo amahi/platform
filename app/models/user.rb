@@ -25,6 +25,9 @@ class User < ActiveRecord::Base
 		acts_as_authentic do |c|
 			# DEBUG: only for testing
 			# c.logged_in_timeout = 1.minute
+
+			# authlogic switchted to SCrypt default recently
+			c.crypto_provider = Authlogic::CryptoProviders::Sha512
 		end
 	rescue
 		# NOTE: ignore errors - only happens when using from a
