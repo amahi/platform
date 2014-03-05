@@ -18,6 +18,7 @@ feature "Users tab" do
 		fill_in "user_password", :with => "secret"
 		fill_in "user_password_confirmation", :with => "secret"
 		click_button "user_create_button"
+		wait_for_ajax
 		visit users_engine.users_path
 		page.has_text?("newuser")
 		page.has_text?("fullname")

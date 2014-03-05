@@ -34,6 +34,21 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		sleep 2 if development?
+		user = User.find params[:id]
+		name = user.name
+		if can_i_edit_details?(user)
+			if(params[:name].strip.length !=0)
+				user.name = params[:name]
+				user.save!
+				name = user.name
+				@saved = true
+				errors = user.errors.any? ? user.error.full_messages.join(', ') : false
+			else
+				errors = t('the_name_cannot_be_blank')
+			end
+		end
+		render :json => { :status => @saved ? :ok : :not_acceptable , :message => errors ? errors : true , :name=> name, :id=>params[:id] }
 	end
 
 	def update_pubkey
@@ -94,6 +109,10 @@ class UsersController < ApplicationController
 
 	def can_i_toggle_admin?(user)
 		current_user != user and !user.needs_auth?
+	end
+
+	def can_i_edit_details?(user)
+		(current_user == user || current_user.admin?) 
 	end
 
 end
