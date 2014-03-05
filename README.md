@@ -9,7 +9,7 @@ The Amahi Platform is part of Amahi and supports the services provided by [Amahi
 
 # Contributing
 
-Well-tested contributions are always welcome! Here's what you need to do to get the Amahi platform working:
+Contributions are always welcome! Here's what you need to do to get the Amahi platform working:
 
 #### 1. Clone the repo
 
@@ -24,7 +24,7 @@ You can test Amahi locally with limited functionality either on the command line
 To run on the command line, run the following command from the project root:
 
 ```bash
-rake spec
+make run-tests
 ```
 
 #### 3. Write some test-driven code
@@ -50,14 +50,13 @@ rails s
 
 Visit `http://localhost:3000/`, login with the username of `admin` & the password of `admin` and excersise the app as much as you can.
 
-
 #### 5. Create a pull request
 
 When you are ready for your changes and it's good code that fits with the goals of the project, submit a pull request and we will merge it!
 
 #### 6. Agree to CLA
 
-For mutual protection, please check the icla.txt file for the individual contributor agreement we require for contributors. It's a virtual copy to Apache's CLA. Generally, you will be asked by email to read it and accept. If you are working for a company or some large institution, we will ask that you submit a scan of the signed CLA for us to keep on file.
+For mutual protection, please check the icla.txt file for the individual contributor agreement we require for contributors. It's a virtual copy to Apache's CLA. Generally, you will be asked by email to read it and accept, otherwise it will be implied that you accept it. If you are working for a company or some large institution, we will ask that you submit a scan of the signed CLA for us to keep on file.
 
 #### 7. Plugins
 
