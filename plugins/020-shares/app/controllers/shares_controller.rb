@@ -36,7 +36,7 @@ class SharesController < ApplicationController
 	def destroy
 		sleep 2 if development?
 		@share.destroy
-		render :json => { :id => @share.id }
+		render :json => { :status=> :ok,:id => @share.id }
 	end
 
 	def settings

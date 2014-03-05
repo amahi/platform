@@ -58,8 +58,10 @@ class UsersController < ApplicationController
 		if @user && @user != current_user && !@user.admin?
 			@user.destroy
 			id = @user.id unless @user.errors.any?
-		end
-		render :json => { status: 'ok', id: id }
+			render :json => { :status => id==nil ? :error_occured : :ok, :id => id }
+		else
+		render :json => { status: 'not_acceptable' , id: id }
+		end	
 	end
 
 	def toggle_admin
