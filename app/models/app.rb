@@ -184,8 +184,17 @@ class App < ActiveRecord::Base
 			mkdir app_path
 			webapp_path = nil
 			self.install_status = 40
+
+			downloaded_file = nil
+			unless (installer.source_url.nil? or installer.source_url.blank?)
+				downloaded_file = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
+				Dir.chdir(app_path) do
+					File.symlink(downloaded_file, "source-file")
+				end
+			end
+
 			unless installer.url_name.nil?
-				(name, webapp_path) = self.install_webapp installer
+				(name, webapp_path) = self.install_webapp(installer, downloaded_file)
 				self.show_in_dashboard = true
 			else
 				self.show_in_dashboard = false
@@ -208,7 +217,7 @@ class App < ActiveRecord::Base
 			end
 			self.install_status = 60
 			self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-			self.theme = self.install_theme(installer) if installer.kind == 'theme'
+			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
@@ -381,17 +390,15 @@ class App < ActiveRecord::Base
 		end
 	end
 
-	def install_theme(installer)
+	def install_theme(installer, source)
 
 		return if (installer.source_url.nil? or installer.source_url.blank?)
-
-		fname = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
 
 		dir = nil
 		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do
 			mkdir '.unpack'
 			Dir.chdir(".unpack") do
-				unpack(installer.source_url, fname)
+				unpack(installer.source_url, source)
 				# if only one file, move it to html!
 				files = Dir.glob('*')
 				if files.size == 1
@@ -408,7 +415,7 @@ class App < ActiveRecord::Base
 		Theme.dir2theme(dir)
 	end
 
-	def install_webapp(installer)
+	def install_webapp(installer, source)
 
 		name = webapp_name(installer.url_name)
 		path = WEBAPP_PATH % name
@@ -421,14 +428,12 @@ class App < ActiveRecord::Base
 
 		return [name, path] if (installer.source_url.nil? or installer.source_url.blank?)
 
-		fname = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
-
 		one_dir = true
 		Dir.chdir(path) do
 			mkdir 'unpack'
 			mkdir 'logs'
 			Dir.chdir("unpack") do
-				unpack(installer.source_url, fname)
+				unpack(installer.source_url, source)
 				# if only one file, move it to html!
 				files = Dir.glob('*')
 				if files.size == 1
