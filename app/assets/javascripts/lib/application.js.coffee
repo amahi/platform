@@ -1,6 +1,6 @@
 $(document).ready ->
   $(".preftab").on "click", ".stretchtoggle", ->
-    $(this).parents("div:first").find(".settings-stretcher:first").toggle('slow')
+    $(this).parents("div:first").find(".settings-stretcher:first").toggle()
     false
 
   SmartLinks.initialize
