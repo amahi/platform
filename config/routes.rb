@@ -26,6 +26,7 @@ AmahiHDA::Application.routes.draw do
       put 'toggle_guest_writeable'
       put 'update_tags'
       put 'update_path'
+      put 'update_workgroup'
       put 'toggle_disk_pool'
       put 'update_extras'
       put 'clear_permissions'

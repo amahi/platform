@@ -41,6 +41,7 @@ class SharesController < ApplicationController
 
 	def settings
 		@page_title = t('shares')
+		@workgroup = Setting.find_by_name('workgroup')
 	end
 
 	def toggle_visible
@@ -94,6 +95,15 @@ class SharesController < ApplicationController
 		sleep 2 if development?
 		@saved = @share.update_tags!(params)
 		render :json => { :status => @saved ? :ok : :not_acceptable }
+	end
+
+	def update_workgroup
+		sleep 2 if development?
+		@workgroup = Setting.find(params[:id])
+		if @workgroup && @workgroup.name.eql?("workgroup")
+			 @workgroup.update_attributes(params[:share])
+		end
+		render :json => { :status => @workgroup ? :ok : :not_acceptable }
 	end
 
 	def update_extras
