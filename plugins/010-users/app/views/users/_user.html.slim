@@ -34,7 +34,7 @@ div.user[id="whole_user_#{user.id}"]
               td = simple_remote_text    :id => "#{user.id}",
                                          :url => users_engine.user_path(:id => user.id),
                                          :label => "Edit",
-                                         :disabled => !can_i_toggle_admin?(user),
+                                         :disabled => !current_user.admin?,
                                          :value => "#{user.name}",
                                          :name => :name,
                                          :method => :put,

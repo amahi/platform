@@ -111,11 +111,54 @@ feature "Users tab" do
 		expect(user.reload.admin?).to eq true
 		page.should have_checked_field(checkbox)
 	end
-	scenario "should allow an admin user to change his full name" do
-		pending
+	scenario "should allow an admin user to change his full name", :js => true do
+		admin = create(:admin)
+		visit root_path
+		page.has_text?("Amahi Server Login")
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		click_button "Log In"
+		page.has_text?("Setup")
+		visit users_engine.users_path
+		page.has_text?("Username")
+		page.has_text?("Full Name")
+		user_link = find("#whole_user_#{admin.id}")
+		user_link.find("tr").click_link admin.login
+		page.has_button?('edit')
+		page.has_field?("name",:with=>"#{admin.name}")
+		within("#form_user_#{admin.id}") do
+			fill_in "name" ,:with=>"changedname"
+			click_button "edit"
+			wait_for_ajax
+		end
+		page.has_field?("name",:with=>"changedname")
+		user_link.has_field?("tr",:with=>"changedname")
+		expect(admin.reload.name).to eq "changedname"
 	end
-	scenario "should allow an admin user to change the full name of another user" do
-		pending
+	scenario "should allow an admin user to change the full name of another user", :js => true do
+		admin = create(:admin)
+		user = create(:user)
+		visit root_path
+		page.has_text?("Amahi Server Login")
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		click_button "Log In"
+		page.has_text?("Setup")
+		visit users_engine.users_path
+		page.has_text?("Username")
+		page.has_text?("Full Name")
+		user_link = find("#whole_user_#{user.id}")
+		user_link.find("tr").click_link user.login
+		page.has_button?('edit')
+		page.has_field?("name",:with=>"#{user.name}")
+		within("#form_user_#{user.id}") do
+			fill_in "name" ,:with=>"changedname"
+			click_button "edit"
+			wait_for_ajax
+		end
+		page.has_field?("name",:with=>"changedname")
+		user_link.has_field?("tr",:with=>"changedname")
+		expect(user.reload.name).to eq "changedname"
 	end
 	scenario "should allow an admin user to change his password" do
 		pending
