@@ -76,7 +76,7 @@ class UsersController < ApplicationController
 			render :json => { :status => id==nil ? :error_occured : :ok, :id => id }
 		else
 		render :json => { status: 'not_acceptable' , id: id }
-		end	
+		end
 	end
 
 	def toggle_admin
@@ -112,7 +112,7 @@ class UsersController < ApplicationController
 	end
 
 	def can_i_edit_details?(user)
-		(current_user == user || current_user.admin?) 
+		(current_user == user || current_user.admin?)
 	end
 
 end

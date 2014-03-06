@@ -88,11 +88,11 @@ module ApplicationHelper
 	end
 
 	def simple_remote_text options
-		parsed_options = {}	
+		parsed_options = {}
 		parsed_options[:disabled] = 'disabled' if options[:disabled]
-		content_tag('span', :id => options[:id]) do
+		content_tag('div', :id => "div_form_#{options[:id]}") do
 			html = ''
-			html << content_tag('form',{:action=>options[:url], :method => options[:method],:data => {:remote=>options[:remote]},:id=>"form_user_#{options[:id]}", :class=>"edit_name_form"}) do 
+			html << content_tag('form',{:action=>options[:url], :method => options[:method],:data => {:remote=>options[:remote]},:id=>"form_user_#{options[:id]}", :class=>"edit_name_form"}) do
 				input_html =''
 				input_html << tag('input', {:class => options[:css_class], :id => "text_user_#{options[:id]}", :name => options[:name], :value => options[:value], :type => 'text'}.merge(parsed_options))
 				input_html << "&nbsp;&nbsp;"

@@ -18,7 +18,7 @@ $(document).on "ajax:success", ".edit_name_form", (event, results) ->
     $(col_element).find(".users-col2").html results["name"]
   else
     alert results["message"]
-  
+
 
 
 # update user password

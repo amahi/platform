@@ -87,8 +87,8 @@ feature "Users tab" do
 		page.should have_checked_field(checkbox)
 		page.uncheck(checkbox)
 		wait_for_ajax
-		expect(user.reload.admin?).to eq false
 		page.should have_unchecked_field(checkbox)
+		expect(user.reload.admin?).to eq false
 	end
 	scenario "should allow an admin user to promote a regular user to admin", :js => true do
 		admin = create(:admin)
@@ -108,8 +108,8 @@ feature "Users tab" do
 		page.should_not have_checked_field(checkbox)
 		page.check(checkbox)
 		wait_for_ajax
-		expect(user.reload.admin?).to eq true
 		page.should have_checked_field(checkbox)
+		expect(user.reload.admin?).to eq true
 	end
 	scenario "should allow an admin user to change his full name", :js => true do
 		admin = create(:admin)

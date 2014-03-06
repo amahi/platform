@@ -15,6 +15,7 @@ SCREENSHOTS_ON_FAILURES=false
 if SCREENSHOTS_ON_FAILURES
 	require 'capybara-screenshot/rspec'
 end
+
 def wait_for_ajax
   Timeout.timeout(Capybara.default_wait_time) do
     loop do
