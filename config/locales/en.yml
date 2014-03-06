@@ -121,6 +121,7 @@
   all_users: All users
   delete_share: Delete share
   edit_share: Edit share
+  shares_global_settings: Global Settings for Shares
   visible: Visible
   read_only: Read Only
   tags: Tags

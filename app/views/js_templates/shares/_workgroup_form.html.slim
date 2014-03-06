@@ -1,0 +1,18 @@
+= form_for Share.new,\
+    :remote => true,\
+    :url => '/shares/${workgroup_id}/update_workgroup',\
+    :method => :put,\
+    :html => {\
+      :class => 'share area update-form update-workgroup-form form-inline',\
+      :id => 'update-workgroup-form'\
+    } do |f|
+
+  .control-group
+    .controls
+      = text_field :share, :value, :size => 38, :maxlength => 128, :placeholder => t('workgroup_name')
+  .control-group
+    .controls
+      = spinner
+      = f.submit "#{t('change')}".html_safe, :class => 'btn'
+      = link_to t('cancel'), '#', :class => 'close-update-workgroup-area cancel-link'
+    .messages
