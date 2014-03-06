@@ -69,6 +69,7 @@ RSpec.configure do |config|
 	#change the default javascript driver to webkit
 	config.before(:suite) do
 		Capybara.javascript_driver = :poltergeist
+		Capybara.default_driver = :poltergeist
 	end
 	config.after(:each) do
 		Capybara.reset_sessions!

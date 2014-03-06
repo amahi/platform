@@ -36,7 +36,7 @@ feature "Users tab" do
 		page.has_text?("Username")
 		page.has_text?("Full Name")
 		find("#whole_user_#{user.id}").find("tr").click_link user.login
-		expect(page).to have_selector("a#delete-user-#{user.id}", :visible => true);
+		expect(page).to have_selector("a#delete-user-#{user.id}", :visible => true)
 		click_link "delete-user-#{user.id}"
 		page.has_no_text?(user.name)
 	end
@@ -161,10 +161,66 @@ feature "Users tab" do
 		expect(user.reload.name).to eq "changedname"
 	end
 	scenario "should allow an admin user to change his password" do
-		pending
+		admin = create(:admin)
+		user = create(:user)
+		visit root_path
+		page.has_text?("Amahi Server Login")
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		click_button "Log In"
+		page.has_text?("Setup")
+		visit users_engine.users_path
+		page.has_text?("Username")
+		page.has_text?("Full Name")
+		user_link = find("#whole_user_#{admin.id}")
+		user_link.find("tr").click_link admin.login
+		within(user_link) do
+			expect(user_link).to have_selector("a#user-password-control-action-#{admin.id}", :visible => true)
+			user_link.has_link?("a#user-password-control-action-#{admin.id}")
+			link = user_link.find_by_id("user-password-control-action-#{admin.id}")
+			link.click
+			user_link.has_field?("user[password]")
+			user_link.has_field?("user[password_confirmation]")
+			password_input = user_link.find_field("user[password]")
+			password_confirm_input = user_link.find_field("user[password_confirmation]")
+			password_input.set "secret"
+			password_confirm_input.set "secret"
+			submit_link = user_link.find_by_id("submit_password_#{admin.id}")
+			submit_link.click
+			wait_for_ajax
+		end
+		expect(admin.reload.password).to eq "secret"
 	end
 	scenario "should allow an admin user to change another user's password" do
-		pending
+		admin = create(:admin)
+		user = create(:user)
+		visit root_path
+		page.has_text?("Amahi Server Login")
+		fill_in "username", :with => admin.login
+		fill_in "password", :with => "secret"
+		click_button "Log In"
+		page.has_text?("Setup")
+		visit users_engine.users_path
+		page.has_text?("Username")
+		page.has_text?("Full Name")
+		user_link = find("#whole_user_#{user.id}")
+		user_link.find("tr").click_link user.login
+		within(user_link) do
+			expect(user_link).to have_selector("a#user-password-control-action-#{user.id}", :visible => true)
+			user_link.has_link?("a#user-password-control-action-#{user.id}")
+			link = user_link.find_by_id("user-password-control-action-#{user.id}")
+			link.click
+			user_link.has_field?("user[password]")
+			user_link.has_field?("user[password_confirmation]")
+			password_input = user_link.find_field("user[password]")
+			password_confirm_input = user_link.find_field("user[password_confirmation]")
+			password_input.set "secret"
+			password_confirm_input.set "secret"
+			submit_link = user_link.find_by_id("submit_password_#{user.id}")
+			submit_link.click
+			wait_for_ajax
+		end
+		expect(user.reload.password).to eq "secret"
 	end
 end
 
