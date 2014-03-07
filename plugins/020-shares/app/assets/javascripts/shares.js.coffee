@@ -142,6 +142,9 @@ Shares =
 				value = FormHelpers.find_first(form).val()
 				#update that link value with the new value entered in form.
 				link.text value
+			else
+				alert(results["errors"])
+
 
 		$(document).on "ajax:complete", ".update-workgroup-form", ->
 			form = $(this)
