@@ -27,6 +27,12 @@ class Setting < ActiveRecord::Base
 	scope :network, by_kind(NETWORK)
 	scope :shares,  by_kind(SHARES)
 
+	validates :value,
+	          :length => { :maximum => 15 },
+	          :format => { :with => /^[a-zA-Z][a-zA-Z0-9]{0,14}$/ },
+	          :if => Proc.new { |x| x.kind.eql?(Setting::GENERAL) && x.name.eql?('workgroup') },
+	          :on => :update
+
 	class << self
 
 		def value_by_name(name)

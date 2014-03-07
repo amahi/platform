@@ -99,11 +99,11 @@ class SharesController < ApplicationController
 
 	def update_workgroup
 		sleep 2 if development?
-		@workgroup = Setting.find(params[:id])
+		@workgroup = Setting.find(params[:id]) if params[:id]
 		if @workgroup && @workgroup.name.eql?("workgroup")
-			 @workgroup.update_attributes(params[:share])
+			@saved = @workgroup.update_attributes(params[:share])
 		end
-		render :json => { :status => @workgroup ? :ok : :not_acceptable }
+		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
 	def update_extras
