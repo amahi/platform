@@ -94,10 +94,15 @@ class UsersController < ApplicationController
 	def update_password
 		sleep 2 if development?
 		@user = User.find(params[:id])
-		@user.update_attributes(params[:user])
-		errors = @user.errors.any?
-		render :json => { :status => errors ? :not_acceptable : :ok,
-			:message => errors ? @user.errors.full_messages.join(', ') : t('password_changed_successfully') }
+		if(params[:user][:password].blank? || params[:user][:password_confirmation].blank?)
+			errors = true
+			error = t("password_cannot_be_blank")
+		else
+			@user.update_attributes(params[:user])
+			errors = @user.errors.any?
+			error = @user.errors.full_messages.join(', ')
+		end
+		render :json => { :status => errors ? :not_acceptable : :ok, :message => errors ?  error : t('password_changed_successfully') }
 	end
 
 	def update_name
