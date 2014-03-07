@@ -41,7 +41,7 @@ class SharesController < ApplicationController
 
 	def settings
 		@page_title = t('shares')
-		@workgroup = Setting.find_by_name('workgroup')
+		@workgroup = Setting.find_or_create_by(Setting::GENERAL, 'workgroup', 'WORKGROUP')
 	end
 
 	def toggle_visible
