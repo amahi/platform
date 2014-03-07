@@ -123,7 +123,6 @@ input[type="password"] {
       @include clearfix;
 
       .controls {
-        float: left;
         margin: 0 20px 0 0;
       }
 
@@ -134,7 +133,6 @@ input[type="password"] {
   }
 
   .control-group {
-    float: left;
     margin: 0 10px 0 0;
   }
 }
@@ -152,13 +150,12 @@ input[type="password"] {
   @include clearfix;
 
   .controls {
-    float: left;
     input[type=text], input[type=password] {
       margin: 0;
     }
   }
 
-  div.messages { margin-left: 180px; width: auto; }
+  div.messages { width: auto; }
 
   .cancel-link {
     margin: 0 0 0 10px;
@@ -184,14 +181,13 @@ input[type="password"] {
     @include clearfix;
     margin: 0 0 10px;
 
-    .controls { float: left; }
+    .controls {  }
 
     div.messages {
       color: darkgrey;
       line-height: 26px;
       height: 26px;
       margin-left: 10px;
-      float: left;
     }
   }
 }

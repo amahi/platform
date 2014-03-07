@@ -42,13 +42,14 @@ class UsersController < ApplicationController
 				user.name = params[:name]
 				user.save!
 				name = user.name
-				@saved = true
 				errors = user.errors.any? ? user.error.full_messages.join(', ') : false
 			else
 				errors = t('the_name_cannot_be_blank')
 			end
+		else
+			errors = "Dont have permission to edit user details"
 		end
-		render :json => { :status => @saved ? :ok : :not_acceptable , :message => errors ? errors : true , :name=> name, :id=>params[:id] }
+		render :json => { :status => errors ? :ok : :not_acceptable , :message => errors ? errors : "Name changed Successfully" , :name=> name, :id=>params[:id] }
 	end
 
 	def update_pubkey

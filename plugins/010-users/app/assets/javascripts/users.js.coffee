@@ -10,26 +10,26 @@ $(document).on "ajax:success", ".btn-delete", (event, results) ->
       user.remove()
 #update fullname
 $(document).on "ajax:success", ".edit_name_form", (event, results) ->
+  msg = $(this).find(".messages")
+  msg.html results.message
+  setTimeout (-> msg.html ""), 8000
   id = results["id"]
   element = $("#text_user_" + results["id"])
   $(element).val results["name"]
-  if results.status is "ok" and results.message is true
+  if results.status is "ok"
     col_element = $("#whole_user_" + results["id"])
     $(col_element).find(".users-col2").html results["name"]
-  else
-    alert results["message"]
 
 
 
 # update user password
 $(document).on 'ajax:success', '.update-password', (event, results) ->
-	msg = $(this).nextAll(".messages:first")
-	msg.text results["message"]
-	setTimeout (-> msg.text ""), 8000
-
-$(document).on 'ajax:complete', '.update-password', ->
-	$(this).find(".password-edit").hide()
-	$(this).find("input[type=password]").val ""
+	msg = $(this).find(".messages:first")
+	msg.html results["message"]
+	setTimeout (-> msg.html ""), 8000
+	if results.status is 'ok'
+		$(this).find("input[type=password]").val ""
+		$(this).find(".password-edit").hide("slow")
 
 # new user
 $(document).on 'ajax:success', '#new-user-form', (event, results) ->
