@@ -134,18 +134,18 @@
         Are you sure you want to disable Windows 95/98 authentication mode?
   disabling_pdc_will_enable_workgroup_mode: |-
         Disabling PDC mode will enable Workgroup mode.
-
+        
         This is a MAJOR change in the way the shares operate. This is meant for home networks (check the wiki for more).
-
+        
         Are you sure you want to disable PDC mode?
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: |-
         Enabling debug will potentially generate very large log files.
         Are you sure you want to enable Samba debugging?
   enabling_pdc_is_a_major_share_change: |-
         Enabling PDC mode is a MAJOR change in the way the shares operate.
-
+        
         This will enable Domain mode and disable Workgroup mode and require that ALL machines be enterprise (or "PRO") machines, using proper credentials. It is meant for enterprise networks.
-
+        
         Are you sure you want to enable PDC mode?
   enabling_lan_manager_is_less_secure: |-
         Enabling Windows 95/98 mode authentication is less secure and may help accesses with older machines.
