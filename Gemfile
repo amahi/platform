@@ -5,15 +5,14 @@ gem 'rails', '3.2.17'
 gem 'mysql2'
 gem "yettings"
 
-# Commenting this out because we're not going to pre-compile assets for now
-#group :assets do
+group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
 
   gem 'therubyracer'
 
   gem 'uglifier'
-#end
+end
 
 gem 'jbuilder'
 gem 'ya2yaml'
@@ -22,8 +21,8 @@ gem 'themes_for_rails'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-# FIXME-cpg: this requirement of 1.3.8 is because bundle update forced slim to 1.0.1! (!?)
-gem 'slim', '~> 1.3.8'
+
+gem 'slim'
 
 gem 'authlogic'
 
