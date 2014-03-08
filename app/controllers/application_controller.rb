@@ -88,6 +88,22 @@ class ApplicationController < ActionController::Base
 		Yetting.locales_implemented
 	end
 
+	# Sanitizes the String or a Hash by removing the
+	# escape characters like ^M which is originated from
+	# end-of-line on Windows platform.
+	# Expects either a Hash or a String,
+	# and returns the same
+	def sanitize_text(arg)
+		if arg.is_a? Hash
+			Hash[arg.to_a.map do |x, y|
+				[x, y.lines.map(&:chomp).join("\n")]
+			end]
+		else
+			#arg is a String
+			arg.lines.map(&:chomp).join("\n")
+		end
+	end
+
 	private
 
 	def set_locale
