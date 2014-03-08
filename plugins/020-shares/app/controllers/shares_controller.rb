@@ -103,7 +103,7 @@ class SharesController < ApplicationController
 		if @workgroup && @workgroup.name.eql?("workgroup")
 			@saved = @workgroup.update_attributes(params[:share])
 		end
-		render :json => { :status => @saved ? :ok : :not_acceptable }
+		render :json => { :status => @saved ? :ok : :not_acceptable, :message => @saved ? t('workgroup_changed_successfully') : t('error_occured') }
 	end
 
 	def update_extras

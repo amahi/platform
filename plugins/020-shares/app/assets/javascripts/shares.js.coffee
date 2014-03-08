@@ -39,6 +39,11 @@ Shares =
 		$(document).on "ajax:success", ".btn-delete", ->
 			share = _this.share($(this))
 			share.remove()
+		#update workgroup
+		$(document).on "ajax:success", ".edit_workgroup_form",(event, results) ->
+			msg = $(this).find(".messages")
+			msg.html results.message
+			setTimeout (-> msg.html ""), 8000
 
 		RemoteCheckbox.initialize
 			selector: ".share_visible_checkbox"
@@ -111,45 +116,6 @@ Shares =
 				form.hide "slow", ->
 					form.remove()
 					link.show()
-
-		SmartLinks.initialize
-			open_selector: ".open-update-workgroup-area"
-			close_selector: ".close-update-workgroup-area"
-			onShow: (open_link) ->
-				console.log(open_link)
-				placeholder = open_link.text()
-				workgroup_div = _this.share(open_link) #extract original workgroup container
-				#parse dumped "id" from div, so that it can be passed to form for update
-				workgroup_id = _this.parse_id(workgroup_div.attr('id'))
-
-				open_link.after Templates.run("updateWorkgroup",
-					workgroup_id: workgroup_id,
-				)
-
-				#extract the <form> from above:
-				form = open_link.next()
-				FormHelpers.update_first form, open_link.text()
-				FormHelpers.focus_first form
-
-		$(document).on "ajax:success", ".update-workgroup-form", (data, results) ->
-			if results["status"] is "ok"
-				#on completion, acquire form,
-				form = $(this)
-				#span.open-update-workgroup-area element which holds the value,
-				#to be displayed on page after AJAX request
-				link = form.prev()
-				#find the updated value from form:
-				value = FormHelpers.find_first(form).val()
-				#update that link value with the new value entered in form.
-				link.text value
-
-		$(document).on "ajax:complete", ".update-workgroup-form", ->
-			form = $(this)
-			link = form.prev()
-			form.hide "slow", ->
-				form.remove()
-				link.show()
-
 
 
 		RemoteCheckbox.initialize

@@ -98,6 +98,7 @@
   new: New
   password_cannot_be_blank: Password cannot be blank
   password_changed_successfully: Password changed successfully
+  workgroup_changed_successfully: Workgroup changed successfully
   password_is_too_short: Password is too short
   password_looks_good: Password looks good
   the_name_cannot_be_blank: The name cannot be blank

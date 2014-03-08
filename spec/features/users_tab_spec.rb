@@ -124,11 +124,11 @@ feature "Users tab" do
 		page.has_text?("Full Name")
 		user_link = find("#whole_user_#{admin.id}")
 		user_link.find("tr").click_link admin.login
-		page.has_button?('edit')
+		page.has_button?('Edit')
 		page.has_field?("name",:with=>"#{admin.name}")
 		within("#form_user_#{admin.id}") do
 			fill_in "name" ,:with=>"changedname"
-			click_button "edit"
+			click_button "Edit"
 			wait_for_ajax
 		end
 		page.has_field?("name",:with=>"changedname")
@@ -149,11 +149,11 @@ feature "Users tab" do
 		page.has_text?("Full Name")
 		user_link = find("#whole_user_#{user.id}")
 		user_link.find("tr").click_link user.login
-		page.has_button?('edit')
+		page.has_button?('Edit')
 		page.has_field?("name",:with=>"#{user.name}")
 		within("#form_user_#{user.id}") do
 			fill_in "name" ,:with=>"changedname"
-			click_button "edit"
+			click_button "Edit"
 			wait_for_ajax
 		end
 		page.has_field?("name",:with=>"changedname")
