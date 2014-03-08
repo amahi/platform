@@ -108,6 +108,7 @@ class SharesController < ApplicationController
 
 	def update_extras
 		sleep 2 if development?
+		params[:share] = sanitize_text(params[:share])
 		@saved = @share.update_extras!(params)
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
