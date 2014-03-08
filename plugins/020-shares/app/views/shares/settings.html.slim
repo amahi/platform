@@ -1,4 +1,4 @@
-div.share[id="workgroup_#{@workgroup.try(:id)}"]
+.share[id="workgroup_#{@workgroup.try(:id)}"]
   .settings-stretcher
     fieldset
       legend
@@ -11,7 +11,7 @@ div.share[id="workgroup_#{@workgroup.try(:id)}"]
               td
                 label #{t("workgroup_name")}
               td
-                span.open-update-workgroup-area.focus= @workgroup.try(:value)
+                .open-update-workgroup-area.focus= @workgroup.try(:value)
 
 
 

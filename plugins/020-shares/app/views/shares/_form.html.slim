@@ -5,12 +5,11 @@
     fieldset
       legend &nbsp; #{t('create_a_new_share')} &nbsp;
 
-      div.create-inside
-        = render :partial => 'shared/errors', :object => @share
+      .create-inside
+        / = render :partial => 'shared/errors', :object => @share
 
         .control-group
           .controls = f.text_field :name, :size => 16, :maxlength => 20, :placeholder => "Name"
-          .messages
 
         .control-group
           .controls
