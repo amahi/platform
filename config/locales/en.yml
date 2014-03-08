@@ -92,7 +92,7 @@
   confirmation_matches: Confirmation matches
   confirmation_must_match: Confirmation must match
   full_name_looks_good: Full name looks good
-  name_changed_succesfully: Name changed Successfully
+  name_changed_successfully: Name changed Successfully
   dont_have_permissions : Dont have permission to edit user details
   error_occured : "Error occurred"
   new: New
