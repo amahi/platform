@@ -42,13 +42,14 @@ class UsersController < ApplicationController
 				user.name = params[:name]
 				user.save!
 				name = user.name
-				@saved = true
 				errors = user.errors.any? ? user.error.full_messages.join(', ') : false
 			else
 				errors = t('the_name_cannot_be_blank')
 			end
+		else
+			errors = t('dont_have_permissions')
 		end
-		render :json => { :status => @saved ? :ok : :not_acceptable , :message => errors ? errors : true , :name=> name, :id=>params[:id] }
+		render :json => { :status => errors ? :ok : :not_acceptable , :message => errors ? errors : t('name_changed_successfully') , :name=> name, :id=>params[:id] }
 	end
 
 	def update_pubkey
@@ -73,7 +74,7 @@ class UsersController < ApplicationController
 		if @user && @user != current_user && !@user.admin?
 			@user.destroy
 			id = @user.id unless @user.errors.any?
-			render :json => { :status => id==nil ? :error_occured : :ok, :id => id }
+			render :json => { :status => id==nil ? t('error_occured') : :ok, :id => id }
 		else
 		render :json => { status: 'not_acceptable' , id: id }
 		end
@@ -93,10 +94,15 @@ class UsersController < ApplicationController
 	def update_password
 		sleep 2 if development?
 		@user = User.find(params[:id])
-		@user.update_attributes(params[:user])
-		errors = @user.errors.any?
-		render :json => { :status => errors ? :not_acceptable : :ok,
-			:message => errors ? @user.errors.full_messages.join(', ') : t('password_changed_successfully') }
+		if(params[:user][:password].blank? || params[:user][:password_confirmation].blank?)
+			errors = true
+			error = t("password_cannot_be_blank")
+		else
+			@user.update_attributes(params[:user])
+			errors = @user.errors.any?
+			error = @user.errors.full_messages.join(', ')
+		end
+		render :json => { :status => errors ? :not_acceptable : :ok, :message => errors ?  error : t('password_changed_successfully') }
 	end
 
 	def update_name

@@ -14,6 +14,15 @@ Spinner =
       form = $(this)
       form.parent().prev().show "fast"
 
+    $(document).on "ajax:beforeSend", ".edit_name_form", ->
+      form = $(this)
+      form.find(".spinner").show "fast"
+      form.find("button, input[type=submit]").hide()
+    $(document).on "ajax:complete", ".edit_name_form", ->
+      form = $(this)
+      form.find(".spinner").hide()
+      form.find("button, input[type=submit]").show()
+
     $(document).on "ajax:complete", ".short-form", ->
       form = $(this)
       form.parent().prev().hide()
