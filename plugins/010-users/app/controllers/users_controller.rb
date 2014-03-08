@@ -47,9 +47,9 @@ class UsersController < ApplicationController
 				errors = t('the_name_cannot_be_blank')
 			end
 		else
-			errors = "Dont have permission to edit user details"
+			errors = t('dont_have_permissions')
 		end
-		render :json => { :status => errors ? :ok : :not_acceptable , :message => errors ? errors : "Name changed Successfully" , :name=> name, :id=>params[:id] }
+		render :json => { :status => errors ? :ok : :not_acceptable , :message => errors ? errors : t('name_changed_successfully') , :name=> name, :id=>params[:id] }
 	end
 
 	def update_pubkey
@@ -74,7 +74,7 @@ class UsersController < ApplicationController
 		if @user && @user != current_user && !@user.admin?
 			@user.destroy
 			id = @user.id unless @user.errors.any?
-			render :json => { :status => id==nil ? :error_occured : :ok, :id => id }
+			render :json => { :status => id==nil ? t('error_occured') : :ok, :id => id }
 		else
 		render :json => { status: 'not_acceptable' , id: id }
 		end
