@@ -17,19 +17,15 @@
         / = render :partial => 'shared/errors', :object => @user
         .control-group
           .controls= f.text_field :login, :size => 16, :maxlength => 20, :placeholder => t('username')
-          .messages
 
         .control-group
           .controls= f.text_field :name, :size => 16, :maxlength => 64, :placeholder => t('full_name')
-          .messages
 
         .control-group
           .controls= f.password_field :password, :size => 16, :maxlength => 12, :placeholder => t('password')
-          .messages
 
         .control-group
           .controls= f.password_field :password_confirmation, :size => 16, :maxlength => 12, :placeholder => t('confirm')
-          .messages
 
         .control-group.create-btn
           .controls
