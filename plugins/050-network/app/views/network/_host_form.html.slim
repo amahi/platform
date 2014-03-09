@@ -5,11 +5,10 @@
     legend &nbsp; #{t('create_a_new_host')} &nbsp;
 
     .create-inside
-      = render partial: 'shared/errors', object: @host
+      /= render partial: 'shared/errors', object: @host
 
       .control-group
         .controls= f.text_field :name, size: 16, maxlength: 20, placeholder: t('name')
-        .messages
 
       .control-group
         .controls= f.text_field :mac, size: 16, maxlength: 20, placeholder: t('mac_address')

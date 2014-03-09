@@ -32,13 +32,17 @@ div.user[id="whole_user_#{user.id}"]
               td
                 label #{t('name')}
               td = simple_remote_text    :id => "#{user.id}",
+                                         :input_id =>"text_user_#{user.id}",
+                                         :form_id => "form_user_#{user.id}",
+                                         :button_id => "change_fullname_user_#{user.id}",
                                          :url => users_engine.user_path(:id => user.id),
                                          :label => "Edit",
                                          :disabled => !current_user.admin?,
                                          :value => "#{user.name}",
                                          :name => :name,
                                          :method => :put,
-                                         :remote => true
+                                         :remote => true,
+                                         :form_css_class => "edit_name_form"
             - if advanced?
               tr
                 td

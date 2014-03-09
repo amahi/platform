@@ -39,6 +39,11 @@ Shares =
 		$(document).on "ajax:success", ".btn-delete", ->
 			share = _this.share($(this))
 			share.remove()
+		#update workgroup
+		$(document).on "ajax:success", ".edit_workgroup_form",(event, results) ->
+			msg = $(this).find(".messages")
+			msg.html results.message
+			setTimeout (-> msg.html ""), 8000
 
 		RemoteCheckbox.initialize
 			selector: ".share_visible_checkbox"
@@ -156,8 +161,6 @@ Shares =
 				form.hide "slow", ->
 					form.remove()
 					link.show()
-
-
 
 		RemoteCheckbox.initialize
 			selector: ".disk_pooling_checkbox"

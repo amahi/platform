@@ -106,8 +106,7 @@ class SharesController < ApplicationController
 			@errors = @workgroup.errors.full_messages.join(', ') unless @saved
 			Share.push_shares
 		end
-		render :json => { :status => @saved ? :ok : :not_acceptable,
-		                  :errors => @errors }
+		render :json => { :status => @saved ? :ok : :not_acceptable, :message => @saved ? t('workgroup_changed_successfully') : t('error_occured') }
 	end
 
 	def update_extras

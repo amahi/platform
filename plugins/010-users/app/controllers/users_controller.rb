@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 		else
 			errors = t('dont_have_permissions')
 		end
-		render :json => { :status => errors ? :ok : :not_acceptable , :message => errors ? errors : t('name_changed_successfully') , :name=> name, :id=>params[:id] }
+		render :json => { :status => errors ? :not_acceptable : :ok , :message => errors ? errors : t('name_changed_successfully') , :name=> name, :id=>params[:id] }
 	end
 
 	def update_pubkey

@@ -1,4 +1,4 @@
-div.share[id="workgroup_#{@workgroup.try(:id)}"]
+.share[id="workgroup_#{@workgroup.try(:id)}"]
   .settings-stretcher
     fieldset
       legend
@@ -10,13 +10,20 @@ div.share[id="workgroup_#{@workgroup.try(:id)}"]
             tr
               td
                 label #{t("workgroup_name")}
-              td
-                span.open-update-workgroup-area.focus= @workgroup.try(:value)
+              td = simple_remote_text    :id => "#{@workgroup.try(:id)}",
+                                         :input_id =>"text_workgroup_#{@workgroup.try(:id)}",
+                                         :form_id => "form_workgroup_#{@workgroup.try(:id)}",
+                                         :button_id => "change_workgroup_name_#{@workgroup.try(:id)}",
+                                         :url => "/shares/#{@workgroup.try(:id)}/update_workgroup",
+                                         :label => "Change",
+                                         :value => "#{@workgroup.try(:value)}",
+                                         :name => "share[value]",
+                                         :method => :put,
+                                         :remote => true,
+                                         :form_css_class => "edit_workgroup_form"
 
 
 
-= content_for(:js_templates) do
-  script[id="updateWorkgroupTemplate" type='text/x-jquery-tmp']
-    = render '/js_templates/shares/workgroup_form'
+
   script[id='updatePathTemplate' type='text/x-jquery-tmpl']
     = render '/js_templates/shares/path_form'
