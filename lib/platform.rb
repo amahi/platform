@@ -34,7 +34,7 @@ class Platform
 		DNSMASQ ? true : false
 	end
 
-	PLATFORMS=['fedora', 'centos', 'ubuntu', 'debian', 'mac']
+	PLATFORMS=['fedora', 'centos', 'ubuntu', 'debian', 'mac', 'mint']
 	SERVICES={
 		'fedora' => {
 			:apache => 'httpd',
@@ -74,7 +74,15 @@ class Platform
 			:named => 'notsure', # FIXME
 			:smb => 'smbd',
 			:nmb => 'nmbd',
-		}
+		},
+    'mint' => {
+      :apache => 'apache2',
+      :dhcp => 'isc-dhcp-server',
+      :named => 'bind9',
+      :smb => 'smbd',
+      :nmb => 'nmbd',
+      :mysql => 'mysql',
+    }
 	}
 
 	FILENAMES={
@@ -127,7 +135,17 @@ class Platform
 			:monit_dir => 'junk',
 			:monit_log => 'junk',
 			:syslog => '/var/log/system.log',
-		}
+		},
+    'mint' => {
+        :apache_pid => 'apache2.pid',
+        :dhcpleasefile => dnsmasq? ? '/var/lib/dnsmasq/dnsmasq.leases' : '/var/lib/dhcp3/dhcpd.leases',
+        :samba_pid => 'samba/smbd.pid',
+        :dhcpd_pid => 'dhcp-server/dhcpd.pid',
+        :monit_dir => '/etc/monit/conf.d',
+        :monit_conf => '/etc/monit/monitrc',
+        :monit_log => '/var/log/monit.log',
+        :syslog => '/var/log/syslog',
+    }
 	}
 
 	class << self
@@ -165,7 +183,11 @@ class Platform
 
 		def debian?
 			@@platform == 'debian'
-		end
+    end
+
+    def mint?
+      @@platform == 'mint'
+    end
 
 		def mac?
 			@@platform == 'mac'
@@ -320,6 +342,7 @@ private
 				@@platform = "ubuntu" if line.include?("Ubuntu")
 				@@platform = "fedora" if line.include?("Fedora")
 				@@platform = "centos" if line.include?("CentOS")
+        @@platform = "mint"   if line.include?("Mint")
 			elsif File.exist?('/mach_kernel')
 				@@platform = "mac"
 			end
@@ -340,7 +363,7 @@ private
 		end
 
 		def pkginstall(pkgs, sha1 = nil)
-			if debian? or ubuntu?
+			if debian? or ubuntu? or mint?
 				c = Command.new "DEBIAN_FRONTEND=noninteractive apt-get -y install #{pkgs}"
 				c.run_now
 			elsif fedora? or centos?
@@ -361,7 +384,7 @@ private
 		end
 
 		def pkguninstall(pkgs)
-			if debian? or ubuntu?
+			if debian? or ubuntu? or mint?
 				c = Command.new "DEBIAN_FRONTEND=noninteractive apt-get -y remove #{pkgs}"
 				c.run_now
 			elsif fedora? or centos?
