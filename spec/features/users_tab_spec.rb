@@ -126,6 +126,7 @@ feature "Users tab" do
 			wait_for_ajax
 		end
 		expect(@user.reload.password).to eq "secret"
-	end
+  end
+
 end
 
