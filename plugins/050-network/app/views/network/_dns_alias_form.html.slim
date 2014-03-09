@@ -5,11 +5,10 @@
     legend &nbsp; #{t('create_a_new_dns_alias')} &nbsp;
 
     .create-inside
-      = render partial: 'shared/errors', object: @dns_alias
+      / = render partial: 'shared/errors', object: @dns_alias
 
       .control-group
         .controls= f.text_field :name, size: 16, maxlength: 20, placeholder: t('name')
-        .messages
 
       .control-group
         .controls= f.text_field :address, size: 16, maxlength: 20, placeholder: t('ip_address')

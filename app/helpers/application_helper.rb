@@ -92,12 +92,12 @@ module ApplicationHelper
 		parsed_options[:disabled] = 'disabled' if options[:disabled]
 		content_tag('div', :id => "div_form_#{options[:id]}") do
 			html = ''
-			html << content_tag('form',{:action=>options[:url], :method => options[:method],:data => {:remote=>options[:remote]},:id=>"form_user_#{options[:id]}", :class=>"edit_name_form"}) do
+			html << content_tag('form',{:action=>options[:url], :method => options[:method],:data => {:remote=>options[:remote]},:id=>options[:form_id], :class=>options[:form_css_class]}) do
 				input_html =''
-				input_html << tag('input', {:class => options[:css_class], :id => "text_user_#{options[:id]}", :name => options[:name], :value => options[:value], :type => 'text'}.merge(parsed_options))
+				input_html << tag('input', {:class => options[:input_css_class], :id =>options[:input_id] , :name => options[:name], :value => options[:value], :type => 'text'}.merge(parsed_options))
 				input_html << "&nbsp;&nbsp;"
 				input_html << "&nbsp;"
-				input_html << content_tag("button","edit",:class=> "btn btn-create margin-for-message",:type => "submit",:id=> "change_fullname_user_#{options[:id]}" )
+				input_html << content_tag("button",options[:label],:class=> "btn btn-create margin-for-message",:type => "submit",:id=> options[:button_id] )
 				input_html << content_tag("span", '', class: "spinner theme-image", style: "display: none")
 				input_html << content_tag("span", '', class: "messages")
 				input_html.html_safe
