@@ -117,7 +117,6 @@ Shares =
 					form.remove()
 					link.show()
 
-
 		RemoteCheckbox.initialize
 			selector: ".disk_pooling_checkbox"
 			parentSelector: "span:first"
