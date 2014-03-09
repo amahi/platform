@@ -116,6 +116,7 @@ Shares =
 			open_selector: ".open-update-workgroup-area"
 			close_selector: ".close-update-workgroup-area"
 			onShow: (open_link) ->
+				$(".messages.workgroup_error").text("")
 				console.log(open_link)
 				placeholder = open_link.text()
 				workgroup_div = _this.share(open_link) #extract original workgroup container
@@ -132,7 +133,9 @@ Shares =
 				FormHelpers.focus_first form
 
 		$(document).on "ajax:success", ".update-workgroup-form", (data, results) ->
+			msg_area = $('.messages.workgroup_error')
 			if results["status"] is "ok"
+				msg_area.text("")
 				#on completion, acquire form,
 				form = $(this)
 				#span.open-update-workgroup-area element which holds the value,
@@ -142,13 +145,17 @@ Shares =
 				value = FormHelpers.find_first(form).val()
 				#update that link value with the new value entered in form.
 				link.text value
+			else
+				msg_area.text results["errors"]
+
 
 		$(document).on "ajax:complete", ".update-workgroup-form", ->
-			form = $(this)
-			link = form.prev()
-			form.hide "slow", ->
-				form.remove()
-				link.show()
+			if $(".messages.workgroup_error").text() == ""
+				form = $(this)
+				link = form.prev()
+				form.hide "slow", ->
+					form.remove()
+					link.show()
 
 
 
