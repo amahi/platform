@@ -15,7 +15,7 @@
                                          :form_id => "form_workgroup_#{@workgroup.try(:id)}",
                                          :button_id => "change_workgroup_name_#{@workgroup.try(:id)}",
                                          :url => "/shares/#{@workgroup.try(:id)}/update_workgroup",
-                                         :label => "Change",
+                                         :label => t("change"),
                                          :value => "#{@workgroup.try(:value)}",
                                          :name => "share[value]",
                                          :method => :put,

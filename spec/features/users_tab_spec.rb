@@ -64,11 +64,11 @@ feature "Users tab" do
 	scenario "should allow an admin user to change his full name", :js => true do
 		user_link = find("#whole_user_#{@admin.id}")
 		user_link.find("tr").click_link @admin.login
-		page.should have_button('Edit')
+		page.should have_button('Change')
 		page.should have_field("name",:with=>"#{@admin.name}")
 		within("#form_user_#{@admin.id}") do
 			fill_in "name" ,:with=>"changedname"
-			click_button "Edit"
+			click_button "Change"
 			wait_for_ajax
 		end
 		page.should have_field("name",:with=>"changedname")
@@ -78,11 +78,11 @@ feature "Users tab" do
 	scenario "should allow an admin user to change the full name of another user", :js => true do
 		user_link = find("#whole_user_#{@user.id}")
 		user_link.find("tr").click_link @user.login
-		page.should have_button('Edit')
+		page.should have_button('Change')
 		page.should have_field("name",:with=>"#{@user.name}")
 		within("#form_user_#{@user.id}") do
 			fill_in "name" ,:with=>"changedname"
-			click_button "Edit"
+			click_button "Change"
 			wait_for_ajax
 		end
 		page.should have_field("name",:with=>"changedname")
