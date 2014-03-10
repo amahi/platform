@@ -15,9 +15,9 @@ div.settings-fields.settings-wrap
         td
           label = t 'advanced_settings'
         td
-          = tag "input", id: "advanced", class: "remote-check", type: "checkbox", checked: @advanced.set?,
-              data: { remote: true, url: settings_engine.toggle_setting_path(id: @advanced),
-              confirm: @advanced.set? ? nil : [t('avanced_settings_is_for_developers'),
+          = tag "input", id: "advanced", class: "remote-check", type: "checkbox", checked: @advanced_settings.set?,
+              data: { remote: true, url: settings_engine.toggle_setting_path(id: @advanced_settings),
+              confirm: @advanced_settings.set? ? nil : [t('avanced_settings_is_for_developers'),
                                 '', '', t('are_you_sure_advanced_features')].join("\n") }
           = spinner
           a href="http://wiki.amahi.org/index.php/Advanced_Settings" target="_blank" class="more-info"
