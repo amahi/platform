@@ -64,6 +64,9 @@ feature "Users tab" do
 	scenario "should allow an admin user to change his full name", :js => true do
 		user_link = find("#whole_user_#{@admin.id}")
 		user_link.find("tr").click_link @admin.login
+		expect(user_link).to have_selector("a.name_click_change", :visible => true)
+		link = user_link.find("a.name_click_change", :visible => true)
+		link.click
 		page.should have_button('Change')
 		page.should have_field("name",:with=>"#{@admin.name}")
 		within("#form_user_#{@admin.id}") do
@@ -71,13 +74,15 @@ feature "Users tab" do
 			click_button "Change"
 			wait_for_ajax
 		end
-		page.should have_field("name",:with=>"changedname")
 		user_link.find("table.settings").should have_content("changedname")
 		expect(@admin.reload.name).to eq "changedname"
 	end
 	scenario "should allow an admin user to change the full name of another user", :js => true do
 		user_link = find("#whole_user_#{@user.id}")
 		user_link.find("tr").click_link @user.login
+		expect(user_link).to have_selector("a.name_click_change", :visible => true)
+		link = user_link.find("a.name_click_change", :visible => true)
+		link.click
 		page.should have_button('Change')
 		page.should have_field("name",:with=>"#{@user.name}")
 		within("#form_user_#{@user.id}") do
@@ -85,7 +90,6 @@ feature "Users tab" do
 			click_button "Change"
 			wait_for_ajax
 		end
-		page.should have_field("name",:with=>"changedname")
 		user_link.find("table.settings").should have_content("changedname")
 		expect(@user.reload.name).to eq "changedname"
 	end

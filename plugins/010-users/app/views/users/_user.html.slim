@@ -31,7 +31,9 @@ div.user[id="whole_user_#{user.id}"]
             tr
               td
                 label #{t('name')}
-              td = simple_remote_text    :id => "#{user.id}",
+              td
+                a.name_click_change  #{user.name}
+                = simple_remote_text    :id => "#{user.id}",
                                          :input_id =>"text_user_#{user.id}",
                                          :form_id => "form_user_#{user.id}",
                                          :button_id => "change_fullname_user_#{user.id}",
@@ -42,7 +44,10 @@ div.user[id="whole_user_#{user.id}"]
                                          :name => :name,
                                          :method => :put,
                                          :remote => true,
-                                         :form_css_class => "edit_name_form"
+                                         :form_css_class => "edit_name_form form_hidden",
+                                         :cancel_class => "name_cancel_link"
+                .messages
+
             - if advanced?
               tr
                 td
