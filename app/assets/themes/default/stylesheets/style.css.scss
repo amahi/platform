@@ -54,9 +54,13 @@ a {
 }
 
 .workgroup_click_change,.name_click_change{
-  color : #535353;
-  text-decoration:underline;
+  color : #333;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  font-weight: bold;
+ &:hover { border-bottom: 1px dashed; text-decoration: none; }
 }
+
 
 // --------------------------------------------------
 // FORMS
