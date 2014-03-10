@@ -50,17 +50,23 @@ rails s
 
 Visit `http://localhost:3000/`, login with the username of `admin` & the password of `admin` and excersise the app as much as you can.
 
-#### 5. Create a pull request
+#### 5. Coding Style
+
+Try to remove suprious white spaces and such. We have a [Ruby beautifier](https://github.com/amahi/rb-beautifier) tool that we recommend. It's a basic ruby sctipt that will modify any number of files (in the command line) to
+make them more readable and keep the formatting conventions and styles that we like in Amahi.
+
+#### 6. Create a pull request
 
 When you are ready for your changes and it's good code that fits with the goals of the project, submit a pull request and we will merge it!
 
-#### 6. Agree to CLA
+#### 7. Agree to CLA
 
 For mutual protection, please check the icla.txt file for the individual contributor agreement we require for contributors. It's a virtual copy to Apache's CLA. Generally, you will be asked by email to read it and accept, otherwise it will be implied that you accept it. If you are working for a company or some large institution, we will ask that you submit a scan of the signed CLA for us to keep on file.
 
-#### 7. Plugins
+#### 8. Develop Plugins
 
-See the [plugins](doc/plugins.md) docs file.
+We are trying to make the platform more modular and also thinner. If you have some ideas for plugins that
+would improve the platform but are better done as plugins, See the [plugins](doc/plugins.md) docs file.
 
 # License
 
