@@ -11,8 +11,8 @@ $(document).on "ajax:success", ".btn-delete", (event, results) ->
 #update fullname
 $(document).ready ->
 	$(".name_click_change").click () ->
-	  $(this).hide('slow')
-	  $(this).parent().find(".edit_name_form").show('slow')
+	  $(this).hide()
+	  $(this).parent().find(".edit_name_form").show()
 
 	$(".name_cancel_link").click () ->
 	  id = $(this).data("id")
@@ -20,7 +20,7 @@ $(document).ready ->
 	  console.log(element)
 	  form = $(element).find('.edit_name_form')
 	  form.hide()
-	  $(element).find(".name_click_change").show('slow')
+	  $(element).find(".name_click_change").show()
 
 
 $(document).on "ajax:success", ".edit_name_form", (event, results) ->

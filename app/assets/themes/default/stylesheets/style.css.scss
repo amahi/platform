@@ -53,6 +53,11 @@ a {
   @include clearfix;
 }
 
+.workgroup_click_change,.name_click_change{
+  color : #535353;
+  text-decoration:underline;
+}
+
 // --------------------------------------------------
 // FORMS
 // --------------------------------------------------
