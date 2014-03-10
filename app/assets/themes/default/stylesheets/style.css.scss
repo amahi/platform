@@ -116,6 +116,7 @@ input[type="password"] {
     width: 600px;
   }
 
+
   .password-edit {
     .control-group {
       float: none;
@@ -135,6 +136,9 @@ input[type="password"] {
   .control-group {
     margin: 0 10px 0 0;
   }
+}
+.form_hidden{
+  display:none;
 }
 
 .form-horizontal {
@@ -961,7 +965,6 @@ td {
 
 .messages {
   overflow: hidden;
-  display: inline-block;
   width: 235px;
   img {
     margin: 0 10px;

@@ -104,9 +104,10 @@ class SharesController < ApplicationController
 			params[:share][:value].strip!
 			@saved = @workgroup.update_attributes(params[:share])
 			@errors = @workgroup.errors.full_messages.join(', ') unless @saved
+			name = @workgroup.value
 			Share.push_shares
 		end
-		render :json => { :status => @saved ? :ok : :not_acceptable, :message => @saved ? t('workgroup_changed_successfully') : t('error_occured') }
+		render :json => { :status => @saved ? :ok : :not_acceptable, :message => @saved ? t('workgroup_changed_successfully') : t('error_occured'), :name => name }
 	end
 
 	def update_extras

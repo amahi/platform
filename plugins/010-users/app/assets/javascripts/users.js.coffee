@@ -9,8 +9,23 @@ $(document).on "ajax:success", ".btn-delete", (event, results) ->
     user.hide "slow", ->
       user.remove()
 #update fullname
+$(document).ready ->
+	$(".name_click_change").click () ->
+	  $(this).hide('slow')
+	  $(this).parent().find(".edit_name_form").show('slow')
+
+	$(".name_cancel_link").click () ->
+	  id = $(this).data("id")
+	  element = "#whole_user_"+id
+	  console.log(element)
+	  form = $(element).find('.edit_name_form')
+	  form.hide()
+	  $(element).find(".name_click_change").show('slow')
+
+
 $(document).on "ajax:success", ".edit_name_form", (event, results) ->
-  msg = $(this).find(".messages")
+  element = "#whole_user_"+results.id
+  msg = $(element).find(".messages")
   msg.html results.message
   setTimeout (-> msg.html ""), 8000
   id = results["id"]
@@ -18,8 +33,10 @@ $(document).on "ajax:success", ".edit_name_form", (event, results) ->
   $(element).val results["name"]
   if results.status is "ok"
     col_element = $("#whole_user_" + results["id"])
+    $(this).hide('slow')
+    $(".name_click_change").html results["name"]
+    $(".name_click_change").show()
     $(col_element).find(".users-col2").html results["name"]
-    $(col_element).find("#delete-user-"+id).html ("Delete " +results["name"])
 
 
 

@@ -98,8 +98,8 @@ module ApplicationHelper
 				input_html << "&nbsp;&nbsp;"
 				input_html << "&nbsp;"
 				input_html << content_tag("button",options[:label],:class=> "btn btn-create margin-for-message",:type => "submit",:id=> options[:button_id] )
+				input_html << content_tag("a",'Cancel',:class=>options[:cancel_class],:data=>{:id=>options[:id]})
 				input_html << content_tag("span", '', class: "spinner theme-image", style: "display: none")
-				input_html << content_tag("span", '', class: "messages")
 				input_html.html_safe
 			end
 			html.html_safe
