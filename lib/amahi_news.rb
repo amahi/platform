@@ -38,7 +38,7 @@ class AmahiNews
 				return output if ++i == length
 				output << { :title => item[1], :link => item[0],
 					:date => item[2],
-					:comments => item[3] }
+				:comments => item[3] }
 			end
 		end
 		output

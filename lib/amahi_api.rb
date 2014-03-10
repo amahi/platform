@@ -4,12 +4,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -18,17 +18,17 @@ require 'rubygems'
 require 'active_support/all'
 require 'active_resource'
 
-# Ruby lib for working with the Amahi API's REST interface.   
-# 
+# Ruby lib for working with the Amahi API's REST interface.
+#
 # The first thing you need to set is the api key.  This is the
-# settings in your HDA 
-#  
-#    AmahiApi.api_key = 'abcxyz123' 
-#     
+# settings in your HDA
+#
+#    AmahiApi.api_key = 'abcxyz123'
+#
 # This library is a small wrapper around the REST interface for
 # Amahi.
 #
-# You should read the (admittedly spare) docs at 
+# You should read the (admittedly spare) docs at
 # http://wiki.amahi.org/index.php/API
 
 module AmahiApi
@@ -103,4 +103,3 @@ module AmahiApi
 	end
 
 end
-
