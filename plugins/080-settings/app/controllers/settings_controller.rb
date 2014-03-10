@@ -21,7 +21,7 @@ class SettingsController < ApplicationController
 	def index
 		@page_title = t 'settings'
 		@available_locales = locales_implemented
-		@advanced = Setting.find_by_name('advanced')
+		@advanced_settings = Setting.find_by_name('advanced')
 		@guest = Setting.find_by_name("guest-dashboard")
 		@version = Platform.platform_versions
 	end

@@ -42,14 +42,14 @@ Shares =
 		#update workgroup
 		$(document).ready ->
 			$(".workgroup_click_change").click () ->
-			  $(this).hide('slow')
-			  $(this).parent().find(".edit_workgroup_form").show('slow')
+			  $(this).hide()
+			  $(this).parent().find(".edit_workgroup_form").show()
 
 			$(".workgroup_cancel_link").click () ->
 			  id = $(this).data("id")
 			  form = "#div_form_"+id
 			  $(form).find('form').hide()
-			  $(form).parent().find(".workgroup_click_change").show('slow')
+			  $(form).parent().find(".workgroup_click_change").show()
 
 		$(document).on "ajax:success", ".edit_workgroup_form",(event, results) ->
 			msg = $(this).parent().parent().find(".messages")
