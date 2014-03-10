@@ -37,7 +37,6 @@ $(document).on "ajax:success", ".edit_name_form", (event, results) ->
     $(".name_click_change").html results["name"]
     $(".name_click_change").show()
     $(col_element).find(".users-col2").html results["name"]
-    $(col_element).find("#delete-user-"+id).html ("Delete " +results["name"])
 
 
 
