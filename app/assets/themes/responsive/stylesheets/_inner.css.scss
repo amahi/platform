@@ -1,0 +1,356 @@
+#app {
+	padding: 50px 0;
+	
+	#welcome {
+		#dashboard {
+			width: 70%;
+			float: left;
+
+			ul {
+
+				text-align: center;
+
+
+				li {
+					display: inline-block;
+				}
+				
+				#install-apps {
+					background: url(../images/dashboard.png) no-repeat;
+					width: 400px;
+					height: 235px;
+					margin:0 auto;
+					display: block;
+					margin-top: 60px;
+
+				}
+			}
+
+		}
+		#latest_news {
+			width: 30%;
+			float: left; 
+
+			#ln_content {
+				ul {
+					li {
+						padding: 5px 0;
+						border-bottom: 1px solid #999;
+						a {
+							display: block;
+						}
+						span {
+							font-size: 12px;
+						}
+					}
+				}
+
+				#more_news {
+					display: block;
+					text-align: right;
+				}
+			}
+		}
+	}
+
+
+	#tabs {
+		background: #eee;
+		top: 30%;
+		left: 0;
+		position: fixed;
+		width: 20px;
+		overflow: hidden;
+
+		&:hover,&:active {
+			width: 300px;
+		}
+	
+		a {
+			color :#000;
+
+			&:hover {
+				color: #999;
+			}
+		}
+
+		ul {
+
+
+			li {
+
+				padding: 20px;
+				
+				
+				ul{
+					margin-top: 10px;
+					font-size: 12px;
+					display: none;
+					
+					li {
+						padding: 0;
+						border: none;
+						a {
+							margin-left: 10px;
+							color: #999;
+							font-weight: normal;
+						}
+					}
+
+					.active {
+							border: none;
+					}
+				}
+
+				i {
+					display: none;
+				}
+
+				
+			}
+
+			.active {
+
+				
+					border-right: 5px solid #03699a;
+					background: #ddd;
+					
+					display: block;
+
+				a {
+					font-weight:bold;
+				}
+
+				ul {
+
+					display: block;
+
+					li {
+						border: none;
+						a {
+							font-weight: normal;
+						}
+					}
+					.active {
+
+							a {
+								font-weight: bold;
+								color: #000;
+							}
+						
+					}
+				}
+			}
+		}
+
+	}
+
+	#preferences {
+		
+
+		.empty-hint {
+			text-align:left;
+			padding: 0;
+		}
+
+		.app-store-header,.settings-actions {
+		
+			a {
+				margin-right: 20px;
+			}
+
+			margin-bottom: 20px;
+
+		}
+
+		#users-table,#shares-table,#apps-table,.server-page {
+
+			th {
+
+				&:first-child {
+				width: 30%;
+				}
+
+				&:last-child {
+				width: 70%;
+				}
+
+			}
+
+			.settings-col1 {
+			width: 30%;
+			}
+
+			.settings-col2 {
+			width: 70%;
+			}
+
+		}
+
+		table {
+			border-bottom: 0.1px solid #999;
+			width:100%;
+
+			th {
+				text-align: left;
+			}
+
+			td {
+				text-align: left;
+			}
+
+		}
+
+		button {
+			margin-top: 12px;
+		}
+
+	}
+
+	fieldset {
+		margin-top: 20px;
+	}
+	.area, .settings-stretcher {
+		margin-top: 20px;
+	}
+
+	.app-manage {
+		img {
+			width: 100px;
+			margin-right: 10px;
+		}
+	}
+
+	.theme-thumbs {
+		margin: 20px 0;
+
+		a {
+			margin-right: 10px;
+			img {
+				border: 5px solid #999;
+				width: 100px;
+		
+			}
+		}
+	}
+
+	#theme_sshot_image {
+		img {
+			
+		}
+	}
+}
+
+
+/* Responsive */
+
+
+@media all 
+and (min-width : 1224px) {
+	
+}
+
+
+/* Mobile */
+
+@media all 
+and (min-width : 320px) 
+and (max-width : 480px) {
+
+
+	#dashboard {
+		display:none;
+	}
+
+	#app #welcome #latest_news {
+		width: 100%;
+	}
+	.theme-thumbs {
+		margin: 20px 0;
+
+		a {
+			margin-right: 10px;
+			img {
+				width: 100%;
+				height: 100%;
+				height: 100px;
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			}
+		}
+	}
+
+	#theme_sshot_image {
+		display: none;
+	}
+
+	.app-manage {
+		.app-description,img {
+			display: none;
+		}
+
+	}
+	.settings-stretcher{
+		legend {
+			b, small {
+				display: none;
+			}
+		}
+	
+	}
+	#app fieldset {
+
+	}
+	#app #preferences table{
+		width: 100%;
+		font-size: 10px;
+
+		td {
+			span {
+
+			}
+		}
+	}
+
+	.shares-fixed-tags,.access {
+		span {
+			display:block;
+		}
+	}
+
+	#app #tabs {
+			background: #eee;
+			top: 0;
+			left: 0;
+			position: fixed;
+			width: 20px;
+			overflow:hidden;
+			height: 100%;
+			z-index: 1000;
+
+		&:hover,&:active {
+			width: 200px;
+			height: 100%;
+		}
+	
+	}
+}
+
+
+/* Tablets */
+
+@media all 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+	#app #tabs {
+		background: #eee;
+top: 0;
+left: 0;
+position: fixed;
+width: 20px;
+overflow-y: scroll;
+height: 100%;
+z-index: 1000
+	}
+}

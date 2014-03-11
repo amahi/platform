@@ -1,0 +1,157 @@
+#header {	
+	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.10);
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.10);
+	border-bottom: 1px solid #E9E9E9;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.10);
+	filter: none;
+	background: #fff;
+	height: 85px;
+
+	#pagetitle {
+		display: none;
+	}
+
+	#head-left {
+		display:inline-block;
+
+		#logo-two {
+			float: left;
+			display: inline-block;
+			background: url(../images/logo2.png) no-repeat;
+			width: 160px;
+			height: 60px;
+			a {
+				span {
+					@include opacity(0);
+					font-size: 40px;
+					letter-spacing: 0.2em;
+				}
+			}
+		}
+
+		ul {
+			margin: 32px 0 0 20px;
+			float: left;
+
+			li {
+				&.first {
+					display: none;
+				}
+
+				&.last {
+					input[type="text"] {
+						margin-right: 8px;
+					}
+					
+					input[type="submit"],button {
+						margin-left: 5px;
+					}
+
+
+				}
+			}
+		}
+
+	}
+
+	#head-right {
+		float: right;
+		display:inline;
+		ul {
+			margin-top: 36px;
+			li {
+				display: inline-block;
+				margin: 5px 0px;
+				
+				i {
+					display: none;
+				}
+
+				&:after {
+					content: "|";
+					margin: 5px;
+					color: #999;
+				}
+
+
+
+				a {
+					color: #333;
+					font-size: 14px;
+
+					&:hover {
+						color: #999;
+					}
+				}
+			}
+
+			li:last-child {
+				&:after {
+					content: "";
+				}
+			}
+		}
+	}
+
+
+}
+
+
+
+
+/* Responsive */
+
+/* Mobile */
+
+@media all 
+and (min-width : 320px) 
+and (max-width : 480px) {
+
+	#header {
+
+		height: 130px;
+
+		#head-left {
+
+			#logo-two {
+				display: none;
+			}
+
+			ul {
+				margin-left: 0;
+				
+				.last {
+					input[type="text"] {
+						width: 50%;
+					}
+
+				}
+			}
+		}
+
+		#head-right {
+			float: none;
+			ul {
+				margin:20px 0;
+				text-align: center;
+			}
+		}
+
+	}
+
+}
+
+
+/* Tablets */
+
+@media all 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+	#header {
+		#head-left {
+			#logo-two {
+				display:none;
+			}
+		}
+	}
+}

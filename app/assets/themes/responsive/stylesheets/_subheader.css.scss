@@ -1,0 +1,53 @@
+
+#content {
+	#subheader {
+		height: 100px;
+		background: url(../../body_bg.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		ul {
+			#first {
+				padding: 28px 55px;
+				color: #fff;
+				font-size: 32px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+/* Responsive */
+
+
+
+@media all 
+and (min-width : 1224px) {
+	#content {
+		#subheader {
+			ul {
+				#first {
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+
+
+/* Mobile */
+
+@media all 
+and (min-width : 320px) 
+and (max-width : 480px) { 
+
+}
+
+/* Tablets */
+
+@media all 
+and (min-width : 768px) 
+and (max-width : 1024px) {
+
+}

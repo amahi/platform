@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700);
+
+
+@font-face {
+	font-family: 'amahi_icons';
+	src:url('../fonts/amahi_icons.eot?t0m2yz');
+	src:url('../fonts/amahi_icons.eot?#iefixt0m2yz') format('embedded-opentype'),
+		url('../fonts/amahi_icons.woff?t0m2yz') format('woff'),
+		url('../fonts/amahi_icons.ttf?t0m2yz') format('truetype'),
+		url('../fonts/amahi_icons.svg?t0m2yz#amahi_icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'amahi_icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-users:before {
+	content: "\e600";
+}
+.icon-shares:before {
+	content: "\e601";
+}
+.icon-disks:before {
+	content: "\e602";
+}
+.icon-network:before {
+	content: "\e603";
+}
+.icon-settings:before {
+	content: "\e604";
+}
+.icon-apps:before {
+	content: "\e606";
+}
