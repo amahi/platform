@@ -20,10 +20,10 @@ feature "Shares tab" do
 			click_button "Create"
 			wait_for_ajax
 			visit shares_path
-			page.should have_content("Shares")
-			page.should have_content("Location")
+			page.should have_content I18n.translate('share')
+			page.should have_content I18n.translate('location')
 			page.should have_content "testShare"
-			page.should have_content '\hda\testShare'
+			page.should have_content '\\hda\testShare'
 		end
 
 		scenario "Cannot create a share with no name" do
