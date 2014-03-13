@@ -40,8 +40,12 @@ class SharesController < ApplicationController
 	end
 
 	def settings
-		@page_title = t('shares')
-		@workgroup = Setting.find_or_create_by(Setting::GENERAL, 'workgroup', 'WORKGROUP')
+		unless @advanced
+			redirect_to shares_engine_path
+		else
+			@page_title = t('shares')
+			@workgroup = Setting.find_or_create_by(Setting::GENERAL, 'workgroup', 'WORKGROUP')
+		end
 	end
 
 	def toggle_visible

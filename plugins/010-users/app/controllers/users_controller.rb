@@ -111,6 +111,12 @@ class UsersController < ApplicationController
 		render :json => { :status => @user.errors.any? ? :not_acceptable : :ok }
 	end
 
+	def settings
+		unless @advanced
+			redirect_to users_engine_path
+		end
+	end
+
 	protected
 
 	def can_i_toggle_admin?(user)

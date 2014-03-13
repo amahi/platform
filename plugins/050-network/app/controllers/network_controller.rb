@@ -31,7 +31,11 @@ class NetworkController < ApplicationController
   end
 
   def dns_aliases
-    get_dns_aliases
+    unless @advanced
+      redirect_to network_engine_path
+    else
+      get_dns_aliases
+    end
   end
 
   def create_dns_alias
@@ -48,13 +52,17 @@ class NetworkController < ApplicationController
   end
 
   def settings
-    @net = Setting.get 'net'
-    @dns = Setting.find_or_create_by(KIND, 'dns', 'opendns')
-    @dns_ip_1, @dns_ip_2 = DnsIpSetting.custom_dns_ips
-    @dnsmasq_dhcp = Setting.find_or_create_by(KIND, 'dnsmasq_dhcp', '1')
-    @dnsmasq_dns = Setting.find_or_create_by(KIND, 'dnsmasq_dns', '1')
-    @lease_time = Setting.get("lease_time") || "14400"
-    @gateway = Setting.find_or_create_by(KIND, 'gateway', '1').value
+    unless @advanced
+      redirect_to network_engine_path
+    else
+      @net = Setting.get 'net'
+      @dns = Setting.find_or_create_by(KIND, 'dns', 'opendns')
+      @dns_ip_1, @dns_ip_2 = DnsIpSetting.custom_dns_ips
+      @dnsmasq_dhcp = Setting.find_or_create_by(KIND, 'dnsmasq_dhcp', '1')
+      @dnsmasq_dns = Setting.find_or_create_by(KIND, 'dnsmasq_dns', '1')
+      @lease_time = Setting.get("lease_time") || "14400"
+      @gateway = Setting.find_or_create_by(KIND, 'gateway', '1').value
+    end
   end
 
   def update_dns
