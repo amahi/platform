@@ -1,5 +1,3 @@
-
-
 require 'spec_helper'
 
 feature "Users tab" do
