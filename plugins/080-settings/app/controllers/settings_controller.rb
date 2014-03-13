@@ -27,12 +27,16 @@ class SettingsController < ApplicationController
 	end
 
 	def servers
-		@message = nil
-		unless use_sample_data?
-			@servers = Server.all
+		unless @advanced
+			redirect_to settings_engine_path
 		else
-			@message = "NOTE: these servers are fake data! Interacting with them will not work."
-			@servers = SampleData.load('servers')
+			@message = nil
+			unless use_sample_data?
+				@servers = Server.all
+			else
+				@message = "NOTE: these servers are fake data! Interacting with them will not work."
+				@servers = SampleData.load('servers')
+			end
 		end
 	end
 

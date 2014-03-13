@@ -16,14 +16,6 @@ if SCREENSHOTS_ON_FAILURES
 	require 'capybara-screenshot/rspec'
 end
 
-def wait_for_ajax
-  Timeout.timeout(Capybara.default_wait_time) do
-    loop do
-      active = page.evaluate_script('jQuery.active')
-      break if active == 0
-    end
-  end
-end
 #reguired for using transactional fixtures with javascript driver
 ActiveRecord::ConnectionAdapters::ConnectionPool.class_eval do
 	def current_connection_id
