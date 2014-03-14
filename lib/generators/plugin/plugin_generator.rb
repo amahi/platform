@@ -3,7 +3,7 @@ class PluginGenerator < Rails::Generators::NamedBase
 
 	# utility method to be called by file name substitution in calls to directory
 	def classname_lower
-		"#{class_name.downcase}"
+		"#{plural_name.underscore}"
 	end
 
 	def create_config_file
@@ -24,7 +24,7 @@ class PluginGenerator < Rails::Generators::NamedBase
 # human readable name (no localization supported yet)
 name: #{class_name}
 # class to be mounted
-class: #{class_name}
+class: #{plural_name.camelize}
 # root url where this plugin will be mounted
 url: /tab/#{plural_name}
 			FILE
@@ -60,7 +60,7 @@ end
 		end
 
 		inside(root) do
-			create_file "lib/#{plural_name}.rb", <<-FILE
+			create_file "lib/#{plural_name.downcase}.rb", <<-FILE
 require "#{plural_name}/version"
 require "#{plural_name}/engine"
 
@@ -83,7 +83,7 @@ end
 
 		inside(root) do
 			create_file "lib/#{plural_name}/engine.rb", <<-FILE
-module #{class_name}
+module #{plural_name.camelize}
 	class Engine < ::Rails::Engine
 		# NOTE: do not isolate the namespace unless you really really
 		# want to adjust all your controllers views, etc., making Amahi's
@@ -106,7 +106,7 @@ end
 		# FIXME -- if the plugin is not a tab, this below needs to be parameterized
 		inside(root) do
 			create_file "config/routes.rb", <<-FILE
-#{class_name}::Engine.routes.draw do
+#{plural_name.camelize}::Engine.routes.draw do
 	# root of the plugin
         root :to => '#{plural_name}#index'
 	# examples of controllers built in this generator. delete at will
@@ -141,8 +141,8 @@ require 'rails/engine/commands'
 		end
 
 		inside(root) do
-			create_file "app/controllers/#{class_name.downcase}_controller.rb", <<-FILE
-class #{class_name}Controller < ApplicationController
+			create_file "app/controllers/#{plural_name.downcase}_controller.rb", <<-FILE
+class #{plural_name.camelize}Controller < ApplicationController
 	before_filter :admin_required
 
 	def index

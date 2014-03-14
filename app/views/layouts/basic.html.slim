@@ -13,7 +13,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     = theme_stylesheet_link_tag 'style'
     = theme_stylesheet_link_tag('rtl') if rtl?
     - amahi_plugins.each do |p|
-      = stylesheet_link_tag p[:class].downcase
+      = stylesheet_link_tag p[:class].underscore
 
     /[ if lt IE 9 ]
       = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
@@ -21,7 +21,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     = javascript_tag {render 'shared/js_vars'}
     = javascript_include_tag 'application'
     - amahi_plugins.each do |p|
-      = javascript_include_tag p[:class].downcase
+      = javascript_include_tag p[:class].underscore
 
     - for header in theme.headers do
       = header =~ /\.js$/ ? javascript_include_tag(header) : header
