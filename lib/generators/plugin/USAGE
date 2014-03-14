@@ -1,7 +1,17 @@
 Description:
     Amahi plugin generator
 
-Example:
-    rails generate plugin Thing
+    Creates a new plugin and its views. Pass the plugin name, either
+    CamelCased or under_scored.
 
-    This will create a basic Amahi platform plugin
+Example:
+    `rails generate plugin Thing`
+    
+     This will create a basic Amahi platform plugin
+    
+    Things plugin with URLs like /tab/things.
+        Controller: plugins/things/app/controllers/things_controller.rb
+        Route:      plugins/things/config/routes.rb
+        Views:      plugins/things/app/views/things/index.html.slim [...]
+        Helper:     plugins/things/app/helpers/application_helper.rb
+
