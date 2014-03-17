@@ -32,6 +32,7 @@ gem 'unicorn'
 
 gem 'rb-readline', require: false
 
+gem 'chartkick'
 group :development do
 	gem 'quiet_assets'
 	gem 'thin'
