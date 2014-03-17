@@ -53,7 +53,7 @@
    		table
 		    - @mounts.each_slice(2) do | first, second |
 				tr
-			        td
+			        td.td_box
 				    	  h3.center_block
 				    		 = first[:mount]
 				    		 | &nbsp;&nbsp;&nbsp;
@@ -69,7 +69,7 @@
 			              slices: [{color: '#A44585'},{color: '#00B5F0'}] \
 			              })
 	            	- if second
-	            		td
+	            		td.td_box
 	            			h3.center_block
 					    		 = second[:mount]
 					    		 | &nbsp;&nbsp;&nbsp;

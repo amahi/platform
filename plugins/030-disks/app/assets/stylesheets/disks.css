@@ -1,4 +1,3 @@
-
 .center_block {
 	margin-left: auto;
 	margin-right: auto;
@@ -16,3 +15,8 @@
 #content {
 	overflow: hidden;
 }
+
+.td_box {
+	width: 40%;
+}
+
