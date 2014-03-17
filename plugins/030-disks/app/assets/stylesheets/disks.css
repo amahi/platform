@@ -5,3 +5,12 @@
 	width: 70%;
 }
 
+#disk-table-head {
+	cursor: pointer;
+}
+
+#disk-table-body {
+	display: none;
+}
+
+
