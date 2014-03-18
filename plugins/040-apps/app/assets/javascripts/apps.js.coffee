@@ -3,12 +3,16 @@ Apps =
 		_this = this
 
 		$(document).on "ajax:beforeSend", ".install-app-in-background, .uninstall-app-in-background", ->
-				$(".install-button").hide()
-				_this.toggle_spinner this
-
+			$(".install-button").hide()
+			_this.toggle_spinner this
+			$('.app').each -> 
+				$(this).find('.install-app-in-background').addClass('inactive')
+		
 		$(document).on "ajax:success", ".install-app-in-background, .uninstall-app-in-background", (data, results) ->
 				_this.update_progress results["identifier"], results["content"]
 				_this.trace_progress results["identifier"]
+				$('.app').each -> 
+				$(this).find('.install-app-in-background').removeClass('inactive')
 
 		RemoteCheckbox.initialize
 			selector: ".in_dashboard_checkbox"
