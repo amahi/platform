@@ -11,9 +11,6 @@ Apps =
 		$(document).on "ajax:success", ".install-app-in-background, .uninstall-app-in-background", (data, results) ->
 				_this.update_progress results["identifier"], results["content"]
 				_this.trace_progress results["identifier"]
-				$('.app').each -> 
-				$(this).find('.install-app-in-background').removeClass('inactive')
-
 		RemoteCheckbox.initialize
 			selector: ".in_dashboard_checkbox"
 			parentSelector: "span:first"
@@ -66,6 +63,8 @@ Apps =
 			success: (data) ->
 				_this.update_progress_message finder, data["content"]
 				if data["app_content"]
+					$('.app').each -> 
+						$(this).find('.install-app-in-background').removeClass('inactive')
 					_this.update_installed_app finder, data["app_content"]
 				else if data["uninstalled"]
 					_this.update_uninstalled_app finder
