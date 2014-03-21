@@ -23,11 +23,4 @@ describe User do
 		User.system_find_name_by_username(username).should include(`cat /etc/passwd | grep `+username+` | cut -d: -f5`.gsub(/\,/,"").strip
 )
 	end
-
-	it "should find all new users" do
-		v =`cd home; cat /etc/passwd | grep "/home" | grep "/bin/bash" | cut -d: -f1 | wc -l`.strip.to_i
-		puts "#{User.system_all_new_users.count}"
-		puts "#{`cat /etc/passwd | grep "/home" | grep "/bin/bash" | cut -d: -f1`}"
-		User.system_all_new_users.count.should == v
-	end
 end
