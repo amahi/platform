@@ -18,3 +18,4 @@ pickle-email-*.html
 .DS_Store
 ._*
 /nbproject
+/config/database.yml
