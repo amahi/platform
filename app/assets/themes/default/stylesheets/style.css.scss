@@ -70,6 +70,11 @@ form {
   color: black;
 }
 
+.inactive{
+  pointer-events: none;
+  cursor: default;
+}
+
 fieldset {
   margin: 15px;
   border: 0;
