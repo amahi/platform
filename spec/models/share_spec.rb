@@ -26,24 +26,24 @@ describe Share do
 
 	describe "::create_default_shares" do
 
-		# it "should create default shares with the following attributes" do
-		# 	Share.create_default_shares
+		it "should create default shares with the following attributes" do
+			Share.create_default_shares
 
-		# 	Share::DEFAULT_SHARES.each do |share_name|
-		# 		share_id = Share::DEFAULT_SHARES.index(share_name) + 1
+			Share::DEFAULT_SHARES.each do |share_name|
+				share_id = Share::DEFAULT_SHARES.index(share_name) + 1
 
-		# 		share = Share.find(share_id)
-		# 		share.name.should             == share_name
-		# 		share.path.should             == "#{Share::DEFAULT_SHARES_ROOT}/#{share_name.downcase}"
-		# 		share.rdonly.should           == false
-		# 		share.visible.should          == true
-		# 		share.everyone.should         == true
-		# 		share.tags.should             == share_name.downcase
-		# 		share.disk_pool_copies.should == 0
-		# 		share.guest_access.should     == false
-		# 		share.guest_writeable.should   == false
-		# 	end
-		# end
+				share = Share.find(share_id)
+				share.name.should             == share_name
+				share.path.should             == "#{Share::DEFAULT_SHARES_ROOT}/#{share_name.downcase}"
+				share.rdonly.should           == false
+				share.visible.should          == true
+				share.everyone.should         == true
+				share.tags.should             == share_name.downcase
+				share.disk_pool_copies.should == 0
+				share.guest_access.should     == false
+				share.guest_writeable.should   == false
+			end
+		end
 
 		it "should have read and write access for all users" do
 			new_user_1 = create(:user)
