@@ -26,6 +26,7 @@ describe User do
 
 	it "should find all new users" do
 		v =`cd home; cat /etc/passwd | grep "/home" | grep "/bin/bash" | cut -d: -f1 | wc -l`.strip.to_i
+		puts "#{User.system_all_new_users.count}"
 		User.system_all_new_users.count.should == v
 	end
 end
