@@ -5,9 +5,8 @@ Apps =
 		$(document).on "ajax:beforeSend", ".install-app-in-background, .uninstall-app-in-background", ->
 				$(".install-button").hide()
 				_this.toggle_spinner this
-				$('.app').each -> 
+				$('.app').each ->
 					$(this).find('.install-app-in-background').addClass('inactive')
-
 
 		$(document).on "ajax:success", ".install-app-in-background, .uninstall-app-in-background", (data, results) ->
 				_this.update_progress results["identifier"], results["content"]
@@ -64,15 +63,12 @@ Apps =
 			url: _this.app(finder).data("progressPath")
 			success: (data) ->
 				_this.update_progress_message finder, data["content"]
-				
 				if data["app_content"]
 					_this.update_installed_app finder, data["app_content"]
-					$('.app').each -> 
+					$('.app').each ->
 						$(this).find('.install-app-in-background').removeClass('inactive')
-
 				else if data["uninstalled"]
 					_this.update_uninstalled_app finder
-				
 				else
 					setTimeout (-> Apps.trace_progress(finder)), 2000
 
