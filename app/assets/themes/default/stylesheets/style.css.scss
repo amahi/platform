@@ -117,7 +117,10 @@ input[type="password"] {
     outline: thin dotted \9; /* IE6-9 */
   }
 }
-
+.inactive{
+  pointer-events: none;
+  cursor: default;
+}
 .form-inline {
   @include clearfix;
 
