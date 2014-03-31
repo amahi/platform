@@ -24,7 +24,15 @@ class AppsController < ApplicationController
 
 	def index
 		set_title t('apps')
+		@inactive = ''
 		@apps = App.available
+		@apps.each do |app|
+			status = App.installation_status(app.identifier)
+			if status >0 and status<100
+				@inactive = 'inactive'
+				break
+			end
+		end
 	end
 
 	def installed
