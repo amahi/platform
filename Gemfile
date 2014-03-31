@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.17'
 
@@ -62,3 +62,7 @@ end
 # FIXME - temporary work-around for Fedora 19
 # see https://bugzilla.redhat.com/show_bug.cgi?id=979133
 gem 'psych'
+gem 'excon'
+gem 'yajl-ruby'
+gem 'lazy_high_charts'
+

@@ -6,3 +6,4 @@ t.add("hosts", "hosts")
 # advanced settings
 t.add("dns_aliases", "dns_aliases", true)
 t.add("settings", "settings", true)
+t.add("statistics","statistics")

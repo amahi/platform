@@ -129,7 +129,14 @@ Settings =
     RemoteCheckbox.initialize
       selector: "#checkbox_setting_dnsmasq_dhcp, #checkbox_setting_dnsmasq_dns"
 
+Statistics =
+  initialize: ->
+    _this = this
+    $(document).on "ajax:success", "#stats-new-form", (data, results) ->
+      alert(results['status']);
+
 $ ->
   Hosts.initialize()
   DnsAliases.initialize()
   Settings.initialize()
+  Statistics.initialize()

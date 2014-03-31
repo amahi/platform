@@ -3,7 +3,7 @@
 #
 
 require 'leases'
-
+require 'yajl'
 class NetworkController < ApplicationController
   KIND = Setting::NETWORK
   before_filter :admin_required
@@ -113,6 +113,79 @@ class NetworkController < ApplicationController
 		else
 			render json: { status: 'error' }
 		end
+  end
+
+  def statistics
+    if !development?
+      if(params[:stats])
+        #Authentication
+        r = Excon.post "http://#{params[:host]}/cgi-bin/luci?status=1", 
+               :body => "username=#{params[:username]}&password=#{params[:password]}",
+               :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' }
+
+        parser = Yajl::Parser.new
+        
+        @parsed_auth_details = pp parser.parse(r.body)
+        
+        sysauth, path = r.headers['Set-Cookie'].split
+        path = path.split('=')[1..-1].join('=')
+
+        #Network Traffic
+        r = Excon.get "http://192.168.66.1/#{path}/admin/status/realtime/bandwidth_status/eth0.1", 
+              :headers => { 'Cookie' => sysauth }
+        @parsed_network_traffic = pp parser.parse(r.body)
+
+        #System Load
+        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/load_status", 
+              :headers => { 'Cookie' => sysauth }
+        @parsed_system_load = pp parser.parse(r.body)
+
+        #Connection Status
+
+        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/connections_status", 
+              :headers => { 'Cookie' => sysauth }
+
+        r.body.gsub! /(connections|statistics)/, '"\\1"'
+        @parsed_connection_status = pp parser.parse(r.body)
+
+        #Web Interface Status
+        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/wireless_status/wl0", 
+              :headers => { 'Cookie' => sysauth }
+        @parsed_web_interface_status = pp parser.parse(r.body)
+
+      end
+    else
+      
+      @chart2 = LazyHighCharts::HighChart.new('line_ajax') do |f|
+        f.chart({ type: 'line',
+                marginRight: 130,
+                marginBottom: 25 })
+        f.title(:text => "Network Traffic Graph")
+        f.xAxis(:title => {:text => "Time"},:categories => [ Time.at(1358095466),Time.at(1358095467)])
+        f.series(:name => "Data packets Transmitted", data: [101161697,101161703] )
+        f.series(:name => "Data packets Received",  :data => [62541131,62541137] )
+
+        f.yAxis({
+        title: {
+          text: 'Data Packets'
+        },
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      })
+        f.legend({
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -10,
+        y: 100,
+        borderWidth: 0
+      })
+      end
+    render 'stats_graph'
+    end
   end
 
 private
