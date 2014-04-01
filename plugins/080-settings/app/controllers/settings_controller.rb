@@ -72,47 +72,56 @@ class SettingsController < ApplicationController
 		c.execute
 		render :text => t('powering_off')
 	end
+	def revoke_app
+		@apps = App.available
+		@apps.each do |app|
+			status = App.installation_status(app.identifier)
+			if status >0 and status<100
+				app.install_status = 999
+			end
+		end
+		render json: {:status => "ok"}
+	end
+	def refresh
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	render 'server_status'
+	end
 
-  def refresh
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    render 'server_status'
-  end
+	def start
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.do_start
+	render 'server_status'
+	end
 
-  def start
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.do_start
-    render 'server_status'
-  end
+	def stop
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.do_stop
+	render 'server_status'
+	end
 
-  def stop
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.do_stop
-    render 'server_status'
-  end
+	def restart
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.do_restart
+	render 'server_status'
+	end
 
-  def restart
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.do_restart
-    render 'server_status'
-  end
+	def toggle_monitored
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.toggle!(:monitored)
+	render 'server_status'
+	end
 
-  def toggle_monitored
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.toggle!(:monitored)
-    render 'server_status'
-  end
-
-  def toggle_start_at_boot
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.toggle!(:start_at_boot)
-    render 'server_status'
-  end
+	def toggle_start_at_boot
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.toggle!(:start_at_boot)
+	render 'server_status'
+	end
 
 	# index of all themes
 	def themes

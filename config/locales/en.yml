@@ -126,6 +126,9 @@
   delete_share: Delete share
   edit_share: Edit share
   shares_global_settings: Global Settings for Shares
+  app_settings: App Settings
+  reset_app_settings: Reset App Settings
+  reset_app : Reset App 
   visible: Visible
   read_only: Read Only
   tags: Tags

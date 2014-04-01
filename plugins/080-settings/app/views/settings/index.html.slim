@@ -29,6 +29,19 @@ div.settings-fields.settings-wrap
           = tag "input", id: "guest", class: "remote-check", type: "checkbox", checked: @guest.set?,
               data: { remote: true, url: settings_engine.toggle_setting_path(id: @guest) }
           = spinner
+div.settings-fields.settings-wrap
+  fieldset
+    legend
+      = t 'app_settings'
+    table
+      tr
+        td
+          label = t 'reset_app_settings'
+        td
+          = link_to(t("reset_app"), settings_engine.revoke_app_path, :method => :put, :remote => true, :class => "revoke-app btn")
+          = spinner
+
+
 
 div.settings-fields.settings-wrap
   fieldset
