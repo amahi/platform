@@ -116,75 +116,118 @@ class NetworkController < ApplicationController
   end
 
   def statistics
-    if !development?
+    if development?
       if(params[:stats])
+        @env = "production"
         #Authentication
-        r = Excon.post "http://#{params[:host]}/cgi-bin/luci?status=1", 
-               :body => "username=#{params[:username]}&password=#{params[:password]}",
+        r = Excon.post "http://#{params[:stats][:host]}/cgi-bin/luci?status=1", 
+               :body => "username=#{params[:stats][:username]}&password=#{params[:stats][:password]}",
                :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' }
 
         parser = Yajl::Parser.new
-        
-        @parsed_auth_details = pp parser.parse(r.body)
-        
-        sysauth, path = r.headers['Set-Cookie'].split
-        path = path.split('=')[1..-1].join('=')
+        @status = r.status
+      if !r.status == 404
+          sysauth, path = r.headers['Set-Cookie'].split
+          path = path.split('=')[1..-1].join('=')
 
-        #Network Traffic
-        r = Excon.get "http://192.168.66.1/#{path}/admin/status/realtime/bandwidth_status/eth0.1", 
-              :headers => { 'Cookie' => sysauth }
-        @parsed_network_traffic = pp parser.parse(r.body)
+          #Network Traffic
+          r = Excon.get "http://192.168.66.1/#{path}/admin/status/realtime/bandwidth_status/eth0.1", 
+                :headers => { 'Cookie' => sysauth }
+          rx_bytes = []
+          time = []
+          tx_bytes = []
+          r.body.each do |u|
+            time.push(u[0])
+            rx_bytes.push(u[1])
+            tx_bytes.push(u[3])
+          end
+          rx = []
+          rx_bytes.each_cons(2) do |i,j|
+            rx << j-i
+          end
+          tx = []
+          tx_bytes.each_cons(2) do |i,j|
+            tx << j-i
+          end
+          time.map{|x| x-time[0] }
+        @chart_network_traffic = LazyHighCharts::HighChart.new('line_ajax') do |f|
+          f.chart({ type: 'line',
+                  marginRight: 130,
+                  marginBottom: 25 })
+          f.title(:text => "Network Traffic Graph")
+          f.xAxis(:title => {:text => "Time"},:categories => time)
+          f.series(:name => "Data bytes Transmitted", data: tx )
+          f.series(:name => "Data bytes Received",  :data => rx )
 
-        #System Load
-        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/load_status", 
-              :headers => { 'Cookie' => sysauth }
-        @parsed_system_load = pp parser.parse(r.body)
+            f.yAxis({
+            title: {
+              text: 'Data Packets'
+            },
+            plotLines: [{
+              value: 0,
+              width: 1,
+              color: '#808080'
+            }]
+          })
+            f.legend({
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -10,
+            y: 100,
+            borderWidth: 0
+          })
+        end
+      end
 
-        #Connection Status
+        # #System Load
+        # r = Excon.get "http://#{host}/#{path}/admin/status/realtime/load_status", 
+        #       :headers => { 'Cookie' => sysauth }
+        # @parsed_system_load = pp parser.parse(r.body)
 
-        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/connections_status", 
-              :headers => { 'Cookie' => sysauth }
+        # #Connection Status
 
-        r.body.gsub! /(connections|statistics)/, '"\\1"'
-        @parsed_connection_status = pp parser.parse(r.body)
+        # r = Excon.get "http://#{host}/#{path}/admin/status/realtime/connections_status", 
+        #       :headers => { 'Cookie' => sysauth }
 
-        #Web Interface Status
-        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/wireless_status/wl0", 
-              :headers => { 'Cookie' => sysauth }
-        @parsed_web_interface_status = pp parser.parse(r.body)
+        # r.body.gsub! /(connections|statistics)/, '"\\1"'
+        # @parsed_connection_status = pp parser.parse(r.body)
 
+        # #Web Interface Status
+        # r = Excon.get "http://#{host}/#{path}/admin/status/realtime/wireless_status/wl0", 
+        #       :headers => { 'Cookie' => sysauth }
+        # @parsed_web_interface_status = pp parser.parse(r.body)
       end
     else
-      
-      @chart2 = LazyHighCharts::HighChart.new('line_ajax') do |f|
+      @env = "development"
+      @chart_network_traffic = LazyHighCharts::HighChart.new('line_ajax') do |f|
         f.chart({ type: 'line',
                 marginRight: 130,
                 marginBottom: 25 })
         f.title(:text => "Network Traffic Graph")
-        f.xAxis(:title => {:text => "Time"},:categories => [ Time.at(1358095466),Time.at(1358095467)])
-        f.series(:name => "Data packets Transmitted", data: [101161697,101161703] )
-        f.series(:name => "Data packets Received",  :data => [62541131,62541137] )
+        f.xAxis(:title => {:text => "Time"},:categories => ['1','5','10','15','20','25','30','35','40'])
+        f.series(:name => "Data bytes Transmitted", data: [36,35,0,78,291,2930,293] )
+        f.series(:name => "Data bytes Received",  :data => [8760,14510,953,937,465,964,273,3400,8860] )
 
-        f.yAxis({
-        title: {
-          text: 'Data Packets'
-        },
-        plotLines: [{
-          value: 0,
-          width: 1,
-          color: '#808080'
-        }]
-      })
-        f.legend({
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -10,
-        y: 100,
-        borderWidth: 0
-      })
+          f.yAxis({
+          title: {
+            text: 'Data Packets'
+          },
+          plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+          }]
+        })
+          f.legend({
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -10,
+          y: 100,
+          borderWidth: 0
+        })
       end
-    render 'stats_graph'
     end
   end
 

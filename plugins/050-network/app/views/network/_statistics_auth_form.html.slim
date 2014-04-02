@@ -1,0 +1,14 @@
+= form_for :stats, url: {:controller => "network", :action => "statistics"}, remote: true, html: {class: "create-form" , id: "stats-new-form"} do |f| 
+	.control-group
+        .controls= f.text_field :username, size: 16, maxlength: 20, placeholder: t('username')
+
+    .control-group
+        .controls= f.text_field :password, size: 16, maxlength: 20, placeholder: t('password')
+
+    .control-group
+        .controls= f.text_field :host, size: 16, maxlength: 20, placeholder: t('host')
+    
+    .control-group.create-btn
+        .controls
+          = spinner
+          = button_tag t('Submit'), type: 'submit', id: 'stats_create_button', class: 'btn btn-create'

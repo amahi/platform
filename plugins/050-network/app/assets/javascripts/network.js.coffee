@@ -133,7 +133,10 @@ Statistics =
   initialize: ->
     _this = this
     $(document).on "ajax:success", "#stats-new-form", (data, results) ->
-      alert(results['status']);
+      if results["status"] is "not_accepted"
+        alert("wrong username or password");
+      $('#stats-new-form').replaceWith results["content"]
+      
 
 $ ->
   Hosts.initialize()
