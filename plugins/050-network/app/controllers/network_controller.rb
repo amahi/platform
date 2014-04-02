@@ -116,7 +116,7 @@ class NetworkController < ApplicationController
   end
 
   def statistics
-    if development?
+    if !development?
       if(params[:stats])
         @env = "production"
         #Authentication
