@@ -125,85 +125,194 @@ class NetworkController < ApplicationController
                :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' }
 
         parser = Yajl::Parser.new
-        @status = r.status
-      if !r.status == 404
-          sysauth, path = r.headers['Set-Cookie'].split
-          path = path.split('=')[1..-1].join('=')
+        @network_traffic_status = r.status
+        if !r.status == 404
+            sysauth, path = r.headers['Set-Cookie'].split
+            path = path.split('=')[1..-1].join('=')
 
-          #Network Traffic
-          r = Excon.get "http://192.168.66.1/#{path}/admin/status/realtime/bandwidth_status/eth0.1", 
-                :headers => { 'Cookie' => sysauth }
-          rx_bytes = []
-          time = []
-          tx_bytes = []
-          r.body.each do |u|
-            time.push(u[0])
-            rx_bytes.push(u[1])
-            tx_bytes.push(u[3])
-          end
-          rx = []
-          rx_bytes.each_cons(2) do |i,j|
-            rx << j-i
-          end
-          tx = []
-          tx_bytes.each_cons(2) do |i,j|
-            tx << j-i
-          end
-          time.map{|x| x-time[0] }
-        @chart_network_traffic = LazyHighCharts::HighChart.new('line_ajax') do |f|
-          f.chart({ type: 'line',
-                  marginRight: 130,
-                  marginBottom: 25 })
-          f.title(:text => "Network Traffic Graph")
-          f.xAxis(:title => {:text => "Time"},:categories => time)
-          f.series(:name => "Data bytes Transmitted", data: tx )
-          f.series(:name => "Data bytes Received",  :data => rx )
+            #Network Traffic
+            r = Excon.get "http://192.168.66.1/#{path}/admin/status/realtime/bandwidth_status/eth0.1", 
+                  :headers => { 'Cookie' => sysauth }
+            rx_bytes = []
+            time = []
+            tx_bytes = []
+            @parsed_network_traffic = pp parser.parse(r.body)
+            @parsed_system_load.each do |u|
+              rx_bytes.push(u[1])
+              tx_bytes.push(u[3])
+            end
+            rx = []
+            rx_bytes.each_cons(2) do |i,j|
+              rx << j-i
+            end
+            tx = []
+            tx_bytes.each_cons(2) do |i,j|
+              tx << j-i
+            end
+          @chart_network_traffic = LazyHighCharts::HighChart.new('line_ajax') do |f|
+            f.chart({ type: 'line',
+                    marginRight: 170,
+                    marginBottom: 100 })
+            f.title(:text => "Network Traffic Graph")
+            f.xAxis(:title => {:text => "Time"},:categories => ['1','5','10','15','20','25','30'] )
+            f.series(:name => "Data bytes Transmitted", data: tx )
+            f.series(:name => "Data bytes Received",  :data => rx )
 
-            f.yAxis({
-            title: {
-              text: 'Data Packets'
-            },
-            plotLines: [{
-              value: 0,
-              width: 1,
-              color: '#808080'
-            }]
-          })
-            f.legend({
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top',
-            x: -10,
-            y: 100,
-            borderWidth: 0
-          })
+              f.yAxis({
+              title: {
+                text: 'Data Packets'
+              },
+              plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+              }]
+            })
+              f.legend({
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'top',
+              x: -10,
+              y: 100,
+              borderWidth: 0
+            })
+          end
         end
-      end
 
-        # #System Load
-        # r = Excon.get "http://#{host}/#{path}/admin/status/realtime/load_status", 
-        #       :headers => { 'Cookie' => sysauth }
-        # @parsed_system_load = pp parser.parse(r.body)
+        #System Load
+        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/load_status", 
+              :headers => { 'Cookie' => sysauth }
+        @system_load_status = r.status
+        if !r.status == 404
+          one_min_load = []
+          five_min_load = []
+          @parsed_system_load = pp parser.parse(r.body)
+          @parsed_system_load.each do |u|
+            one_min_load.push(u[1])
+            five_min_load.push(u[2])
+          end
+          @chart_system_load = LazyHighCharts::HighChart.new('line_ajax') do |f|
+            f.chart({ type: 'line',
+                    marginRight: 170,
+                    marginBottom: 100 })
+            f.title(:text => "System Load")
+            f.xAxis(:title => {:text => "Time"},:categories => ['1','5','10','15','20','25','30'])
+            f.series(:name => "1 minute Load", data: one_min_load )
+            f.series(:name => "5 min load",  :data => five_min_load )
 
-        # #Connection Status
+              f.yAxis({
+              title: {
+                text: 'Time Load'
+              },
+              plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+              }]
+            })
+              f.legend({
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'top',
+              x: -10,
+              y: 100,
+              borderWidth: 0
+            })
+          end  
+        end
+           
 
-        # r = Excon.get "http://#{host}/#{path}/admin/status/realtime/connections_status", 
-        #       :headers => { 'Cookie' => sysauth }
+        #Connection Status
 
-        # r.body.gsub! /(connections|statistics)/, '"\\1"'
-        # @parsed_connection_status = pp parser.parse(r.body)
+        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/connections_status", 
+              :headers => { 'Cookie' => sysauth }
+        @system_connection_status = r.status
+        if !r.status == 404
+            r.body.gsub! /(connections|statistics)/, '"\\1"'
+          @parsed_connection_status = pp parser.parse(r.body)
+          other_connections = []
+          @parsed_connection_status["statistics"].each do |u|
+            other_connections.pushu[3]
+          end
+          
+          @chart_connection_status = LazyHighCharts::HighChart.new('line_labels') do |f|
+            f.chart({ type: 'line',
+                    marginRight: 130,
+                    marginBottom: 100 })
+            f.title(:text => "Connection Status")
+            f.xAxis(:title => {:text => "Time"},:categories => ['1','5','10','15','20','25','30'])
+            f.series(:name => "Other Connections", data: other_connections )
+            
+              f.yAxis({
+              title: {
+                text: 'Number of Connections'
+              },
+              plotLines: [{
+                value: 0,
+                width: 0.5,
+                color: '#808080'
+              }]
+            })
+              f.legend({
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'top',
+              x: -10,
+              y: 100,
+              borderWidth: 0
+            })
+          end
+        end
+        
 
-        # #Web Interface Status
-        # r = Excon.get "http://#{host}/#{path}/admin/status/realtime/wireless_status/wl0", 
-        #       :headers => { 'Cookie' => sysauth }
-        # @parsed_web_interface_status = pp parser.parse(r.body)
+        #Wireless Interface Status
+        r = Excon.get "http://#{host}/#{path}/admin/status/realtime/wireless_status/wl0", 
+              :headers => { 'Cookie' => sysauth }
+        @wireless_interface_status = r.status
+        if !r.status == 404
+            @parsed_wireless_interface_status = pp parser.parse(r.body)
+          rssi = []
+          noise = []
+          @parsed_wireless_interface_status.each do |u|
+            rssi.push(u[2])
+            noise.push(u[3])
+          end
+            @chart_wireless_interface_status = LazyHighCharts::HighChart.new('line_time_series') do |f|
+            f.chart({ type: 'line',
+                    marginRight: 130,
+                    marginBottom: 100 })
+            f.title(:text => "Wireless Interface Status")
+            f.xAxis(:title => {:type=>"datetime", :text => "Time"},:categories => ['1','5','10','15','20','25','30'])
+            f.series(:name => "RSSI",  :data => rssi )
+            f.series(:name => "Noise",  :data => noise )
+
+              f.yAxis({
+              title: {
+                text: 'Wireless interface Parameters'
+              },
+              plotLines: [{
+                value: 0,
+                width: 0.5,
+                color: '#808080'
+              }]
+            })
+              f.legend({
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'top',
+              x: -10,
+              y: 100,
+              borderWidth: 0
+            })
+          end
+        end
       end
     else
       @env = "development"
-      @chart_network_traffic = LazyHighCharts::HighChart.new('line_ajax') do |f|
+      @chart_network_traffic = LazyHighCharts::HighChart.new('basic_line') do |f|
         f.chart({ type: 'line',
-                marginRight: 130,
-                marginBottom: 25 })
+                marginRight: 170,
+                marginBottom: 100 })
         f.title(:text => "Network Traffic Graph")
         f.xAxis(:title => {:text => "Time"},:categories => ['1','5','10','15','20','25','30','35','40'])
         f.series(:name => "Data bytes Transmitted", data: [36,35,0,78,291,2930,293] )
@@ -216,6 +325,89 @@ class NetworkController < ApplicationController
           plotLines: [{
             value: 0,
             width: 1,
+            color: '#808080'
+          }]
+        })
+          f.legend({
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -10,
+          y: 100,
+          borderWidth: 0
+        })
+      end
+      @chart_system_load = LazyHighCharts::HighChart.new('line_ajax') do |f|
+        f.chart({ type: 'line',
+                marginRight: 130,
+                marginBottom: 100 })
+        f.title(:text => "System Load")
+        f.xAxis(:title => {:text => "Time"},:categories => ['1','5','10','15','20','25','30'])
+        f.series(:name => "1 minute Load", data: [36,36,38,41,37,49,39] )
+        f.series(:name => "5 min load",  :data => [40,40,42,44,41,48,43] )
+
+          f.yAxis({
+          title: {
+            text: 'Time Load'
+          },
+          plotLines: [{
+            value: 0,
+            width: 1,
+            color: '#808080'
+          }]
+        })
+          f.legend({
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -10,
+          y: 100,
+          borderWidth: 0
+        })
+      end
+      @chart_connection_status = LazyHighCharts::HighChart.new('line_labels') do |f|
+        f.chart({ type: 'line',
+                marginRight: 130,
+                marginBottom: 100 })
+        f.title(:text => "Connection Status")
+        f.xAxis(:title => {:text => "Time"},:categories => ['1','5','10','15','20','25','30'])
+        f.series(:name => "Other Connections", data: [48,50,49,55,62,50,51] )
+
+          f.yAxis({
+          title: {
+            text: 'Number of Connections'
+          },
+          plotLines: [{
+            value: 0,
+            width: 0.5,
+            color: '#808080'
+          }]
+        })
+          f.legend({
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -10,
+          y: 100,
+          borderWidth: 0
+        })
+      end
+      @chart_wireless_interface_status = LazyHighCharts::HighChart.new('line_time_series') do |f|
+        f.chart({ type: 'line',
+                marginRight: 130,
+                marginBottom: 100 })
+        f.title(:text => "Wireless Interface Status")
+        f.xAxis(:title => {:type=>"datetime", :text => "Time"},:categories => ['1','5','10','15','20','25','30'])
+        f.series(:name => "RSSI",  :data => [213,231,220,245,280,270,295] )
+        f.series(:name => "Noise",  :data => [167,166,140,180,160,142,165] )
+
+          f.yAxis({
+          title: {
+            text: 'Wireless interface Parameters'
+          },
+          plotLines: [{
+            value: 0,
+            width: 0.5,
             color: '#808080'
           }]
         })
