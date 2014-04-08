@@ -17,4 +17,6 @@ Network::Engine.routes.draw do
 	put 'update_dns' => 'network#update_dns'
 	put 'update_dns_ips' => 'network#update_dns_ips'
 	put 'toggle_setting/:id' => 'network#toggle_setting', as: 'toggle_setting'
+	get 'statistics' => 'network#statistics'
+	post 'statistics' => 'network#statistics'
 end

@@ -129,7 +129,17 @@ Settings =
     RemoteCheckbox.initialize
       selector: "#checkbox_setting_dnsmasq_dhcp, #checkbox_setting_dnsmasq_dns"
 
+Statistics =
+  initialize: ->
+    _this = this
+    $(document).on "ajax:success", "#stats-new-form", (data, results) ->
+      if results["status"] is "not_accepted"
+        alert("wrong username or password");
+      $('#stats-new-form').replaceWith results["content"]
+      
+
 $ ->
   Hosts.initialize()
   DnsAliases.initialize()
   Settings.initialize()
+  Statistics.initialize()
