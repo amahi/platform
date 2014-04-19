@@ -182,7 +182,6 @@ class App < ActiveRecord::Base
 			self.install_pkg_deps installer if installer.pkg_dependencies
 			self.install_pkgs installer if installer.pkg
 			app_path = APP_PATH % identifier
-
 			# return just after installing a plugin to prevent creating unnecessary folders,etc
 			self.install_plugin(installer) and return if installer.kind == 'plugin'
 			mkdir app_path
@@ -456,23 +455,18 @@ class App < ActiveRecord::Base
 	end
 
 	def install_plugin(installer)
-		return if (installer.source_url.nil? or installer.source_url.blank?) 
-		
+		return if (installer.source_url.nil? or installer.source_url.blank?)
 		name = plugin_name(installer.url_name)
 		path = PLUGIN_PATH % name
 		mkdir "%s/unpack" % path
-
 		Dir.chdir("%s/unpack" % path) do
 			downloaded_file = nil
-
 			unless (installer.source_url.nil? or installer.source_url.blank?)
 				downloaded_file = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
 			end
 			unpack(installer.source_url, downloaded_file)
-
 		end
 	end
-
 
 	def unpack(url, fname)
 		if (url =~ /\.zip$/)
@@ -502,17 +496,13 @@ class App < ActiveRecord::Base
 		current_plugins = Dir.glob(format(PLUGIN_PATH,"*"))
 		lower_bound = 100
 		prefix_numbers = []
-
 		for plugin in current_plugins
 			number = plugin.split('/')[-1][0..2]
 			plugin_number = number.to_i if Float(number) rescue false 
 			prefix_numbers.push plugin_number if plugin_number and plugin_number > lower_bound 
 		end
-		
 		new_plugin_number = prefix_numbers.max ? prefix_numbers.max + 1 : lower_bound
-
 		return format("%s-%s",new_plugin_number,name)
-
 	end
 
 end
