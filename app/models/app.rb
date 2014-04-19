@@ -24,6 +24,7 @@ class App < ActiveRecord::Base
 
 	APP_PATH = Rails.env == "development" ? "/tmp/app/%s" : "/var/hda/apps/%s"
 	WEBAPP_PATH = Rails.env == "development" ? "/tmp/web-apps/%s" : "/var/hda/web-apps/%s"
+	PLUGIN_PATH = "/var/hda/apps/plugin/%s"
 	INSTALLER_LOG = "/var/log/amahi-app-installer.log"
 
 	belongs_to :webapp, :dependent => :destroy
@@ -218,6 +219,7 @@ class App < ActiveRecord::Base
 			self.install_status = 60
 			self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
+			self.install_plugin(installer, downloaded_file) if installer.kind == 'plugin'
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
@@ -451,6 +453,23 @@ class App < ActiveRecord::Base
 		[name, path]
 	end
 
+	def install_plugin(installer, source)
+		name = plugin_name(installer.url_name)
+		path = PLUGIN_PATH % name
+
+		return if (installer.source_url.nil? or installer.source_url.blank?) 
+		
+		mkdir 'unpack'
+		Dir.chdir("unpack") do
+			unpack(installer.source_url, source)
+
+			end
+		end
+		
+
+	end
+
+
 	def unpack(url, fname)
 		if (url =~ /\.zip$/)
 			system("unzip -q #{fname}")
@@ -473,6 +492,20 @@ class App < ActiveRecord::Base
 			i += 1
 			add = i.to_s
 		end while i < 100
+	end
+
+	def plugin_name(name)
+		current_plugins = Dir.glob(format(PLUGIN_PATH,"*"))
+		lower_bound = 100
+		prefix_numbers = []
+		for plugin in current_plugins
+			name = plugin.split('/').pop
+			plugin_number = if Float(name[0..2]) rescue false 
+			prefix_numbers.push plugin_number.to_i if plugin_number and plugin_number.to_i > lower_bound 
+		end
+
+		return format("%s-%s",prefix_numbers.max,name)
+
 	end
 
 end
