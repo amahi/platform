@@ -24,7 +24,7 @@ class App < ActiveRecord::Base
 
 	APP_PATH = Rails.env == "development" ? "/tmp/app/%s" : "/var/hda/apps/%s"
 	WEBAPP_PATH = Rails.env == "development" ? "/tmp/web-apps/%s" : "/var/hda/web-apps/%s"
-	PLUGIN_PATH = "/var/hda/apps/plugin/%s"
+	PLUGIN_PATH = "/var/hda/platform/html/plugins/%s"
 	INSTALLER_LOG = "/var/log/amahi-app-installer.log"
 
 	belongs_to :webapp, :dependent => :destroy
@@ -182,6 +182,9 @@ class App < ActiveRecord::Base
 			self.install_pkg_deps installer if installer.pkg_dependencies
 			self.install_pkgs installer if installer.pkg
 			app_path = APP_PATH % identifier
+
+			# return just after installing a plugin to prevent creating unnecessary folders,etc
+			self.install_plugin(installer) and return if installer.kind == 'plugin'
 			mkdir app_path
 			webapp_path = nil
 			self.install_status = 40
@@ -219,7 +222,6 @@ class App < ActiveRecord::Base
 			self.install_status = 60
 			self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
-			self.install_plugin(installer, downloaded_file) if installer.kind == 'plugin'
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
@@ -453,18 +455,22 @@ class App < ActiveRecord::Base
 		[name, path]
 	end
 
-	def install_plugin(installer, source)
-		name = plugin_name(installer.url_name)
-		path = PLUGIN_PATH % name
-
+	def install_plugin(installer)
 		return if (installer.source_url.nil? or installer.source_url.blank?) 
 		
+		name = plugin_name(installer.url_name)
+		path = PLUGIN_PATH % name
 		mkdir "%s/unpack" % path
+
 		Dir.chdir("%s/unpack" % path) do
-			unpack(installer.source_url, source)
+			downloaded_file = nil
+
+			unless (installer.source_url.nil? or installer.source_url.blank?)
+				downloaded_file = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
+			end
+			unpack(installer.source_url, downloaded_file)
 
 		end
-		
 	end
 
 
@@ -496,13 +502,16 @@ class App < ActiveRecord::Base
 		current_plugins = Dir.glob(format(PLUGIN_PATH,"*"))
 		lower_bound = 100
 		prefix_numbers = []
+
 		for plugin in current_plugins
-			name = plugin.split('/').pop
-			plugin_number = name[0..2].to_i if Float(name[0..2]) rescue false 
+			number = plugin.split('/')[-1][0..2]
+			plugin_number = number.to_i if Float(number) rescue false 
 			prefix_numbers.push plugin_number if plugin_number and plugin_number > lower_bound 
 		end
 		
-		return format("%s-%s",prefix_numbers.max + 1,name)
+		new_plugin_number = prefix_numbers.max ? prefix_numbers.max + 1 : lower_bound
+
+		return format("%s-%s",new_plugin_number,name)
 
 	end
 
