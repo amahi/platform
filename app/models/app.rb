@@ -459,14 +459,12 @@ class App < ActiveRecord::Base
 
 		return if (installer.source_url.nil? or installer.source_url.blank?) 
 		
-		mkdir 'unpack'
-		Dir.chdir("unpack") do
+		mkdir "%s/unpack" % path
+		Dir.chdir("%s/unpack" % path) do
 			unpack(installer.source_url, source)
 
-			end
 		end
 		
-
 	end
 
 
@@ -500,10 +498,10 @@ class App < ActiveRecord::Base
 		prefix_numbers = []
 		for plugin in current_plugins
 			name = plugin.split('/').pop
-			plugin_number = if Float(name[0..2]) rescue false 
-			prefix_numbers.push plugin_number.to_i if plugin_number and plugin_number.to_i > lower_bound 
+			plugin_number = name[0..2].to_i if Float(name[0..2]) rescue false 
+			prefix_numbers.push plugin_number if plugin_number and plugin_number > lower_bound 
 		end
-
+		
 		return format("%s-%s",prefix_numbers.max + 1,name)
 
 	end
