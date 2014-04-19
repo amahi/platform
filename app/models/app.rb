@@ -504,7 +504,7 @@ class App < ActiveRecord::Base
 			prefix_numbers.push plugin_number.to_i if plugin_number and plugin_number.to_i > lower_bound 
 		end
 
-		return format("%s-%s",prefix_numbers.max,name)
+		return format("%s-%s",prefix_numbers.max + 1,name)
 
 	end
 
