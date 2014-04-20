@@ -458,14 +458,31 @@ class App < ActiveRecord::Base
 		return if (installer.source_url.nil? or installer.source_url.blank?)
 		name = plugin_name(installer.url_name)
 		path = PLUGIN_PATH % name
-		mkdir "%s/unpack" % path
-		Dir.chdir("%s/unpack" % path) do
+		temp_path = "%s/.unpack" % path
+		mkdir temp_path
+		Dir.chdir(temp_path) do
 			downloaded_file = nil
 			unless (installer.source_url.nil? or installer.source_url.blank?)
 				downloaded_file = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
 			end
 			unpack(installer.source_url, downloaded_file)
+			files = Dir.glob('*')
+			if files.size == 1
+				dir = files.first
+				begin; Dir.rmdir("../#{dir}"); rescue; end
+				source_files = Dir.glob("#{files.first}/*")
+				for file in source_files
+					FileUtils.mv(file,path)
+				end
+			else
+				# FIXME what to do if more file are unpacked
+				raise "WARNING: this plugin unpacks into more than one file. This is a warning sign that it may not install properly!"
+			end
 		end
+		FileUtils.rm_rf temp_path
+		apache = Server.find_by_name "apache"
+		# unlike in web apps, in order to initialize the plugin server need to be restarted
+		apache.do_restart
 	end
 
 	def unpack(url, fname)
