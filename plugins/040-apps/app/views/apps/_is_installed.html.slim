@@ -18,7 +18,7 @@
     = app.special_instructions.html_safe
 
 
-- if app.webapp
+- if app.webapp || app.plugin
   div.app-url= link_to(app.full_url, app.full_url, :target => '_blank')
 
 - if app.theme
