@@ -18,20 +18,24 @@
 require 'tempfile'
 require 'digest/md5'
 
-
-
 class App < ActiveRecord::Base
 
-	APP_PATH = Rails.env == "development" ? "/tmp/app/%s" : "/var/hda/apps/%s"
-	WEBAPP_PATH = Rails.env == "development" ? "/tmp/web-apps/%s" : "/var/hda/web-apps/%s"
-	PLUGIN_PATH = "/var/hda/apps/plugin/%s"
-	INSTALLER_LOG = "/var/log/amahi-app-installer.log"
+	if Rails.env == "production"
+		APP_PATH = "/var/hda/apps/%s"
+		WEBAPP_PATH = "/var/hda/web-apps/%s"
+		INSTALLER_LOG = "/var/log/amahi-app-installer.log"
+	else	# development, test, any other
+		APP_PATH = "#{HDA_TMP_DIR}/app/%s"
+		WEBAPP_PATH = "#{HDA_TMP_DIR}/web-apps/%s"
+		INSTALLER_LOG = "#{HDA_TMP_DIR}/amahi-app-installer.log"
+	end
 
 	belongs_to :webapp, :dependent => :destroy
 	belongs_to :theme, :dependent => :destroy
 	belongs_to :db, :dependent => :destroy
 	belongs_to :server, :dependent => :destroy
 	belongs_to :share, :dependent => :destroy
+	belongs_to :plugin, :dependent => :destroy
 
 	has_many :app_dependencies, :dependent => :destroy
 	has_many :children, :class_name => "AppDependency", :foreign_key => 'dependency_id'
@@ -86,8 +90,13 @@ class App < ActiveRecord::Base
 	def self.install(identifier)
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app --environment=#{Rails.env} #{identifier} >> #{INSTALLER_LOG} 2>&1 &")
-		c = Command.new cmd
-		c.execute
+		if Rails.env == "production"
+			c = Command.new cmd
+			c.execute
+		else
+			# execute the command directly not in production
+			system(cmd)
+		end
 	end
 
 
@@ -190,7 +199,8 @@ class App < ActiveRecord::Base
 			unless (installer.source_url.nil? or installer.source_url.blank?)
 				downloaded_file = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
 				Dir.chdir(app_path) do
-					File.symlink(downloaded_file, "source-file")
+					FileUtils.rm_rf "source-file"
+					File.symlink downloaded_file, "source-file"
 				end
 			end
 
@@ -219,7 +229,9 @@ class App < ActiveRecord::Base
 			self.install_status = 60
 			self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
-			self.install_plugin(installer, downloaded_file) if installer.kind == 'plugin'
+			if installer.kind == 'plugin'
+				self.plugin = Plugin.install(installer, downloaded_file)
+			end
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
@@ -400,7 +412,7 @@ class App < ActiveRecord::Base
 		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do
 			mkdir '.unpack'
 			Dir.chdir(".unpack") do
-				unpack(installer.source_url, source)
+				SystemUtils.unpack(installer.source_url, source)
 				# if only one file, move it to html!
 				files = Dir.glob('*')
 				if files.size == 1
@@ -435,7 +447,7 @@ class App < ActiveRecord::Base
 			mkdir 'unpack'
 			mkdir 'logs'
 			Dir.chdir("unpack") do
-				unpack(installer.source_url, source)
+				SystemUtils.unpack(installer.source_url, source)
 				# if only one file, move it to html!
 				files = Dir.glob('*')
 				if files.size == 1
@@ -453,32 +465,6 @@ class App < ActiveRecord::Base
 		[name, path]
 	end
 
-	def install_plugin(installer, source)
-		name = plugin_name(installer.url_name)
-		path = PLUGIN_PATH % name
-
-		return if (installer.source_url.nil? or installer.source_url.blank?)
-
-		mkdir "%s/unpack" % path
-		Dir.chdir("%s/unpack" % path) do
-			unpack(installer.source_url, source)
-		end
-
-	end
-
-
-	def unpack(url, fname)
-		if (url =~ /\.zip$/)
-			system("unzip -q #{fname}")
-		elsif (url =~ /\.(tar.gz|tgz)$/)
-			system("tar -xzf #{fname}")
-		elsif (url =~ /\.(tar.bz2)$/)
-			system("tar -xjf #{fname}")
-		else
-			raise "File #{url} is not supported for unpacking please report it to the Amahi community!"
-		end
-	end
-
 	def webapp_name(name)
 		i = 0
 		add = ""
@@ -489,20 +475,6 @@ class App < ActiveRecord::Base
 			i += 1
 			add = i.to_s
 		end while i < 100
-	end
-
-	def plugin_name(name)
-		current_plugins = Dir.glob(format(PLUGIN_PATH,"*"))
-		lower_bound = 100
-		prefix_numbers = []
-		for plugin in current_plugins
-			name = plugin.split('/').pop
-			plugin_number = name[0..2].to_i if Float(name[0..2]) rescue false
-			prefix_numbers.push plugin_number if plugin_number and plugin_number > lower_bound
-		end
-
-		return format("%s-%s",prefix_numbers.max + 1,name)
-
 	end
 
 end
