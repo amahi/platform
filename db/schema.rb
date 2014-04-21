@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803011600) do
+ActiveRecord::Schema.define(:version => 20140419104547) do
 
   create_table "app_dependencies", :force => true do |t|
     t.integer  "app_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20120803011600) do
     t.string   "initial_password"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "plugin_id"
   end
 
   create_table "cap_accesses", :force => true do |t|
@@ -83,9 +84,16 @@ ActiveRecord::Schema.define(:version => 20120803011600) do
   end
 
   create_table "hosts", :force => true do |t|
-    t.string "name",                    :null => false
+    t.string "name",    :default => "", :null => false
     t.string "mac",     :default => ""
     t.string "address"
+  end
+
+  create_table "plugins", :force => true do |t|
+    t.string   "name"
+    t.string   "path"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "servers", :force => true do |t|

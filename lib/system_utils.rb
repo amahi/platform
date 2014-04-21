@@ -70,4 +70,16 @@ class SystemUtils
 		end
 	end
 
+	def self.unpack(url, fname)
+		if (url =~ /\.zip$/)
+			system("unzip -q #{fname}")
+		elsif (url =~ /\.(tar.gz|tgz)$/)
+			system("tar -xzf #{fname}")
+		elsif (url =~ /\.(tar.bz2)$/)
+			system("tar -xjf #{fname}")
+		else
+			raise "File #{url} is not supported for unpacking please report it to the Amahi community!"
+		end
+	end
+
 end

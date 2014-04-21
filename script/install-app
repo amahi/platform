@@ -16,23 +16,17 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-require File.dirname(__FILE__) + '/../config/boot'
+#require File.dirname(__FILE__) + '/../config/boot'
+require 'rubygems'
+
+# Set up gems listed in the Gemfile.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
+require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 #require 'commands/runner'
 require 'optparse'
 require 'thread'
 require 'etc'
-
-# switch to apache:users first
-uid = Etc.getpwnam("apache").uid
-gid = Etc.getgrnam("users").gid
-Process.gid = gid
-Process.egid = gid
-Process.uid = uid
-Process.euid = uid
-
-# make things group (users) writeable
-File.umask(0002)
 
 options = { :environment => (ENV['RAILS_ENV'] || "development").dup }
 options[:install] = true
@@ -62,8 +56,23 @@ ARGV.delete(app_id)
 
 ENV["RAILS_ENV"] = options[:environment]
 
+if ENV['RAILS_ENV'] == "production"
+	# switch to apache:users first
+	uid = Etc.getpwnam("apache").uid
+	gid = Etc.getgrnam("users").gid
+	Process.gid = gid
+	Process.egid = gid
+	Process.uid = uid
+	Process.euid = uid
+end
+
+# make things group (users) writeable
+File.umask(0002)
+
+#raise $LOAD_PATH.inspect
 # load the environment only after RAILS_ENV is set up
 ROOTDIR = File.join(File.dirname(__FILE__), "..")
+$LOAD_PATH << ROOTDIR
 require File.join(ROOTDIR, 'config/environment')
 Rails.env.replace(options[:environment])
 
