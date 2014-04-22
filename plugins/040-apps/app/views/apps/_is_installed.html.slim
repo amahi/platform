@@ -21,6 +21,9 @@
 - if app.webapp
   div.app-url= link_to(app.full_url, app.full_url, :target => '_blank')
 
+- if app.plugin
+  div.app-url= link_to(app.plugin.name, app.full_url, :target => '_blank')
+
 - if app.theme
   div.app-url= link_to(t('manage_themes'), app.full_url)
 
