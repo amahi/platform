@@ -66,10 +66,11 @@ class Plugin < ActiveRecord::Base
 		# 	{"name"=>"Foo Bar", "class"=>"FooBar", "url"=>"/tab/foo_bar"}
 		def dir2plugin(source, config)
 			# use the destination
-			path = File.basename config["url"]
+			path = config["url"]
+			base = File.basename path
 			# create the plugin proper
 			plugin = create(name: config["name"], path: path)
-			destination = File.join(Rails.root, "plugins", "#{1000+plugin.id}-#{path}")
+			destination = File.join(Rails.root, "plugins", "#{1000+plugin.id}-#{base}")
 			# move the plugin files to the destination
 			FileUtils.rm_rf destination
 			FileUtils.mv source, destination
