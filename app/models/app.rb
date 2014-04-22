@@ -315,7 +315,7 @@ class App < ActiveRecord::Base
 	def full_url
 		webapp ? webapp.full_url : "http://#{app_url}.#{Setting.value_by_name('domain')}"
                 if plugin
-                  "http://hda.#{Setting.value_by_name('domain')}/tab/#{plugin.path}"
+                  "/tab/#{plugin.path}"
                 end
         end
 
