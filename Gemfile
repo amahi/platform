@@ -24,6 +24,7 @@ gem 'jquery-ui-rails'
 
 gem 'slim'
 
+gem 'scrypt' # required for authlogic even though it's not used
 gem 'authlogic'
 
 gem 'bcrypt'
