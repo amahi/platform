@@ -9,5 +9,5 @@ Users::Engine.routes.draw do
 			put 'update_pubkey'
 		end
 	end
-	match 'settings' => 'users#settings'
+	match 'settings' => 'users#settings' ,via: [:get,:post]
 end

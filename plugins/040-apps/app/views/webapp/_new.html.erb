@@ -1,4 +1,4 @@
-<%= button_to_function " #{t('new_web_app')} &raquo; ", update_page { |page|
+<%= button_to " #{t('new_web_app')} &raquo; ", update_page { |page|
    	page.hide 'new-webapp-to-step1'
    	page[:name].value = ""
    	page[:path].value = ""

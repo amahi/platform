@@ -2,12 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-if defined?(Bundler)
-  # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
-  # If you want your assets lazily compiled in production, use this line
-  # Bundler.require(:default, :assets, Rails.env)
-end
+Bundler.require(:default, Rails.env)
 
 module AmahiHDA
   class Application < Rails::Application
@@ -55,7 +50,7 @@ module AmahiHDA
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    # config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.1'

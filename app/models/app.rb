@@ -41,9 +41,9 @@ class App < ActiveRecord::Base
 	has_many :children, :class_name => "AppDependency", :foreign_key => 'dependency_id'
 	has_many :dependencies, :through => :app_dependencies
 
-	scope :installed, where(:installed => true)
-	scope :in_dashboard, where(:show_in_dashboard => true).installed
-	scope :latest_first, :order => 'updated_at desc'
+	scope :installed, ->{where(:installed => true)}
+	scope :in_dashboard,-> {where(:show_in_dashboard => true).installed}
+	scope :latest_first, ->{order('updated_at desc')}
 
 	before_destroy :before_destroy_hook
 

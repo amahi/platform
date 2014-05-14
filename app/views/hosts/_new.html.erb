@@ -1,6 +1,6 @@
 <br />
 
-<%= button_to_function " #{t('new_static_ip')} &raquo; ", update_page { |page|
+<%= button_to " #{t('new_static_ip')} &raquo; ", update_page { |page|
    	page.hide 'new-host-to-step1'
    	page[:host_host].value = ""
    	page[:host_address].value = ""
