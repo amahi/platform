@@ -40,7 +40,7 @@ class Db < ActiveRecord::Base
 private
 
 	def after_create_hook
-		c = connection
+		c = self.class.connection
 		password = name
 		user = name
 		host = 'localhost'
@@ -58,7 +58,7 @@ private
 		Dir.chdir(DB_BACKUPS_DIR) do
 			system("ln -sf #{filename} latest-#{name}.bz2")
 		end
-		c = connection
+		c = self.class.connection
 		host = 'localhost'
 		c.execute "drop user '#{user}'@'#{host}';"
 		c.execute "drop database if exists `#{name}`;"
