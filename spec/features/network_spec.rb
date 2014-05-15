@@ -31,6 +31,5 @@ feature "Network tab" do
 		wait_for_ajax
 		page.should have_content("testdns")
 		page.should have_content("192.168.1.10")
-		page.save_screenshot("checking.png")
 	end
 end

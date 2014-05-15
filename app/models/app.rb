@@ -164,7 +164,7 @@ class App < ActiveRecord::Base
 
 	def install_status=(value)
 		# create it dynamically if it does not exist
-		status = Setting.where(:kind=>self.identifier, :name=> 'install_status', :value=>value).first
+		status = Setting.where(:kind=>self.identifier, :name=> 'install_status').first_or_create
 		if value.nil?
 			status && status.destroy
 			return nil
