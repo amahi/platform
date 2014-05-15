@@ -38,7 +38,7 @@ module TabsHelper
 	end
 
 	def advanced?
-		(s = Setting.find_by_name 'advanced') && s.set?
+		(s = Setting.where(:name=>'advanced').first) && s.set?
 	end
 
 	def debug?

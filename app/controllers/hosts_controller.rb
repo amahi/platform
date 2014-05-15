@@ -122,7 +122,7 @@ class HostsController < ApplicationController
 			render :text => a.address
 			return
 		end
-		h = Host.find_by_address addr
+		h = Host.where(:address=>addr).first
 		if h.nil?
 			# no such address, ok to use it
 			a.address = addr
@@ -140,7 +140,7 @@ class HostsController < ApplicationController
 			render :text => a.mac
 			return
 		end
-		h = Host.find_by_mac mac
+		h = Host.where(:mac=>mac).first
 		if h.nil?
 			# no such address, ok to use it
 			a.mac = mac
@@ -172,7 +172,7 @@ class HostsController < ApplicationController
 			render :partial => 'hosts/name_bad'
 			return
 		end
-		a = Host.find_by_host(n)
+		a = Host.where(:host=>n).first
 		if a.nil?
 			# no such alias, ok to create it
 			@name = n
@@ -190,7 +190,7 @@ class HostsController < ApplicationController
 			render :partial => 'hosts/address_bad'
 			return
 		end
-		a = Host.find_by_address(n)
+		a = Host.where(:address=>n).first
 		if a.nil?
 			# no such address, ok to create it
 			@name = n
@@ -208,7 +208,7 @@ class HostsController < ApplicationController
 			render :partial => 'hosts/mac_bad'
 			return
 		end
-		a = Host.find_by_mac(n)
+		a = Host.where(:mac=>n).first
 		if a.nil?
 			# no such mac, ok to create it
 			@name = n

@@ -23,7 +23,7 @@
 	<tr>
 	<td>&nbsp;</td>
 	<td>
-	<%= link_to_function t('cancel'), update_page { |page|
+	<%= link_to t('cancel'), update_page { |page|
    			page.hide 'new-webapp-step1'
    			page.show 'new-webapp-to-step1'
 			page[:name].value = ""

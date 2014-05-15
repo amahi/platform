@@ -8,7 +8,7 @@ feature "Admin creation" do
 	end
 
 	scenario "first login for admin should see the setup page and setup first admin" do
-		(s = Setting.find_by_name('initialized')) && s.destroy
+		(s = Setting.where(:name=>'initialized').first) && s.destroy
 		username = "newuser"
 		User.stub(:system_find_name_by_username) { ["New User", 1000, username] }
 		visit start_path
@@ -17,7 +17,7 @@ feature "Admin creation" do
 		fill_in "password", :with => "secret"
 		fill_in "password_confirmation", :with => "secret"
 		click_button "Create"
-		user = User.find_by_login username
+		user = User.where(:login => username).first
 		user.admin.should be_true
 	end
 

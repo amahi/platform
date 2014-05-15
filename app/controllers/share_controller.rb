@@ -97,7 +97,7 @@ class ShareController < ApplicationController
 			render :partial => 'share/name_invalid'
 			return false
 		end
-		share = Share.find_by_name(sn)
+		share = Share.where(:name=>sn).first
 		if share
 			render :partial => 'share/name_not_available'
 			return false
@@ -118,7 +118,7 @@ class ShareController < ApplicationController
 			render :partial => 'share/path_invalid'
 			return false
 		end
-		share = Share.find_by_path(sp)
+		share = Share.where(:path=>sp).first
 		if share
 			render :partial => 'share/path_not_available'
 			return false
@@ -296,7 +296,7 @@ class ShareController < ApplicationController
 
 	def toggle_disk_pool_partition
 		path = params[:path]
-		part = DiskPoolPartition.find_by_path(path)
+		part = DiskPoolPartition.where(:path=>path).first
 		if part
 			# was enabled - disable it by deleting it
 			# FIXME - see http://bugs.amahi.org/issues/show/510

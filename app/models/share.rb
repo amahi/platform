@@ -26,7 +26,7 @@ class Share < ActiveRecord::Base
 	DEFAULT_SHARES = [ "Books", "Pictures", "Movies", "Videos", "Music", "Docs", "Public" ].each {|s| I18n.t s }
 	PDC_SETTINGS = "/var/hda/domain-settings"
 
-	default_scope order("name")
+	default_scope {order("name")}
 	# scope :in_disk_pool, where([ "disk_pool_copies > ?", 0])
 
 	has_many :cap_accesses, :dependent => :destroy
@@ -43,7 +43,7 @@ class Share < ActiveRecord::Base
 	attr_accessible :name, :path, :rdonly, :visible, :tags, :extras
 
 	validates :name, :presence => true,
-		:format => { :with => /^\w[\w ]+$/ },
+		:format => { :with => /\A^\w[\w ]+$\z/ },
 		:length => { :maximum => 32 },
 		:uniqueness => { :case_sensitive => false }
 

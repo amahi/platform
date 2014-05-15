@@ -30,7 +30,7 @@ class WebappAliasController < ApplicationController
 	def create
 		@wa = Webapp.find(params[:id])
 		raise "Webapp with id=#{params[:id]} cannot be found" unless @wa
-		@waa = WebappAlias.find_by_name(params[:name])
+		@waa = WebappAlias.where(:name=>params[:name]).first
 		if @waa
 			prev = @waa.webapp_id
 			@waa.webapp_id = @wa.id

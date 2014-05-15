@@ -1,18 +1,21 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.17'
+gem "rails", '~>4.1.1'
 
 gem 'mysql2'
 gem "yettings"
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
+gem 'sass-rails' , '~>4.0.3'
+gem 'coffee-rails'
 
-  gem 'therubyracer'
+gem 'therubyracer'
 
-  gem 'uglifier'
-end
+gem 'uglifier'
+
+gem "activeresource", require: "active_resource"
+gem 'protected_attributes' 
+gem 'actionpack-action_caching'
+gem 'rails-observers'
 
 gem 'jbuilder'
 gem 'ya2yaml'
@@ -43,7 +46,7 @@ group :development do
 
 	# FIXME: for Fedora only
 	if ((open('/etc/issue').grep(/fedora/i).length > 0) rescue false)
-		gem 'minitest'
+		gem "minitest", "~> 4.7.5"
 	end
 end
 
