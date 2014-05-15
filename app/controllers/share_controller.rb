@@ -17,7 +17,7 @@
 class ShareController < ApplicationController
 	before_filter :admin_required
 
-	VALID_NAME = Regexp.new "^\\w[\\w ]+$"
+	VALID_NAME = Regexp.new "\A\\w[\\w ]+\z"
 	# Disk Pool minimum free: default og 10GB, but for root,
 	# 20GB. so that when all drives are full, / should still have 10GB free.
 	DP_MIN_FREE_DEFAULT = 10
@@ -318,7 +318,7 @@ class ShareController < ApplicationController
 
 	def is_valid_domain_name(domain)
 		return false if domain.size > 15 || domain.size < 1
-		return false unless domain =~ /^[A-z][A-z_0-9]*$/
+		return false unless domain =~ /\A[A-z][A-z_0-9]*\z/
 		true
 	end
 
