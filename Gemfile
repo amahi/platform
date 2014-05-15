@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "rails", '~>4.0.5'
+gem "rails", '~>4.1.1'
 
 gem 'mysql2'
 gem "yettings"
@@ -20,7 +20,7 @@ gem 'rails-observers'
 gem 'jbuilder'
 gem 'ya2yaml'
 
-gem 'themes_for_rails'
+gem 'themes_for_rails', :git=>"https://github.com/agmps18/themes_for_rails.git"
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

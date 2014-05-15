@@ -36,7 +36,7 @@ class CalendarController < ApplicationController
 			FileUtils.rm_rf(".DAV/" + calname + ".dir")
 			@calendars = Dir["*.ics"]
 		end
-		@has_ical = App.find_by_name 'iCalendar' != nil
+		@has_ical = App.where (:name=>'iCalendar').first != nil
 		render :partial => 'calendar/calendar', :collection => @calendars, :locals => { :has_ical => @has_ical }
 	end
 
@@ -52,7 +52,7 @@ class CalendarController < ApplicationController
 			end
 			@calendars = Dir["*.ics"]
 		end
-		@has_ical = App.find_by_name 'iCalendar' != nil
+		@has_ical = App.where (:name=>'iCalendar').first != nil
 		render :partial => 'calendar/calendar', :collection => @calendars, :locals => { :has_ical => @has_ical }
 	end
 
