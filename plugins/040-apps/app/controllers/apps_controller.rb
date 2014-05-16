@@ -34,13 +34,13 @@ class AppsController < ApplicationController
 
 	def install
 		identifier = params[:id]
-		@app = App.find_by_identifier identifier
+		@app = App.where(:identifier=>identifier).first
 		App.install identifier unless @app
 	end
 
 	def install_progress
 		identifier = params[:id]
-		@app = App.find_by_identifier identifier
+		@app = App.where(:identifier=>identifier).first
 
 		if @app
 			@app.reload
@@ -56,13 +56,13 @@ class AppsController < ApplicationController
 
 	def uninstall
 		identifier = params[:id]
-		@app = App.find_by_identifier identifier
+		@app = App.where(:identifier=>identifier).first
 		@app.uninstall if @app
 	end
 
 	def uninstall_progress
 		identifier = params[:id]
-		@app = App.find_by_identifier identifier
+		@app = App.where(:identifier=>identifier).first
 		if @app
 			@app.reload
 			@progress = @app.install_status
@@ -76,7 +76,7 @@ class AppsController < ApplicationController
 
 	def toggle_in_dashboard
 		identifier = params[:id]
-		app = App.find_by_identifier identifier
+		app = App.where(:identifier=>identifier).first
 		if app.installed
 			app.show_in_dashboard = ! app.show_in_dashboard
 			app.save

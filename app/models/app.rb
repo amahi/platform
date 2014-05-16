@@ -41,9 +41,9 @@ class App < ActiveRecord::Base
 	has_many :children, :class_name => "AppDependency", :foreign_key => 'dependency_id'
 	has_many :dependencies, :through => :app_dependencies
 
-	scope :installed, where(:installed => true)
-	scope :in_dashboard, where(:show_in_dashboard => true).installed
-	scope :latest_first, :order => 'updated_at desc'
+	scope :installed, ->{where(:installed => true)}
+	scope :in_dashboard,-> {where(:show_in_dashboard => true).installed}
+	scope :latest_first, ->{order('updated_at desc')}
 
 	before_destroy :before_destroy_hook
 
@@ -111,7 +111,7 @@ class App < ActiveRecord::Base
 		AmahiApi::api_key = Setting.value_by_name("api-key")
 		begin
 			AmahiApi::App.find(:all).map do |online_app|
-				App.find_by_identifier(online_app.id) ? nil : App.new(online_app.id, online_app)
+				App.where(:identifier=>online_app.id).first ? nil : App.new(online_app.id, online_app)
 			end.compact
 		rescue
 			[]
@@ -157,14 +157,14 @@ class App < ActiveRecord::Base
 	end
 
 	def self.installation_status(identifier)
-		status = Setting.find_by_kind_and_name(identifier, 'install_status')
+		status = Setting.where(:kind=>identifier,:name=> 'install_status').first
 		return 0 unless status
 		status.value.to_i
 	end
 
 	def install_status=(value)
 		# create it dynamically if it does not exist
-		status = Setting.find_or_create_by(self.identifier, 'install_status', value)
+		status = Setting.where(:kind=>self.identifier, :name=> 'install_status', :value=>value).first
 		if value.nil?
 			status && status.destroy
 			return nil
@@ -213,7 +213,7 @@ class App < ActiveRecord::Base
 			self.create_db(:name => installer.database) if installer.database && !installer.database.blank?
 			# if it has a share, create it and install it
 			if installer.share
-				sh = Share.find_by_name installer.share
+				sh = Share.where(:name=>installer.share).first
 				if sh
 					# FIXME: autohook to it. this is for legacy shares. not needed in new installs
 					self.share = sh
@@ -376,7 +376,7 @@ class App < ActiveRecord::Base
 		return [] if deps.nil? or deps.blank?
 		deps.strip!
 		deps.split(/[, ]+/).map do |identifier|
-			a = App.find_by_identifier identifier
+			a = App.where(:identifier=>identifier).first
 			unless a
 				a = App.new identifier
 				a.install_bg
@@ -469,7 +469,7 @@ class App < ActiveRecord::Base
 		i = 0
 		add = ""
 		begin
-			wa = Webapp.find_by_name(name + add)
+			wa = Webapp.where(:name=>(name + add)).first
 			return (name+add) if wa.nil?
 			raise "cannot find a suitable webapp name. giving up at #{name+add}." if i > 29
 			i += 1

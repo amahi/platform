@@ -1,7 +1,7 @@
 td.top
   label #{t('authentication')}
 td.top
-  = link_to_function content_tag('i', '', class: 'auth'), "$(this).parent().children('.pubkey-area').toggle('slow')",
+  = link_to content_tag('i', '', class: 'auth'), '#', :onclick=>"$(this).parent().children('.pubkey-area').toggle('slow')",
     :title => t('manage_your_public_key'),
     :class => 'control-action',:id=>"user-auth-control-action-#{user.id}"
   = theme_image_tag("ok.png", :class => 'ok', :style => 'display:none')
@@ -15,4 +15,4 @@ td.top
       .control-group
         .controls
           = submit_tag t('update_key'), :class => 'btn'
-          = link_to_function t('cancel'), "$(this).parents('.pubkey-area').hide('slow')", :class => 'cancel-link'
+          = link_to t('cancel'), '#', :onclick=>"$(this).parents('.pubkey-area').hide('slow')", :class => 'cancel-link'

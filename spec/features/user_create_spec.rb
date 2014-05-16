@@ -65,7 +65,7 @@ feature "Users tab" do
       fill_in "user_password", :with => "secret"
       click_button "user_create_button"
       wait_for_ajax
-      page.should have_content 'is too short (minimum is 4 characters)'
+      page.should have_content "doesn't match Password"
     end
     scenario 'when password doesnt match' do
       visit users_engine.users_path
@@ -76,7 +76,8 @@ feature "Users tab" do
       fill_in "user_password_confirmation", :with => "notsecret"
       click_button "user_create_button"
       wait_for_ajax
-      page.should have_content "doesn't match confirmation"
+      page.save_screenshot('image1.jpg')
+      page.should have_content "doesn't match Password"
     end
   end
 end

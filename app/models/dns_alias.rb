@@ -20,7 +20,7 @@ class DnsAlias < ActiveRecord::Base
 	after_destroy :restart
 	after_save :restart
 
-	scope :user_visible, where(["address != ?", ''])
+	scope :user_visible,->{where(["address != ?", ''])}
 
 	attr_accessible :name, :address
 

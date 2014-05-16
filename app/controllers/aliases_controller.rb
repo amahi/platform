@@ -160,7 +160,7 @@ class AliasesController < ApplicationController
 			render :partial => 'aliases/name_bad'
 			return
 		end
-		a = DnsAlias.find_by_alias(n)
+		a = DnsAlias.where(:alias=>n).first
 		if a.nil?
 			# no such alias, ok to create it
 			@name = n

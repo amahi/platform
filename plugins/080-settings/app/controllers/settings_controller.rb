@@ -21,8 +21,8 @@ class SettingsController < ApplicationController
 	def index
 		@page_title = t 'settings'
 		@available_locales = locales_implemented
-		@advanced_settings = Setting.find_by_name('advanced')
-		@guest = Setting.find_by_name("guest-dashboard")
+		@advanced_settings = Setting.where(:name=>'advanced').first
+		@guest = Setting.where(:name=>"guest-dashboard").first
 		@version = Platform.platform_versions
 	end
 
@@ -120,7 +120,7 @@ class SettingsController < ApplicationController
 	end
 
 	def activate_theme
-		s = Setting.find_by_name "theme"
+		s = Setting.where(:name=> "theme").first
 		s.value = params[:id]
 		s.save!
 		# redirect rather than render, so that it re-displays with the new theme

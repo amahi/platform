@@ -86,7 +86,7 @@ class UserSessionsController < ApplicationController
 			return
 		end
 		# the user exists in the system .. does it exist in the database?
-		u = User.find_by_login(systemusername)
+		u = User.where(:login=>systemusername).first
 		if u
 			@user = u
 		else

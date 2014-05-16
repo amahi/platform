@@ -1,6 +1,6 @@
 <% message_string = "\n\nExplain the sequence of events leading to the error\nin as much detail as you can.\n\nThe more *concrete detail* you can add,\nthe higher chances we fix the problem quickly!\n\nClick here to continue ..." %>
 <div id="debug_submit_link">
-<%= button_to_function "#{t('submit_for_debug')} &raquo; ", update_page { |page|
+<%= button_to "#{t('submit_for_debug')} &raquo; ", update_page { |page|
    			page.hide :debug_submit_link
    			page[:debug_submit_form].visual_effect :appear
    			page[:app_log].visual_effect :fade
@@ -25,7 +25,7 @@
 		<tr>
 		<td> &nbsp; </td>
 		<td>
-			<%= link_to_function t('cancel'), update_page { |page|
+			<%= link_to t('cancel'), update_page { |page|
 					page.hide 'debug_submit_form'
 					page.show 'debug_submit_link'
 					page[:subject].value = "Describe what failed here ..."

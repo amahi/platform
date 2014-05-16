@@ -7,8 +7,8 @@
         th
           = t 'temperature'
           | &nbsp;(
-          = link_to_function "F", '$("#disks-table .temperature").toggle()', class: 'temperature', style: 'display:none'
-          = link_to_function "C", '$("#disks-table .temperature").toggle()', class: 'temperature'
+          = link_to "F", '#', :onclick=> '$("#disks-table .temperature").toggle()', class: 'temperature', style: 'display:none'
+          = link_to "C", '#', :onclick=> '$("#disks-table .temperature").toggle()', class: 'temperature'
           | )
     tbody
       - @disks.each do | disk |

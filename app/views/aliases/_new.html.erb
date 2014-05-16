@@ -1,6 +1,6 @@
 <br />
 
-<%= button_to_function " #{t('new_alias')} &raquo; ", update_page { |page|
+<%= button_to " #{t('new_alias')} &raquo; ", update_page { |page|
    	page.hide 'new-alias-to-step1'
    	page[:alias_alias].value = ""
    	page[:alias_address].value = ""
