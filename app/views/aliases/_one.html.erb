@@ -1,10 +1,10 @@
 <%
 	name = [h(one.alias), @domain].join '.'
-	name = h($1) if one.alias =~ /(.*)\.$/
+	name = h($1) if one.alias =~ /(.*)\.\z/
 	(base, addr) = case one.address
 			when ''
 				[@net, @self]
-			when /^\d+$/
+			when /\A\d+\z/
 				[@net, [@net, h(one.address)].join('.')]
 			else
 				['', h(one.address)]
