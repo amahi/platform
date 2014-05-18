@@ -18,8 +18,8 @@ class AliasesController < ApplicationController
 
 	before_filter :admin_required
 
-	VALID_NAME = Regexp.new "^[A-Za-z0-9\-]+$"
-	VALID_ADDRESS = Regexp.new '^(|\d(\d?\d?)|\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?))$'
+	VALID_NAME = Regexp.new "\A[A-Za-z0-9\-]+\z"
+	VALID_ADDRESS = Regexp.new '\A(|\d(\d?\d?)|\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?))\z'
 
 	def initialize
 	      @page_title = 'DNS Aliases'
@@ -195,7 +195,7 @@ private
 		# NOTE: do not allow aliases to the hda as a blank address
 		return false if addr.blank?
 		return false unless (addr =~ VALID_ADDRESS)
-		if addr =~ Regexp.new('^(\d+)\.(\d+)\.(\d+)\.(\d+)$')
+		if addr =~ Regexp.new('\A(\d+)\.(\d+)\.(\d+)\.(\d+)\z')
 			[$1, $2, $3, $4].each { |ip| return false if ip.to_i > 254 }
 			return true
 		end
@@ -203,11 +203,11 @@ private
 	end
 
 	def is_address_full?(addr)
-		(addr =~ Regexp.new('^(\d+)\.(\d+)\.(\d+)\.(\d+)$')) ? true : false
+		(addr =~ Regexp.new('\A(\d+)\.(\d+)\.(\d+)\.(\d+)\z')) ? true : false
 	end
 
 	def valid_short_address?(addr)
-		if addr =~ Regexp.new('^(\d+)$')
+		if addr =~ Regexp.new('\A(\d+)\z')
 			v = addr.to_i
 			return true unless v < 0 or v > 254
 		end

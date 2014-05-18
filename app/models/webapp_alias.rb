@@ -25,7 +25,7 @@ class WebappAlias < ActiveRecord::Base
 						:presence => true,
 						:uniqueness => true,
 						:length => { :within => 1..254 },
-						:format => { :with => /\A^[a-z0-9][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*){0,5}$\z/i }
+						:format => { :with => /\A[a-z0-9][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*){0,5}\z/i }
 
 	def to_s
 		name

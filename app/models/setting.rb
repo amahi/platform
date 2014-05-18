@@ -29,7 +29,7 @@ class Setting < ActiveRecord::Base
 
 	validates :value,
 	          :length => { :maximum => 15 },
-	          :format => { :with => /\A^[a-zA-Z][a-zA-Z0-9]{0,14}$\z/ },
+	          :format => { :with => /\A[a-zA-Z][a-zA-Z0-9]{0,14}\z/ },
 	          :if => Proc.new { |x| x.kind.eql?(Setting::GENERAL) && x.name.eql?('workgroup') },
 	          :on => :update
 
