@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 	attr_accessible :login, :name, :password, :password_confirmation, :admin
 
 	validates :login, :presence => true,
-	:format => { :with => /\A^[A-Za-z][A-Za-z0-9]+$\z/ },
+	:format => { :with => /\A[A-Za-z][A-Za-z0-9]+\z/ },
 	:length => { :in => 3..32 },
 	:uniqueness => { :case_sensitive => false },
 	:user_not_exist_in_system => {:message => 'already exists in system', :on => :create}

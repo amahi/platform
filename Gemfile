@@ -46,7 +46,7 @@ group :development do
 
 	# FIXME: for Fedora only
 	if ((open('/etc/issue').grep(/fedora/i).length > 0) rescue false)
-		gem "minitest", "~> 4.7.5"
+		gem "minitest"
 	end
 end
 

@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
 	def check_for_amahi_app
 		server = request.env['SERVER_NAME']
 		dom = Setting.get_by_name('domain')
-		if server && server != 'hda' && server =~ /^(.*)\.#{dom}$/
+		if server && server != 'hda' && server =~ /\A(.*)\.#{dom}\z/
 			server = $1
 		end
 		if server && server != 'hda' && DnsAlias.where(:name=>server).first
@@ -75,8 +75,8 @@ class ApplicationController < ActionController::Base
 			rd = RouterDriver.current_router = (r ? r.value : "")
 			# return the class proper if valid
 			@router = Kernel.const_get(rd) unless rd.blank?
-			u = Setting.network.where(:name=>'router_username').first
-			p = Setting.network.where(:name=>'router_password').first
+			u = Setting.network.find_by_name('router_username')
+			p = Setting.network.find_by_name('router_password')
 			RouterDriver.set_auth(unobfuscate(u.value), unobfuscate(p.value)) if p and u and p.value and u.value
 		rescue
 			# shhh. comment out the rescue for debugging

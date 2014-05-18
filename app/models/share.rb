@@ -43,7 +43,7 @@ class Share < ActiveRecord::Base
 	attr_accessible :name, :path, :rdonly, :visible, :tags, :extras
 
 	validates :name, :presence => true,
-		:format => { :with => /\A^\w[\w ]+$\z/ },
+		:format => { :with => /\A\w[\w ]+\z/ },
 		:length => { :maximum => 32 },
 		:uniqueness => { :case_sensitive => false }
 
