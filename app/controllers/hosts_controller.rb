@@ -17,8 +17,8 @@
 class HostsController < ApplicationController
 	before_filter :admin_required
 
-	VALID_NAME = Regexp.new "^[A-Za-z][A-Za-z0-9\-]+$"
-	VALID_ADDRESS = Regexp.new '^(|\d(\d?\d?)|\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?))$'
+	VALID_NAME = Regexp.new "\A[A-Za-z][A-Za-z0-9\-]+\z"
+	VALID_ADDRESS = Regexp.new '\A(|\d(\d?\d?)|\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?))\z'
 	MAC_P = '(\d|[A-Fa-f])(\d|[A-Fa-f])'
 	# This is the range at which DHCP starts. Strictly below is valid
 
@@ -242,7 +242,7 @@ private
 	end
 
 	def valid_short_address?(addr)
-		if addr =~ Regexp.new('^(\d+)$')
+		if addr =~ Regexp.new('\A(\d+)\z')
 			v = addr.to_i
 			return true if v > 0 and v < VALID_DHCP_ADDRESS_RANGE
 		end

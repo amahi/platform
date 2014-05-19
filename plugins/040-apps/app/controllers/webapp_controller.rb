@@ -17,7 +17,7 @@
 class WebappController < ApplicationController
 	before_filter :admin_required
 
-	VALID_NAME = Regexp.new "^[A-Za-z][A-Za-z0-9\-]+$"
+	VALID_NAME = Regexp.new "\A[A-Za-z][A-Za-z0-9\-]+\z"
 
 	def create
 		# FIXME - check check check!
@@ -130,7 +130,7 @@ private
 	def valid_path?(path)
 		return false if path.size > 250
 		return false unless path =~ /^\//
-		return false unless path =~ /^[A-Za-z0-9_\/-]+$/
+		return false unless path =~ /\A[A-Za-z0-9_\/-]+\z/
 		return false if path =~ /\/$/
 		return false if path =~ /\/\/+/
 		true

@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
 	def check_for_amahi_app
 		server = request.env['SERVER_NAME']
 		dom = Setting.get_by_name('domain')
-		if server && server != 'hda' && server =~ /^(.*)\.#{dom}$/
+		if server && server != 'hda' && server =~ /\A(.*)\.#{dom}\z/
 			server = $1
 		end
 		if server && server != 'hda' && DnsAlias.where(:name=>server).first
