@@ -314,7 +314,10 @@ class App < ActiveRecord::Base
 
 	def full_url
 		webapp ? webapp.full_url : "http://#{app_url}.#{Setting.value_by_name('domain')}"
-	end
+                if plugin
+                  "/tab/#{plugin.path}"
+                end
+        end
 
 	def testing?
 		status == 'testing'
