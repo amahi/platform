@@ -75,8 +75,8 @@ class ApplicationController < ActionController::Base
 			rd = RouterDriver.current_router = (r ? r.value : "")
 			# return the class proper if valid
 			@router = Kernel.const_get(rd) unless rd.blank?
-			u = Setting.network.find_by_name('router_username')
-			p = Setting.network.find_by_name('router_password')
+			u = Setting.network.where(:name=>'router_username').first
+			p = Setting.network.where(:name=>'router_password').first
 			RouterDriver.set_auth(unobfuscate(u.value), unobfuscate(p.value)) if p and u and p.value and u.value
 		rescue
 			# shhh. comment out the rescue for debugging
