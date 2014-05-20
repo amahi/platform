@@ -24,7 +24,7 @@ class Theme < ActiveRecord::Base
 		tl = all
 		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do
 			Dir.glob("*").sort.each do |theme_dir|
-				next if find_by_css theme_dir
+				next if where(:css=>theme_dir).first
 				theme_init_file = File.join(theme_dir, "init.rb")
 				if File.exist? theme_init_file
 					load theme_init_file
