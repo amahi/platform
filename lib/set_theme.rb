@@ -22,7 +22,7 @@ class SetTheme
 
 		def find
 			begin
-				theme_setting = Setting.where(:name => 'theme', :value => self.default).first_or_create
+				theme_setting = Setting.where(:name => 'theme').first_or_create
 				path = theme_setting.value
 				theme_path = init_file_exists?(path) ? path : self.default
 				theme = init(theme_path)
