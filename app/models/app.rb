@@ -313,7 +313,13 @@ class App < ActiveRecord::Base
 	end
 
 	def full_url
-		webapp ? webapp.full_url : "http://#{app_url}.#{Setting.value_by_name('domain')}"
+		if webapp
+			webapp.full_url
+		elsif theme?
+			"/tab/settings/themes"
+		else
+			"http://#{app_url}.#{Setting.value_by_name('domain')}"
+		end
 	end
 
 	def testing?
