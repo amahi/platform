@@ -1,7 +1,7 @@
 #hosts-table
   .settings-table
     - if @hosts.any?
-      table.settings
+      table.settings.table
         thead
           tr
             th.settings-col1= t 'host'
@@ -10,7 +10,7 @@
     .empty-hint
       h2= t('there_are_no_hosts')
 
-  = button_tag t('new_host'), type: 'button', class: 'open-area btn btn-create', id: 'new-host-to-step1', data: { related: '#new-host-step1' }
+  = button_tag t('new_host'), type: 'button', class: 'open-area btnn btn-create btn btn-info btn-sm', id: 'new-host-to-step1', data: { related: '#new-host-step1' }
 
   #new-host-box
     #host-new

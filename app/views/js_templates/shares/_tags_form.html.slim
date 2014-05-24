@@ -11,11 +11,11 @@
       :id => 'update-tags-form'\
     } do |f|
 
-  .control-group
+  .control-group.form-group
     .controls
-      = f.text_field :tags, :size => 16, :maxlength => 255, :placeholder => '(add tags)'
-  .control-group
+      = f.text_field :tags, :size => 16, :maxlength => 255, :class=>'form-control input-sm right-margin-10', :placeholder => '(add tags)'
+  .control-group.form-group
     .controls
       = spinner
-      = f.submit "#{t('change')}".html_safe, :class => 'btn'
-      = link_to t('cancel'), '#', :class => 'close-update-tags-area cancel-link'
+      = f.submit "#{t('change')}".html_safe, :class => 'btnn btn btn-info btn-sm'
+      = link_to t('cancel'), '#', :class => 'close-update-tags-area cancel-link btn btn-primary btn-sm left-margin-10'

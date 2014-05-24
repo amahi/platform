@@ -5,9 +5,9 @@
 #apps-table
   .settings-table
     - if @apps.any?
-      table.settings
+      table.settings.table
         tr
-          th.settings-col1.apps-col1[scope='col']= t('application')
+          th.settings-col1settings-col1-pad1.apps-col1[scope='col']= t('application')
           th.settings-col2.apps-col2[scope='col']= t('description')
       = render :partial => 'apps/app_available', :collection => @apps
     - else

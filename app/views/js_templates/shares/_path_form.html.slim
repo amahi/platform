@@ -7,12 +7,12 @@
       :id => 'update-path-form'\
     } do |f|
 
-  .control-group
+  .control-group.form-group
     .controls
-      = f.text_field :path, :size => 38, :maxlength => 128, :placeholder => t('location')
-  .control-group
+      = f.text_field :path, :size => 38, :maxlength => 128,:class=>'form-control input-sm', :placeholder => t('location')
+  .control-group.form-group
     .controls
       = spinner
-      = f.submit "#{t('change')}".html_safe, :class => 'btn'
-      = link_to t('cancel'), '#', :class => 'close-update-path-area cancel-link'
+      = f.submit "#{t('change')}".html_safe, :class => 'btnn btn btn-info btn-sm left-margin-10'
+      = link_to t('cancel'), '#', :class => 'close-update-path-area cancel-link btn btn-primary btn-sm left-margin-10'
     .messages

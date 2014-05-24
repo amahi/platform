@@ -34,7 +34,7 @@ AmahiHDA::Application.routes.draw do
 
   resources :user_sessions, :hosts, :aliases
 
-  match 'search/:action' => 'search', :as => :search, via: [:get]
+  match 'search/:action' => 'search', :as => :search, via: [:get,:post]
 
   root :to => 'front#index'
 

@@ -1,18 +1,18 @@
 td.top
   label #{t('authentication')}
 td.top
-  = link_to content_tag('i', '', class: 'auth'), '#', :onclick=>"$(this).parent().children('.pubkey-area').toggle('slow')",
+  = link_to content_tag('i', '', class: 'auth glyphicon glyphicon-certificate left-margin-10'), '#', :onclick=>"event.preventDefault();$(this).parent().children('.pubkey-area').toggle('slow')",
     :title => t('manage_your_public_key'),
     :class => 'control-action',:id=>"user-auth-control-action-#{user.id}"
   = theme_image_tag("ok.png", :class => 'ok', :style => 'display:none')
   = theme_image_tag("warning.png", :class => 'error', :style => 'display:none')
   = spinner
   div.pubkey-area[style="display:none"]
-    = form_tag users_engine.update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey short-form form-horizontal' do |f|
+    = form_tag users_engine.update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey short-form form-horizontal left-margin-20' do |f|
       .control-group
-        .controls
-          = text_area_tag "public_key_#{user.id}", user.public_key, :rows => 5, :cols => 78, :placeholder => t('public_key')
+        .controls.form-group
+          = text_area_tag "public_key_#{user.id}", user.public_key, :rows => 5,:class=>'form-control input-sm lef-margin-10', :cols => 78, :placeholder => t('public_key')
       .control-group
-        .controls
-          = submit_tag t('update_key'), :class => 'btn'
-          = link_to t('cancel'), '#', :onclick=>"$(this).parents('.pubkey-area').hide('slow')", :class => 'cancel-link'
+        .controls.form-group
+          = submit_tag t('update_key'), :class => 'btnn btn btn-info btn-sm'
+          = link_to t('cancel'), '#', :onclick=>"$(this).parents('.pubkey-area').hide('slow')", :class => 'cancel-link btn btn-primary btn-sm left-margin-10'
