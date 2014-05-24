@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/agmps18/themes_for_rails.git
-  revision: f1cf020fecc8b4aa03caac956c13716f6943beb1
+  revision: 8eca26171d864b489678ef94e0c60d75f4954e80
   specs:
     themes_for_rails (0.5.1)
       rails (>= 3.0.0)
@@ -101,7 +101,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.3.4)
-    multi_json (1.10.0)
+    multi_json (1.10.1)
     mysql2 (0.3.16)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)

@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
 		set_direction
 		check_for_amahi_app
 		prepare_theme
-		adv = Setting.find_by_name('advanced')
+		adv = Setting.where(:name=>'advanced').first
 		@advanced = adv && adv.value == '1'
 	end
 
@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
 		if server && server != 'hda' && server =~ /\A(.*)\.#{dom}\z/
 			server = $1
 		end
-		if server && server != 'hda' && DnsAlias.find_by_name(server)
+		if server && server != 'hda' && DnsAlias.where(:name=>server).first
 			redirect_to "http://hda/hda_app_#{server}"
 		end
 	end
@@ -75,8 +75,8 @@ class ApplicationController < ActionController::Base
 			rd = RouterDriver.current_router = (r ? r.value : "")
 			# return the class proper if valid
 			@router = Kernel.const_get(rd) unless rd.blank?
-			u = Setting.network.find_by_name('router_username')
-			p = Setting.network.find_by_name('router_password')
+			u = Setting.network.where(:name=>'router_username').first
+			p = Setting.network.where(:name=>'router_password').first
 			RouterDriver.set_auth(unobfuscate(u.value), unobfuscate(p.value)) if p and u and p.value and u.value
 		rescue
 			# shhh. comment out the rescue for debugging

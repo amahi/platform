@@ -1,27 +1,27 @@
 - @host = @host || Host.new
 
-= form_for @host, url: network_engine.hosts_path, remote: true, html: { class: 'host create-form', id: 'new-host-form' } do |f|
+= form_for @host, url: network_engine.hosts_path, remote: true, html: { class: 'host create-form form-horizontal col-md-6', id: 'new-host-form' } do |f|
   fieldset
     legend &nbsp; #{t('create_a_new_host')} &nbsp;
 
     .create-inside
       /= render partial: 'shared/errors', object: @host
 
-      .control-group
-        .controls= f.text_field :name, size: 16, maxlength: 20, placeholder: t('name')
+      .control-group.form-group
+        .controls= f.text_field :name, size: 16, maxlength: 20, placeholder: t('name'),:class=>'form-control input-sm top-margin-10'
 
-      .control-group
-        .controls= f.text_field :mac, size: 16, maxlength: 20, placeholder: t('mac_address')
+      .control-group.form-group
+        .controls= f.text_field :mac, size: 16, maxlength: 20, placeholder: t('mac_address') ,:class=>'form-control input-sm top-margin-10'
         .messages= t('host_mac_hint')
 
-      .control-group
-        .controls= f.text_field :address, size: 16, maxlength: 20, placeholder: t('ip_address')
+      .control-group.form-group
+        .controls= f.text_field :address, size: 16, maxlength: 20, placeholder: t('ip_address') ,:class=>'form-control input-sm top-margin-10'
         .messages
           = @net + '.'
           b#net-message = 'X'
 
-      .control-group.create-btn
+      .control-group.create-btn.form-group
         .controls
           = spinner
-          = button_tag t('create'), type: 'submit', id: 'host_create_button', class: 'btn btn-create'
-          = link_to t('cancel'), '#', class: 'close-area cancel-link', data: { related: '#new-host-to-step1' }
+          = button_tag t('create'), type: 'submit', id: 'host_create_button', class: 'btnn btn-create btn btn-info btn-sm '
+          = link_to t('cancel'), '#', class: 'close-area cancel-link btn btn-primary btn-sm left-margin-10', data: { related: '#new-host-to-step1' }
