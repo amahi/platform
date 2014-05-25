@@ -41,6 +41,8 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
       #app.inner
         = yield
 
+      .push
+
     = render 'layouts/footer'
 
     #js-templates[style="display:none"]

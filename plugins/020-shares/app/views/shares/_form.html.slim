@@ -1,6 +1,6 @@
 - @share = @share || Share.new
 
-= form_for @share, :remote => true, :html => { :class => 'share create-form', :id => 'new-share-form' } do |f|
+= form_for @share, :remote => true, :html => { :class => 'share create-form form-horizontal', :id => 'new-share-form' } do |f|
 
     fieldset
       legend &nbsp; #{t('create_a_new_share')} &nbsp;
@@ -8,21 +8,21 @@
       .create-inside
         / = render :partial => 'shared/errors', :object => @share
 
-        .control-group
-          .controls = f.text_field :name, :size => 16, :maxlength => 20, :placeholder => "Name"
+        .control-group.form-group
+          .controls = f.text_field :name, :size => 16, :maxlength => 20, :class=>'form-control', :placeholder => "Name"
 
-        .control-group
+        .control-group.form-group
           .controls
-            = f.check_box :visible, { :checked => true }
+            = f.check_box :visible, { :checked => true,:class => 'right-margin-10' }
             = label(:visible, t('visible'))
 
-        .control-group
+        .control-group.form-group
           .controls
-            = f.check_box :rdonly
+            = f.check_box :rdonly, {:class => 'right-margin-10'}
             = label(:rdonly, t('read_only'))
 
-        .control-group.create-btn
+        .control-group.create-btn.form-group
           .controls
             = spinner
-            = button_tag t('create'), :type => 'submit', :id => 'share_create_button', :class => 'btn btn-create'
-            = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-share-to-step1'}
+            = button_tag t('create'), :type => 'submit', :id => 'share_create_button', :class => 'btnn btn-create btn-info btn btn-sm'
+            = link_to t('cancel'), '#', :class => 'close-area cancel-link btn btn-primary btn-sm left-margin-10', :data => {:related => '#new-share-to-step1'}

@@ -97,7 +97,7 @@ module ApplicationHelper
 				input_html << tag('input', {:class => options[:input_css_class], :id =>options[:input_id] , :name => options[:name], :value => options[:value], :type => 'text'}.merge(parsed_options))
 				input_html << "&nbsp;&nbsp;"
 				input_html << "&nbsp;"
-				input_html << content_tag("button",options[:label],:class=> "btn btn-create margin-for-message",:type => "submit",:id=> options[:button_id] )
+				input_html << content_tag("button",options[:label],:class=> "btnn btn btn-info btn-create btn-sm margin-for-message",:type => "submit",:id=> options[:button_id] )
 				input_html << content_tag("a",'Cancel',:class=>options[:cancel_class],:data=>{:id=>options[:id]})
 				input_html << content_tag("span", '', class: "spinner theme-image", style: "display: none")
 				input_html.html_safe
@@ -116,7 +116,7 @@ module ApplicationHelper
 		content_tag('span', :id => options[:id]) do
 			html = ''
 			html << (block_given? ? yield : options[:label].to_s)
-			html << select_tag("select", options_from_collection_for_select(options[:collection], "first", "last", options[:selected].to_s), :name => options[:name], :data => {:url => options[:url]}.merge(parsed_options))
+			html << select_tag("select", options_from_collection_for_select(options[:collection], "first", "last", options[:selected].to_s), :class=>'form-control', :name => options[:name], :data => {:url => options[:url]}.merge(parsed_options))
 			html << content_tag("span", '', class: "spinner theme-image", style: "display: none") unless options[:no_spinner]
 			html.html_safe
 		end
