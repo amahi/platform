@@ -2,6 +2,7 @@ doctype 5
 html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
   head
     meta charset="utf-8"
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
     title = full_page_title
 
     = stylesheet_link_tag 'application'
@@ -39,7 +40,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     #content
       = render 'layouts/subheader'
       = render 'shared/flash_messages'
-      #app.inner
+      #app.inner.container
         - unless @no_tabs
           = render 'shared/tabs'
           #preferences.col-sm-8
