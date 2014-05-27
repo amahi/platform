@@ -110,8 +110,8 @@ end
 	# root of the plugin
         root :to => '#{plural_name}#index'
 	# examples of controllers built in this generator. delete at will
-	match 'settings' => '#{plural_name}#settings'
-	match 'advanced' => '#{plural_name}#advanced'
+	match 'settings' => '#{plural_name}#settings',:via=> :all
+	match 'advanced' => '#{plural_name}#advanced',:via => :all
 end
 			FILE
 		end
