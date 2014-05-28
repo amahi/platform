@@ -57,7 +57,6 @@ class ApplicationController < ActionController::Base
 		theme @theme.path
 	end
 
-
 	class Helper
 		include Singleton
 		include ActionView::Helpers::NumberHelper

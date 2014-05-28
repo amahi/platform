@@ -34,7 +34,7 @@ class UserSessionsController < ApplicationController
 		else
 			# initial system initialization
 			@user = User.new
-			flash[:notice] = t("amahi_initialization")
+			flash[:info] = t("amahi_initialization")
 			@title = t("amahi_initialization")
 		end
 	end
@@ -48,7 +48,7 @@ class UserSessionsController < ApplicationController
 			flash[:success] = "Logged in Successfully"
 			redirect_to root_url
 		else
-			flash[:error] = t 'not_a_valid_user_or_password'
+			flash[:danger] = t 'not_a_valid_user_or_password'
 			render :action => 'new'
 		end
 	end
@@ -58,7 +58,7 @@ class UserSessionsController < ApplicationController
 		@user_session = UserSession.find
 		@user_session.destroy
 		# FIXME-translate
-		flash[:notice] = t('you_have_been_logged_out')
+		flash[:info] = t('you_have_been_logged_out')
 		redirect_to root_path
 	end
 
@@ -68,7 +68,7 @@ class UserSessionsController < ApplicationController
 		pwd = params[:password]
 		conf = params[:password_confirmation]
 		unless valid_admin_password?(pwd, conf)
-			flash[:error] = t 'not_a_valid_user_or_password'
+			flash[:danger] = t 'not_a_valid_user_or_password'
 			@user = User.new
 			sleep 1
 			render :action => 'start'
@@ -81,7 +81,7 @@ class UserSessionsController < ApplicationController
 		# FIXME-cpg: very hackish constant for regular uid (1000)
 		unless name and uid and uid >= 1000
 			# not a system user. should we create one?
-			flash[:error] = t 'not_a_valid_user_or_password'
+			flash[:danger] = t 'not_a_valid_user_or_password'
 			@user = User.new
 			render :action => 'start'
 			return
@@ -103,7 +103,7 @@ class UserSessionsController < ApplicationController
 			initialize_default_settings
 			redirect_to root_url
 		else
-			flash[:error] = t 'not_a_valid_user_or_password'
+			flash[:danger] = t 'not_a_valid_user_or_password'
 			render :action => 'start'
 		end
 	end
