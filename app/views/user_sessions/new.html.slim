@@ -4,7 +4,7 @@
       a[href="http://www.amahi.org/" title="Powered by Amahi"] Amahi Server Login
 
   - flash.each do |name, msg|
-    div[class="message-#{name}"]= msg
+    div[class="alert alert-#{name}"]= msg
 
   = form_for @user_session do |f|
     p

@@ -165,7 +165,7 @@ class ApplicationController < ActionController::Base
 	def login_required
 		unless current_user
 			store_location
-			flash[:notice] = I18n.t('must_be_logged_in')
+			flash[:info] = I18n.t('must_be_logged_in')
 			redirect_to new_user_session_path
 			return false
 		end
@@ -181,7 +181,7 @@ class ApplicationController < ActionController::Base
 		return false if login_required == false
 		unless current_user.admin?
 			store_location
-			flash[:notice] = t('must_be_admin')
+			flash[:info] = t('must_be_admin')
 			redirect_to new_user_session_url
 			return false
 		end

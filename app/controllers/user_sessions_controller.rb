@@ -4,12 +4,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -34,7 +34,7 @@ class UserSessionsController < ApplicationController
 		else
 			# initial system initialization
 			@user = User.new
-			flash[:notice] = t("amahi_initialization")
+			flash[:info] = t("amahi_initialization")
 			@title = t("amahi_initialization")
 		end
 	end
@@ -45,9 +45,10 @@ class UserSessionsController < ApplicationController
 		remember_me = params[:remember_me]
 		@user_session = UserSession.new(:login => username, :password => password, :remember_me => remember_me)
 		if @user_session.save
+			flash[:success] = "Logged in Successfully"
 			redirect_to root_url
 		else
-			flash[:error] = t 'not_a_valid_user_or_password'
+			flash[:danger] = t 'not_a_valid_user_or_password'
 			render :action => 'new'
 		end
 	end
@@ -57,7 +58,7 @@ class UserSessionsController < ApplicationController
 		@user_session = UserSession.find
 		@user_session.destroy
 		# FIXME-translate
-		flash[:notice] = t('you_have_been_logged_out')
+		flash[:info] = t('you_have_been_logged_out')
 		redirect_to root_path
 	end
 
@@ -67,7 +68,7 @@ class UserSessionsController < ApplicationController
 		pwd = params[:password]
 		conf = params[:password_confirmation]
 		unless valid_admin_password?(pwd, conf)
-			flash[:error] = t 'not_a_valid_user_or_password'
+			flash[:danger] = t 'not_a_valid_user_or_password'
 			@user = User.new
 			sleep 1
 			render :action => 'start'
@@ -80,7 +81,7 @@ class UserSessionsController < ApplicationController
 		# FIXME-cpg: very hackish constant for regular uid (1000)
 		unless name and uid and uid >= 1000
 			# not a system user. should we create one?
-			flash[:error] = t 'not_a_valid_user_or_password'
+			flash[:danger] = t 'not_a_valid_user_or_password'
 			@user = User.new
 			render :action => 'start'
 			return
@@ -102,7 +103,7 @@ class UserSessionsController < ApplicationController
 			initialize_default_settings
 			redirect_to root_url
 		else
-			flash[:error] = t 'not_a_valid_user_or_password'
+			flash[:danger] = t 'not_a_valid_user_or_password'
 			render :action => 'start'
 		end
 	end
