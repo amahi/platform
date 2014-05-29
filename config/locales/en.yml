@@ -39,6 +39,7 @@
 
   # login
   log_in: Log In
+  logged_in_successfully: "Logged in successfully"
   not_a_valid_user_or_password: "Error: Incorrect username or password"
   first_time_admin_setup: "First admin setup. Please re-create your user password."
   remember_me: Remember me
