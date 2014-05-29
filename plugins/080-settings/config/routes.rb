@@ -15,4 +15,6 @@ Settings::Engine.routes.draw do
 	match 'refresh' => 'settings#refresh'
 	match 'themes' => 'settings#themes'
 	match 'activate_theme' => 'settings#activate_theme'
+
+	put 'revoke_app' => 'settings#revoke_app', as: 'revoke_app'
 end

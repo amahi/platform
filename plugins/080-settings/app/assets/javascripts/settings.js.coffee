@@ -20,3 +20,17 @@ $ ->
 $ ->
     $(".preftab").on "ajax:success", "#locale", ->
        window.location.reload(true)
+
+$(document).on 'ajax:beforeSend', '.revoke-app', ->
+  button = $(this)
+  parent = button.parent()
+  spinner = parent.find('.spinner')
+  spinner.show()
+  button.hide()
+
+$(document).on 'ajax:complete', '.revoke-app', ->
+  button = $(this)
+  parent = button.parent()
+  spinner = parent.find('.spinner')
+  spinner.hide()
+  button.show()
