@@ -14,14 +14,11 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class FrontController < ApplicationController
+# Debug JS functionality
 
-	before_filter :login_required_unless_guest_dashboard
-	layout 'basic'
 
-	def index
-		@page_title = t('dashboard')
-		@apps = App.in_dashboard
-		@news = AmahiNews.top()
-	end
-end
+$(document).on "ajax:success", ".debug-form", (event, results) ->
+	if results.status is "ok"
+		$('#debug-submit-form').html("<p class='alert alert-info'> Error Log Succesfully Submitted</p>")
+	else
+		$('#debug-submit-form').html("<p class='alert alert-danger'>Debug report failed. Please do try again later.</p>")

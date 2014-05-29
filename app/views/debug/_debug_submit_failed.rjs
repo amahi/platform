@@ -1,2 +1,0 @@
-page[:thanks].replace_html "Debug report failed. Please do try again later."
-page.visual_effect :highlight, :thanks, { :duration => 8 }
