@@ -1,0 +1,9 @@
+
+= button_tag 'Submit for Debug', :type => 'button', :class => 'open-area btn btn-create', :id => "debug-button",  :data => { :related => "#debug-submit-form" }
+
+#debug-submit-form[style="display:none;"]
+ fieldset
+   legend &nbsp; Debug Report &nbsp;
+   = render 'form'
+pre
+ = SystemUtils.run "tail -100 #{Rails.root}/log/development.log"
