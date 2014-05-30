@@ -17,13 +17,22 @@
 module TabsHelper
 
 	def tab_class(tab)
-		klass = params[:controller] == tab.id ? 'active' : ''
+		if params[:controller] == tab.id
+			klass = 'active'
+		else
+			tab = Tab.find(params[:controller])
+			if tab==nil
+				if Tab.ischild(params[:controller],tab)
+					klass =  'active'
+				end
+			end
+		end
 		klass += " empty" unless tab.subtabs?
 		klass
 	end
 
-	def subtab_class(action = nil)
-		params[:action] == action ? 'active' : ''
+	def subtab_class(action = nil, tab_id)
+		((action == params[:action] && params[:controller] == tab_id) or (action == params[:controller] && Tab.find(params[:controller])==nil) ) ? 'active' : ''
 	end
 
 	def nav_class(tabs)
