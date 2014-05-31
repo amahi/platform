@@ -1,5 +1,7 @@
 # plugin initialization
-t = Tab.new("network", "network", "/tab/network")
+unless t = Tab.find("network")
+	t = Tab.new("network", "network", "/tab/network")
+end
 # add any subtabs with what you need. params are controller and the label, for example
 t.add("index", "leases")
 t.add("hosts", "hosts")
