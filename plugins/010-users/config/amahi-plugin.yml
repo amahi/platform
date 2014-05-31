@@ -2,5 +2,6 @@
 name: Users
 # class to be mounted
 class: Users
+kind: tab
 # root url where this plugin will be mounted
 url: /tab/users

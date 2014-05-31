@@ -56,14 +56,14 @@ class Tab
 
 	#Returns Tab with id:controller
 	def self.find(controller)
-		tabs = []
+		tabs = nil
 		AmahiHDA::Application.config.tabs.each do |tab|
 			if tab.id==controller
-				tabs << tab
+				tabs = tab
 				break
 			end
 		end
-		tabs.first
+		tabs
 	end
 
 	#checks if tab has a subtab with id:controller

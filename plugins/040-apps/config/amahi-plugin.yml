@@ -2,5 +2,6 @@
 name: Apps
 # class to be mounted
 class: Apps
+kind: tab
 # root url where this plugin will be mounted
 url: /tab/apps
