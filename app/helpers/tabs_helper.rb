@@ -20,8 +20,8 @@ module TabsHelper
 		if params[:controller] == tab.id
 			klass = 'active'
 		else
-			tab = Tab.find(params[:controller])
-			if tab==nil
+			subtab = Tab.find(params[:controller])
+			if subtab==nil
 				if Tab.ischild(params[:controller],tab)
 					klass =  'active'
 				end
