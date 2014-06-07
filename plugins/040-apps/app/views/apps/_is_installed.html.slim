@@ -20,12 +20,15 @@
 
 - if app.webapp
   div.app-url= link_to(app.full_url, app.full_url, :target => '_blank')
+  = spinner
 
 - if app.plugin
   div.app-url= link_to(app.plugin.name, app.plugin.path, :target => '_blank')
+  = spinner
 
 - if app.theme
   div.app-url= link_to(t('manage_themes'), settings_engine.themes_path)
+  = spinner
 
 - if app.webapp
   = render 'in_dashboard', :app => app
@@ -34,7 +37,6 @@ br
 br
 br
 
-= spinner
 span.progress
   - unless app.has_dependents?
     span.install-button
