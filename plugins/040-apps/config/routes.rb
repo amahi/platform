@@ -3,7 +3,6 @@ Apps::Engine.routes.draw do
 	root :to => 'apps#index'
 	# examples of controllers built in this generator. delete at will
 	match 'installed' => 'apps#installed', via: [:get,:post]
-	match 'webapps' => 'apps#advanced', via: [:get,:post]
 
 	post 'install/:id' => 'apps#install', as: 'install'
 	match 'install_progress/:id' => 'apps#install_progress', as: 'install_progress', via: [:get,:post]
