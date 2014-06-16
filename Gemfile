@@ -13,14 +13,14 @@ gem 'therubyracer'
 gem 'uglifier'
 
 gem "activeresource", require: "active_resource"
-gem 'protected_attributes' 
+gem 'protected_attributes'
 gem 'actionpack-action_caching'
 gem 'rails-observers'
 
 gem 'jbuilder'
 gem 'ya2yaml'
 
-gem 'themes_for_rails', :git=>"https://github.com/agmps18/themes_for_rails.git"
+gem 'themes_for_rails', :git=>"https://github.com/amahi/themes_for_rails.git"
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
