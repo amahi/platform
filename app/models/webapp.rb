@@ -104,7 +104,7 @@ class Webapp < ActiveRecord::Base
 		conf = conf.gsub(/HDA_APP_NAME/, name)
 		conf = conf.gsub(/APP_ROOT_DIR/, path)
 		conf = conf.gsub(/HDA_DOMAIN/, domain) unless domain.empty?
-		conf = conf.gsub(/HDA_ACCESS/, login_required ? access_conf : '')
+		conf = conf.gsub(/HDA_AUTHFILE/, "#{path}/htpasswd")
 		conf = conf.gsub(/APP_ALIASES/, aliases || '')
 		begin
 			conf = conf.gsub(/APP_CUSTOM_OPTIONS/, custom_options || '')
@@ -118,7 +118,7 @@ class Webapp < ActiveRecord::Base
 	end
 
 	def access_conf
-		["AuthUserFile /var/hda/web-apps/htpasswd",
+		["AuthUserFile #{path}/htpasswd",
 			"AuthGroupFile /dev/null",
 			"AuthName \"User Login Required for This Area\"",
 			"AuthType Basic",
