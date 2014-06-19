@@ -20,7 +20,7 @@ gem 'rails-observers'
 gem 'jbuilder'
 gem 'ya2yaml'
 
-gem 'themes_for_rails', :git=>"https://github.com/amahi/themes_for_rails.git"
+gem 'themes_for_rails', :git => "https://github.com/amahi/themes_for_rails.git"
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
