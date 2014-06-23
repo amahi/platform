@@ -1,5 +1,0 @@
-page[:name_messages].replace_html theme_image_tag("ok") + " " + t('name_looks_good')
-page.show 'name_messages'
-page[:path].disabled = false
-# FIXME - this path needs parametrization
-page[:path].value = "/var/hda/web-apps/" + @name
