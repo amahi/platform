@@ -104,6 +104,7 @@ class Webapp < ActiveRecord::Base
 		conf = conf.gsub(/HDA_APP_NAME/, name)
 		conf = conf.gsub(/APP_ROOT_DIR/, path)
 		conf = conf.gsub(/HDA_DOMAIN/, domain) unless domain.empty?
+		conf = conf.gsub(/HDA_AUTHFILE/, "#{path}/htpasswd")
 		conf = conf.gsub(/HDA_ACCESS/, login_required ? access_conf : '')
 		conf = conf.gsub(/APP_ALIASES/, aliases || '')
 		begin

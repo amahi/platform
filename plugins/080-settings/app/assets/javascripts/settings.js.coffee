@@ -20,3 +20,10 @@ $ ->
 $ ->
     $(".preftab").on "ajax:success", "#locale", ->
        window.location.reload(true)
+
+$(document).on "click", ".remote-check", (event)->
+  checkbox = $(this)
+  false
+
+$(document).on "ajax:complete",".remote-check", ->
+      $(this).prop("checked",!$(this).prop("checked"))
