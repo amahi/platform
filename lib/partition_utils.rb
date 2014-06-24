@@ -77,7 +77,7 @@ class PartitionUtils
 			# return total bytes, free bytes
 			[blocks * bsize, bfree * bsize]
 		rescue => e
-			RAILS_DEFAULT_LOGGER.error("******** disk stats error for #{path}: #{e.inspect}")
+			Rails.logger.error("******** disk stats error for #{path}: #{e.inspect}")
 			[0, 0]
 		end
 	end
