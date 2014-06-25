@@ -23,7 +23,8 @@ $ ->
 
 $(document).on "click", ".remote-check", (event)->
   checkbox = $(this)
-  false
+  checkbox.prop("checked",!checkbox.prop("checked"))
+  true
 
 $(document).on "ajax:complete",".remote-check", ->
       $(this).prop("checked",!$(this).prop("checked"))
