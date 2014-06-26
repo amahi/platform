@@ -42,14 +42,14 @@ div.settings-fields.settings-wrap
               method: :post,
               class: 'btn-system',
               id: 'btn-poweroff',
-              confirm: t('this_will_power_off')
+              data: {confirm: t('this_will_power_off')}
         = link_to t('reboot'),
               settings_engine.reboot_path,
               remote: true,
               method: :post,
               class: 'btn-system',
               id: 'btn-reboot',
-              confirm: t('this_will_reboot')
+              data: {confirm: t('this_will_reboot')}
     div.settings-fields#info-table
       table
         tr

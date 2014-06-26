@@ -1,3 +1,0 @@
-page[:path_messages].replace_html theme_image_tag("ok") + " " + t('path_looks_good')
-page.show 'path_messages'
-page[:webapp_create_button].disabled = false

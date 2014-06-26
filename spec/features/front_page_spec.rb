@@ -7,7 +7,7 @@ feature "Front page" do
 	end
 
 	scenario "should be the dashboard if \"guest dashboard\" is enabled" do
-		setting = Setting.find_by_name("guest-dashboard")
+		setting = Setting.where(:name=>"guest-dashboard").first
 		setting.value = "1"
 		setting.save
 		visit root_path

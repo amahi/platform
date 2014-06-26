@@ -19,7 +19,7 @@ require 'command'
 
 class User < ActiveRecord::Base
 
-	scope :admins, where(:admin => true)
+	scope :admins, ->{ where(:admin => true)}
 
 	begin
 		acts_as_authentic do |c|
@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 	attr_accessible :login, :name, :password, :password_confirmation, :admin
 
 	validates :login, :presence => true,
-	:format => { :with => /^[A-Za-z][A-Za-z0-9]+$/ },
+	:format => { :with => /\A[A-Za-z][A-Za-z0-9]+\z/ },
 	:length => { :in => 3..32 },
 	:uniqueness => { :case_sensitive => false },
 	:user_not_exist_in_system => {:message => 'already exists in system', :on => :create}
@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
 			res = []
 			Dir.chdir("/home") do
 				Dir.glob("*").sort.reverse.each do |login|
-					unless User.find_by_login login
+					unless User.where(:login=> login).first
 						name, uid = system_find_name_by_username login
 						# FIXME-cpg: Fedora specific constant 500 here
 						res << { :login => login, :name => name } unless name.nil? or name.blank? or uid < 500

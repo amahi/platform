@@ -97,13 +97,14 @@ class Webapp < ActiveRecord::Base
 		else # generic
 			f = File.open(BASE % "generic")
 		end
-		server_aliases = self.aliases.split(/[, ]+/).select{ |s| ! (s.empty? || DnsAlias.find_by_alias(s)) }
+		server_aliases = self.aliases.split(/[, ]+/).select{ |s| ! (s.empty? || DnsAlias.where(:alias=>s).first) }
 		server_aliases += self.webapp_aliases.map{|wa| wa.name}
 		aliases = server_aliases.count > 0 ? ("ServerAlias " + server_aliases.join(" ")) : ""
 		conf = f.readlines.join
 		conf = conf.gsub(/HDA_APP_NAME/, name)
 		conf = conf.gsub(/APP_ROOT_DIR/, path)
 		conf = conf.gsub(/HDA_DOMAIN/, domain) unless domain.empty?
+		conf = conf.gsub(/HDA_AUTHFILE/, "#{path}/htpasswd")
 		conf = conf.gsub(/HDA_ACCESS/, login_required ? access_conf : '')
 		conf = conf.gsub(/APP_ALIASES/, aliases || '')
 		begin

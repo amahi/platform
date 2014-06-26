@@ -20,16 +20,16 @@ class Setting < ActiveRecord::Base
 
 	attr_accessible :name, :value, :kind
 
-	scope :by_name, lambda{|name| where(:name => name)}
-	scope :by_kind, lambda{|kind| where(:kind => kind)}
+	scope :by_name,  lambda{|name| where(:name => name)} 
+	scope :by_kind,  lambda{|kind| where(:kind => kind)} 
 
-	scope :general, by_kind(GENERAL)
-	scope :network, by_kind(NETWORK)
-	scope :shares,  by_kind(SHARES)
+	scope :general, ->{by_kind(GENERAL)}
+	scope :network, ->{by_kind(NETWORK)}
+	scope :shares,  ->{by_kind(SHARES)}
 
 	validates :value,
 	          :length => { :maximum => 15 },
-	          :format => { :with => /^[a-zA-Z][a-zA-Z0-9]{0,14}$/ },
+	          :format => { :with => /\A[a-zA-Z][a-zA-Z0-9]{0,14}\z/ },
 	          :if => Proc.new { |x| x.kind.eql?(Setting::GENERAL) && x.name.eql?('workgroup') },
 	          :on => :update
 
@@ -49,7 +49,7 @@ class Setting < ActiveRecord::Base
 		end
 
 		def set(name, value, kind=GENERAL)
-			self.find_or_create_by_name(:name => name).update_attributes(value: value, kind: kind)
+			self.where(:name => name).first_or_create.update_attributes(value: value, kind: kind)
 		end
 
 		def get_kind(kind, name)

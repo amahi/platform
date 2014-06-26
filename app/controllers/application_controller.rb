@@ -37,17 +37,17 @@ class ApplicationController < ActionController::Base
 		set_direction
 		check_for_amahi_app
 		prepare_theme
-		adv = Setting.find_by_name('advanced')
+		adv = Setting.where(:name=>'advanced').first
 		@advanced = adv && adv.value == '1'
 	end
 
 	def check_for_amahi_app
 		server = request.env['SERVER_NAME']
 		dom = Setting.get_by_name('domain')
-		if server && server != 'hda' && server =~ /^(.*)\.#{dom}$/
+		if server && server != 'hda' && server =~ /\A(.*)\.#{dom}\z/
 			server = $1
 		end
-		if server && server != 'hda' && DnsAlias.find_by_name(server)
+		if server && server != 'hda' && DnsAlias.where(:name=>server).first
 			redirect_to "http://hda/hda_app_#{server}"
 		end
 	end
@@ -75,8 +75,8 @@ class ApplicationController < ActionController::Base
 			rd = RouterDriver.current_router = (r ? r.value : "")
 			# return the class proper if valid
 			@router = Kernel.const_get(rd) unless rd.blank?
-			u = Setting.network.find_by_name('router_username')
-			p = Setting.network.find_by_name('router_password')
+			u = Setting.network.where(:name=>'router_username').first
+			p = Setting.network.where(:name=>'router_password').first
 			RouterDriver.set_auth(unobfuscate(u.value), unobfuscate(p.value)) if p and u and p.value and u.value
 		rescue
 			# shhh. comment out the rescue for debugging
@@ -165,7 +165,7 @@ class ApplicationController < ActionController::Base
 	def login_required
 		unless current_user
 			store_location
-			flash[:notice] = I18n.t('must_be_logged_in')
+			flash[:info] = I18n.t('must_be_logged_in')
 			redirect_to new_user_session_path
 			return false
 		end
@@ -181,7 +181,7 @@ class ApplicationController < ActionController::Base
 		return false if login_required == false
 		unless current_user.admin?
 			store_location
-			flash[:notice] = t('must_be_admin')
+			flash[:info] = t('must_be_admin')
 			redirect_to new_user_session_url
 			return false
 		end

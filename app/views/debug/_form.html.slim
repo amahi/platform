@@ -1,0 +1,18 @@
+- message_string = "\n\nExplain the sequence of events leading to the error\nin as much detail as you can.\n\nThe more *concrete detail* you can add,\nthe higher chances we fix the problem quickly!"
+
+= form_for :debug, :remote => true, :html => {\
+      :class => 'debug-form',\
+      :id => 'submit-debug-form'\
+    } do |f|
+  .control-group
+    h3.debug-form  Help improve Amahi by sending crash reports and anonymous usage data.
+  .control-group
+    .controls= f.text_field :subject, :size => 32, :maxlength => 40, :placeholder => "Describe what failed here ...",:class=> "form-control debug-form"
+  .control-group
+    .controls
+        = text_area_tag :comments, '', :rows => 10, :cols => 80, :placeholder => message_string, :class=> "form-control debug-form"
+  .control-group.create-btn
+    .controls
+      = spinner
+      = button_tag 'Submit', :type => 'submit', :id => 'debug_button', :class => 'btn btn-submit btn-info btn-sm debug-form', :data=>{:confirm=>"Machine logs will be submitted to Amahi for debug.\nThis will help improve Amahi!\nWould you like to submit?"}
+      = link_to t('cancel'), '#', :class => 'close-area cancel-link debug-form', :data => {:related=> '#debug-button'}, :onclick=>"$('#debug-submit-form').hide('slow');"
