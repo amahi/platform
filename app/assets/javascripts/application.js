@@ -14,4 +14,5 @@
 //= require lib/templates
 //= require lib/smart-links
 //= require lib/debug
+//= require bootstrap.min
 //= require spinner

@@ -1,6 +1,6 @@
 .theme-thumbs
   - @themes.each do |theme|
-    = link_to image_tag(theme_image_path('theme-thumb.png', theme.css), :class => "theme-thumb", title: theme.name),
+    = link_to image_tag(theme_image_path('theme-thumb.png', theme.css), :class => "theme-thumb thumbnail right-margin-10", title: theme.name),
       settings_engine.activate_theme_path(id: theme.css),
       { onmouseover: "$('#theme-sshot').attr('src', '#{theme_image_path('theme-sshot.png', theme.css)}')" }
 

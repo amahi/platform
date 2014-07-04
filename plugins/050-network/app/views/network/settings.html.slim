@@ -2,7 +2,7 @@
   fieldset
     legend
       = t 'settings'
-    table
+    table.table
       tr
         td
           label = t 'dhcp_server'
@@ -43,7 +43,7 @@
               .control-group
                 .controls
                   = spinner
-                  = submit_tag t('update_dns_ips'), class: 'btn', disabled: 'disabled'
+                  = submit_tag t('update_dns_ips'), class: 'btnn', disabled: 'disabled'
       tr
         td
           label= t 'gateway'

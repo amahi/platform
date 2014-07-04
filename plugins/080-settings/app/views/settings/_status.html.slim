@@ -2,7 +2,7 @@
   fieldset
     legend = server.comment
     .settings-fields
-      table
+      table.table
         tr
           td
             label = t 'status'
@@ -16,7 +16,7 @@
               = link_to t('refresh_status'),
                     settings_engine.refresh_path(server),
                     remote: true,
-                    class: 'btn-refresh remote-btn'
+                    class: 'btn-refresh remote-btn btn btn-info btn-sm'
               | &nbsp; &mdash; &nbsp;
               = t 'refresh_status'
 
@@ -26,7 +26,7 @@
                 = link_to t('stop_it'),
                       settings_engine.stop_path(server),
                       remote: true,
-                      class: 'btn-stop remote-btn',
+                      class: 'btn-stop remote-btn btn btn-success btn-sm',
                       confirm: [t('are_you_sure_you_want_to_stop_the_server', :name => server.comment), "",
                                 server.monitored ? t('the_watchdog_is_running_and_will_restart_it_in_a_few_seconds') : t('this_will_stop_the_server_permanently', :name => server.comment)].join("\n")
                 | &nbsp; &mdash; &nbsp;
@@ -38,7 +38,7 @@
                 = link_to t('start_server'),
                       settings_engine.start_path(server),
                       remote: true,
-                      class: 'btn-start remote-btn',
+                      class: 'btn-start remote-btn btn btn-success btn-sm',
                       confirm: t('are_you_sure_you_want_to_start_the_server', name: server.comment)
                 | &nbsp; &mdash; &nbsp;
                 = t 'start_it'
@@ -48,7 +48,7 @@
               = link_to t('restart_server'),
                     settings_engine.restart_path(server),
                     remote: true,
-                    class: 'btn-restart remote-btn',
+                    class: 'btn-restart remote-btn btn btn-primary btn-sm',
                     confirm: t('are_you_sure_you_want_to_restart_the_server', name: server.comment)
               | &nbsp; &mdash; &nbsp;
               = t 'restart'
