@@ -2,9 +2,9 @@
 
 = content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => apps_engine.install_progress_path(app.identifier) } do
 
-  table.settings.stretchtoggle[id="app_row_#{app.identifier}"]
+  table.settings.stretchtoggle.table[id="app_row_#{app.identifier}"]
     tr
-      td.settings-col1.apps-col1
+      td.settings-col1.settings-col1-pad1.apps-col1
         = link_to name_with_warning(app), '#'
       td.settings-col2.apps-col2[id="app_ip_#{app.identifier}"]
         = short_desc(app)
@@ -15,19 +15,19 @@
         legend &nbsp; #{app.name} #{t('available_for_installation')} &nbsp;
         .settings-fields
 
-          .img-wrap
+          .img-wrap.col-md-6
             = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
 
-          .app-content
+          .app-content.col-md-6
             p.app-description
               = app.description.try(:html_safe) || t('no_description_supplied')
 
             = render 'is_available', :app => app
 
-            .app-more
+            .app-more.top-margin-10
               p
                 | #{t('version')} #{app.version}
-                = link_to t('more'), app.app_url, :target => '_blank'
+                = link_to '', app.app_url, :target => '_blank', :class=>'glyphicon glyphicon-plus-sign'
 
               - if app.forum_url.present?
                 br

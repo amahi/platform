@@ -4,15 +4,15 @@
     :class => 'setting area update-form update-gateway-form form-inline',\
     :id => 'update-gateway-form' do |f|
 
-  .control-group
+  .control-group.form-group
     .controls
-      = text_field_tag 'gateway', '${gateway}', :maxlength => 3, :placeholder => t('gateway')
+      = text_field_tag 'gateway', '${gateway}', :maxlength => 3, :placeholder => t('gateway'),:class=>'form-control input-sm increase-length-40'
       .messages
         = @net + '.'
         b#net-message = 'X'
-  .control-group
+  .control-group.form-group
     .controls
       = spinner
-      = submit_tag t('change'), :class => 'btn'
-      = link_to t('cancel'), '#', :class => 'close-update-gateway-area cancel-link'
+      = submit_tag t('change'), :class => 'btnn btnn btn-create btn btn-info btn-sm'
+      = link_to t('cancel'), '#', :class => 'close-update-gateway-area cancel-link btn btn-primary btn-sm left-margin-10'
     .messages
