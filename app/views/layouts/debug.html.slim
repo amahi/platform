@@ -2,6 +2,7 @@ doctype 5
 html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
   head
     meta charset="utf-8"
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
     title = full_page_title
 
     = stylesheet_link_tag 'application'
@@ -22,7 +23,6 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     = javascript_include_tag 'application'
     - amahi_plugins.each do |p|
       = javascript_include_tag p[:class].underscore
-
     = javascript_tag {'$.fx.off = true;' if Rails.env.test?}
     - for header in theme.headers do
       = header =~ /\.js$/ ? javascript_include_tag(header) : header
@@ -32,7 +32,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
     = csrf_meta_tags
 
-  body
+  body.basic
 
     = render 'layouts/header'
 
@@ -41,7 +41,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
       = render 'shared/flash_messages'
       #app.inner
         #tabs
-          nav.preftab
+          nav.preftab.active
             ul
               li.active
                 a href='/tab/debug'
