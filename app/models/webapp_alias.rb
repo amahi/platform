@@ -20,7 +20,7 @@ class WebappAlias < ActiveRecord::Base
 
 	after_save :save_webapp
 	after_destroy :save_webapp
-
+	attr_accessible :name, :webapp_id
 	validates :name,
 						:presence => true,
 						:uniqueness => true,

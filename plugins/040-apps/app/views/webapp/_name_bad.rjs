@@ -1,4 +1,0 @@
-page[:name_messages].replace_html theme_image_tag("stop") + " " + t('name_is_not_valid')
-page.show 'name_messages'
-page[:path].disabled = true
-page[:webapp_create_button].disabled = true

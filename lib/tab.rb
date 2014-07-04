@@ -45,6 +45,41 @@ class Tab
 		subtabs
 	end
 
+	# Return the Tab(if exists) with id:contoller. Otherwise creates a new Tab
+	def self.find_or_create(controller, label, url)
+		tabs = self.find(controller)
+		if tabs==nil
+		 tabs = Tab.new(controller, label, url)
+		end
+		tabs
+	end
+
+	#Returns Tab with id:controller
+	def self.find(controller)
+		tabs = []
+		AmahiHDA::Application.config.tabs.each do |tab|
+			if tab.id==controller
+				tabs << tab
+				break
+			end
+		end
+		tabs.first
+	end
+
+	#checks if tab has a subtab with id:controller
+	def self.ischild(controller,tab)
+		child = false
+		if tab.subtabs?
+			tab.subtabs.each do |subtab|
+				if(subtab.id == controller)
+					child = true
+					break
+				end
+			end
+		end
+		child
+	end
+
 	private
 
 	# keep top-level tabs in an app variable, due to complex initialzation issues

@@ -1585,10 +1585,12 @@ textarea {border: 1px solid #ccc;}
 .hide {
   display: none;
 }
+
 #theme-sshot{
   height:100%;
   width:100%
 }
+
 //Markup for alert boxes
 .alert {
 padding: 15px;
@@ -1610,4 +1612,9 @@ border-radius: 4px;
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
+}
+//Debug Tab Design
+.debug-form{
+  margin-top:10px !important;
+  margin-left: 20px !important;
 }

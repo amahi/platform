@@ -45,7 +45,7 @@ class UserSessionsController < ApplicationController
 		remember_me = params[:remember_me]
 		@user_session = UserSession.new(:login => username, :password => password, :remember_me => remember_me)
 		if @user_session.save
-			flash[:success] = "Logged in Successfully"
+			flash[:success] = t 'logged_in_successfully'
 			redirect_to root_url
 		else
 			flash[:danger] = t 'not_a_valid_user_or_password'

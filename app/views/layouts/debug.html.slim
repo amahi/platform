@@ -39,10 +39,23 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     #content
       = render 'layouts/subheader'
       = render 'shared/flash_messages'
-      #app.inner.container
-        = yield
-
-      .push
+      #app.inner
+        #tabs
+          nav.preftab.active
+            ul
+              li.active
+                a href='/tab/debug'
+                  = t 'debug'
+                ul
+                  li[class="#{request.fullpath == '/tab/debug' ? 'active' : ''}"]
+                    = link_to "App Logs", '/tab/debug'
+                  li[class="#{request.fullpath == '/tab/debug/logs' ? 'active' : ''}"]
+                    = link_to "Logs", '/tab/debug/logs'
+                  li[class="#{request.fullpath == '/tab/debug/system' ? 'active' : ''}"]
+                    = link_to "System Info", '/tab/debug/system'
+        #preferences
+          .preftab
+            = yield
 
     = render 'layouts/footer'
 

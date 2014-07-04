@@ -7,7 +7,10 @@ AmahiHDA::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout, via: [:get]
   match 'start' => 'user_sessions#start', :as => :start, via: [:get]
   match 'user_sessions/initialize_system' => 'user_sessions#initialize_system', :as => :initialize_system, via: [:get,:post]
-
+  get '/tab/debug'=>'debug#index'
+  post '/tab/debug'=>'debug#submit'
+  get '/tab/debug/system'=>'debug#system'
+  get '/tab/debug/logs'=>'debug#logs'
   resources :shares do
     collection do
       get 'disk_pooling'
