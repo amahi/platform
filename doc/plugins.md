@@ -75,7 +75,19 @@ unless t = Tab.find("fuzzbar")
 end
 t.add("foobar", "Foobar")
 ```
+##Making a plugin Fullscreen
+Add the following line in the controller class of the plugin to make it fullscreen:
+```ruby
+class FooController < ApplicationController
 
+	before_filter :admin_required
+	layout 'fullscreen'
+	def index
+	##code here
+	end
+	##other action methods
+end
+```
 
 ## Principles
 
