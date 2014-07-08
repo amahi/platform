@@ -6,7 +6,7 @@
 
   .control-group.form-group
     .controls
-      = text_field_tag 'gateway', '${gateway}', :maxlength => 3, :placeholder => t('gateway'),:class=>'form-control input-sm increase-length-40'
+      = text_field_tag 'gateway', '${gateway}', :maxlength => 3, :placeholder => t('gateway'),:class=>'form-control input-sm increase-length-40',:style=>'float:left;'
       .messages
         = @net + '.'
         b#net-message = 'X'
