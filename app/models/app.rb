@@ -389,7 +389,7 @@ class App < ActiveRecord::Base
 	def install_pkg_deps(installer)
 		deps = installer.pkg_dependencies
 		return if deps.nil? or deps.blank?
-		deps.strip!
+		deps = deps.gsub(/[, ][ ]*/,' ').strip
 		unless deps.blank?
 			Platform.install(deps)
 		end
