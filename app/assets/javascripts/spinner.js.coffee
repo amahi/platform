@@ -20,12 +20,36 @@ Spinner =
       form.find("button, input[type=submit]").hide()
       form.find("a.name_cancel_link").hide()
 
+    $(document).on "ajax:beforeSend", ".edit_lease_form", ->
+      form = $(this)
+      form.find(".spinner").show "fast"
+      form.find("button, input[type=submit]").hide()
+      form.find("a.lease-cancel-link").hide()
+
+    $(document).on "ajax:complete", ".edit_lease_form", ->
+      form = $(this)
+      form.find(".spinner").hide()
+      form.find("button, input[type=submit]").show()
+      form.find("a.lease-cancel-link").show()
+
+    $(document).on "ajax:beforeSend", ".edit_gateway_form", ->
+      form = $(this)
+      form.find(".spinner").show "fast"
+      form.find("button, input[type=submit]").hide()
+      form.find("a.gateway-cancel-link").hide()
+
+    $(document).on "ajax:complete", ".edit_gateway_form", ->
+      form = $(this)
+      form.find(".spinner").hide()
+      form.find("button, input[type=submit]").show()
+      form.find("a.gateway-cancel-link").show()
+
     $(document).on "ajax:beforeSend", ".edit_workgroup_form", ->
       form = $(this)
       form.find(".spinner").show "fast"
       form.find("button, input[type=submit]").hide()
       form.find("a.workgroup_cancel_link").hide()
-    
+
     $(document).on "ajax:complete", ".edit_name_form", ->
       form = $(this)
       form.find(".spinner").hide()

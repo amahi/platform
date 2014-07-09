@@ -56,7 +56,7 @@ a {
   @include clearfix;
 }
 
-.workgroup_click_change,.name_click_change{
+.workgroup_click_change,.name_click_change, .lease_click_change, .gateway_click_change{
   color : #333;
   text-decoration: none;
   border-bottom: 1px dashed;
@@ -915,7 +915,6 @@ table.apptable {
     margin-bottom: 0px;
     font-size: inherit;
     line-height: initial;
-    border-bottom: initial;
   }
   legend b, fieldset b {
     color: black;
@@ -1138,6 +1137,7 @@ td {
   display: inline-block;
   padding: 0 0 0 50px;
   margin: 0 30px;
+  float:right;
 }
 
 #btn-install-apps {
@@ -1149,6 +1149,7 @@ td {
   display: inline-block;
   padding: 0 0 0 50px;
   margin: 0 30px;
+  float:left;
 }
 
 .install-button .install-app-in-background {
@@ -1618,3 +1619,10 @@ border-radius: 4px;
   margin-top:10px !important;
   margin-left: 20px !important;
 }
+
+.install-apps,.get-apps {
+	float: left;
+	width: 50%;
+}
+
+
