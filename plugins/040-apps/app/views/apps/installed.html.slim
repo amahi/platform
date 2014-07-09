@@ -1,7 +1,6 @@
-.app-store-header
-  = link_to 'Get apps', 'https://www.amahi.org/apps', :title => 'Amahi App Store', :target => '_blank', :id => 'btn-get-apps'
-  = link_to 'Install here!', apps_engine.root_path, :title => 'Refresh', :id => 'btn-install-apps'
-
+.app-store-header.row
+  .col-xs-6.col-sm-6.col-md-6.col-lg-6.get-apps = link_to 'Get apps', 'https://www.amahi.org/apps', :title => 'Amahi App Store', :target => '_blank', :id => 'btn-get-apps'
+  .col-xs-6.col-sm-6.col-md-6.col-lg-6.install-apps = link_to 'Install here!', apps_engine.root_path, :title => 'Refresh', :id => 'btn-install-apps'
 #apps-table
   .settings-table
     - if @apps.any?
