@@ -35,7 +35,7 @@ br
 
 span.progress
   - unless app.has_dependents?
-    span.install-button
+    span.install-button[style="#{@inactive}"]
       = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-in-background btn btn-primary btn-sm')
 
 

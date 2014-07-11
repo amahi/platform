@@ -24,17 +24,58 @@ class AppsController < ApplicationController
 
 	def index
 		set_title t('apps')
+		@inactive = ''
 		@apps = App.available
+
+		@apps.each do |app|
+			app_setting  = Setting.get_kind(app.identifier,'install_status')
+			status = app_setting.value.to_i if app_setting
+			if app_setting and status < 100
+				id = app.identifier
+				timestamp = Setting.get_kind('app_installation','installation_time')
+				if timestamp
+					time = Time.parse(Time.now.to_s)
+					Rails.logger.error(timestamp)
+					installation_time = Time.parse(timestamp.value)
+					diff = time - installation_time
+					if(diff<240)
+						@inactive = 'display:none'
+					end
+					break
+				end
+			end
+		end
 	end
 
 	def installed
 		set_title t('apps')
 		@apps = App.latest_first
+
+		@apps.each do |app|
+			app_setting  = Setting.get_kind(app.identifier,'install_status')
+			status = app_setting.value.to_i if app_setting
+			if app_setting and status>0 and status < 100
+				id = app.identifier
+				timestamp = Setting.get_kind('app_uninstallation','uninstallation_time')
+				if timestamp
+					time = Time.parse(Time.now.to_s)
+					Rails.logger.error(timestamp)
+					installation_time = Time.parse(timestamp.value)
+					diff = time - installation_time
+					if(diff<240)
+						@inactive = 'display:none'
+					end
+					break
+				end
+			end
+		end
 	end
 
 	def install
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
+		Setting.set('install_status','0',identifier)
+		Setting.set('installation_time', Time.now.to_s,'app_installation')
 		App.install identifier unless @app
 	end
 
@@ -57,6 +98,7 @@ class AppsController < ApplicationController
 	def uninstall
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
+		Setting.set('uninstallation_time', Time.now.to_s,'app_uninstallation')
 		@app.uninstall if @app
 	end
 
