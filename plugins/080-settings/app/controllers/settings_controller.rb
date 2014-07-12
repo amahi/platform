@@ -30,15 +30,13 @@ class SettingsController < ApplicationController
 		@uninstall = false
 		if(install_lock_value==1)
 			installation_time = Setting.find_or_create_by('installation_time','installation_lock_time',Time.now.to_s)
-			a = Time.zone.parse(4.minutes.ago.to_s) - Time.parse(installation_time.value)
-			if a > 0
+			if (Time.zone.parse(4.minutes.ago.to_s) - Time.parse(installation_time.value))> 0
 				@install = true
 			end
 		end
 		if (uninstall_lock_value==1)
 			uninstallation_time = Setting.find_or_create_by('uninstallation_time','uninstallation_lock_time',Time.now.to_s)
-			b = Time.zone.parse(4.minutes.ago.to_s) - Time.parse(uninstallation_time.value)
-			if b > 0
+			if (Time.zone.parse(4.minutes.ago.to_s) - Time.parse(uninstallation_time.value)) > 0
 				@uninstall = true
 			end
 		end
