@@ -1,0 +1,22 @@
+.center_block {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+#disk-table-head {
+	cursor: pointer;
+}
+
+#disk-table-body {
+	display: none;
+}
+
+#content {
+	overflow: hidden;
+}
+
+.td_box {
+	width: 40%;
+}
+
