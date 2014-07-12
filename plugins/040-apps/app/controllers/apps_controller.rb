@@ -38,8 +38,10 @@ class AppsController < ApplicationController
 		lock_value = Setting.find_or_create_by('installation', 'installation_lock','0').value.to_i
 		if lock_value==0
 			@status = true
-			Setting.set('installation_lock','1','installation')
-			Setting.set('installation_lock_time',Time.now.to_s,'installation_time')
+			Setting.transaction do
+				Setting.set('installation_lock','1','installation')
+				Setting.set('installation_lock_time',Time.now.to_s,'installation_time')
+			end
 			App.install identifier unless @app
 		else
 			@status = false
@@ -69,8 +71,10 @@ class AppsController < ApplicationController
 		lock_value = Setting.find_or_create_by('uninstallation', 'uninstallation_lock','0').value.to_i
 		if lock_value==0
 			@status = true
-			Setting.set('installation_lock','1','installation')
-			Setting.set('uninstallation_lock_time',Time.now.to_s,'uninstallation_time')
+			Setting.transaction do
+				Setting.set('installation_lock','1','installation')
+				Setting.set('uninstallation_lock_time',Time.now.to_s,'uninstallation_time')
+			end
 			@app = App.where(:identifier=>identifier).first
 			@app.uninstall if @app
 		else
