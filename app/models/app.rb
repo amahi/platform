@@ -262,12 +262,12 @@ class App < ActiveRecord::Base
 			self.save!
 			self.install_status = 100
 			Dir.chdir(initial_path)
-			Setting.set('installation_lock','0','installation')
 		rescue Exception => e
 			self.install_status = 999
 			Dir.chdir(initial_path)
-			Setting.set('installation_lock','0','installation')
 			raise e
+		ensure
+			Setting.set('installation_lock','0','installation')
 		end
 	end
 
