@@ -3,3 +3,7 @@
 'en':
   # put here your string symbols and translations
   start_it: Start it
+  reset_lock: Reset App locks
+  unlock_install: Unlock App installation
+  unlock_uninstall: Unlock App uninstallation
+

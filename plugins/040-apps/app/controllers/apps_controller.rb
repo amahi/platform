@@ -35,7 +35,16 @@ class AppsController < ApplicationController
 	def install
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
-		App.install identifier unless @app
+		lock_value = Setting.find_or_create_by('installation', 'installation_lock','0').value.to_i
+		if lock_value==0
+			@status = true
+			Setting.set('installation_lock','1','installation')
+			Setting.set('installation_lock_time',Time.now.to_s,'installation_time')
+			App.install identifier unless @app
+		else
+			@status = false
+		end
+
 	end
 
 	def install_progress
@@ -57,7 +66,16 @@ class AppsController < ApplicationController
 	def uninstall
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
-		@app.uninstall if @app
+		lock_value = Setting.find_or_create_by('uninstallation', 'uninstallation_lock','0').value.to_i
+		if lock_value==0
+			@status = true
+			Setting.set('installation_lock','1','installation')
+			Setting.set('uninstallation_lock_time',Time.now.to_s,'uninstallation_time')
+			@app = App.where(:identifier=>identifier).first
+			@app.uninstall if @app
+		else
+			@status = false
+		end
 	end
 
 	def uninstall_progress

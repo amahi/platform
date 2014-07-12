@@ -5,12 +5,15 @@ Apps =
 		$(document).on "ajax:beforeSend", ".install-app-in-background, .uninstall-app-in-background", ->
 				$(".install-button").hide()
 				_this.toggle_spinner this
-				$('.app').each ->
-					$(this).find('.install-app-in-background').addClass('inactive')
 
 		$(document).on "ajax:success", ".install-app-in-background, .uninstall-app-in-background", (data, results) ->
+			if results.status
 				_this.update_progress results["identifier"], results["content"]
 				_this.trace_progress results["identifier"]
+			else
+				_this.show_lock_error results["identifier"], results["content"]
+				$(".install-button").show()
+
 
 		RemoteCheckbox.initialize
 			selector: ".in_dashboard_checkbox"
@@ -46,6 +49,13 @@ Apps =
 		notice = app.find(".app-flash-notice")
 		notice.show()
 
+	show_lock_error: (finder,content) ->
+		progress = @progress(finder)
+		progress.addClass('alert-info')
+		@progress(finder).html content
+		spinner = @app(finder).find ".spinner:first"
+		spinner.hide()
+
 	update_installed_app: (finder, content) ->
 		_this = this
 		app = @app(finder)
@@ -69,6 +79,8 @@ Apps =
 						$(this).find('.install-app-in-background').removeClass('inactive')
 				else if data["uninstalled"]
 					_this.update_uninstalled_app finder
+					$('.app').each ->
+						$(this).find('.uninstall-app-in-background').removeClass('inactive')
 				else
 					setTimeout (-> Apps.trace_progress(finder)), 2000
 
