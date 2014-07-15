@@ -39,15 +39,15 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     #content
       = render 'layouts/subheader'
       = render 'shared/flash_messages'
-      #app.inner
+      #app.inner.container
         - unless @no_tabs
           = render 'shared/tabs'
-          #preferences
+          #preferences.col-sm-8
             .preftab
                 = yield
         - else
           = yield
-
+      .push
     = render 'layouts/footer'
 
     #js-templates[style="display:none"]

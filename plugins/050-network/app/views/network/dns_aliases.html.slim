@@ -1,7 +1,7 @@
 #dns-aliases-table
   .settings-table
     - if @dns_aliases.any?
-      table.settings
+      table.settings.table
         thead
           tr
             th.settings-col1= t 'name'
@@ -10,7 +10,7 @@
     .empty-hint
       h2= t('there_are_no_dns_aliases')
 
-  = button_tag t('new_dns_alias'), type: 'button', class: 'open-area btn btn-create', id: 'new-dns-alias-to-step1', data: { related: '#new-dns-alias-step1' }
+  = button_tag t('new_dns_alias'), type: 'button', class: 'open-area btnn btn-create btn btn-info btn-sm', id: 'new-dns-alias-to-step1', data: { related: '#new-dns-alias-step1' }
 
   #new-dns-alias-box
     #dns-alias-new

@@ -22,7 +22,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     = javascript_include_tag 'application'
     - amahi_plugins.each do |p|
       = javascript_include_tag p[:class].underscore
-
+    = javascript_tag {'$.fx.off = true;' if Rails.env.test?}
     - for header in theme.headers do
       = header =~ /\.js$/ ? javascript_include_tag(header) : header
 
@@ -38,8 +38,10 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     #content
       = render 'layouts/subheader'
       = render 'shared/flash_messages'
-      #app.inner
+      #app.inner.container
         = yield
+
+      .push
 
     = render 'layouts/footer'
 

@@ -2,7 +2,7 @@
   fieldset
     legend
       = t 'settings'
-    table
+    table.table
       tr
         td
           label = t 'dhcp_server'
@@ -21,7 +21,21 @@
         td
           label= t 'lease_time'
         td
-          span.open-update-lease-time-area.focus= @lease_time
+          a.lease_click_change = @lease_time
+          = simple_remote_text     :id => "lease_time_area",
+                                   :input_id =>"lease_time",
+                                   :form_id => "lease_form",
+                                   :button_id => "",
+                                   :url => network_engine.update_lease_time_path,
+                                   :label => t("change"),
+                                   :disabled => false,
+                                   :value => @lease_time,
+                                   :name => :lease_time,
+                                   :method => :put,
+                                   :remote => true,
+                                   :input_css_class=>'form-control input-sm',
+                                   :form_css_class => "edit_lease_form form-inline form_hidden",
+                                   :cancel_class => "lease-cancel-link btn btn-primary btn-sm left-margin-10"
       tr
         td
           label = t 'dns_provider'
@@ -43,12 +57,31 @@
               .control-group
                 .controls
                   = spinner
-                  = submit_tag t('update_dns_ips'), class: 'btn', disabled: 'disabled'
+                  = submit_tag t('update_dns_ips'), class: 'btnn', disabled: 'disabled'
       tr
         td
           label= t 'gateway'
         td
-          span.open-update-gateway-area.focus = @net + '.' + @gateway
+          a.gateway_click_change
+            =@net +'.'
+            b.gateway_value = @gateway
+          = simple_remote_text     :id => "gateway_area",
+                                   :input_id =>"gateway_input",
+                                   :form_id => "gateway_form",
+                                   :button_id => "",
+                                   :url => network_engine.update_gateway_path,
+                                   :label => t("change"),
+                                   :disabled => false,
+                                   :value => @gateway,
+                                   :name => :gateway,
+                                   :method => :put,
+                                   :remote => true,
+                                   :input_css_class=>'form-control input-sm',
+                                   :form_css_class => "edit_gateway_form form-inline form_hidden",
+                                   :cancel_class => "gateway-cancel-link btn btn-primary btn-sm left-margin-10"
+          .gateway_messages[style="display:none;"]
+            =@net +'.'
+            b.gateway_message_value = @gateway
 
 = content_for(:js_templates) do
   script[id='updateLeaseTimeTemplate' type='text/x-jquery-tmpl']

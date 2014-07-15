@@ -4,12 +4,12 @@
     :class => 'setting area update-form update-lease-time-form form-inline',\
     :id => 'update-lease-time-form' do |f|
 
-  .control-group
+  .control-group.form-group
     .controls
-      = text_field_tag 'lease_time', '${lease_time}', :size => 38, :maxlength => 128, :placeholder => t('lease_time')
-  .control-group
+      = text_field_tag 'lease_time', '${lease_time}', :size => 38, :maxlength => 128, :placeholder => t('lease_time'),:class=>'form-control input-sm '
+  .control-group.form-group
     .controls
       = spinner
-      = submit_tag t('change'), :class => 'btn'
-      = link_to t('cancel'), '#', :class => 'close-update-lease-time-area cancel-link'
+      = submit_tag t('change'), :class => 'btnn btn-create btn btn-info btn-sm left-margin-10'
+      = link_to t('cancel'), '#', :class => 'close-update-lease-time-area cancel-link btn btn-primary btn-sm left-margin-10'
     .messages

@@ -27,6 +27,7 @@ class SettingsController < ApplicationController
 	end
 
 	def servers
+		@page_title = t 'settings'
 		unless @advanced
 			redirect_to settings_engine_path
 		else
@@ -116,6 +117,7 @@ class SettingsController < ApplicationController
 
 	# index of all themes
 	def themes
+		@page_title = t 'settings'
 		@themes = Theme.available
 	end
 

@@ -133,3 +133,46 @@ $ ->
   Hosts.initialize()
   DnsAliases.initialize()
   Settings.initialize()
+
+$(document).ready ->
+  $(".lease_click_change").click () ->
+    $(this).hide()
+    $(".edit_lease_form").show()
+
+  $(".lease-cancel-link").click () ->
+    form = $('.edit_lease_form').hide()
+    $(".lease_click_change").show()
+
+$(document).on "ajax:success", ".edit_lease_form", (event, results) ->
+  element = $(".lease_click_change")
+  form = $('.edit_lease_form')
+  if results.status is "ok"
+    element.html($('#lease_time').val())
+    form.hide('slow')
+    element.show('slow')
+
+$(document).ready ->
+  $(".gateway_click_change").click () ->
+    $(this).hide()
+    $(".edit_gateway_form").show()
+    $('.gateway_messages').show()
+
+  $(".gateway-cancel-link").click () ->
+    form = $('.edit_gateway_form').hide()
+    $('.gateway_messages').hide()
+    $(".gateway_click_change").show()
+
+
+$(document).on 'keyup', '#gateway_input', ->
+  $('.gateway_message_value').text $(this).val()
+
+$(document).on "ajax:success", ".edit_gateway_form", (event, results) ->
+  element = $(".gateway_click_change")
+  element_child = $('.gateway_value')
+  form = $('.edit_gateway_form')
+  if results.status is "ok"
+    element_child.html($('#gateway_input').val())
+    form.hide('slow')
+    $('.gateway_messages').hide()
+    element.show('slow')
+
