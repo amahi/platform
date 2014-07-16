@@ -3,3 +3,5 @@
 'en':
   # put here your string symbols and translations
   hello_world: Hello World! (yay for the Amahi plugins!)
+  already_installation_going_on: "Currently an installation is already going on. Please try again in a moment"
+  already_uninstallation_going_on: "Currently an uninstallation is already going on. Please try again in a moment"

@@ -24,6 +24,32 @@ class SettingsController < ApplicationController
 		@advanced_settings = Setting.where(:name=>'advanced').first
 		@guest = Setting.where(:name=>"guest-dashboard").first
 		@version = Platform.platform_versions
+		install_lock_value = Setting.find_or_create_by('installation', 'installation_lock','0').value.to_i
+		uninstall_lock_value = Setting.find_or_create_by('uninstallation', 'uninstallation_lock','0').value.to_i
+		@install = false
+		@uninstall = false
+		if(install_lock_value==1)
+			installation_time = Setting.find_or_create_by('installation_time','installation_lock_time',Time.now.to_s)
+			if (Time.zone.parse(4.minutes.ago.to_s) - Time.parse(installation_time.value))> 0
+				@install = true
+			end
+		end
+		if (uninstall_lock_value==1)
+			uninstallation_time = Setting.find_or_create_by('uninstallation_time','uninstallation_lock_time',Time.now.to_s)
+			if (Time.zone.parse(4.minutes.ago.to_s) - Time.parse(uninstallation_time.value)) > 0
+				@uninstall = true
+			end
+		end
+	end
+
+	def unlock_install
+		Setting.set('installation_lock','0','installation')
+		render json: { status: 'ok' }
+	end
+
+	def unlock_uninstall
+		Setting.set('uninstallation_lock','0','uninstallation')
+		render json: { status: 'ok' }
 	end
 
 	def servers
@@ -74,46 +100,46 @@ class SettingsController < ApplicationController
 		render :text => t('powering_off')
 	end
 
-  def refresh
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    render 'server_status'
-  end
+	def refresh
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	render 'server_status'
+	end
 
-  def start
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.do_start
-    render 'server_status'
-  end
+	def start
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.do_start
+	render 'server_status'
+	end
 
-  def stop
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.do_stop
-    render 'server_status'
-  end
+	def stop
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.do_stop
+	render 'server_status'
+	end
 
-  def restart
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.do_restart
-    render 'server_status'
-  end
+	def restart
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.do_restart
+	render 'server_status'
+	end
 
-  def toggle_monitored
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.toggle!(:monitored)
-    render 'server_status'
-  end
+	def toggle_monitored
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.toggle!(:monitored)
+	render 'server_status'
+	end
 
-  def toggle_start_at_boot
-    sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
-    @server.toggle!(:start_at_boot)
-    render 'server_status'
-  end
+	def toggle_start_at_boot
+	sleep 2 if Rails.env.development?
+	@server = Server.find(params[:id])
+	@server.toggle!(:start_at_boot)
+	render 'server_status'
+	end
 
 	# index of all themes
 	def themes

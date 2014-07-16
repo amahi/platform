@@ -266,6 +266,8 @@ class App < ActiveRecord::Base
 			self.install_status = 999
 			Dir.chdir(initial_path)
 			raise e
+		ensure
+			Setting.set('installation_lock','0','installation')
 		end
 	end
 

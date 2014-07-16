@@ -33,10 +33,13 @@ br
 br
 br
 
-span.progress
+span.app-progress
   - unless app.has_dependents?
-    span.install-button
-      = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-in-background btn btn-primary btn-sm')
+    span.install
+      = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-in-background btn btn-primary btn-sm install-button')
+    br
+    br
+    span.progress
 
 
 - unless app.installed

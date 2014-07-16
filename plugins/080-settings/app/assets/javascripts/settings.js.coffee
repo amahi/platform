@@ -28,3 +28,8 @@ $(document).on "click", ".remote-check", (event)->
 
 $(document).on "ajax:complete",".remote-check", ->
       $(this).prop("checked",!$(this).prop("checked"))
+
+$(document).on "ajax:complete",".unlock-uninstall",->
+        $('.unlock-uninstall').hide()
+$(document).on "ajax:complete",".unlock-install",->
+        $('.unlock-install').hide()

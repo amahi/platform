@@ -29,6 +29,16 @@ div.settings-fields.settings-wrap
           = tag "input", id: "guest", class: "remote-check", type: "checkbox", checked: @guest.set?,
               data: { remote: true, url: settings_engine.toggle_setting_path(id: @guest) }
           = spinner
+      -if @install or @uninstall
+        tr
+          td
+            label = t 'reset_lock'
+          td
+            -if @install
+              = link_to(t("unlock_install"), settings_engine.unlock_install_path, :method => :put, :remote => true, :class => 'btnn btn btn-info btn-sm unlock-install left-margin-10')
+            -if @uninstall
+              = link_to(t("unlock_uninstall"), settings_engine.unlock_uninstall_path, :method => :put, :remote => true, :class => 'btnn btn btn-info btn-sm unlock-uninstall left-margin-10')
+
 
 div.settings-fields.settings-wrap
   fieldset
