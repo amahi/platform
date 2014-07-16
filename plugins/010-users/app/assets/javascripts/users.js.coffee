@@ -34,8 +34,9 @@ $(document).on "ajax:success", ".edit_name_form", (event, results) ->
   if results.status is "ok"
     col_element = $("#whole_user_" + results["id"])
     $(this).hide('slow')
-    $(".name_click_change").html results["name"]
-    $(".name_click_change").show()
+    elem = $(this).closest('td').find(".name_click_change")
+    elem.html results["name"]
+    elem.show()
     $(col_element).find(".users-col2").html results["name"]
 
 
