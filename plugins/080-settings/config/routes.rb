@@ -17,4 +17,6 @@ Settings::Engine.routes.draw do
 	match 'activate_theme' => 'settings#activate_theme', via: [:get,:post]
 
 	put 'revoke_app' => 'settings#revoke_app', as: 'revoke_app'
+	put 'unlock_install' => 'settings#unlock_install', as: 'unlock_install'
+	put 'unlock_uninstall' => 'settings#unlock_uninstall', as: 'unlock_uninstall'
 end
