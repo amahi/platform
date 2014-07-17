@@ -6,7 +6,7 @@
   = spinner
   p[class="shares-fixed-tags"]
 
-    - [t('music'), t('pictures'), t('videos'), t('docs')].each_with_index do |tag, i|
+    - [t('music'), t('pictures'), t('videos'), t('docs'), t('tv')].each_with_index do |tag, i|
       = simple_remote_checkbox :id => "share_visible_#{share.id}_#{i}",
                                       :css_class => 'share_tags_checkbox',
                                       :url => update_tags_share_path(:id => share.id, :name => tag),

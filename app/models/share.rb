@@ -23,7 +23,7 @@ class Share < ActiveRecord::Base
 	DEFAULT_SHARES_ROOT = '/var/hda/files'
 
 	SIGNATURE = "Amahi configuration"
-	DEFAULT_SHARES = [ "Books", "Pictures", "Movies", "Videos", "Music", "Docs", "Public" ].each {|s| I18n.t s }
+	DEFAULT_SHARES = [ "Books", "Pictures", "Movies", "Videos", "Music", "Docs", "Public", "TV" ].each {|s| I18n.t s }
 	PDC_SETTINGS = "/var/hda/domain-settings"
 
 	default_scope {order("name")}
