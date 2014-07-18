@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627195608) do
-
+ActiveRecord::Schema.define(version: 20140717200213) do
   create_table "app_dependencies", force: true do |t|
     t.integer  "app_id"
     t.integer  "dependency_id"
