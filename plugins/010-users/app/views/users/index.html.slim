@@ -10,9 +10,9 @@
     .no-users
       h2= t('there_are_no_users')
 
-= button_tag t('new_user'), :type => 'button', :class => 'open-area btnn btn-create btn btn-info ', :id => "new-user-to-step1",  :data => { :related => "#new-user-step1" }
+= button_tag t('new_user'), :type => 'button', :class => 'open-area btnn btn btn-info ', :id => "new-user-to-step1",  :data => { :related => "#new-user-step1" }
 
-#new-user-box.col-sm-7
+#new-user-box
   #user-new
     #new-user-step1.area[style="display:none;"]
       = render 'form'
