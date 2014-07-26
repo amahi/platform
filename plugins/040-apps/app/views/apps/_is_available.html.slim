@@ -1,3 +1,6 @@
 = spinner
 span.install
-    = link_to(t("install"), apps_engine.install_path(:id => app.identifier), :method => :post, :remote => true, :class => 'install-app-in-background btnn btn btn-info btn-sm ')
+    = link_to(t("install"), apps_engine.install_path(:id => app.identifier), :method => :post, :remote => true, :class => 'install-app-in-background btnn btn btn-info btn-sm install-button')
+br
+br
+span.progress
