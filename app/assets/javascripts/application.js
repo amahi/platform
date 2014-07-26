@@ -1,5 +1,5 @@
 //= require jquery
-//= require jquery.ui.all
+//= require jquery-ui
 //= require lib/jquery.ui.templates
 //= require jquery_ujs
 
