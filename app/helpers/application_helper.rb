@@ -94,11 +94,25 @@ module ApplicationHelper
 			html = ''
 			html << content_tag('form',{:action=>options[:url], :method => options[:method],:data => {:remote=>options[:remote]},:id=>options[:form_id], :class=>options[:form_css_class]}) do
 				input_html =''
-				input_html << tag('input', {:class => options[:input_css_class], :id =>options[:input_id] , :name => options[:name], :value => options[:value], :type => 'text'}.merge(parsed_options))
-				input_html << "&nbsp;&nbsp;"
-				input_html << "&nbsp;"
-				input_html << content_tag("button",options[:label],:class=> "btnn btn btn-info btn-create btn-sm margin-for-message",:type => "submit",:id=> options[:button_id] )
-				input_html << content_tag("a",'Cancel',:class=>options[:cancel_class],:data=>{:id=>options[:id]})
+				input_html << content_tag('div',:class=>"control-group form-group") do
+					input_html1 = ''
+					input_html1 = content_tag('div',:class=>"controls") do
+						input_html2 = ''
+						input_html2 << tag('input', {:class => options[:input_css_class], :id =>options[:input_id] , :name => options[:name], :value => options[:value], :type => 'text'}.merge(parsed_options))
+						input_html2.html_safe
+					end
+					input_html1.html_safe
+				end
+				input_html << content_tag('div',:class=>"control-group form-group") do
+					input_html1 = ''
+					input_html1 = content_tag('div',:class=>"controls") do
+						input_html2 = ''
+						input_html2 << content_tag("button",options[:label],:class=> "btnn btn btn-info btn-create btn-sm left-margin-10",:type => "submit",:id=> options[:button_id] )
+						input_html2 << content_tag("a",'Cancel',:class=>options[:cancel_class],:data=>{:id=>options[:id]})
+						input_html2.html_safe
+					end
+					input_html1.html_safe
+				end
 				input_html << content_tag("span", '', class: "spinner theme-image", style: "display: none")
 				input_html.html_safe
 			end
