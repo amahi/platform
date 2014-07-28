@@ -82,7 +82,7 @@ class DiskUtils
 				d[:available] = key[3].to_i * 1024
 				d[:use_percent] = key[4]
 				d[:mount] = key[5]
-				res.push(d) unless ['tmpfs', 'devtmpfs'].include? d[:filesystem]
+				res.push(d) unless ['tmpfs', 'devtmpfs', 'none'].include? d[:filesystem]
 			end
 			res.sort { |x,y| x[:filesystem] <=> y[:filesystem] }
 		end
