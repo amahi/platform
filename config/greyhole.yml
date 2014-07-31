@@ -20,20 +20,20 @@ db_user: greyhole
 db_pass: greyhole
 db_host: localhost
 
-# other defaults:
-email_to: root
-greyhole_log_file: /var/log/greyhole.log
-log_level: DEBUG
-log_memory_usage: no
-dir_selection_algorithm: most_available_space
-df_cache_time: 15
-delete_moves_to_attic: yes
-balance_modified_files: no
+## other defaults, if you want to change them:
+# email_to: root
+# greyhole_log_file: /var/log/greyhole.log
+# log_level: DEBUG
+# log_memory_usage: no
+# drive_selection_algorithm: most_available_space
+# df_cache_time: 15
+# delete_moves_to_trash: yes
+# delete_moves_to_trash: no
 
-# sticky_files and stick_into options can have special nested formatting. *indentation matters*
-# see the details here http://wiki.amahi.org/index.php/Greyhole#Greyhole_advanced_options
-sticky_files:
-- - Music/
+## sticky_files and stick_into options can have special nested formatting. *indentation matters*
+## see the details here http://wiki.amahi.org/index.php/Greyhole#Greyhole_advanced_options
+# sticky_files:
+# - - Music/
 
 # special note about this field:
 #
