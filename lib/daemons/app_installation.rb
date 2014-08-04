@@ -8,7 +8,7 @@ root = File.dirname(root) until File.exists?(File.join(root, 'config'))
 Dir.chdir(root)
 
 require File.join(root, "config", "daemon")
-AmahiHDA::Application.config.daemon = true
+AmahiHDA::Application.config.daemon = false
 AmahiHDA::Application.initialize!
 
 $running = true

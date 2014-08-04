@@ -80,7 +80,7 @@ module AmahiHDA
 	# stick them in an app-wide variable for when it's needed by the app
 	config.amahi_plugins = amahi_plugins
 
-    #initialize daemon variable to false
-    config.daemon = false
+    #set daemon variable to true to let the Daemon controller know that background script shouuld not initialize the daemon again
+    config.daemon = true
   end
 end
