@@ -79,5 +79,8 @@ module AmahiHDA
 	end
 	# stick them in an app-wide variable for when it's needed by the app
 	config.amahi_plugins = amahi_plugins
+
+    #initialize daemon variable to false
+    config.daemon = false
   end
 end

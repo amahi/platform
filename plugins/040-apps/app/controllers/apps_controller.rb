@@ -35,7 +35,8 @@ class AppsController < ApplicationController
 	def install
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
-		App.install identifier unless @app
+		#.install identifier unless @app
+		Setting.set("app_api",identifier) unless @app
 	end
 
 	def install_progress
