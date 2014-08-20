@@ -34,7 +34,8 @@ class Platform
 		DNSMASQ ? true : false
 	end
 
-	PLATFORMS=['fedora', 'centos', 'ubuntu', 'debian', 'mac', 'mint']
+	PLATFORMS=['fedora', 'centos', 'ubuntu', 'debian', 'mac', 'mint', 'arch']
+
 	SERVICES={
 		'fedora' => {
 			:apache => 'httpd',
@@ -82,9 +83,16 @@ class Platform
 			:smb => 'smbd',
 			:nmb => 'nmbd',
 			:mysql => 'mysql',
+		},
+		'arch'   => {
+			:apache => 'httpd',
+			:dhcp => 'dhcpd',
+			:named => 'named',
+			:smb => 'smbd',
+			:nmb => 'nmbd',
+			:mysql => 'mysqld',
 		}
 	}
-
 	FILENAMES={
 		'fedora' => {
 			:apache_pid => 'httpd/httpd.pid',
@@ -145,9 +153,18 @@ class Platform
 			:monit_conf => '/etc/monit/monitrc',
 			:monit_log => '/var/log/monit.log',
 			:syslog => '/var/log/syslog',
+		},
+		'arch' => {
+			:apache_pid => 'httpd/httpd.pid',
+			:dhcpleasefile => dnsmasq? ? '/var/lib/dnsmasq/dnsmasq.leases' : '/var/lib/dhcpd/dhcpd.leases',
+			:samba_pid => 'smbd.pid',
+			:dhcpd_pid => 'dhcpcd.pid',
+			:monit_dir => '/etc/monit.d',
+			:monit_conf => '/etc/monit.conf',
+			:monit_log => '/var/log/monit',
+			:syslog => '/var/log/messages',
 		}
 	}
-
 	class << self
 		def reload(service)
 			c = Command.new("sleep 1")
@@ -167,6 +184,10 @@ class Platform
 
 		def platform
 			@@platform
+		end
+
+		def arch?
+			@@platform == 'arch'
 		end
 
 		def fedora?
@@ -203,7 +224,7 @@ class Platform
 
 		def service_start_command(name)
 			service = service_name(name)
-			if fedora?
+			if fedora? or arch?
 				"/usr/bin/systemctl start #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl start #{service}"
@@ -216,7 +237,7 @@ class Platform
 
 		def service_stop_command(name)
 			service = service_name(name)
-			if fedora?
+			if fedora? or arch?
 				"/usr/bin/systemctl stop #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl stop #{service}"
@@ -229,7 +250,7 @@ class Platform
 
 		def service_enable_command(name)
 			service = service_name(name)
-			if fedora?
+			if fedora? or arch?
 				"/usr/bin/systemctl enable #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl enable #{service}"
@@ -242,7 +263,7 @@ class Platform
 
 		def service_disable_command(name)
 			service = service_name(name)
-			if fedora?
+			if fedora? or arch?
 				"/usr/bin/systemctl enable #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl disable #{service}"
@@ -338,6 +359,7 @@ class Platform
 				File.open("/etc/issue", "r") do |issue|
 					line = issue.gets
 				end
+				@@platform = "arch"   if line.include?("Arch")
 				@@platform = "debian" if line.include?("Debian")
 				@@platform = "ubuntu" if line.include?("Ubuntu")
 				@@platform = "fedora" if line.include?("Fedora")
@@ -377,7 +399,9 @@ class Platform
 				end
 				c = Command.new cmd
 				c.run_now
-
+			elsif arch?
+				c = Command.new "pacman -S --noprogressbar --noconfirm \"#{pkgs}\""
+				c.run_now
 			else
 				raise "unsupported platform #{@@platform}" unless PLATFORMS.include?(@@platform)
 			end
@@ -394,6 +418,9 @@ class Platform
 					cmd = "rpm -e #{pkgs}"
 				end
 				c = Command.new cmd
+				c.run_now
+			elsif arch?
+				c = Command.new "pacman -R --noprogressbar --noconfirm \"#{pkgs}\""
 				c.run_now
 			else
 				raise "unsupported platform #{@@platform}" unless PLATFORMS.include?(@@platform)
