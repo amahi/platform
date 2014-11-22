@@ -17,7 +17,6 @@ $(document).ready ->
 	$(".name_cancel_link").click () ->
 	  id = $(this).data("id")
 	  element = "#whole_user_"+id
-	  console.log(element)
 	  form = $(element).find('.edit_name_form')
 	  form.hide()
 	  $(element).find(".name_click_change").show()

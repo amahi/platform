@@ -115,7 +115,6 @@ Settings =
       $('#update-dns-ips-form #error_explanation').remove()
       unless results["status"] is "ok"
         $errorMessages = $("<div id='error_explanation'><ul></ul></div>")
-        console.log results["ip_1_saved"]
         $errorMessages.find('ul').append('<li>Format of DNS IP Primary is wrong</li>') if results["ip_1_saved"] == false
         $errorMessages.find('ul').append('<li>Format of DNS IP Secondary is wrong</li>') if results["ip_2_saved"] == false
         $('#update-dns-ips-form').prepend $errorMessages
