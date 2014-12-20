@@ -50,6 +50,8 @@ rails s
 
 Visit `http://localhost:3000/`, login with the username of `admin` & the password of `admin` and excersise the app as much as you can.
 
+We like to follow a particular [git branching model](http://nvie.com/posts/a-successful-git-branching-model/). You can create and work in your own branch, making your work easier to track.
+
 #### 5. Coding Style
 
 Try to remove suprious white spaces and such. We have a [Ruby beautifier](https://github.com/amahi/rb-beautify) tool that we recommend. It's a basic ruby sctipt that will modify any number of files (in the command line) to
