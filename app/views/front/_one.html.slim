@@ -1,3 +1,4 @@
-li[class="welcome_desc#{subclass}"]
-  = link_to(image_tag(app.logo_url, :class => "welcome-logo#{subclass}", :title => app.name), app.full_url, :target => '_blank')
-  = link_to(app.name, app.full_url, :target => '_blank')
+.col-md-6
+	li[class="welcome_desc#{subclass}"]
+	  = link_to(image_tag(app.logo_url, :class => "welcome-logo#{subclass}", :title => app.name), app.full_url, :target => '_blank')
+	  = link_to(app.name, app.full_url, :target => '_blank')

@@ -1,18 +1,17 @@
-header#header
-  .inside
-    nav#head-left
-      h1#logo-two
-        = link_to t('amahi'), root_url
-      ul
+nav.navbar.navbar-default role="navigation" 
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
         li.first= link_to t('home'), root_path
-        li.last
-          = render 'layouts/searchform'
-    nav#head-right
-      ul
-        li
-          a href=root_path
-            = t('home')
-            i.icon-home
+      form.navbar-form.navbar-left role="search" 
+        = render 'layouts/searchform'
+      ul.nav.navbar-nav.navbar-right
         - if current_user_is_admin?
           li
             a href=users_engine.root_path
@@ -32,5 +31,8 @@ header#header
               = t('help')
               i.icon-apps
 
-    h2#pagetitle = page_title
+
+
+
+
 
