@@ -14,6 +14,7 @@ html, body {
 }
 
 body {
+  background: #333;
   font-size: 12px;
   line-height: 19px;
   font-family: Arial, Helvetica, sans-serif;
@@ -348,6 +349,7 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
   width: 100%;
   margin: 0 auto;
   border-top: 5px solid #000;
+  background: #333;
   overflow: hidden;
   height: 59px;
 
@@ -565,6 +567,7 @@ section#dashboard {
   #ln_header {
     background: #f7f6f6;
     font-weight: bold;
+    color: #333;
     height: 28px;
     padding: 12px 17px 0;
     @include border-radius(5px 5px 0 0);
@@ -795,6 +798,7 @@ table.settings, .settings th {
 
 .settings th, thead.apptable td {
   font-size: 16px;
+  background: #333;
   color: #fff;
   border-collapse: collapse;
   height: 40px;

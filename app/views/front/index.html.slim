@@ -1,8 +1,8 @@
 .container-fluid
-  .row-fluid
+  .row
     - size = @apps.size
-    .col-md-8.col-xs-10.col-lg-10.col-sm-10
-      #welcome.nav
+    #welcome.nav
+      .col-md-6.col-xs-8
         section#dashboard
           ul#welcome_apps
             - if size > 6
@@ -13,15 +13,15 @@
             - if size < 3
               li
                 = link_to '', apps_engine.root_path, title: t('install_apps'), id: 'install-apps'
-    .col-md-4.col-xs-4.col-lg-4.col-sm-4
-      - if @news
-        section#latest_news
-          #ln_inner
-            #ln_header
-              h3
-                = t('latest_news')
-            #ln_content
-              ul
-                = render partial: 'news', collection: @news
-              span#more_news
-                = link_to(t("more_news"), "http://blog.amahi.org/")
+      .col-md-4.col-xs-6
+        - if @news
+          section#latest_news
+            #ln_inner
+              #ln_header
+                h3
+                  = t('latest_news')
+              #ln_content
+                ul
+                  = render partial: 'news', collection: @news
+                span#more_news
+                  = link_to(t("more_news"), "http://blog.amahi.org/")
