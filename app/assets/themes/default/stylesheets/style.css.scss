@@ -70,6 +70,7 @@ a {
 // --------------------------------------------------
 
 form {
+  margin-left:3px;
   color: black;
 }
 
@@ -237,6 +238,7 @@ input[type="password"] {
 // --------------------------------------------------
 
 input[type=button], input[type=submit], .btnn {
+  margin-left:3px;
   font-size: 12px;
   font-weight: bold;
   display: inline-block;
@@ -679,7 +681,7 @@ nav.preftab {
     a {
       display: block;
       line-height: 38px;
-      padding: 0 28px;
+      padding: 0 20px;
       font-size: 12px;
       font-weight: bold;
       color: #b3b3b3;

@@ -1,5 +1,3 @@
-
-
 nav.navbar.navbar-inverse
   .container-fluid
     .navbar-header
@@ -7,13 +5,12 @@ nav.navbar.navbar-inverse
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      .navbar-brand  
-        = link_to t('amahi'), root_url
     #myNavbar.collapse.navbar-collapse
       ul.nav.navbar-nav
         li.first= link_to t('home'), root_path
         li.last
-          = render 'layouts/searchform'
+          div style="padding-top:7px"
+            = render 'layouts/searchform'
       ul.nav.navbar-nav.navbar-right
         - if current_user_is_admin?
           li
