@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem "rails", '~>4.1.1'
 
+gem 'rake', '10.1.0'
+
 gem 'mysql2'
 gem "yettings"
 
@@ -43,12 +45,9 @@ group :development do
 	# turn this on to enable reporting on best practices with:
 	#	rails_best_practices -f html .
 	# gem 'rails_best_practices'
-
-	# FIXME: for Fedora only
-	if ((open('/etc/issue').grep(/fedora/i).length > 0) rescue false)
-		gem "minitest"
-	end
 end
+
+gem "minitest"
 
 gem "rspec-rails", :group => [:test, :development]
 group :test do
@@ -56,8 +55,6 @@ group :test do
   gem "factory_girl_rails"
   gem "capybara"
   gem 'capybara-screenshot'
-  # FIXME: required in Fedora 18 for some (packaging?) reason
-  gem 'minitest'
   # required for javascript test in selenium
   gem 'poltergeist'
   gem 'simplecov', :require => false
