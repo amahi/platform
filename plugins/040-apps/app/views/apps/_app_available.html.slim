@@ -19,7 +19,7 @@
             = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
 
           .app-content.col-md-6
-            p.app-description
+            div.app-description
               = app.description.try(:html_safe) || t('no_description_supplied')
 
             = render 'is_available', :app => app

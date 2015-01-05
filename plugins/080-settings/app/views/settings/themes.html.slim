@@ -4,6 +4,6 @@
       settings_engine.activate_theme_path(id: theme.css),
       { onmouseover: "$('#theme-sshot').attr('src', '#{theme_image_path('theme-sshot.png', theme.css)}')" }
 
-div[text-align:center]
+div style="text-align:center"
   #theme_sshot_image
     = theme_image_tag('theme-sshot.png', id: "theme-sshot", alt: theme.name, title: theme.name)
