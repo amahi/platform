@@ -2,6 +2,7 @@
 //= require jquery-ui
 //= require lib/jquery.ui.templates
 //= require jquery_ujs
+//= require bootstrap-sprockets
 
 //= require forms/remote-radios
 //= require forms/remote-checkboxes
@@ -14,5 +15,4 @@
 //= require lib/templates
 //= require lib/smart-links
 //= require lib/debug
-//= require bootstrap.min
 //= require spinner
