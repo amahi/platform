@@ -1590,10 +1590,11 @@ textarea {border: 1px solid #ccc;}
 
 //Markup for alert boxes
 .alert {
-padding: 15px;
-margin: 0 5px 20px 5px;
-border: 1px solid transparent;
-border-radius: 4px;
+  padding: 15px;
+  margin: 0 auto;
+  width: 69%;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 .alert-success {
   color: #3c763d;
