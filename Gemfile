@@ -5,6 +5,9 @@ gem "rails", '~>4.1.1'
 gem 'mysql2'
 gem "yettings"
 
+# foreign key
+gem 'foreigner'
+
 gem 'sass-rails' , '~>4.0.3'
 gem 'coffee-rails'
 
