@@ -29,9 +29,8 @@ class ApplicationController < ActionController::Base
 	helper_method :current_user
 
 	def accessed_from_ip
-		host = request.host
-		if !(IPAddr.new(host) rescue nil).nil?
-			flash.now[:info] =   "Client machine may not be using the HDA for DNS  <a href='http://www.amahi.org/faq#is-dhcp-server-required' target='_blank'>More info</a>"
+		unless (IPAddr.new(request.host) rescue nil).nil?
+			flash.now[:info] =   "Client machine may not be using the HDA for DNS  <a href='https://wiki.amahi.org/index.php/Network_troubleshooting' target='_blank'>More info</a>"
 		end
 	end
 
