@@ -77,6 +77,16 @@ a {text-decoration: none;}
   border: 1px solid #FAB762;
   background-color: #FFF8B0;
 }
+.alert-warn {
+  margin: 0 0 16px 8px;
+  padding: 12px;
+  color: #FF0000;
+  background-color: #F7BE81;
+  border-color: #FF4000;
+  a {
+    color: #B40404;
+  }
+}
 
 form {
   margin-left: 8px;
@@ -184,4 +194,3 @@ input::-webkit-input-placeholder { color: #bbb; font-weight: normal; }
 input:-moz-placeholder { color: #bbb; font-weight: normal; }
 input::-moz-placeholder { color: #bbb; font-weight: normal; }
 input:-ms-input-placeholder { color: #bbb; font-weight: normal; }
-
