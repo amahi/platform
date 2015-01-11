@@ -18,15 +18,22 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-
+	require 'ipaddr'
 	protect_from_forgery
 
 	before_filter :before_filter_hook
 	before_filter :initialize_validators
 	before_filter :prepare_plugins
+	before_action :accessed_from_ip
 
 	helper_method :current_user
 
+	def accessed_from_ip
+		host = request.host
+		if !(IPAddr.new(host) rescue nil).nil?
+			flash.now[:info] =   "Client machine may not be using the HDA for DNS  <a href='http://www.amahi.org/faq#is-dhcp-server-required' target='_blank'>More info</a>"
+		end
+	end
 
 	def initialize_validators
 		@validators_string = ''
