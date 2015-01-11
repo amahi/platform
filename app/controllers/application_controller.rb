@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
 	def accessed_from_ip
 		unless (IPAddr.new(request.host) rescue nil).nil?
-			flash.now[:warn] =   "Client machine may not be using the HDA for DNS  <a href='https://wiki.amahi.org/index.php/Network_troubleshooting' target='_blank'>More info</a>"
+			flash.now[:warn] =   "Your client device is probably not using your HDA for DNS. We recommend <a href='https://wiki.amahi.org/index.php/Transition_to_Amahi' target='_blank'>the following</a> for best results"
 		end
 	end
 
