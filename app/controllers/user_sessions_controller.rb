@@ -15,7 +15,7 @@
 # team at http://www.amahi.org/ under "Contact Us."
 
 class UserSessionsController < ApplicationController
-	before_filter :login_required, :except => ['new', 'create', 'start', 'initialize_system']
+	before_action :login_required, only: :destroy 
 	layout 'login'
 
 	def new
