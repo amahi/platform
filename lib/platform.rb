@@ -365,7 +365,7 @@ class Platform
 				@@platform = "fedora" if line.include?("Fedora")
 				@@platform = "centos" if line.include?("CentOS")
 				@@platform = "mint"   if line.include?("Mint")
-			elsif File.exist?('/mach_kernel')
+			elsif File.exist?('/Volumes')
 				@@platform = "mac"
 			end
 			#To ensure that @@platform is either set or nil:
