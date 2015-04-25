@@ -332,7 +332,7 @@ ko:
   permanently: "영구적으로"
   automated_install: "자동 설치"
   not_updating: "업데이트가 않됨"
-  mysql_database_server: "MySQL DB 서버"
+  mariadb_database_server: "MariaDB 서버"
   router_ip: "라우터 IP"
   port_range_ports_are_already_allocated: "범위에있는 포트가 이미 할당되었읍니다"
   new: "새로운"

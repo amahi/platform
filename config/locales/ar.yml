@@ -268,7 +268,7 @@ ar:
           billion: "مليار"
           trillion: "تريليون"
           quadrillion: "الكدريليون رقم"
-  mysql_database_server: "خادم MySQL DB"
+  mariadb_database_server: "خادم MariaDB"
   edit_and_rate_beta_apps: "تحرير وتقييم التطبيقات التجريبية"
   or_view_each_one_separately_below: "أو عرض كل واحد بشكل منفصل أدناه."
   username: "اسم المستخدم"

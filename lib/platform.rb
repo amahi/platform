@@ -43,7 +43,7 @@ class Platform
 			:named => 'named',
 			:smb => 'smb',
 			:nmb => 'nmb',
-			:mysql => 'mysqld',
+			:mysql => 'mariadb',
 		},
 		'centos' => {
 			:apache => 'httpd',

@@ -236,7 +236,7 @@ zh:
   are_you_sure_you_want_to_delete_alias: "您确定要删除%{name}的别名？"
   ip_address: "IP地址"
   is_not_being_monitored_24x7: "不以24x7显示"
-  mysql_database_server: "MySQL数据库服务器"
+  mariadb_database_server: "MariaDB数据库服务器"
   edit_and_rate_beta_apps: "编辑和测试应用"
   feedback: "反馈"
   username: "用户名"

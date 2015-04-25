@@ -34,7 +34,7 @@ class Server < ActiveRecord::Base
 
 	def self.create_default_servers
 		Server.create(:name => 'apache', :pidfile => Platform.file_name(:apache_pid), :comment => I18n.t('apache_web_server'))
-		Server.create(:name => 'mysql', :pidfile => 'mysqld/mysqld.pid', :comment => I18n.t('mysql_database_server'))
+		Server.create(:name => 'mariadb', :pidfile => 'mariadb/mariadb.pid', :comment => I18n.t('mariadb_database_server'))
 		Server.create(:name => 'smb', :pidfile => Platform.file_name(:samba_pid), :comment => I18n.t('file_server_samba'))
 		r = "# WARNING - This file was automatically generated on #{Time.now}\n" \
 			"\nset daemon 30\n" \

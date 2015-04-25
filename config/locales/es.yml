@@ -238,7 +238,7 @@ es:
     precision: 
       format: 
         delimiter: ""
-  mysql_database_server: Servidor de BBDD MySQL
+  mariadb_database_server: Servidor de BBDD MariaDB
   edit_and_rate_beta_apps: Editar y Votar aplicaciones en Beta
   or_view_each_one_separately_below: o ver a cada uno por separado.
   username: Usuario

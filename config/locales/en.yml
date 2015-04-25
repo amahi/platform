@@ -443,7 +443,7 @@
   dhcp_server: DHCP Server
   dns_server: DNS Server
   file_server_samba: File Server (Samba)
-  mysql_database_server: MySQL DB Server
+  mariadb_database_server: MariaDB Server
   this_file_was_automatically_generated_on: "# This file was automatically generated on %{time} - WARNING - any manual edits WILL be lost!"
   transmission_bittorrent_server: Transmission Bittorrent Server
   ushare_upnp_media_server: Ushare UPnP Media Server

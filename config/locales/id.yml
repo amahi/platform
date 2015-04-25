@@ -262,7 +262,7 @@ id:
   is_not_being_monitored_24x7: <b>tidak</b> akan dimonitor 24x7
   are_you_sure_you_want_to_delete_alias: Anda yakin hendak menghapus alias '%{name}'?
   ip_address: Alamat IP
-  mysql_database_server: Server DB MySQL
+  mariadb_database_server: Server MariaDB
   edit_and_rate_beta_apps: Sunting dan nilai aplikasi-aplikasi Beta
   feedback: Tanggapan
   username: Pengguna
