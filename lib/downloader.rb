@@ -97,7 +97,7 @@ class Downloader
 			puts "WARNING: primary downloaded file #{filename} did not pass signature check - got #{new_sha1}, expected #{sha1}"
 			new_url = File.join(AMAHI_DOWNLOAD_CACHE_SITE, sha1)
 			file = download_direct(new_url)
-			open(filename, "w") { |f| f.write file }
+			open(filename, "w:ASCII-8BIT") { |f| f.write file }
 			puts "new file #{filename} from Amahi's cache written in the cache"
 
 			new_sha1 = Digest::SHA1.hexdigest(file)
