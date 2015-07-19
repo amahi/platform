@@ -63,7 +63,7 @@ class Downloader
 			u = URI.parse(url)
 			http = Net::HTTP.new(u.host, u.port)
 			http.use_ssl = (u.scheme == 'https')
-			request = Net::HTTP::Get.new(u.path)
+			request = Net::HTTP::Get.new(u.path, { 'accept-encoding' => '' })
 			response = http.start { |http| http.request(request) }
 			return response.body unless response.kind_of?(Net::HTTPRedirection)
 			# it's a redirection
@@ -85,7 +85,7 @@ class Downloader
 		begin
 
 			file = download_direct(url)
-			open(filename, "w:ASCII-8BIT") {|f| f.write file }
+			open(filename, "wb") {|f| f.write file }
 			puts "file #{filename} written in cache"
 
 			new_sha1 = Digest::SHA1.hexdigest(file)
@@ -97,7 +97,7 @@ class Downloader
 			puts "WARNING: primary downloaded file #{filename} did not pass signature check - got #{new_sha1}, expected #{sha1}"
 			new_url = File.join(AMAHI_DOWNLOAD_CACHE_SITE, sha1)
 			file = download_direct(new_url)
-			open(filename, "w:ASCII-8BIT") { |f| f.write file }
+			open(filename, "wb") { |f| f.write file }
 			puts "new file #{filename} from Amahi's cache written in the cache"
 
 			new_sha1 = Digest::SHA1.hexdigest(file)
