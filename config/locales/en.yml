@@ -284,6 +284,7 @@
   dns_google: Google Public DNS
   dns_custom: Custom DNS
   dns_opendns: OpenDNS
+  dynamic_ip_range: Dynamic IP Range
 
   # networking -> firewall
   firewall: Firewall

@@ -175,3 +175,36 @@ $(document).on "ajax:success", ".edit_gateway_form", (event, results) ->
     $('.gateway_messages').hide()
     element.show('slow')
 
+$(document).ready ->
+  $(".dyn_lo_click_change").click () ->
+    $(this).hide()
+    $(".edit_dyn_lo_form").show()
+
+  $(".dyn-lo-cancel-link").click () ->
+    form = $('.edit_dyn_lo_form').hide()
+    $(".dyn_lo_click_change").show()
+
+$(document).on "ajax:success", ".edit_dyn_lo_form", (event, results) ->
+  element = $(".dyn_lo_click_change")
+  form = $('.edit_dyn_lo_form')
+  if results.status is "ok"
+    element.html($('#dyn_lo_input').val())
+    form.hide('slow')
+    element.show('slow')
+
+$(document).ready ->
+  $(".dyn_hi_click_change").click () ->
+    $(this).hide()
+    $(".edit_dyn_hi_form").show()
+
+  $(".dyn-hi-cancel-link").click () ->
+    form = $('.edit_dyn_hi_form').hide()
+    $(".dyn_hi_click_change").show()
+
+$(document).on "ajax:success", ".edit_dyn_hi_form", (event, results) ->
+  element = $(".dyn_hi_click_change")
+  form = $('.edit_dyn_hi_form')
+  if results.status is "ok"
+    element.html($('#dyn_hi_input').val())
+    form.hide('slow')
+    element.show('slow')
