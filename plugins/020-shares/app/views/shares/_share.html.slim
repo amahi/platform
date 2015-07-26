@@ -59,6 +59,17 @@ div.share[id="whole_share_#{share.id}"]
               td
                 span.open-update-path-area.focus= share.path
 
+            tr
+              td
+                label #{t('size')}
+              td
+                = link_to  content_tag(:span, t('get_the_size') ) ,
+                shares_engine.update_size_path(share),
+              :method => :put,
+              :remote => true,
+              :class  =>"update-size-area focus remote-bt size#{share.id}"
+
+
             - if advanced?
               tr
                 td.top
