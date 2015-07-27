@@ -132,6 +132,13 @@ class SharesController < ApplicationController
 		end
 	end
 
+	def update_size
+		size = %x(du -sb #{@share.path})
+		size = size.split(' ').first
+		helper = Object.new.extend(ActionView::Helpers::NumberHelper)
+		size = helper.number_to_human_size(size)
+		render :json => { status: :ok, size: size, id: @share.id }
+	end
 
 	protected
 

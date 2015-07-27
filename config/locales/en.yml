@@ -130,6 +130,8 @@
   visible: Visible
   read_only: Read Only
   tags: Tags
+  size: Size
+  get_the_size: Get the size
   extra_parameters: Extra Parameters
   add_extra_parameters: (add extra parameters)
   disabling_lan_manager_will_not_allow_older_machines: Disabling Windows 95/98 LanManager authentication will not allow older machines to use the shares.
