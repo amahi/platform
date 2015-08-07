@@ -8,7 +8,7 @@ class CreateServers < ActiveRecord::Migration
 			t.string   "stop"
 			t.boolean  "monitored",     :default => true
 			t.boolean  "start_at_boot", :default => true
-			t.timestamps, null: false
+			t.timestamps null: false
 		end
 	end
 end

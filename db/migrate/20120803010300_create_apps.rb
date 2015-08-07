@@ -20,7 +20,7 @@ class CreateApps < ActiveRecord::Migration
 			t.integer  "share_id"
 			t.string   "initial_user"
 			t.string   "initial_password"
-			t.timestamps, null: false
+			t.timestamps null: false
 		end
 	end
 end
