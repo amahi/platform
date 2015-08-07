@@ -33,15 +33,15 @@ describe Share do
 				share_id = Share::DEFAULT_SHARES.index(share_name) + 1
 
 				share = Share.find(share_id)
-				share.name.should             == share_name
-				share.path.should             == "#{Share::DEFAULT_SHARES_ROOT}/#{share_name.downcase}"
-				share.rdonly.should           == false
-				share.visible.should          == true
-				share.everyone.should         == true
-				share.tags.should             == share_name.downcase
-				share.disk_pool_copies.should == 0
-				share.guest_access.should     == false
-				share.guest_writeable.should   == false
+				expec(share.name).to             == share_name
+				expec(share.path).to             == "#{Share::DEFAULT_SHARES_ROOT}/#{share_name.downcase}"
+				expec(share.rdonly).to           == false
+				expec(share.visible).to          == true
+				expec(share.everyone).to         == true
+				expec(share.tags).to             == share_name.downcase
+				expec(share.disk_pool_copies).to == 0
+				expec(share.guest_access).to     == false
+				expec(share.guest_writeable).to   == false
 			end
 		end
 
@@ -51,8 +51,8 @@ describe Share do
 			Share.create_default_shares
 			Share.all.each do |share|
 				User.all.each do |user|
-					share.users_with_share_access.should include(user)
-					share.users_with_write_access.should include(user)
+					expect(share.users_with_share_access).to include(user)
+					expect(share.users_with_write_access).to include(user)
 				end
 			end
 		end
@@ -64,15 +64,15 @@ describe Share do
 		it "should give a user read and write access if the share has everyone: true" do
 			user = create(:user)
 			share = create(:share)
-			share.users_with_share_access.should include(user)
-			share.users_with_write_access.should include(user)
+			expect(share.users_with_share_access).to include(user)
+			expect(share.users_with_write_access).to include(user)
 		end
 
 		it "should NOT give a user readn and write access if the share has everyone: false" do
 			user = create(:user)
 			share = create(:share, everyone: false)
-			share.users_with_share_access.should_not include(user)
-			share.users_with_write_access.should_not include(user)
+			expect(share.users_with_share_access).not_to include(user)
+			expect(share.users_with_write_access).not_to include(user)
 		end
 
 	end

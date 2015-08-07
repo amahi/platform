@@ -74,7 +74,7 @@ feature "Users tab" do
 			click_button "Change"
 			wait_for_ajax
 		end
-		user_link.find("table.settings").should have_content("changedname")
+		expect(user_link.find("table.settings")).to have_content("changedname")
 		expect(@admin.reload.name).to eq "changedname"
 	end
 	scenario "should allow an admin user to change the full name of another user", :js => true do
@@ -90,7 +90,7 @@ feature "Users tab" do
 			click_button "Change"
 			wait_for_ajax
 		end
-		user_link.find("table.settings").should have_content("changedname")
+		expect(user_link.find("table.settings")).to have_content("changedname")
 		expect(@user.reload.name).to eq "changedname"
 	end
 	scenario "should allow an admin user to change his password" do
@@ -100,8 +100,8 @@ feature "Users tab" do
 			expect(user_link).to have_selector("a#user-password-control-action-#{@admin.id}", :visible => true)
 			link = user_link.find_by_id("user-password-control-action-#{@admin.id}")
 			link.click
-			user_link.should have_field("user[password]")
-			user_link.should have_field("user[password_confirmation]")
+			expect(user_link).to have_field("user[password]")
+			expect(user_link).to have_field("user[password_confirmation]")
 			password_input = user_link.find_field("user[password]")
 			password_confirm_input = user_link.find_field("user[password_confirmation]")
 			password_input.set "secret"
@@ -119,8 +119,8 @@ feature "Users tab" do
 			expect(user_link).to have_selector("a#user-password-control-action-#{@user.id}", :visible => true)
 			link = user_link.find_by_id("user-password-control-action-#{@user.id}")
 			link.click
-			user_link.should have_field("user[password]")
-			user_link.should have_field("user[password_confirmation]")
+			expect(user_link).to have_field("user[password]")
+			expect(user_link).to have_field("user[password_confirmation]")
 			password_input = user_link.find_field("user[password]")
 			password_confirm_input = user_link.find_field("user[password_confirmation]")
 			password_input.set "secret"
@@ -133,4 +133,3 @@ feature "Users tab" do
   end
 
 end
-
