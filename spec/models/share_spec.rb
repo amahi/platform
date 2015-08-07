@@ -9,7 +9,7 @@ describe Share do
 	end
 
 	it "should have a valid factory" do
-		create(:share).should be_valid
+		expect(create(:share)).to be_valid
 	end
 
 	it "should be invalid without a valid name" do
@@ -78,4 +78,3 @@ describe Share do
 	end
 
 end
-

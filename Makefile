@@ -33,5 +33,6 @@ devel-rpms:
 		libxml2-devel libxslt-devel sqlite sqlite-devel v8 v8-devel rubygem-bundler
 
 run-tests:
+	bundle install
 	bundle exec rake db:test:prepare
-	bundle exec rspec spec
+	bundle exec rspec spec/
