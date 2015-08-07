@@ -14,7 +14,7 @@ class CreateUsers < ActiveRecord::Migration
 			t.string   "current_login_ip"
 			t.boolean  "admin"
 			t.text     "public_key"
-			t.timestamps
+			t.timestamps, null: false
 		end
 	end
 end
