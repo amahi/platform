@@ -9,8 +9,8 @@ FactoryGirl.define do
 
 		# we do not want to create users in the system
 		before(:create) do |user|
-			allow(user).to receive(:before_create_hook) { nil }
-			allow(user).to receive(:after_save_hook) { nil }
+			user.class.skip_callback(:create, :before, ->() { nil })
+			user.class.skip_callback(:save, :after, ->() { nil })
 		end
 
 		# an admin user
