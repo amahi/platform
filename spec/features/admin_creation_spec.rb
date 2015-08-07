@@ -12,7 +12,7 @@ feature "Admin creation" do
 		username = "newuser"
 		User.stub(:system_find_name_by_username) { ["New User", 1000, username] }
 		visit start_path
-		page.should have_content("Amahi initialization")
+		expect(page).to have_content("Amahi initialization")
 		fill_in "username", :with => username
 		fill_in "password", :with => "secret"
 		fill_in "password_confirmation", :with => "secret"
