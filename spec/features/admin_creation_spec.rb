@@ -18,7 +18,7 @@ feature "Admin creation" do
 		fill_in "password_confirmation", :with => "secret"
 		click_button "Create"
 		user = User.where(:login => username).first
-		user.admin.should be_truthy
+		expect(user.admin).to be_truthy
 	end
 
 end

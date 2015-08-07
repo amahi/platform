@@ -8,9 +8,9 @@ FactoryGirl.define do
 		password_confirmation "secret"
 
 		# we do not want to create users in the system
-		before(:create) do |u|
-			u.stub(:before_create_hook) { nil }
-			u.stub(:after_save_hook) { nil }
+		before(:create) do |user|
+			allow(user).to receive(:before_create_hook) { nil }
+			allow(user).to receive(:after_save_hook) { nil }
 		end
 
 		# an admin user
