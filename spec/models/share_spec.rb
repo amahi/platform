@@ -33,15 +33,15 @@ describe Share do
 				share_id = Share::DEFAULT_SHARES.index(share_name) + 1
 
 				share = Share.find(share_id)
-				expec(share.name).to             == share_name
-				expec(share.path).to             == "#{Share::DEFAULT_SHARES_ROOT}/#{share_name.downcase}"
-				expec(share.rdonly).to           == false
-				expec(share.visible).to          == true
-				expec(share.everyone).to         == true
-				expec(share.tags).to             == share_name.downcase
-				expec(share.disk_pool_copies).to == 0
-				expec(share.guest_access).to     == false
-				expec(share.guest_writeable).to   == false
+				expect(share.name).to             == share_name
+				expect(share.path).to             == "#{Share::DEFAULT_SHARES_ROOT}/#{share_name.downcase}"
+				expect(share.rdonly).to           == false
+				expect(share.visible).to          == true
+				expect(share.everyone).to         == true
+				expect(share.tags).to             == share_name.downcase
+				expect(share.disk_pool_copies).to == 0
+				expect(share.guest_access).to     == false
+				expect(share.guest_writeable).to   == false
 			end
 		end
 
