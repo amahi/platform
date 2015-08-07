@@ -2,6 +2,8 @@ require 'spec_helper'
 
 feature "Shares tab" do
 	before do
+		allow(Share).to receive(:push_shares) { nil }
+
 		@admin = create(:admin)
 		visit root_path
 		fill_in "username", :with => @admin.login

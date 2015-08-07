@@ -24,9 +24,5 @@ FactoryGirl.define do
 	factory :share do
 		sequence(:path) { |n| "/path #{n}" }
 		sequence(:name) { |n| "name #{n}" }
-
-		before(:create) do |share|
-			share.class.define_method(:push_shares) {}
-		end
 	end
 end
