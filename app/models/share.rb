@@ -42,13 +42,13 @@ class Share < ActiveRecord::Base
 
 	attr_accessible :name, :path, :rdonly, :visible, :tags, :extras
 
-	validates :name, :presence => true,
-		:format => { :with => /\A\w[\w ]+\z/ },
-		:length => { :maximum => 32 },
-		:uniqueness => { :case_sensitive => false }
+	validates :name, presence: true,
+		format: { :with => /\A\S[\S ]+\z/ },
+		length: 1..32,
+		uniqueness: { :case_sensitive => false }
 
-	validates :path, :presence => true,
-		:length => { :maximum => 64 }
+	validates :path, presence: true,
+		length: 2..64
 
 	# return the full path of a share (even if it does not exist!).
 	# (this is for encapsulation purposes mostly)

@@ -14,6 +14,8 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
+require "open3"
+
 class SharesController < ApplicationController
 
 	before_filter :admin_required
@@ -132,6 +134,23 @@ class SharesController < ApplicationController
 		end
 	end
 
+	def update_size
+		sleep 1 if development?
+		begin
+			std_out , status = Open3.capture2e("du -sb #{@share.path}")
+			size = std_out.split(' ').first
+			is_integer = Integer(size) != nil rescue false
+			if is_integer and status
+				helper = Object.new.extend(ActionView::Helpers::NumberHelper)
+				size = helper.number_to_human_size(size)
+			else
+				size = std_out
+			end
+		rescue Exception => e
+			size = e.to_s
+		end
+		render :json => { status: :ok, size: size, id: @share.id }
+	end
 
 	protected
 

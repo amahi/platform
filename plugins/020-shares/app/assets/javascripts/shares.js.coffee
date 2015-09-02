@@ -144,6 +144,10 @@ Shares =
 				share = _this.share(checkbox)
 				share.find(".disk-pool:first").replaceWith data["content"]
 
+		#update size
+		$('.update-size-area').on "ajax:success", (data, results) ->
+			$('.size'+results.id).text( results.size )
+
 		# update extras
 		SmartLinks.initialize
 			open_selector: ".open-update-extras-area"
