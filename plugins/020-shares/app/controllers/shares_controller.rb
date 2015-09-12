@@ -137,7 +137,7 @@ class SharesController < ApplicationController
 	def update_size
 		sleep 1 if development?
 		begin
-			std_out , status = Open3.capture2e("du -sb #{@share.path}")
+			std_out, status = Open3.capture2e("du -sbL #{@share.path}")
 			size = std_out.split(' ').first
 			is_integer = Integer(size) != nil rescue false
 			if is_integer and status
