@@ -1,6 +1,6 @@
 div.share[id="whole_share_#{share.id}"]
 
-  table.settings.stretchtoggle
+  table.settings.stretchtoggle.table
     tr
       td.settings-col1.shares-col1
         = link_to share.name, '#'
@@ -25,10 +25,10 @@ div.share[id="whole_share_#{share.id}"]
               :method => :delete,
               :data => {:confirm => confirm_share_destroy_message(share.name)},
               :remote => true,
-              :class => 'btn-delete remote-btn'
+              :class => 'btn-delete remote-btn navbar-right btn btn-primary btn-sm'
 
         .settings-fields
-          table
+          table.table
             tr
               td
                 label #{t('access')}
@@ -50,7 +50,7 @@ div.share[id="whole_share_#{share.id}"]
             - if advanced?
               tr
                 td.top
-                  label#{t('tags')}
+                  label #{t('tags')}
                 td.top[colspan='8']= render :partial => 'shares/tags', :object => share
 
             tr
@@ -59,13 +59,22 @@ div.share[id="whole_share_#{share.id}"]
               td
                 span.open-update-path-area.focus= share.path
 
+            tr
+              td
+                label #{t('size')}
+              td
+                = link_to  content_tag(:span, t('get_the_size') ) ,
+                shares_engine.update_size_path(share),
+                :method => :put,
+                :remote => true,
+                :class  =>"update-size-area focus remote-bt size#{share.id} remote-check"
+                = spinner
+
+
             - if advanced?
               tr
                 td.top
                   label #{t('extra_parameters')}
                 td.top
                   span.open-update-extras-area.focus= share.extras.blank? ? t('add_extra_parameters') : share.extras
-                  |  <a href="http://wiki.amahi.org/index.php/Share_Extra_Parameters" class="extra-link" target="_blank"><i class="icon-add"></i>
-                  </a>
-                  = simple_remote_select :collection => [[1, 'ok'], [2, 'no']],
-                                         :selected => 2
+                  | <a href="http://wiki.amahi.org/index.php/Share_Extra_Parameters" class="app-more" target="_blank"></a>

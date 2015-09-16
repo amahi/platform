@@ -239,7 +239,7 @@ sv:
         delimiter: ","
     precision: 
       format: 
-  mysql_database_server: MySQL DB Server
+  mariadb_database_server: MariaDB Server
   edit_and_rate_beta_apps: "Redigera och betygsätt Beta-applikationer"
   or_view_each_one_separately_below: eller visa var och en separat nedan.
   username: "Användarnamn"

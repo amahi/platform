@@ -14,11 +14,12 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
+require "open3"
+
 class SharesController < ApplicationController
 
 	before_filter :admin_required
 
-	before_filter :create_default
 	before_filter :get_share
 
 	def index
@@ -37,11 +38,16 @@ class SharesController < ApplicationController
 	def destroy
 		sleep 2 if development?
 		@share.destroy
-		render :json => { :id => @share.id }
+		render :json => { :status=> :ok,:id => @share.id }
 	end
 
 	def settings
-		@page_title = t('shares')
+		unless @advanced
+			redirect_to shares_engine_path
+		else
+			@page_title = t('shares')
+			@workgroup = Setting.find_or_create_by(Setting::GENERAL, 'workgroup', 'WORKGROUP')
+		end
 	end
 
 	def toggle_visible
@@ -97,8 +103,22 @@ class SharesController < ApplicationController
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
+	def update_workgroup
+		sleep 2 if development?
+		@workgroup = Setting.find(params[:id]) if params[:id]
+		if @workgroup && @workgroup.name.eql?("workgroup")
+			params[:share][:value].strip!
+			@saved = @workgroup.update_attributes(params[:share])
+			@errors = @workgroup.errors.full_messages.join(', ') unless @saved
+			name = @workgroup.value
+			Share.push_shares
+		end
+		render :json => { :status => @saved ? :ok : :not_acceptable, :message => @saved ? t('workgroup_changed_successfully') : t('error_occured'), :name => name }
+	end
+
 	def update_extras
 		sleep 2 if development?
+		params[:share] = sanitize_text(params[:share])
 		@saved = @share.update_extras!(params)
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
@@ -114,15 +134,28 @@ class SharesController < ApplicationController
 		end
 	end
 
+	def update_size
+		sleep 1 if development?
+		begin
+			std_out, status = Open3.capture2e("du -sbL #{@share.path}")
+			size = std_out.split(' ').first
+			is_integer = Integer(size) != nil rescue false
+			if is_integer and status
+				helper = Object.new.extend(ActionView::Helpers::NumberHelper)
+				size = helper.number_to_human_size(size)
+			else
+				size = std_out
+			end
+		rescue Exception => e
+			size = e.to_s
+		end
+		render :json => { status: :ok, size: size, id: @share.id }
+	end
 
 	protected
 
 	def render_share_access
 		render :json => render_to_string('shares/_access') and return
-	end
-
-	def create_default
-		Share.create_default_shares if Share.count == 0
 	end
 
 	def get_share

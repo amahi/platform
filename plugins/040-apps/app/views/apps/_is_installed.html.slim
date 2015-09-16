@@ -20,22 +20,23 @@
 
 - if app.webapp
   div.app-url= link_to(app.full_url, app.full_url, :target => '_blank')
-
-- if app.theme
-  div.app-url= link_to(t('manage_themes'), app.full_url)
-
-- if app.webapp
   = render 'in_dashboard', :app => app
 
+- if app.plugin
+  div.app-url= link_to(app.plugin.name, app.plugin.path, :target => '_blank')
+  = spinner
+
+- if app.theme
+  div.app-url= link_to(t('manage_themes'), settings_engine.themes_path,:class=>"btn btn-info btn-sm")
+
 br
 br
 br
 
-= spinner
 span.progress
   - unless app.has_dependents?
     span.install-button
-      = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-in-background')
+      = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-in-background btn btn-primary btn-sm')
 
 
 - unless app.installed

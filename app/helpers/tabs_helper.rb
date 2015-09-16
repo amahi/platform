@@ -17,20 +17,27 @@
 module TabsHelper
 
 	def tab_class(tab)
-		klass = params[:controller] == tab.id ? 'active' : ''
+		klass = 'active' if params[:controller] == tab.id
+		klass = 'active' if !Tab.find(params[:controller]) && Tab.ischild(params[:controller],tab)
 		klass += " empty" unless tab.subtabs?
 		klass
 	end
 
-	def subtab_class(action = nil)
-		params[:action] == action ? 'active' : ''
+	def subtab_class(action = nil, tab_id)
+		((action == params[:action] && params[:controller] == tab_id) or (action == params[:controller] && Tab.find(params[:controller])==nil) ) ? 'active' : ''
 	end
 
 	def nav_class(tabs)
 		tabs.each do |tab|
-			return "subtab" if params[:controller] == tab.id && tab.subtabs?
+			return "subtab" if is_subtab(tab) && tab.subtabs?
 		end
 		""
+	end
+
+	def is_subtab(tab)
+	  return true if params[:controller] == tab.id
+	  return true if !Tab.find(params[:controller]) && Tab.ischild(params[:controller],tab)
+	  false
 	end
 
 	def debug_tab?
@@ -38,7 +45,7 @@ module TabsHelper
 	end
 
 	def advanced?
-		(s = Setting.find_by_name 'advanced') && s.set?
+		(s = Setting.where(:name=>'advanced').first) && s.set?
 	end
 
 	def debug?

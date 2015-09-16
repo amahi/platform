@@ -13,7 +13,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     = theme_stylesheet_link_tag 'style'
     = theme_stylesheet_link_tag('rtl') if rtl?
     - amahi_plugins.each do |p|
-      = stylesheet_link_tag p[:class].downcase
+      = stylesheet_link_tag p[:class].underscore
 
     /[ if lt IE 9 ]
       = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
@@ -21,8 +21,9 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     = javascript_tag {render 'shared/js_vars'}
     = javascript_include_tag 'application'
     - amahi_plugins.each do |p|
-      = javascript_include_tag p[:class].downcase
+      = javascript_include_tag p[:class].underscore
 
+    = javascript_tag {'$.fx.off = true;' if Rails.env.test?}
     - for header in theme.headers do
       = header =~ /\.js$/ ? javascript_include_tag(header) : header
 
@@ -38,15 +39,15 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     #content
       = render 'layouts/subheader'
       = render 'shared/flash_messages'
-      #app.inner
+      #app.inner.container
         - unless @no_tabs
           = render 'shared/tabs'
-          #preferences
+          #preferences.col-sm-8
             .preftab
                 = yield
         - else
           = yield
-
+      .push
     = render 'layouts/footer'
 
     #js-templates[style="display:none"]

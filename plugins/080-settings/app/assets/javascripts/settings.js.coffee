@@ -16,6 +16,15 @@ Servers =
 $ ->
   Servers.initialize()
 
-	$(".preftab").on "ajax:success", "#locale", ->
-		# reload the page because the whole language has changed
-		window.location.reload(true)
+# reload the page with locale change because the whole language has changed
+$ ->
+    $(".preftab").on "ajax:success", "#locale", ->
+       window.location.reload(true)
+
+$(document).on "click", ".remote-check", (event)->
+  checkbox = $(this)
+  checkbox.prop("checked",!checkbox.prop("checked"))
+  true
+
+$(document).on "ajax:complete",".remote-check", ->
+      $(this).prop("checked",!$(this).prop("checked"))

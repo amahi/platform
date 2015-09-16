@@ -17,7 +17,7 @@
 class ShareController < ApplicationController
 	before_filter :admin_required
 
-	VALID_NAME = Regexp.new "^\\w[\\w ]+$"
+	VALID_NAME = Regexp.new "\A\\w[\\w ]+\z"
 	# Disk Pool minimum free: default og 10GB, but for root,
 	# 20GB. so that when all drives are full, / should still have 10GB free.
 	DP_MIN_FREE_DEFAULT = 10
@@ -97,7 +97,7 @@ class ShareController < ApplicationController
 			render :partial => 'share/name_invalid'
 			return false
 		end
-		share = Share.find_by_name(sn)
+		share = Share.where(:name=>sn).first
 		if share
 			render :partial => 'share/name_not_available'
 			return false
@@ -118,7 +118,7 @@ class ShareController < ApplicationController
 			render :partial => 'share/path_invalid'
 			return false
 		end
-		share = Share.find_by_path(sp)
+		share = Share.where(:path=>sp).first
 		if share
 			render :partial => 'share/path_not_available'
 			return false
@@ -296,7 +296,7 @@ class ShareController < ApplicationController
 
 	def toggle_disk_pool_partition
 		path = params[:path]
-		part = DiskPoolPartition.find_by_path(path)
+		part = DiskPoolPartition.where(:path=>path).first
 		if part
 			# was enabled - disable it by deleting it
 			# FIXME - see http://bugs.amahi.org/issues/show/510
@@ -318,7 +318,7 @@ class ShareController < ApplicationController
 
 	def is_valid_domain_name(domain)
 		return false if domain.size > 15 || domain.size < 1
-		return false unless domain =~ /^[A-z][A-z_0-9]*$/
+		return false unless domain =~ /\A[A-z][A-z_0-9]*\z/
 		true
 	end
 

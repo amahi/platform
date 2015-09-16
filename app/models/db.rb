@@ -4,12 +4,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -23,10 +23,25 @@ class Db < ActiveRecord::Base
 
   attr_accessible :name
 
+	# stubs for name, password and hostname, in case they need changed later
+
+	def username
+		name
+	end
+
+	def password
+		name
+	end
+
+	def hostname
+		"localhost"
+	end
+
 private
 
 	def after_create_hook
-		c = connection
+		return unless Rails.env.production?
+		c = self.class.connection
 		password = name
 		user = name
 		host = 'localhost'
@@ -38,13 +53,14 @@ private
 	end
 
 	def after_destroy_hook
+		return unless Rails.env.production?
 		user = name
 		filename = Time.now.strftime("#{DB_BACKUPS_DIR}/%y%m%d-%H%M%S-#{name}.sql.bz2")
 		system("mysqldump --add-drop-table -u#{user} -p#{user} #{name} | bzip2 > #{filename}")
 		Dir.chdir(DB_BACKUPS_DIR) do
 			system("ln -sf #{filename} latest-#{name}.bz2")
 		end
-		c = connection
+		c = self.class.connection
 		host = 'localhost'
 		c.execute "drop user '#{user}'@'#{host}';"
 		c.execute "drop database if exists `#{name}`;"

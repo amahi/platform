@@ -1,18 +1,53 @@
 # delete a user
-$(document).on 'ajax:success', '.btn-delete', (event, results) ->
-	user = $("#whole_user_" + results['id'])
-	user.hide 'slow', ->
-		user.remove()
+$(document).on "ajax:success", ".btn-delete", (event, results) ->
+  user = $("#whole_user_" + results["id"])
+  unless results["status"] is "ok"
+    alert results["status"]
+    $(this).parent().find(".spinner").hide()
+    $(this).show()
+  else
+    user.hide "slow", ->
+      user.remove()
+#update fullname
+$(document).ready ->
+	$(".name_click_change").click () ->
+	  $(this).hide()
+	  $(this).parent().find(".edit_name_form").show()
+
+	$(".name_cancel_link").click () ->
+	  id = $(this).data("id")
+	  element = "#whole_user_"+id
+	  form = $(element).find('.edit_name_form')
+	  form.hide()
+	  $(element).find(".name_click_change").show()
+
+
+$(document).on "ajax:success", ".edit_name_form", (event, results) ->
+  element = "#whole_user_"+results.id
+  msg = $(element).find(".messages")
+  msg.html results.message
+  setTimeout (-> msg.html ""), 8000
+  id = results["id"]
+  element = $("#text_user_" + results["id"])
+  $(element).val results["name"]
+  if results.status is "ok"
+    col_element = $("#whole_user_" + results["id"])
+    $(this).hide('slow')
+    elem = $(this).closest('td').find(".name_click_change")
+    elem.html results["name"]
+    elem.show()
+    $(col_element).find(".users-col2").html results["name"]
+
+
 
 # update user password
 $(document).on 'ajax:success', '.update-password', (event, results) ->
-	msg = $(this).nextAll(".messages:first")
-	msg.text results["message"]
-	setTimeout (-> msg.text ""), 8000
-
-$(document).on 'ajax:complete', '.update-password', ->
-	$(this).find(".password-edit").hide()
-	$(this).find("input[type=password]").val ""
+	msg = $(this).find(".messages:first")
+	msg.html results["message"]
+	setTimeout (-> msg.html ""), 8000
+	if results.status is 'ok'
+		$(this).find("input[type=password]").val ""
+		$(this).find(".password-edit").hide("slow")
 
 # new user
 $(document).on 'ajax:success', '#new-user-form', (event, results) ->

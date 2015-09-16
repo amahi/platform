@@ -1,33 +1,38 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.14'
+gem 'rake'
+
+gem "rails", '~>4.2.4'
 
 gem 'mysql2'
 gem "yettings"
 
-# Commenting this out because we're not going to pre-compile assets for now
-#group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
+gem 'sass-rails' , '~>4.0.3'
+gem 'coffee-rails'
 
-  gem 'therubyracer'
+gem 'therubyracer'
 
-  gem 'uglifier'
-#end
+gem 'uglifier'
+
+gem "activeresource", require: "active_resource"
+gem 'protected_attributes'
+gem 'actionpack-action_caching'
+gem 'rails-observers'
 
 gem 'jbuilder'
 gem 'ya2yaml'
 
-gem 'themes_for_rails'
+gem 'themes_for_rails', :git => "https://github.com/amahi/themes_for_rails.git"
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-# FIXME-cpg: this requirement of 1.3.8 is because bundle update forced slim to 1.0.1! (!?)
-gem 'slim', '~> 1.3.8'
 
+gem 'slim'
+
+gem 'scrypt' # required for authlogic even though it's not used
 gem 'authlogic'
 
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 
 gem 'unicorn'
 
@@ -43,11 +48,12 @@ group :development do
 
 	# FIXME: for Fedora only
 	if ((open('/etc/issue').grep(/fedora/i).length > 0) rescue false)
-		gem 'minitest'
+		gem "minitest"
 	end
 end
 
 gem "rspec-rails", :group => [:test, :development]
+
 group :test do
   gem "sqlite3"
   gem "factory_girl_rails"
@@ -57,6 +63,7 @@ group :test do
   gem 'minitest'
   # required for javascript test in selenium
   gem 'poltergeist'
+  gem 'simplecov', :require => false
 end
 
 # FIXME - temporary work-around for Fedora 19

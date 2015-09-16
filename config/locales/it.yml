@@ -357,7 +357,7 @@ it:
   not_updating: Non Aggiornare
   router_ip: IP Router
   logout: Esci
-  mysql_database_server: MySQL DB Server
+  mariadb_database_server: MariaDB Server
   permanently: permanentemente
   port_range_ports_are_already_allocated: "Le porte in questo intervallo sono già assegnate"
   new: Nuovo

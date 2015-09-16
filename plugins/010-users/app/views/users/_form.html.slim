@@ -7,7 +7,7 @@
         :ok_icon_path => theme_image_path('ok.png'), \
         :error_icon_path => theme_image_path('stop.png') \
       }, \
-      :class => 'user create-form', \
+      :class => 'user create-form form-horizontal', \
       :id => 'new-user-form' \
     } do |f|
 
@@ -15,24 +15,20 @@
       legend &nbsp; #{t('create_a_new_user')} &nbsp;
       .create-inside
         / = render :partial => 'shared/errors', :object => @user
-        .control-group
-          .controls= f.text_field :login, :size => 16, :maxlength => 20, :placeholder => t('username')
-          .messages
+        .control-group.form-group
+          .controls= f.text_field :login, :size => 16, :maxlength => 20, :class=>'form-control',:placeholder => t('username')
 
-        .control-group
-          .controls= f.text_field :name, :size => 16, :maxlength => 64, :placeholder => t('full_name')
-          .messages
+        .control-group.form-group
+          .controls= f.text_field :name, :size => 16, :maxlength => 64, :class=>'form-control', :placeholder => t('full_name')
 
-        .control-group
-          .controls= f.password_field :password, :size => 16, :maxlength => 12, :placeholder => t('password')
-          .messages
+        .control-group.form-group
+          .controls= f.password_field :password, :size => 16, :maxlength => 24, :class=>'form-control',:placeholder => t('password')
 
-        .control-group
-          .controls= f.password_field :password_confirmation, :size => 16, :maxlength => 12, :placeholder => t('confirm')
-          .messages
+        .control-group.form-group
+          .controls= f.password_field :password_confirmation, :size => 16, :maxlength => 24, :class=>'form-control', :placeholder => t('confirm')
 
-        .control-group.create-btn
-          .controls
+        .control-group.create-btn.form-group
+          .controls.col-xs-offset-2.col-xs-10
             = spinner
-            = button_tag t('create'), :type => 'submit', :id => 'user_create_button', :class => 'btn btn-create'
-            = link_to t('cancel'), '#', :class => 'close-area cancel-link', :data => {:related => '#new-user-to-step1'}
+            = button_tag t('create'), :type => 'submit', :id => 'user_create_button', :class => 'btnn btn-create btn btn-info'
+            = link_to t('cancel'), '#', :class => 'close-area cancel-link btn btn-primary left-margin-10' , :data => {:related => '#new-user-to-step1'}

@@ -19,7 +19,10 @@ body {
   line-height: 19px;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+h2{
+  line-height: initial;
+  font-size:initial;
+}
 a {
   color: $linkColor;
   text-decoration: none;
@@ -53,6 +56,15 @@ a {
   @include clearfix;
 }
 
+.workgroup_click_change,.name_click_change, .lease_click_change, .gateway_click_change, .dyn_lo_click_change, .dyn_hi_click_change{
+  color : #333;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  font-weight: bold;
+ &:hover { border-bottom: 1px dashed; text-decoration: none; }
+}
+
+
 // --------------------------------------------------
 // FORMS
 // --------------------------------------------------
@@ -78,9 +90,16 @@ fieldset {
 
 legend, fieldset {
   color: darkgrey;
+
 }
 
-legend { padding: 0 15px; }
+legend {
+
+    padding: 0 15px;
+    width: inherit;
+    font-size: inherit;
+    line-height: initial;
+    }
 
 legend b, fieldset b, .editable {
   color: black;
@@ -89,6 +108,7 @@ legend b, fieldset b, .editable {
 label {
   color: #535353;
   margin: 0 0.4em;
+  display: initial;
 }
 
 input[type="text"],
@@ -108,13 +128,17 @@ input[type="password"] {
     outline: thin dotted \9; /* IE6-9 */
   }
 }
-
+.inactive{
+  pointer-events: none;
+  cursor: default;
+}
 .form-inline {
   @include clearfix;
 
   &.update-password {
     width: 600px;
   }
+
 
   .password-edit {
     .control-group {
@@ -123,7 +147,6 @@ input[type="password"] {
       @include clearfix;
 
       .controls {
-        float: left;
         margin: 0 20px 0 0;
       }
 
@@ -134,15 +157,20 @@ input[type="password"] {
   }
 
   .control-group {
-    float: left;
-    margin: 0 10px 0 0;
+    margin: 0 10px 10px 0;
   }
+}
+.form_hidden{
+  display:none;
 }
 
 .form-horizontal {
 
   .control-group {
     margin: 0 0 10px;
+    .controls {
+        margin-left:0px;
+      }
   }
 
   textarea { display: block; }
@@ -152,13 +180,12 @@ input[type="password"] {
   @include clearfix;
 
   .controls {
-    float: left;
     input[type=text], input[type=password] {
       margin: 0;
     }
   }
 
-  div.messages { margin-left: 180px; width: auto; }
+  div.messages { width: auto; }
 
   .cancel-link {
     margin: 0 0 0 10px;
@@ -184,18 +211,19 @@ input[type="password"] {
     @include clearfix;
     margin: 0 0 10px;
 
-    .controls { float: left; }
+    .controls { margin-left: 0px; }
 
     div.messages {
       color: darkgrey;
       line-height: 26px;
       height: 26px;
       margin-left: 10px;
-      float: left;
     }
   }
 }
-
+.margin-for-message{
+  margin-right:20px;
+}
 .shares-fixed-tags {
   padding: 10px 0 0;
 }
@@ -208,7 +236,7 @@ input[type="password"] {
 // Buttons
 // --------------------------------------------------
 
-input[type=button], input[type=submit], .btn {
+input[type=button], input[type=submit], .btnn {
   font-size: 12px;
   font-weight: bold;
   display: inline-block;
@@ -220,6 +248,7 @@ input[type=button], input[type=submit], .btn {
   @include border-radius(4px);
   @include background-gradient(#e8715f, #bc0332);
   &:hover {
+    color:#fff;
     @include background-gradient(#e78577, #fe0646);
     @include box-shadow(inset 0 0 1px 1px rgba(255, 255, 255, 0.4));
   }
@@ -548,6 +577,7 @@ section#dashboard {
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
+    line-height: 0px;
   }
 }
 
@@ -556,7 +586,7 @@ section#dashboard {
 
   > ul {
     list-style: none;
-
+    margin: 0 0 0px 0px;
     li {
       @include background-gradient(#fff, #f7f6f6);
       padding: 10px 15px;
@@ -612,6 +642,7 @@ nav.preftab {
 
   ul {
     list-style: none;
+    margin: 0 0 0px 0px;
     @include clearfix;
   }
 
@@ -636,6 +667,7 @@ nav.preftab {
 
       > ul {
         display: block;
+        margin: 0 0 0px 0px;
         z-index: 100;
       }
     }
@@ -662,6 +694,7 @@ nav.preftab {
       // secondary navigation
       ul {
         display: block none;
+        margin: 0 0 0px 0px;
         background: #fff;
         border-top: 1px solid #e8e8e8;
         position: absolute;
@@ -875,6 +908,9 @@ table.apptable {
 
   legend, fieldset {
     color: darkgrey;
+    width: inherit;
+    font-size: inherit;
+    line-height: initial;
   }
   legend b, fieldset b {
     color: black;
@@ -900,7 +936,6 @@ table.apptable {
     td:first-child {
       width: 110px;
       text-align: right;
-      vertical-align: top;
       padding-right: 10px;
       border-right: 1px solid #DFDFDF;
     }
@@ -964,7 +999,6 @@ td {
 
 .messages {
   overflow: hidden;
-  display: inline-block;
   width: 235px;
   img {
     margin: 0 10px;
@@ -1063,7 +1097,7 @@ td {
 
     ul { list-style: inside; }
 
-    .progress {
+    .install {
       margin-top: 30px;
       display: inline-block;
     }
@@ -1099,6 +1133,7 @@ td {
   display: inline-block;
   padding: 0 0 0 50px;
   margin: 0 30px;
+  float:right;
 }
 
 #btn-install-apps {
@@ -1110,6 +1145,7 @@ td {
   display: inline-block;
   padding: 0 0 0 50px;
   margin: 0 30px;
+  float:left;
 }
 
 .install-button .install-app-in-background {
@@ -1459,7 +1495,7 @@ td.form-action-wrap {
   padding-bottom: 0;
 }
 
-.open-update-tags-area {
+.open-update-tags-area, .open-update-workgroup-area {
   display: inline-block;
   margin-bottom: 8px;
 }
@@ -1529,7 +1565,7 @@ span.server_status {
 #nav{ float:right; font-size: 1em; }
 
 .app-store-count { font-size: 42px; font-weight: bold; }
-.app-store-header { font-size: 14px; padding: 5px 0 25px 0; text-align: center; }
+.app-store-header { font-size: 14px; padding: 5px 0 60px 0; text-align: center; }
 
 .focus {cursor: pointer; font-weight: bold; color: #000;}
 .no-wrap {white-space: nowrap;}
@@ -1546,3 +1582,43 @@ textarea {border: 1px solid #ccc;}
 .hide {
   display: none;
 }
+
+#theme-sshot{
+  height:100%;
+  width:100%
+}
+
+//Markup for alert boxes
+.alert {
+padding: 15px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+//Debug Tab Design
+.debug-form{
+  margin-top:10px !important;
+  margin-left: 20px !important;
+}
+
+.install-apps,.get-apps {
+	float: left;
+	width: 50%;
+}
+
+

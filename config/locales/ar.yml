@@ -268,7 +268,7 @@ ar:
           billion: "مليار"
           trillion: "تريليون"
           quadrillion: "الكدريليون رقم"
-  mysql_database_server: "خادم MySQL DB"
+  mariadb_database_server: "خادم MariaDB"
   edit_and_rate_beta_apps: "تحرير وتقييم التطبيقات التجريبية"
   or_view_each_one_separately_below: "أو عرض كل واحد بشكل منفصل أدناه."
   username: "اسم المستخدم"
@@ -435,6 +435,8 @@ ar:
   partitions: "أقسام"
   router_setting_failed: "إعدادات الموجه فشلت. رجاءاً تحقق من إعداداتك"
   global_settings_for_shares: "إعداداد عامة لمجلدات المشاركة"
+  size: "المساحة"
+  get_the_size: "تعرف علي المساحة"
   the_watchdog_is_a_critical_setting: "watchdog اعدادت حساسة. ايقاف مراقبة خدمات وعمليات الخادم غير موصى فيه إطلاقاً. لقد تم تصميم هذا البرنامج للتأكد من أن الخدمات في الخادم تعمل بشكل صحيح حتى في حالة حدوث خلل.\r\n\
     هل أنت متأكد أنك تريد إيقاف watchdog في هذا الخادم ؟"
   warning_this_application_is_in_testing: "تحذير : هذا التطبيق في مرحلة تجريبية!"

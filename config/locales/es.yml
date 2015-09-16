@@ -238,7 +238,7 @@ es:
     precision: 
       format: 
         delimiter: ""
-  mysql_database_server: Servidor de BBDD MySQL
+  mariadb_database_server: Servidor de BBDD MariaDB
   edit_and_rate_beta_apps: Editar y Votar aplicaciones en Beta
   or_view_each_one_separately_below: o ver a cada uno por separado.
   username: Usuario
@@ -397,6 +397,8 @@ es:
   partitions: Particiones
   router_setting_failed: "Configuración router falló. Por favor, comprueba los valores de nuevo."
   global_settings_for_shares: "Configuración Global para Recursos Compartidos"
+  get_the_size: "Espacio usado"
+  size: "Espacio"
   the_watchdog_is_a_critical_setting: "El proceso monitor es un valor IMPORTANTE. No te aconsejamos que detengas el monitor de un proceso servidor. Esto está diseñado para mantener los servicios en tu HDA funcionando de forma fiable incluso en la presencia de fallos esporádicos. ¿Estás seguro de que quieres detener el monitor de este proceso servidor?"
   warning_this_application_is_in_testing: "ATENCIÓN: Esta aplicación esta siendo testeada!"
   is_being_monitored_24x7: "está siendo monitorizado 24x7"

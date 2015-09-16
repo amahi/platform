@@ -34,7 +34,8 @@ class Platform
 		DNSMASQ ? true : false
 	end
 
-	PLATFORMS=['fedora', 'centos', 'ubuntu', 'debian', 'mac']
+	PLATFORMS=['fedora', 'centos', 'ubuntu', 'debian', 'mac', 'mint', 'arch']
+
 	SERVICES={
 		'fedora' => {
 			:apache => 'httpd',
@@ -42,7 +43,7 @@ class Platform
 			:named => 'named',
 			:smb => 'smb',
 			:nmb => 'nmb',
-			:mysql => 'mysqld',
+			:mysql => 'mariadb',
 		},
 		'centos' => {
 			:apache => 'httpd',
@@ -74,9 +75,24 @@ class Platform
 			:named => 'notsure', # FIXME
 			:smb => 'smbd',
 			:nmb => 'nmbd',
+		},
+		'mint' => {
+			:apache => 'apache2',
+			:dhcp => 'isc-dhcp-server',
+			:named => 'bind9',
+			:smb => 'smbd',
+			:nmb => 'nmbd',
+			:mysql => 'mysql',
+		},
+		'arch'   => {
+			:apache => 'httpd',
+			:dhcp => 'dhcpd',
+			:named => 'named',
+			:smb => 'smbd',
+			:nmb => 'nmbd',
+			:mysql => 'mysqld',
 		}
 	}
-
 	FILENAMES={
 		'fedora' => {
 			:apache_pid => 'httpd/httpd.pid',
@@ -127,9 +143,28 @@ class Platform
 			:monit_dir => 'junk',
 			:monit_log => 'junk',
 			:syslog => '/var/log/system.log',
+		},
+		'mint' => {
+			:apache_pid => 'apache2.pid',
+			:dhcpleasefile => dnsmasq? ? '/var/lib/dnsmasq/dnsmasq.leases' : '/var/lib/dhcp3/dhcpd.leases',
+			:samba_pid => 'samba/smbd.pid',
+			:dhcpd_pid => 'dhcp-server/dhcpd.pid',
+			:monit_dir => '/etc/monit/conf.d',
+			:monit_conf => '/etc/monit/monitrc',
+			:monit_log => '/var/log/monit.log',
+			:syslog => '/var/log/syslog',
+		},
+		'arch' => {
+			:apache_pid => 'httpd/httpd.pid',
+			:dhcpleasefile => dnsmasq? ? '/var/lib/dnsmasq/dnsmasq.leases' : '/var/lib/dhcpd/dhcpd.leases',
+			:samba_pid => 'smbd.pid',
+			:dhcpd_pid => 'dhcpcd.pid',
+			:monit_dir => '/etc/monit.d',
+			:monit_conf => '/etc/monit.conf',
+			:monit_log => '/var/log/monit',
+			:syslog => '/var/log/messages',
 		}
 	}
-
 	class << self
 		def reload(service)
 			c = Command.new("sleep 1")
@@ -151,6 +186,10 @@ class Platform
 			@@platform
 		end
 
+		def arch?
+			@@platform == 'arch'
+		end
+
 		def fedora?
 			@@platform == 'fedora'
 		end
@@ -167,6 +206,10 @@ class Platform
 			@@platform == 'debian'
 		end
 
+		def mint?
+			@@platform == 'mint'
+		end
+
 		def mac?
 			@@platform == 'mac'
 		end
@@ -181,8 +224,8 @@ class Platform
 
 		def service_start_command(name)
 			service = service_name(name)
-			if fedora?
-				"systemctl start #{service}.service"
+			if fedora? or arch?
+				"/usr/bin/systemctl start #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl start #{service}"
 			else
@@ -194,13 +237,39 @@ class Platform
 
 		def service_stop_command(name)
 			service = service_name(name)
-			if fedora?
-				"systemctl stop #{service}.service"
+			if fedora? or arch?
+				"/usr/bin/systemctl stop #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl stop #{service}"
 			else
 				# legacy fallback
 				tmp = service + " stop"
+				(tmp =~ /^\//) ? tmp : File.join(LEGACY_INIT_PATH, tmp)
+			end
+		end
+
+		def service_enable_command(name)
+			service = service_name(name)
+			if fedora? or arch?
+				"/usr/bin/systemctl enable #{service}.service"
+			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
+				"/sbin/initctl enable #{service}"
+			else
+				# legacy fallback
+				tmp = service + " enable"
+				(tmp =~ /^\//) ? tmp : File.join(LEGACY_INIT_PATH, tmp)
+			end
+		end
+
+		def service_disable_command(name)
+			service = service_name(name)
+			if fedora? or arch?
+				"/usr/bin/systemctl enable #{service}.service"
+			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
+				"/sbin/initctl disable #{service}"
+			else
+				# legacy fallback
+				tmp = service + " disable"
 				(tmp =~ /^\//) ? tmp : File.join(LEGACY_INIT_PATH, tmp)
 			end
 		end
@@ -281,7 +350,7 @@ class Platform
 		end
 	end
 
-private
+	private
 
 	class << self
 		def set_platform
@@ -290,15 +359,17 @@ private
 				File.open("/etc/issue", "r") do |issue|
 					line = issue.gets
 				end
+				@@platform = "arch"   if line.include?("Arch")
 				@@platform = "debian" if line.include?("Debian")
 				@@platform = "ubuntu" if line.include?("Ubuntu")
 				@@platform = "fedora" if line.include?("Fedora")
 				@@platform = "centos" if line.include?("CentOS")
-			elsif File.exist?('/mach_kernel')
+				@@platform = "mint"   if line.include?("Mint")
+			elsif File.exist?('/Volumes')
 				@@platform = "mac"
-			else
-				@@platform = nil
 			end
+			#To ensure that @@platform is either set or nil:
+			@@platform ||= nil
 			raise "unsupported platform #{@@platform}" unless PLATFORMS.include?(@@platform)
 		end
 
@@ -314,7 +385,7 @@ private
 		end
 
 		def pkginstall(pkgs, sha1 = nil)
-			if debian? or ubuntu?
+			if debian? or ubuntu? or mint?
 				c = Command.new "DEBIAN_FRONTEND=noninteractive apt-get -y install #{pkgs}"
 				c.run_now
 			elsif fedora? or centos?
@@ -328,14 +399,16 @@ private
 				end
 				c = Command.new cmd
 				c.run_now
-
+			elsif arch?
+				c = Command.new "pacman -S --noprogressbar --noconfirm \"#{pkgs}\""
+				c.run_now
 			else
 				raise "unsupported platform #{@@platform}" unless PLATFORMS.include?(@@platform)
 			end
 		end
 
 		def pkguninstall(pkgs)
-			if debian? or ubuntu?
+			if debian? or ubuntu? or mint?
 				c = Command.new "DEBIAN_FRONTEND=noninteractive apt-get -y remove #{pkgs}"
 				c.run_now
 			elsif fedora? or centos?
@@ -345,6 +418,9 @@ private
 					cmd = "rpm -e #{pkgs}"
 				end
 				c = Command.new cmd
+				c.run_now
+			elsif arch?
+				c = Command.new "pacman -R --noprogressbar --noconfirm \"#{pkgs}\""
 				c.run_now
 			else
 				raise "unsupported platform #{@@platform}" unless PLATFORMS.include?(@@platform)

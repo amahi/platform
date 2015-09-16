@@ -8,6 +8,7 @@ class NetworkController < ApplicationController
   KIND = Setting::NETWORK
   before_filter :admin_required
   before_filter :set_page_title
+  IP_RANGE = 10
 
   def index
     @leases = use_sample_data? ? SampleData.load('leases') : Leases.all
@@ -27,11 +28,15 @@ class NetworkController < ApplicationController
     sleep 2 if development?
     @host = Host.find params[:id]
     @host.destroy
-    render json: { id: @host.id }
+    render json: {:status=>:ok,id: @host.id }
   end
 
   def dns_aliases
-    get_dns_aliases
+    unless @advanced
+      redirect_to network_engine_path
+    else
+      get_dns_aliases
+    end
   end
 
   def create_dns_alias
@@ -44,23 +49,29 @@ class NetworkController < ApplicationController
     sleep 2 if development?
     @dns_alias = DnsAlias.find params[:id]
     @dns_alias.destroy
-    render json: { id: @dns_alias.id }
+    render json: { :status=>:ok, id: @dns_alias.id }
   end
 
   def settings
-    @net = Setting.get 'net'
-    @dns = Setting.find_or_create_by(KIND, 'dns', 'opendns')
-    @dns_ip_1, @dns_ip_2 = DnsIpSetting.custom_dns_ips
-    @dnsmasq_dhcp = Setting.find_or_create_by(KIND, 'dnsmasq_dhcp', '1')
-    @dnsmasq_dns = Setting.find_or_create_by(KIND, 'dnsmasq_dns', '1')
-    @lease_time = Setting.get("lease_time") || "14400"
-    @gateway = Setting.find_or_create_by(KIND, 'gateway', '1').value
+    unless @advanced
+      redirect_to network_engine_path
+    else
+      @net = Setting.get 'net'
+      @dns = Setting.find_or_create_by(KIND, 'dns', 'opendns')
+      @dns_ip_1, @dns_ip_2 = DnsIpSetting.custom_dns_ips
+      @dnsmasq_dhcp = Setting.find_or_create_by(KIND, 'dnsmasq_dhcp', '1')
+      @dnsmasq_dns = Setting.find_or_create_by(KIND, 'dnsmasq_dns', '1')
+      @lease_time = Setting.get("lease_time") || "14400"
+      @gateway = Setting.find_or_create_by(KIND, 'gateway', '1').value
+      @dyn_lo = Setting.find_or_create_by(KIND, 'dyn_lo', '100').value
+      @dyn_hi = Setting.find_or_create_by(KIND, 'dyn_hi', '254').value
+    end
   end
 
   def update_dns
     sleep 2 if development?
     case params[:setting_dns]
-    when 'opendns', 'google'
+    when 'opendns', 'google', 'opennic'
       @saved = Setting.set("dns", params[:setting_dns], KIND)
       system("hda-ctl-hup")
     else
@@ -113,6 +124,25 @@ class NetworkController < ApplicationController
 		else
 			render json: { status: 'error' }
 		end
+  end
+
+  def update_dhcp_range
+    if(params[:id] == "min")
+      dyn_lo = params[:dyn_lo].to_i
+      dyn_hi = Setting.find_by_name("dyn_hi").value.to_i
+    else
+      dyn_lo = Setting.find_by_name("dyn_lo").value.to_i
+      dyn_hi = params[:dyn_hi].to_i
+    end
+    @saved = dyn_lo > 0 && dyn_hi < 255 && dyn_hi - dyn_lo > IP_RANGE
+    if @saved
+      Setting.set("dyn_lo", dyn_lo, KIND)
+      Setting.set("dyn_hi", dyn_hi, KIND)
+      system("hda-ctl-hup")
+      render json: { status: :ok }
+    else
+      render json: { status: :not_acceptable }
+    end
   end
 
 private

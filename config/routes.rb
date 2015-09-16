@@ -1,14 +1,16 @@
-
 AmahiHDA::Application.routes.draw do
 
   themes_for_rails
   amahi_plugin_routes
 
-  match 'login' => 'user_sessions#new', :as => :login
-  match 'logout' => 'user_sessions#destroy', :as => :logout
-  match 'start' => 'user_sessions#start', :as => :start
-  match 'user_sessions/initialize_system' => 'user_sessions#initialize_system', :as => :initialize_system
-
+  match 'login' => 'user_sessions#new', :as => :login, via: [:get]
+  match 'logout' => 'user_sessions#destroy', :as => :logout, via: [:get]
+  match 'start' => 'user_sessions#start', :as => :start, via: [:get]
+  match 'user_sessions/initialize_system' => 'user_sessions#initialize_system', :as => :initialize_system, via: [:get,:post]
+  get '/tab/debug'=>'debug#index'
+  post '/tab/debug'=>'debug#submit'
+  get '/tab/debug/system'=>'debug#system'
+  get '/tab/debug/logs'=>'debug#logs'
   resources :shares do
     collection do
       get 'disk_pooling'
@@ -26,6 +28,7 @@ AmahiHDA::Application.routes.draw do
       put 'toggle_guest_writeable'
       put 'update_tags'
       put 'update_path'
+      put 'update_workgroup'
       put 'toggle_disk_pool'
       put 'update_extras'
       put 'clear_permissions'
@@ -34,10 +37,10 @@ AmahiHDA::Application.routes.draw do
 
   resources :user_sessions, :hosts, :aliases
 
-  match 'search/:action' => 'search', :as => :search
+  match 'search/:action' => 'search', :as => :search, via: [:get,:post]
 
   root :to => 'front#index'
 
-  match ':controller(/:action(/:id))(.:format)'
+  match ':controller(/:action(/:id))(.:format)', via: [:get]
 
 end

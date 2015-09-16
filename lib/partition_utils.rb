@@ -46,7 +46,7 @@ class PartitionUtils
 		f.close
 	end
 
-private
+	private
 
 	# return device
 	def part2device(part)
@@ -73,14 +73,13 @@ private
 				end
 			end
 			type, bsize, blocks, bfree, bavail, files, ffree, namelen =
-				buffer.unpack(unpack_fmt).values_at(0, 1, 2, 3, 4, 5, 6, 9)
+			buffer.unpack(unpack_fmt).values_at(0, 1, 2, 3, 4, 5, 6, 9)
 			# return total bytes, free bytes
 			[blocks * bsize, bfree * bsize]
 		rescue => e
-			RAILS_DEFAULT_LOGGER.error("******** disk stats error for #{path}: #{e.inspect}")
+			Rails.logger.error("******** disk stats error for #{path}: #{e.inspect}")
 			[0, 0]
 		end
 	end
 
 end
-

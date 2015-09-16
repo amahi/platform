@@ -39,6 +39,26 @@ Shares =
 		$(document).on "ajax:success", ".btn-delete", ->
 			share = _this.share($(this))
 			share.remove()
+		#update workgroup
+		$(document).ready ->
+			$(".workgroup_click_change").click () ->
+			  $(this).hide()
+			  $(this).parent().find(".edit_workgroup_form").show()
+
+			$(".workgroup_cancel_link").click () ->
+			  id = $(this).data("id")
+			  form = "#div_form_"+id
+			  $(form).find('form').hide()
+			  $(form).parent().find(".workgroup_click_change").show()
+
+		$(document).on "ajax:success", ".edit_workgroup_form",(event, results) ->
+			msg = $(this).parent().parent().find(".messages")
+			msg.html results.message
+			setTimeout (-> msg.html ""), 8000
+			if results.status is 'ok'
+				$(this).hide('slow')
+				$(this).parent().parent().find(".workgroup_click_change").val results.name
+				$(this).parent().parent().find(".workgroup_click_change").show()
 
 		RemoteCheckbox.initialize
 			selector: ".share_visible_checkbox"
@@ -112,7 +132,6 @@ Shares =
 					form.remove()
 					link.show()
 
-
 		RemoteCheckbox.initialize
 			selector: ".disk_pooling_checkbox"
 			parentSelector: "span:first"
@@ -124,6 +143,10 @@ Shares =
 				checkbox = $(checkbox)
 				share = _this.share(checkbox)
 				share.find(".disk-pool:first").replaceWith data["content"]
+
+		#update size
+		$('.update-size-area').on "ajax:success", (data, results) ->
+			$('.size'+results.id).text( results.size )
 
 		# update extras
 		SmartLinks.initialize

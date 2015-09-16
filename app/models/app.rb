@@ -18,27 +18,32 @@
 require 'tempfile'
 require 'digest/md5'
 
-
-
 class App < ActiveRecord::Base
 
-	APP_PATH = Rails.env == "development" ? "/tmp/app/%s" : "/var/hda/apps/%s"
-	WEBAPP_PATH = Rails.env == "development" ? "/tmp/web-apps/%s" : "/var/hda/web-apps/%s"
-	INSTALLER_LOG = "/var/log/amahi-app-installer.log"
+	if Rails.env == "production"
+		APP_PATH = "/var/hda/apps/%s"
+		WEBAPP_PATH = "/var/hda/web-apps/%s"
+		INSTALLER_LOG = "/var/log/amahi-app-installer.log"
+	else	# development, test, any other
+		APP_PATH = "#{HDA_TMP_DIR}/app/%s"
+		WEBAPP_PATH = "#{HDA_TMP_DIR}/web-apps/%s"
+		INSTALLER_LOG = "#{HDA_TMP_DIR}/amahi-app-installer.log"
+	end
 
 	belongs_to :webapp, :dependent => :destroy
 	belongs_to :theme, :dependent => :destroy
 	belongs_to :db, :dependent => :destroy
 	belongs_to :server, :dependent => :destroy
 	belongs_to :share, :dependent => :destroy
+	belongs_to :plugin, :dependent => :destroy
 
 	has_many :app_dependencies, :dependent => :destroy
 	has_many :children, :class_name => "AppDependency", :foreign_key => 'dependency_id'
 	has_many :dependencies, :through => :app_dependencies
 
-	scope :installed, where(:installed => true)
-	scope :in_dashboard, where(:show_in_dashboard => true).installed
-	scope :latest_first, :order => 'updated_at desc'
+	scope :installed, ->{where(:installed => true)}
+	scope :in_dashboard,-> {where(:show_in_dashboard => true).installed}
+	scope :latest_first, ->{order('updated_at desc')}
 
 	before_destroy :before_destroy_hook
 
@@ -85,8 +90,13 @@ class App < ActiveRecord::Base
 	def self.install(identifier)
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app --environment=#{Rails.env} #{identifier} >> #{INSTALLER_LOG} 2>&1 &")
-		c = Command.new cmd
-		c.execute
+		if Rails.env == "production"
+			c = Command.new cmd
+			c.execute
+		else
+			# execute the command directly not in production
+			system(cmd)
+		end
 	end
 
 
@@ -100,15 +110,9 @@ class App < ActiveRecord::Base
 	def self.available
 		AmahiApi::api_key = Setting.value_by_name("api-key")
 		begin
-			av = AmahiApi::App.find(:all).map do |online_app|
-				a = App.find_by_identifier online_app.id
-				if a
-					nil
-				else
-					App.new(online_app.id, online_app)
-				end
-			end
-			av.compact
+			AmahiApi::App.find(:all).map do |online_app|
+				App.where(:identifier=>online_app.id).first ? nil : App.new(online_app.id, online_app)
+			end.compact
 		rescue
 			[]
 		end
@@ -126,7 +130,7 @@ class App < ActiveRecord::Base
 		when  20 then "Installing app dependencies ..."
 		when  30 then "Installing package dependencies ..."
 		when  40 then "Downloading application and unpacking it ..."
-		when  60 then "Installing the application in your HDA ..."
+		when  60 then "Doing application configuration ..."
 		when  70 then "Creating associated server in your HDA ..."
 		when  80 then "Saving application settings ..."
 		when 100 then "Application installed."
@@ -153,14 +157,14 @@ class App < ActiveRecord::Base
 	end
 
 	def self.installation_status(identifier)
-		status = Setting.find_by_kind_and_name(identifier, 'install_status')
+		status = Setting.where(:kind=>identifier,:name=> 'install_status').first
 		return 0 unless status
 		status.value.to_i
 	end
 
 	def install_status=(value)
 		# create it dynamically if it does not exist
-		status = Setting.find_or_create_by(self.identifier, 'install_status', value)
+		status = Setting.where(:kind=>self.identifier, :name=> 'install_status').first_or_create
 		if value.nil?
 			status && status.destroy
 			return nil
@@ -190,8 +194,18 @@ class App < ActiveRecord::Base
 			mkdir app_path
 			webapp_path = nil
 			self.install_status = 40
+
+			downloaded_file = nil
+			unless (installer.source_url.nil? or installer.source_url.blank?)
+				downloaded_file = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
+				Dir.chdir(app_path) do
+					FileUtils.rm_rf "source-file"
+					File.symlink downloaded_file, "source-file"
+				end
+			end
+
 			unless installer.url_name.nil?
-				(name, webapp_path) = self.install_webapp installer
+				(name, webapp_path) = self.install_webapp(installer, downloaded_file)
 				self.show_in_dashboard = true
 			else
 				self.show_in_dashboard = false
@@ -199,7 +213,7 @@ class App < ActiveRecord::Base
 			self.create_db(:name => installer.database) if installer.database && !installer.database.blank?
 			# if it has a share, create it and install it
 			if installer.share
-				sh = Share.find_by_name installer.share
+				sh = Share.where(:name=>installer.share).first
 				if sh
 					# FIXME: autohook to it. this is for legacy shares. not needed in new installs
 					self.share = sh
@@ -213,32 +227,36 @@ class App < ActiveRecord::Base
 				end
 			end
 			self.install_status = 60
-			# if it has a server, install it and associate it
-			if installer.server
-				servername = installer.server
-				pidfile = nil
-				if servername =~ /(\w+):(.+)/
-					servername = $1
-					pidfile = $2 unless $2.empty?
-				end
-				self.create_server(:name => servername, :comment => "#{self.name} Server", :pidfile => pidfile)
-			end
-			self.install_status = 70
 			self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-			self.theme = self.install_theme(installer) if installer.kind == 'theme'
+			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
+			if installer.kind == 'plugin'
+				self.plugin = Plugin.install(installer, downloaded_file)
+			end
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
 			if installer.install_script
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
-					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password))
+					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password, self.db))
 				end
+			end
+			self.install_status = 70
+			# if it has a server, install it and associate it
+			if installer.server
+				servername = installer.server
+				pidfile = nil
+				if servername =~ /\s*([^\s]+):(.+)/
+					servername = $1
+					pidfile = $2 unless $2.empty?
+				end
+				self.create_server(:name => servername, :comment => "#{self.name} Server", :pidfile => pidfile)
 			end
 			self.install_status = 80
 			self.initial_user = installer.initial_user
 			self.initial_password = installer.initial_password
 			self.special_instructions = installer.special_instructions
+			self.version = installer.version || ""
 			# mark it as installed
 			self.installed = true
 			self.save!
@@ -317,7 +335,7 @@ class App < ActiveRecord::Base
 	# extra environment for install scripts
 	# *please* update the docs of variables supported at
 	# http://wiki.amahi.org/index.php/Script_variables
-	def hda_environment(user = nil, password = nil)
+	def hda_environment(user = nil, password = nil, db=nil)
 		env = {}
 		net = Setting.value_by_name('net')
 		addr = Setting.value_by_name('self-address')
@@ -329,6 +347,12 @@ class App < ActiveRecord::Base
 		user && env["HDA_APP_USERNAME"] = user
 		password && env["HDA_APP_PASSWORD"] = password
 		env["HDA_1ST_ADMIN"] = (User.admins.first.login || "no-admin" ) rescue "error"
+		if db
+			env["HDA_DB_DBNAME"] = db.name
+			env["HDA_DB_USERNAME"] = db.username
+			env["HDA_DB_PASSWORD"] = db.password
+			env["HDA_DB_HOSTNAME"] = db.hostname
+		end
 		env
 	end
 
@@ -352,7 +376,7 @@ class App < ActiveRecord::Base
 		return [] if deps.nil? or deps.blank?
 		deps.strip!
 		deps.split(/[, ]+/).map do |identifier|
-			a = App.find_by_identifier identifier
+			a = App.where(:identifier=>identifier).first
 			unless a
 				a = App.new identifier
 				a.install_bg
@@ -365,7 +389,7 @@ class App < ActiveRecord::Base
 	def install_pkg_deps(installer)
 		deps = installer.pkg_dependencies
 		return if deps.nil? or deps.blank?
-		deps.strip!
+		deps = deps.gsub(/[, ][ ]*/,' ').strip
 		unless deps.blank?
 			Platform.install(deps)
 		end
@@ -380,17 +404,15 @@ class App < ActiveRecord::Base
 		end
 	end
 
-	def install_theme(installer)
+	def install_theme(installer, source)
 
 		return if (installer.source_url.nil? or installer.source_url.blank?)
-
-		fname = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
 
 		dir = nil
 		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do
 			mkdir '.unpack'
 			Dir.chdir(".unpack") do
-				unpack(installer.source_url, fname)
+				SystemUtils.unpack(installer.source_url, source)
 				# if only one file, move it to html!
 				files = Dir.glob('*')
 				if files.size == 1
@@ -407,7 +429,7 @@ class App < ActiveRecord::Base
 		Theme.dir2theme(dir)
 	end
 
-	def install_webapp(installer)
+	def install_webapp(installer, source)
 
 		name = webapp_name(installer.url_name)
 		path = WEBAPP_PATH % name
@@ -420,14 +442,12 @@ class App < ActiveRecord::Base
 
 		return [name, path] if (installer.source_url.nil? or installer.source_url.blank?)
 
-		fname = Downloader.download_and_check_sha1(installer.source_url, installer.source_sha1)
-
 		one_dir = true
 		Dir.chdir(path) do
 			mkdir 'unpack'
 			mkdir 'logs'
 			Dir.chdir("unpack") do
-				unpack(installer.source_url, fname)
+				SystemUtils.unpack(installer.source_url, source)
 				# if only one file, move it to html!
 				files = Dir.glob('*')
 				if files.size == 1
@@ -445,23 +465,11 @@ class App < ActiveRecord::Base
 		[name, path]
 	end
 
-	def unpack(url, fname)
-		if (url =~ /\.zip$/)
-			system("unzip -q #{fname}")
-		elsif (url =~ /\.(tar.gz|tgz)$/)
-			system("tar -xzf #{fname}")
-		elsif (url =~ /\.(tar.bz2)$/)
-			system("tar -xjf #{fname}")
-		else
-			raise "File #{url} is not supported for unpacking please report it to the Amahi community!"
-		end
-	end
-
 	def webapp_name(name)
 		i = 0
 		add = ""
 		begin
-			wa = Webapp.find_by_name(name + add)
+			wa = Webapp.where(:name=>(name + add)).first
 			return (name+add) if wa.nil?
 			raise "cannot find a suitable webapp name. giving up at #{name+add}." if i > 29
 			i += 1

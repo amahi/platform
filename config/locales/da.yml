@@ -340,7 +340,7 @@ da:
   there_is_no_undo: Der er INGEN FORTRYD til denne sletning
   delete_user: Slet bruger
   visible: Synlig
-  mysql_database_server: MySQL DB Server
+  mariadb_database_server: MariaDB Server
   router_ip: Router IP
   logout: Log ud
   not_updating: Opdaterer ikke

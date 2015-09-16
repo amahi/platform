@@ -252,7 +252,7 @@ bg:
     precision: 
       format: 
         delimiter: ""
-  mysql_database_server: "MySQL БД Сървър"
+  mariadb_database_server: "MariaDB БД Сървър"
   edit_and_rate_beta_apps: "Редактиране и оценка на Бета приложения"
   or_view_each_one_separately_below: "или да прегледате всяка една поотделно по-долу."
   username: "Потребителско име"

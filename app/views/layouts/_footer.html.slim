@@ -1,19 +1,19 @@
 footer#footer
   .inside
     p.copy
-      | &copy; #{Date.today.year} #{link_to "Amahi", "http://www.amahi.org"}
+      | &copy; #{Date.today.year} #{link_to "Amahi", "http://www.amahi.org", :target => "_blank"}
     nav
       ul
-        li = link_to t('your_control_panel'), 'https://www.amahi.org/user'
-        li = link_to t('feedback'),'https://www.amahi.org/feedback'
-        li = link_to t('wiki'), 'https://wiki.amahi.org/'
-        li = link_to t('tracker'), 'https://bugs.amahi.org'
+        li = link_to t('your_control_panel'), 'https://www.amahi.org/user', :target=>'_blank'
+        li = link_to t('feedback'),'https://www.amahi.org/feedback', :target=>'_blank'
+        li = link_to t('wiki'), 'https://wiki.amahi.org/', :target=>'_blank'
+        li = link_to t('tracker'), 'https://bugs.amahi.org', :target=>'_blank'
 
         - if theme.author
           li
             | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
-          li = link_to t('live_help'), 'http://talk.amahi.org'
-          li = link_to t('forums'), 'https://forums.amahi.org'
+          li = link_to t('live_help'), 'http://talk.amahi.org', :target=>'_blank'
+          li = link_to t('forums'), 'https://forums.amahi.org', :target=>'_blank'
 
         - if current_user
           li.logout

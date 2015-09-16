@@ -1,7 +1,7 @@
 div.user[id="whole_user_#{user.id}"]
-  table.settings.stretchtoggle
+  table.settings.stretchtoggle.table.table-condensed
     tr
-      td.settings-col1.users-col1
+      td.settings-col1.settings-col1-pad.users-col1
         = link_to user.login, '#'
         span[class="user_icons #{user_icon_class(user)}"]
       td.settings-col2.users-col2= user.name
@@ -24,15 +24,30 @@ div.user[id="whole_user_#{user.id}"]
                       :method => :delete,
                       :id => "delete-user-#{user.id}",
                       :data => { :confirm => confirm_user_destroy_message(user.login) },
-                      :class => 'btn-delete remote-btn'
+                      :class => 'btn-delete remote-btn navbar-right btn btn-primary btn-sm'
 
         .settings-fields
-          table
+          table.table
             tr
               td
                 label #{t('name')}
               td
-                b = user.name
+                a.name_click_change  #{user.name}
+                = simple_remote_text     :id => "#{user.id}",
+                                         :input_id =>"text_user_#{user.id}",
+                                         :form_id => "form_user_#{user.id}",
+                                         :button_id => "change_fullname_user_#{user.id}",
+                                         :url => users_engine.user_path(:id => user.id),
+                                         :label => t("change"),
+                                         :disabled => !current_user.admin?,
+                                         :value => "#{user.name}",
+                                         :name => :name,
+                                         :method => :put,
+                                         :remote => true,
+                                         :input_css_class=>'form-control input-sm',
+                                         :form_css_class => "edit_name_form form_hidden form-inline",
+                                         :cancel_class => "name_cancel_link btn btn-primary btn-sm left-margin-10"
+                .messages
 
             - if advanced?
               tr

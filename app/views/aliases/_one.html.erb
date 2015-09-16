@@ -1,10 +1,10 @@
 <%
 	name = [h(one.alias), @domain].join '.'
-	name = h($1) if one.alias =~ /(.*)\.$/
+	name = h($1) if one.alias =~ /(.*)\.\z/
 	(base, addr) = case one.address
 			when ''
 				[@net, @self]
-			when /^\d+$/
+			when /\A\d+\z/
 				[@net, [@net, h(one.address)].join('.')]
 			else
 				['', h(one.address)]
@@ -22,7 +22,7 @@
 <table id="alias_row_<%= uid %>" class="settings stretchtoggle" onmouseup="<%= h toggler %>">
     <tr>
 	<td class="settings-col1 aliases-col1">
-		<%= link_to_function(h(name), '') %>
+		<%= link_to(h(name), '') %>
 	</td>
 	<td class="settings-col2 aliases-col2" id="alias_ip_<%= uid %>">
 		<%= h(addr) %>

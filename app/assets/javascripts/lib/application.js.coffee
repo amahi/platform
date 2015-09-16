@@ -1,8 +1,8 @@
 $(document).ready ->
   $(".preftab").on "click", ".stretchtoggle", ->
-    $(this).parents("div:first").find(".settings-stretcher:first").toggle()
+    $(this).parents("div:first").find(".settings-stretcher:first").toggle('slow')
     false
-
+  
   SmartLinks.initialize
     open_selector: ".open-area"
     close_selector: ".close-area"
@@ -13,3 +13,11 @@ $(document).ready ->
 
     mouseleave: ->
       $(this).css "background-color", "transparent"
+
+  $("#websearchbutton").on
+   click: ->
+    $('#searchform').attr('target',"_blank")
+
+  $("#hdasearchbutton").on
+   click: ->
+    $('#searchform').attr('target',"_self") 

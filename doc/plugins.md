@@ -22,12 +22,22 @@ Each plugin has to have a file called `config/amahi_plugin.yml` with details of 
 	name: Foo Bar Tab
 	# class to be mounted
 	class: FooBar
-	# kind of plugin (so far we only support 'tab' plugins)
 	kind: tab
 	# url where it will be mounted in the platform
 	url: /tab/foobar
 
 No two apps have may use the same class or url to be mounted.
+
+In case you are adding plugin as a subtab under a tab(Fuzzbar)  :
+
+	# human readable name (no localization supported yet)
+	# for example, it may be used as the text of the tab or the page title, etc.
+	name: Foo Bar Sub Tab
+	# class to be mounted
+	class: FooBar
+	kind: subtab
+	# url where it will be mounted in the platform
+	url: /tab/fuzzbar/foobar
 
 ## Adding Tabs and Subtabs
 
@@ -37,10 +47,13 @@ Example for initialization for a plugin (e.g. plugin/foo_bar/config/initializers
 
 ```ruby
 # plugin initialization -- set up a tab by calling Tab.new:
+#Checks for Existing tab with the same controller.
+unless t = Tab.find("foobar")
 # - first argument to Tab.new is the controller that it will hooked up to
 # - second argument is a string, the label for the tab. This will support internationalization in the future
 # - third argument is the route it should be mounted on, example /tab/foobar
-t = Tab.new("foobar", "FooBar", "/tab/apps")
+	t = Tab.new("foobar", "FooBar", "/tab/apps")
+end
 # add any subtabs to this tab with what you need.
 # The params are
 # - controller
@@ -51,6 +64,29 @@ t.add("advanced", "Advanced Settings for Foos")
 # this subtab has a third parameter -- denoting it's an advanced subtab
 t.add("expert", "Expert Settings", true)
 t.add("other", "Other Settings")
+```
+
+To add a plugin as a subtab of an existing tab(Fuzzbar) :
+```ruby
+# plugin initialization -- set up a tab by calling Tab.new:
+#Checks for Existing tab with the same controller.
+unless t = Tab.find("fuzzbar")
+	t = Tab.new("fuzzbar", "FuzzBar", "/tab/Fuzzbar")
+end
+t.add("foobar", "Foobar")
+```
+##Making a plugin Fullscreen
+Add the following line in the controller class of the plugin to make it fullscreen:
+```ruby
+class FooController < ApplicationController
+
+	before_filter :admin_required
+	layout 'fullscreen'
+	def index
+	##code here
+	end
+	##other action methods
+end
 ```
 
 ## Principles

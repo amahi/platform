@@ -39,6 +39,7 @@
 
   # login
   log_in: Log In
+  logged_in_successfully: "Logged in successfully"
   not_a_valid_user_or_password: "Error: Incorrect username or password"
   first_time_admin_setup: "First admin setup. Please re-create your user password."
   remember_me: Remember me
@@ -92,9 +93,13 @@
   confirmation_matches: Confirmation matches
   confirmation_must_match: Confirmation must match
   full_name_looks_good: Full name looks good
+  name_changed_successfully: Name changed Successfully
+  dont_have_permissions : Dont have permission to edit user details
+  error_occured : "Error occurred"
   new: New
   password_cannot_be_blank: Password cannot be blank
   password_changed_successfully: Password changed successfully
+  workgroup_changed_successfully: Workgroup changed successfully
   password_is_too_short: Password is too short
   password_looks_good: Password looks good
   the_name_cannot_be_blank: The name cannot be blank
@@ -121,9 +126,12 @@
   all_users: All users
   delete_share: Delete share
   edit_share: Edit share
+  shares_global_settings: Global Settings for Shares
   visible: Visible
   read_only: Read Only
   tags: Tags
+  size: Size
+  get_the_size: Get the size
   extra_parameters: Extra Parameters
   add_extra_parameters: (add extra parameters)
   disabling_lan_manager_will_not_allow_older_machines: Disabling Windows 95/98 LanManager authentication will not allow older machines to use the shares.
@@ -278,6 +286,7 @@
   dns_google: Google Public DNS
   dns_custom: Custom DNS
   dns_opendns: OpenDNS
+  dynamic_ip_range: Dynamic IP Range
 
   # networking -> firewall
   firewall: Firewall
@@ -437,7 +446,7 @@
   dhcp_server: DHCP Server
   dns_server: DNS Server
   file_server_samba: File Server (Samba)
-  mysql_database_server: MySQL DB Server
+  mariadb_database_server: MariaDB Server
   this_file_was_automatically_generated_on: "# This file was automatically generated on %{time} - WARNING - any manual edits WILL be lost!"
   transmission_bittorrent_server: Transmission Bittorrent Server
   ushare_upnp_media_server: Ushare UPnP Media Server

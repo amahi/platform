@@ -115,7 +115,6 @@ Settings =
       $('#update-dns-ips-form #error_explanation').remove()
       unless results["status"] is "ok"
         $errorMessages = $("<div id='error_explanation'><ul></ul></div>")
-        console.log results["ip_1_saved"]
         $errorMessages.find('ul').append('<li>Format of DNS IP Primary is wrong</li>') if results["ip_1_saved"] == false
         $errorMessages.find('ul').append('<li>Format of DNS IP Secondary is wrong</li>') if results["ip_2_saved"] == false
         $('#update-dns-ips-form').prepend $errorMessages
@@ -133,3 +132,79 @@ $ ->
   Hosts.initialize()
   DnsAliases.initialize()
   Settings.initialize()
+
+$(document).ready ->
+  $(".lease_click_change").click () ->
+    $(this).hide()
+    $(".edit_lease_form").show()
+
+  $(".lease-cancel-link").click () ->
+    form = $('.edit_lease_form').hide()
+    $(".lease_click_change").show()
+
+$(document).on "ajax:success", ".edit_lease_form", (event, results) ->
+  element = $(".lease_click_change")
+  form = $('.edit_lease_form')
+  if results.status is "ok"
+    element.html($('#lease_time').val())
+    form.hide('slow')
+    element.show('slow')
+
+$(document).ready ->
+  $(".gateway_click_change").click () ->
+    $(this).hide()
+    $(".edit_gateway_form").show()
+    $('.gateway_messages').show()
+
+  $(".gateway-cancel-link").click () ->
+    form = $('.edit_gateway_form').hide()
+    $('.gateway_messages').hide()
+    $(".gateway_click_change").show()
+
+
+$(document).on 'keyup', '#gateway_input', ->
+  $('.gateway_message_value').text $(this).val()
+
+$(document).on "ajax:success", ".edit_gateway_form", (event, results) ->
+  element = $(".gateway_click_change")
+  element_child = $('.gateway_value')
+  form = $('.edit_gateway_form')
+  if results.status is "ok"
+    element_child.html($('#gateway_input').val())
+    form.hide('slow')
+    $('.gateway_messages').hide()
+    element.show('slow')
+
+$(document).ready ->
+  $(".dyn_lo_click_change").click () ->
+    $(this).hide()
+    $(".edit_dyn_lo_form").show()
+
+  $(".dyn-lo-cancel-link").click () ->
+    form = $('.edit_dyn_lo_form').hide()
+    $(".dyn_lo_click_change").show()
+
+$(document).on "ajax:success", ".edit_dyn_lo_form", (event, results) ->
+  element = $(".dyn_lo_click_change")
+  form = $('.edit_dyn_lo_form')
+  if results.status is "ok"
+    element.html($('#dyn_lo_input').val())
+    form.hide('slow')
+    element.show('slow')
+
+$(document).ready ->
+  $(".dyn_hi_click_change").click () ->
+    $(this).hide()
+    $(".edit_dyn_hi_form").show()
+
+  $(".dyn-hi-cancel-link").click () ->
+    form = $('.edit_dyn_hi_form').hide()
+    $(".dyn_hi_click_change").show()
+
+$(document).on "ajax:success", ".edit_dyn_hi_form", (event, results) ->
+  element = $(".dyn_hi_click_change")
+  form = $('.edit_dyn_hi_form')
+  if results.status is "ok"
+    element.html($('#dyn_hi_input').val())
+    form.hide('slow')
+    element.show('slow')

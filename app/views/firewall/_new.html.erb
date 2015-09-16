@@ -1,6 +1,6 @@
 <br />
 
-<%= button_to_function " #{t 'new_firewall_rule'} &raquo; ", update_page { |page|
+<%= button_to " #{t 'new_firewall_rule'} &raquo; ", update_page { |page|
    	page.hide 'new-firewall-to-step1'
    	page.show 'new-firewall-step1'
    }, :id => "new-firewall-to-step1" %>

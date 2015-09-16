@@ -35,7 +35,7 @@
 		  <tr><td>&nbsp;</td></tr>
 		  <tr>
 		    <td>&nbsp;</td><td>&nbsp;</td><td>
-			<%= link_to_function t('cancel'), update_page { |page|
+			<%= link_to t('cancel'), update_page { |page|
 					page.hide 'new-host-step1'
 					page.show 'new-host-to-step1'
 					page[:host_host].value = ""
