@@ -1,7 +1,7 @@
 
 bundle:
 	bundle install --without test --path vendor/bundle --binstubs bin/ --deployment
-	(cd vendor/bundle/ruby/ && find . -type f -exec grep -l '/usr/bin/ruby' {} \; | xargs sed -i -e 's|/usr/bin/ruby|/usr/bin/ruby|') || true
+	#(cd vendor/bundle/ruby/ && find . -type f -exec grep -l '/usr/bin/ruby' {} \; | xargs sed -i -e 's|/usr/bin/ruby|/usr/bin/ruby|') || true
 	# clean up things that are not needed at run time
 	(cd vendor/bundle/ruby/ && rm -rf cache) || true
 	(cd vendor/bundle/ruby/gems && rm -rf rails-*/guides */spec */doc */doc-api) || true
