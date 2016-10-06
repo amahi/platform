@@ -16,7 +16,7 @@
 
 class FrontController < ApplicationController
 
-	before_filter :login_required_unless_guest_dashboard
+	before_action :login_required_unless_guest_dashboard
 	layout 'basic'
 
 	def index

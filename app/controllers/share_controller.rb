@@ -15,7 +15,7 @@
 # team at http://www.amahi.org/ under "Contact Us."
 
 class ShareController < ApplicationController
-	before_filter :admin_required
+	before_action :admin_required
 
 	VALID_NAME = Regexp.new "\A\\w[\\w ]+\z"
 	# Disk Pool minimum free: default og 10GB, but for root,
