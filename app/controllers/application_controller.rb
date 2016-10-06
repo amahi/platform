@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
 	protect_from_forgery
 
-	before_action :before_filter_hook
+	before_action :before_action_hook
 	before_action :initialize_validators
 	before_action :prepare_plugins
 
