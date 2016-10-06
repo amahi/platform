@@ -1605,6 +1605,15 @@ border-radius: 4px;
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
+
+.alert-warn {
+  color: #FF0000;
+  background-color: #F7BE81;
+  border-color: #FF4000;
+  a {
+    color: #B40404;
+  }
+}
 .alert-danger {
   color: #a94442;
   background-color: #f2dede;
@@ -1620,5 +1629,3 @@ border-radius: 4px;
 	float: left;
 	width: 50%;
 }
-
-
