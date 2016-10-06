@@ -272,7 +272,7 @@ fi:
           billion: Miljardia
           trillion: Biljoona
           quadrillion: Kvadriljoona
-  mysql_database_server: MySQL-tietokantapalvelin
+  mariadb_database_server: MariaDB-tietokantapalvelin
   edit_and_rate_beta_apps: Muokkaa ja arvioi beta-sovelmia
   or_view_each_one_separately_below: "tai näytä ne yksi kerrallaan."
   username: "Käyttäjänimi"

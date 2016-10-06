@@ -43,7 +43,7 @@ class Platform
 			:named => 'named',
 			:smb => 'smb',
 			:nmb => 'nmb',
-			:mysql => 'mysqld',
+			:mysql => 'mariadb',
 		},
 		'centos' => {
 			:apache => 'httpd',
@@ -354,7 +354,14 @@ class Platform
 
 	class << self
 		def set_platform
-			if File.exist?('/etc/issue')
+			if File.exist?('/etc/system-release')
+				line = nil
+				File.open("/etc/system-release", "r") do |issue|
+					line = issue.gets
+				end
+				@@platform = "fedora" if line.include?("Fedora")
+				@@platform = "centos" if line.include?("CentOS")
+			elsif File.exist?('/etc/issue')
 				line = nil
 				File.open("/etc/issue", "r") do |issue|
 					line = issue.gets
@@ -362,10 +369,8 @@ class Platform
 				@@platform = "arch"   if line.include?("Arch")
 				@@platform = "debian" if line.include?("Debian")
 				@@platform = "ubuntu" if line.include?("Ubuntu")
-				@@platform = "fedora" if line.include?("Fedora")
-				@@platform = "centos" if line.include?("CentOS")
 				@@platform = "mint"   if line.include?("Mint")
-			elsif File.exist?('/mach_kernel')
+			elsif File.exist?('/Volumes')
 				@@platform = "mac"
 			end
 			#To ensure that @@platform is either set or nil:

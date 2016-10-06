@@ -266,7 +266,7 @@ he:
           billion: "מיליארד"
           trillion: "טריליון"
           quadrillion: "קודריליון"
-  mysql_database_server: "שרת מסד הנתונים MySQL"
+  mariadb_database_server: "שרת מסד הנתונים MariaDB"
   edit_and_rate_beta_apps: "ערוך ותן ציון לישום בפיתוח"
   or_view_each_one_separately_below: "או הסתכל למטה על כל אחד בנפרד "
   username: "שם משתמש/ת"

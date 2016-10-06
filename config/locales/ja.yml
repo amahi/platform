@@ -326,7 +326,7 @@ ja:
   visible: ""
   router_ip: ""
   new: "新規"
-  mysql_database_server: "MySQL DB サーバー"
+  mariadb_database_server: "MariaDB サーバー"
   logout: "ログアウト"
   automated_install: "自動インストール"
   install_code: "インストールコード"

@@ -1,7 +1,7 @@
 
 bundle:
-	/usr/bin/bundle install --without test --path vendor/bundle --binstubs bin/ --deployment
-	(cd vendor/bundle/ruby/ && find . -type f -exec grep -l '/usr/bin/ruby' {} \; | xargs sed -i -e 's|/usr/bin/ruby|/usr/bin/ruby|') || true
+	bundle install --without test --path vendor/bundle --binstubs bin/ --deployment
+	#(cd vendor/bundle/ruby/ && find . -type f -exec grep -l '/usr/bin/ruby' {} \; | xargs sed -i -e 's|/usr/bin/ruby|/usr/bin/ruby|') || true
 	# clean up things that are not needed at run time
 	(cd vendor/bundle/ruby/ && rm -rf cache) || true
 	(cd vendor/bundle/ruby/gems && rm -rf rails-*/guides */spec */doc */doc-api) || true
@@ -29,7 +29,7 @@ clean:
 
 # install necessary packages (FIXME: this is for fedora 18 only so far)
 devel-rpms:
-	sudo yum -y install git rpm-build ruby ruby-devel gcc gcc-c++ mysql mysql-devel \
+	sudo dnf -y install git rpm-build ruby ruby-devel gcc gcc-c++ mysql mysql-devel \
 		libxml2-devel libxslt-devel sqlite sqlite-devel v8 v8-devel rubygem-bundler
 
 run-tests:

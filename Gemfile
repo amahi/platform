@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
-gem "rails", '~>4.1.1'
+gem 'rake'
 
-gem 'mysql2'
+gem "rails", '~>4.2.6'
+
+gem 'mysql2', '~>0.3.0'
 gem "yettings"
 
 gem 'sass-rails' , '~>4.0.3'
@@ -51,6 +53,7 @@ group :development do
 end
 
 gem "rspec-rails", :group => [:test, :development]
+
 group :test do
   gem "sqlite3"
   gem "factory_girl_rails"

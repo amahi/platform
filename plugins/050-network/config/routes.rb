@@ -17,4 +17,5 @@ Network::Engine.routes.draw do
 	put 'update_dns' => 'network#update_dns'
 	put 'update_dns_ips' => 'network#update_dns_ips'
 	put 'toggle_setting/:id' => 'network#toggle_setting', as: 'toggle_setting'
+	put 'update_dhcp_range/:id' => 'network#update_dhcp_range', as: 'update_dhcp_range'
 end

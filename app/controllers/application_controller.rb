@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
 	require 'ipaddr'
 	protect_from_forgery
 
-	before_filter :before_filter_hook
-	before_filter :initialize_validators
-	before_filter :prepare_plugins
+	before_action :before_filter_hook
+	before_action :initialize_validators
+	before_action :prepare_plugins
 	before_action :accessed_from_ip
 
 	helper_method :current_user
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
 		@validators_string = ''
 	end
 
-	def before_filter_hook
+	def before_action_hook
 		set_locale
 		set_direction
 		check_for_amahi_app
