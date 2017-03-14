@@ -38,7 +38,8 @@ feature "Users tab" do
 	end
 	scenario "should not allow an admin user to revoke its own admin rights", :js => true do
 		find("#whole_user_#{@admin.id}").find("tr").click_link @admin.login
-		expect(page.find_by_id("checkbox_user_admin_#{@admin.id}")[:disabled]).to eq 'disabled'
+		expect(page.find_by_id("checkbox_user_admin_#{@admin.id}")[:checked]).to eq true
+		expect(page.find_by_id("checkbox_user_admin_#{@admin.id}")[:disabled]).to eq true
 	end
 	scenario "should allow an admin user to revoke admin rights to another user", :js => true do
 		user = create(:admin)
