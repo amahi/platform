@@ -13,15 +13,15 @@ describe Share do
 	end
 
 	it "should be invalid without a valid name" do
-		expect { create(:share, name: nil) }.to raise_error
-		expect { create(:share, name: "") }.to raise_error
-		expect { create(:share, name: "this name is too long because it is over 32 chars") }.to raise_error
-		expect { 2.times{ create(:share, name: "not_unique") } }.to raise_error # name must be unique
+		expect { create(:share, name: nil) }.to raise_error(ActiveRecord::RecordInvalid)
+		expect { create(:share, name: "") }.to raise_error(ActiveRecord::RecordInvalid)
+		expect { create(:share, name: "this name is too long because it is over 32 chars") }.to raise_error(ActiveRecord::RecordInvalid)
+		expect { 2.times{ create(:share, name: "not_unique") } }.to raise_error(ActiveRecord::RecordInvalid) # name must be unique
 	end
 
 	it "should be invalid without a valid path" do
-		expect { create(:share, path: nil) }.to raise_error
-		expect { create(:share, path: "this path is too way long because it has more than sixty four characters") }.to raise_error
+		expect { create(:share, path: nil) }.to raise_error(ActiveRecord::RecordInvalid)
+		expect { create(:share, path: "this path is too way long because it has more than sixty four characters") }.to raise_error(ActiveRecord::RecordInvalid)
 	end
 
 	describe "::create_default_shares" do
@@ -78,4 +78,3 @@ describe Share do
 	end
 
 end
-
