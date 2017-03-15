@@ -4,7 +4,6 @@ require 'simplecov'
 require 'simplecov_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'factory_girl_rails'
