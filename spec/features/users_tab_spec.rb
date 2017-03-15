@@ -6,8 +6,8 @@ feature "Users tab" do
     @user = create(:user)
     visit root_path
     expect(page).to have_content("Amahi Server Login")
-    fill_in "username", :with => "admin"
-    fill_in "password", :with => "admin"
+    fill_in "username", :with => @admin.login
+    fill_in "password", :with => "secret"
     click_button "Log In"
     expect(page).to have_content("Setup")
     visit users_engine.users_path
