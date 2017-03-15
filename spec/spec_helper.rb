@@ -71,3 +71,8 @@ RSpec.configure do |config|
 	end
 
 end
+
+# This is to stub with RSpec in FactoryGirl
+FactoryGirl::SyntaxRunner.class_eval do
+  include RSpec::Mocks::ExampleMethods
+end
