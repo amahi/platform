@@ -6,8 +6,8 @@ feature "Users tab" do
     @user = create(:user)
     visit root_path
     expect(page).to have_content("Amahi Server Login")
-    fill_in "username", :with => @admin.login
-    fill_in "password", :with => "secret"
+    fill_in "username", :with => "admin"
+    fill_in "password", :with => "admin"
     click_button "Log In"
     expect(page).to have_content("Setup")
     visit users_engine.users_path
@@ -38,7 +38,7 @@ feature "Users tab" do
 	end
 	scenario "should not allow an admin user to revoke its own admin rights", :js => true do
 		find("#whole_user_#{@admin.id}").find("tr").click_link @admin.login
-		expect(page.find_by_id("checkbox_user_admin_#{@admin.id}")[:disabled]).to eq 'disabled'
+		expect(page.find_by_id("checkbox_user_admin_#{@admin.id}")[:disabled]).to eq true
 	end
 	scenario "should allow an admin user to revoke admin rights to another user", :js => true do
 		user = create(:admin)
@@ -133,4 +133,3 @@ feature "Users tab" do
   end
 
 end
-
