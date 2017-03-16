@@ -11,20 +11,20 @@ feature "Disks tab" do
 	end
 
 	scenario "It should list the created disk" do
-		page.should have_content I18n.translate('model')
-		page.should have_content "Hitachi HDS723020BLA642"
-		page.should have_content I18n.translate('device')
-		page.should have_content '/dev/sda'
-		page.should have_content I18n.translate('temperature')+" (C)"
-		page.should have_content "25"
+		expect(page).to have_content I18n.translate('model')
+		expect(page).to have_content "Hitachi HDS723020BLA642"
+		expect(page).to have_content I18n.translate('device')
+		expect(page).to have_content '/dev/sda'
+		expect(page).to have_content I18n.translate('temperature')+" (C)"
+		expect(page).to have_content "25"
 	end
 
 	scenario "Switching to Fahrenheit then back to Celsius" do
 		click_link "C"
-		page.should have_content I18n.translate('temperature')+" (F)"
-		page.should have_content "77"
+		expect(page).to have_content I18n.translate('temperature')+" (F)"
+		expect(page).to have_content "77"
 		click_link "F"
-		page.should have_content I18n.translate('temperature')+" (C)"
-		page.should have_content "25"
+		expect(page).to have_content I18n.translate('temperature')+" (C)"
+		expect(page).to have_content "25"
 	end
 end

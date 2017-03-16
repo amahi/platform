@@ -18,8 +18,8 @@ feature "Network tab" do
 		fill_in "host[address]" ,:with=> "10"
 		click_button "host_create_button"
 		wait_for_ajax
-		page.should have_content("testIP")
-		page.should have_content("192.168.1.10")
+		expect(page).to have_content("testIP")
+		expect(page).to have_content("192.168.1.10")
 	end
 
 	scenario "Admin should be able to create DNS aliases" do
@@ -29,7 +29,7 @@ feature "Network tab" do
 		fill_in "dns_alias[address]" ,:with=> "10"
 		click_button "dns_alias_create_button"
 		wait_for_ajax
-		page.should have_content("testdns")
-		page.should have_content("192.168.1.10")
+		expect(page).to have_content("testdns")
+		expect(page).to have_content("192.168.1.10")
 	end
 end

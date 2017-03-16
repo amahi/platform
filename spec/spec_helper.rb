@@ -4,7 +4,6 @@ require 'simplecov'
 require 'simplecov_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'factory_girl_rails'
@@ -71,4 +70,9 @@ RSpec.configure do |config|
 		Capybara::Screenshot.autosave_on_failure = true
 	end
 
+end
+
+# This is to stub with RSpec in FactoryGirl
+FactoryGirl::SyntaxRunner.class_eval do
+  include RSpec::Mocks::ExampleMethods
 end
