@@ -3,7 +3,7 @@ class CreateAppDependencies < ActiveRecord::Migration
     create_table "app_dependencies" do |t|
       t.integer  "app_id"
       t.integer  "dependency_id"
-      t.timestamps, :null => true
+      t.timestamps null: true
     end
 	end
 end

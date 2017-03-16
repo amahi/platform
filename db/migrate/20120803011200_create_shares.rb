@@ -11,7 +11,7 @@ class CreateShares < ActiveRecord::Migration
       t.integer  "disk_pool_copies", :default => 0
       t.boolean  "guest_access",     :default => false
       t.boolean  "guest_writeable",  :default => false
-      t.timestamps, :null => true
+      t.timestamps null: true
     end
 	end
 end
