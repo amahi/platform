@@ -10,7 +10,7 @@ class CreateWebapps < ActiveRecord::Migration
       t.boolean  "login_required", :default => false
       t.integer  "dns_alias_id"
       t.string   "custom_options", :default => ""
-      t.timestamps
+      t.timestamps, :null => true
     end
   end
 end

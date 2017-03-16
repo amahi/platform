@@ -9,7 +9,7 @@ class CreateFirewalls < ActiveRecord::Migration
       t.string   "mac",        :default => ""
       t.string   "url",        :default => ""
       t.string   "comment",    :default => ""
-      t.timestamps
+      t.timestamps, :null => true
     end
   end
 end
