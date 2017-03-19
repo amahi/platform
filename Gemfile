@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rake'
 
-gem "rails", '~>4.2.6'
+gem "rails", '~>4.2.8'
 
 gem 'mysql2', '~>0.3.0'
 gem "yettings"

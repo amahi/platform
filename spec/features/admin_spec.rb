@@ -7,7 +7,7 @@ feature "Admin" do
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
 		fill_in "username", :with => user.login
-		fill_in "password", :with => "secret"
+		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
 		expect(page).to have_content("Dashboard")
 		expect(page).to have_content("Setup")
@@ -19,7 +19,7 @@ feature "Admin" do
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
 		fill_in "username", :with => user.login
-		fill_in "password", :with => "secret"
+		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
 		expect(page).not_to have_content("Setup")
 		visit users_engine.users_path
