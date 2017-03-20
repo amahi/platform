@@ -12,14 +12,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20140717200213) do
-  create_table "app_dependencies", force: true do |t|
+
+  create_table "app_dependencies", force: :cascade do |t|
     t.integer  "app_id"
     t.integer  "dependency_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "apps", force: true do |t|
+  create_table "apps", force: :cascade do |t|
     t.boolean  "installed"
     t.string   "name"
     t.string   "screenshot_url"
@@ -39,37 +40,37 @@ ActiveRecord::Schema.define(version: 20140717200213) do
     t.integer  "share_id"
     t.string   "initial_user"
     t.string   "initial_password"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "plugin_id"
   end
 
-  create_table "cap_accesses", force: true do |t|
+  create_table "cap_accesses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "share_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "cap_writers", force: true do |t|
+  create_table "cap_writers", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "share_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "dbs", force: true do |t|
+  create_table "dbs", force: :cascade do |t|
     t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "dns_aliases", force: true do |t|
+  create_table "dns_aliases", force: :cascade do |t|
     t.string "name",    default: "", null: false
     t.string "address", default: "", null: false
   end
 
-  create_table "firewalls", force: true do |t|
+  create_table "firewalls", force: :cascade do |t|
     t.string   "kind",       default: ""
     t.boolean  "state",      default: true
     t.string   "ip",         default: ""
@@ -78,24 +79,24 @@ ActiveRecord::Schema.define(version: 20140717200213) do
     t.string   "mac",        default: ""
     t.string   "url",        default: ""
     t.string   "comment",    default: ""
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "hosts", force: true do |t|
-    t.string "name",    default: "", null: false
+  create_table "hosts", force: :cascade do |t|
+    t.string "name",                 null: false
     t.string "mac",     default: ""
     t.string "address"
   end
 
-  create_table "plugins", force: true do |t|
+  create_table "plugins", force: :cascade do |t|
     t.string   "name"
     t.string   "path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "servers", force: true do |t|
+  create_table "servers", force: :cascade do |t|
     t.string   "name",                         null: false
     t.string   "comment",       default: ""
     t.string   "pidfile"
@@ -103,17 +104,17 @@ ActiveRecord::Schema.define(version: 20140717200213) do
     t.string   "stop"
     t.boolean  "monitored",     default: true
     t.boolean  "start_at_boot", default: true
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "settings", force: true do |t|
+  create_table "settings", force: :cascade do |t|
     t.string "name"
     t.string "value"
     t.string "kind",  default: "general"
   end
 
-  create_table "shares", force: true do |t|
+  create_table "shares", force: :cascade do |t|
     t.string   "name"
     t.string   "path"
     t.boolean  "rdonly"
@@ -124,16 +125,16 @@ ActiveRecord::Schema.define(version: 20140717200213) do
     t.integer  "disk_pool_copies", default: 0
     t.boolean  "guest_access",     default: false
     t.boolean  "guest_writeable",  default: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "themes", force: true do |t|
+  create_table "themes", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "css",  default: "", null: false
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "login",                         null: false
     t.string   "name"
     t.string   "crypted_password"
@@ -147,18 +148,18 @@ ActiveRecord::Schema.define(version: 20140717200213) do
     t.string   "current_login_ip"
     t.boolean  "admin"
     t.text     "public_key"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "webapp_aliases", force: true do |t|
+  create_table "webapp_aliases", force: :cascade do |t|
     t.string   "name"
     t.integer  "webapp_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "webapps", force: true do |t|
+  create_table "webapps", force: :cascade do |t|
     t.string   "name",                           null: false
     t.string   "path",           default: ""
     t.string   "kind",           default: ""
@@ -168,8 +169,8 @@ ActiveRecord::Schema.define(version: 20140717200213) do
     t.boolean  "login_required", default: false
     t.integer  "dns_alias_id"
     t.text     "custom_options"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
