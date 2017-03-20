@@ -18,7 +18,7 @@
 require 'tempfile'
 require 'digest/md5'
 
-class App < ActiveRecord::Base
+class App < ApplicationRecord
 
 	if Rails.env == "production"
 		APP_PATH = "/var/hda/apps/%s"

@@ -14,7 +14,7 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class Db < ActiveRecord::Base
+class Db < ApplicationRecord
 
 	DB_BACKUPS_DIR = "/var/hda/dbs"
 

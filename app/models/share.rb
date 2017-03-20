@@ -17,7 +17,7 @@
 require 'command'
 require 'platform'
 
-class Share < ActiveRecord::Base
+class Share < ApplicationRecord
 	# include Greyhole
 
 	DEFAULT_SHARES_ROOT = '/var/hda/files'

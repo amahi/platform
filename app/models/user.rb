@@ -17,7 +17,7 @@
 require 'strscan'
 require 'command'
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
 
 	scope :admins, ->{ where(:admin => true)}
 
