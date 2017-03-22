@@ -15,7 +15,7 @@ gem 'therubyracer'
 gem 'uglifier'
 
 gem "activeresource", require: "active_resource"
-gem 'protected_attributes'
+gem 'protected_attributes_continued'
 gem 'actionpack-action_caching'
 gem 'rails-observers'
 
