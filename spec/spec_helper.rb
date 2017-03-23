@@ -42,7 +42,7 @@ RSpec.configure do |config|
 	# If you're not using ActiveRecord, or you'd prefer not to run each of your
 	# examples within a transaction, remove the following line or assign false
 	# instead of true.
-	config.use_transactional_fixtures = true
+	config.use_transactional_fixtures = false
 
 	# If true, the base class of anonymous controllers will be inferred
 	# automatically. This will be the default behavior in future versions of
@@ -62,7 +62,15 @@ RSpec.configure do |config|
 		Capybara.javascript_driver = :poltergeist
 		Capybara.default_driver = :poltergeist
 	end
+
+	config.before(:each) do
+		DatabaseCleaner.start
+		# load the seed to get the minimum env going, and to ensure
+		# that we don't get the initilization page on every scenario
+		load "#{Rails.root}/db/seeds.rb"
+	end
 	config.after(:each) do
+		DatabaseCleaner.clean
 		Capybara.reset_sessions!
 	end
 
