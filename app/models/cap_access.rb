@@ -14,7 +14,7 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class CapAccess < ActiveRecord::Base
+class CapAccess < ApplicationRecord
 	belongs_to :user
 	belongs_to :share
 end

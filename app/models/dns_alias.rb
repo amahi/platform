@@ -14,7 +14,7 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class DnsAlias < ActiveRecord::Base
+class DnsAlias < ApplicationRecord
 
 	after_create :restart
 	after_destroy :restart

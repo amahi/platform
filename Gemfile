@@ -2,22 +2,22 @@ source 'https://rubygems.org'
 
 gem 'rake'
 
-gem "rails", '~>4.2.8'
+gem "rails", '~>5.0.0'
 
-gem 'mysql2', '~>0.3.0'
+gem 'mysql2'
 gem "yettings"
 
-gem 'sass-rails' , '~>4.0.3'
+gem 'sass-rails'
 gem 'coffee-rails'
 
 gem 'therubyracer'
 
 gem 'uglifier'
 
-gem "activeresource", require: "active_resource"
-gem 'protected_attributes'
+gem 'activeresource', :git => "https://github.com/rails/activeresource.git", require: "active_resource"
+gem 'protected_attributes_continued'
 gem 'actionpack-action_caching'
-gem 'rails-observers'
+gem 'rails-observers', :git => "https://github.com/rails/rails-observers.git"
 
 gem 'jbuilder'
 gem 'ya2yaml'
@@ -39,7 +39,6 @@ gem 'unicorn'
 gem 'rb-readline', require: false
 
 group :development do
-	gem 'quiet_assets'
 	gem 'thin'
 	gem 'thor'
 	# turn this on to enable reporting on best practices with:
@@ -57,10 +56,11 @@ gem "rspec-rails", :group => [:test, :development]
 group :test do
   gem "sqlite3"
   gem "factory_girl_rails"
-  gem "capybara"
+  gem "capybara", :git => "https://github.com/teamcapybara/capybara.git"
   gem 'capybara-screenshot'
+	gem 'database_cleaner'
   # FIXME: required in Fedora 18 for some (packaging?) reason
-  gem 'minitest'
+  # gem 'minitest'
   # required for javascript test in selenium
   gem 'poltergeist'
   gem 'simplecov', :require => false
