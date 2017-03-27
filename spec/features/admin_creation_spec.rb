@@ -14,8 +14,8 @@ feature "Admin creation" do
 		visit start_path
 		expect(page).to have_content("Amahi initialization")
 		fill_in "username", :with => username
-		fill_in "password", :with => "secret"
-		fill_in "password_confirmation", :with => "secret"
+		fill_in "password", :with => "secretpassword"
+		fill_in "password_confirmation", :with => "secretpassword"
 		click_button "Create"
 		user = User.where(:login => username).first
 		expect(user.admin).to be_truthy

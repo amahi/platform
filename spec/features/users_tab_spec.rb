@@ -7,7 +7,7 @@ feature "Users tab" do
     visit root_path
     expect(page).to have_content("Amahi Server Login")
     fill_in "username", :with => @admin.login
-    fill_in "password", :with => "secret"
+    fill_in "password", :with => "secretpassword"
     click_button "Log In"
     expect(page).to have_content("Setup")
     visit users_engine.users_path
@@ -18,8 +18,8 @@ feature "Users tab" do
 		click_button "New User"
 		fill_in "user_login", :with => "newuser"
 		fill_in "user_name", :with => "fullname"
-		fill_in "user_password", :with => "secret"
-		fill_in "user_password_confirmation", :with => "secret"
+		fill_in "user_password", :with => "secretpassword"
+		fill_in "user_password_confirmation", :with => "secretpassword"
 		click_button "user_create_button"
 		wait_for_ajax
 		visit users_engine.users_path
@@ -104,13 +104,13 @@ feature "Users tab" do
 			expect(user_link).to have_field("user[password_confirmation]")
 			password_input = user_link.find_field("user[password]")
 			password_confirm_input = user_link.find_field("user[password_confirmation]")
-			password_input.set "secret"
-			password_confirm_input.set "secret"
+			password_input.set "secretpassword"
+			password_confirm_input.set "secretpassword"
 			submit_link = user_link.find_by_id("submit_password_#{@admin.id}")
 			submit_link.click
 			wait_for_ajax
 		end
-		expect(@admin.reload.password).to eq "secret"
+		expect(@admin.reload.password).to eq "secretpassword"
 	end
 	scenario "should allow an admin user to change another user's password" do
 		user_link = find("#whole_user_#{@user.id}")
@@ -123,13 +123,13 @@ feature "Users tab" do
 			expect(user_link).to have_field("user[password_confirmation]")
 			password_input = user_link.find_field("user[password]")
 			password_confirm_input = user_link.find_field("user[password_confirmation]")
-			password_input.set "secret"
-			password_confirm_input.set "secret"
+			password_input.set "secretpassword"
+			password_confirm_input.set "secretpassword"
 			submit_link = user_link.find_by_id("submit_password_#{@user.id}")
 			submit_link.click
 			wait_for_ajax
 		end
-		expect(@user.reload.password).to eq "secret"
+		expect(@user.reload.password).to eq "secretpassword"
   end
 
 end

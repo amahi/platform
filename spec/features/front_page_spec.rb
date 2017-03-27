@@ -25,7 +25,7 @@ feature "Front page" do
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
 		fill_in "username", :with => user.login
-		fill_in "password", :with => "secret"
+		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
 		expect(page).to have_content("Dashboard")
 		expect(page).to have_content("Logout")
@@ -36,7 +36,7 @@ feature "Front page" do
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
 		fill_in "username", :with => "bogus"
-		fill_in "password", :with => "secret"
+		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
 		expect(page).to have_content("Error: Incorrect username or password")
 		expect(page).to have_content("Amahi Server Login")
@@ -58,7 +58,7 @@ feature "Front page" do
 		visit root_path
 		expect(page).to have_content("Amahi Server Login")
 		fill_in "username", :with => user.login
-		fill_in "password", :with => "secret"
+		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
 		expect(page).to have_content("Dashboard")
 		expect(page).to have_content("Logout")

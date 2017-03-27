@@ -5,7 +5,7 @@ feature "Disks tab" do
 		@admin = create(:admin)
 		visit root_path
 		fill_in "username", :with => @admin.login
-		fill_in "password", :with => "secret"
+		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
 		visit disks_engine_path
 	end

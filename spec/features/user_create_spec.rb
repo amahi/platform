@@ -6,7 +6,7 @@ feature "Users tab" do
     visit root_path
     expect(page).to have_content("Amahi Server Login")
     fill_in "username", :with => user.login
-    fill_in "password", :with => "secret"
+    fill_in "password", :with => "secretpassword"
     click_button "Log In"
   end
   scenario "an admin should be able to create a new user", :js => true do
@@ -17,8 +17,8 @@ feature "Users tab" do
     click_button "New User"
     fill_in "user_login", :with => "newuser"
     fill_in "user_name", :with => "fullname"
-    fill_in "user_password", :with => "secret"
-    fill_in "user_password_confirmation", :with => "secret"
+    fill_in "user_password", :with => "secretpassword"
+    fill_in "user_password_confirmation", :with => "secretpassword"
     click_button "user_create_button"
     wait_for_ajax
     visit users_engine.users_path
@@ -31,8 +31,8 @@ feature "Users tab" do
       visit users_engine.users_path
       click_button "New User"
       fill_in "user_name", :with => "fullname"
-      fill_in "user_password", :with => "secret"
-      fill_in "user_password_confirmation", :with => "secret"
+      fill_in "user_password", :with => "secretpassword"
+      fill_in "user_password_confirmation", :with => "secretpassword"
       click_button "user_create_button"
       wait_for_ajax
       expect(page).to have_content "is too short (minimum is 3 characters)"
@@ -41,8 +41,8 @@ feature "Users tab" do
       visit users_engine.users_path
       click_button "New User"
       fill_in "user_login", :with => "newuser"
-      fill_in "user_password", :with => "secret"
-      fill_in "user_password_confirmation", :with => "secret"
+      fill_in "user_password", :with => "secretpassword"
+      fill_in "user_password_confirmation", :with => "secretpassword"
       click_button "user_create_button"
       wait_for_ajax
       expect(page).to have_content "can't be blank"
@@ -52,17 +52,17 @@ feature "Users tab" do
       click_button "New User"
       fill_in "user_login", :with => "newuser"
       fill_in "user_name", :with => "fullname"
-      fill_in "user_password_confirmation", :with => "secret"
+      fill_in "user_password_confirmation", :with => "secretpassword"
       click_button "user_create_button"
       wait_for_ajax
-      expect(page).to have_content 'is too short (minimum is 4 characters)'
+      expect(page).to have_content 'is too short (minimum is 8 characters)'
     end
     scenario 'with no password confirmation' do
       visit users_engine.users_path
       click_button "New User"
       fill_in "user_login", :with => "newuser"
       fill_in "user_name", :with => "fullname"
-      fill_in "user_password", :with => "secret"
+      fill_in "user_password", :with => "secretpassword"
       click_button "user_create_button"
       wait_for_ajax
       expect(page).to have_content "doesn't match Password"
@@ -72,7 +72,7 @@ feature "Users tab" do
       click_button "New User"
       fill_in "user_login", :with => "newuser"
       fill_in "user_name", :with => "fullname"
-      fill_in "user_password", :with => "secret"
+      fill_in "user_password", :with => "secretpassword"
       fill_in "user_password_confirmation", :with => "notsecret"
       click_button "user_create_button"
       wait_for_ajax
@@ -81,4 +81,3 @@ feature "Users tab" do
     end
   end
 end
-
