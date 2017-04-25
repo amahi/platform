@@ -17,6 +17,7 @@
 
 require 'tempfile'
 require 'digest/md5'
+require 'amahi_api'
 
 class App < ApplicationRecord
 

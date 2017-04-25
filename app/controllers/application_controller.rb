@@ -17,6 +17,8 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
+require 'set_theme'
+
 class ApplicationController < ActionController::Base
 	require 'ipaddr'
 	protect_from_forgery
