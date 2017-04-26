@@ -15,6 +15,7 @@
 # team at http://www.amahi.org/ under "Contact Us."
 
 require 'platform'
+require 'command'
 
 class Server < ApplicationRecord
 

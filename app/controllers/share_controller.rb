@@ -14,6 +14,8 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
+require 'partition_utils'
+
 class ShareController < ApplicationController
 	before_action :admin_required
 
