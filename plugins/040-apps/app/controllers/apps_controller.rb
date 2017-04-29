@@ -20,7 +20,6 @@ class AppsController < ApplicationController
 
 	# make the JSON calls much more efficient by not invoking these filters
 	skip_filter :before_filter_hook, except: [:index, :installed]
-	skip_filter :prepare_plugins, except: [:index, :installed]
 
 	def index
 		set_title t('apps')
