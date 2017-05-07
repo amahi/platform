@@ -24,7 +24,7 @@ class AppsController < ApplicationController
 
 	def index
 		set_title t('apps')
-		@apps = App.available
+		@apps = App.available.sort_by! {|m| m.name.downcase}
 	end
 
 	def installed
