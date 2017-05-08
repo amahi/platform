@@ -357,6 +357,10 @@ class App < ApplicationRecord
 			env["HDA_DB_PASSWORD"] = db.password
 			env["HDA_DB_HOSTNAME"] = db.hostname
 		end
+		if share
+			env["HDA_SHARE_NAME"] = share.name
+			env["HDA_SHARE_PATH"] = share.path
+		end
 		env
 	end
 
