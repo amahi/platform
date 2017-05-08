@@ -1,0 +1,42 @@
+version: '2'
+services:
+  amahi_mysqldb:
+    image: mysql:latest
+    container_name: amahi_mysqldb
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=test123
+
+  amahi_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: amahi_phpmyadmin
+    volumes:
+      - /sessions
+    ports:
+      - 8090:80
+    environment:
+      - PMA_ARBITRARY=1
+      - TESTSUITE_PASSWORD=test123
+    depends_on:
+      - amahi_mysqldb
+
+  amahi_web:
+    image: vikasy/amahi_platform
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/amahi
+    ports:
+      - "3000:3000"
+    depends_on:
+      - amahi_mysqldb
+    volumes_from:
+      - amahi_box
+    environment:
+      - BUNDLE_PATH=/box
+  
+  amahi_box:
+    image: busybox
+    volumes:
+      - /box
+

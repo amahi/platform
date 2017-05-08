@@ -32,12 +32,14 @@ class AppsController < ApplicationController
 		@apps = App.latest_first
 	end
 
+	# Init app installation after user clicks on install button
 	def install
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
-		App.install identifier unless @app
+		App.install identifier unless @app # Check app/models/app.rb for App.install function
 	end
 
+	# Used to serve ajax calls for showing app installation progress progress
 	def install_progress
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
@@ -51,15 +53,18 @@ class AppsController < ApplicationController
 			@message = App.installation_message @progress
 		end
 		# we may send HTML if there app is installed or it errored out
+		# Installation errors out if @progress>100 and succedes if @progress=100
 		before_action_hook if @progress >= 100
 	end
 
+	# Init app uninstall after user clicks on uninstall button
 	def uninstall
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
 		@app.uninstall if @app
 	end
 
+	# Used to serve ajax calls for showing app uninstallation progress progress
 	def uninstall_progress
 		identifier = params[:id]
 		@app = App.where(:identifier=>identifier).first
