@@ -35,4 +35,8 @@ AmahiHDA::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # To disable asset logging behavior, replacing the gem 'quiet_assets' used in
+  # Rails 4. This is provided by sprockets-rails
+  config.assets.quiet = true
 end

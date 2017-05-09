@@ -17,7 +17,7 @@
 require 'fileutils'
 require 'yaml'
 
-class Plugin < ActiveRecord::Base
+class Plugin < ApplicationRecord
 	attr_accessible :name, :path
 
 	before_destroy :before_destroy

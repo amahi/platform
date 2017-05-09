@@ -18,7 +18,7 @@
 require 'tempfile'
 require 'digest/md5'
 
-class App < ActiveRecord::Base
+class App < ApplicationRecord
 
 	# App and Log storage path is different for both production and development environment.
 	if Rails.env == "production"

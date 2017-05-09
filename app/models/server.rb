@@ -16,7 +16,7 @@
 
 require 'platform'
 
-class Server < ActiveRecord::Base
+class Server < ApplicationRecord
 
 	# CAUTION - this class *assumes* new servers are created
 	# started and enabled at boot time as services!

@@ -17,7 +17,7 @@
 require 'command'
 require 'platform'
 
-class Webapp < ActiveRecord::Base
+class Webapp < ApplicationRecord
 
 	BASE = "/usr/share/hda-platform/webapps/app-%s.conf"
 
