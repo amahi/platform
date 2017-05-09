@@ -15,21 +15,20 @@
         .settings-fields
           p.app-description
             | This app failed to install &nbsp; :-(  &nbsp; We REALLY HATE that.
-            | This could be due to a bug, slow failed network, app bug or other changes to the system.
-          p
-            | Please share the logs (in Linux, via terminal or SSH) using "apaste" as follows:
-              
-            code
-              | tail -600 /var/log/amahi-app-installer.log | apaste
+            | This could be due to a bug, a slow or failed network, an app bug or other changes to the system.
           p
             | If you feel this is a bug we at the Amahi Team would like to hear from you via the &nbsp;
             a href="https://forums.amahi.org" forums
             | &nbsp; the &nbsp;
             a href="https://bugs.amahi.org" bug tracker
             | &nbsp; or the &nbsp;
-            a href="https://talk.amahi.org" IRC support channel
+            a href="http://talk.amahi.org" IRC support channel
             | .
           p
-            | Handle app install failures here
-            a href="https://wiki.amahi.org/index.php/App_Install"  Link to Wiki
+            | It will help if you can share the logs (in Linux, via terminal or SSH) using "apaste" as follows:             
+            code
+              | tail -600 /var/log/amahi-app-installer.log | apaste
+          p
+            | Visit our wiki for further
+            a href="https://wiki.amahi.org/index.php/App_Install" app installation troubleshooting
             | .
