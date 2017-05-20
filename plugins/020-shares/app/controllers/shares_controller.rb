@@ -18,9 +18,9 @@ require "open3"
 
 class SharesController < ApplicationController
 
-	before_filter :admin_required
+	before_action :admin_required
 
-	before_filter :get_share
+	before_action :get_share
 
 	def index
 		@page_title = t('shares')
