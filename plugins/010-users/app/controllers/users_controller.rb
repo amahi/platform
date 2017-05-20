@@ -16,8 +16,8 @@
 
 class UsersController < ApplicationController
 
-	before_filter :admin_required
-	before_filter :no_subtabs
+	before_action :admin_required
+	before_action :no_subtabs
 
 	helper_method :can_i_toggle_admin?
 

@@ -14,7 +14,7 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class CapWriter < ActiveRecord::Base
+class CapWriter < ApplicationRecord
 	belongs_to :user
 	belongs_to :share
 end

@@ -126,7 +126,7 @@ Settings =
 
 
     RemoteCheckbox.initialize
-      selector: "#checkbox_setting_dnsmasq_dhcp, #checkbox_setting_dnsmasq_dns"
+      selector: "#checkbox_setting_dnsmasq_dhcp"
 
 $ ->
   Hosts.initialize()
