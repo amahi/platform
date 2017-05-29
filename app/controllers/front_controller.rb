@@ -14,6 +14,8 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
+require 'amahi_news'
+
 class FrontController < ApplicationController
 
 	before_action :login_required_unless_guest_dashboard

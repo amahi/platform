@@ -2,11 +2,6 @@ require 'spec_helper'
 
 feature "Admin creation" do
 
-	before(:each) do
-		# load the seed to get the minimum env going
-		load "#{Rails.root}/db/seeds.rb"
-	end
-
 	scenario "first login for admin should see the setup page and setup first admin" do
 		(s = Setting.where(:name=>'initialized').first) && s.destroy
 		username = "newuser"

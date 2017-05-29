@@ -10,8 +10,8 @@ development:
   encoding: utf8
   pool: 5
   database: hda_development
-  username: amahihda
-  password: AmahiHDARulez
+  username: root
+  password: 
   host: localhost
   socket: <%= [
      '/var/lib/mysql/mysql.sock', # Fedora.

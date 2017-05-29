@@ -17,8 +17,12 @@
 
 require 'tempfile'
 require 'digest/md5'
+require 'amahi_api'
+require 'command'
+require 'downloader'
+require 'system_utils'
 
-class App < ActiveRecord::Base
+class App < ApplicationRecord
 
 	# App and Log storage path is different for both production and development environment.
 	if Rails.env == "production"
@@ -361,6 +365,10 @@ class App < ActiveRecord::Base
 			env["HDA_DB_USERNAME"] = db.username
 			env["HDA_DB_PASSWORD"] = db.password
 			env["HDA_DB_HOSTNAME"] = db.hostname
+		end
+		if share
+			env["HDA_SHARE_NAME"] = share.name
+			env["HDA_SHARE_PATH"] = share.path
 		end
 		env
 	end

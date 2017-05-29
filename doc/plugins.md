@@ -80,7 +80,7 @@ Add the following line in the controller class of the plugin to make it fullscre
 ```ruby
 class FooController < ApplicationController
 
-	before_filter :admin_required
+	before_action :admin_required
 	layout 'fullscreen'
 	def index
 	##code here
