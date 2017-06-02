@@ -16,6 +16,7 @@
 
 require 'command'
 require 'platform'
+require 'temp_cache'
 
 class Share < ApplicationRecord
 	# include Greyhole

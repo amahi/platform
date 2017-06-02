@@ -143,7 +143,7 @@ require 'rails/engine/commands'
 		inside(root) do
 			create_file "app/controllers/#{plural_name.downcase}_controller.rb", <<-FILE
 class #{plural_name.camelize}Controller < ApplicationController
-	before_filter :admin_required
+	before_action :admin_required
 
 	def index
 		# do your main thing here

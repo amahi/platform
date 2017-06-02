@@ -19,7 +19,7 @@ require 'platform'
 
 class Webapp < ApplicationRecord
 
-	BASE = "/usr/share/hda-platform/webapps/app-%s.conf"
+	BASE = Rails.env.production? ? "/usr/share/hda-platform/webapps/app-%s.conf" : (File.join(Rails.root, "misc/webapps/app-%s.conf"))
 
 	belongs_to :dns_alias, :dependent => :destroy, :class_name => 'DnsAlias'
 	has_many :webapp_aliases, :dependent => :destroy
