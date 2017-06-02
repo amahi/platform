@@ -29,7 +29,7 @@
                 | #{t('version')} #{app.version}
                 = link_to '', app.app_url, :target => '_blank', :class=>'glyphicon glyphicon-plus-sign'
 
-              - if app.forum_url.present?
+              - if app.forum_url?
                 br
                 = link_to "#{t('discussion_forum_for')} #{app.name}", app.forum_url, :target => '_blank'
                 | &raquo;
