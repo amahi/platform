@@ -16,8 +16,6 @@
 
 class Theme < ApplicationRecord
 
-	before_destroy :before_destroy_hook
-
 	attr_accessible :name, :css
 
 	def self.available
@@ -68,9 +66,4 @@ class Theme < ApplicationRecord
 		theme
 	end
 
-	def before_destroy_hook
-		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do
-			FileUtils.rm_rf self.css
-		end
-	end
 end

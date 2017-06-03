@@ -16,10 +16,6 @@
 
 class DnsAlias < ApplicationRecord
 
-	after_create :restart
-	after_destroy :restart
-	after_save :restart
-
 	scope :user_visible,->{where(["address != ?", ''])}
 
 	attr_accessible :name, :address
@@ -27,12 +23,5 @@ class DnsAlias < ApplicationRecord
 	validates :name, presence: true, uniqueness: true, format: { with: /\A[a-z][a-z0-9-]*\z/i }
 	# FIXME: validate this OR simply empty to point to our own address
 	#validates :address, presence: true, uniqueness: true, numericality: { greater_than: 0, less_than: 255 }
-
-	protected
-
-	def restart
-		# FIXME - only do named
-		system "hda-ctl-hup"
-	end
 
 end

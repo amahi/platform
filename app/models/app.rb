@@ -46,8 +46,6 @@ class App < ApplicationRecord
 	scope :in_dashboard,-> {where(:show_in_dashboard => true).installed}
 	scope :latest_first, ->{order('updated_at desc')}
 
-	before_destroy :before_destroy_hook
-
 	validates :name, :presence => true
 	validates :identifier, :presence => true, :uniqueness => true
 
@@ -363,10 +361,6 @@ class App < ApplicationRecord
 			env["HDA_DB_HOSTNAME"] = db.hostname
 		end
 		env
-	end
-
-	def before_destroy_hook
-		# uninstall
 	end
 
 	def mkdir(path)

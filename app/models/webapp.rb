@@ -24,12 +24,6 @@ class Webapp < ApplicationRecord
 	belongs_to :dns_alias, :dependent => :destroy, :class_name => 'DnsAlias'
 	has_many :webapp_aliases, :dependent => :destroy
 
-	before_create :before_create_hook
-	after_destroy :after_destroy_hook
-	after_save :after_save_hook
-
-	before_validation :create_unique_fname, :on => :create
-
 	validates :name, :fname, :path, :presence => true
 
 	attr_accessible :name, :fname, :path, :deletable, :custom_options, :kind
@@ -51,34 +45,6 @@ class Webapp < ApplicationRecord
 	end
 
 	protected
-
-	def before_create_hook
-		# FIXME - a huuuuge amount of checks need to be
-		# done here!
-		self.create_dns_alias(:name => self.name)
-		FileUtils.mkpath(File.join(path, "html"))
-		FileUtils.mkpath(File.join(path, "logs"))
-		write_conf_file
-	end
-
-	def create_unique_fname
-		# ok, maybe not entirely unique, but this should
-		# work fine - FIXME
-		self.fname = "%4d-#{self.name}.conf" % (1000 + Webapp.count)
-	end
-
-	def after_save_hook
-		# FIXME - check and change name, path, etc.
-		write_conf_file
-	end
-
-	def after_destroy_hook
-		c = Command.new
-		c.submit("rm -f /etc/httpd/conf.d/#{fname}") unless fname.blank?
-		c.submit("rm -rf #{path}")
-		c.execute
-		Platform.reload(:apache)
-	end
 
 	def conf_file
 		# clean the path first

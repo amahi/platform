@@ -49,12 +49,6 @@ class User < ApplicationRecord
 
 	#NOTE: validation for password and password_confirmation is set by authlogic
 
-	before_create :before_create_hook
-	before_save :before_save_hook
-	before_destroy :before_destroy_hook
-	after_save :after_save_hook
-	after_create :after_create_hook
-
 	class << self
 		def system_find_name_by_username(username)
 			# return [username, 500] if Yetting.dummy_mode.inspect
@@ -125,23 +119,6 @@ class User < ApplicationRecord
 
 	protected
 
-	def before_create_hook
-		# FIXME: this is an issue with fedora 12 and usernames in lowercase
-		# https://bugzilla.redhat.com/show_bug.cgi?id=550732
-		# http://bugs.amahi.org/issues/show/392
-		self.login = self.login.downcase
-		return if User.system_user_exists? self.login
-		pwd_option = password_option()
-		# FIXME: use a different (programmable) group
-		c = Command.new "useradd -m -g users -c \"#{self.name}\" #{pwd_option} \"#{self.login}\""
-		# FIXME - we should use add_or_passwd_change_samba_user above! DRY
-		unless self.password.nil? && self.password.blank?
-			p = self.password
-			c.submit("(echo '#{p}'; echo '#{p}') | pdbedit -d0 -t -a -u \"#{self.login}\"")
-		end
-		c.execute
-	end
-
 	# provide a password option with a crypted password suitable for the system
 	# NOTE: it's different than the standard crypted password and salt in the user model!
 	def password_option
@@ -150,33 +127,6 @@ class User < ApplicationRecord
 		salt = (salt.sort_by{rand}.join)[0,2]
 		sys_crypted_password = password.crypt(salt)
 		"-p \"#{sys_crypted_password}\""
-	end
-
-	def before_save_hook
-		return unless User.system_user_exists? self.login
-		pwd_option = password_option()
-		c = Command.new("usermod -c \"#{self.name}\" #{pwd_option} \"#{self.login}\"")
-		c.execute
-	end
-
-	def after_save_hook
-		if admin_changed?
-			make_admin
-			Share.push_shares
-		end
-		if public_key_changed?
-			update_pubkey
-		end
-	end
-
-	def after_create_hook
-		Share.create_logon_script(self.login)
-	end
-
-	def before_destroy_hook
-		c = Command.new("pdbedit -d0 -x -u \"#{self.login}\"")
-		c.submit("userdel -r \"#{self.login}\"")
-		c.execute
 	end
 
 	def update_pubkey

@@ -19,6 +19,8 @@ module AmahiHDA
 
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+    config.active_record.observers = :app_observer, :db_observer, :dns_alias_observer, :host_observer, :plugin_observer, :server_observer, :share_observer, :theme_observer, :webapp_alias_observer, :webapp_observer
+
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
