@@ -11,6 +11,7 @@
 #####################################################################
 
 require 'open-uri'
+require 'ping'
 
 class AmahiNews
 

@@ -7,8 +7,6 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.paths << Emoji.images_path
 
 # Precompile additional assets.
-# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += [%w( login.css ), %w( users.css ),
-  %w( shares.css ), %w( disks.css ), %w( apps.css ), %w( network.css ), %w( settings.css )]
-Rails.application.config.assets.precompile += [%w( login.js ), %w( users.js ),
-  %w( shares.js ), %w( disks.js ), %w( apps.js ), %w( network.js ), %w( settings.js )]
+#
+# see https://bugs.amahi.org/issues/2233 for details as to why
+Rails.application.config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/

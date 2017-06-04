@@ -6,8 +6,8 @@ require 'leases'
 
 class NetworkController < ApplicationController
   KIND = Setting::NETWORK
-  before_filter :admin_required
-  before_filter :set_page_title
+  before_action :admin_required
+  before_action :set_page_title
   IP_RANGE = 10
 
   def index

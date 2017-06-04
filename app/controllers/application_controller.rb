@@ -17,6 +17,9 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
+require 'set_theme'
+require 'tab'
+
 class ApplicationController < ActionController::Base
 	require 'ipaddr'
 	protect_from_forgery
@@ -30,7 +33,7 @@ class ApplicationController < ActionController::Base
 
 	def accessed_from_ip
 		unless (IPAddr.new(request.host) rescue nil).nil?
-			flash.now[:warn] =   "Your client device is probably not using your HDA for DNS. We recommend <a href='https://wiki.amahi.org/index.php/Transition_to_Amahi' target='_blank'>the following</a> for best results"
+			flash.now[:warn] = "Your client device is probably not using your HDA for DNS yet. We <a href='https://wiki.amahi.org/index.php/Transition_to_Amahi' target='_blank'>recommend the following</a> for best experience."
 		end
 	end
 
