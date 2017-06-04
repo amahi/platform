@@ -65,5 +65,5 @@ class Theme < ApplicationRecord
 		theme.save! if theme
 		theme
 	end
-
+	Theme.add_observer ThemeObserver.instance
 end

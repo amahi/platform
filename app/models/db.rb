@@ -33,5 +33,5 @@ class Db < ApplicationRecord
 	def hostname
 		"localhost"
 	end
-	
+	Db.add_observer DbObserver.instance
 end

@@ -94,4 +94,5 @@ class Webapp < ApplicationRecord
 		"</Limit>"].join("\n\t\t")
 	end
 
+	Webapp.add_observer WebappObserver.instance
 end

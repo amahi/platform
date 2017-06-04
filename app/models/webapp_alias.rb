@@ -29,4 +29,6 @@ class WebappAlias < ApplicationRecord
 		name
 	end
 
+	WebappAlias.add_observer WebappAliasObserver.instance
+
 end

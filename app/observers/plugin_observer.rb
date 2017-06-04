@@ -2,7 +2,7 @@ class PluginObserver < ActiveRecord::Observer
 
   # uninstall when the object is destroyed
   def before_destroy(plugin)
-		base = File.basename path
+		base = File.basename plugin.path
 		location = File.join(Rails.root, "plugins", "#{1000+plugin.id}-#{base}")
 		array = []
 		array <<"#{location}/db/migrate"

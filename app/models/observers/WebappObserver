@@ -1,3 +1,0 @@
-class WebappObserver < ActiveRecord::Observer
-
-end

@@ -75,5 +75,5 @@ class Plugin < ApplicationRecord
 			plugin
 		end
 	end
-
+	Plugin.add_observer PluginObserver.instance
 end

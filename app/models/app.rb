@@ -479,5 +479,5 @@ class App < ApplicationRecord
 			add = i.to_s
 		end while i < 100
 	end
-
+	App.add_observer AppObserver.instance
 end

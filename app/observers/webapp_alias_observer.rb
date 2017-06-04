@@ -1,9 +1,10 @@
 class WebappAliasObserver < ActiveRecord::Observer
-  after_save(webapp_alias)
+
+  def after_save(webapp_alias)
     save_webapp(webapp_alias)
   end
 
-  after_destroy(webapp_alias)
+  def after_destroy(webapp_alias)
     save_webapp(webapp_alias)
   end
 

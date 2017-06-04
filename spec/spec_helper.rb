@@ -78,6 +78,11 @@ RSpec.configure do |config|
 		Capybara::Screenshot.autosave_on_failure = true
 	end
 
+	#  adds colors to test output
+	config.color = true
+	# makes it possible to use print and puts statements inside the code
+	# and display their output with tests. Useful for quick debugging.
+  config.tty = true
 end
 
 # This is to stub with RSpec in FactoryGirl

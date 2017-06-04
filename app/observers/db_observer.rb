@@ -3,9 +3,10 @@ class DbObserver < ActiveRecord::Observer
   def after_create(db)
     return unless Rails.env.production?
 		c = db.class.connection
-		password = name
-		user = name
-		host = 'localhost'
+		password = db.password
+		user = db.username
+		host = db.hostname
+    name = db.name
 		c.execute "CREATE DATABASE IF NOT EXISTS `#{name}` DEFAULT CHARACTER SET utf8;"
 		# FIXME - why do we have to drop the user first in some cases?!?!!??
 		c.execute("DROP USER '#{user}'@'#{host}';") rescue nil
@@ -15,7 +16,8 @@ class DbObserver < ActiveRecord::Observer
 
   def after_destroy(db)
     return unless Rails.env.production?
-		user = name
+		user = db.username
+    name = db.name
 		filename = Time.now.strftime("#{DB_BACKUPS_DIR}/%y%m%d-%H%M%S-#{name}.sql.bz2")
 		system("mysqldump --add-drop-table -u#{user} -p#{user} #{name} | bzip2 > #{filename}")
 		Dir.chdir(DB_BACKUPS_DIR) do

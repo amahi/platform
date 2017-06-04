@@ -8,10 +8,11 @@ FactoryGirl.define do
 		password_confirmation "secretpassword"
 
 		# we do not want to create users in the system
-		before(:create) do |u|
-			allow(u).to receive(:before_create_hook) { nil }
-			allow(u).to receive(:after_save_hook) { nil }
-		end
+		# .......................................................
+		# not sure how to disable specific methods in an observer
+		# added if staetment in before_create and after_create in
+		# UserObserver to check that the environment is not test
+		# .......................................................
 
 		# an admin user
 		factory :admin do

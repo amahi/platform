@@ -435,4 +435,5 @@ class Share < ApplicationRecord
 		d = d[-15..-1] if d.size > 15
 		d
 	end
+	Share.add_observer ShareObserver.instance
 end

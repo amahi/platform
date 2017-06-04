@@ -116,9 +116,6 @@ class User < ApplicationRecord
 		!crypted_password || crypted_password.blank?
 	end
 
-
-	protected
-
 	# provide a password option with a crypted password suitable for the system
 	# NOTE: it's different than the standard crypted password and salt in the user model!
 	def password_option
@@ -129,11 +126,7 @@ class User < ApplicationRecord
 		"-p \"#{sys_crypted_password}\""
 	end
 
-	def update_pubkey
-		Platform.update_user_pubkey(login, public_key)
-	end
+	protected
 
-	def make_admin
-		Platform.make_admin(login, admin?)
-	end
+	User.add_observer UserObserver.instance
 end

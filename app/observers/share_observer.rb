@@ -1,3 +1,5 @@
+require 'command'
+require 'platform'
 class ShareObserver < ActiveRecord::Observer
 
   def before_save(share)
@@ -22,7 +24,7 @@ class ShareObserver < ActiveRecord::Observer
     if share.guest_writeable_changed?
       share.guest_writeable ? share.make_guest_writeable : share.make_guest_non_writeable
     end
-    if everyone
+    if share.everyone
       users = User.all
       share.users_with_share_access = users
       share.users_with_write_access = users

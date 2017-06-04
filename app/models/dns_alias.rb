@@ -24,4 +24,5 @@ class DnsAlias < ApplicationRecord
 	# FIXME: validate this OR simply empty to point to our own address
 	#validates :address, presence: true, uniqueness: true, numericality: { greater_than: 0, less_than: 255 }
 
+	DnsAlias.add_observer DnsAliasObserver.instance
 end

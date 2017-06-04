@@ -80,12 +80,12 @@ class Server < ApplicationRecord
 		name.gsub /@/, '-'
 	end
 
-protected
-
 	def pid_file
 		tmp = self.pidfile || (self.name + ".pid")
 		(tmp =~ /^\//) ? tmp : File.join(PID_PATH, tmp)
 	end
+
+protected
 
 	def start_cmd
 		Platform.service_start_command(name)
@@ -93,47 +93,6 @@ protected
 
 	def stop_cmd
 		Platform.service_stop_command(name)
-	end
-
-	def enable_cmd
-		Platform.service_enable_command(name)
-	end
-
-	def disable_cmd
-		Platform.service_disable_command(name)
-	end
-
-	def cmd_file
-		"# WARNING - This file was automatically generated on #{Time.now}\n"	\
-		"check process #{self.clean_name} with pidfile \"#{self.pid_file}\"\n"	\
-        	"\tstart program = \"#{self.start_cmd}\"\n"				\
-        	"\tstop  program = \"#{self.stop_cmd}\"\n"
-	end
-
-	def monit_file_add
-		fname = TempCache.unique_filename "server-#{self.name}"
-		open(fname, "w") { |f| f.write cmd_file }
-		c = Command.new "cp -f #{fname} #{File.join(Platform.file_name(:monit_dir), Platform.service_name(self.name))}.conf"
-		c.submit "rm -f #{fname}"
-		c.submit Platform.watchdog_restart_command
-		c.execute
-	end
-
-	def monit_file_remove
-		c = Command.new("rm -f #{File.join(Platform.file_name(:monit_dir), Platform.service_name(name))}.conf")
-		# FIXME - this conrestart does not help on ubuntu, as there is no such thing
-		c.submit Platform.watchdog_restart_command
-		c.execute
-	end
-
-	def service_enable
-		c = Command.new enable_cmd
-		c.execute
-	end
-
-	def service_disable
-		c = Command.new disable_cmd
-		c.execute
 	end
 
 	# estimate the status of the PIDs
@@ -170,5 +129,5 @@ protected
 		end
 		ret
 	end
-
+	Server.add_observer ServerObserver.instance
 end

@@ -23,4 +23,5 @@ class Host < ApplicationRecord
 	# FIXME - this assumes we do not know about the DHCP dynamic ranges
 	validates :address, presence: true, uniqueness: true, numericality: { greater_than: 0, less_than: 255, only_integer: true }
 
+	Host.add_observer HostObserver.instance
 end
