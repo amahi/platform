@@ -1,4 +1,3 @@
-
 FactoryGirl.define do
 
 	factory :user do
@@ -8,11 +7,16 @@ FactoryGirl.define do
 		password_confirmation "secretpassword"
 
 		# we do not want to create users in the system
-		# .......................................................
-		# not sure how to disable specific methods in an observer
-		# added if staetment in before_create and after_create in
-		# UserObserver to check that the environment is not test
-		# .......................................................
+		# so we redefine the before_create and after_create
+		# for the user to nil
+		UserObserver.class_eval do
+			def before_create(user)
+				nil
+			end
+			def after_create(user)
+				nil
+			end
+		end
 
 		# an admin user
 		factory :admin do

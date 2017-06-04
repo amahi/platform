@@ -8,24 +8,20 @@ class UserObserver < ActiveRecord::Observer
     # https://bugzilla.redhat.com/show_bug.cgi?id=550732
     # http://bugs.amahi.org/issues/show/392
 
-    if Rails.env != "test" # we don't want this to execute in the test environment
-      user.login = user.login.downcase
-      return if User.system_user_exists? user.login
-      pwd_option = user.password_option
-      c = Command.new "useradd -m -g users -c \"#{user.name}\" #{pwd_option} \"#{user.login}\""
-      # FIXME - we should use add_or_passwd_change_samba_user above! DRY
-      unless user.password.nil? && user.password.blank?
-        p = user.password
-        c.submit("(echo '#{p}'; echo '#{p}') | pdbedit -d0 -t -a -u \"#{user.login}\"")
-      end
-      c.execute
+    user.login = user.login.downcase
+    return if User.system_user_exists? user.login
+    pwd_option = user.password_option
+    c = Command.new "useradd -m -g users -c \"#{user.name}\" #{pwd_option} \"#{user.login}\""
+    # FIXME - we should use add_or_passwd_change_samba_user above! DRY
+    unless user.password.nil? && user.password.blank?
+      p = user.password
+      c.submit("(echo '#{p}'; echo '#{p}') | pdbedit -d0 -t -a -u \"#{user.login}\"")
     end
+    c.execute
   end
 
   def after_create(user)
-    if Rails.env != "test" # we don't want this to execute in the test environment
-      Share.create_logon_script(user.login)
-    end
+    Share.create_logon_script(user.login)
   end
 
   def before_save(user)
