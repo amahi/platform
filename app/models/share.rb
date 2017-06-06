@@ -36,8 +36,6 @@ class Share < ApplicationRecord
 	has_many :cap_writers, :dependent => :destroy
 	has_many :users_with_write_access, :through => :cap_writers, :source => :user
 
-	attr_accessible :name, :path, :rdonly, :visible, :tags, :extras
-
 	validates :name, presence: true,
 		format: { :with => /\A\S[\S ]+\z/ },
 		length: 1..32,

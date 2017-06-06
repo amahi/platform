@@ -16,8 +16,6 @@
 
 class Theme < ApplicationRecord
 
-	attr_accessible :name, :css
-
 	def self.available
 		tl = all
 		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do

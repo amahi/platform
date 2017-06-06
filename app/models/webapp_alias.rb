@@ -18,7 +18,6 @@ class WebappAlias < ApplicationRecord
 
 	belongs_to :webapp
 
-	attr_accessible :name, :webapp_id
 	validates :name,
 						:presence => true,
 						:uniqueness => true,

@@ -20,13 +20,13 @@ class NetworkController < ApplicationController
 
   def create_host
     sleep 2 if development?
-    @host = Host.create params[:host]
+    @host = Host.create permitted_params(class: :host).permit
     get_hosts
   end
 
   def destroy_host
     sleep 2 if development?
-    @host = Host.find params[:id]
+    @host = Host.find permitted_params(class: :host).permit[:id]
     @host.destroy
     render json: {:status=>:ok,id: @host.id }
   end
@@ -41,13 +41,13 @@ class NetworkController < ApplicationController
 
   def create_dns_alias
     sleep 2 if development?
-    @dns_alias = DnsAlias.create params[:dns_alias]
+    @dns_alias = DnsAlias.create permitted_params(class: :dns_alias).permit
     get_dns_aliases
   end
 
   def destroy_dns_alias
     sleep 2 if development?
-    @dns_alias = DnsAlias.find params[:id]
+    @dns_alias = DnsAlias.find permitted_params(class: :dns_alias).permit[:id]
     @dns_alias.destroy
     render json: { :status=>:ok, id: @dns_alias.id }
   end
@@ -70,9 +70,10 @@ class NetworkController < ApplicationController
 
   def update_dns
     sleep 2 if development?
-    case params[:setting_dns]
+    print(params)
+    case permitted_params.permit[:setting_dns]
     when 'opendns', 'google', 'opennic'
-      @saved = Setting.set("dns", params[:setting_dns], KIND)
+      @saved = Setting.set("dns", permitted_params.permit[:setting_dns], KIND)
       system("hda-ctl-hup")
     else
       @saved = true
@@ -83,8 +84,8 @@ class NetworkController < ApplicationController
   def update_dns_ips
     sleep 2 if development?
     Setting.transaction do
-      @ip_1_saved = DnsIpSetting.set("dns_ip_1", params[:dns_ip_1], KIND)
-      @ip_2_saved = DnsIpSetting.set("dns_ip_2", params[:dns_ip_2], KIND)
+      @ip_1_saved = DnsIpSetting.set("dns_ip_1", permitted_params.permit[:dns_ip_1], KIND)
+      @ip_2_saved = DnsIpSetting.set("dns_ip_2", permitted_params.permit[:dns_ip_2], KIND)
       Setting.set("dns", 'custom', KIND)
       system("hda-ctl-hup")
     end
@@ -97,17 +98,17 @@ class NetworkController < ApplicationController
 
   def update_lease_time
     sleep 2 if development?
-    @saved = params[:lease_time].present? && params[:lease_time].to_i > 0 ? Setting.set("lease_time", params[:lease_time], KIND) : false
+    @saved = permitted_params.permit[:lease_time].present? && permitted_params.permit[:lease_time].to_i > 0 ? Setting.set("lease_time", permitted_params.permit[:lease_time], KIND) : false
     render :json => { :status => @saved ? :ok : :not_acceptable }
     system("hda-ctl-hup")
   end
 
   def update_gateway
     sleep 2 if development?
-    @saved = params[:gateway].to_i > 0 && params[:gateway].to_i < 255 ? Setting.set("gateway", params[:gateway], KIND) : false
+    @saved = permitted_params.permit[:gateway].to_i > 0 && permitted_params.permit[:gateway].to_i < 255 ? Setting.set("gateway", permitted_params.permit[:gateway], KIND) : false
     if @saved
       @net = Setting.get 'net'
-      render json: { status: :ok, data: @net + '.' + params[:gateway] }
+      render json: { status: :ok, data: @net + '.' + permitted_params.permit[:gateway] }
     else
       render json: { status: :not_acceptable }
     end
@@ -115,7 +116,7 @@ class NetworkController < ApplicationController
 
   def toggle_setting
 		sleep 2 if development?
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		s = Setting.find id
 		s.value = (1 - s.value.to_i).to_s
 		if s.save
@@ -127,12 +128,12 @@ class NetworkController < ApplicationController
   end
 
   def update_dhcp_range
-    if(params[:id] == "min")
-      dyn_lo = params[:dyn_lo].to_i
+    if(permitted_params.permit[:id] == "min")
+      dyn_lo = permitted_params.permit[:dyn_lo].to_i
       dyn_hi = Setting.find_by_name("dyn_hi").value.to_i
     else
       dyn_lo = Setting.find_by_name("dyn_lo").value.to_i
-      dyn_hi = params[:dyn_hi].to_i
+      dyn_hi = permitted_params.permit[:dyn_hi].to_i
     end
     @saved = dyn_lo > 0 && dyn_hi < 255 && dyn_hi - dyn_lo > IP_RANGE
     if @saved

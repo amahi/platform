@@ -19,7 +19,7 @@ class ServerController < ApplicationController
 	before_action :admin_required
 
 	def start
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		server = Server.find id
 		server.do_start
 		sleep 1
@@ -27,7 +27,7 @@ class ServerController < ApplicationController
 	end
 
 	def restart
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		server = Server.find id
 		server.do_restart
 		sleep 1
@@ -35,7 +35,7 @@ class ServerController < ApplicationController
 	end
 
 	def stop
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		server = Server.find id
 		server.do_stop
 		sleep 1
@@ -43,14 +43,14 @@ class ServerController < ApplicationController
 	end
 
 	def refresh
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		server = Server.find id
 		sleep 1
 		render :partial => 'status', :locals => { :server => server, :pids => server.pids }
 	end
 
 	def toggle_monitored
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		server = Server.find id
 		server.monitored = ! server.monitored
 		server.save!
@@ -58,7 +58,7 @@ class ServerController < ApplicationController
 	end
 
 	def toggle_start_at_boot
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		server = Server.find id
 		server.start_at_boot = ! server.start_at_boot
 		server.save!

@@ -18,8 +18,6 @@ class Db < ApplicationRecord
 
 	DB_BACKUPS_DIR = "/var/hda/dbs"
 
-  attr_accessible :name
-
 	# stubs for name, password and hostname, in case they need changed later
 
 	def username

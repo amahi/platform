@@ -30,7 +30,7 @@ class SharesController < ApplicationController
 	def create
 		sleep 2 if development?
 		params[:share][:path] = Share.default_full_path(params[:share][:name])
-		@share = Share.new(params[:share])
+		@share = Share.new(permitted_params.permit)
 		@share.save
 		get_shares unless @share.errors.any?
 	end
@@ -70,13 +70,13 @@ class SharesController < ApplicationController
 
 	def toggle_access
 		sleep 2 if development?
-		@saved = @share.toggle_access!(params[:user_id]) if @share
+		@saved = @share.toggle_access!(permitted_params.permit[:user_id]) if @share
 		render_share_access
 	end
 
 	def toggle_write
 		sleep 2 if development?
-		@saved = @share.toggle_write!(params[:user_id]) if @share
+		@saved = @share.toggle_write!(permitted_params.permit[:user_id]) if @share
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
@@ -94,7 +94,7 @@ class SharesController < ApplicationController
 
 	def update_tags
 		sleep 2 if development?
-		@saved = @share.update_tags!(params)
+		@saved = @share.update_tags!(permitted_params.permit)
 	end
 
 	def update_path
@@ -105,10 +105,10 @@ class SharesController < ApplicationController
 
 	def update_workgroup
 		sleep 2 if development?
-		@workgroup = Setting.find(params[:id]) if params[:id]
+		@workgroup = Setting.find(permitted_params.permit[:id]) if permitted_params.permit[:id]
 		if @workgroup && @workgroup.name.eql?("workgroup")
-			params[:share][:value].strip!
-			@saved = @workgroup.update_attributes(params[:share])
+			permitted_params.permit[:value].strip!
+			@saved = @workgroup.update_attributes(permitted_params.permit)
 			@errors = @workgroup.errors.full_messages.join(', ') unless @saved
 			name = @workgroup.value
 			Share.push_shares
@@ -118,13 +118,13 @@ class SharesController < ApplicationController
 
 	def update_extras
 		sleep 2 if development?
-		params[:share] = sanitize_text(params[:share])
-		@saved = @share.update_extras!(params)
+		params[:share] = sanitize_text(permitted_params.permit)
+		@saved = @share.update_extras!(permitted_params.permit)
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
 	def clear_permissions
-		@share = Share.find(params[:id]) if params[:id]
+		@share = Share.find(permitted_params.permit[:id]) if permitted_params.permit[:id]
 		sleep 2 if development?
 		if @share
 			@cleared = @share.clear_permissions
@@ -159,7 +159,7 @@ class SharesController < ApplicationController
 	end
 
 	def get_share
-		@share = Share.find(params[:id]) if params[:id]
+		@share = Share.find(permitted_params.permit[:id]) if permitted_params.permit[:id]
 	rescue
 	end
 

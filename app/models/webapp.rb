@@ -26,8 +26,6 @@ class Webapp < ApplicationRecord
 
 	validates :name, :fname, :path, :presence => true
 
-	attr_accessible :name, :fname, :path, :deletable, :custom_options, :kind
-
 	def full_url
 		"http://#{name}.#{Setting.value_by_name('domain')}"
 	end

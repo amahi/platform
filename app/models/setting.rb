@@ -18,10 +18,8 @@ class Setting < ApplicationRecord
 
 	KINDS = [GENERAL = "general", NETWORK = "network", SHARES = "shares"]
 
-	attr_accessible :name, :value, :kind
-
-	scope :by_name,  lambda{|name| where(:name => name)} 
-	scope :by_kind,  lambda{|kind| where(:kind => kind)} 
+	scope :by_name,  lambda{|name| where(:name => name)}
+	scope :by_kind,  lambda{|kind| where(:kind => kind)}
 
 	scope :general, ->{by_kind(GENERAL)}
 	scope :network, ->{by_kind(NETWORK)}
