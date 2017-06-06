@@ -1,0 +1,32 @@
+tr
+  td  
+  td  
+  td  
+tr
+  td
+    = t 'ip_address'
+    | \:
+  td  
+  td
+    = @net
+    | \.#{rule.ip}
+tr
+  td  
+  td  
+  td  
+tr
+  td
+    = t 'protocol'
+    | \:
+  td  
+  td= fw_prot(rule.protocol)
+tr
+  td  
+  td  
+  td  
+tr
+  td
+    = t 'comment'
+    | \:
+  td  
+  td= h(rule.comment)
