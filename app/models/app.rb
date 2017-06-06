@@ -21,6 +21,8 @@ require 'amahi_api'
 require 'command'
 require 'downloader'
 require 'system_utils'
+require 'container'
+require 'docker'
 
 class App < ApplicationRecord
 
@@ -240,6 +242,7 @@ class App < ApplicationRecord
 				end
 			end
 			self.install_status = 60
+			# Create a virtual host file for this app. For more info refer to app/models/webapp.rb
 			self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
 			if installer.kind == 'plugin'
@@ -248,6 +251,42 @@ class App < ApplicationRecord
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
+
+			# If installer.kind=="PHP5"
+			# Crete a container
+			# Run the install script inside the container
+
+			begin
+				if installer.kind=="PHP5"
+					puts "Started installing PHP5 app"
+					# Find a free port
+					# FIXME: Write a method to pick ports carefully for each app
+					port = 5000 # Using port 5000 for now because its just one app anyway
+					puts webapp_path
+					options = {
+							:image => 'richarvey/nginx-php-fpm:php5',
+							:volume => webapp_path,
+							:port => port
+					}
+
+					# TODO: Create an image for this app
+					# TODO: Handle failure
+					image = Docker::Image.build("from richarvey/nginx-php-fpm:php5")
+					image.tag('repo' => "amahi/#{identifier}", 'force' => true)
+					puts image
+					# TODO: Run the container with options provided
+					# TODO: Handle failure
+					container = Container.new(id=identifier,port=port, options=options)
+					container.create
+				end
+			rescue => e
+				puts e
+				self.install_status = 999
+				Dir.chdir(initial_path)
+				raise e
+			end
+
+
 			if installer.install_script
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
@@ -283,6 +322,7 @@ class App < ApplicationRecord
 	end
 
 	def uninstall_bg
+		# TODO: Write uninstallation case for php5 apps. 
 		app_path = APP_PATH % identifier
 		begin
 			self.install_status = 100
