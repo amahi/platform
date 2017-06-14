@@ -5,7 +5,7 @@ class Container
   def initialize(id=nil, port=nil, options=nil)
     @id = id
     @port = port.to_s
-    @volume = options[:volume]
+    @options = options;
     begin
       @container = Docker::Container.get(@id)
     rescue
@@ -26,7 +26,7 @@ class Container
         'name' => "#{@id}",
         'Image' => 'richarvey/nginx-php-fpm:php5',
         "HostConfig" => {
-            "Binds" => ["#{@volume}/html:/var/www/html" ],
+            "Binds" => ["#{@options[:volume]}/html:/var/www/html" ],
             "PortBindings" =>{ "80/tcp" => [{ "HostPort" => @port }] }
         }
     )
@@ -36,6 +36,14 @@ class Container
     container.start
     return true
   end
+
+  def remove
+    # Use docker api to stop the running container and then remove it.
+    # Functions provided by docker api
+    @container.stop
+    @container.remove
+  end
+
 
   private
   def running?
@@ -62,4 +70,6 @@ class Container
       return false
     end
   end
+
+
 end

@@ -286,7 +286,6 @@ class App < ApplicationRecord
 				raise e
 			end
 
-
 			if installer.install_script
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
@@ -329,6 +328,10 @@ class App < ApplicationRecord
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 80
 			uninstaller = AmahiApi::AppUninstaller.find(identifier)
+			# Have to get the installer as well to get the app kind
+			installer = AmahiApi::AppInstaller.find identifier
+			# FIXME : How to do this with a single api call?
+
 			if uninstaller
 				# execute the uninstall script
 				self.install_status = 60
@@ -349,6 +352,14 @@ class App < ApplicationRecord
 				# FIXME - retry? what if an app is not
 				# live at this time??
 			end
+
+			# FIXME - what happens if this throws an exception?
+			if installer.kind=="PHP5"
+				# This one extra step is required to stop and remove the container
+				container = Container.new(id=identifier)
+				container.remove
+			end
+
 			# FIXME - set to nil to destroy??
 			self.install_status = 0
 			self.destroy
