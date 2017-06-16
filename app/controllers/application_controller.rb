@@ -17,22 +17,31 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
-class ApplicationController < ActionController::Base
+require 'set_theme'
+require 'tab'
 
+class ApplicationController < ActionController::Base
+	require 'ipaddr'
 	protect_from_forgery
 
-	before_filter :before_filter_hook
-	before_filter :initialize_validators
-	before_filter :prepare_plugins
+	before_action :before_action_hook
+	before_action :initialize_validators
+	before_action :prepare_plugins
+	before_action :accessed_from_ip
 
 	helper_method :current_user
 
+	def accessed_from_ip
+		unless (IPAddr.new(request.host) rescue nil).nil?
+			flash.now[:warn] = "Your client device is probably not using your HDA for DNS yet. We <a href='https://wiki.amahi.org/index.php/Transition_to_Amahi' target='_blank'>recommend the following</a> for best experience."
+		end
+	end
 
 	def initialize_validators
 		@validators_string = ''
 	end
 
-	def before_filter_hook
+	def before_action_hook
 		set_locale
 		set_direction
 		check_for_amahi_app

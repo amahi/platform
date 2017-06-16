@@ -239,7 +239,7 @@ no-NB:
       format: 
         precision: 4
         delimiter: ""
-  mysql_database_server: MySQL DB-tjener
+  mariadb_database_server: MariaDB DB-tjener
   edit_and_rate_beta_apps: Rediger og vurder apps
   or_view_each_one_separately_below: eller se hver enkelt nedenfor.
   username: Brukernavn

@@ -11,6 +11,7 @@
 #####################################################################
 
 require 'open-uri'
+require 'ping'
 
 class AmahiNews
 
@@ -20,7 +21,7 @@ class AmahiNews
 			# double protection
 			site = 'blog.amahi.org'
 			if Ping.pingecho(site, 2, 'http')
-				ret = parse_feed("http://#{site}/news/2/", nitems) rescue nil
+				ret = parse_feed("https://#{site}/news/2/", nitems) rescue nil
 			end
 		rescue
 			ret = nil

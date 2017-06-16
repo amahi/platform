@@ -14,7 +14,7 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class Db < ActiveRecord::Base
+class Db < ApplicationRecord
 
 	DB_BACKUPS_DIR = "/var/hda/dbs"
 
@@ -40,6 +40,7 @@ class Db < ActiveRecord::Base
 private
 
 	def after_create_hook
+		return unless Rails.env.production?
 		c = self.class.connection
 		password = name
 		user = name
@@ -52,6 +53,7 @@ private
 	end
 
 	def after_destroy_hook
+		return unless Rails.env.production?
 		user = name
 		filename = Time.now.strftime("#{DB_BACKUPS_DIR}/%y%m%d-%H%M%S-#{name}.sql.bz2")
 		system("mysqldump --add-drop-table -u#{user} -p#{user} #{name} | bzip2 > #{filename}")

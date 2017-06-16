@@ -5,7 +5,7 @@ feature "Shares tab" do
 		@admin = create(:admin)
 		visit root_path
 		fill_in "username", :with => @admin.login
-		fill_in "password", :with => "secret"
+		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
 		visit shares_path
 	end
@@ -20,16 +20,16 @@ feature "Shares tab" do
 			click_button "Create"
 			wait_for_ajax
 			visit shares_path
-			page.should have_content I18n.translate('share')
-			page.should have_content I18n.translate('location')
-			page.should have_content "testShare"
-			page.should have_content '\\hda\testShare'
+			expect(page).to have_content I18n.translate('share')
+			expect(page).to have_content I18n.translate('location')
+			expect(page).to have_content "testShare"
+			expect(page).to have_content '\\hda\testShare'
 		end
 
 		scenario "Cannot create a share with no name" do
 			click_button "Create"
 			wait_for_ajax
-			page.should have_content "can't be blank"
+			expect(page).to have_content "can't be blank"
 		end
 
 		scenario "Cannot create share with a duplicate name" do
@@ -39,7 +39,7 @@ feature "Shares tab" do
 			fill_in "Name", :with => share.name
 			click_button "Create"
 			wait_for_ajax
-			page.should have_content "has already been taken"
+			expect(page).to have_content "has already been taken"
 		end
 	end
 
@@ -52,7 +52,7 @@ feature "Shares tab" do
 			click_link "Delete #{@share.name}"
 			wait_for_ajax
 			visit shares_path
-			page.should_not have_content @share.name
+			expect(page).not_to have_content @share.name
 		end
 	end
 

@@ -115,7 +115,6 @@ Settings =
       $('#update-dns-ips-form #error_explanation').remove()
       unless results["status"] is "ok"
         $errorMessages = $("<div id='error_explanation'><ul></ul></div>")
-        console.log results["ip_1_saved"]
         $errorMessages.find('ul').append('<li>Format of DNS IP Primary is wrong</li>') if results["ip_1_saved"] == false
         $errorMessages.find('ul').append('<li>Format of DNS IP Secondary is wrong</li>') if results["ip_2_saved"] == false
         $('#update-dns-ips-form').prepend $errorMessages
@@ -127,7 +126,7 @@ Settings =
 
 
     RemoteCheckbox.initialize
-      selector: "#checkbox_setting_dnsmasq_dhcp, #checkbox_setting_dnsmasq_dns"
+      selector: "#checkbox_setting_dnsmasq_dhcp"
 
 $ ->
   Hosts.initialize()
@@ -176,3 +175,36 @@ $(document).on "ajax:success", ".edit_gateway_form", (event, results) ->
     $('.gateway_messages').hide()
     element.show('slow')
 
+$(document).ready ->
+  $(".dyn_lo_click_change").click () ->
+    $(this).hide()
+    $(".edit_dyn_lo_form").show()
+
+  $(".dyn-lo-cancel-link").click () ->
+    form = $('.edit_dyn_lo_form').hide()
+    $(".dyn_lo_click_change").show()
+
+$(document).on "ajax:success", ".edit_dyn_lo_form", (event, results) ->
+  element = $(".dyn_lo_click_change")
+  form = $('.edit_dyn_lo_form')
+  if results.status is "ok"
+    element.html($('#dyn_lo_input').val())
+    form.hide('slow')
+    element.show('slow')
+
+$(document).ready ->
+  $(".dyn_hi_click_change").click () ->
+    $(this).hide()
+    $(".edit_dyn_hi_form").show()
+
+  $(".dyn-hi-cancel-link").click () ->
+    form = $('.edit_dyn_hi_form').hide()
+    $(".dyn_hi_click_change").show()
+
+$(document).on "ajax:success", ".edit_dyn_hi_form", (event, results) ->
+  element = $(".dyn_hi_click_change")
+  form = $('.edit_dyn_hi_form')
+  if results.status is "ok"
+    element.html($('#dyn_hi_input').val())
+    form.hide('slow')
+    element.show('slow')

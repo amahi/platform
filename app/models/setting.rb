@@ -14,7 +14,7 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class Setting < ActiveRecord::Base
+class Setting < ApplicationRecord
 
 	KINDS = [GENERAL = "general", NETWORK = "network", SHARES = "shares"]
 

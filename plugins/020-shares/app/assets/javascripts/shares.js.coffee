@@ -52,10 +52,12 @@ Shares =
 			  $(form).parent().find(".workgroup_click_change").show()
 
 		$(document).on "ajax:success", ".edit_workgroup_form",(event, results) ->
+			element = $(".workgroup_click_change")
 			msg = $(this).parent().parent().find(".messages")
 			msg.html results.message
 			setTimeout (-> msg.html ""), 8000
 			if results.status is 'ok'
+				element.html($(".edit_workgroup_form > input").val())
 				$(this).hide('slow')
 				$(this).parent().parent().find(".workgroup_click_change").val results.name
 				$(this).parent().parent().find(".workgroup_click_change").show()
@@ -143,6 +145,10 @@ Shares =
 				checkbox = $(checkbox)
 				share = _this.share(checkbox)
 				share.find(".disk-pool:first").replaceWith data["content"]
+
+		#update size
+		$('.update-size-area').on "ajax:success", (data, results) ->
+			$('.size'+results.id).text( results.size )
 
 		# update extras
 		SmartLinks.initialize

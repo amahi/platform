@@ -6,8 +6,9 @@ require 'leases'
 
 class NetworkController < ApplicationController
   KIND = Setting::NETWORK
-  before_filter :admin_required
-  before_filter :set_page_title
+  before_action :admin_required
+  before_action :set_page_title
+  IP_RANGE = 10
 
   def index
     @leases = use_sample_data? ? SampleData.load('leases') : Leases.all
@@ -62,6 +63,8 @@ class NetworkController < ApplicationController
       @dnsmasq_dns = Setting.find_or_create_by(KIND, 'dnsmasq_dns', '1')
       @lease_time = Setting.get("lease_time") || "14400"
       @gateway = Setting.find_or_create_by(KIND, 'gateway', '1').value
+      @dyn_lo = Setting.find_or_create_by(KIND, 'dyn_lo', '100').value
+      @dyn_hi = Setting.find_or_create_by(KIND, 'dyn_hi', '254').value
     end
   end
 
@@ -121,6 +124,25 @@ class NetworkController < ApplicationController
 		else
 			render json: { status: 'error' }
 		end
+  end
+
+  def update_dhcp_range
+    if(params[:id] == "min")
+      dyn_lo = params[:dyn_lo].to_i
+      dyn_hi = Setting.find_by_name("dyn_hi").value.to_i
+    else
+      dyn_lo = Setting.find_by_name("dyn_lo").value.to_i
+      dyn_hi = params[:dyn_hi].to_i
+    end
+    @saved = dyn_lo > 0 && dyn_hi < 255 && dyn_hi - dyn_lo > IP_RANGE
+    if @saved
+      Setting.set("dyn_lo", dyn_lo, KIND)
+      Setting.set("dyn_hi", dyn_hi, KIND)
+      system("hda-ctl-hup")
+      render json: { status: :ok }
+    else
+      render json: { status: :not_acceptable }
+    end
   end
 
 private

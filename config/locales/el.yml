@@ -352,7 +352,7 @@ el:
   permanently: "μόνιμα"
   automated_install: "Αυτόματη εγκατάσταση"
   not_updating: "Δεν Ενημέρωνεται"
-  mysql_database_server: "Εξυπηρετητής Βάσεων Δεδομένων MySQL"
+  mariadb_database_server: "Εξυπηρετητής Βάσεων Δεδομένων MariaDB"
   router_ip: Router IP
   port_range_ports_are_already_allocated: "Πόρτες σε αυτό το φάσμα είναι ήδη κατανεμημένες"
   new: "Νέος"

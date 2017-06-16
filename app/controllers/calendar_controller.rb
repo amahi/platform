@@ -15,7 +15,7 @@
 # team at http://www.amahi.org/ under "Contact Us."
 
 class CalendarController < ApplicationController
-	before_filter :admin_required
+	before_action :admin_required
 
 	def initialize
 		@page_title = t('calendars')

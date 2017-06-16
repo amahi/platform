@@ -312,7 +312,7 @@ ru:
             few: "Квадриллионов"
             many: "Квадриллионов"
             other: "Квадриллионов"
-  mysql_database_server: "Сервер MySQL DB"
+  mariadb_database_server: "Сервер MariaDB"
   edit_and_rate_beta_apps: "Редактировать и оценить Бета-приложения"
   or_view_each_one_separately_below: "или просмотреть каждый по отдельности ниже."
   username: "Имя пользователя"

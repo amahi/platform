@@ -243,7 +243,7 @@ pl:
     precision: 
       format: 
         delimiter: ""
-  mysql_database_server: MySQL DB Serwer
+  mariadb_database_server: MariaDB Serwer
   edit_and_rate_beta_apps: "Edytuj i oceń Beta apps"
   or_view_each_one_separately_below: ""
   username: "Nazwa użytkownika"

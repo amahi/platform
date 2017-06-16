@@ -14,9 +14,12 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
+require 'amahi_api'
+require 'system_utils'
+
 class DebugController < ApplicationController
 
-	before_filter :admin_required
+	before_action :admin_required
 	layout 'debug'
 
 	def index

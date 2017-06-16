@@ -247,7 +247,7 @@ pt-pt:
     precision: 
       format: 
         delimiter: .
-  mysql_database_server: Servidor BD MySQL
+  mariadb_database_server: Servidor MariaDB
   edit_and_rate_beta_apps: "Editar e avaliar Aplicações Beta"
   or_view_each_one_separately_below: ou veja cada uma separadamente abaixo.
   username: Nome de utilizador

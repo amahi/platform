@@ -4,18 +4,18 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
 class HostsController < ApplicationController
-	before_filter :admin_required
+	before_action :admin_required
 
 	VALID_NAME = Regexp.new "\A[A-Za-z][A-Za-z0-9\-]+\z"
 	VALID_ADDRESS = Regexp.new '\A(|\d(\d?\d?)|\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?))\z'
@@ -27,7 +27,7 @@ class HostsController < ApplicationController
 	def index
 	  @page_title = 'Static IP Addresses'
 	  @hosts = Host.find(:all)
-	  @max = VALID_DHCP_ADDRESS_RANGE-1 
+	  @max = VALID_DHCP_ADDRESS_RANGE-1
 
 	  respond_to do |format|
 	    format.html # index.html.erb

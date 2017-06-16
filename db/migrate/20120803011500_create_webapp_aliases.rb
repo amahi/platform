@@ -3,7 +3,7 @@ class CreateWebappAliases < ActiveRecord::Migration
     create_table "webapp_aliases" do |t|
       t.string   "name"
       t.integer  "webapp_id"
-      t.timestamps
+      t.timestamps null: true
     end
 	end
 end

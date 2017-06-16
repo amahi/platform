@@ -56,7 +56,7 @@ a {
   @include clearfix;
 }
 
-.workgroup_click_change,.name_click_change, .lease_click_change, .gateway_click_change{
+.workgroup_click_change,.name_click_change, .lease_click_change, .gateway_click_change, .dyn_lo_click_change, .dyn_hi_click_change{
   color : #333;
   text-decoration: none;
   border-bottom: 1px dashed;
@@ -1608,6 +1608,15 @@ border-radius: 4px;
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
+
+.alert-warn {
+  color: #FF0000;
+  background-color: #F7BE81;
+  border-color: #FF4000;
+  a {
+    color: #B40404;
+  }
+}
 .alert-danger {
   color: #a94442;
   background-color: #f2dede;
@@ -1623,5 +1632,3 @@ border-radius: 4px;
 	float: left;
 	width: 50%;
 }
-
-

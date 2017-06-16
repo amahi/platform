@@ -248,7 +248,7 @@ nl:
         separator: .
         precision: 2
         delimiter: .
-  mysql_database_server: MySQL DB Server
+  mariadb_database_server: MariaDB Server
   edit_and_rate_beta_apps: Bewerk en stem op Beta toepassingen
   or_view_each_one_separately_below: Of bekijk elk apart onderaan
   username: Gebruikersnaam

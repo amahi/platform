@@ -4,13 +4,13 @@ FactoryGirl.define do
 	factory :user do
 		sequence(:login) { |n| "user#{n}" }
 		sequence(:name) { |n| "Name #{n}" }
-		password "secret"
-		password_confirmation "secret"
+		password "secretpassword"
+		password_confirmation "secretpassword"
 
 		# we do not want to create users in the system
 		before(:create) do |u|
-			u.stub(:before_create_hook) { nil }
-			u.stub(:after_save_hook) { nil }
+			allow(u).to receive(:before_create_hook) { nil }
+			allow(u).to receive(:after_save_hook) { nil }
 		end
 
 		# an admin user

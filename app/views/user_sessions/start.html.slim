@@ -4,7 +4,7 @@
       a[href="http://www.amahi.org/" title="Powered by Amahi"] Amahi Server Login
 
   - flash.each do |name, msg|
-    div[class="alert alert-#{name}"]= msg
+    div[class="alert alert-#{name}"]= msg.html_safe
 
   = form_for @user, :url => initialize_system_path(@user.login) do |f|
     p

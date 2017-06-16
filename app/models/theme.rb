@@ -14,14 +14,14 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-class Theme < ActiveRecord::Base
+class Theme < ApplicationRecord
 
 	before_destroy :before_destroy_hook
 
 	attr_accessible :name, :css
 
 	def self.available
-		tl = all
+		tl = all.to_a
 		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do
 			Dir.glob("*").sort.each do |theme_dir|
 				next if where(:css=>theme_dir).first

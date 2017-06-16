@@ -17,9 +17,14 @@
 
 require 'tempfile'
 require 'digest/md5'
+require 'amahi_api'
+require 'command'
+require 'downloader'
+require 'system_utils'
 
-class App < ActiveRecord::Base
+class App < ApplicationRecord
 
+	# App and Log storage path is different for both production and development environment.
 	if Rails.env == "production"
 		APP_PATH = "/var/hda/apps/%s"
 		WEBAPP_PATH = "/var/hda/web-apps/%s"
@@ -66,6 +71,7 @@ class App < ActiveRecord::Base
 		self.installed = false
 	end
 
+	# Not used anymore. Instead install-app script directly calls install_bg function.
 	def install_start
 		App.transaction do
 			self.installed = false
@@ -79,6 +85,7 @@ class App < ActiveRecord::Base
 		Process.detach(p)
 	end
 
+	# Not used anymore. Instead install-app script directly calls uninstall_bg function.
 	def uninstall_start
 		p = Process.fork do
 			App.transaction { uninstall_bg }
@@ -87,6 +94,9 @@ class App < ActiveRecord::Base
 		Process.detach(p)
 	end
 
+	# This function is used to start background installation of apps
+	# It is important to start installs in background because installation takes long time and a web connection generally
+	# times out after a few seconds.
 	def self.install(identifier)
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app --environment=#{Rails.env} #{identifier} >> #{INSTALLER_LOG} 2>&1 &")
@@ -99,7 +109,7 @@ class App < ActiveRecord::Base
 		end
 	end
 
-
+	# This function is used to start background uninstallation of apps
 	def uninstall
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app -u --environment=#{Rails.env} #{self.identifier} >>  #{INSTALLER_LOG} 2>&1 &")
@@ -177,6 +187,9 @@ class App < ActiveRecord::Base
 		children != []
 	end
 
+	# This function does the background installation. It is generally called by the script/install-app file.
+	# Please don't call this function directly for installation instead use App.install because this function might take a
+	# lot of time to finish and request can time out.
 	def install_bg
 		initial_path = Dir.pwd
 		begin
@@ -352,6 +365,10 @@ class App < ActiveRecord::Base
 			env["HDA_DB_USERNAME"] = db.username
 			env["HDA_DB_PASSWORD"] = db.password
 			env["HDA_DB_HOSTNAME"] = db.hostname
+		end
+		if share
+			env["HDA_SHARE_NAME"] = share.name
+			env["HDA_SHARE_PATH"] = share.path
 		end
 		env
 	end
