@@ -18,8 +18,6 @@ class WebappAlias < ApplicationRecord
 
 	belongs_to :webapp
 
-	after_save :save_webapp
-	after_destroy :save_webapp
 	attr_accessible :name, :webapp_id
 	validates :name,
 						:presence => true,
@@ -31,11 +29,6 @@ class WebappAlias < ApplicationRecord
 		name
 	end
 
-	private
-
-	# save the webapp so that it picks up the server aliases
-	def save_webapp
-		self.webapp && self.webapp.save
-	end
+	WebappAlias.add_observer WebappAliasObserver.instance
 
 end

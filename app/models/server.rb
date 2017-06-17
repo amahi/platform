@@ -4,12 +4,12 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License v3
 # (29 June 2007), as published in the COPYING file.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # file COPYING for more details.
-# 
+#
 # You should have received a copy of the GNU General Public
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
@@ -26,10 +26,6 @@ class Server < ApplicationRecord
 
 	validates_uniqueness_of :name
 	validates_presence_of :name
-
-	before_save  :before_save_hook
-	after_create  :create_hook
-	after_destroy  :destroy_hook
 
 	attr_accessible :name, :pidfile, :comment
 
@@ -83,12 +79,12 @@ class Server < ApplicationRecord
 		name.gsub /@/, '-'
 	end
 
-protected
-
 	def pid_file
 		tmp = self.pidfile || (self.name + ".pid")
 		(tmp =~ /^\//) ? tmp : File.join(PID_PATH, tmp)
 	end
+
+protected
 
 	def start_cmd
 		Platform.service_start_command(name)
@@ -96,73 +92,6 @@ protected
 
 	def stop_cmd
 		Platform.service_stop_command(name)
-	end
-
-	def enable_cmd
-		Platform.service_enable_command(name)
-	end
-
-	def disable_cmd
-		Platform.service_disable_command(name)
-	end
-
-	def destroy_hook
-		c = Command.new("rm -f #{File.join(Platform.file_name(:monit_dir), Platform.service_name(name))}.conf")
-		c.submit Platform.watchdog_restart_command
-		c.submit disable_cmd
-		c.submit stop_cmd
-		c.execute
-	end
-
-	def cmd_file
-		"# WARNING - This file was automatically generated on #{Time.now}\n"	\
-		"check process #{self.clean_name} with pidfile \"#{self.pid_file}\"\n"	\
-        	"\tstart program = \"#{self.start_cmd}\"\n"				\
-        	"\tstop  program = \"#{self.stop_cmd}\"\n"
-	end
-
-	def monit_file_add
-		fname = TempCache.unique_filename "server-#{self.name}"
-		open(fname, "w") { |f| f.write cmd_file }
-		c = Command.new "cp -f #{fname} #{File.join(Platform.file_name(:monit_dir), Platform.service_name(self.name))}.conf"
-		c.submit "rm -f #{fname}"
-		c.submit Platform.watchdog_restart_command
-		c.execute
-	end
-
-	def monit_file_remove
-		c = Command.new("rm -f #{File.join(Platform.file_name(:monit_dir), Platform.service_name(name))}.conf")
-		# FIXME - this conrestart does not help on ubuntu, as there is no such thing
-		c.submit Platform.watchdog_restart_command
-		c.execute
-	end
-
-	def service_enable
-		c = Command.new enable_cmd
-		c.execute
-	end
-
-	def service_disable
-		c = Command.new disable_cmd
-		c.execute
-	end
-
-	def before_save_hook
-		if monitored_changed?
-			monitored ? monit_file_add : monit_file_remove
-			# DEBUG RAILS_DEFAULT_LOGGER.info "* * * MONITORED CHANGED to #{monitored}"
-		end
-		if start_at_boot_changed?
-			start_at_boot ? service_enable : service_disable
-			# DEBUG RAILS_DEFAULT_LOGGER.info "* * * START_AT_BOOT CHANGED to #{start_at_boot}"
-		end
-	end
-
-	def create_hook
-		c = Command.new enable_cmd
-		c.submit start_cmd
-		c.execute
-		monit_file_add
 	end
 
 	# estimate the status of the PIDs
@@ -199,5 +128,5 @@ protected
 		end
 		ret
 	end
-
+	Server.add_observer ServerObserver.instance
 end
