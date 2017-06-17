@@ -50,8 +50,6 @@ class App < ApplicationRecord
 	scope :in_dashboard,-> {where(:show_in_dashboard => true).installed}
 	scope :latest_first, ->{order('updated_at desc')}
 
-	before_destroy :before_destroy_hook
-
 	validates :name, :presence => true
 	validates :identifier, :presence => true, :uniqueness => true
 
@@ -373,10 +371,6 @@ class App < ApplicationRecord
 		env
 	end
 
-	def before_destroy_hook
-		# uninstall
-	end
-
 	def mkdir(path)
 		FileUtils.mkdir_p(path)
 	end
@@ -493,5 +487,5 @@ class App < ApplicationRecord
 			add = i.to_s
 		end while i < 100
 	end
-
+	App.add_observer AppObserver.instance
 end

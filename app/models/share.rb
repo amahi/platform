@@ -36,13 +36,6 @@ class Share < ApplicationRecord
 	has_many :cap_writers, :dependent => :destroy
 	has_many :users_with_write_access, :through => :cap_writers, :source => :user
 
-	before_save :before_save_hook
-	before_destroy :before_destroy_hook
-	after_save :after_save_hook
-	after_destroy :after_destroy_hook
-
-	attr_accessible :name, :path, :rdonly, :visible, :tags, :extras
-
 	validates :name, presence: true,
 		format: { :with => /\A\S[\S ]+\z/ },
 		length: 1..32,
@@ -266,43 +259,6 @@ class Share < ApplicationRecord
 
 	private
 
-	def before_save_hook
-		self.tags = self.tags.split(/\s*,\s*|\s+/).reject {|s| s.empty? }.join(', ').downcase if self.tags_changed?
-		return unless self.path_changed?
-		return if self.path.nil? or self.path.blank?
-		user = User.admins.first.login
-		c = Command.new
-		c.submit("rmdir \"#{self.path_was}\"") unless self.path_was.blank?
-		c.submit("mkdir -p \"#{self.path}\"")
-		c.submit("chown #{user}:users \"#{self.path}\"")
-		c.submit("chmod g+w \"#{self.path}\"")
-		c.execute
-	end
-
-	def after_save_hook
-		if guest_writeable_changed?
-			guest_writeable ? make_guest_writeable : make_guest_non_writeable
-		end
-		if everyone
-			users = User.all
-			self.users_with_share_access = users
-			self.users_with_write_access = users
-		end
-		Share.push_shares
-		# Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
-	end
-
-	def before_destroy_hook
-		c = Command.new("rmdir --ignore-fail-on-non-empty \"#{self.path}\"")
-		c.execute
-	end
-
-	def after_destroy_hook
-		Share.push_shares
-		# sync the gh configuration
-		# Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
-	end
-
 	def self.samba_conf(domain)
 		ret = self.header(domain)
 		Share.all.each do |s|
@@ -478,4 +434,5 @@ class Share < ApplicationRecord
 		d = d[-15..-1] if d.size > 15
 		d
 	end
+	Share.add_observer ShareObserver.instance
 end

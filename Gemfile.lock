@@ -36,6 +36,9 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    action_parameter (0.0.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     actioncable (5.0.2)
       actionpack (= 5.0.2)
       nio4r (>= 1.2, < 3.0)
@@ -154,8 +157,6 @@ GEM
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
-    protected_attributes_continued (1.2.4)
-      activemodel (>= 4.0.1, < 6.0)
     psych (2.2.4)
     public_suffix (2.0.5)
     rack (2.0.1)
@@ -261,6 +262,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_parameter
   actionpack-action_caching
   activeresource!
   authlogic
@@ -275,7 +277,6 @@ DEPENDENCIES
   jquery-ui-rails
   mysql2
   poltergeist
-  protected_attributes_continued
   psych
   rails (~> 5.0.0)
   rails-observers!
@@ -297,4 +298,4 @@ DEPENDENCIES
   yettings
 
 BUNDLED WITH
-   1.14.6
+   1.15.0

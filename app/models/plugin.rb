@@ -20,9 +20,6 @@ require 'command'
 require 'system_utils'
 
 class Plugin < ApplicationRecord
-	attr_accessible :name, :path
-
-	before_destroy :before_destroy
 
 	class << self
 		# installer info
@@ -52,20 +49,6 @@ class Plugin < ApplicationRecord
 		end
 	end
 
-	# uninstall when the object is destroyed
-	def before_destroy
-		base = File.basename path
-		location = File.join(Rails.root, "plugins", "#{1000+id}-#{base}")
-		array = []
-		array <<"#{location}/db/migrate"
-		puts "Reverting the changes to the database made by the plugin"
-		ActiveRecord::Migrator.down(array,nil)
-		FileUtils.rm_rf location
-		# restart the rails stack -- FIXME: this is too much a restart would be best
-		c = Command.new "touch /var/hda/platform/html/tmp/restart.txt"
-		c.execute
-	end
-
 	private
 
 	class << self
@@ -93,5 +76,5 @@ class Plugin < ApplicationRecord
 			plugin
 		end
 	end
-
+	Plugin.add_observer PluginObserver.instance
 end

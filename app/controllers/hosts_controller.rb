@@ -38,7 +38,7 @@ class HostsController < ApplicationController
 	# GET /hosts/1
 	# GET /hosts/1.xml
 	def show
-	  @host = Host.find(params[:id])
+	  @host = Host.find(permitted_params.permit[:id])
 
 	  respond_to do |format|
 	    format.html # show.html.erb
@@ -59,14 +59,14 @@ class HostsController < ApplicationController
 
 	# GET /hosts/1/edit
 	def edit
-	  @host = Host.find(params[:id])
+	  @host = Host.find(permitted_params.permit[:id])
 	  @net = Setting.get 'net'
 	end
 
 	# POST /hosts
 	# POST /hosts.xml
 	def create
-	  @host = Host.new(params[:host])
+	  @host = Host.new(permitted_params.permit)
 	  @domain = Setting.get 'domain'
 
 	  respond_to do |format|
@@ -87,11 +87,11 @@ class HostsController < ApplicationController
 	# PUT /hosts/1
 	# PUT /hosts/1.xml
 	def update
-	  @host = Host.find(params[:id])
+	  @host = Host.find(permitted_params.permit[:id])
 	  @domain = Setting.get 'domain'
 
 	  respond_to do |format|
-	    if @host.update_attributes(params[:host])
+	    if @host.update_attributes(permitted_params.permit)
 	      flash[:notice] = 'Host was successfully updated.'
 	      format.html { redirect_to(@host) }
 	      format.xml  { head :ok }
@@ -105,7 +105,7 @@ class HostsController < ApplicationController
 	# DELETE /hosts/1
 	# DELETE /hosts/1.xml
 	def destroy
-	  @host = Host.find(params[:id])
+	  @host = Host.find(permitted_params.permit[:id])
 	  @host.destroy
 
 	  respond_to do |format|
@@ -115,8 +115,8 @@ class HostsController < ApplicationController
 	end
 
 	def update_address
-		a = Host.find(params[:id])
-		addr = params[:value].strip
+		a = Host.find(permitted_params.permit[:id])
+		addr = permitted_params.permit[:value].strip
 		# FIXME - report errors to the user!
 		unless valid_short_address?(addr)
 			render :text => a.address
@@ -133,8 +133,8 @@ class HostsController < ApplicationController
 	end
 
 	def update_mac
-		a = Host.find(params[:id])
-		mac = params[:value].strip
+		a = Host.find(permitted_params.permit[:id])
+		mac = permitted_params.permit[:value].strip
 		# FIXME - report errors to the user!
 		unless valid_mac?(mac)
 			render :text => a.mac
@@ -151,7 +151,7 @@ class HostsController < ApplicationController
 	end
 
 	def delete
-		a = Host.find params[:id]
+		a = Host.find permitted_params.permit[:id]
 		a.destroy
 		hosts = Host.all
 		@net = Setting.get('net')
@@ -162,7 +162,7 @@ class HostsController < ApplicationController
 
 
 	def new_host_check
-		n = params[:host]
+		n = permitted_params.permit
 		if n.nil? or n.blank?
 			render :partial => 'hosts/name_bad'
 			return
@@ -183,7 +183,7 @@ class HostsController < ApplicationController
 	end
 
 	def new_address_check
-		n = params[:address]
+		n = permitted_params.permit[:address]
 		n = '' if n.nil? or n.blank?
 		n = n.strip
 		unless valid_short_address?(n)
@@ -201,7 +201,7 @@ class HostsController < ApplicationController
 	end
 
 	def new_mac_check
-		n = params[:mac]
+		n = permitted_params.permit[:mac]
 		n = '' if n.nil? or n.blank?
 		n = n.strip
 		if (not (valid_mac?(n))) or (n.size > 18)
@@ -219,14 +219,14 @@ class HostsController < ApplicationController
 	end
 
 	def wake_system
-		@host = Host.find(params[:id])
+		@host = Host.find(permitted_params.permit[:id])
 		if @host
 			system "wol #{@host.mac}"
 		end
 	end
 
 	def wake_mac
-		@mac = params[:mac]
+		@mac = permitted_params.permit[:mac]
 		if @mac
 			system "wol #{@mac}"
 		end

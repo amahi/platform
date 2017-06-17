@@ -28,18 +28,19 @@ class UsersController < ApplicationController
 
 	def create
 		sleep 2 if development?
-		@user = User.new(params[:user])
+		@user = User.new(permitted_params.permit)
 		@user.save
 		@users = User.all_users unless @user.errors.any?
 	end
 
 	def update
 		sleep 2 if development?
-		user = User.find params[:id]
-		name = user.name
+		name = permitted_params.permit[:name]
+		id = permitted_params.permit[:id]
+		user = User.find id
 		if can_i_edit_details?(user)
-			if(params[:name].strip.length !=0)
-				user.name = params[:name]
+			if(name.strip.length !=0)
+				user.name = name
 				user.save!
 				name = user.name
 				errors = user.errors.any? ? user.error.full_messages.join(', ') : false
@@ -49,17 +50,17 @@ class UsersController < ApplicationController
 		else
 			errors = t('dont_have_permissions')
 		end
-		render :json => { :status => errors ? :not_acceptable : :ok , :message => errors ? errors : t('name_changed_successfully') , :name=> name, :id=>params[:id] }
+		render :json => { :status => errors ? :not_acceptable : :ok , :message => errors ? errors : t('name_changed_successfully') , :name=> name, :id=> id }
 	end
 
 	def update_pubkey
 		sleep 2 if development?
-		@user = User.find(params[:id])
+		@user = User.find(permitted_params.permit[:id])
 		# sleep a little to see the spinner working well
 		unless @user
 			render :json => { :status => :not_acceptable }
 		else
-			key = params["public_key_#{params[:id]}"]
+			key = permitted_params.permit["public_key_#{permitted_params.permit[:id]}"]
 			key = nil if key.blank?
 			@user.public_key=key
 			@user.save
@@ -69,7 +70,7 @@ class UsersController < ApplicationController
 
 	def destroy
 		sleep 2 if development?
-		@user = User.find(params[:id])
+		@user = User.find(permitted_params.permit[:id])
 		id = nil
 		if @user && @user != current_user && !@user.admin?
 			@user.destroy
@@ -82,7 +83,7 @@ class UsersController < ApplicationController
 
 	def toggle_admin
 		sleep 2 if development?
-		user = User.find params[:id]
+		user = User.find permitted_params.permit[:id]
 		if can_i_toggle_admin?(user)
 			user.admin = !user.admin
 			user.save!
@@ -93,12 +94,12 @@ class UsersController < ApplicationController
 
 	def update_password
 		sleep 2 if development?
-		@user = User.find(params[:id])
-		if(params[:user][:password].blank? || params[:user][:password_confirmation].blank?)
+		@user = User.find(permitted_params.permit[:id])
+		if(permitted_params.permit[:password].blank? || permitted_params.permit[:password_confirmation].blank?)
 			errors = true
 			error = t("password_cannot_be_blank")
 		else
-			@user.update_attributes(params[:user])
+			@user.update_attributes(permitted_params.permit)
 			errors = @user.errors.any?
 			error = @user.errors.full_messages.join(', ')
 		end
@@ -106,8 +107,8 @@ class UsersController < ApplicationController
 	end
 
 	def update_name
-		@user = User.find(params[:id])
-		@user.update_attributes(params[:user])
+		@user = User.find(permitted_params.permit[:id])
+		@user.update_attributes(permitted_params.permit)
 		render :json => { :status => @user.errors.any? ? :not_acceptable : :ok }
 	end
 

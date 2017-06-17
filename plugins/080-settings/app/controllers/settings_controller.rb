@@ -76,41 +76,41 @@ class SettingsController < ApplicationController
 
   def refresh
     sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
+    @server = Server.find(permitted_params(class: :server).permit[:id])
     render 'server_status'
   end
 
   def start
     sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
+    @server = Server.find(permitted_params(class: :server).permit[:id])
     @server.do_start
     render 'server_status'
   end
 
   def stop
     sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
+    @server = Server.find(permitted_params(class: :server).permit[:id])
     @server.do_stop
     render 'server_status'
   end
 
   def restart
     sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
+    @server = Server.find(permitted_params(class: :server).permit[:id])
     @server.do_restart
     render 'server_status'
   end
 
   def toggle_monitored
     sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
+    @server = Server.find(permitted_params(class: :server).permit[:id])
     @server.toggle!(:monitored)
     render 'server_status'
   end
 
   def toggle_start_at_boot
     sleep 2 if Rails.env.development?
-    @server = Server.find(params[:id])
+    @server = Server.find(permitted_params(class: :server).permit[:id])
     @server.toggle!(:start_at_boot)
     render 'server_status'
   end

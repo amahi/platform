@@ -27,8 +27,8 @@ class ShareController < ApplicationController
 
 	def update_name
 		# FIXME - lots of checks missing!
-		s = Share.find(params[:id])
-		s.name = params[:value]
+		s = Share.find(permitted_params.permit[:id])
+		s.name = permitted_params.permit[:value]
 		s.save
 		s.reload
 		render :text => s.name
@@ -36,18 +36,18 @@ class ShareController < ApplicationController
 
 	def update_extras
 		# FIXME - lots of checks missing!
-		s = Share.find(params[:id])
-		s.extras = params[:value]
+		s = Share.find(permitted_params.permit[:id])
+		s.extras = permitted_params.permit[:value]
 		s.save
 		s.reload
 		extras = s.extras.blank? ? t('add_extra_parameters') : s.extras
-		render :text => extras
+		render :text =permitted_params.permit> extras
 	end
 
 	def update_path
 		# FIXME - lots of checks missing!
-		s = Share.find(params[:id])
-		s.path = params[:value]
+		s = Share.find(permitted_params.permit[:id])
+		s.path = permitted_params.permit[:value]
 		s.save
 		s.reload
 		render :text => s.path
@@ -55,23 +55,23 @@ class ShareController < ApplicationController
 
 	def update_tags
 		# FIXME - lots of checks missing!
-		s = Share.find(params[:id])
-		s.tags = params[:value].downcase
+		s = Share.find(permitted_params.permit[:id])
+		s.tags = permitted_params.permit[:value].downcase
 		s.save
 		s.reload
 		render :text => s.tags
 	end
 
 	def delete
-		s = Share.find params[:id]
+		s = Share.find permitted_params.permit[:id]
 		s.destroy
 		shares = Share.all.sort { |x,y| x.name.casecmp y.name }
 		render :partial => 'share/list', :locals => { :shares => shares }
 	end
 
 	def create
-		nm = params[:name]
-		path = params[:path]
+		nm = permitted_params.permit[:name]
+		path = permitted_params.permit[:path]
 		if nm.nil? or nm.blank? or ((not (valid_name?(nm))) or (nm.size > 32) or (path.size > 64))
 			flash.now[:error] = "Bad share name!"
 			render :text => "", :status => 403
@@ -81,8 +81,8 @@ class ShareController < ApplicationController
 			render :text => "", :status => 401
 			return
 		end
-		v = params[:visible] ? true : false
-		r = params[:readonly] ? true : false
+		v = permitted_params.permit[:visible] ? true : false
+		r = permitted_params.permit[:readonly] ? true : false
 		s = Share.new(:name => nm, :path => path, :visible => v, :rdonly => r)
 		s.save!
 		shares = Share.all.sort { |x,y| x.name.casecmp y.name }
@@ -90,7 +90,7 @@ class ShareController < ApplicationController
 	end
 
 	def new_share_name_check
-		sn = params[:name]
+		sn = permitted_params.permit[:name]
 		if sn.nil? or sn.blank?
 			render :partial => 'share/name_cannot_be_blank'
 			return false
@@ -111,7 +111,7 @@ class ShareController < ApplicationController
 	end
 
 	def new_share_path_check
-		sp = params[:path]
+		sp = permitted_params.permit[:path]
 		if sp.nil? or sp.blank?
 			render :partial => 'share/path_cannot_be_blank'
 			return false
@@ -132,7 +132,7 @@ class ShareController < ApplicationController
 
 	def toggle_everyone
 		begin
-			share = Share.find params[:id]
+			share = Share.find permitted_params.permit[:id]
 			if share.everyone
 				allu = User.all
 				share.users_with_share_access = allu
@@ -153,7 +153,7 @@ class ShareController < ApplicationController
 	end
 
 	def toggle_guest_access
-		share = Share.find params[:id]
+		share = Share.find permitted_params.permit[:id]
 		if share.guest_access
 			share.guest_access = false
 		else
@@ -166,7 +166,7 @@ class ShareController < ApplicationController
 	end
 
 	def toggle_guest_writeable
-		share = Share.find params[:id]
+		share = Share.find permitted_params.permit[:id]
 		share.guest_writeable = ! share.guest_writeable
 		share.save
 		render :partial => 'share/access', :locals => { :share => share }
@@ -174,12 +174,13 @@ class ShareController < ApplicationController
 
 	def toggle_access
 		begin
-			share = Share.find params[:id]
+			share = Share.find permitted_params.permit[:id]
 			if share.everyone
 				render :partial => 'share/access', :locals => { :share => share }
 				return
 			end
-			user = User.find params[:user]
+
+			user = User.find permitted_params.permit[:user_id]
 			if share.users_with_share_access.include? user
 				share.users_with_share_access -= [user]
 			else
@@ -193,12 +194,12 @@ class ShareController < ApplicationController
 
 	def toggle_write
 		begin
-			share = Share.find params[:id]
+			share = Share.find permitted_params.permit[:id]
 			if share.everyone
 				render :partial => 'share/access', :locals => { :share => share }
 				return
 			end
-			user = User.find params[:user]
+			user = User.find permitted_params.permit[:user_id]
 			if share.users_with_write_access.include? user
 				share.users_with_write_access -= [user]
 			else
@@ -212,7 +213,7 @@ class ShareController < ApplicationController
 
 	def toggle_readonly
 		begin
-			share = Share.find params[:id]
+			share = Share.find permitted_params.permit[:id]
 			share.rdonly = ! share.rdonly
 			share.save
 		rescue
@@ -222,7 +223,7 @@ class ShareController < ApplicationController
 
 	def toggle_visible
 		begin
-			share = Share.find params[:id]
+			share = Share.find permitted_params.permit[:id]
 			share.visible = ! share.visible
 			share.save
 		rescue
@@ -232,8 +233,8 @@ class ShareController < ApplicationController
 
 	def toggle_tag
 		begin
-			t = params[:tag]
-			share = Share.find(params[:id])
+			t = permitted_params.permit[:tag]
+			share = Share.find(permitted_params.permit[:id])
 			st = share.tag_list
 			if st.include? t
 				st -= [t]
@@ -249,7 +250,7 @@ class ShareController < ApplicationController
 	end
 
 	def toggle_setting
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		s = Setting.find id
 		s.value = (1 - s.value.to_i).to_s
 		s.save!
@@ -264,9 +265,9 @@ class ShareController < ApplicationController
 	end
 
 	def update_workgroup_name
-		id = params[:id]
+		id = permitted_params.permit[:id]
 		s = Setting.find id
-		v = params[:value]
+		v = permitted_params.permit[:value]
 		if is_valid_domain_name(v) && v != s.value
 			s.value = v
 			s.save
@@ -277,7 +278,7 @@ class ShareController < ApplicationController
 	end
 
 	def toggle_disk_pool_enabled
-		share = Share.find params[:id]
+		share = Share.find permitted_params.permit[:id]
 		if share.disk_pool_copies > 0
 			share.disk_pool_copies = 0
 		else
@@ -289,15 +290,15 @@ class ShareController < ApplicationController
 	end
 
 	def update_disk_pool_copies
-		share = Share.find params[:id]
-		share.disk_pool_copies = params[:value].to_i
+		share = Share.find permitted_params.permit[:id]
+		share.disk_pool_copies = permitted_params.permit[:value].to_i
 		share.save
 		share.reload
 		render :partial => 'share/disk_pool_share', :locals => { :share => share }
 	end
 
 	def toggle_disk_pool_partition
-		path = params[:path]
+		path = permitted_params.permit[:path]
 		part = DiskPoolPartition.where(:path=>path).first
 		if part
 			# was enabled - disable it by deleting it
