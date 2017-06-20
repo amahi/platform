@@ -27,6 +27,7 @@ require 'docker'
 class App < ApplicationRecord
 
 	# App and Log storage path is different for both production and development environment.
+	BASE_PORT = 35000
 	if Rails.env == "production"
 		APP_PATH = "/var/hda/apps/%s"
 		WEBAPP_PATH = "/var/hda/web-apps/%s"
@@ -258,26 +259,14 @@ class App < ApplicationRecord
 
 			begin
 				if installer.kind=="PHP5"
-					puts "Started installing PHP5 app"
-					# Find a free port
-					# FIXME: Write a method to pick ports carefully for each app
-					port = 5000 # Using port 5000 for now because its just one app anyway
-					puts webapp_path
-					options = {
-							:image => 'richarvey/nginx-php-fpm:php5',
-							:volume => webapp_path,
-							:port => port
-					}
+					puts "Started building image for php5 app"
 
 					# TODO: Create an image for this app
 					# TODO: Handle failure
-					image = Docker::Image.build("from richarvey/nginx-php-fpm:php5")
+					# TODO: In future replace the content inside .build with a Dockerfile fetched from server.
+					image = Docker::Image.build("from richarvey/nginx-php-fpm:php5\n WORKDIR /var/www")
 					image.tag('repo' => "amahi/#{identifier}", 'force' => true)
 					puts image
-					# TODO: Run the container with options provided
-					# TODO: Handle failure
-					container = Container.new(id=identifier,port=port, options=options)
-					container.create
 				end
 			rescue => e
 				puts e
@@ -311,6 +300,22 @@ class App < ApplicationRecord
 			# mark it as installed
 			self.installed = true
 			self.save!
+
+			# Once the app is saved in db then we can get its id and start running the container
+			# FIXME: Should this be added as an after create hook? But how would we know if its a php5 kind app?
+			# Should we store an extra field in db to identify the type of application as well?
+			# Or maybe make an api call inside the after_create?
+			if installer.kind=="PHP5"
+				puts "Going to start the container #{self.id}"
+				options = {
+						:image => "amahi/#{identifier}",
+						:volume => webapp_path,
+						:port => BASE_PORT+self.id
+				}
+				container = Container.new(id=identifier, options=options)
+				container.create
+			end
+
 			self.install_status = 100
 			Dir.chdir(initial_path)
 		rescue Exception => e
@@ -356,7 +361,7 @@ class App < ApplicationRecord
 			# FIXME - what happens if this throws an exception?
 			if installer.kind=="PHP5"
 				# This one extra step is required to stop and remove the container
-				container = Container.new(id=identifier)
+				container = Container.new	(id=identifier)
 				container.remove
 			end
 

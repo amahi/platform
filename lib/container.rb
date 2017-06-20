@@ -2,9 +2,8 @@ require 'docker'
 
 class Container
   DOCKER_URL = '/var/run/docker.sock'
-  def initialize(id=nil, port=nil, options=nil)
+  def initialize(id=nil, options=nil)
     @id = id
-    @port = port.to_s
     @options = options;
     begin
       @container = Docker::Container.get(@id)
@@ -14,7 +13,8 @@ class Container
   end
 
   def create
-    image = Docker::Image.get("amahi/#{@id}") rescue nil
+    @image = @options[:image]
+    image = Docker::Image.get(@image) rescue nil
     if image.nil?
       # Image not found and hence could not create the container
       raise "Image amahi/#{@id} not found"
@@ -24,10 +24,10 @@ class Container
     # Create container using build file and volume
     container = Docker::Container.create(
         'name' => "#{@id}",
-        'Image' => 'richarvey/nginx-php-fpm:php5',
+        'Image' => @image,
         "HostConfig" => {
             "Binds" => ["#{@options[:volume]}/html:/var/www/html" ],
-            "PortBindings" =>{ "80/tcp" => [{ "HostPort" => @port }] }
+            "PortBindings" =>{ "80/tcp" => [{ "HostPort" => @options[:port].to_s }] }
         }
     )
     puts "Successfully created the container time to run it"
