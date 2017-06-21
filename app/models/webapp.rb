@@ -33,6 +33,7 @@ class Webapp < ApplicationRecord
 	validates :name, :fname, :path, :presence => true
 
 	attr_accessible :name, :fname, :path, :deletable, :custom_options, :kind
+	attr_accessor :port
 
 	def full_url
 		"http://#{name}.#{Setting.value_by_name('domain')}"
@@ -86,6 +87,8 @@ class Webapp < ApplicationRecord
 		path.gsub!(/\/+/, '/')
 		domain = ''
 		domain = (Setting.get('domain') || '') rescue ''
+		php5_app_id = 0
+
 		self.kind = 'generic' if self.kind.nil?
 		case self.kind.downcase
 		when 'python'
@@ -94,6 +97,8 @@ class Webapp < ApplicationRecord
 			f = File.open(BASE % "ror")
 		when 'custom'
 			f = File.open(BASE % "custom")
+		when 'php5'
+			f = File.open(BASE % "php5")
 		else # generic
 			f = File.open(BASE % "generic")
 		end
@@ -106,7 +111,12 @@ class Webapp < ApplicationRecord
 		conf = conf.gsub(/HDA_DOMAIN/, domain) unless domain.empty?
 		conf = conf.gsub(/HDA_AUTHFILE/, "#{path}/htpasswd")
 		conf = conf.gsub(/HDA_ACCESS/, login_required ? access_conf : '')
-		conf = conf.gsub(/APP_ALIASES/, aliases || '')
+		conf = conf.gsub(/APP_ALIASES/, aliases 	|| '')
+
+		if self.kind=="PHP5"
+			conf = conf.gsub(/APP_PORT/, "#{35000 + self.port}")
+		end
+
 		begin
 			conf = conf.gsub(/APP_CUSTOM_OPTIONS/, custom_options || '')
 		rescue
