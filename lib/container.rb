@@ -27,8 +27,9 @@ class Container
         'Image' => @image,
         "HostConfig" => {
             "Binds" => ["#{@options[:volume]}/html:/var/www/html" ],
-            "PortBindings" =>{ "80/tcp" => [{ "HostPort" => @options[:port].to_s }] }
-        }
+            "PortBindings" =>{ "80/tcp" => [{ "HostPort" => @options[:port].to_s }] },
+            "RestartPolicy"=>{ "Name" => "always"}
+            }
     )
     puts "Successfully created the container time to run it"
     puts container
