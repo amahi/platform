@@ -20,6 +20,7 @@ end
 
 
 # TODO: Error logging in a separate file so that reports can be seen later on.
+# TODO: Check vhost config
 identifier='ldwbkzuq8c'
 reset(identifier)
 (1..10).each do |t|

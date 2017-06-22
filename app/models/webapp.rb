@@ -24,16 +24,23 @@ class Webapp < ApplicationRecord
 	belongs_to :dns_alias, :dependent => :destroy, :class_name => 'DnsAlias'
 	has_many :webapp_aliases, :dependent => :destroy
 
-	before_create :before_create_hook
+	before_create :before_create_hook , :unless => :php5?
 	after_destroy :after_destroy_hook
-	after_save :after_save_hook
-
+	after_save :after_save_hook, :unless => :php5?
 	before_validation :create_unique_fname, :on => :create
 
 	validates :name, :fname, :path, :presence => true
 
 	attr_accessible :name, :fname, :path, :deletable, :custom_options, :kind
 	attr_accessor :port
+
+	def php5?
+		if self.kind=="PHP5"
+			return true
+		else
+			return false
+		end
+	end
 
 	def full_url
 		"http://#{name}.#{Setting.value_by_name('domain')}"
@@ -51,15 +58,27 @@ class Webapp < ApplicationRecord
 		Platform.reload(:apache)
 	end
 
+	def create_php5_vhost
+		puts "Creating vhost for php5 #{self.id}"
+		self.create_dns_alias(:name => self.name)
+		FileUtils.mkpath(File.join(path, "html"))
+		FileUtils.mkpath(File.join(path, "logs"))
+		write_conf_file
+	end
+
 	protected
 
 	def before_create_hook
 		# FIXME - a huuuuge amount of checks need to be
 		# done here!
-		self.create_dns_alias(:name => self.name)
-		FileUtils.mkpath(File.join(path, "html"))
-		FileUtils.mkpath(File.join(path, "logs"))
-		write_conf_file
+		# A very dirty hack to make php5 container app vhosts works.
+		# Most likely will remove it later on.
+		if self.kind!="PHP5"
+			self.create_dns_alias(:name => self.name)
+			FileUtils.mkpath(File.join(path, "html"))
+			FileUtils.mkpath(File.join(path, "logs"))
+			write_conf_file
+		end
 	end
 
 	def create_unique_fname
@@ -87,7 +106,6 @@ class Webapp < ApplicationRecord
 		path.gsub!(/\/+/, '/')
 		domain = ''
 		domain = (Setting.get('domain') || '') rescue ''
-		php5_app_id = 0
 
 		self.kind = 'generic' if self.kind.nil?
 		case self.kind.downcase
@@ -114,7 +132,11 @@ class Webapp < ApplicationRecord
 		conf = conf.gsub(/APP_ALIASES/, aliases 	|| '')
 
 		if self.kind=="PHP5"
-			conf = conf.gsub(/APP_PORT/, "#{35000 + self.port}")
+			php5_app_id = App.where(webapp: self).count > 0 ? App.where(webapp: self)[0].id : 0
+			if php5_app_id==0
+				raise "App not created yet. Unable to assign port to container."
+			end
+			conf = conf.gsub(/APP_PORT/, "#{35000 + php5_app_id}")
 		end
 
 		begin

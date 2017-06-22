@@ -320,7 +320,14 @@ class App < ApplicationRecord
 				container.create
 
 				# We skipped creation of webapp earlier so we will create now since we have obtained an id for our app
-				# self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind, :port=>self.id)
+				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+
+				# Assign the webapp to the existing app for the workaround to work.
+				# later on maybe webapp has_one :app relation migt help
+				self.webapp = webapp
+				self.save!
+				# For php5 kind webapp default webapp creation method is skipped for the workaround to work and hence this.
+				webapp.create_php5_vhost
 			end
 
 			self.install_status = 100
