@@ -375,7 +375,7 @@ class App < ApplicationRecord
 			# FIXME - what happens if this throws an exception?
 			if installer.kind=="PHP5"
 				# This one extra step is required to stop and remove the container
-				container = Container.new	(id=identifier)
+				container = Container.new(id=identifier)
 				container.remove
 			end
 
