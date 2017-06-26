@@ -1,24 +1,28 @@
-- size = @apps.size
-#welcome.nav
-  section#dashboard
-    ul#welcome_apps
-      - if size > 6
-        = render partial: 'pair', collection: @apps[0..(size-1)/2].zip(@apps[(size+1)/2..-1])
-      - else
-        = render partial: 'app', collection: @apps
+.container-fluid
+  .row
+    - size = @apps.size
+    #welcome.nav
+      .col-md-6.col-xs-10.col-xs-offset-0
+        section#dashboard
+          ul#welcome_apps
+            - if size > 6
+              = render partial: 'pair', collection: @apps[0..(size-1)/2].zip(@apps[(size+1)/2..-1])
+            - else
+              = render partial: 'app', collection: @apps
 
-      - if size < 3
-        li
-          = link_to '', apps_engine.root_path, title: t('install_apps'), id: 'install-apps'
+            - if size < 3
+              li
+                = link_to '', apps_engine.root_path, title: t('install_apps'), id: 'install-apps'
 
-  - if @news
-    section#latest_news
-      #ln_inner
-        #ln_header
-          h3
-            = t('latest_news')
-        #ln_content
-          ul
-            = render partial: 'news', collection: @news
-          span#more_news
-            = link_to(t("more_news"), "http://blog.amahi.org/")
+      .col-md-6.col-xs-6
+        - if @news
+          section#latest_news
+            #ln_inner
+              #ln_header
+                h3
+                  = t('latest_news')
+              #ln_content
+                ul
+                  = render partial: 'news', collection: @news
+                span#more_news
+                  = link_to(t("more_news"), "http://blog.amahi.org/")

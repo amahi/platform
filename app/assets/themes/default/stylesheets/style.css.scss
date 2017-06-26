@@ -344,109 +344,109 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
 // --------------------------------------------------
 // HEADER
 // --------------------------------------------------
-
-#header {
-  width: 100%;
-  margin: 0 auto;
-  border-top: 5px solid #000;
-  background: #333;
-  overflow: hidden;
-  height: 59px;
-
-  a {
-    color: #fff;
-    font-weight: bold;
-    font-size: 12px;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  #logo-two, #pagetitle, #search-form { display: none; }
-}
-
-#head-left {
-  float: left;
-  margin-top: 17px;
-  margin-left: 0;
-  display: inline;
-
-  ul { list-style: none; @include clearfix; }
-
-  li { float: left; }
-
-  #searchinput {
-    background: #fff;
-    width: 180px;
-    height: 24px;
-    line-height: 18px;
-    padding: 0 14px;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-    font-size: 12px;
-    color: #666;
-    margin: 0 10px 0 0;
-    float: left;
-    @include border-radius(5px);
-  }
-
-  a {
-    display: inline-block;
-    margin: 0 10px 0 0;
-    padding: 0 9px;
-    height: 24px;
-    line-height: 24px;
-
-    &:hover {
-      text-decoration: none;
-      background: #000;
-      @include border-radius(4px);
-      @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.17));
-    }
-  }
-
-  input[type=submit] {
-    float: left;
-    margin: 0 2px 0 0;
-  }
-}
-
-#head-right {
-  margin-top: 17px;
-  margin-right: 0;
-  float: right;
-  display: inline;
-
-  ul {
-    list-style: none;
-    @include clearfix;
-
-    li {
-      float: left;
-      padding: 0 0 1px 0;
-      margin: 0 0 0 15px;
-
-      &:first-child { display: none; }
-    }
-  }
-
-  a {
-    display: block;
-    padding: 0 9px;
-    height: 24px;
-    line-height: 24px;
-    float: left;
-
-    &:hover {
-      text-decoration: none;
-      background: #000;
-      @include border-radius(4px);
-      @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.17));
-    }
-  }
-}
+//
+// #header {
+//   width: 100%;
+//   margin: 0 auto;
+//   border-top: 5px solid #000;
+//   background: #333;
+//   overflow: hidden;
+//   height: 59px;
+//
+//   a {
+//     color: #fff;
+//     font-weight: bold;
+//     font-size: 12px;
+//     text-decoration: none;
+//
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+//
+//   #logo-two, #pagetitle, #search-form { display: none; }
+// }
+//
+// #head-left {
+//   float: left;
+//   margin-top: 17px;
+//   margin-left: 0;
+//   display: inline;
+//
+//   ul { list-style: none; @include clearfix; }
+//
+//   li { float: left; }
+//
+//   #searchinput {
+//     background: #fff;
+//     width: 180px;
+//     height: 24px;
+//     line-height: 18px;
+//     padding: 0 14px;
+//     border-right: 1px solid #000;
+//     border-bottom: 1px solid #000;
+//     font-size: 12px;
+//     color: #666;
+//     margin: 0 10px 0 0;
+//     float: left;
+//     @include border-radius(5px);
+//   }
+//
+//   a {
+//     display: inline-block;
+//     margin: 0 10px 0 0;
+//     padding: 0 9px;
+//     height: 24px;
+//     line-height: 24px;
+//
+//     &:hover {
+//       text-decoration: none;
+//       background: #000;
+//       @include border-radius(4px);
+//       @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.17));
+//     }
+//   }
+//
+//   input[type=submit] {
+//     float: left;
+//     margin: 0 2px 0 0;
+//   }
+// }
+//
+// #head-right {
+//   margin-top: 17px;
+//   margin-right: 0;
+//   float: right;
+//   display: inline;
+//
+//   ul {
+//     list-style: none;
+//     @include clearfix;
+//
+//     li {
+//       float: left;
+//       padding: 0 0 1px 0;
+//       margin: 0 0 0 15px;
+//
+//       &:first-child { display: none; }
+//     }
+//   }
+//
+//   a {
+//     display: block;
+//     padding: 0 9px;
+//     height: 24px;
+//     line-height: 24px;
+//     float: left;
+//
+//     &:hover {
+//       text-decoration: none;
+//       background: #000;
+//       @include border-radius(4px);
+//       @include box-shadow(0 1px 1px rgba(255, 255, 255, 0.17));
+//     }
+//   }
+// }
 
 // --------------------------------------------------
 // CONTENT
@@ -561,7 +561,7 @@ section#dashboard {
 #latest_news {
   float: right;
   border: 1px solid #e6e6e6;
-  width: 245px;
+  width: 370px;
   @include border-radius(5px);
 
   #ln_header {
@@ -1323,7 +1323,7 @@ td {
   background: #333;
   height: 32px;
   text-align: center;
-  padding: 18px 0 0 0;
+  padding: 18px 0 36px 0;
   color: white;
   clear: both;
 
