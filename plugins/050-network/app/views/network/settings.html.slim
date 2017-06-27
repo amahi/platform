@@ -1,132 +1,93 @@
-.settings-fields.settings-wrap
-  fieldset
-    legend
-      = t 'settings'
-    table.table
-      tr
-        td
-          label = t 'dhcp_server'
-        td
-          = simple_remote_checkbox id: "setting_dnsmasq_dhcp",
-                                   url: network_engine.toggle_setting_path(@dnsmasq_dhcp),
-                                   checked: @dnsmasq_dhcp.set?
+.container-fluid
+  .row
+    .col-md-12.col-xs-6      
+      .settings-fields.settings-wrap
+        fieldset
+          legend
+            = t 'settings'
+          table.table
+            tr
+              td
+                label = t 'dhcp_server'
+              td
+                = simple_remote_checkbox id: "setting_dnsmasq_dhcp",
+                                         url: network_engine.toggle_setting_path(@dnsmasq_dhcp),
+                                         checked: @dnsmasq_dhcp.set?
+            tr
+              td
+                label = t 'dns_server'
+              td
+                = simple_remote_checkbox id: "setting_dnsmasq_dns",
+                                         url: network_engine.toggle_setting_path(@dnsmasq_dns),
+                                         checked: @dnsmasq_dns.set?
+            tr
+              td
+                label= t 'lease_time'
+              td
+                a.lease_click_change = @lease_time
+                = simple_remote_text     :id => "lease_time_area",
+                                         :input_id =>"lease_time",
+                                         :form_id => "lease_form",
+                                         :button_id => "",
+                                         :url => network_engine.update_lease_time_path,
+                                         :label => t("change"),
+                                         :disabled => false,
+                                         :value => @lease_time,
+                                         :name => :lease_time,
+                                         :method => :put,
+                                         :remote => true,
+                                         :input_css_class=>'form-control input-sm',
+                                         :form_css_class => "edit_lease_form form-inline form_hidden",
+                                         :cancel_class => "lease-cancel-link btn btn-primary btn-sm left-margin-10"
+            tr
+              td
+                label = t 'dns_provider'
+              td
+                .dns-area
+                  = simple_remote_select id: "setting_dns",
+                                         name: "setting_dns",
+                                         collection: dns_select_options,
+                                         url: network_engine.update_dns_path,
+                                         selected: @dns.value
+                .dns-ips-area style=(@dns.value == "custom" ? "" : "display: none")
+                  = form_tag network_engine.update_dns_ips_path, remote: true, method: 'put', id: 'update-dns-ips-form', class: 'update-form form-horizontal' do |f|
+                    .control-group
+                      .controls
+                        = text_field_tag "dns_ip_1", @dns_ip_1, placeholder: t('dns_ip_1')
+                    .control-group
+                      .controls
+                        = text_field_tag "dns_ip_2", @dns_ip_2, placeholder: t('dns_ip_2')
+                    .control-group
+                      .controls
+                        = spinner
+                        = submit_tag t('update_dns_ips'), class: 'btnn', disabled: 'disabled'
+            tr
+              td
+                label= t 'gateway'
+              td
+                a.gateway_click_change
+                  =@net +'.'
+                  b.gateway_value = @gateway
+                = simple_remote_text     :id => "gateway_area",
+                                         :input_id =>"gateway_input",
+                                         :form_id => "gateway_form",
+                                         :button_id => "",
+                                         :url => network_engine.update_gateway_path,
+                                         :label => t("change"),
+                                         :disabled => false,
+                                         :value => @gateway,
+                                         :name => :gateway,
+                                         :method => :put,
+                                         :remote => true,
+                                         :input_css_class=>'form-control input-sm',
+                                         :form_css_class => "edit_gateway_form form-inline form_hidden",
+                                         :cancel_class => "gateway-cancel-link btn btn-primary btn-sm left-margin-10"
+                .gateway_messages[style="display:none;"]
+                  =@net +'.'
+                  b.gateway_message_value = @gateway
 
-      tr
-        td
-          label= t 'lease_time'
-        td
-          a.lease_click_change = @lease_time
-          = simple_remote_text     :id => "lease_time_area",
-                                   :input_id =>"lease_time",
-                                   :form_id => "lease_form",
-                                   :button_id => "",
-                                   :url => network_engine.update_lease_time_path,
-                                   :label => t("change"),
-                                   :disabled => false,
-                                   :value => @lease_time,
-                                   :name => :lease_time,
-                                   :method => :put,
-                                   :remote => true,
-                                   :input_css_class=>'form-control input-sm',
-                                   :form_css_class => "edit_lease_form form-inline form_hidden",
-                                   :cancel_class => "lease-cancel-link btn btn-primary btn-sm left-margin-10"
-      tr
-        td
-          label = t 'dns_provider'
-        td
-          .dns-area
-            = simple_remote_select id: "setting_dns",
-                                   name: "setting_dns",
-                                   collection: dns_select_options,
-                                   url: network_engine.update_dns_path,
-                                   selected: @dns.value
-          .dns-ips-area style=(@dns.value == "custom" ? "" : "display: none")
-            = form_tag network_engine.update_dns_ips_path, remote: true, method: 'put', id: 'update-dns-ips-form', class: 'update-form form-horizontal' do |f|
-              .control-group
-                .controls
-                  = text_field_tag "dns_ip_1", @dns_ip_1, placeholder: t('dns_ip_1')
-              .control-group
-                .controls
-                  = text_field_tag "dns_ip_2", @dns_ip_2, placeholder: t('dns_ip_2')
-              .control-group
-                .controls
-                  = spinner
-                  = submit_tag t('update_dns_ips'), class: 'btnn', disabled: 'disabled'
-      tr
-        td
-          label= t 'gateway'
-        td
-          a.gateway_click_change
-            =@net +'.'
-            b.gateway_value = @gateway
-          = simple_remote_text     :id => "gateway_area",
-                                   :input_id =>"gateway_input",
-                                   :form_id => "gateway_form",
-                                   :button_id => "",
-                                   :url => network_engine.update_gateway_path,
-                                   :label => t("change"),
-                                   :disabled => false,
-                                   :value => @gateway,
-                                   :name => :gateway,
-                                   :method => :put,
-                                   :remote => true,
-                                   :input_css_class=>'form-control input-sm',
-                                   :form_css_class => "edit_gateway_form form-inline form_hidden",
-                                   :cancel_class => "gateway-cancel-link btn btn-primary btn-sm left-margin-10"
-          .gateway_messages[style="display:none;"]
-            =@net +'.'
-            b.gateway_message_value = @gateway
-
-.settings-fields.settings-wrap
-  fieldset
-    legend
-      = t 'dynamic_ip_range'
-    table.table
-      tr
-        td
-          label= t 'minimum'
-        td
-
-          a.dyn_lo_click_change
-            b = @dyn_lo
-          = simple_remote_text     :id => "dyn_lo_area",
-                                   :input_id =>"dyn_lo_input",
-                                   :form_id => "dyn_lo_form",
-                                   :button_id => "",
-                                   :url => network_engine.update_dhcp_range_path("min"),
-                                   :label => t("change"),
-                                   :disabled => false,
-                                   :value => @dyn_lo,
-                                   :name => :dyn_lo,
-                                   :method => :put,
-                                   :remote => true,
-                                   :input_css_class=>'form-control input-sm',
-                                   :form_css_class => "edit_dyn_lo_form form-inline form_hidden",
-                                   :cancel_class => "dyn-lo-cancel-link btn btn-primary btn-sm left-margin-10"
-      tr
-        td
-          label= t 'maximum'
-        td
-
-          a.dyn_hi_click_change
-            b = @dyn_hi
-          = simple_remote_text     :id => "dyn_hi_area",
-                                   :input_id =>"dyn_hi_input",
-                                   :form_id => "dyn_hi_form",
-                                   :button_id => "",
-                                   :url => network_engine.update_dhcp_range_path("max"),
-                                   :label => t("change"),
-                                   :disabled => false,
-                                   :value => @dyn_hi,
-                                   :name => :dyn_hi,
-                                   :method => :put,
-                                   :remote => true,
-                                   :input_css_class=>'form-control input-sm',
-                                   :form_css_class => "edit_dyn_hi_form form-inline form_hidden",
-                                   :cancel_class => "dyn-hi-cancel-link btn btn-primary btn-sm left-margin-10"
-
-= content_for(:js_templates) do
-  script[id='updateLeaseTimeTemplate' type='text/x-jquery-tmpl']
-    = render '/js_templates/shares/lease_time_form'
-  script[id='updateGatewayTemplate' type='text/x-jquery-tmpl']
-    = render '/js_templates/shares/gateway_form'
+      = content_for(:js_templates) do
+        script[id='updateLeaseTimeTemplate' type='text/x-jquery-tmpl']
+          = render '/js_templates/shares/lease_time_form'
+        script[id='updateGatewayTemplate' type='text/x-jquery-tmpl']
+          = render '/js_templates/shares/gateway_form'
