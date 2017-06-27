@@ -11,7 +11,7 @@ development:
   pool: 5
   database: hda_development
   username: root
-  password: Lotus@123
+  password: 
   host: localhost
   socket: <%= [
      '/var/lib/mysql/mysql.sock', # Fedora.
