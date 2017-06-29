@@ -1,6 +1,6 @@
 .container-fluid
   .row
-    .col-md-12.col-xs-6
+    .col-md-12.col-sm-8.col-xs-5
       #shares-table
         .settings-table
           .col-md-12.col-xs-12
@@ -9,7 +9,7 @@
                 thead
                   tr
                     th.settings-col1.shares-col1[scope="col"]= t('share')
-                    th.settings-col2.shares-col2[scope="col"]= t('location')
+                    th.set6ings-col2.shares-col2[scope="col"]= t('location')
               = render :partial => 'shares/share', :collection => @shares
             - else
                 h2 =t('there_are_no_shares_created')
