@@ -9,7 +9,7 @@
                 thead
                   tr
                     th.settings-col1.shares-col1[scope="col"]= t('share')
-                    th.set6ings-col2.shares-col2[scope="col"]= t('location')
+                    th.settings-col2.shares-col2[scope="col"]= t('location')
               = render :partial => 'shares/share', :collection => @shares
             - else
                 h2 =t('there_are_no_shares_created')
