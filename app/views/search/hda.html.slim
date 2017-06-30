@@ -1,4 +1,4 @@
-#search-page
+#search-page.col-md-12.col-sm-10.col-xs-5
   #search-types
     ul#search-menu
       li[class="#{active 'hda'}"]
@@ -12,10 +12,10 @@
       li.results
         = t('results_displayed', :count => @results.size)
         '
-        ' | 
+        ' |
         =link_to 50, query: @query, per_page: 50
         '
-        ' | 
+        ' |
         =link_to 100, query: @query, per_page: 100
   #search-results
     .results_list

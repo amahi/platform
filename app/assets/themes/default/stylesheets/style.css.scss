@@ -455,7 +455,7 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
 #content {
   width: 100%;
   background: #fff;
-  overflow: auto;
+  overflow: hidden;
   padding-bottom: 70px;
   @include clearfix;
 }
