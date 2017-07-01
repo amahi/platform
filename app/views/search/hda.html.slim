@@ -26,7 +26,7 @@
         .myhda_empty
           = t 'no_documents_found'
 
-  #search-pagination
+  .container-fluid
     ul.pagination
       - if @page != 1
         li.previous_page =link_to t('previous'), query: @query, page: @page-1, per_page: @rpp
