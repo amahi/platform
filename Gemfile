@@ -38,6 +38,8 @@ gem 'unicorn'
 
 gem 'rb-readline', require: false
 
+gem 'docker-api' # required to create and manage docker containers
+
 group :development do
 	gem 'thin'
 	gem 'thor'
