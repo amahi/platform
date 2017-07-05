@@ -1,0 +1,44 @@
+<% protocol_options = options_for_select [['Both', 'both'], ['TCP', 'tcp'], ['UDP', 'udp']] %>
+<div class="fw-selection" id="port-forward">
+      <table>
+	<tr>
+      	<td></td>
+      	<td><%=t 'firewall_port_forward_message' %></td>
+	</tr>
+	<tr>
+      <td class="fw-label"><%=t 'ip_address' %>:</td>
+      <td class="fw-setting"><big><%= @net %>.</big><%= text_field_tag :ip, "", :size => 3, :maxlength => 3 %>
+      	<span style="display: none" id="ip_messages" class="messages"></span></td>
+	</tr>
+	<tr>
+      <td class="fw-label"><%=t 'protocol' %>:</td>
+      <td class="fw-setting"><%= select_tag :protocol, protocol_options %>
+      	<span style="display: none" id="protocol_messages" class="messages"></span>
+      </td>
+	</tr>
+	<tr>
+      <td class="fw-label"><%=t 'port_range' %>:</td>
+      <td class="fw-setting"><%= text_field_tag :range_lo, '', :size => 4, :maxlength => 5 %> -
+      <%= text_field_tag :range_hi, '', :size => 4, :maxlength => 5 %>
+      	<span style="display: none" id="range_messages" class="messages"></span></td>
+	</tr>
+	<tr>
+      <td class="fw-label"><%=t 'comment' %>:</td>
+      <td class="fw-setting"><%= text_field_tag :comment, '', :size => 25, :maxlength => 40 %></td>
+	</tr>
+      </table>
+</div>
+<%= render :partial => 'firewall/new_button' %>
+
+<%= observe_field 'range_hi', :frequency => 0.5,
+			:url => { :controller => 'firewall', :action => 'check_port_range_hi' },
+			:with => "'range_hi=' + encodeURIComponent(value) + '&range_lo=' + encodeURIComponent($('range_lo').value)" %>
+
+<%= observe_field 'range_lo', :frequency => 0.5,
+			:url => { :controller => 'firewall', :action => 'check_port_range_lo' },
+			:with => "'range_lo=' + encodeURIComponent(value) + '&range_hi=' + encodeURIComponent($('range_hi').value)" %>
+
+<%= observe_field 'ip', :frequency => 0.5,
+			:url => { :controller => 'firewall', :action => 'check_ip' },
+			:with => "'ip=' + encodeURIComponent(value)" %>
+

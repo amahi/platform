@@ -1,0 +1,22 @@
+<div id="fw-rules-table">
+	<div class="settings-table">
+		<% if fw_rules.size > 0 %>
+			<table class="settings">
+			  <thead>
+			  <tr>
+			    <th scope="col" class="settings-col1 fw-rules-col1"><%=t 'rule' %></th>
+			    <th scope="col" class="settings-col2 fw-rules-col2"><%=t 'state' %></th>
+			    <th scope="col" class="settings-col3 fw-rules-col3"><%=t 'details' %></th>
+			  </tr>
+			</thead>
+			<tbody style="display: none"><tr><td></td></tr></tbody>
+			</table>
+			<%= render :partial => 'firewall/rule', :collection => fw_rules %>
+		<% else %>
+			<div align="center">
+				<h2><%=t 'there_are_no_firewall_rules_defined' %></h2>
+			</div>
+		<% end %>
+	</div>
+</div>
+

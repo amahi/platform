@@ -1,0 +1,29 @@
+<div class="fw-selection" id="url-filter">
+      <table>
+	<tr>
+      	<td></td>
+		<td>
+			<%=t 'firewall_url_filter_message' %>
+		</td>
+	</tr>
+	<tr>
+	      <td class="fw-label"><%=t 'url_to_filter' %>:</td>
+	      <td class="fw-setting"><%= text_field_tag :url, '', :size => 30, :maxlength => 30 %>
+		<span style="display: none" id="url_messages" class="messages"></span>
+	      </td>
+	</tr>
+	<tr>
+      	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	      <td class="fw-label"><%=t 'comment' %>:</td>
+	      <td class="fw-setting"><%= text_field_tag :comment, '', :size => 25, :maxlength => 40 %></td>
+	</tr>
+      </table>
+</div>
+<%= render :partial => 'firewall/new_button' %>
+
+<%= observe_field 'url', :frequency => 0.5,
+			:url => { :controller => 'firewall', :action => 'check_url' },
+			:with => "'url=' + encodeURIComponent(value)" %>
+
