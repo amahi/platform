@@ -194,6 +194,12 @@ class App < ApplicationRecord
 	# Please don't call this function directly for installation instead use App.install because this function might take a
 	# lot of time to finish and request can time out.
 	def install_bg
+		# Change permissions of docker.sock file
+		if Rails.env=="production"
+			cmd = Command.new("chmod 666 /var/run/docker.sock")
+			cmd.execute
+		end
+
 		initial_path = Dir.pwd
 		begin
 			# see the install_message method for the meaning of the messages
@@ -340,7 +346,11 @@ class App < ApplicationRecord
 	end
 
 	def uninstall_bg
-		# TODO: Write uninstallation case for php5 apps. 
+		if Rails.env=="production"
+			cmd = Command.new("chmod 666 /var/run/docker.sock")
+			cmd.execute
+		end
+		# TODO: Write uninstallation case for php5 apps.
 		app_path = APP_PATH % identifier
 		begin
 			self.install_status = 100

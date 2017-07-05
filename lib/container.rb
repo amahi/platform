@@ -26,9 +26,9 @@ class Container
         'name' => "#{@id}",
         'Image' => @image,
         "HostConfig" => {
-            "Binds" => ["#{@options[:volume]}/html:/var/www/html" ],
+            "Binds" => ["#{@options[:volume]}/html:/var/www/html" , "/var/lib/mysql/mysql.sock:/var/run/mysql.sock"],
             "PortBindings" =>{ "80/tcp" => [{ "HostPort" => @options[:port].to_s }] },
-            "RestartPolicy"=>{ "Name" => "always"}
+            "RestartPolicy"=>{ "Name" => "unless-stopped"}
             }
     )
     puts "Successfully created the container time to run it"
