@@ -99,6 +99,7 @@ legend {
     width: inherit;
     font-size: inherit;
     line-height: initial;
+    border-bottom:none;
     }
 
 legend b, fieldset b, .editable {
@@ -1395,7 +1396,7 @@ td {
   display: block;
   width: 19px;
   height: 19px;
-  margin-top: 8px;
+  margin-top: -3px;
 }
 
 .user_admin {
