@@ -267,23 +267,24 @@ class App < ApplicationRecord
 			# Crete a container
 			# Run the install script inside the container
 
-			begin
-				if installer.kind=="PHP5"
-					puts "Started building image for php5 app"
-
-					# TODO: Create an image for this app
-					# TODO: Handle failure
-					# TODO: In future replace the content inside .build with a Dockerfile fetched from server.
-					image = Docker::Image.build("from richarvey/nginx-php-fpm:php5\n WORKDIR /var/www")
-					image.tag('repo' => "amahi/#{identifier}", 'force' => true)
-					puts image
-				end
-			rescue => e
-				puts e
-				self.install_status = 999
-				Dir.chdir(initial_path)
-				raise e
-			end
+			# Let install script handle the job of image creation
+			# begin
+			# 	if installer.kind=="PHP5"
+			# 		puts "Started building image for php5 app"
+      #
+			# 		# TODO: Create an image for this app
+			# 		# TODO: Handle failure
+			# 		# TODO: In future replace the content inside .build with a Dockerfile fetched from server.
+			# 		image = Docker::Image.build("from richarvey/nginx-php-fpm:php5\n WORKDIR /var/www")
+			# 		image.tag('repo' => "amahi/#{identifier}", 'force' => true)
+			# 		puts image
+			# 	end
+			# rescue => e
+			# 	puts e
+			# 	self.install_status = 999
+			# 	Dir.chdir(initial_path)
+			# 	raise e
+			# end
 
 			if installer.install_script
 				# if there is an installer script, run it
