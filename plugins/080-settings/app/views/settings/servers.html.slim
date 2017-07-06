@@ -1,21 +1,24 @@
-- if @servers.length < 1
-    h2
-      = t 'there_are_no_servers_available'
-- else
-  - if @message
-      h2
-        = @message
-  div.settings-table.server-page
-    table.settings.table
-      thead
-        tr
-          th scope="col" class="settings-col1 servers-col1"
-            = t 'servers'
-          th scope="col" class="settings-col2 servers-col2"
-            = t 'state'
-      tbody style="display: none"
-        tr
-          td
-          td
+.container-fluid
+  .row
+    .col-md-12.col-sm-10.col-xs-5
+      - if @servers.length < 1
+          h2
+            = t 'there_are_no_servers_available'
+      - else
+        - if @message
+            h2
+              = @message
+        div.settings-table.server-page
+          table.settings.table
+            thead
+              tr
+                th scope="col" class="settings-col1 servers-col1"
+                  = t 'servers'
+                th scope="col" class="settings-col2 servers-col2"
+                  = t 'state'
+            tbody style="display: none"
+              tr
+                td
+                td
 
-    = render partial: 'server', collection: @servers
+          = render partial: 'server', collection: @servers

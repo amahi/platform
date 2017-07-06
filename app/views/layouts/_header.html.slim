@@ -1,18 +1,18 @@
-header#header
-  .inside
-    nav#head-left
-      h1#logo-two
-        = link_to t('amahi'), root_url
-      ul
+nav.navbar.navbar-inverse
+  .container
+    .navbar-header
+      button.navbar-toggle data-target="#myNavbar" data-toggle="collapse" type="button"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
         li.first= link_to t('home'), root_path
         li.last
-          = render 'layouts/searchform'
-    nav#head-right
-      ul
-        li
-          a href=root_path
-            = t('home')
-            i.icon-home
+          div style="padding-top:7px"
+            = render 'layouts/searchform'
+            
+      ul.nav.navbar-nav.navbar-right
         - if current_user_is_admin?
           li
             a href=users_engine.root_path
@@ -31,6 +31,3 @@ header#header
             a href='https://wiki.amahi.org/index.php/Help' target='_blank'
               = t('help')
               i.icon-apps
-
-    h2#pagetitle = page_title
-

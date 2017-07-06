@@ -16,3 +16,4 @@
 //= require lib/debug
 //= require bootstrap.min
 //= require spinner
+//= require bootstrap-sprockets

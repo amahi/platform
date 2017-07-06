@@ -21,7 +21,7 @@ class Theme < ApplicationRecord
 	attr_accessible :name, :css
 
 	def self.available
-		tl = all
+		tl = all.to_a
 		Dir.chdir(File.join(Rails.root, THEME_ROOT)) do
 			Dir.glob("*").sort.each do |theme_dir|
 				next if where(:css=>theme_dir).first
