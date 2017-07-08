@@ -293,7 +293,7 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
 #systems-result {
   overflow: hidden;
   text-align: center;
-  padding: 15px 345px 15px 0;
+  padding: 15px 290px 15px 0;
 }
 
 .btn-system {
@@ -718,7 +718,7 @@ nav.preftab {
 
           a {
             line-height: 28px;
-            padding: 0 20px;
+            padding: 0 27px;
             font-weight: normal;
             color: #b3b3b3;
           }
@@ -765,6 +765,7 @@ nav.preftab {
         td {
           border-bottom: 0;
 
+
           &:first-child { @include border-radius(0 0 0 5px); }
           &:last-child { @include border-radius(0 0 5px 0); }
         }
@@ -772,6 +773,9 @@ nav.preftab {
     }
   }
 }
+.table th, .table td {
+     border-top: none !important;
+ }
 
 .apptable {
   border-collapse: collapse;
@@ -804,7 +808,7 @@ table.settings, .settings th {
   border-collapse: collapse;
   height: 40px;
   line-height: 40px;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -855,6 +859,7 @@ table.settings {
 	tbody td {
 		height: 35px;
 		border-bottom: 1px solid #e8e8e8;
+    text-align: center;
 	}
 	.odd td {
 		background: #f8f8f8;
@@ -893,7 +898,7 @@ table.apptable {
   @include background-gradient(#fcfcfc, #f7f7f7);
 
   td {
-    text-align: left;
+    text-align: center;
     a {
       color: #000;
       font-size: 13px;

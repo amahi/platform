@@ -9,9 +9,9 @@ nav.navbar.navbar-inverse
       ul.nav.navbar-nav
         li.first= link_to t('home'), root_path
         li.last
-          div style="padding-top:7px"
+          div style="padding:7px 10px"
             = render 'layouts/searchform'
-            
+
       ul.nav.navbar-nav.navbar-right
         - if current_user_is_admin?
           li
