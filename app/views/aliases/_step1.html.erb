@@ -1,0 +1,65 @@
+<div align="center" style="padding: 0% 10% 5% 10%">
+<fieldset>
+<legend>&nbsp; <%=t 'new_dns_alias' %> &nbsp;</legend>
+
+	<% form_for(newalias) do |f| %>
+	  <%= f.error_messages %>
+
+		<table>
+		  <tr><td>&nbsp;</td></tr>
+		  <tr>
+			<td><%= f.label :alias %>: </td>
+			<td>&nbsp;</td>
+			<td><%= f.text_field :alias, :size => 18, :maxlength => 32 %></td>
+			<td><div style="display: none" id="alias_messages" class="messages"></div></td>
+		  </tr>
+		  <tr><td>&nbsp;</td><td>&nbsp;</td><td colspan=2><small><br/><%=t 'the_alias_name_you_input_will_be_added' %></strong></small></td></tr>
+		  <tr><td>&nbsp;</td></tr>
+		  <tr>
+			<td><%=t 'ip_address' %>:</td>
+			<td>&nbsp;</td>
+			<td><%= f.text_field :address, :size => 18, :maxlength => 32 %></td>
+			<td><div style="display: none" id="address_messages" class="messages"></div></td>
+		  </tr>
+		  <tr><td>&nbsp;</td><td>&nbsp;</td><td colspan=2><small><br/><%=t 'the_ip_address_can_be' %>:
+			<ul>	<li><%=t 'a_single_number_0_254_to_point_to_a_given_machine' %></li>
+				<li><%=t 'an_external_ip_address_to_make_the_alias' %></li>
+			</ul>
+			</small></td></tr>
+		  <tr><td>&nbsp;</td></tr>
+		  <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>
+			<%= link_to t('cancel'), update_page { |page|
+					page.hide 'new-alias-step1'
+					page.show 'new-alias-to-step1'
+					page[:alias_alias].value = ""
+					page[:alias_address].value = ""
+					page.select(".messages").each do |item|
+						page.send 'replace_html', item, ""
+					end
+					page[:alias_address].disabled = true
+					page[:alias_create_button].disabled = true
+				 } %>
+			&nbsp;&nbsp;
+			<%= submit_to_remote "create_alias", " #{t('create_alias')} &raquo; ",
+					:url =>  { :controller => 'aliases', :action => 'create' },
+					:html =>  { :id => "alias_create_button", :disabled => true },
+					:failure =>  "alert('HTTP Error ' + request.status + '!')",
+					:update => { :success => "aliases", :failure => "create_aliases_error_msgs" } %>
+			</td>
+		  </tr>
+		</table>
+	<% end %>
+</fieldset>
+</div>
+
+<div style="display: none" id="create_aliases_error_msgs"></div>
+
+<%= observe_field 'alias_alias', :frequency => 0.5,
+			:url => { :controller => 'aliases', :action => 'new_alias_check' },
+			:with => "'alias=' + encodeURIComponent(value)" %>
+<%= observe_field 'alias_address', :frequency => 0.5,
+			:url => { :controller => 'aliases', :action => 'new_address_check' },
+			:with => "'address=' + encodeURIComponent(value)" %>
+
+<br />

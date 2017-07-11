@@ -1,0 +1,23 @@
+<br />
+
+<%= button_to " #{t 'new_firewall_rule'} &raquo; ", update_page { |page|
+   	page.hide 'new-firewall-to-step1'
+   	page.show 'new-firewall-step1'
+   }, :id => "new-firewall-to-step1" %>
+
+<div align="center">
+	<div id="new-firewall-box" >
+		<div id="firewall-new">
+
+   		<br />
+   		<%= error_messages_for :firewall %>
+   		<br />
+
+   		<% form_for :firewall, :id => "firewall-new", :url => { :controller => 'firewall', :action => 'create' } do |f| -%>
+   			<div style="display: none" id="new-firewall-step1">
+   				<%= render :partial => "firewall/step1", :locals => { :form => f } -%>
+   			</div>
+		<% end %>
+		</div>
+	</div>
+</div>

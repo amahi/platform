@@ -1,0 +1,36 @@
+<%
+	rule_type_options = options_for_select [[t('please_select'), 'select'], [t('port_filtering'), 'port_filter'], [t('ip_filtering'), 'ip_filter'], [t('mac_filtering'), 'mac_filter'], [t('port_forwarding'), 'port_forward'], [t('url_filtering'), 'url_filter']]
+%>
+
+<div align="center" style="padding: 0% 10% 5% 10%">
+<fieldset>
+<legend>&nbsp; <%=t 'new_firewall_rule' %> &nbsp;</legend>
+
+		<div class="fw-box">
+		  <div>
+			<table>
+			<tr>
+				<td class="fw-label"><%=t 'rule_type' %>:</td>
+				<td class="fw-setting"><%= select_tag :rule, rule_type_options,
+						:onchange => remote_function(
+							:url => { :controller => 'firewall', :action => 'new_rule_type' },
+							:before => "Element.show('spinner-select')",
+							:success => "Element.hide('spinner-select')",
+							:with => "'rule=' + escape(value)",
+							:update => 'fw_fields') %>
+						<%= spinner "select" %>
+				</td>
+			</tr>
+			<tr> <td>&nbsp;</td><td></td> </tr>
+			</table>
+		  </div>
+		  <div id="fw_fields">
+			<%= render :partial => 'firewall/empty_select' %>
+		  </div>
+		</div>
+</fieldset>
+</div>
+
+<div style="display: none" id="create_firewall_error_msgs"></div>
+
+<br />

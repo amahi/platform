@@ -1,0 +1,66 @@
+<%
+	name = fw_rule_type(rule.kind)
+	active = fw_rule_state(rule)
+	details = fw_rule_details(rule)
+	delete_icon = delete_icon "Delete Rule"
+	uid = rule.id.to_s
+	toggler = update_page do |page|
+			row = "fw_rule_row_" + uid
+			info = "fw_rule_info_" + uid
+			page.toggle info
+			page[row].toggle_class_name "rules-row-open"
+		  end
+%>
+
+<table id="fw_rule_row_<%= uid %>" class="settings stretchtoggle" onmouseup="<%= h toggler %>">
+    <tr>
+	<td class="settings-col1 fw-rules-col1">
+		<%= link_to(name, '') %>
+	</td>
+	<td class="settings-col2 fw-rules-col2" id="fw_rule_state_<%= uid %>">
+		<%= active ? "Active" : "Inactive" %>
+	</td>
+	<td class="settings-col3 fw-rules-col3" id="fw_rule_detail_<%= uid %>">
+		<%= rule.comment.blank? ? details : rule.comment %>
+	</td>
+    </tr>
+</table>
+
+<div class="settings-stretcher" id="fw_rule_info_<%= uid %>" style="display:none;">
+	<div class="fw_rule-manage">
+		<fieldset>
+		<legend>&nbsp; <%=t 'rule' %> &nbsp;</legend>
+			<div class="settings-actions">
+				<%= spinner uid %>
+				<%=t 'delete_this_rule' %> &nbsp;
+				<%= link_to_remote(delete_icon,
+					:update => 'fw-rules-table',
+					:confirm => t('are_you_sure_you_want_to_delete_the_static_ip', :name => name),
+					:before => "Element.show('spinner-#{uid}')",
+					:success => "Element.hide('spinner-#{uid}')",
+					:url => { :controller => 'firewall', :action => 'delete', :id => uid }) %>
+			</div>
+			<div class="settings-fields">
+				<table>
+				<tr>
+					<td><%=t 'rule_type' %>:</td><td> &nbsp; </td>
+					<td><%= fw_rule_type(rule.kind) %></td>
+				</tr>
+				<% case rule.kind 
+				   when 'port_filter' %>
+					<%= render :partial => 'firewall/details_port_filter', :locals => { :rule => rule } %>
+				<% when 'ip_filter' %>
+					<%= render :partial => 'firewall/details_ip_filter', :locals => { :rule => rule } %>
+				<% when 'mac_filter' %>
+					<%= render :partial => 'firewall/details_mac_filter', :locals => { :rule => rule } %>
+				<% when 'url_filter' %>
+					<%= render :partial => 'firewall/details_url_filter', :locals => { :rule => rule } %>
+				<% when 'port_forward' %>
+					<%= render :partial => 'firewall/details_port_forward', :locals => { :rule => rule } %>
+				<% end %>
+				</table>
+			</div>
+		</fieldset>
+	</div>
+</div>
+

@@ -1,0 +1,21 @@
+<div id="hosts-table">
+	<div class="settings-table">
+		<% if hosts.size > 0 %>
+			<table class="settings">
+			  <thead>
+			  <tr>
+			    <th scope="col" class="settings-col1 hosts-col1"><%=t 'name' %></th>
+			    <th scope="col" class="settings-col2 hosts-col2"><%=t 'static_ip_address' %></th>
+			  </tr>
+			</thead>
+			<tbody style="display: none"><tr><td></td></tr></tbody>
+			</table>
+			<%= render :partial => 'hosts/one', :collection => hosts %>
+		<% else %>
+			<div align="center">
+				<h2><%=t 'there_are_no_static_ips_defined' %></h2>
+			</div>
+		<% end %>
+	</div>
+</div>
+

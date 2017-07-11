@@ -21,10 +21,13 @@ require 'amahi_api'
 require 'command'
 require 'downloader'
 require 'system_utils'
+require 'container'
+require 'docker'
 
 class App < ApplicationRecord
 
 	# App and Log storage path is different for both production and development environment.
+	BASE_PORT = 35000
 	if Rails.env == "production"
 		APP_PATH = "/var/hda/apps/%s"
 		WEBAPP_PATH = "/var/hda/web-apps/%s"
@@ -191,6 +194,12 @@ class App < ApplicationRecord
 	# Please don't call this function directly for installation instead use App.install because this function might take a
 	# lot of time to finish and request can time out.
 	def install_bg
+		# Change permissions of docker.sock file
+		if Rails.env=="production"
+			cmd = Command.new("chmod 666 /var/run/docker.sock")
+			cmd.execute
+		end
+
 		initial_path = Dir.pwd
 		begin
 			# see the install_message method for the meaning of the messages
@@ -240,7 +249,12 @@ class App < ApplicationRecord
 				end
 			end
 			self.install_status = 60
-			self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+			# Create a virtual host file for this app. For more info refer to app/models/webapp.rb
+
+			# workaround : Skip creation of webapp for php5 kind apps
+			if installer.kind!="PHP5"
+				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+			end
 			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
 			if installer.kind == 'plugin'
 				self.plugin = Plugin.install(installer, downloaded_file)
@@ -248,6 +262,30 @@ class App < ApplicationRecord
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
+
+			# If installer.kind=="PHP5"
+			# Crete a container
+			# Run the install script inside the container
+
+			# Let install script handle the job of image creation
+			# begin
+			# 	if installer.kind=="PHP5"
+			# 		puts "Started building image for php5 app"
+      #
+			# 		# TODO: Create an image for this app
+			# 		# TODO: Handle failure
+			# 		# TODO: In future replace the content inside .build with a Dockerfile fetched from server.
+			# 		image = Docker::Image.build("from richarvey/nginx-php-fpm:php5\n WORKDIR /var/www")
+			# 		image.tag('repo' => "amahi/#{identifier}", 'force' => true)
+			# 		puts image
+			# 	end
+			# rescue => e
+			# 	puts e
+			# 	self.install_status = 999
+			# 	Dir.chdir(initial_path)
+			# 	raise e
+			# end
+
 			if installer.install_script
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
@@ -273,6 +311,32 @@ class App < ApplicationRecord
 			# mark it as installed
 			self.installed = true
 			self.save!
+
+			# Once the app is saved in db then we can get its id and start running the container
+			# FIXME: Should this be added as an after create hook? But how would we know if its a php5 kind app?
+			# Should we store an extra field in db to identify the type of application as well?
+			# Or maybe make an api call inside the after_create?
+			if installer.kind=="PHP5"
+				puts "Going to start the container #{self.id}"
+				options = {
+						:image => "amahi/#{identifier}",
+						:volume => webapp_path,
+						:port => BASE_PORT+self.id
+				}
+				container = Container.new(id=identifier, options=options)
+				container.create
+
+				# We skipped creation of webapp earlier so we will create now since we have obtained an id for our app
+				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+
+				# Assign the webapp to the existing app for the workaround to work.
+				# later on maybe webapp has_one :app relation migt help
+				self.webapp = webapp
+				self.save!
+				# For php5 kind webapp default webapp creation method is skipped for the workaround to work and hence this.
+				webapp.create_php5_vhost
+			end
+
 			self.install_status = 100
 			Dir.chdir(initial_path)
 		rescue Exception => e
@@ -283,12 +347,21 @@ class App < ApplicationRecord
 	end
 
 	def uninstall_bg
+		if Rails.env=="production"
+			cmd = Command.new("chmod 666 /var/run/docker.sock")
+			cmd.execute
+		end
+		# TODO: Write uninstallation case for php5 apps.
 		app_path = APP_PATH % identifier
 		begin
 			self.install_status = 100
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 80
 			uninstaller = AmahiApi::AppUninstaller.find(identifier)
+			# Have to get the installer as well to get the app kind
+			installer = AmahiApi::AppInstaller.find identifier
+			# FIXME : How to do this with a single api call?
+
 			if uninstaller
 				# execute the uninstall script
 				self.install_status = 60
@@ -309,6 +382,14 @@ class App < ApplicationRecord
 				# FIXME - retry? what if an app is not
 				# live at this time??
 			end
+
+			# FIXME - what happens if this throws an exception?
+			if installer.kind=="PHP5"
+				# This one extra step is required to stop and remove the container
+				container = Container.new(id=identifier)
+				container.remove
+			end
+
 			# FIXME - set to nil to destroy??
 			self.install_status = 0
 			self.destroy

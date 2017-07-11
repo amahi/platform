@@ -1,0 +1,76 @@
+<div align="center" style="padding: 0% 10% 5% 10%">
+<fieldset>
+<legend>&nbsp; <%=t 'new_static_ip' %> &nbsp;</legend>
+
+	<% form_for(newhost) do |f| %>
+	  <%= f.error_messages %>
+
+		<table>
+		  <tr><td>&nbsp;</td></tr>
+		  <tr>
+			<td><%=t 'name' %>:</td>
+			<td>&nbsp;</td>
+			<td><%= f.text_field :host, :size => 12, :maxlength => 32 %> .<%= @domain %></td>
+			<td><div style="display: none" id="host_messages" class="messages"></div></td>
+		  </tr>
+		  <tr><td>&nbsp;</td><td>&nbsp;</td><td colspan=2><small><br/><%=t 'the_name_you_input_above_will_be_added_to_the_DNS_server' %></strong></small></td></tr>
+		  <tr><td>&nbsp;</td></tr>
+		  <tr>
+			<td><%=t 'ip_address' %>:</td>
+			<td>&nbsp;</td>
+			<td><%= @net %>.<%= f.text_field :address, :size => 4, :maxlength => 5 %></td>
+			<td><div style="display: none" id="address_messages" class="messages"></div></td>
+		  </tr>
+		  <tr><td>&nbsp;</td><td>&nbsp;</td><td colspan=2><small><br/>
+			<%=t('this_ip_address_will_always_be_statically_associated_to_the_mac_address', :max => @max) %>
+			</small></td></tr>
+		  <tr><td>&nbsp;</td></tr>
+		  <tr>
+			<td><%=t 'mac_address' %>:</td>
+			<td>&nbsp;</td>
+			<td><%= f.text_field :mac, :size => 17, :maxlength => 22 %></td>
+			<td><div style="display: none" id="mac_messages" class="messages"></div></td>
+		  </tr>
+		  <tr><td>&nbsp;</td><td>&nbsp;</td><td colspan=2><small><br/><%=t 'mac_address_of_the_device' %></small></td></tr>
+		  <tr><td>&nbsp;</td></tr>
+		  <tr>
+		    <td>&nbsp;</td><td>&nbsp;</td><td>
+			<%= link_to t('cancel'), update_page { |page|
+					page.hide 'new-host-step1'
+					page.show 'new-host-to-step1'
+					page[:host_host].value = ""
+					page[:host_address].value = ""
+					page[:host_mac].value = ""
+					page.select(".messages").each do |item|
+						page.send 'replace_html', item, ""
+					end
+					page[:host_address].disabled = true
+					page[:host_mac].disabled = true
+					page[:host_create_button].disabled = true
+				 } %>
+			&nbsp;&nbsp;
+			<%= submit_to_remote "create_host", " #{t('create')} &raquo; ",
+					:url =>  { :controller => 'hosts', :action => 'create' },
+					:html =>  { :id => "host_create_button", :disabled => true },
+					:failure =>  "alert('HTTP Error ' + request.status + '!')",
+					:update => { :success => "hosts", :failure => "create_hosts_error_msgs" } %>
+			</td>
+		  </tr>
+		</table>
+	<% end %>
+</fieldset>
+</div>
+
+<div style="display: none" id="create_hosts_error_msgs"></div>
+
+<%= observe_field 'host_host', :frequency => 0.5,
+			:url => { :controller => 'hosts', :action => 'new_host_check' },
+			:with => "'host=' + encodeURIComponent(value)" %>
+<%= observe_field 'host_address', :frequency => 0.5,
+			:url => { :controller => 'hosts', :action => 'new_address_check' },
+			:with => "'address=' + encodeURIComponent(value)" %>
+<%= observe_field 'host_mac', :frequency => 0.5,
+			:url => { :controller => 'hosts', :action => 'new_mac_check' },
+			:with => "'mac=' + encodeURIComponent(value)" %>
+
+<br />
