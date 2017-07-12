@@ -41,7 +41,7 @@ class Container
   def remove
     # Use docker api to stop the running container and then remove it.
     # Functions provided by docker api
-    @container.kill
+    @container.stop
     @container.remove
   end
 
