@@ -1,10 +1,14 @@
 require 'docker'
 
+# A wrapper class for containers.
+# Internally it uses docker-api gem to perform different tasks
 class Container
   DOCKER_URL = '/var/run/docker.sock'
   def initialize(id=nil, options=nil)
     @id = id
     @options = options;
+    # Check if container already exists and is running
+    # If not running then make @container nil
     begin
       @container = Docker::Container.get(@id)
     rescue
@@ -12,6 +16,7 @@ class Container
     end
   end
 
+  # This function runs the container with the options provided
   def create
     @image = @options[:image]
     image = Docker::Image.get(@image) rescue nil
@@ -20,7 +25,6 @@ class Container
       raise "Image amahi/#{@id} not found"
     end
 
-    # TODO: Take care of the restart policies
     # Create container using build file and volume
     container = Docker::Container.create(
         'name' => "#{@id}",
