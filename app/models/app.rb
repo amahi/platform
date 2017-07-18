@@ -60,7 +60,9 @@ class App < ApplicationRecord
 
 	def initialize(identifier, app=nil)
 		super()
-		if app.nil?
+		if Rails.env=="test"
+			app = FAKE_APP
+		elsif app.nil?
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			app = AmahiApi::App.find(identifier)
 		end
@@ -206,7 +208,12 @@ class App < ApplicationRecord
 			self.install_status = 0
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 10
-			installer = AmahiApi::AppInstaller.find identifier
+			if Rails.env=="test"
+				installer = FAKE_APP_INSTALLER
+			else
+				installer = AmahiApi::AppInstaller.find identifier
+			end
+
 			self.install_status = 20
 			self.install_app_deps installer if installer.app_dependencies
 			self.install_status = 30
@@ -249,12 +256,7 @@ class App < ApplicationRecord
 				end
 			end
 			self.install_status = 60
-			# Create a virtual host file for this app. For more info refer to app/models/webapp.rb
 
-			# workaround : Skip creation of webapp for php5 kind apps
-			if installer.kind!="PHP5"
-				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-			end
 			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
 			if installer.kind == 'plugin'
 				self.plugin = Plugin.install(installer, downloaded_file)
@@ -262,29 +264,6 @@ class App < ApplicationRecord
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
-
-			# If installer.kind=="PHP5"
-			# Crete a container
-			# Run the install script inside the container
-
-			# Let install script handle the job of image creation
-			# begin
-			# 	if installer.kind=="PHP5"
-			# 		puts "Started building image for php5 app"
-      #
-			# 		# TODO: Create an image for this app
-			# 		# TODO: Handle failure
-			# 		# TODO: In future replace the content inside .build with a Dockerfile fetched from server.
-			# 		image = Docker::Image.build("from richarvey/nginx-php-fpm:php5\n WORKDIR /var/www")
-			# 		image.tag('repo' => "amahi/#{identifier}", 'force' => true)
-			# 		puts image
-			# 	end
-			# rescue => e
-			# 	puts e
-			# 	self.install_status = 999
-			# 	Dir.chdir(initial_path)
-			# 	raise e
-			# end
 
 			if installer.install_script
 				# if there is an installer script, run it
@@ -326,15 +305,13 @@ class App < ApplicationRecord
 				container = Container.new(id=identifier, options=options)
 				container.create
 
-				# We skipped creation of webapp earlier so we will create now since we have obtained an id for our app
+				# Create web app for php5 kind app
 				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-
-				# Assign the webapp to the existing app for the workaround to work.
-				# later on maybe webapp has_one :app relation migt help
 				self.webapp = webapp
-				self.save!
-				# For php5 kind webapp default webapp creation method is skipped for the workaround to work and hence this.
+				self.save! # Get
 				webapp.create_php5_vhost
+			else
+				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			end
 
 			self.install_status = 100
