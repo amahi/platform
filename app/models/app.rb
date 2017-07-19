@@ -21,8 +21,6 @@ require 'amahi_api'
 require 'command'
 require 'downloader'
 require 'system_utils'
-require 'container'
-require 'docker'
 
 class App < ApplicationRecord
 
@@ -48,6 +46,7 @@ class App < ApplicationRecord
 	has_many :app_dependencies, :dependent => :destroy
 	has_many :children, :class_name => "AppDependency", :foreign_key => 'dependency_id'
 	has_many :dependencies, :through => :app_dependencies
+	has_many :containers, :dependent => :destroy
 
 	scope :installed, ->{where(:installed => true)}
 	scope :in_dashboard,-> {where(:show_in_dashboard => true).installed}
@@ -302,10 +301,7 @@ class App < ApplicationRecord
 						:volume => webapp_path,
 						:port => BASE_PORT+self.id
 				}
-				container = Container.new(id=identifier, options=options)
-				container.create
-
-				# Create web app for php5 kind app
+				self.containers.create(:name=>identifier, :options=>options)
 				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 				self.webapp = webapp
 				self.save! # Get
@@ -337,7 +333,6 @@ class App < ApplicationRecord
 			uninstaller = AmahiApi::AppUninstaller.find(identifier)
 			# Have to get the installer as well to get the app kind
 			installer = AmahiApi::AppInstaller.find identifier
-			# FIXME : How to do this with a single api call?
 
 			if uninstaller
 				# execute the uninstall script
