@@ -10,6 +10,15 @@ describe App do
       # TODO: Add test case for config files if needed
       #puts app.webapp.get_conf
     end
+
+    it "uninstalls correctly" do
+      app = App.new("normal") # Create an app object
+      app.install_bg # Install it
+      expect(App.count).to eq(1)
+
+      app.uninstall_bg
+      expect(App.count).to eq(0)
+    end
   end
 
   describe "php5 installation" do
@@ -17,14 +26,30 @@ describe App do
       app = App.new('php5')
       app.install_bg
       expect(App.count).to eq(1)
+      expect(Container.count).to eq(1)
     end
+
+    it "uninstalls correctly" do
+      app = App.new("php5") # Create an app object
+      app.install_bg # Install it
+      expect(App.count).to eq(1)
+
+      app.uninstall_bg
+      expect(App.count).to eq(0)
+      expect(Container.count).to eq(0)
+    end
+
 
     # Clean up to remove the container
     after(:each) do
       puts "removing container"
-      c = Docker::Container.get('php5')
-      c.stop
-      c.remove
+      begin
+        c = Docker::Container.get('php5')
+        c.stop
+        c.remove
+      rescue Exception=>e
+        puts e
+      end
     end
   end
 

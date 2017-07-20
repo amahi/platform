@@ -52,7 +52,7 @@ class Container < ApplicationRecord
 
   def remove_container
     if self.running?
-      docker_container = self.get_docker_container
+      docker_container = get_docker_container
       docker_container.stop
       docker_container.remove
     end

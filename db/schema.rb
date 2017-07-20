@@ -139,9 +139,10 @@ ActiveRecord::Schema.define(version: 20170720052348) do
   create_table "testapps", force: :cascade do |t|
     t.string   "identifier"
     t.text     "installer"
+    t.text     "uninstaller"
     t.text     "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "themes", force: :cascade do |t|

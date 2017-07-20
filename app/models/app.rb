@@ -290,14 +290,11 @@ class App < ApplicationRecord
 			self.installed = true
 			self.save!
 
-			# Once the app is saved in db then we can get its id and start running the container
-			# FIXME: Should this be added as an after create hook? But how would we know if its a php5 kind app?
-			# Should we store an extra field in db to identify the type of application as well?
-			# Or maybe make an api call inside the after_create?
+
 			if installer.kind=="PHP5"
 				puts "Going to start the container #{self.id}"
 				options = {
-						:image => "amahi/#{identifier}",
+						:image => "amahi/#{identifier.to_s}",
 						:volume => webapp_path,
 						:port => BASE_PORT+self.id
 				}
@@ -330,9 +327,20 @@ class App < ApplicationRecord
 			self.install_status = 100
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 80
-			uninstaller = AmahiApi::AppUninstaller.find(identifier)
-			# Have to get the installer as well to get the app kind
-			installer = AmahiApi::AppInstaller.find identifier
+
+			if Rails.env=="test"
+				begin
+					uninstaller = Testapp.where(:identifier=>identifier)[0].get_uninstaller
+				rescue
+					uninstaller = false
+				end
+				installer = Testapp.where(:identifier=>identifier)[0].get_installer
+			else
+				uninstaller = AmahiApi::AppUninstaller.find(identifier)
+				# Have to get the installer as well to get the app kind
+				installer = AmahiApi::AppInstaller.find identifier
+			end
+
 
 			if uninstaller
 				# execute the uninstall script
@@ -353,13 +361,6 @@ class App < ApplicationRecord
 				# else
 				# FIXME - retry? what if an app is not
 				# live at this time??
-			end
-
-			# FIXME - what happens if this throws an exception?
-			if installer.kind=="PHP5"
-				# This one extra step is required to stop and remove the container
-				container = Container.new(id=identifier)
-				container.remove
 			end
 
 			# FIXME - set to nil to destroy??

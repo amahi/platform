@@ -67,17 +67,22 @@ if Rails.env=="test"
       "version"=>"0.1"
   }
 
+  uninstaller = {
+      "uninstall_script" => nil,
+      "pkg" => nil
+  }
+
   # Create a normal app
   app['identifier'] = 'normal'
   app['id'] = 'normal'
   installer['identifier'] = 'normal'
   installer['kind'] = ''
-  Testapp.create(:identifier=>'normal', :installer=> installer, :info => app)
+  Testapp.create(:identifier=>'normal', :installer=> installer, :info => app, :uninstaller => uninstaller)
 
   # Create a php5 app
   app['identifier'] = 'php5'
   app['id'] = 'php5'
   installer['identifier'] = 'php5'
   installer['kind'] = 'PHP5'
-  Testapp.create(:identifier=>'php5', :installer=> installer, :info => app)
+  Testapp.create(:identifier=>'php5', :installer=> installer, :info => app, :uninstaller => uninstaller)
 end
