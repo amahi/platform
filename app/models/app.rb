@@ -60,7 +60,7 @@ class App < ApplicationRecord
 	def initialize(identifier, app=nil)
 		super()
 		if Rails.env=="test"
-			app = FAKE_APP
+			app = Testapp.where(:identifier=>identifier)[0].get_app
 		elsif app.nil?
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			app = AmahiApi::App.find(identifier)
@@ -208,7 +208,7 @@ class App < ApplicationRecord
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 10
 			if Rails.env=="test"
-				installer = FAKE_APP_INSTALLER
+				installer = Testapp.where(:identifier=>identifier)[0].get_installer
 			else
 				installer = AmahiApi::AppInstaller.find identifier
 			end

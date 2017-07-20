@@ -3,12 +3,12 @@ class Container < ApplicationRecord
   belongs_to :app
 
   after_create :run_container
-
   after_destroy :remove_container
 
   validates_uniqueness_of :name
   validates_presence_of :app
 
+  serialize :options
   def running?
     # Check : Is it ok to write like this?
     begin
@@ -31,7 +31,7 @@ class Container < ApplicationRecord
     image = Docker::Image.get(image) rescue nil
     if image.nil?
       # Image not found and hence could not create the container
-      raise "Image amahi/#{@id} not found"
+      raise "Image #{options.image} not found"
     end
 
     # Create container using build file and volume
@@ -65,6 +65,6 @@ class Container < ApplicationRecord
   end
 
   def parse_options
-    OpenStruct.new(JSON.parse(self.options))
+    OpenStruct.new(self.options)
   end
 end
