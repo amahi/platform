@@ -3,6 +3,7 @@ class Testapp < ApplicationRecord
   serialize :installer
   serialize :info
   serialize :uninstaller
+  
   def get_installer
     return OpenStruct.new(self.installer)
   end

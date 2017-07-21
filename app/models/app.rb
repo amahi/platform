@@ -59,6 +59,8 @@ class App < ApplicationRecord
 
 	def initialize(identifier, app=nil)
 		super()
+		# If test environment then use the testapps present locally
+		# else use the amahi api to get app details
 		if Rails.env=="test"
 			app = Testapp.where(:identifier=>identifier)[0].get_app
 		elsif app.nil?
@@ -290,7 +292,8 @@ class App < ApplicationRecord
 			self.installed = true
 			self.save!
 
-
+			# If installer kind is PHP5 then install then create a container and webapp
+			# else just create the webapp
 			if installer.kind=="PHP5"
 				puts "Going to start the container #{self.id}"
 				options = {
