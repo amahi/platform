@@ -297,7 +297,7 @@ class App < ApplicationRecord
 			if installer.kind=="PHP5"
 				puts "Going to start the container #{self.id}"
 				options = {
-						:image => "amahi/#{identifier.to_s}",
+						:image => "amahi/#{identifier}", # Change this
 						:volume => webapp_path,
 						:port => BASE_PORT+self.id
 				}
