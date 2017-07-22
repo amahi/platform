@@ -1,0 +1,40 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #333;
+}
+.footer-list
+{
+
+      > ul {
+        list-style: none;
+
+
+        li {
+          float: left;
+          margin: 0 15px 0 0;
+
+          &:before {
+            content: '|';
+            line-height: 18px;
+            float: left;
+            margin: 0 15px 0 0;
+            position: relative;
+            top: -2px;
+          }
+
+        }
+      }
+}

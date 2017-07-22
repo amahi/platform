@@ -1,26 +1,26 @@
-.container
-	.row-fluid
-footer#footer
-  .inside
-    p.copy
-      | &copy; #{Date.today.year} #{link_to "Amahi", "http://www.amahi.org", :target => "_blank"}
-    nav
-      ul
-        li = link_to t('your_control_panel'), 'https://www.amahi.org/user', :target=>'_blank'
-        li = link_to t('feedback'),'https://www.amahi.org/feedback', :target=>'_blank'
-        li = link_to t('wiki'), 'https://wiki.amahi.org/', :target=>'_blank'
-        li = link_to t('tracker'), 'https://bugs.amahi.org', :target=>'_blank'
-        li = link_to t('troubleshoot'), 'https://wiki.amahi.org/index.php/Troubleshooting', :target=>'_blank'
+.row-fluid
+footer.footer
+  .container
+	  .inside
+	    p.copy
+	      | &copy; #{Date.today.year} #{link_to "Amahi", "http://www.amahi.org", :target => "_blank"}
+	    .footer-list
+	      ul
+	        li = link_to t('your_control_panel'), 'https://www.amahi.org/user', :target=>'_blank'
+	        li = link_to t('feedback'),'https://www.amahi.org/feedback', :target=>'_blank'
+	        li = link_to t('wiki'), 'https://wiki.amahi.org/', :target=>'_blank'
+	        li = link_to t('tracker'), 'https://bugs.amahi.org', :target=>'_blank'
+	        li = link_to t('troubleshoot'), 'https://wiki.amahi.org/index.php/Troubleshooting', :target=>'_blank'
 
 
-        - if theme.author
-          li
-            | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
-          li = link_to t('live_help'), 'http://talk.amahi.org', :target=>'_blank'
-          li = link_to t('forums'), 'https://forums.amahi.org', :target=>'_blank'
+	        - if theme.author
+	          li
+	            | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
+	          li = link_to t('live_help'), 'http://talk.amahi.org', :target=>'_blank'
+	          li = link_to t('forums'), 'https://forums.amahi.org', :target=>'_blank'
 
-        - if current_user
-          li.logout
-            = link_to (t('logout') + " " + current_user.login), logout_path
-        - else
-          li = link_to t('log_in'), login_path
+	        - if current_user
+	          li.logout
+	            = link_to (t('logout') + " " + current_user.login), logout_path
+	        - else
+	          li = link_to t('log_in'), login_path

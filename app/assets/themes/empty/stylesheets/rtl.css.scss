@@ -1,0 +1,12 @@
+/* support for extra CSS for right-to-left languages */
+
+#tabs tr.prefsubtab td {
+  &.prefsubtabfiller {
+    border-left: 1px solid #5BA9FF;
+    border-right: none;
+  }
+  &.first {
+    border-right: 1px solid #5BA9FF;
+    border-left: none;
+  }
+}
