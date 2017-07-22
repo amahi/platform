@@ -61,12 +61,10 @@ class App < ApplicationRecord
 		super()
 		# If test environment then use the testapps present locally
 		# else use the amahi api to get app details
-		if Rails.env=="test"
-			app = Testapp.where(:identifier=>identifier)[0].get_app
-		elsif app.nil?
-			AmahiApi::api_key = Setting.value_by_name("api-key")
-			app = AmahiApi::App.find(identifier)
-		end
+
+		AmahiApi::api_key = Setting.value_by_name("api-key")
+		app = AmahiApi::App.find(identifier)
+
 		self.name = app.name
 		self.screenshot_url = app.screenshot_url
 		self.identifier = app.id
@@ -209,11 +207,7 @@ class App < ApplicationRecord
 			self.install_status = 0
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 10
-			if Rails.env=="test"
-				installer = Testapp.where(:identifier=>identifier)[0].get_installer
-			else
-				installer = AmahiApi::AppInstaller.find identifier
-			end
+			installer = AmahiApi::AppInstaller.find identifier
 
 			self.install_status = 20
 			self.install_app_deps installer if installer.app_dependencies
@@ -331,18 +325,9 @@ class App < ApplicationRecord
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 80
 
-			if Rails.env=="test"
-				begin
-					uninstaller = Testapp.where(:identifier=>identifier)[0].get_uninstaller
-				rescue
-					uninstaller = false
-				end
-				installer = Testapp.where(:identifier=>identifier)[0].get_installer
-			else
-				uninstaller = AmahiApi::AppUninstaller.find(identifier)
-				# Have to get the installer as well to get the app kind
-				installer = AmahiApi::AppInstaller.find identifier
-			end
+			uninstaller = AmahiApi::AppUninstaller.find(identifier)
+			# Have to get the installer as well to get the app kind
+			installer = AmahiApi::AppInstaller.find identifier
 
 
 			if uninstaller
