@@ -316,30 +316,46 @@ class App < ApplicationRecord
 	def install_container_app(installer, webapp_path)
 		begin
 			kind = installer.kind.split("-")[1]
+
+			# Please note that both conditions of if else for php5 and node have identical code
+			# But it's like that because if in future we need to do something specific to a kind of app
+			# then we can do it here
 			if kind=="php5"
-				puts "Going to start the container #{self.id}"
 				options = {
 						:image => "amahi/#{identifier}", # Change this
 						:volume => webapp_path,
 						:port => BASE_PORT+self.id
 				}
+				puts "Creating containers"
 				self.containers.create(:name=>identifier, :options=>options, :kind=>kind)
-				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+				puts "Creating webapp"
+				webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 				self.webapp = webapp
 				self.save! # Get
 				webapp.create_container_vhost
+
+				puts "Starting up containers"
+				self.containers.each do |container|
+					container.run_container
+				end
 			elsif kind=="node"
-				puts "Going to start the container #{self.id}"
 				options = {
 						:image => "amahi/#{identifier}", # Change this
 						:volume => webapp_path,
 						:port => BASE_PORT+self.id
 				}
+				puts "Creating containers"
 				self.containers.create(:name=>identifier, :options=>options, :kind=>kind)
-				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+				puts "Creating webapp"
+				webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 				self.webapp = webapp
 				self.save! # Get
 				webapp.create_container_vhost
+
+				puts "Starting up containers"
+				self.containers.each do |container|
+					container.run_container
+				end
 			else
 				# This condition will run if this is a kind of container app which we have not programmed to handle
 				return true

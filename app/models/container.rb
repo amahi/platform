@@ -1,8 +1,6 @@
 class Container < ApplicationRecord
   DOCKER_URL = '/var/run/docker.sock'
   belongs_to :app
-
-  after_create :run_container
   after_destroy :remove_container
 
   validates_uniqueness_of :name
@@ -24,7 +22,6 @@ class Container < ApplicationRecord
     running?
   end
 
-  private
   def run_container
     options = parse_options
     image = options.image
@@ -53,6 +50,7 @@ class Container < ApplicationRecord
       puts "time to run a node container"
       begin
         mongo = Docker::Container.get('mongo')
+        puts "Mongo container running!"
       rescue Exception => e
         puts e
         image = Docker::Image.create('fromImage' => 'mongo:3.5')
@@ -64,7 +62,9 @@ class Container < ApplicationRecord
                 "RestartPolicy"=>{ "Name" => "unless-stopped"}
             }
         )
+        puts "Created new mongo container. Starting it up"
         mongo.start
+        # FIXME: Shift this installation process to hda-platform installation
       end
       # Add a link so that the app can interact with mongodb
       config["HostConfig"]["Links"].push("mongo")
@@ -75,7 +75,7 @@ class Container < ApplicationRecord
     container.start
     return true
   end
-
+  private
   def remove_container
     if self.running?
       docker_container = get_docker_container
