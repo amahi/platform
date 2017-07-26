@@ -37,7 +37,7 @@ class Container < ApplicationRecord
         'Image' => options.image,
         "HostConfig" => {
             "Binds" => ["#{options.volume}/html:/var/www/html" , "/var/lib/mysql/mysql.sock:/var/run/mysql.sock"],
-            "PortBindings" =>{ "80/tcp" => [{ "HostPort" => options.port.to_s }] },
+            "PortBindings" =>{ "#{options.container_port}/tcp" => [{ "HostPort" => options.port.to_s }] },
             "RestartPolicy"=>{ "Name" => "unless-stopped"},
             "Links" => []
         }

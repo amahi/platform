@@ -324,8 +324,13 @@ class App < ApplicationRecord
 				options = {
 						:image => "amahi/#{identifier}", # Change this
 						:volume => webapp_path,
-						:port => BASE_PORT+self.id
+						:port => BASE_PORT+self.id,
+						:container_port => 80
 				}
+
+				if !installer.special_instructions.nil? and !installer.special_instructions.blank?
+					options[:container_port] = installer.special_instructions.to_i
+				end
 				puts "Creating containers"
 				self.containers.create(:name=>identifier, :options=>options, :kind=>kind)
 				puts "Creating webapp"
@@ -342,8 +347,13 @@ class App < ApplicationRecord
 				options = {
 						:image => "amahi/#{identifier}", # Change this
 						:volume => webapp_path,
-						:port => BASE_PORT+self.id
+						:port => BASE_PORT+self.id,
+						:container_port => 80
 				}
+
+				if !installer.special_instructions.nil? and !installer.special_instructions.blank?
+					options[:container_port] = installer.special_instructions.to_i
+				end
 				puts "Creating containers"
 				self.containers.create(:name=>identifier, :options=>options, :kind=>kind)
 				puts "Creating webapp"
