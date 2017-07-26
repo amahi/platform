@@ -35,15 +35,41 @@ class Container < ApplicationRecord
     end
 
     # Create container using build file and volume
-    container = Docker::Container.create(
+    config = {
         'name' => self.name,
         'Image' => options.image,
         "HostConfig" => {
             "Binds" => ["#{options.volume}/html:/var/www/html" , "/var/lib/mysql/mysql.sock:/var/run/mysql.sock"],
             "PortBindings" =>{ "80/tcp" => [{ "HostPort" => options.port.to_s }] },
-            "RestartPolicy"=>{ "Name" => "unless-stopped"}
+            "RestartPolicy"=>{ "Name" => "unless-stopped"},
+            "Links" => []
         }
-    )
+    }
+
+    # Why is mongo express starting on port 8081
+    # Shift the port mapping somehow. How do we do that?
+    if(self.kind=="node")
+      # Make sure that the mongo container is running. If not running then run it.
+      puts "time to run a node container"
+      begin
+        mongo = Docker::Container.get('mongo')
+      rescue Exception => e
+        puts e
+        image = Docker::Image.create('fromImage' => 'mongo:3.5')
+        mongo = Docker::Container.create(
+            'name' => 'mongo',
+            'Image' => 'mongo:3.5',
+            "HostConfig" => {
+                "PortBindings" =>{ "27017/tcp" => [{ "HostPort" => "27017" }] },
+                "RestartPolicy"=>{ "Name" => "unless-stopped"}
+            }
+        )
+        mongo.start
+      end
+      # Add a link so that the app can interact with mongodb
+      config["HostConfig"]["Links"].push("mongo")
+    end
+    container = Docker::Container.create(config)
     puts "Successfully created the container time to run it"
     puts container
     container.start

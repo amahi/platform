@@ -3,6 +3,7 @@ class CreateContainers < ActiveRecord::Migration
     create_table :containers do |t|
       t.string :name, :null=>false
       t.string :options, :null=>false
+      t.string :kind, :null=> false
       t.integer :app_id, :null=>false
       t.timestamps
     end

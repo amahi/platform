@@ -292,21 +292,15 @@ class App < ApplicationRecord
 			self.installed = true
 			self.save!
 
-			# If installer kind is PHP5 then install then create a container and webapp
-			# else just create the webapp
-			if installer.kind=="PHP5"
-				puts "Going to start the container #{self.id}"
-				options = {
-						:image => "amahi/#{identifier}", # Change this
-						:volume => webapp_path,
-						:port => BASE_PORT+self.id
-				}
-				self.containers.create(:name=>identifier, :options=>options)
-				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-				self.webapp = webapp
-				self.save! # Get
-				webapp.create_php5_vhost
+			if installer.kind.include? "container"
+				# Try installing the container app
+				# Mark the installation as failed if it returns false
+				# For container app webapp creation will be handled inside the "install_container_app" function
+				if !install_container_app(installer, webapp_path)
+					self.install_status = 999
+				end
 			else
+				# Create the webapp normally if its not a container app
 				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			end
 
@@ -319,6 +313,44 @@ class App < ApplicationRecord
 		end
 	end
 
+	def install_container_app(installer, webapp_path)
+		begin
+			kind = installer.kind.split("-")[1]
+			if kind=="php5"
+				puts "Going to start the container #{self.id}"
+				options = {
+						:image => "amahi/#{identifier}", # Change this
+						:volume => webapp_path,
+						:port => BASE_PORT+self.id
+				}
+				self.containers.create(:name=>identifier, :options=>options, :kind=>kind)
+				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+				self.webapp = webapp
+				self.save! # Get
+				webapp.create_container_vhost
+			elsif kind=="node"
+				puts "Going to start the container #{self.id}"
+				options = {
+						:image => "amahi/#{identifier}", # Change this
+						:volume => webapp_path,
+						:port => BASE_PORT+self.id
+				}
+				self.containers.create(:name=>identifier, :options=>options, :kind=>kind)
+				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+				self.webapp = webapp
+				self.save! # Get
+				webapp.create_container_vhost
+			else
+				# This condition will run if this is a kind of container app which we have not programmed to handle
+				return true
+			end
+		rescue Exception=>e
+			puts "FAILURE: Container App Installation Failed."
+			puts e
+			return false
+		end
+
+	end
 	def uninstall_bg
 		if Rails.env=="production"
 			cmd = Command.new("chmod 666 /var/run/docker.sock")

@@ -83,6 +83,13 @@ if Rails.env=="test"
   app['identifier'] = 'php5'
   app['id'] = 'php5'
   installer['identifier'] = 'php5'
-  installer['kind'] = 'PHP5'
+  installer['kind'] = 'container-php5'
   Testapp.create(:identifier=>'php5', :installer=> installer, :info => app, :uninstaller => uninstaller)
+
+  # create a node app
+  app['identifier'] = 'node'
+  app['id'] = 'node'
+  installer['identifier'] = 'node'
+  installer['kind'] = 'container-node'
+  Testapp.create(:identifier=>'node', :installer=> installer, :info => app, :uninstaller => uninstaller)
 end
