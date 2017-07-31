@@ -266,6 +266,7 @@ class App < ApplicationRecord
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
 
+			# TODO: Skip this step for container apps
 			if installer.install_script
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
@@ -321,51 +322,11 @@ class App < ApplicationRecord
 			# But it's like that because if in future we need to do something specific to a kind of app
 			# then we can do it here
 			if kind=="php5"
-				options = {
-						:image => "amahi/#{identifier}", # Change this
-						:volume => webapp_path,
-						:port => BASE_PORT+self.id,
-						:container_port => 80
-				}
 
-				if !installer.special_instructions.nil? and !installer.special_instructions.blank?
-					options[:container_port] = installer.special_instructions.to_i
-				end
-				puts "Creating containers"
-				self.containers.create(:name=>identifier, :options=>options, :kind=>kind)
-				puts "Creating webapp"
-				webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-				self.webapp = webapp
-				self.save! # Get
-				webapp.create_container_vhost
-
-				puts "Starting up containers"
-				self.containers.each do |container|
-					container.run_container
-				end
 			elsif kind=="node"
-				options = {
-						:image => "amahi/#{identifier}", # Change this
-						:volume => webapp_path,
-						:port => BASE_PORT+self.id,
-						:container_port => 80
-				}
 
-				if !installer.special_instructions.nil? and !installer.special_instructions.blank?
-					options[:container_port] = installer.special_instructions.to_i
-				end
-				puts "Creating containers"
-				self.containers.create(:name=>identifier, :options=>options, :kind=>kind)
-				puts "Creating webapp"
-				webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-				self.webapp = webapp
-				self.save! # Get
-				webapp.create_container_vhost
+			elsif kind=="independent"
 
-				puts "Starting up containers"
-				self.containers.each do |container|
-					container.run_container
-				end
 			else
 				# This condition will run if this is a kind of container app which we have not programmed to handle
 				return true
