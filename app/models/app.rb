@@ -267,7 +267,7 @@ class App < ApplicationRecord
 			initial_password = installer.initial_password
 
 			# TODO: Skip this step for container apps
-			if installer.install_script
+			if installer.install_script and !installer.kind.include?("container")
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
 					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password, self.db))
@@ -297,7 +297,7 @@ class App < ApplicationRecord
 				# Try installing the container app
 				# Mark the installation as failed if it returns false
 				# For container app webapp creation will be handled inside the "install_container_app" function
-				if !install_container_app(installer, webapp_path)
+				if !install_container_app(installer, webapp_path, identifier)
 					self.install_status = 999
 				end
 			else
@@ -314,23 +314,36 @@ class App < ApplicationRecord
 		end
 	end
 
-	def install_container_app(installer, webapp_path)
+	def install_container_app(installer, webapp_path, identifier)
 		begin
+			# Get the kind of container app
 			kind = installer.kind.split("-")[1]
 
-			# Please note that both conditions of if else for php5 and node have identical code
-			# But it's like that because if in future we need to do something specific to a kind of app
-			# then we can do it here
-			if kind=="php5"
+			# Run the install script.
+			# docker-compose.yml file will be inside the install_script
+			app_path = APP_PATH % identifier
+			if installer.install_script
+				puts "Running container installation script"
+				install_script = installer.install_script
+				install_script = install_script.gsub(/HOST_PORT/, (BASE_PORT+self.id).to_s)
+				install_script = install_script.gsub(/WEBAPP_PATH/, webapp_path)
+				install_script = install_script.gsub(/APP_IDENTIFIER/, identifier)
+				Dir.chdir(webapp_path ? webapp_path : app_path) do
+					SystemUtils.run_script(install_script, installer.url_name)
+				end
 
-			elsif kind=="node"
-
-			elsif kind=="independent"
-
-			else
-				# This condition will run if this is a kind of container app which we have not programmed to handle
-				return true
+				puts "Testing if the container was created and is running"
+				c = Docker::Container.get(identifier) # This will raise an exception if container was not running
+				puts "Container with identifier: #{identifier} running"
 			end
+
+			# Create webapp
+			puts "Creating webapp"
+			webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+			self.webapp = webapp
+			self.save! # Get
+			webapp.create_container_vhost
+
 		rescue Exception=>e
 			puts "FAILURE: Container App Installation Failed."
 			puts e
@@ -376,6 +389,15 @@ class App < ApplicationRecord
 						Dir.chdir(app_path) do
 							SystemUtils.run_script(uninstaller.uninstall_script, name, hda_environment)
 						end
+					end
+
+					puts "Testing if the container was stopped"
+					# This must raise an exception because container is not running
+					c = Docker::Container.get(identifier) rescue nil
+					if c
+						# Container is still available
+						puts "Uninstallation Failed"
+						raise "Uninstallation Failed"
 					end
 				end
 				self.install_status = 20
