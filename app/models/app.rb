@@ -46,7 +46,6 @@ class App < ApplicationRecord
 	has_many :app_dependencies, :dependent => :destroy
 	has_many :children, :class_name => "AppDependency", :foreign_key => 'dependency_id'
 	has_many :dependencies, :through => :app_dependencies
-	has_many :containers, :dependent => :destroy
 
 	scope :installed, ->{where(:installed => true)}
 	scope :in_dashboard,-> {where(:show_in_dashboard => true).installed}
