@@ -46,7 +46,6 @@ class App < ApplicationRecord
 	has_many :app_dependencies, :dependent => :destroy
 	has_many :children, :class_name => "AppDependency", :foreign_key => 'dependency_id'
 	has_many :dependencies, :through => :app_dependencies
-	has_many :containers, :dependent => :destroy
 
 	scope :installed, ->{where(:installed => true)}
 	scope :in_dashboard,-> {where(:show_in_dashboard => true).installed}
@@ -260,7 +259,8 @@ class App < ApplicationRecord
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
 
-			if installer.install_script
+			# TODO: Skip this step for container apps
+			if installer.install_script and !installer.kind.include?("container")
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
 					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password, self.db))
@@ -286,21 +286,15 @@ class App < ApplicationRecord
 			self.installed = true
 			self.save!
 
-			# If installer kind is PHP5 then install then create a container and webapp
-			# else just create the webapp
-			if installer.kind=="PHP5"
-				puts "Going to start the container #{self.id}"
-				options = {
-						:image => "amahi/#{identifier}", # Change this
-						:volume => webapp_path,
-						:port => BASE_PORT+self.id
-				}
-				self.containers.create(:name=>identifier, :options=>options)
-				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-				self.webapp = webapp
-				self.save! # Get
-				webapp.create_php5_vhost
+			if installer.kind.include? "container"
+				# Try installing the container app
+				# Mark the installation as failed if it returns false
+				# For container app webapp creation will be handled inside the "install_container_app" function
+				if !install_container_app(installer, webapp_path, identifier)
+					self.install_status = 999
+				end
 			else
+				# Create the webapp normally if its not a container app
 				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			end
 
@@ -313,6 +307,43 @@ class App < ApplicationRecord
 		end
 	end
 
+	def install_container_app(installer, webapp_path, identifier)
+		begin
+			# Get the kind of container app
+			kind = installer.kind.split("-")[1]
+
+			# Run the install script.
+			# docker-compose.yml file will be inside the install_script
+			app_path = APP_PATH % identifier
+			if installer.install_script
+				puts "Running container installation script"
+				install_script = installer.install_script
+				install_script = install_script.gsub(/HOST_PORT/, (BASE_PORT+self.id).to_s)
+				install_script = install_script.gsub(/WEBAPP_PATH/, webapp_path)
+				install_script = install_script.gsub(/APP_IDENTIFIER/, identifier)
+				Dir.chdir(webapp_path ? webapp_path : app_path) do
+					SystemUtils.run_script(install_script, installer.url_name)
+				end
+
+				puts "Testing if the container was created and is running"
+				c = Docker::Container.get(identifier) # This will raise an exception if container was not running
+				puts "Container with identifier: #{identifier} running"
+			end
+
+			# Create webapp
+			puts "Creating webapp"
+			webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+			self.webapp = webapp
+			self.save! # Get
+			webapp.create_container_vhost
+
+		rescue Exception=>e
+			puts "FAILURE: Container App Installation Failed."
+			puts e
+			return false
+		end
+
+	end
 	def uninstall_bg
 		if Rails.env=="production"
 			cmd = Command.new("chmod 666 /var/run/docker.sock")
@@ -342,6 +373,15 @@ class App < ApplicationRecord
 						Dir.chdir(app_path) do
 							SystemUtils.run_script(uninstaller.uninstall_script, name, hda_environment)
 						end
+					end
+
+					puts "Testing if the container was stopped"
+					# This must raise an exception because container is not running
+					c = Docker::Container.get(identifier) rescue nil
+					if c
+						# Container is still available
+						puts "Uninstallation Failed"
+						raise "Uninstallation Failed"
 					end
 				end
 				self.install_status = 20

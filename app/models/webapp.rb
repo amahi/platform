@@ -24,9 +24,9 @@ class Webapp < ApplicationRecord
 	belongs_to :dns_alias, :dependent => :destroy, :class_name => 'DnsAlias'
 	has_many :webapp_aliases, :dependent => :destroy
 
-	before_create :before_create_hook , :unless => :php5?
+	before_create :before_create_hook , :unless => :container?
 	after_destroy :after_destroy_hook
-	after_save :after_save_hook, :unless => :php5?
+	after_save :after_save_hook, :unless => :container?
 	before_validation :create_unique_fname, :on => :create
 
 	validates :name, :fname, :path, :presence => true
@@ -34,8 +34,8 @@ class Webapp < ApplicationRecord
 	attr_accessible :name, :fname, :path, :deletable, :custom_options, :kind
 	attr_accessor :port
 
-	def php5?
-		if self.kind=="PHP5"
+	def container?
+		if self.kind.include? "container"
 			return true
 		else
 			return false
@@ -49,7 +49,7 @@ class Webapp < ApplicationRecord
 	def write_conf_file
 		fname = TempCache.unique_filename "webapp"
 		File.open(fname, "w") { |f| f.write(conf_file) }
-
+		puts "Saving conf file at #{self.fname}"
 		# move path to the http area
 		c = Command.new "mv -f #{fname} /etc/httpd/conf.d/#{self.fname}"
 
@@ -58,8 +58,18 @@ class Webapp < ApplicationRecord
 		Platform.reload(:apache)
 	end
 
+	# Not used anywhere for now
 	def create_php5_vhost
-		puts "Creating vhost for php5 #{self.id}"
+			puts "Creating vhost for #{self.kind} #{self.id}"
+		self.create_dns_alias(:name => self.name)
+		FileUtils.mkpath(File.join(path, "html"))
+		FileUtils.mkpath(File.join(path, "logs"))
+		write_conf_file
+	end
+
+
+	def create_container_vhost
+		puts "Creating container vhost for #{self.kind} #{self.id}"
 		self.create_dns_alias(:name => self.name)
 		FileUtils.mkpath(File.join(path, "html"))
 		FileUtils.mkpath(File.join(path, "logs"))
@@ -79,7 +89,7 @@ class Webapp < ApplicationRecord
 		# done here!
 		# A very dirty hack to make php5 container app vhosts works.
 		# Most likely will remove it later on.
-		if self.kind!="PHP5"
+		unless container?
 			self.create_dns_alias(:name => self.name)
 			FileUtils.mkpath(File.join(path, "html"))
 			FileUtils.mkpath(File.join(path, "logs"))
@@ -113,15 +123,23 @@ class Webapp < ApplicationRecord
 		domain = ''
 		domain = (Setting.get('domain') || '') rescue ''
 
+		# If app kind is null then set it to generic
 		self.kind = 'generic' if self.kind.nil?
-		case self.kind.downcase
+
+		app_kind = self.kind.downcase
+		if self.kind.include? "container"
+			app_kind='container'
+		end
+
+		# FIXME: Change php5 to container. Add app-container.conf
+		case app_kind
 		when 'python'
 			f = File.open(BASE % "python")
 		when 'ror'
 			f = File.open(BASE % "ror")
 		when 'custom'
 			f = File.open(BASE % "custom")
-		when 'php5'
+		when 'container'
 			f = File.open(BASE % "php5")
 		else # generic
 			f = File.open(BASE % "generic")
@@ -137,7 +155,7 @@ class Webapp < ApplicationRecord
 		conf = conf.gsub(/HDA_ACCESS/, login_required ? access_conf : '')
 		conf = conf.gsub(/APP_ALIASES/, aliases 	|| '')
 
-		if self.kind=="PHP5"
+		if container?
 			# FIXME : Add a relation: Webapp belongs to app / has one app
 			php5_app_id = App.where(webapp: self).count > 0 ? App.where(webapp: self)[0].id : 0
 			if php5_app_id==0

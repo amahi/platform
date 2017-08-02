@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170720052348) do
   create_table "containers", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "options",    null: false
+    t.string   "kind",       null: false
     t.integer  "app_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
