@@ -2,7 +2,7 @@ $(document).ready ->
   $(".preftab").on "click", ".stretchtoggle", ->
     $(this).parents("div:first").find(".settings-stretcher:first").toggle('slow')
     false
-  
+
   SmartLinks.initialize
     open_selector: ".open-area"
     close_selector: ".close-area"
@@ -20,4 +20,4 @@ $(document).ready ->
 
   $("#hdasearchbutton").on
    click: ->
-    $('#searchform').attr('target',"_self") 
+  $('#searchform').attr('target',"_self")

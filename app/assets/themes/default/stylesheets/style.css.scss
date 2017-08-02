@@ -448,7 +448,7 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
 //     }
 //   }
 // }
-
+//
 // --------------------------------------------------
 // CONTENT
 // --------------------------------------------------
@@ -457,7 +457,7 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
   width: 100%;
   background: #fff;
   overflow: hidden;
-  padding-bottom: 70px;
+  padding-bottom: 0;
   @include clearfix;
 }
 
@@ -861,9 +861,9 @@ table.settings {
 		border-bottom: 1px solid #e8e8e8;
     text-align: center;
 	}
-	.odd td {
-		background: #f8f8f8;
-	}
+	// .odd td {
+	// 	background: #f8f8f8;
+	// }
 }
 
 div.no-content {
@@ -1324,14 +1324,18 @@ td {
 
 #footer {
   position: relative;
-  margin-top: 0px;
+  margin-top: 100px;
   width: 100%;
-  background: #333;
-  height: 32px;
+  background-color: #333;
+  height: 100px;
   text-align: center;
   padding: 18px 0 36px 40px;
   color: white;
   clear: both;
+  left: 0;
+  bottom: -183px;
+
+  overflow:hidden;
 
   a {
     color: #fff;
@@ -1340,7 +1344,7 @@ td {
   .inside {
     width: auto;
     display: table;
-    margin: 0 auto;
+    margin: 20px auto;
   }
 
   .copy, nav {
