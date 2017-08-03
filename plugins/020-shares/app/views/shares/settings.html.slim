@@ -1,6 +1,6 @@
 .container-fluid
-  .row
-    .col-md-12.col-sm-8.col-xs-5
+  .row.table.table-bordered
+    .col-md-10
       .share[id="workgroup_#{@workgroup.try(:id)}"]
         .settings-stretcher
           fieldset
@@ -9,7 +9,7 @@
 
             - if @workgroup
               .settings-fields
-                table.table
+                table.table.table-bordered
                   tr
                     td
                       label #{t("workgroup_name")}
@@ -26,7 +26,7 @@
                                                :method => :put,
                                                :remote => true,
                                                :form_css_class => "edit_workgroup_form form_hidden",
-                                               :cancel_class => "workgroup_cancel_link btn btn-primary btn-sm left-margin-10 "
+                                               :cancel_class => "workgroup_cancel_link btn btn-primary btn-sm btn-space  "
                       .messages
 
 

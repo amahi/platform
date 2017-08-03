@@ -1,7 +1,7 @@
 .container-fluid
-  .row
-    .col-md-12.col-sm-10.col-xs-5
-      .settings-fields.settings-wrap
+  .row.table.table-bordered
+    .col-md-10
+      .settings-fields.settings-wrap.table.table-bordered
         fieldset
           legend
             = t 'settings'
@@ -81,7 +81,7 @@
                                          :remote => true,
                                          :input_css_class=>'form-control input-sm',
                                          :form_css_class => "edit_gateway_form form-inline form_hidden",
-                                         :cancel_class => "gateway-cancel-link btn btn-primary btn-sm left-margin-10"
+                                         :cancel_class => "gateway-cancel-link btn btn-primary btn-sm left-margin-10 btn-space"
                 .gateway_messages[style="display:none;"]
                   =@net +'.'
                   b.gateway_message_value = @gateway

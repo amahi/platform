@@ -1,7 +1,7 @@
 .container-fluid
-  .row
-    .col-md-12.col-sm-10.col-xs-5
-      div.settings-fields.settings-wrap
+  .row.table.table-bordered
+    .col-md-10
+      div.settings-fields.settings-wrap.table.table-bordered
         fieldset
           legend
             = t 'global_settings'
@@ -33,7 +33,7 @@
                     data: { remote: true, url: settings_engine.toggle_setting_path(id: @guest) }
                 = spinner
 
-      div.settings-fields.settings-wrap
+      div.settings-fields.settings-wrap.table.table-bordered
         fieldset
           legend
             = t 'system_info'

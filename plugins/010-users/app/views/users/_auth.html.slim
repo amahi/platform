@@ -10,9 +10,9 @@ td.top
   div.pubkey-area[style="display:none"]
     = form_tag users_engine.update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey short-form form-horizontal left-margin-20' do |f|
       .control-group
-        .controls.form-group.col-md-12.col-sm-10.col-xs-8
+        .controls.form-group.col-md-8
           = text_area_tag "public_key_#{user.id}", user.public_key, :rows => 5,:class=>'form-control input-sm lef-margin-10', :cols => 78, :placeholder => t('public_key')
       .control-group
-        .controls.form-group.col-md-12.col-sm-10.col-xs-10
-          = submit_tag t('update_key'), :class => 'btnn btn btn-info btn-sm'
+        .controls.form-group.col-md-8
+          = submit_tag t('update_key'), :class => 'btnn btn btn-info btn-sm btn-space'
           = link_to t('cancel'), '#', :onclick=>"$(this).parents('.pubkey-area').hide('slow')", :class => 'cancel-link btn btn-primary btn-sm left-margin-10'

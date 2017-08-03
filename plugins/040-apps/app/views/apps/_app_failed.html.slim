@@ -3,11 +3,11 @@
 = content_tag 'div', :class => 'app', :id => "app_whole_#{identifier}" do
 
   table.settings.stretchtoggle.table[id="app_row_#{identifier}"]
-    tr
+    tr.active
       td.settings-col1.settings-col1-pad1.apps-col1
         = link_to '-', '#'
       td.settings-col2.apps-col2[id="app_ip_#{identifier}"]
-        | 
+        |
 
   .settings-stretcher[id="app_info_#{identifier}" style="#{display_style}"]
     .app-manage
@@ -25,7 +25,7 @@
             a href="http://talk.amahi.org" IRC support channel
             | .
           p
-            | It will help if you can share the logs (in Linux, via terminal or SSH) using "apaste" as follows:             
+            | It will help if you can share the logs (in Linux, via terminal or SSH) using "apaste" as follows:
             code
               | tail -600 /var/log/amahi-app-installer.log | apaste
           p

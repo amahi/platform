@@ -97,7 +97,7 @@ module ApplicationHelper
 				input_html << tag('input', {:class => options[:input_css_class], :id =>options[:input_id] , :name => options[:name], :value => options[:value], :type => 'text'}.merge(parsed_options))
 				input_html << "&nbsp;&nbsp;"
 				input_html << "&nbsp;"
-				input_html << content_tag("button",options[:label],:class=> "btnn btn btn-info btn-create btn-sm margin-for-message",:type => "submit",:id=> options[:button_id] )
+				input_html << content_tag("button",options[:label],:class=> "btnn btn btn-info btn-create btn-sm margin-for-message btn-space",:type => "submit",:id=> options[:button_id] )
 				input_html << content_tag("a",'Cancel',:class=>options[:cancel_class],:data=>{:id=>options[:id]})
 				input_html << content_tag("span", '', class: "spinner theme-image", style: "display: none")
 				input_html.html_safe
