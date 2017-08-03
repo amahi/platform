@@ -317,12 +317,15 @@ class App < ApplicationRecord
 			app_path = APP_PATH % identifier
 			if installer.install_script
 				puts "Running container installation script"
+				app_host = "#{installer.url_name}.#{Setting.value_by_name('domain')}"
+				puts app_host
 				install_script = installer.install_script
 				install_script = install_script.gsub(/HOST_PORT/, (BASE_PORT+self.id).to_s)
 				install_script = install_script.gsub(/WEBAPP_PATH/, webapp_path)
 				install_script = install_script.gsub(/APP_IDENTIFIER/, identifier)
+				install_script = install_script.gsub(/APP_HOSTNAME/, app_host)
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
-					SystemUtils.run_script(install_script, installer.url_name)
+					SystemUtils.run_script(install_script, installer.url_name, hda_environment(installer.initial_user, installer.initial_password, self.db))
 				end
 
 				puts "Testing if the container was created and is running"
