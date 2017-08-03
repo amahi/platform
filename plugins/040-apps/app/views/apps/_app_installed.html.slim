@@ -18,7 +18,7 @@
           .img-wrap
             = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
 
-          .app-content.col-md-10
+          .app-content.col-md-10.table.table-bordered
             div.app-description
               = app.description.try(:html_safe) || t('no_description_supplied')
 
