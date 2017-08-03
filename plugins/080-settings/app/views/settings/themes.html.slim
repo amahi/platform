@@ -1,12 +1,12 @@
 .container-fluid
   .row
-    .col-md-12.col-sm-10.col-xs-5
+    .col-md-10.table.table-bordered
 		.theme-thumbs
 		  - @themes.each do |theme|
 		    = link_to image_tag(theme_image_path('theme-thumb.png', theme.css), :class => "theme-thumb thumbnail right-margin-10", title: theme.name),
 		      settings_engine.activate_theme_path(id: theme.css),
 		      { onmouseover: "$('#theme-sshot').attr('src', '#{theme_image_path('theme-sshot.png', theme.css)}')" }
-  .col-md-12.col-sm-10.col-xs-5
-    div style="text-align:center"
-      #theme_sshot_image
-        = theme_image_tag('theme-sshot.png', id: "theme-sshot", alt: theme.name, title: theme.name)
+
+        div style="text-align:center"
+          #theme_sshot_image
+            = theme_image_tag('theme-sshot.png', id: "theme-sshot", alt: theme.name, title: theme.name , :class=>"img-responsive")

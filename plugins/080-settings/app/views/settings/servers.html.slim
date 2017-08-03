@@ -2,11 +2,11 @@
   .row
     .col-md-10.table.table-bordered
       - if @servers.length < 1
-          h3
+          h2
             = t 'there_are_no_servers_available'
       - else
         - if @message
-            h3
+            h4
               = @message
         div.settings-table.server-page
           table.settings.table
