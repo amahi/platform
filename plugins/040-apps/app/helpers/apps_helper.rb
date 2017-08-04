@@ -27,7 +27,7 @@ module AppsHelper
   end
 
   def image_for_app(app)
-    image_tag(app.screenshot_url, :class => 'app-screenshot', :title => "#{app.name} screenshot").html_safe
+    image_tag(app.screenshot_url, :class => 'img-responsive', :title => "#{app.name} screenshot").html_safe
   end
 
   def display_app?
