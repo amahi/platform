@@ -15,10 +15,10 @@
         legend &nbsp; #{app.name} #{t('available_for_installation')} &nbsp;
         .settings-fields
 
-          .img-wrap.col-md-6
+          .img-wrap
             = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
 
-          .app-content.col-md-6
+          .app-content.col-md-6.col-xs-12
             div.app-description
               = app.description.try(:html_safe) || t('no_description_supplied')
 

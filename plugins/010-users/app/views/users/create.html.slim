@@ -1,3 +1,6 @@
+.container-fluid
+  .row
+    .col-md-12.col-sm-8.col-xs-5
 - if @user.errors.any?
   = render 'form', :object => @user, :status => :not_accepted
 - else

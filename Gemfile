@@ -9,7 +9,7 @@ gem "yettings"
 
 gem 'sass-rails'
 gem 'coffee-rails'
-
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'therubyracer'
 
 gem 'uglifier'

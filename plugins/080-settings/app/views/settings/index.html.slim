@@ -1,74 +1,76 @@
-div.settings-fields.settings-wrap
-  fieldset
-    legend
-      = t 'global_settings'
-    table.table
-      tr
-        td
-          label = t 'language'
-        td
-          = select_tag 'locale', options_for_select(@available_locales, I18n.locale.to_s),
-            data: { remote: true, url: settings_engine.change_language_path, update: 'language' },
-            class: 'remote-select form-control'
-          = spinner
-      tr
-        td
-          label = t 'advanced_settings'
-        td
-          = tag "input", id: "advanced", class: "remote-check", type: "checkbox", checked: @advanced_settings.set?,
-              data: { remote: true, url: settings_engine.toggle_setting_path(id: @advanced_settings),
-              confirm: @advanced_settings.set? ? nil : [t('avanced_settings_is_for_developers'),
-                                '', '', t('are_you_sure_advanced_features')].join("\n") }
-          = spinner
-          a href="http://wiki.amahi.org/index.php/Advanced_Settings" target="_blank" class="more-info"
-            i.icon-more
-      tr
-        td
-          label = t 'guest_dashboard'
-        td
-          = tag "input", id: "guest", class: "remote-check", type: "checkbox", checked: @guest.set?,
-              data: { remote: true, url: settings_engine.toggle_setting_path(id: @guest) }
-          = spinner
+.container-fluid
+  .row
+    .col-md-12.col-sm-10.col-xs-5
+      div.settings-fields.settings-wrap
+        fieldset
+          legend
+            = t 'global_settings'
+          table.table
+            tr
+              td
+                label = t 'language'
+              td
+                = select_tag 'locale', options_for_select(@available_locales, I18n.locale.to_s),
+                  data: { remote: true, url: settings_engine.change_language_path, update: 'language' },
+                  class: 'remote-select form-control'
+                = spinner
+            tr
+              td
+                label = t 'advanced_settings'
+              td
+                = tag "input", id: "advanced", class: "remote-check", type: "checkbox", checked: @advanced_settings.set?,
+                    data: { remote: true, url: settings_engine.toggle_setting_path(id: @advanced_settings),
+                    confirm: @advanced_settings.set? ? nil : [t('avanced_settings_is_for_developers'),
+                                      '', '', t('are_you_sure_advanced_features')].join("\n") }
+                = spinner
+                a href="http://wiki.amahi.org/index.php/Advanced_Settings" target="_blank" class="more-info"
+                  i.icon-more
+            tr
+              td
+                label = t 'guest_dashboard'
+              td
+                = tag "input", id: "guest", class: "remote-check", type: "checkbox", checked: @guest.set?,
+                    data: { remote: true, url: settings_engine.toggle_setting_path(id: @guest) }
+                = spinner
 
-div.settings-fields.settings-wrap
-  fieldset
-    legend
-      = t 'system_info'
-    div.settings-actions
-      span#systems-result.increase-font-30
-        = link_to '',
-              settings_engine.poweroff_path,
-              remote: true,
-              method: :post,
-              class: 'btn-system glyphicon glyphicon-off left-margin-40',
-              id: 'btn-poweroff',
-              data: {:confirm => t('this_will_power_off')}
-        = link_to '',
-              settings_engine.reboot_path,
-              remote: true,
-              method: :post,
-              data: {:confirm => t('this_will_reboot')},
-              class: 'btn-system glyphicon glyphicon-repeat',
-              id: 'btn-reboot'
-    div.settings-fields#info-table
-      table.table
-        tr
-          td
-            label = t 'system'
-          td
-            = `uname -r`
-            |,
-            = `uname -m`
-        tr
-          td
-            label = t 'platform'
-          td = @version[:platform]
-        tr
-          td
-            label  = t 'core'
-          td = @version[:core]
-        tr
-          td
-            label = t 'uptime'
-          td = `uptime`
-
+      div.settings-fields.settings-wrap
+        fieldset
+          legend
+            = t 'system_info'
+          div.settings-actions
+            span#systems-result.increase-font-30
+              = link_to '',
+                    settings_engine.poweroff_path,
+                    remote: true,
+                    method: :post,
+                    class: 'btn-system glyphicon glyphicon-off left-margin-40',
+                    id: 'btn-poweroff',
+                    data: {:confirm => t('this_will_power_off')}
+              = link_to '',
+                    settings_engine.reboot_path,
+                    remote: true,
+                    method: :post,
+                    data: {:confirm => t('this_will_reboot')},
+                    class: 'btn-system glyphicon glyphicon-repeat',
+                    id: 'btn-reboot'
+          div.settings-fields#info-table
+            table.table
+              tr
+                td
+                  label = t 'system'
+                td
+                  = `uname -r`
+                  |,
+                  = `uname -m`
+              tr
+                td
+                  label = t 'platform'
+                td = @version[:platform]
+              tr
+                td
+                  label  = t 'core'
+                td = @version[:core]
+              tr
+                td
+                  label = t 'uptime'
+                td = `uptime`

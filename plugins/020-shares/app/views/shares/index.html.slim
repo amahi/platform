@@ -1,27 +1,31 @@
-#shares-table
-  .settings-table
-    - if @shares.any?
-      table.settings.table
-        thead
-          tr
-            th.settings-col1.shares-col1[scope="col"]= t('share')
-            th.settings-col2.shares-col2[scope="col"]= t('location')
-      = render :partial => 'shares/share', :collection => @shares
-    - else
-        h2 =t('there_are_no_shares_created')
+.container-fluid
+  .row
+    .col-md-12.col-sm-8.col-xs-5
+      #shares-table
+        .settings-table
+          
+            - if @shares.any?
+              table.settings.table
+                thead
+                  tr
+                    th.settings-col1.shares-col1[scope="col"]= t('share')
+                    th.settings-col2.shares-col2[scope="col"]= t('location')
+              = render :partial => 'shares/share', :collection => @shares
+            - else
+                h2 =t('there_are_no_shares_created')
 
-  = button_tag t('new_share'), :type => 'button', :class => 'open-area btnn btn-create btn btn-info pull-left', :id => "new-share-to-step1",  :data => { :related => "#new-share-step1" }
+            = button_tag t('new_share'), :type => 'button', :class => 'open-area btnn btn-create btn btn-info pull-left', :id => "new-share-to-step1",  :data => { :related => "#new-share-step1" }
 
-  div
-    #new-share-box.col-sm-7
-      #share-new
-        #new-share-step1.area[style="display:none;"]
-          = render 'form'
+        div
+          #new-share-box.col-sm-7
+            #share-new
+              #new-share-step1.area[style="display:none"]
+                = render 'form'
 
-= content_for(:js_templates) do
-  script[id='updateTagsTemplate' type='text/x-jquery-tmpl']
-    = render '/js_templates/shares/tags_form'
-  script[id='updatePathTemplate' type='text/x-jquery-tmpl']
-    = render '/js_templates/shares/path_form'
-  script[id='updateExtrasTemplate' type='text/x-jquery-tmpl']
-    = render '/js_templates/shares/extras_form'
+      = content_for(:js_templates) do
+        script[id='updateTagsTemplate' type='text/x-jquery-tmpl']
+          = render '/js_templates/shares/tags_form'
+        script[id='updatePathTemplate' type='text/x-jquery-tmpl']
+          = render '/js_templates/shares/path_form'
+        script[id='updateExtrasTemplate' type='text/x-jquery-tmpl']
+          = render '/js_templates/shares/extras_form'

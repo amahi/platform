@@ -88,7 +88,12 @@ GEM
       activesupport (>= 3.2, < 5.1)
       request_store (~> 1.0)
       scrypt (>= 1.2, < 4.0)
+    autoprefixer-rails (7.1.1.2)
+      execjs
     bcrypt (3.1.11)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     capybara-screenshot (1.0.14)
       capybara (>= 1.0, < 3)
@@ -269,6 +274,7 @@ DEPENDENCIES
   activeresource!
   authlogic
   bcrypt
+  bootstrap-sass (~> 3.3.7)
   capybara!
   capybara-screenshot
   coffee-rails
@@ -302,4 +308,4 @@ DEPENDENCIES
   yettings
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
