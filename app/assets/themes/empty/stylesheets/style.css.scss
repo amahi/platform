@@ -25,6 +25,18 @@ body {
     width: 33%;
 }
 
+.table-bordered > tbody > tr > td , .table > tbody > tr > td{
+    border: 0px solid #ddd;
+}
+
+fieldset {
+    padding: 25px;
+}
+legend {
+    border-bottom: 0px solid #e5e5e5;
+}
+
+
 
 .footer-list
 {
