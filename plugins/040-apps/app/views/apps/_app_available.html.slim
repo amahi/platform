@@ -2,7 +2,7 @@
 
 = content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => apps_engine.install_progress_path(app.identifier) } do
 
-  table.settings.stretchtoggle.table.well.well-sm[id="app_row_#{app.identifier}"]
+  table.settings.stretchtoggle.list-group-item[id="app_row_#{app.identifier}"]
     tr.active
       td.settings-col1.settings-col1-pad1.apps-col1
         = link_to name_with_warning(app), '#'

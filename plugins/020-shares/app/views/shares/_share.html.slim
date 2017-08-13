@@ -1,6 +1,6 @@
 div.share[id="whole_share_#{share.id}"]
 
-  table.settings.stretchtoggle.table.well.well-sm
+  table.settings.stretchtoggle.list-group-item
     tr
       td.settings-col1.shares-col1
         = link_to share.name, '#'
@@ -28,7 +28,7 @@ div.share[id="whole_share_#{share.id}"]
               :class => 'btn-delete remote-btn navbar-right btn btn-primary btn-sm btn-space'
 
         .settings-fields
-          table.table.table-bordered
+          table.table.table-condensed
             tr
               td
                 label #{t('access')}

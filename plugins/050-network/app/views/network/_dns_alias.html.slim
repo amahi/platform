@@ -1,12 +1,12 @@
 div.entry
-  table.settings.stretchtoggle.table.well.well-sm
+  table.settings.stretchtoggle.list-group-item
     tr
       td.settings-col1.settings-col1-pad
         = link_to dns_alias.name, '#'
       td
         = alias_ip(dns_alias)
 
-  .settings-stretcher.table.table-bordered[style="display:none;"]
+  .settings-stretcher.table.table-condensed[style="display:none;"]
     fieldset
       legend
         | &nbsp; &nbsp;

@@ -1,15 +1,15 @@
 .container-fluid
-  .row
-    .col-md-10.table.table-bordered
+  .row.col-md-10.table.table-bordered
+    .col-md-10
       #shares-table
-        .settings-table.table.table-bordered
+        .settings-table.panel.panel-body
 
             - if @shares.any?
               table.settings.table.table.table-bordered
                 thead
-                  tr.active
-                    th.settings-col1.shares-col1[scope="col"]= t('share')
-                    th.settings-col2.shares-col2[scope="col"]= t('location')
+                  tr.panel.panel-primary
+                    th.settings-col1.shares-col1.panel-heading[scope="col"]= t('share')
+                    th.settings-col2.shares-col2.panel-heading[scope="col"]= t('location')
               = render :partial => 'shares/share', :collection => @shares
             - else
                 h2 =t('there_are_no_shares_created')

@@ -1,5 +1,5 @@
 div.user[id="whole_user_#{user.id}"]
-  table.settings.stretchtoggle.table.table-condensed.well.well-sm
+  table.settings.stretchtoggle.list-group-item
     tr
       td.settings-col1.settings-col1-pad.users-col1
         = link_to user.login, '#'
@@ -30,7 +30,7 @@ div.user[id="whole_user_#{user.id}"]
                       :class => 'btn-delete remote-btn navbar-right btn btn-primary btn-sm btn-space'
 
         .settings-fields
-          table.table.table-bordered
+          table.table.table-condensed
             tr
               td
                 label #{t('name')}
