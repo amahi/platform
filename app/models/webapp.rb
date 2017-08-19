@@ -87,7 +87,7 @@ class Webapp < ApplicationRecord
 	def before_create_hook
 		# FIXME - a huuuuge amount of checks need to be
 		# done here!
-		# A very dirty hack to make php5 container app vhosts works.
+		# A very dirty hack to make container apps vhosts works.
 		# Most likely will remove it later on.
 		unless container?
 			self.create_dns_alias(:name => self.name)
@@ -131,7 +131,6 @@ class Webapp < ApplicationRecord
 			app_kind='container'
 		end
 
-		# FIXME: Change php5 to container. Add app-container.conf
 		case app_kind
 		when 'python'
 			f = File.open(BASE % "python")
@@ -140,7 +139,7 @@ class Webapp < ApplicationRecord
 		when 'custom'
 			f = File.open(BASE % "custom")
 		when 'container'
-			f = File.open(BASE % "php5")
+			f = File.open(BASE % "container")
 		else # generic
 			f = File.open(BASE % "generic")
 		end
@@ -157,11 +156,11 @@ class Webapp < ApplicationRecord
 
 		if container?
 			# FIXME : Add a relation: Webapp belongs to app / has one app
-			php5_app_id = App.where(webapp: self).count > 0 ? App.where(webapp: self)[0].id : 0
-			if php5_app_id==0
+			app_id = App.where(webapp: self).count > 0 ? App.where(webapp: self)[0].id : 0
+			if app_id==0
 				raise "App not created yet. Unable to assign port to container."
 			end
-			conf = conf.gsub(/APP_PORT/, "#{35000 + php5_app_id}")
+			conf = conf.gsub(/APP_PORT/, "#{35000 + app_id}")
 		end
 
 		begin
