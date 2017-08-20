@@ -21,8 +21,6 @@ require 'amahi_api'
 require 'command'
 require 'downloader'
 require 'system_utils'
-require 'container'
-require 'docker'
 
 class App < ApplicationRecord
 
@@ -60,10 +58,12 @@ class App < ApplicationRecord
 
 	def initialize(identifier, app=nil)
 		super()
-		if app.nil?
-			AmahiApi::api_key = Setting.value_by_name("api-key")
-			app = AmahiApi::App.find(identifier)
-		end
+		# If test environment then use the testapps present locally
+		# else use the amahi api to get app details
+
+		AmahiApi::api_key = Setting.value_by_name("api-key")
+		app = AmahiApi::App.find(identifier)
+
 		self.name = app.name
 		self.screenshot_url = app.screenshot_url
 		self.identifier = app.id
@@ -207,6 +207,7 @@ class App < ApplicationRecord
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 10
 			installer = AmahiApi::AppInstaller.find identifier
+
 			self.install_status = 20
 			self.install_app_deps installer if installer.app_dependencies
 			self.install_status = 30
@@ -249,12 +250,7 @@ class App < ApplicationRecord
 				end
 			end
 			self.install_status = 60
-			# Create a virtual host file for this app. For more info refer to app/models/webapp.rb
 
-			# workaround : Skip creation of webapp for php5 kind apps
-			if installer.kind!="PHP5"
-				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-			end
 			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
 			if installer.kind == 'plugin'
 				self.plugin = Plugin.install(installer, downloaded_file)
@@ -263,30 +259,8 @@ class App < ApplicationRecord
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
 
-			# If installer.kind=="PHP5"
-			# Crete a container
-			# Run the install script inside the container
-
-			# Let install script handle the job of image creation
-			# begin
-			# 	if installer.kind=="PHP5"
-			# 		puts "Started building image for php5 app"
-      #
-			# 		# TODO: Create an image for this app
-			# 		# TODO: Handle failure
-			# 		# TODO: In future replace the content inside .build with a Dockerfile fetched from server.
-			# 		image = Docker::Image.build("from richarvey/nginx-php-fpm:php5\n WORKDIR /var/www")
-			# 		image.tag('repo' => "amahi/#{identifier}", 'force' => true)
-			# 		puts image
-			# 	end
-			# rescue => e
-			# 	puts e
-			# 	self.install_status = 999
-			# 	Dir.chdir(initial_path)
-			# 	raise e
-			# end
-
-			if installer.install_script
+			# TODO: Skip this step for container apps
+			if installer.install_script and !installer.kind.include?("container")
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
 					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password, self.db))
@@ -312,29 +286,16 @@ class App < ApplicationRecord
 			self.installed = true
 			self.save!
 
-			# Once the app is saved in db then we can get its id and start running the container
-			# FIXME: Should this be added as an after create hook? But how would we know if its a php5 kind app?
-			# Should we store an extra field in db to identify the type of application as well?
-			# Or maybe make an api call inside the after_create?
-			if installer.kind=="PHP5"
-				puts "Going to start the container #{self.id}"
-				options = {
-						:image => "amahi/#{identifier}",
-						:volume => webapp_path,
-						:port => BASE_PORT+self.id
-				}
-				container = Container.new(id=identifier, options=options)
-				container.create
-
-				# We skipped creation of webapp earlier so we will create now since we have obtained an id for our app
-				webapp = Webapp.create(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-
-				# Assign the webapp to the existing app for the workaround to work.
-				# later on maybe webapp has_one :app relation migt help
-				self.webapp = webapp
-				self.save!
-				# For php5 kind webapp default webapp creation method is skipped for the workaround to work and hence this.
-				webapp.create_php5_vhost
+			if installer.kind.include? "container"
+				# Try installing the container app
+				# Mark the installation as failed if it returns false
+				# For container app webapp creation will be handled inside the "install_container_app" function
+				if !install_container_app(installer, webapp_path, identifier)
+					self.install_status = 999
+				end
+			else
+				# Create the webapp normally if its not a container app
+				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			end
 
 			self.install_status = 100
@@ -346,6 +307,46 @@ class App < ApplicationRecord
 		end
 	end
 
+	def install_container_app(installer, webapp_path, identifier)
+		begin
+			# Get the kind of container app
+			kind = installer.kind.split("-")[1]
+
+			# Run the install script.
+			# docker-compose.yml file will be inside the install_script
+			app_path = APP_PATH % identifier
+			if installer.install_script
+				puts "Running container installation script"
+				app_host = "#{installer.url_name}.#{Setting.value_by_name('domain')}"
+				puts app_host
+				install_script = installer.install_script
+				install_script = install_script.gsub(/HOST_PORT/, (BASE_PORT+self.id).to_s)
+				install_script = install_script.gsub(/WEBAPP_PATH/, webapp_path)
+				install_script = install_script.gsub(/APP_IDENTIFIER/, identifier)
+				install_script = install_script.gsub(/APP_HOSTNAME/, app_host)
+				Dir.chdir(webapp_path ? webapp_path : app_path) do
+					SystemUtils.run_script(install_script, installer.url_name, hda_environment(installer.initial_user, installer.initial_password, self.db))
+				end
+
+				puts "Testing if the container was created and is running"
+				c = Docker::Container.get(identifier) # This will raise an exception if container was not running
+				puts "Container with identifier: #{identifier} running"
+			end
+
+			# Create webapp
+			puts "Creating webapp"
+			webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+			self.webapp = webapp
+			self.save! # Get
+			webapp.create_container_vhost
+
+		rescue Exception=>e
+			puts "FAILURE: Container App Installation Failed."
+			puts e
+			return false
+		end
+
+	end
 	def uninstall_bg
 		if Rails.env=="production"
 			cmd = Command.new("chmod 666 /var/run/docker.sock")
@@ -357,10 +358,11 @@ class App < ApplicationRecord
 			self.install_status = 100
 			AmahiApi::api_key = Setting.value_by_name("api-key")
 			self.install_status = 80
+
 			uninstaller = AmahiApi::AppUninstaller.find(identifier)
 			# Have to get the installer as well to get the app kind
 			installer = AmahiApi::AppInstaller.find identifier
-			# FIXME : How to do this with a single api call?
+
 
 			if uninstaller
 				# execute the uninstall script
@@ -375,19 +377,21 @@ class App < ApplicationRecord
 							SystemUtils.run_script(uninstaller.uninstall_script, name, hda_environment)
 						end
 					end
+
+					puts "Testing if the container was stopped"
+					# This must raise an exception because container is not running
+					c = Docker::Container.get(identifier) rescue nil
+					if c
+						# Container is still available
+						puts "Uninstallation Failed"
+						raise "Uninstallation Failed"
+					end
 				end
 				self.install_status = 20
 				self.uninstall_pkgs uninstaller if uninstaller.pkg
 				# else
 				# FIXME - retry? what if an app is not
 				# live at this time??
-			end
-
-			# FIXME - what happens if this throws an exception?
-			if installer.kind=="PHP5"
-				# This one extra step is required to stop and remove the container
-				container = Container.new(id=identifier)
-				container.remove
 			end
 
 			# FIXME - set to nil to destroy??

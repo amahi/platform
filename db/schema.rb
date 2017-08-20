@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717200213) do
+ActiveRecord::Schema.define(version: 20170720052348) do
 
   create_table "app_dependencies", force: :cascade do |t|
     t.integer  "app_id"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 20140717200213) do
   create_table "cap_writers", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "share_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "containers", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "options",    null: false
+    t.string   "kind",       null: false
+    t.integer  "app_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -126,6 +135,15 @@ ActiveRecord::Schema.define(version: 20140717200213) do
     t.boolean  "guest_writeable",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "testapps", force: :cascade do |t|
+    t.string   "identifier"
+    t.text     "installer"
+    t.text     "uninstaller"
+    t.text     "info"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "themes", force: :cascade do |t|

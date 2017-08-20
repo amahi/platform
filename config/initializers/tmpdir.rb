@@ -5,4 +5,5 @@ if Rails.env != "production"
 else
 	HDA_TMP_DIR = '/var/hda/tmp'
 end
+
 FileUtils.mkdir_p(HDA_TMP_DIR)
