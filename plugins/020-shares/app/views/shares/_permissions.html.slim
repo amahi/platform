@@ -3,7 +3,7 @@
 .permissions
   = spinner
   = link_to content_tag('span', '', :class => 'tools'), clear_permissions_share_path(share), :remote => true, :method => 'put',
-    :class => 'clear-permissions remote-btn glyphicon glyphicon-wrench',
+    :class => 'clear-permissions remote-btn fa fa-wrench',
     :title => t('this_will_clear_permissions_wide', :share => share.name),
     :data => { :confirm => t('this_will_clear_permissions_wide', :share => share.name), :success => t('permissions_cleared'), :error => t('permissions_clearning_error') }
   span.messages

@@ -4,7 +4,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
   head
     meta charset="utf-8"
-    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+      /
     title= @title || "Amahi Server #{t('log_in')}"
     = stylesheet_link_tag "login"
     = csrf_meta_tags

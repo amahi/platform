@@ -1,13 +1,13 @@
 div.entry
 
-  table.settings.stretchtoggle.table
+  table.settings.stretchtoggle.table.table-hover
     tr
       td.settings-col1.settings-col1-pad
         = link_to host.name, '#'
       td
         = @net + '.' + host.address
 
-  .settings-stretcher[style="display:none;"]
+  .settings-stretcher.table.table-condensed[style="display:none;"]
     fieldset
 
       legend
@@ -23,7 +23,7 @@ div.entry
             :method => :delete,
             :data => {:confirm => confirm_host_destroy_message(host.name)},
             :remote => true,
-            :class => 'btn-delete remote-btn btn btn-primary btn-sm pull-right'
+            :class => 'btn-delete remote-btn btn btn-primary btn-sm pull-right btn-space'
 
       .settings-fields
         table.table

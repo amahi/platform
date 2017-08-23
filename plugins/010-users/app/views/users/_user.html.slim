@@ -1,15 +1,18 @@
 div.user[id="whole_user_#{user.id}"]
-  table.settings.stretchtoggle.table.table-condensed
+  table.settings.stretchtoggle.table.table-hover
     tr
       td.settings-col1.settings-col1-pad.users-col1
         = link_to user.login, '#'
         span[class="user_icons #{user_icon_class(user)}"]
       td.settings-col2.users-col2= user.name
 
+
+
+
   div.settings-stretcher[id="about_user_#{user.id}" style="display:none;"]
     div.user-manage
       fieldset
-        legend
+        h4 style="margin-left:8px"
           = t('edit_user')
           | &nbsp;
           b = user.login
@@ -24,14 +27,14 @@ div.user[id="whole_user_#{user.id}"]
                       :method => :delete,
                       :id => "delete-user-#{user.id}",
                       :data => { :confirm => confirm_user_destroy_message(user.login) },
-                      :class => 'btn-delete remote-btn navbar-right btn btn-primary btn-sm'
+                      :class => 'btn-delete remote-btn navbar-right btn btn-primary btn-sm btn-space'
 
         .settings-fields
-          table.table
+          table.table.table-condensed
             tr
               td
                 label #{t('name')}
-              td
+              td.col-md-3
                 a.name_click_change  #{user.name}
                 = simple_remote_text     :id => "#{user.id}",
                                          :input_id =>"text_user_#{user.id}",
@@ -46,7 +49,7 @@ div.user[id="whole_user_#{user.id}"]
                                          :remote => true,
                                          :input_css_class=>'form-control input-sm',
                                          :form_css_class => "edit_name_form form_hidden form-inline",
-                                         :cancel_class => "name_cancel_link btn btn-primary btn-sm left-margin-10"
+                                         :cancel_class => "name_cancel_link btn btn-primary btn-sm left-margin-10 btn-space"
                 .messages
 
             - if advanced?

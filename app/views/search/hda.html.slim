@@ -1,4 +1,4 @@
-#search-page
+#search-page.col-md-12.col-sm-10.col-xs-5
   #search-types
     ul#search-menu
       li[class="#{active 'hda'}"]
@@ -12,10 +12,10 @@
       li.results
         = t('results_displayed', :count => @results.size)
         '
-        ' | 
+        ' |
         =link_to 50, query: @query, per_page: 50
         '
-        ' | 
+        ' |
         =link_to 100, query: @query, per_page: 100
   #search-results
     .results_list
@@ -26,26 +26,26 @@
         .myhda_empty
           = t 'no_documents_found'
 
-  #search-pagination
-    .pagination
+  .container-fluid
+    ul.pagination
       - if @page != 1
-        span.previous_page =link_to t('previous'), query: @query, page: @page-1, per_page: @rpp
-        '
+        li.previous_page =link_to t('previous'), query: @query, page: @page-1, per_page: @rpp
+
       - if @page > 5
-        =link_to "1", query: @query, page: 1, per_page: @rpp
+        li =link_to "1", query: @query, page: 1, per_page: @rpp
         '
-        =link_to "2", query: @query, page: 2, per_page: @rpp
+        li =link_to "2", query: @query, page: 2, per_page: @rpp
         '
-        ' ..
+        '
       -(1..4).each do |p|
         - page = @page-(5-p)
         - unless page < 1
-          =link_to page, query: @query, page: page, per_page: @rpp
+          li  =link_to page, query: @query, page: page, per_page: @rpp
           '
-      em.current = @page
+      li.active = link_to @page
       - unless @results.size < @rpp
         '
         -(1..6).each do |p|
-          =link_to @page+p, query: @query, rel: "next", page: @page+p, per_page: @rpp
+          li =link_to @page+p, query: @query, rel: "next", page: @page+p, per_page: @rpp
           '
-        span.next_page =link_to t('next'), query: @query, page: @page+1, per_page: @rpp
+        li.next_page =link_to t('next'), query: @query, page: @page+1, per_page: @rpp

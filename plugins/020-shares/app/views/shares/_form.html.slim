@@ -5,7 +5,7 @@
     fieldset
       legend &nbsp; #{t('create_a_new_share')} &nbsp;
 
-      .create-inside
+      .create-inside.col-md-7
         / = render :partial => 'shared/errors', :object => @share
 
         .control-group.form-group
@@ -24,5 +24,5 @@
         .control-group.create-btn.form-group
           .controls
             = spinner
-            = button_tag t('create'), :type => 'submit', :id => 'share_create_button', :class => 'btnn btn-create btn-info btn btn-sm'
+            = button_tag t('create'), :type => 'submit', :id => 'share_create_button', :class => 'btnn btn-create btn-info btn btn-sm btn-space'
             = link_to t('cancel'), '#', :class => 'close-area cancel-link btn btn-primary btn-sm left-margin-10', :data => {:related => '#new-share-to-step1'}

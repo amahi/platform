@@ -2,8 +2,8 @@
 
 = content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => apps_engine.uninstall_progress_path(app.identifier) } do
 
-  table.settings.stretchtoggle.table[id="app_row_#{app.identifier}"]
-    tr
+  table.settings.stretchtoggle.table.table-hover[id="app_row_#{app.identifier}"]
+    tr.active
       td.settings-col1.settings-col1-pad1.apps-col1
         = link_to name_with_warning(app), '#'
       td.settings-col2.apps-col2[id="app_ip_#{app.identifier}"]

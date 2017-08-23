@@ -3,7 +3,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
   head
     meta charset="utf-8"
     title = full_page_title
-
+     
     = stylesheet_link_tag 'application'
 
     - if theme.name != "default" and theme.disable_inheritance == false
