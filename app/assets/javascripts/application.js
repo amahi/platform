@@ -1,4 +1,4 @@
-//= require jquery
+//= require jquery3
 //= require jquery-ui
 //= require lib/jquery.ui.templates
 //= require jquery_ujs
@@ -14,5 +14,6 @@
 //= require lib/templates
 //= require lib/smart-links
 //= require lib/debug
-//= require bootstrap.min
+//= require popper
+//= require bootstrap-sprockets
 //= require spinner

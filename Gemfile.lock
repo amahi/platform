@@ -88,7 +88,13 @@ GEM
       activesupport (>= 3.2, < 5.1)
       request_store (~> 1.0)
       scrypt (>= 1.2, < 4.0)
+    autoprefixer-rails (7.1.2.4)
+      execjs
     bcrypt (3.1.11)
+    bootstrap (4.0.0.beta)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (~> 1.11.1)
+      sass (>= 3.4.19)
     builder (3.2.3)
     capybara-screenshot (1.0.14)
       capybara (>= 1.0, < 3)
@@ -122,6 +128,8 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.8.1)
@@ -158,6 +166,7 @@ GEM
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
+    popper_js (1.11.1)
     protected_attributes_continued (1.2.4)
       activemodel (>= 4.0.1, < 6.0)
     psych (2.2.4)
@@ -269,12 +278,14 @@ DEPENDENCIES
   activeresource!
   authlogic
   bcrypt
+  bootstrap (~> 4.0.0.beta)
   capybara!
   capybara-screenshot
   coffee-rails
   database_cleaner
   docker-api
   factory_girl_rails
+  font-awesome-rails
   jbuilder
   jquery-rails
   jquery-ui-rails
@@ -302,4 +313,4 @@ DEPENDENCIES
   yettings
 
 BUNDLED WITH
-   1.14.6
+   1.15.3

@@ -1,4 +1,4 @@
 = form_tag search_path(action: 'hda'), method: 'get', id: 'searchform' do
-  = text_field_tag 'query', @query, :maxlength => 45, :size => 20, :class => "ip-input", :id => 'searchinput'
-  = submit_tag 'HDA', :class => 'searchbutton', :name => "button" , :id => 'hdasearchbutton'
-  = submit_tag t('web'), :class => 'searchbutton', :name => "button" , :id => 'websearchbutton'
+  = text_field_tag 'query', @query, :maxlength => 45, :size => 20, :class => "ip-input btn-space", :id => 'searchinput'
+  = submit_tag 'HDA', :class => 'searchbutton btn btn-danger btn-sm btn-space', :name => "button" , :id => 'hdasearchbutton'
+  = submit_tag t('web'), :class => 'searchbutton btn btn-danger btn-sm btn-space', :name => "button" , :id => 'websearchbutton'

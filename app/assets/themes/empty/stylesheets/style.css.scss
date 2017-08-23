@@ -1,0 +1,103 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 100px;
+
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #333;
+}
+
+.btn-space {
+    margin-right: 5px;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td ,tbody > tr > td,.table > thead > tr > th{
+
+    width: 21%;
+}
+
+
+// .nav-tabs > li > a {
+//     border-left: 1px solid #ddd;
+//     border-right: 1px solid #ddd;
+//     border-top: 1px solid #ddd;
+//     padding: 10px;
+// }
+
+
+fieldset {
+    padding: 50px;
+
+}
+// legend {
+//     border-bottom: 0px solid #e5e5e5;
+// }
+.col-md-2 {
+    float: left;
+}
+h2 {
+    margin-left: 60px;
+    margin-top: 14px;
+}
+
+#btn-get-apps {
+    color: #000;
+    font-size: 20px;
+    line-height: 48px;
+    font-weight: bold;
+    background: url(../images/install-app.png) no-repeat;
+    display: inline-block;
+    padding: 0 210px 0 50px;
+    margin: 0 30px;
+    float: right;
+}
+#btn-install-apps {
+    color: #000;
+    font-size: 20px;
+    line-height: 48px;
+    font-weight: bold;
+    background: url(../images/install.png) no-repeat;
+    display: inline-block;
+    padding: 0 0 0 50px;
+    margin: 0 30px;
+    float: left;
+}
+.footer-list
+{
+
+      > ul {
+        list-style: none;
+
+
+        li {
+          float: left;
+          margin: 0 15px 0 0;
+
+          &:before {
+            content: '|';
+            line-height: 18px;
+            float: left;
+            margin: 0 15px 0 0;
+            position: relative;
+            top: -2px;
+          }
+
+        }
+      }
+}
+.table {
+    margin-top: 20px;
+}
+.btn {
+    margin-bottom: 10px;
+}

@@ -1,17 +1,20 @@
-#tabs
-  nav.preftab[class=nav_class(@tabs)]
-    ul
+
+  #tabs.nav.nav-tabs
+   nav.preftab[class=nav_class(@tabs)]
+    ul.nav.nav-tabs
       - @tabs.each do |tab|
         li[class=tab_class(tab)]
-          a href=tab.url
+          a.nav-link.dropdown-toggle data-toggle="dropdown" href=tab.url
             = t tab.label
+            span.caret
             i class="icon-#{tab.label.downcase}"
-          ul
+
+          ul.dropdown-menu
             - if @advanced
               - tab.advanced_subtabs.each do |subtab|
-                li[class=subtab_class(subtab.id,tab.id)]
+                li.dropdown-item[class=subtab_class(subtab.id,tab.id)]
                   = link_to t(subtab.label), subtab.url
             - else
               - tab.basic_subtabs.each do |subtab|
-                li[class=subtab_class(subtab.id,tab.id)]
+                li.dropdown-item[class=subtab_class(subtab.id,tab.id)]
                   = link_to t(subtab.label), subtab.url

@@ -9,9 +9,9 @@ gem "yettings"
 
 gem 'sass-rails'
 gem 'coffee-rails'
-
+gem 'bootstrap', '~> 4.0.0.beta'
 gem 'therubyracer'
-
+gem "font-awesome-rails"
 gem 'uglifier'
 
 gem 'activeresource', :git => "https://github.com/rails/activeresource.git", require: "active_resource"
