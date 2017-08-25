@@ -318,6 +318,13 @@ class App < ApplicationRecord
 				puts "Running container installation script"
 				app_host = "#{installer.url_name}.#{Setting.value_by_name('domain')}" rescue nil
 				puts app_host
+
+				# FIXME : test this
+				if webapp_path.nil?
+					webapp_path = WEBAPP_PATH % identifier
+					mkdir File.join(webapp_path, 'html')
+					mkdir File.join(webapp_path, 'logs')
+				end
 				# Replace the variables in docker-compose.yml
 				install_script = installer.install_script
 				install_script = install_script.gsub(/HOST_PORT/, (BASE_PORT+self.id).to_s)
@@ -335,8 +342,8 @@ class App < ApplicationRecord
 				puts "Container with identifier: #{identifier} running"
 			end
 
-			# Create webapp if required
-			if app_host
+			# Create webapp if url name is provided
+			if installer.url_name
 				puts "Creating webapp"
 				webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 				self.webapp = webapp
@@ -347,6 +354,8 @@ class App < ApplicationRecord
 		rescue Exception=>e
 			puts "FAILURE: Container App Installation Failed."
 			puts e
+			puts e.message
+			puts e.backtrace.join("\n")
 			return false
 		end
 
