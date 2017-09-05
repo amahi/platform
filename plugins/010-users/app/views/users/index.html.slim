@@ -1,13 +1,13 @@
 .container-fluid
-  .row
-    .col-md-12.col-sm-8.col-xs-5
-      .settings-table#users-table
+  .row.col-md-10.table.table-bordered
+    .col-md-10
+      .settings-table.panel.panel-body#users-table
         - if @users.any?
-          table.settings.table
+          table.settings.table.table.table-bordered
             thead
-              tr
-                th.settings-col1.users-col1[scope="col"]= t('username')
-                th.settings-col1.users-col2[scope="col"]= t('full_name')
+              tr.panel.panel-primary
+                th.settings-col1.users-col1.panel-heading[scope="col"]= t('username')
+                th.settings-col1.users-col2.panel-heading[scope="col"]= t('full_name')
           = render @users
         - else
           .no-users
@@ -15,7 +15,7 @@
 
       = button_tag t('new_user'), :type => 'button', :class => 'open-area btnn btn-create btn btn-info pull-left', :id => "new-user-to-step1",  :data => { :related => "#new-user-step1" }
 
-      #new-user-box.col-sm-7
+      #new-user-box.col-md-5
         #user-new
           #new-user-step1.area[style="display:none;"]
             = render 'form'

@@ -2,8 +2,8 @@
 
 = content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => apps_engine.uninstall_progress_path(app.identifier) } do
 
-  table.settings.stretchtoggle.table[id="app_row_#{app.identifier}"]
-    tr
+  table.settings.stretchtoggle.list-group-item[id="app_row_#{app.identifier}"]
+    tr.active
       td.settings-col1.settings-col1-pad1.apps-col1
         = link_to name_with_warning(app), '#'
       td.settings-col2.apps-col2[id="app_ip_#{app.identifier}"]
@@ -15,10 +15,10 @@
         legend &nbsp; #{app.name} #{t('installed_paren')} &nbsp;
         .settings-fields
 
-          .img-wrap
+          .img-wrap.col-md-6
             = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
 
-          .app-content.col-md-6.col-xs-12
+          .app-content.col-md-6
             div.app-description
               = app.description.try(:html_safe) || t('no_description_supplied')
 

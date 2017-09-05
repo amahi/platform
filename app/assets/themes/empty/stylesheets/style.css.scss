@@ -5,6 +5,7 @@ html {
 
 body {
     margin-bottom: 100px;
+
 }
 
 
@@ -14,6 +15,62 @@ body {
   width: 100%;
   height: 100px;
   background-color: #333;
+}
+
+.btn-space {
+    margin-right: 5px;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td ,tbody > tr > td,.table > thead > tr > th{
+
+    width: 4%;
+}
+ 
+.table-bordered > tbody > tr > td , .table > tbody > tr > td{
+    border: 0px solid #ddd;
+}
+.nav-tabs > li > a {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+}
+.list-group-item {
+    background-color: #e8e8e8;
+}
+
+.panel-body {
+    padding: 0px;
+}
+fieldset {
+    padding: 20px;
+
+}
+legend {
+    border-bottom: 0px solid #e5e5e5;
+}
+
+#btn-get-apps {
+    color: #000;
+    font-size: 20px;
+    line-height: 48px;
+    font-weight: bold;
+    background: url(../images/install-app.png) no-repeat;
+    display: inline-block;
+    padding: 0 215px 0 50px;
+    margin: 0 30px;
+    float: right;
+}
+#btn-install-apps {
+    color: #000;
+    font-size: 20px;
+    line-height: 48px;
+    font-weight: bold;
+    background: url(../images/install.png) no-repeat;
+    display: inline-block;
+    padding: 0 0 0 50px;
+    margin: 0 30px;
+    float: left;
 }
 .footer-list
 {
@@ -37,4 +94,10 @@ body {
 
         }
       }
+}
+.table {
+    margin-top: 20px;
+}
+.btn {
+    margin-bottom: 10px;
 }

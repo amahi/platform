@@ -1,17 +1,17 @@
 .container-fluid
-  .row
-    .col-md-12.col-sm-8.col-xs-5
+  .row.col-md-10.table.table-bordered
+    .col-md-10
       .app-store-header.row
         .col-xs-6.col-sm-6.col-md-6.col-lg-6.get-apps = link_to 'Get apps', 'https://www.amahi.org/apps', :title => 'Amahi App Store', :target => '_blank', :id => 'btn-get-apps'
         .col-xs-6.col-sm-6.col-md-6.col-lg-6.install-apps = link_to 'Install here!', apps_engine.root_path, :title => 'Refresh', :id => 'btn-install-apps'
 
       #apps-table
-        .settings-table
+        .settings-table.panel.panel-body
           - if @apps.any?
-            table.settings.table
-              tr
-                th.settings-col1.settings-col1-pad1.apps-col1[scope='col']= t('application')
-                th.settings-col2.apps-col2[scope='col']= t('description')
+            table.settings.table.table-bordered
+              tr.panel.panel-primary
+                th.settings-col1.settings-col1-pad1.apps-col1.panel-heading[scope='col']= t('application')
+                th.settings-col2.apps-col2.panel-heading[scope='col']= t('description')
             = render :partial => 'apps/app_available', :collection => @apps
           - else
             div.align-center.default-message

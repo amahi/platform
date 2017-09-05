@@ -1,20 +1,20 @@
 .container-fluid
-  .row
-    .col-md-12.col-sm-10.col-xs-5
+  .row.col-md-10.table.table-bordered
+    .col-md-10
       - if @servers.length < 1
           h2
             = t 'there_are_no_servers_available'
       - else
         - if @message
-            h2
+            h4
               = @message
-        div.settings-table.server-page
+        div.settings-table.server-page.panel.panel-body
           table.settings.table
             thead
-              tr
-                th scope="col" class="settings-col1 servers-col1"
+              tr.panel.panel-primary
+                th scope="col" class="settings-col1 servers-col1 panel-heading"
                   = t 'servers'
-                th scope="col" class="settings-col2 servers-col2"
+                th scope="col" class="settings-col2 servers-col2 panel-heading"
                   = t 'state'
             tbody style="display: none"
               tr
