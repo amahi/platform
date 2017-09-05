@@ -58,12 +58,10 @@ class App < ApplicationRecord
 
 	def initialize(identifier, app=nil)
 		super()
-		# If test environment then use the testapps present locally
-		# else use the amahi api to get app details
-
-		AmahiApi::api_key = Setting.value_by_name("api-key")
-		app = AmahiApi::App.find(identifier)
-
+		if app.nil?
+			AmahiApi::api_key = Setting.value_by_name("api-key")
+			app = AmahiApi::App.find(identifier)
+		end
 		self.name = app.name
 		self.screenshot_url = app.screenshot_url
 		self.identifier = app.id
@@ -259,7 +257,7 @@ class App < ApplicationRecord
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
 
-			# TODO: Skip this step for container apps
+			# Run the installer script only if this app is not of container type
 			if installer.install_script and !installer.kind.include?("container")
 				# if there is an installer script, run it
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
@@ -286,15 +284,16 @@ class App < ApplicationRecord
 			self.installed = true
 			self.save!
 
+			# This condition initiates container installation if the app is of container type
+			# For container app webapp creation will be handled inside the "install_container_app" function
+			# Create the webapp normally if its not a container app (See the else statement)
 			if installer.kind.include? "container"
 				# Try installing the container app
 				# Mark the installation as failed if it returns false
-				# For container app webapp creation will be handled inside the "install_container_app" function
 				if !install_container_app(installer, webapp_path, identifier)
 					self.install_status = 999
 				end
 			else
-				# Create the webapp normally if its not a container app
 				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			end
 
@@ -310,20 +309,30 @@ class App < ApplicationRecord
 	def install_container_app(installer, webapp_path, identifier)
 		begin
 			# Get the kind of container app
+			# container apps are of kind: container-python, container-php5, container-custom, etc
 			kind = installer.kind.split("-")[1]
 
 			# Run the install script.
-			# docker-compose.yml file will be inside the install_script
 			app_path = APP_PATH % identifier
 			if installer.install_script
 				puts "Running container installation script"
-				app_host = "#{installer.url_name}.#{Setting.value_by_name('domain')}"
+				app_host = "#{installer.url_name}.#{Setting.value_by_name('domain')}" rescue nil
 				puts app_host
+
+				# FIXME : test this
+				if webapp_path.nil?
+					webapp_path = WEBAPP_PATH % identifier
+					mkdir File.join(webapp_path, 'html')
+					mkdir File.join(webapp_path, 'logs')
+				end
+				# Replace the variables in docker-compose.yml
 				install_script = installer.install_script
 				install_script = install_script.gsub(/HOST_PORT/, (BASE_PORT+self.id).to_s)
 				install_script = install_script.gsub(/WEBAPP_PATH/, webapp_path)
 				install_script = install_script.gsub(/APP_IDENTIFIER/, identifier)
 				install_script = install_script.gsub(/APP_HOSTNAME/, app_host)
+
+				# Run the install script
 				Dir.chdir(webapp_path ? webapp_path : app_path) do
 					SystemUtils.run_script(install_script, installer.url_name, hda_environment(installer.initial_user, installer.initial_password, self.db))
 				end
@@ -333,16 +342,20 @@ class App < ApplicationRecord
 				puts "Container with identifier: #{identifier} running"
 			end
 
-			# Create webapp
-			puts "Creating webapp"
-			webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-			self.webapp = webapp
-			self.save! # Get
-			webapp.create_container_vhost
+			# Create webapp if url name is provided
+			if installer.url_name
+				puts "Creating webapp"
+				webapp = Webapp.create(:name => installer.url_name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+				self.webapp = webapp
+				self.save! # Get
+				webapp.create_container_vhost
+			end
 
 		rescue Exception=>e
 			puts "FAILURE: Container App Installation Failed."
 			puts e
+			puts e.message
+			puts e.backtrace.join("\n")
 			return false
 		end
 
@@ -352,7 +365,7 @@ class App < ApplicationRecord
 			cmd = Command.new("chmod 666 /var/run/docker.sock")
 			cmd.execute
 		end
-		# TODO: Write uninstallation case for php5 apps.
+
 		app_path = APP_PATH % identifier
 		begin
 			self.install_status = 100
@@ -389,9 +402,6 @@ class App < ApplicationRecord
 				end
 				self.install_status = 20
 				self.uninstall_pkgs uninstaller if uninstaller.pkg
-				# else
-				# FIXME - retry? what if an app is not
-				# live at this time??
 			end
 
 			# FIXME - set to nil to destroy??
