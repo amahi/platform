@@ -71,3 +71,5 @@ end
 # FIXME - temporary work-around for Fedora 19
 # see https://bugzilla.redhat.com/show_bug.cgi?id=979133
 gem 'psych'
+
+gem 'mini_portile2'
