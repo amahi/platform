@@ -16,6 +16,7 @@
 
 class Host < ApplicationRecord
 
+	before_save :convert_address
 	after_save :restart
 	after_create :restart
 	after_destroy :restart
@@ -32,5 +33,9 @@ class Host < ApplicationRecord
 	def restart
 		# FIXME - only do named
 		system "hda-ctl-hup"
+	end
+
+	def convert_address
+		self.address = self.address.to_i.to_s
 	end
 end
