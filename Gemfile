@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'activeresource', :git => "https://github.com/rails/activeresource.git", require: "active_resource"
 gem 'protected_attributes_continued'
 gem 'actionpack-action_caching'
+gem 'actionview'
 gem 'rails-observers', :git => "https://github.com/rails/rails-observers.git"
 
 gem 'jbuilder'

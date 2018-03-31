@@ -266,6 +266,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack-action_caching
+  actionview
   activeresource!
   authlogic
   bcrypt
@@ -302,4 +303,4 @@ DEPENDENCIES
   yettings
 
 BUNDLED WITH
-   1.14.6
+   1.16.1
