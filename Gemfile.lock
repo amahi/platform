@@ -272,6 +272,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack-action_caching
+  actionview
   activeresource!
   authlogic
   bcrypt

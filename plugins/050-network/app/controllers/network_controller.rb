@@ -71,7 +71,7 @@ class NetworkController < ApplicationController
   def update_dns
     sleep 2 if development?
     case params[:setting_dns]
-    when 'opendns', 'google', 'opennic'
+    when 'opendns', 'google', 'opennic', 'cloudflare'
       @saved = Setting.set("dns", params[:setting_dns], KIND)
       system("hda-ctl-hup")
     else
