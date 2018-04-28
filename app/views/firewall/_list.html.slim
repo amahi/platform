@@ -1,0 +1,20 @@
+#fw-rules-table
+  .settings-table
+    - if fw_rules.size > 0
+      table.settings
+        thead
+          tr
+            th.settings-col1.fw-rules-col1 scope="col"
+              =t 'rule'
+            th.settings-col2.fw-rules-col2 scope="col"
+              =t 'state'
+            th.settings-col3.fw-rules-col3 scope="col"
+              =t 'details'
+        tbody style="display: none"
+          tr
+            td
+      = render :partial => 'firewall/rule', :collection => fw_rules
+    - else
+      div align="center"
+        h2
+          =t 'there_are_no_firewall_rules_defined'
