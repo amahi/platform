@@ -1,0 +1,123 @@
+div align="center" style="padding: 0% 10% 5% 10%" 
+  fieldset
+    legend
+      | &nbsp;
+      = t 'new_static_ip'
+      | &nbsp;
+    - form_for(newhost) do |f|
+      = f.error_messages
+
+      table
+        tr
+          td
+            | &nbsp;  
+        tr
+          td
+            = t 'name'
+            | \:
+          td
+            | &nbsp;
+          td
+            = f.text_field :host, :size => 12, :maxlength => 32
+            | .
+            = @domain
+          td
+            #host_messages.messages style="display: none" 
+        tr
+          td
+            | &nbsp;
+          td
+            | &nbsp;
+          td colspan="2" 
+            small
+              br
+              strong
+                = t 'the_name_you_input_above_will_be_added_to_the_DNS_server'
+        tr
+          td
+            | &nbsp;
+        tr
+          td
+            = t 'ip_address'
+            | \:
+          td
+            | &nbsp;
+          td
+            = @net
+            | .
+            = f.text_field :address, :size => 4, :maxlength => 5
+          td
+            #address_messages.messages style="display: none" 
+        tr
+          td
+            | &nbsp;
+          td
+            | &nbsp;
+          td colspan="2" 
+            small
+              br
+              = t('this_ip_address_will_always_be_statically_associated_to_the_mac_address', :max => @max)
+        tr
+          td
+            | &nbsp;
+        tr
+          td
+            = t 'mac_address'
+            | \:
+          td
+            | &nbsp;
+          td
+            = f.text_field :mac, :size => 17, :maxlength => 22
+          td
+            #mac_messages.messages style="display: none" 
+        tr
+          td
+            | &nbsp;
+          td
+            | &nbsp;
+          td colspan="2" 
+            small
+              br
+              = t 'mac_address_of_the_device'
+        tr
+          td
+            | &nbsp;
+        tr
+          td
+            | &nbsp;
+          td
+            | &nbsp;
+          td
+            = link_to t('cancel'), update_page { |page| \
+              page.hide 'new-host-step1'                \
+              page.show 'new-host-to-step1'             \
+              page[:host_host].value = ""               \
+              page[:host_address].value = ""            \
+              page[:host_mac].value = ""                \
+              page.select(".messages").each do |item|   \
+                page.send 'replace_html', item, ""       \
+              end                                       \
+              page[:host_address].disabled = true       \
+              page[:host_mac].disabled = true           \
+              page[:host_create_button].disabled = true \
+            }                
+            | &nbsp;&nbsp;                         
+            = submit_to_remote "create_host", " #{t('create')} &raquo; ", \
+             :url =>  { :controller => 'hosts', :action => 'create' }, \
+             :html =>  { :id => "host_create_button", :disabled => true }, \
+             :failure =>  "alert('HTTP Error ' + request.status + '!')", \
+             :update => { :success => "hosts", :failure => "create_hosts_error_msgs" }}
+
+#create_hosts_error_msgs style="display: none" 
+
+= observe_field 'host_host', :frequency => 0.5,                    \
+  :url => { :controller => 'hosts', :action => 'new_host_check' }, \
+  :with => "'host=' + encodeURIComponent(value)"                   
+= observe_field 'host_address', :frequency => 0.5,                    \
+  :url => { :controller => 'hosts', :action => 'new_address_check' }, \
+  :with => "'address=' + encodeURIComponent(value)"                   
+= observe_field 'host_mac', :frequency => 0.5,                    \
+  :url => { :controller => 'hosts', :action => 'new_mac_check' },  \
+  :with => "'mac=' + encodeURIComponent(value)"                   
+
+br

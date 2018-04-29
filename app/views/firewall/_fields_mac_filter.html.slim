@@ -1,0 +1,28 @@
+#mac-filter.fw-selection
+  table
+    tr
+      td
+      td
+        =t 'firewall_mac_address_filter_info'
+    tr
+      td.fw-label
+        =t 'mac_address'
+        | :
+      td.fw-setting
+        = text_field_tag :mac, "", :size => 17, :maxlength => 22
+        span#mac_messages.messages style="display: none"
+    tr
+      td
+      td
+        =t 'mac_address_to_be_filtered_in_format'
+    tr
+      td.fw-label
+        =t 'comment'
+        | :
+      td.fw-setting
+        = text_field_tag :comment, '', :size => 25, :maxlength => 40
+
+= render :partial => 'firewall/new_button'
+= observe_field 'mac', :frequency => 0.5, \
+ 			:url => { :controller => 'firewall', :action => 'check_mac' },  \
+ 			:with => "'mac=' + encodeURIComponent(value)"
