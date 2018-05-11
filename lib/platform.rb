@@ -360,13 +360,12 @@ class Platform
 					line = issue.gets
 				end
 				@@platform = "fedora" if line.include?("Fedora")
-			elsif File.exist?('/etc/system-release')
+			elsif File.exist?('/etc/amahi-release')
 				line = nil
-				File.open("/etc/system-release", "r") do |issue|
+				File.open("/etc/amahi-release", "r") do |issue|
 					line = issue.gets
 				end
 				@@platform = "fedora" if line.include?("Fedora")
-				@@platform = "fedora" if line.include?("Generic")
 				@@platform = "centos" if line.include?("CentOS")
 			elsif File.exist?('/etc/issue')
 				line = nil
