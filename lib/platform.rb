@@ -360,6 +360,7 @@ class Platform
 					line = issue.gets
 				end
 				@@platform = "fedora" if line.include?("Fedora")
+				@@platform = "fedora" if line.include?("Generic")
 				@@platform = "centos" if line.include?("CentOS")
 			elsif File.exist?('/etc/issue')
 				line = nil
