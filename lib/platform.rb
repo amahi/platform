@@ -354,7 +354,13 @@ class Platform
 
 	class << self
 		def set_platform
-			if File.exist?('/etc/system-release')
+			if File.exist?('/etc/amahi-release')
+				line = nil
+				File.open("/etc/amahi-release", "r") do |issue|
+					line = issue.gets
+				end
+				@@platform = "fedora" if line.include?("Fedora")
+			elsif File.exist?('/etc/system-release')
 				line = nil
 				File.open("/etc/system-release", "r") do |issue|
 					line = issue.gets
