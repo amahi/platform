@@ -1590,10 +1590,11 @@ textarea {border: 1px solid #ccc;}
 
 //Markup for alert boxes
 .alert {
-padding: 15px;
-margin-bottom: 20px;
-border: 1px solid transparent;
-border-radius: 4px;
+  padding: 15px;
+  margin: 0 auto;
+  width: 69%;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 .alert-success {
   color: #3c763d;
@@ -1628,4 +1629,10 @@ border-radius: 4px;
 .install-apps,.get-apps {
 	float: left;
 	width: 50%;
+}
+/* for close button on alert
+   its better if we use bootstrap classes
+*/
+.close {
+  float: right;
 }
