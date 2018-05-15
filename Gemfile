@@ -22,6 +22,9 @@ gem 'rails-observers'
 gem 'jbuilder'
 gem 'ya2yaml'
 
+gem 'bootstrap', '~> 4.1.1'
+gem 'popper_js', '~> 1.12.9'
+
 gem 'themes_for_rails', :git => "https://github.com/amahi/themes_for_rails.git"
 
 gem 'jquery-rails'
@@ -43,6 +46,7 @@ gem 'docker-api' # required to create and manage docker containers
 group :development do
 	gem 'thin'
 	gem 'thor'
+	gem 'byebug'
 	# turn this on to enable reporting on best practices with:
 	#	rails_best_practices -f html .
 	# gem 'rails_best_practices'
@@ -60,7 +64,8 @@ group :test do
   gem "factory_girl_rails"
   gem "capybara"
   gem 'capybara-screenshot'
-	gem 'database_cleaner'
+  gem 'database_cleaner'
+  gem 'byebug'
   # FIXME: required in Fedora 18 for some (packaging?) reason
   # gem 'minitest'
   # required for javascript test in selenium
