@@ -1,4 +1,4 @@
-class CreateFirewalls < ActiveRecord::Migration
+class CreateFirewalls < ActiveRecord::Migration[5.1]
   def change
     create_table "firewalls" do |t|
       t.string   "kind",       :default => ""

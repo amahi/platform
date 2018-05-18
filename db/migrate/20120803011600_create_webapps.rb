@@ -1,4 +1,4 @@
-class CreateWebapps < ActiveRecord::Migration
+class CreateWebapps < ActiveRecord::Migration[5.1]
   def change
     create_table "webapps" do |t|
       t.string   "name",                              :null => false

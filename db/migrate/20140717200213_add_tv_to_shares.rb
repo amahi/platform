@@ -1,4 +1,4 @@
-class AddTvToShares < ActiveRecord::Migration
+class AddTvToShares < ActiveRecord::Migration[5.1]
 	def self.up
 		if(Setting.get('initialized') && Setting.get('initialized') == '1')
 			name = "TV"

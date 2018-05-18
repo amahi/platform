@@ -1,4 +1,4 @@
-class CreateDbs < ActiveRecord::Migration
+class CreateDbs < ActiveRecord::Migration[5.1]
   def change
     create_table "dbs" do |t|
       t.string   "name",       :null => false
