@@ -17,6 +17,7 @@
 class ServerController < ApplicationController
 
 	before_action :admin_required
+	theme :theme_resolver
 
 	def start
 		id = params[:id]
