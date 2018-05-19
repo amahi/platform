@@ -17,12 +17,14 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
-require 'set_theme'
+# require 'set_theme'
 require 'tab'
 
 class ApplicationController < ActionController::Base
 	require 'ipaddr'
-	protect_from_forgery
+	protect_from_forgery with: :exception
+
+	theme :theme_resolver
 
 	before_action :before_action_hook
 	before_action :initialize_validators
@@ -228,4 +230,9 @@ class ApplicationController < ActionController::Base
 		development? || test?
 	end
 
+	protected
+
+    def theme_resolver
+      params[:theme] ||= "red"
+    end
 end
