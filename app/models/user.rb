@@ -34,8 +34,6 @@ class User < ApplicationRecord
 		# non-fully active record compliant, e.g. from the app installer
 	end
 
-	attr_accessible :login, :name, :password, :password_confirmation, :admin
-
 	validates :login, :presence => true,
 	:format => { :with => /\A[A-Za-z][A-Za-z0-9]+\z/ },
 	:length => { :in => 3..32 },

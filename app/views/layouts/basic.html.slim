@@ -6,12 +6,12 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
     = stylesheet_link_tag 'application'
 
-    - if theme.name != "default" and theme.disable_inheritance == false
-      = stylesheet_link_tag(theme_stylesheet_path('style', theme.default))
-      = stylesheet_link_tag(theme_stylesheet_path('rtl', theme.default)) if rtl?
+    / - if theme.name != "default" and theme.disable_inheritance == false
+    /   = stylesheet_link_tag(theme_stylesheet_path('style', theme.default))
+    /   = stylesheet_link_tag(theme_stylesheet_path('rtl', theme.default)) if rtl?
 
-    = theme_stylesheet_link_tag 'style'
-    = theme_stylesheet_link_tag('rtl') if rtl?
+    / = theme_stylesheet_link_tag 'style'
+    / = theme_stylesheet_link_tag('rtl') if rtl?
     - amahi_plugins.each do |p|
       = stylesheet_link_tag p[:class].underscore
 
@@ -23,8 +23,8 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     - amahi_plugins.each do |p|
       = javascript_include_tag p[:class].underscore
     = javascript_tag {'$.fx.off = true;' if Rails.env.test?}
-    - for header in theme.headers do
-      = header =~ /\.js$/ ? javascript_include_tag(header) : header
+    /- for header in theme.headers do
+    /  = header =~ /\.js$/ ? javascript_include_tag(header) : header
 
     link rel="search" type="application/opensearchdescription+xml" title="HDA Search" href="/search.xml"
     link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"

@@ -45,7 +45,8 @@ class ApplicationController < ActionController::Base
 		set_locale
 		set_direction
 		check_for_amahi_app
-		prepare_theme
+		# disable for now until we get new themes
+		#prepare_theme
 		adv = Setting.where(:name=>'advanced').first
 		@advanced = adv && adv.value == '1'
 	end

@@ -19,7 +19,6 @@ require 'platform'
 require 'temp_cache'
 
 class Share < ApplicationRecord
-	# include Greyhole
 
 	DEFAULT_SHARES_ROOT = '/var/hda/files'
 
@@ -40,8 +39,6 @@ class Share < ApplicationRecord
 	before_destroy :before_destroy_hook
 	after_save :after_save_hook
 	after_destroy :after_destroy_hook
-
-	attr_accessible :name, :path, :rdonly, :visible, :tags, :extras
 
 	validates :name, presence: true,
 		format: { :with => /\A\S[\S ]+\z/ },
@@ -289,7 +286,6 @@ class Share < ApplicationRecord
 			self.users_with_write_access = users
 		end
 		Share.push_shares
-		# Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
 	end
 
 	def before_destroy_hook
@@ -299,8 +295,6 @@ class Share < ApplicationRecord
 
 	def after_destroy_hook
 		Share.push_shares
-		# sync the gh configuration
-		# Greyhole.save_conf_file(DiskPoolPartition.all, Share.in_disk_pool)
 	end
 
 	def self.samba_conf(domain)

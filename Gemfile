@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rake'
 
-gem "rails", '~>5.1.0'
+gem "rails", '~>5.2.0'
 
 gem "yettings"
 
@@ -14,7 +14,6 @@ gem 'therubyracer'
 gem 'uglifier'
 
 gem 'activeresource'
-gem 'protected_attributes_continued'
 gem 'actionpack-action_caching'
 gem 'actionview'
 gem 'rails-observers'
@@ -22,7 +21,9 @@ gem 'rails-observers'
 gem 'jbuilder'
 gem 'ya2yaml'
 
-gem 'themes_for_rails', :git => "https://github.com/amahi/themes_for_rails.git"
+gem 'bootsnap', require: false
+
+gem 'themes_on_rails' #, :git => "https://github.com/amahi/themes_for_rails.git", :branch => 'ChapterMedia-rails-5.0-theme-translations'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -41,22 +42,26 @@ gem 'rb-readline', require: false
 gem 'docker-api' # required to create and manage docker containers
 
 group :development do
-	gem 'thin'
-	gem 'thor'
 	# turn this on to enable reporting on best practices with:
 	#	rails_best_practices -f html .
 	# gem 'rails_best_practices'
+
+	gem 'listen'
 
 	# FIXME: for Fedora only
 	if ((open('/etc/issue').grep(/fedora/i).length > 0) rescue false)
 		gem "minitest"
 	end
+
+	gem 'better_errors'
+	gem 'binding_of_caller'
+
+	gem 'puma'
 end
 
 gem "rspec-rails", :group => [:test, :development]
 
 group :test do
-  gem "sqlite3"
   gem "factory_girl_rails"
   gem "capybara"
   gem 'capybara-screenshot'
@@ -74,6 +79,10 @@ gem 'psych'
 
 group :development, :production do
 	gem 'mysql2'
+end
+
+group :development, :test do
+	gem 'sqlite3'
 end
 
 # this is somehow needed for nokogiri

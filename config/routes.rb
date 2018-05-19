@@ -1,6 +1,5 @@
-AmahiHDA::Application.routes.draw do
+Rails.application.routes.draw do
 
-  themes_for_rails
   amahi_plugin_routes
 
   match 'login' => 'user_sessions#new', :as => :login, via: [:get]

@@ -21,8 +21,6 @@ class Db < ApplicationRecord
 	after_create :after_create_hook
 	after_destroy :after_destroy_hook
 
-  attr_accessible :name
-
 	# stubs for name, password and hostname, in case they need changed later
 
 	def username
