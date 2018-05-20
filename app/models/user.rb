@@ -55,6 +55,12 @@ class User < ApplicationRecord
 
 	class << self
 		def system_find_name_by_username(username)
+			u = ENV['USER']
+			if Rails.env.development? && username == u
+				# in development pretend the user is the logged in one if it matches
+				logger.debug("USER: #{u}")
+				return [u, 4444, u]
+			end
 			# return [username, 500] if Yetting.dummy_mode.inspect
 			pwd = StringScanner.new(File.open('/etc/passwd').readlines.join)
 			user = Regexp.new("^(#{username}):[^:]*:(\\d+):\\d+:([^:]*):", Regexp::MULTILINE | Regexp::IGNORECASE)
