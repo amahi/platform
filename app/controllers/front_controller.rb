@@ -20,6 +20,7 @@ class FrontController < ApplicationController
 
 	before_action :login_required_unless_guest_dashboard
 	layout 'basic'
+	theme :theme_resolver
 
 	def index
 		@page_title = t('dashboard')

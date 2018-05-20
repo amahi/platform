@@ -21,6 +21,7 @@ class SearchController < ApplicationController
 
 	before_action :login_required
 	layout 'basic'
+	theme :theme_resolver
 
 	RESULTS_PER_PAGE = 20
 
