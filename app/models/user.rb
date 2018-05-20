@@ -58,7 +58,6 @@ class User < ApplicationRecord
 			u = ENV['USER']
 			if Rails.env.development? && username == u
 				# in development pretend the user is the logged in one if it matches
-				logger.debug("USER: #{u}")
 				return [u, 4444, u]
 			end
 			# return [username, 500] if Yetting.dummy_mode.inspect
