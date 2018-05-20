@@ -271,4 +271,21 @@ module ApplicationHelper
 	def spinner_hide id
 		"Element.hide('spinner-#{id}');"
 	end
+
+	# theme helpers
+	def theme_stylesheet_link_tag(a, options = {})
+		stylesheet_link_tag(a, options)
+	end
+
+	def theme_stylesheet_path(a, options = {})
+		stylesheet_path(a, options)
+	end
+
+	def theme_image_tag(a, options = {})
+		image_tag(a, options)
+	end
+
+	def theme_image_path(a, options = {})
+		image_path(a, options)
+	end
 end
