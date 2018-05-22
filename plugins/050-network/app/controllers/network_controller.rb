@@ -20,7 +20,7 @@ class NetworkController < ApplicationController
 
   def create_host
     sleep 2 if development?
-    @host = Host.create params[:host]
+    @host = Host.create(params_host)
     get_hosts
   end
 
@@ -162,5 +162,9 @@ private
 
   def params_create_alias    
     params.require(:dns_alias).permit([:name, :address])
+  end
+
+  def params_host
+    params.require(:host).permit(:name, :mac, :address)
   end
 end
