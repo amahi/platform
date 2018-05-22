@@ -251,7 +251,7 @@ class Share < ApplicationRecord
 	end
 
 	def update_extras!(params)
-		self.update_attributes(params[:share])
+		self.update_attributes(params)
 	end
 
 	# make all the files in the share globally writeable

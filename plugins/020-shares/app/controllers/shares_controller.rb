@@ -107,7 +107,7 @@ class SharesController < ApplicationController
 		@workgroup = Setting.find(params[:id]) if params[:id]
 		if @workgroup && @workgroup.name.eql?("workgroup")
 			params[:share][:value].strip!
-			@saved = @workgroup.update_attributes(params[:share])
+			@saved = @workgroup.update_attributes(params_update_workgroup)
 			@errors = @workgroup.errors.full_messages.join(', ') unless @saved
 			name = @workgroup.value
 			Share.push_shares
@@ -117,8 +117,8 @@ class SharesController < ApplicationController
 
 	def update_extras
 		sleep 2 if development?
-		params[:share] = sanitize_text(params[:share])
-		@saved = @share.update_extras!(params)
+		params[:share] = sanitize_text(params_update_extras)
+		@saved = @share.update_extras!(params_update_extras)
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
@@ -177,6 +177,14 @@ class SharesController < ApplicationController
 	    else
 	    	params.permit([:name])	
 	    end
+	end
+
+	def params_update_workgroup
+		params.require(:share).permit([:value])
+	end
+
+	def params_update_extras
+		params.require(:share).permit([:extras])
 	end
 
 end
