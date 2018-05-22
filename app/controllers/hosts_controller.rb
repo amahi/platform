@@ -16,7 +16,6 @@
 
 class HostsController < ApplicationController
 	before_action :admin_required
-	theme :theme_resolver
 
 	VALID_NAME = Regexp.new "\A[A-Za-z][A-Za-z0-9\-]+\z"
 	VALID_ADDRESS = Regexp.new '\A(|\d(\d?\d?)|\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?)\.\d(\d?\d?))\z'

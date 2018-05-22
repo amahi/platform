@@ -21,7 +21,6 @@ class DebugController < ApplicationController
 
 	before_action :admin_required
 	layout 'debug'
-	theme :theme_resolver
 
 	def index
 		@page_title = t('debug')

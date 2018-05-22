@@ -16,7 +16,6 @@
 
 class CalendarController < ApplicationController
 	before_action :admin_required
-	theme :theme_resolver
 
 	def initialize
 		@page_title = t('calendars')

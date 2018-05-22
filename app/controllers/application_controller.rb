@@ -227,11 +227,4 @@ class ApplicationController < ActionController::Base
 		development? || test?
 	end
 
-	protected
-
-		def theme_resolver
-			@theme = SetTheme.find
-			(@theme && @theme.path) || 'default'
-    end
-
 end
