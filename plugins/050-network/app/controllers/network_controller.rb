@@ -41,7 +41,7 @@ class NetworkController < ApplicationController
 
   def create_dns_alias
     sleep 2 if development?
-    @dns_alias = DnsAlias.create params[:dns_alias]
+    @dns_alias = DnsAlias.create(params_create_alias)
     get_dns_aliases
   end
 
@@ -158,5 +158,9 @@ private
   def get_dns_aliases
     @dns_aliases = DnsAlias.order('name ASC')
     @net = Setting.get 'net'
+  end
+
+  def params_create_alias    
+    params.require(:dns_alias).permit([:name, :address])
   end
 end

@@ -231,8 +231,8 @@ class Share < ApplicationRecord
 	def update_tags!(params)
 		# format with coma is set in before save
 
-		unless params[:share].blank?
-			self.update_attributes(params[:share])
+		unless params[:path].blank?
+			self.update_attributes(params)
 		else
 			name = params[:name].downcase
 			if self.tags.include?(name)

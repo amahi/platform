@@ -29,8 +29,7 @@ class SharesController < ApplicationController
 
 	def create
 		sleep 2 if development?
-		params[:share][:path] = Share.default_full_path(params[:share][:name])
-		@share = Share.new(params[:share])
+		@share = Share.new(params_create_share)
 		@share.save
 		get_shares unless @share.errors.any?
 	end
@@ -92,14 +91,14 @@ class SharesController < ApplicationController
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
-	def update_tags
+	def update_tags		
 		sleep 2 if development?
-		@saved = @share.update_tags!(params)
+		@saved = @share.update_tags!(params_update_tags_path)           
 	end
 
 	def update_path
 		sleep 2 if development?
-		@saved = @share.update_tags!(params)
+		@saved = @share.update_tags!(params_update_tags_path)           
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
@@ -165,6 +164,19 @@ class SharesController < ApplicationController
 
 	def get_shares
 		@shares = Share.all
+	end
+
+	private
+	def params_create_share
+		params.require(:share).permit([:name, :visible, :rdonly]).merge(:path => Share.default_full_path(params[:share][:name]))
+	end
+
+	def params_update_tags_path
+	    unless params[:share].blank?
+	    	params.require(:share).permit([:path]) 
+	    else
+	    	params.permit([:name])	
+	    end
 	end
 
 end
