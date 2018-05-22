@@ -101,6 +101,7 @@ class ApplicationController < ActionController::Base
 	# Expects either a Hash or a String,
 	# and returns the same
 	def sanitize_text(arg)
+		arg = arg.to_h
 		if arg.is_a? Hash
 			Hash[arg.to_a.map do |x, y|
 				[x, y.lines.map(&:chomp).join("\n")]

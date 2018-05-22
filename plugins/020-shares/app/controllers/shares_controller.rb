@@ -29,8 +29,7 @@ class SharesController < ApplicationController
 
 	def create
 		sleep 2 if development?
-		params[:share][:path] = Share.default_full_path(params[:share][:name])
-		@share = Share.new(params[:share])
+		@share = Share.new(params_create_share)
 		@share.save
 		get_shares unless @share.errors.any?
 	end
@@ -92,14 +91,14 @@ class SharesController < ApplicationController
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
-	def update_tags
+	def update_tags		
 		sleep 2 if development?
-		@saved = @share.update_tags!(params)
+		@saved = @share.update_tags!(params_update_tags_path)           
 	end
 
 	def update_path
 		sleep 2 if development?
-		@saved = @share.update_tags!(params)
+		@saved = @share.update_tags!(params_update_tags_path)           
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
@@ -108,7 +107,7 @@ class SharesController < ApplicationController
 		@workgroup = Setting.find(params[:id]) if params[:id]
 		if @workgroup && @workgroup.name.eql?("workgroup")
 			params[:share][:value].strip!
-			@saved = @workgroup.update_attributes(params[:share])
+			@saved = @workgroup.update_attributes(params_update_workgroup)
 			@errors = @workgroup.errors.full_messages.join(', ') unless @saved
 			name = @workgroup.value
 			Share.push_shares
@@ -118,8 +117,8 @@ class SharesController < ApplicationController
 
 	def update_extras
 		sleep 2 if development?
-		params[:share] = sanitize_text(params[:share])
-		@saved = @share.update_extras!(params)
+		params[:share] = sanitize_text(params_update_extras)
+		@saved = @share.update_extras!(params_update_extras)
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
@@ -165,6 +164,27 @@ class SharesController < ApplicationController
 
 	def get_shares
 		@shares = Share.all
+	end
+
+	private
+	def params_create_share
+		params.require(:share).permit([:name, :visible, :rdonly]).merge(:path => Share.default_full_path(params[:share][:name]))
+	end
+
+	def params_update_tags_path
+	    unless params[:share].blank?
+	    	params.require(:share).permit([:path]) 
+	    else
+	    	params.permit([:name])	
+	    end
+	end
+
+	def params_update_workgroup
+		params.require(:share).permit([:value])
+	end
+
+	def params_update_extras
+		params.require(:share).permit([:extras])
 	end
 
 end

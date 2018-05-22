@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
 	def create
 		sleep 2 if development?
-		@user = User.new(params[:user])
+		@user = User.new(params_user_create)
 		@user.save
 		@users = User.all_users unless @user.errors.any?
 	end
@@ -98,7 +98,7 @@ class UsersController < ApplicationController
 			errors = true
 			error = t("password_cannot_be_blank")
 		else
-			@user.update_attributes(params[:user])
+			@user.update_attributes(params_password_update) 
 			errors = @user.errors.any?
 			error = @user.errors.full_messages.join(', ')
 		end
@@ -107,7 +107,7 @@ class UsersController < ApplicationController
 
 	def update_name
 		@user = User.find(params[:id])
-		@user.update_attributes(params[:user])
+		@user.update_attributes(params_name_update) 
 		render :json => { :status => @user.errors.any? ? :not_acceptable : :ok }
 	end
 
@@ -125,6 +125,20 @@ class UsersController < ApplicationController
 
 	def can_i_edit_details?(user)
 		(current_user == user || current_user.admin?)
+	end
+
+	private 
+
+	def params_user_create
+		params.require(:user).permit(:login, :name, :password, :password_confirmation)
+	end
+
+	def params_password_update
+		params_user_create.permit(:password, :password_confirmation)
+	end
+
+	def params_name_update
+		params_user_create.permit(:name)
 	end
 
 end
