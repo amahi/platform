@@ -579,7 +579,7 @@ section#dashboard {
         margin: 0 0 5px; }
       #ln_content > ul li span {
         display: block;
-        background: url(../../default/images/date-icon.png) no-repeat left 1px;
+        background: url(../images/date-icon.png) no-repeat left 1px;
         color: #9a9a9a;
         padding: 0 0 0 23px;
         font-size: 11px; }
