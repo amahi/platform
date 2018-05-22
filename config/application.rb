@@ -54,19 +54,19 @@ end
 ############################################
 module AmahiHDA
   class Application < Rails::Application
-	PLUGIN_LOCATION = File.join(Rails.root, 'plugins')
-	amahi_plugins = []
-	Dir.glob(File.join(PLUGIN_LOCATION, '*')).sort.each do |dir|
-		file = "#{dir}/config/amahi-plugin.yml"
-		if File.file?(file) and File.readable?(file)
-			plugin = YAML.load(File.read(file)).symbolize_keys
-			plugin[:dir] = File.basename(dir)
-			amahi_plugins << plugin
-			$LOAD_PATH << "#{dir}/lib"
-			Kernel.require plugin[:class].underscore
-		end
-	end
-	# stick them in an app-wide variable for when it's needed by the app
-	config.amahi_plugins = amahi_plugins
+  	PLUGIN_LOCATION = File.join(Rails.root, 'plugins')
+  	amahi_plugins = []
+  	Dir.glob(File.join(PLUGIN_LOCATION, '*')).sort.each do |dir|
+  		file = "#{dir}/config/amahi-plugin.yml"
+  		if File.file?(file) and File.readable?(file)
+  			plugin = YAML.load(File.read(file)).symbolize_keys
+  			plugin[:dir] = File.basename(dir)
+  			amahi_plugins << plugin
+  			$LOAD_PATH << "#{dir}/lib"
+  			Kernel.require plugin[:class].underscore
+  		end
+  	end
+  	# stick them in an app-wide variable for when it's needed by the app
+  	config.amahi_plugins = amahi_plugins
   end
 end

@@ -23,8 +23,6 @@ gem 'ya2yaml'
 
 gem 'bootsnap', require: false
 
-gem 'themes_on_rails' #, :git => "https://github.com/amahi/themes_for_rails.git", :branch => 'ChapterMedia-rails-5.0-theme-translations'
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 

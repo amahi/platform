@@ -1,5 +1,4 @@
 
 # theme configuration
 
-THEME_ROOT='app/assets/themes'
-
+THEME_ROOT='public/themes'

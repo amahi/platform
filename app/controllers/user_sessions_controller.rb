@@ -17,7 +17,6 @@
 class UserSessionsController < ApplicationController
 	before_action :login_required, :except => ['new', 'create', 'start', 'initialize_system']
 	layout 'login'
-	theme :theme_resolver
 
 	def new
 		if initialized?

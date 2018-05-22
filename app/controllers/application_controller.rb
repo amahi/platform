@@ -23,7 +23,6 @@ require 'tab'
 class ApplicationController < ActionController::Base
 	require 'ipaddr'
 	protect_from_forgery with: :exception
-	theme :theme_resolver
 
 	before_action :before_action_hook
 	before_action :initialize_validators
@@ -46,8 +45,7 @@ class ApplicationController < ActionController::Base
 		set_locale
 		set_direction
 		check_for_amahi_app
-		# disable for now until we get new themes
-		#prepare_theme
+		prepare_theme
 		adv = Setting.where(:name=>'advanced').first
 		@advanced = adv && adv.value == '1'
 	end
@@ -65,7 +63,7 @@ class ApplicationController < ActionController::Base
 
 	def prepare_theme
 		@theme = SetTheme.find
-		theme @theme.path
+		# theme @theme.path
 	end
 
 	class Helper
@@ -231,8 +229,9 @@ class ApplicationController < ActionController::Base
 
 	protected
 
-	def theme_resolver
-      params[:theme] || 'default'
+		def theme_resolver
+			@theme = SetTheme.find
+			(@theme && @theme.path) || 'default'
     end
 
 end
