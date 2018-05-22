@@ -17,7 +17,7 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
-# require 'set_theme'
+require 'set_theme'
 require 'tab'
 
 class ApplicationController < ActionController::Base
@@ -63,7 +63,6 @@ class ApplicationController < ActionController::Base
 
 	def prepare_theme
 		@theme = SetTheme.find
-		# theme @theme.path
 	end
 
 	class Helper
