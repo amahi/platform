@@ -5,6 +5,10 @@ module AmahiHDA
 			AmahiHDA::Application.config.amahi_plugins.each do |plugin|
 				klass = Object.const_get(plugin[:class])::Engine
 				mount klass, :at => plugin[:url]
+
+				# add precompile assets
+				name = plugin[:class].downcase
+				Rails.application.config.assets.precompile += [ name + ".css", name + ".js" ]
 			end
 		end
 	end

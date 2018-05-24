@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 		sleep 2 if development?
 		@user = User.new(params_user_create)
 		@user.save
-		@users = User.all_users unless @user.errors.any?
+		@users = User.all_users	unless @user.errors.any?
 	end
 
 	def update
@@ -98,7 +98,7 @@ class UsersController < ApplicationController
 			errors = true
 			error = t("password_cannot_be_blank")
 		else
-			@user.update_attributes(params_password_update) 
+			@user.update_attributes(params_password_update)
 			errors = @user.errors.any?
 			error = @user.errors.full_messages.join(', ')
 		end
@@ -107,7 +107,7 @@ class UsersController < ApplicationController
 
 	def update_name
 		@user = User.find(params[:id])
-		@user.update_attributes(params_name_update) 
+		@user.update_attributes(params_name_update)
 		render :json => { :status => @user.errors.any? ? :not_acceptable : :ok }
 	end
 
@@ -127,7 +127,7 @@ class UsersController < ApplicationController
 		(current_user == user || current_user.admin?)
 	end
 
-	private 
+	private
 
 	def params_user_create
 		params.require(:user).permit(:login, :name, :password, :password_confirmation)
