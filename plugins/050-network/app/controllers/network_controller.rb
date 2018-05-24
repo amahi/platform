@@ -171,4 +171,12 @@ private
   def params_host
     params.require(:host).permit(:name, :mac, :address)
   end
+
+  def params_create_alias    
+    params.require(:dns_alias).permit([:name, :address])
+  end
+
+  def params_host
+    params.require(:host).permit(:name, :mac, :address)
+  end
 end
