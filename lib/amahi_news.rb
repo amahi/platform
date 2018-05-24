@@ -12,6 +12,11 @@
 
 require 'open-uri'
 require 'ping'
+require 'rubygems'
+require 'active_support/core_ext/numeric/time'
+require 'action_view'
+require 'action_view/helpers'
+include ActionView::Helpers::DateHelper
 
 class AmahiNews
 
@@ -38,11 +43,16 @@ class AmahiNews
 			result['news'].each_with_index do |item, i|
 				return output if ++i == length
 				output << { :title => item[1], :link => item[0],
-					:date => item[2],
+					:date => convert_time_to_words(item[2]),
 				:comments => item[3] }
 			end
 		end
 		output
+	end	
+
+	def self.convert_time_to_words(weeks)
+		weeks_count = weeks.gsub("weeks ago","").to_i 
+		time_ago_in_words(Time.now - weeks_count.week) + ' ago'
 	end
 
 end

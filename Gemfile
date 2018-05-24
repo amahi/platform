@@ -2,9 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rake'
 
-gem "rails", '~>5.0.0'
+gem "rails", '~>5.1.0'
 
-gem 'mysql2'
 gem "yettings"
 
 gem 'sass-rails'
@@ -14,13 +13,17 @@ gem 'therubyracer'
 
 gem 'uglifier'
 
-gem 'activeresource', :git => "https://github.com/rails/activeresource.git", require: "active_resource"
+gem 'activeresource'
 gem 'protected_attributes_continued'
 gem 'actionpack-action_caching'
-gem 'rails-observers', :git => "https://github.com/rails/rails-observers.git"
+gem 'actionview'
+gem 'rails-observers'
 
 gem 'jbuilder'
 gem 'ya2yaml'
+
+gem 'bootstrap', '~> 4.1.1'
+gem 'popper_js', '~> 1.12.9'
 
 gem 'themes_for_rails', :git => "https://github.com/amahi/themes_for_rails.git"
 
@@ -58,9 +61,10 @@ gem "rspec-rails", :group => [:test, :development]
 group :test do
   gem "sqlite3"
   gem "factory_girl_rails"
-  gem "capybara", :git => "https://github.com/teamcapybara/capybara.git"
+  gem "capybara"
   gem 'capybara-screenshot'
-	gem 'database_cleaner'
+  gem 'database_cleaner'
+
   # FIXME: required in Fedora 18 for some (packaging?) reason
   # gem 'minitest'
   # required for javascript test in selenium
@@ -71,3 +75,11 @@ end
 # FIXME - temporary work-around for Fedora 19
 # see https://bugzilla.redhat.com/show_bug.cgi?id=979133
 gem 'psych'
+
+group :development, :production do
+	gem 'mysql2'
+end
+
+# this is somehow needed for nokogiri
+gem 'mini_portile2',  '~> 2.3.0'
+gem "nokogiri", :require => "nokogiri"

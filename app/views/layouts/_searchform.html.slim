@@ -1,4 +1,7 @@
-= form_tag search_path(action: 'hda'), method: 'get', id: 'searchform' do
-  = text_field_tag 'query', @query, :maxlength => 45, :size => 20, :class => "ip-input", :id => 'searchinput'
-  = submit_tag 'HDA', :class => 'searchbutton', :name => "button" , :id => 'hdasearchbutton'
-  = submit_tag t('web'), :class => 'searchbutton', :name => "button" , :id => 'websearchbutton'
+form.form-inline.my-2 action="/search/hda" method="get" id="searchform"
+  input.form-control aria-label="Search" name="query" placeholder="Search" maxlength="45" size="20"  style=("width: auto; height: 25px; font-size: 15px;") type="search" /
+  input.searchbutton.mx-1 id="hdasearchbutton" value="HDA" name="button" type="submit"
+  input.searchbutton id="websearchbutton" value="Web" name="button" type="submit"
+
+button.navbar-toggler.navbar-dark data-target="#amahi-nav" data-toggle="collapse" 
+  span.navbar-toggler-icon

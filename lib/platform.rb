@@ -224,7 +224,7 @@ class Platform
 
 		def service_start_command(name)
 			service = service_name(name)
-			if fedora? or arch?
+			if fedora? or arch? or centos?
 				"/usr/bin/systemctl start #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl start #{service}"
@@ -237,7 +237,7 @@ class Platform
 
 		def service_stop_command(name)
 			service = service_name(name)
-			if fedora? or arch?
+			if fedora? or arch? or centos?
 				"/usr/bin/systemctl stop #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl stop #{service}"
@@ -250,7 +250,7 @@ class Platform
 
 		def service_enable_command(name)
 			service = service_name(name)
-			if fedora? or arch?
+			if fedora? or arch? or centos?
 				"/usr/bin/systemctl enable #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl enable #{service}"
@@ -263,7 +263,7 @@ class Platform
 
 		def service_disable_command(name)
 			service = service_name(name)
-			if fedora? or arch?
+			if fedora? or arch? or centos?
 				"/usr/bin/systemctl enable #{service}.service"
 			elsif ubuntu? and File.exist?(UPSTART_CONF % service)
 				"/sbin/initctl disable #{service}"
@@ -276,7 +276,7 @@ class Platform
 
 		# watchdog restart command
 		def watchdog_restart_command
-			if fedora?
+			if fedora? or centos?
 				"service monit condrestart"
 			else
 				# FIXME - this will restart it forcefully, even if not running
@@ -312,7 +312,7 @@ class Platform
 		def platform_versions
 			platform = ""
 			hda_ctl = ""
-			if fedora?
+			if fedora? or centos?
 				open("|rpm -q hda-platform hda-ctl") do |f|
 					while f.gets
 						line = $_
@@ -354,12 +354,19 @@ class Platform
 
 	class << self
 		def set_platform
-			if File.exist?('/etc/system-release')
+			if File.exist?('/etc/amahi-release')
+				line = nil
+				File.open("/etc/amahi-release", "r") do |issue|
+					line = issue.gets
+				end
+				@@platform = "fedora" if line.include?("Fedora")
+			elsif File.exist?('/etc/system-release')
 				line = nil
 				File.open("/etc/system-release", "r") do |issue|
 					line = issue.gets
 				end
 				@@platform = "fedora" if line.include?("Fedora")
+				@@platform = "fedora" if line.include?("Generic")
 				@@platform = "centos" if line.include?("CentOS")
 			elsif File.exist?('/etc/issue')
 				line = nil

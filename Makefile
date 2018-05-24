@@ -1,6 +1,6 @@
 
 bundle:
-	bundle install --without test --path vendor/bundle --binstubs bin/ --deployment
+	bin/bundle install --without test --path vendor/bundle --binstubs bin/ --deployment
 	#(cd vendor/bundle/ruby/ && find . -type f -exec grep -l '/usr/bin/ruby' {} \; | xargs sed -i -e 's|/usr/bin/ruby|/usr/bin/ruby|') || true
 	# clean up things that are not needed at run time
 	(cd vendor/bundle/ruby/ && rm -rf cache) || true
@@ -13,7 +13,7 @@ distclean: clean
 
 # this is needed to package v8 for fedora 18, using the system v8
 bundle-config:
-	bundle config build.libv8 --with-system-v8
+	bin/bundle config build.libv8 --with-system-v8
 
 # cleanup misc files that bloat things up
 clean:
@@ -33,5 +33,5 @@ devel-rpms:
 		libxml2-devel libxslt-devel sqlite sqlite-devel v8 v8-devel rubygem-bundler
 
 run-tests:
-	bundle exec rake db:test:prepare
-	bundle exec rspec spec
+	bin/bundle exec rake db:test:prepare
+	bin/bundle exec rspec spec
