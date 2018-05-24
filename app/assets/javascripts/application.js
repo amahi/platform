@@ -16,3 +16,7 @@
 //= require lib/debug
 //= require bootstrap.min
 //= require spinner
+
+//= require jquery3
+//= require popper
+//= require bootstrap
