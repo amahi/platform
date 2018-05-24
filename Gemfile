@@ -67,7 +67,7 @@ group :test do
   gem "capybara"
   gem 'capybara-screenshot'
   gem 'database_cleaner'
-  
+
   # FIXME: required in Fedora 18 for some (packaging?) reason
   # gem 'minitest'
   # required for javascript test in selenium
