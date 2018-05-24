@@ -1,0 +1,50 @@
+#tabs {
+  width: 145px;
+  float: left;
+  border: 1px solid #e8e8e8;
+  border-bottom-color: #dfdfdf;
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
+  background-color: #fcfcfc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f7f7f7));
+  background-image: -webkit-linear-gradient(top, #fcfcfc, #f7f7f7);
+  background-image: -moz-linear-gradient(top, #fcfcfc, #f7f7f7);
+  background-image: -ms-linear-gradient(top, #fcfcfc, #f7f7f7);
+  background-image: -o-linear-gradient(top, #fcfcfc, #f7f7f7);
+  background-image: linear-gradient(top, #fcfcfc, #f7f7f7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor); }
+
+#preferences {
+  width: 770px;
+  float: left;
+  border: 1px solid #e8e8e8;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0 5px 5px 5px; }
+
+nav.preftab {
+  position: static; }
+  nav.preftab li {
+    width: 145px; }
+    nav.preftab li.active > ul {
+      display: inline; }
+    nav.preftab li:hover ul {
+      display: inline; }
+    nav.preftab li a {
+      width: 145px; }
+    nav.preftab li ul {
+      position: static;
+      width: 145;
+      display: inline; }
+      nav.preftab li ul li > a {
+        padding: 0 40px; }
+
+.settings-actions {
+  float: right; }
+
+.settings-fields {
+  float: left; }
+
+#systems-result {
+  padding: 5px 0 5px 0; }

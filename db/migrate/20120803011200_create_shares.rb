@@ -1,4 +1,4 @@
-class CreateShares < ActiveRecord::Migration
+class CreateShares < ActiveRecord::Migration[5.1]
 	def change
     create_table "shares" do |t|
       t.string   "name"

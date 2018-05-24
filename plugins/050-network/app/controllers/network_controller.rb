@@ -20,7 +20,7 @@ class NetworkController < ApplicationController
 
   def create_host
     sleep 2 if development?
-    @host = Host.create params[:host]
+    @host = Host.create(params_host)
     get_hosts
   end
 
@@ -41,7 +41,7 @@ class NetworkController < ApplicationController
 
   def create_dns_alias
     sleep 2 if development?
-    @dns_alias = DnsAlias.create params[:dns_alias]
+    @dns_alias = DnsAlias.create(params_create_alias)
     get_dns_aliases
   end
 
@@ -71,7 +71,7 @@ class NetworkController < ApplicationController
   def update_dns
     sleep 2 if development?
     case params[:setting_dns]
-    when 'opendns', 'google', 'opennic'
+    when 'opendns', 'google', 'opennic', 'cloudflare'
       @saved = Setting.set("dns", params[:setting_dns], KIND)
       system("hda-ctl-hup")
     else
@@ -158,5 +158,13 @@ private
   def get_dns_aliases
     @dns_aliases = DnsAlias.order('name ASC')
     @net = Setting.get 'net'
+  end
+
+  def params_create_alias    
+    params.require(:dns_alias).permit([:name, :address])
+  end
+
+  def params_host
+    params.require(:host).permit(:name, :mac, :address)
   end
 end

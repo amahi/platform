@@ -2,7 +2,7 @@
 // Amahi - Default Theme
 // --------------------------------------------------
 
-@import "_mixins.css.scss";
+@import "_mixins.scss";
 
 // --------------------------------------------------
 // GENERAL STYLES
@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-  background: #333;
+  background: #343a40;
   font-size: 12px;
   line-height: 19px;
   font-family: Arial, Helvetica, sans-serif;

@@ -1,4 +1,4 @@
-class CreateCapAccesses < ActiveRecord::Migration
+class CreateCapAccesses < ActiveRecord::Migration[5.1]
   def change
     create_table "cap_accesses" do |t|
       t.integer  "user_id"

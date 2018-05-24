@@ -1,4 +1,4 @@
-class CreateApps < ActiveRecord::Migration
+class CreateApps < ActiveRecord::Migration[5.1]
   def change
     create_table "apps" do |t|
       t.boolean  "installed"

@@ -22,7 +22,7 @@ require 'tab'
 
 class ApplicationController < ActionController::Base
 	require 'ipaddr'
-	protect_from_forgery
+	protect_from_forgery with: :exception
 
 	before_action :before_action_hook
 	before_action :initialize_validators
@@ -63,7 +63,6 @@ class ApplicationController < ActionController::Base
 
 	def prepare_theme
 		@theme = SetTheme.find
-		theme @theme.path
 	end
 
 	class Helper
@@ -102,6 +101,7 @@ class ApplicationController < ActionController::Base
 	# Expects either a Hash or a String,
 	# and returns the same
 	def sanitize_text(arg)
+		arg = arg.to_h
 		if arg.is_a? Hash
 			Hash[arg.to_a.map do |x, y|
 				[x, y.lines.map(&:chomp).join("\n")]

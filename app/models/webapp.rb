@@ -31,9 +31,6 @@ class Webapp < ApplicationRecord
 
 	validates :name, :fname, :path, :presence => true
 
-	attr_accessible :name, :fname, :path, :deletable, :custom_options, :kind
-	attr_accessor :port
-
 	def php5?
 		if self.kind=="PHP5"
 			return true

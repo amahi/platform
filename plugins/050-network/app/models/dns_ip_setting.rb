@@ -11,6 +11,8 @@ class DnsIpSetting < Setting
       self.google_dns
     when "opennic"
       self.opennic
+    when "cloudflare"
+      self.cloudflare
     else
       self.custom_dns_ips
     end
@@ -26,6 +28,10 @@ class DnsIpSetting < Setting
 
   def self.opennic
     %w(173.230.156.28 23.90.4.6)
+  end
+  
+  def self.cloudflare
+    %w(1.1.1.1 1.0.0.1)
   end
 
   def self.custom_dns_ips
