@@ -1,24 +1,66 @@
-footer#footer
-  .inside
-    p.copy
-      | &copy; #{Date.today.year} #{link_to "Amahi", "http://www.amahi.org", :target => "_blank"}
-    nav
-      ul
-        li = link_to t('your_control_panel'), 'https://www.amahi.org/user', :target=>'_blank'
-        li = link_to t('feedback'),'https://www.amahi.org/feedback', :target=>'_blank'
-        li = link_to t('wiki'), 'https://wiki.amahi.org/', :target=>'_blank'
-        li = link_to t('tracker'), 'https://bugs.amahi.org', :target=>'_blank'
-        li = link_to t('troubleshoot'), 'https://wiki.amahi.org/index.php/Troubleshooting', :target=>'_blank'
+footer.container-fluid.bg-dark.p-3
+    .container.text-white
+      .d-flex.justify-content-center
+        .d-none.d-md-block.d-lg-block
+          span.mx-2 
+            | &copy; #{Date.today.year} #{link_to "Amahi", "http://www.amahi.org", :target => "_blank"}
+          span.mx-2 
+            = link_to t('your_control_panel'), 'https://www.amahi.org/user', :target=>'_blank'
+          span.mx-2 
+            = link_to t('feedback'),'https://www.amahi.org/feedback', :target=>'_blank'
+          span.mx-2 
+            = link_to t('wiki'), 'https://wiki.amahi.org/', :target=>'_blank'
+          span.mx-2 
+            = link_to t('tracker'), 'https://bugs.amahi.org', :target=>'_blank'
+          span.mx-2 
+            = link_to t('troubleshoot'), 'https://wiki.amahi.org/index.php/Troubleshooting', :target=>'_blank'
+          
+          /- if theme.author
+          /  li
+          /    | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
+          
+          span.mx-2 
+            = link_to t('live_help'), 'http://talk.amahi.org', :target=>'_blank'
+          span.mx-2 
+            = link_to t('forums'), 'https://forums.amahi.org', :target=>'_blank'
+          
+          - if current_user
+            span.mx-2 
+              = link_to (t('logout') + " " + current_user.login), logout_path
+          - else
+            span.mx-2  
+              = link_to t('log_in'), login_path
 
 
-        /- if theme.author
-        /  li
-        /    | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
-        li = link_to t('live_help'), 'http://talk.amahi.org', :target=>'_blank'
-        li = link_to t('forums'), 'https://forums.amahi.org', :target=>'_blank'
+        .d-block.d-md-none
+          .row.text-center.justify-content-center
+            span.col-.mx-2
+              | &copy; #{Date.today.year} #{link_to "Amahi", "http://www.amahi.org", :target => "_blank"}
+            span.col-.mx-2
+              = link_to t('your_control_panel'), 'https://www.amahi.org/user', :target=>'_blank'
+            span.col-.mx-2
+              = link_to t('feedback'),'https://www.amahi.org/feedback', :target=>'_blank'            
+            span.col-.mx-2
+              = link_to t('wiki'), 'https://wiki.amahi.org/', :target=>'_blank'
+            span.col-.mx-2
+              = link_to t('tracker'), 'https://bugs.amahi.org', :target=>'_blank'
+          
+          .row.text-center.justify-content-center            
+            span.col-.mx-2
+              = link_to t('troubleshoot'), 'https://wiki.amahi.org/index.php/Troubleshooting', :target=>'_blank'
 
-        - if current_user
-          li.logout
-            = link_to (t('logout') + " " + current_user.login), logout_path
-        - else
-          li = link_to t('log_in'), login_path
+            / - if theme.author
+            /   span.mx-2 
+            /     | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
+            
+            span.mx-2  
+              = link_to t('live_help'), 'http://talk.amahi.org', :target=>'_blank'
+            span.mx-2  
+              = link_to t('forums'), 'https://forums.amahi.org', :target=>'_blank'
+
+            - if current_user
+              span.mx-2 
+                = link_to (t('logout') + " " + current_user.login), logout_path
+            - else
+              span.mx-2  
+                = link_to t('log_in'), login_path
