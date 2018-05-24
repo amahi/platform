@@ -46,7 +46,6 @@ gem 'docker-api' # required to create and manage docker containers
 group :development do
 	gem 'thin'
 	gem 'thor'
-	gem 'byebug'
 	# turn this on to enable reporting on best practices with:
 	#	rails_best_practices -f html .
 	# gem 'rails_best_practices'
@@ -65,7 +64,7 @@ group :test do
   gem "capybara"
   gem 'capybara-screenshot'
   gem 'database_cleaner'
-  gem 'byebug'
+
   # FIXME: required in Fedora 18 for some (packaging?) reason
   # gem 'minitest'
   # required for javascript test in selenium

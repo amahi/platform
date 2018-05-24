@@ -1,36 +1,22 @@
-header#header
-  .inside
-    nav#head-left
-      h1#logo-two
-        = link_to t('amahi'), root_url
-      ul
-        li.first= link_to t('home'), root_path
-        li.last
-          = render 'layouts/searchform'
-    nav#head-right
-      ul
-        li
-          a href=root_path
-            = t('home')
-            i.icon-home
-        - if current_user_is_admin?
-          li
-            a href=users_engine.root_path
-              = t('setup')
-              i.icon-setup
-          li
-            a href='https://wiki.amahi.org/index.php/Help' target='_blank'
-              = t('help')
-              i.icon-help
-          li
-            a href=apps_engine.root_path
-              = t('apps')
-              i.icon-apps
-        - else
-          li
-            a href='https://wiki.amahi.org/index.php/Help' target='_blank'
-              = t('help')
-              i.icon-apps
+nav.navbar.navbar-expand-md.bg-dark.navbar-inverse
+  .container
+    a.nav-item.nav-link.text-white.nav_hover href="/"  
+     = t('home')
 
-    h2#pagetitle = page_title
+    = render 'layouts/searchform'    
 
+    #amahi-nav.collapse.navbar-collapse.justify-content-end    
+      - if current_user_is_admin?
+        .navbar-nav
+          a.nav-item.nav-link.text-white.text-center.nav_hover href=users_engine.root_path
+            = t('setup')
+          a.nav-item.nav-link.text-white.text-center.nav_hover href="https://wiki.amahi.org/index.php/Help" target='_blank'  
+            = t('help')
+          a.nav-item.nav-link.text-white.text-center.nav_hover href=apps_engine.root_path
+            = t('apps')
+      - else
+        .navbar-nav
+          a.nav-item.nav-link.text-white.text-center.nav_hover href="https://wiki.amahi.org/index.php/Help" target='_blank'  
+            = t('help')
+
+ 
