@@ -1,0 +1,124 @@
+- name = [h(one.host), @domain].join '.'
+- name = h($1) if one.host =~ /(.*)\.$/
+- (base, addr) = case one.address
+- 	when ''
+- 		[@net, @self]
+- 	when /^\d+$/
+- 		[@net, [@net, h(one.address)].join('.')]
+- 	else
+- 		['', h(one.address)]
+- 	end
+- delete_icon = theme_image_tag("delete", :title => t('delete_static_ip'))
+- wake_icon = theme_image_tag("wake", :title => t('awake_this_device_via_wol'))
+- uid = one.id.to_s
+- toggler = update_page do |page|
+- 	row = "host_row_" + uid
+- 	info = "host_info_" + uid
+- 	page.toggle info
+- 	page[row].toggle_class_name "settings-row-open"
+- end
+
+table.settings.stretchtoggle id="host_row_#{uid}" onmouseup="#{h toggler}"
+  tr
+    td.settings-col1.hosts-col1
+      = link_to(h(name), '')
+    td.settings-col2.hosts-col2 id="host_ip_#{uid}"
+      = h(addr)
+.settings-stretcher id="host_info_#{uid}" style="display:none;"
+  .host-manage
+    fieldset
+      legend
+        | &nbsp;
+        = t 'edit_static_ip'
+        b = h(one.host)
+        |  &nbsp;
+      .settings-actions
+        = spinner uid
+        |  &nbsp;
+        = t 'delete_static_ip'
+        | &nbsp;
+        = link_to_remote(delete_icon,	\
+		      :update => 'hosts-table',	\
+		      :confirm => t('are_you_sure_you_want_to_delete_the_static_ip', :name => name),	\
+		      :before => "Element.show('spinner-#{uid}')",	\
+		      :success => "Element.hide('spinner-#{uid}')",	\
+		      :url => { :controller => 'hosts', :action => 'delete', :id => uid })
+        p
+        = t 'awake_this_device_via_wol'
+        | (
+        a href="http://wiki.amahi.org/index.php/WOL" target="_blank"
+          | WOL
+        | )
+        | &nbsp;
+        span id="wake-icon-#{uid}"
+          = link_to_remote(wake_icon,                                                 \
+            :before => "Element.show('spinner-#{uid}')",                            \
+            :success => "Element.hide('spinner-#{uid}')",                           \
+            :url => { :controller => 'hosts', :action => 'wake_system', :id => uid })
+      .settings-fields
+        table
+          tr
+            td
+              = t 'ip_address'
+              | \:
+            td  
+              | &nbsp;
+            td
+              = base.blank? ? '' : base + '.'
+              = editable_content(             		\
+                :content => {                 		\
+                :element => 'span',            		\
+                :text => h(one.address),       		\
+                :options => {                  		\
+	                :id => "host_address_#{uid}",   \
+	                :class => 'editable'            \
+                  }                             	\
+                },                            		\
+                :url => {                      		\
+                  :controller => 'hosts',        	\
+                  :action => 'update_address',   	\
+                  :id => uid                     	\
+                })
+          tr
+            td
+              | &nbsp;
+            td
+              | &nbsp;
+            td
+              | &nbsp;
+          tr
+            td
+              = t 'mac_address'
+              | \:
+            td
+              | &nbsp;
+            td
+              = editable_content(                 \
+                :content => {                     \
+	                :element => 'span',           \
+	                :text => h(one.mac),          \
+	                :options => {                 \
+		                :id => "host_mac_#{uid}", \
+		                :class => 'editable'      \
+                  }                             \
+                },                                \
+                :url => {                         \
+	                :controller => 'hosts',       \
+	                :action => 'update_mac',      \
+	                :id => uid                    \
+                })
+          tr
+            td
+              | &nbsp;
+            td
+              | &nbsp;
+            td
+              | &nbsp;
+          tr
+            td
+              = t 'location'
+              | \:
+            td
+              | &nbsp;
+            td
+              = link_to h(name), "http://#{h(name)}", { :target="_blank" }
