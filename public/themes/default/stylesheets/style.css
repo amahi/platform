@@ -473,6 +473,29 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
     display: block;
     padding: 36px 0 0 174px; }
 
+.page-title{
+  font-size: 2.5rem;
+  color: #44444482;
+}
+
+@media (max-width: 769px){
+  .page-title{
+    margin-left: 110px;
+  }
+}
+
+@media (min-width: 770px){
+  .page-title{
+    margin-left: 85px;
+  }
+}
+
+@media (min-width: 992px){
+  .page-title{
+    margin-left: 40px;
+  }
+}
+
 #app {
   margin: 15px auto 0;
   width: 960px; }
@@ -533,7 +556,9 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
 section#dashboard {
   float: left;
   text-align: center;
-  width: 710px; }
+  /*width: auto; */
+  /*margin-right: 285px;*/
+}
 
 #latest_news {
   float: right;
