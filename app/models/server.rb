@@ -31,8 +31,6 @@ class Server < ApplicationRecord
 	after_create  :create_hook
 	after_destroy  :destroy_hook
 
-	attr_accessible :name, :pidfile, :comment
-
 	def self.create_default_servers
 		Server.create(:name => 'smb', :pidfile => Platform.file_name(:samba_pid), :comment => I18n.t('file_server_samba'))
 		r = "# WARNING - This file was automatically generated on #{Time.now}\n" \

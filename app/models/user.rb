@@ -34,8 +34,6 @@ class User < ApplicationRecord
 		# non-fully active record compliant, e.g. from the app installer
 	end
 
-	attr_accessible :login, :name, :password, :password_confirmation, :admin
-
 	validates :login, :presence => true,
 	:format => { :with => /\A[A-Za-z][A-Za-z0-9]+\z/ },
 	:length => { :in => 3..32 },
@@ -57,6 +55,11 @@ class User < ApplicationRecord
 
 	class << self
 		def system_find_name_by_username(username)
+			u = ENV['USER']
+			if Rails.env.development? && username == u
+				# in development pretend the user is the logged in one if it matches
+				return [u, 4444, u]
+			end
 			# return [username, 500] if Yetting.dummy_mode.inspect
 			pwd = StringScanner.new(File.open('/etc/passwd').readlines.join)
 			user = Regexp.new("^(#{username}):[^:]*:(\\d+):\\d+:([^:]*):", Regexp::MULTILINE | Regexp::IGNORECASE)

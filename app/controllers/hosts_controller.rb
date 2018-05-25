@@ -66,7 +66,7 @@ class HostsController < ApplicationController
 	# POST /hosts
 	# POST /hosts.xml
 	def create
-	  @host = Host.new(params[:host])
+	  @host = Host.new(params_host) 
 	  @domain = Setting.get 'domain'
 
 	  respond_to do |format|
@@ -254,6 +254,10 @@ private
 		valid_mac = Regexp.new m
 		return false unless (mac =~ valid_mac)
 		true
+	end
+
+	def params_host
+		params.require(:host).permit([:name, :mac, :address])
 	end
 
 end

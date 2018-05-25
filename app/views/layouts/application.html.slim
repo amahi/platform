@@ -12,16 +12,12 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
     = theme_stylesheet_link_tag 'style'
     = theme_stylesheet_link_tag('rtl') if rtl?
-    - amahi_plugins.each do |p|
-      = stylesheet_link_tag p[:class].underscore
 
     /[ if lt IE 9 ]
       = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
 
     = javascript_tag {render 'shared/js_vars'}
     = javascript_include_tag 'application'
-    - amahi_plugins.each do |p|
-      = javascript_include_tag p[:class].underscore
 
     = javascript_tag {'$.fx.off = true;' if Rails.env.test?}
     - for header in theme.headers do

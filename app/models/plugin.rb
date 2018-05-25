@@ -20,7 +20,6 @@ require 'command'
 require 'system_utils'
 
 class Plugin < ApplicationRecord
-	attr_accessible :name, :path
 
 	before_destroy :before_destroy
 

@@ -11,11 +11,11 @@ footer#footer
         li = link_to t('troubleshoot'), 'https://wiki.amahi.org/index.php/Troubleshooting', :target=>'_blank'
 
 
-        - if theme.author
-          li
-            | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
-          li = link_to t('live_help'), 'http://talk.amahi.org', :target=>'_blank'
-          li = link_to t('forums'), 'https://forums.amahi.org', :target=>'_blank'
+        /- if theme.author
+        /  li
+        /    | #{t('theme_by')} #{theme.author_url ? link_to(theme.author, theme.author_url) : "#{theme.author} "}
+        li = link_to t('live_help'), 'http://talk.amahi.org', :target=>'_blank'
+        li = link_to t('forums'), 'https://forums.amahi.org', :target=>'_blank'
 
         - if current_user
           li.logout

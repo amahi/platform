@@ -67,7 +67,7 @@ class AliasesController < ApplicationController
 	# POST /aliases
 	# POST /aliases.xml - FIXME
 	def create
-	  @alias = DnsAlias.new(params[:alias])
+	  @alias = DnsAlias.new(params_dns_alias) 
 
 	  respond_to do |format|
 	    if @alias.save
@@ -91,7 +91,7 @@ class AliasesController < ApplicationController
 	  @alias = DnsAlias.find(params[:id])
 
 	  respond_to do |format|
-	    if @alias.update_attributes(params[:alias])
+	    if @alias.update_attributes(params_dns_alias) 
 	      flash[:notice] = 'Alias was successfully updated.'
 	      format.html { redirect_to(@alias) }
 	      format.xml  { head :ok }
@@ -212,5 +212,9 @@ private
 			return true unless v < 0 or v > 254
 		end
 		false
+	end
+
+	def params_dns_alias
+		params.require(:alias).permit([:name, :address])
 	end
 end
