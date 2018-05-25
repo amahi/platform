@@ -1,3 +1,5 @@
-li[class="welcome_desc#{subclass}"]
-  = link_to(image_tag(app.logo_url, :class => "welcome-logo#{subclass}", :title => app.name), app.full_url, :target => '_blank')
-  = link_to(app.name, app.full_url, :target => '_blank')
+.card.float-left.m-2.app-item-card title="#{app.name}"
+  img.card-img-top.img-fluid alt=("#{app.name}") src="#{app.logo_url}" style="height: 11rem; max-height: 12em;" onclick="open_app('#{app.full_url}');" /
+  .card-body
+    p.h5.align-middle.text-truncate
+      = app.name
