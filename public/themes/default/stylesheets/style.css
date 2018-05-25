@@ -32,6 +32,14 @@ a {
 #locale, #setting_dns select {
   border: 1px solid #cccccc; }
 
+.hover-style{
+	cursor: pointer;
+}
+
+.hover-style:hover{
+	background: ##d8d8d873;	
+}
+
 .inside {
   width: 960px;
   margin: 0 auto;
