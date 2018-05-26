@@ -1,7 +1,7 @@
 div.share[id="whole_share_#{share.id}"]
 
-  table.settings.stretchtoggle.table
-    tr
+  table.settings.stretchtoggle
+    tr.hover-style
       td.settings-col1.shares-col1
         = link_to share.name, '#'
       td.settings-col2.shares-col2
@@ -28,7 +28,7 @@ div.share[id="whole_share_#{share.id}"]
               :class => 'btn-delete remote-btn navbar-right btn btn-primary btn-sm'
 
         .settings-fields
-          table.table
+          table
             tr
               td
                 label #{t('access')}

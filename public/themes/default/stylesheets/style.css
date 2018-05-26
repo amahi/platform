@@ -32,6 +32,14 @@ a {
 #locale, #setting_dns select {
   border: 1px solid #cccccc; }
 
+.hover-style{
+ cursor: pointer;
+}
+
+.hover-style:hover{
+ background: #d4d4d4;
+}
+
 .inside {
   width: 960px;
   margin: 0 auto;
@@ -863,6 +871,10 @@ nav.preftab {
       -webkit-border-radius: 0 0 5px 0;
       border-radius: 0 0 5px 0; }
 
+tr.even{
+  background: #b3b3b3a1;
+}
+
 .apptable {
   border-collapse: collapse; }
 
@@ -890,10 +902,12 @@ table.settings, .settings th {
   vertical-align: top; }
 
 .settings th, thead.apptable td {
-  font-size: 16px;
+  font-size: 13px;
   background: #333;
   color: #fff;
   border-collapse: collapse;
+  padding: 5px;
+  padding-left: 32px;
   height: 40px;
   line-height: 40px;
   text-align: left;
@@ -921,7 +935,7 @@ thead.apptable td:last-child, .fw-rules-col3 {
   padding: 0 30px 0 0; }
 
 .settings-col1 {
-  padding: 0 0 0 30px;
+  padding: 6px 6px 6px 30px;  
   width: 30%;
   -moz-border-radius: 5px 0 0 0;
   -webkit-border-radius: 5px 0 0 0;
