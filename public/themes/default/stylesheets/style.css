@@ -688,19 +688,22 @@ section#dashboard {
 
 .tab-link-style{
   font-size: 13px; 
-  border-bottom: 1px solid #dadada !important;
-  padding: 0.7rem 1.4rem;
+  padding: 0.7rem 1.2rem;
   background: #f3f3f3 !important;
+  border-bottom: 0px !important;
 }
 
 .active-tab-link-style{
   font-size: 14px; 
-  padding: 0.7rem 1.4rem; 
+  padding: 0.7rem 1.2rem; 
+  background: #dedede1c !important;  
+  border-bottom: 0px;
 }
 
 .tab-link-style:hover{
   font-size: 13px;   
-  background: #fff !important;
+  background: #dedede1c !important;
+  border-bottom: 0px !important;
 }
 
 .subtab-link{
@@ -709,6 +712,7 @@ section#dashboard {
   text-decoration: none; 
   color: #333;
   border: 1px solid #00000000;
+  margin-left: 2px;
 }
 
 .active-subtab-link{
@@ -716,10 +720,11 @@ section#dashboard {
   padding: 10px 15px; 
   text-decoration: none; 
   color: #333;
-  background: #fff;
+  background: #f7f7f7;
   border: 1px solid #d8d8d8;
   border-radius: 5px 5px 0px 0px;
   border-bottom: 0px;
+  margin-left: 2px;
 }
 
 .active-subtab-link:hover{
@@ -728,7 +733,7 @@ section#dashboard {
 }
 
 .subtab-link:hover{
-  background: #fff;
+  background: #f7f7f7;
   border: 1px solid #333;
   text-decoration: none; 
   color: #333;  

@@ -1,6 +1,6 @@
 - active_tab = nil
 .container
-  ul.nav.nav-tabs style="width: 518px"
+  ul.nav.nav-tabs style="width: 480px; border-bottom: 0px;"
     - @tabs.each do |tab|
       li.nav-item
           - if tab_class(tab).blank?
@@ -11,7 +11,7 @@
               a.nav-link.active.text-capitalize.active-tab-link-style href="#{tab.url}"
                 = tab.label
 
-.container style="padding: 20px 10px 10px 10px; margin-left:15px; width: 518px; background: #d0cece1c"
+.container style="padding: 20px 10px 8px 30px; background: #dedede1c; border: 1px solid #d8d8d8; border-top-width: 0.5px;"
   ul.nav.nav-tabs style="border: 0px;"
     - if @advanced
       - active_tab.advanced_subtabs.each do |subtab|           
