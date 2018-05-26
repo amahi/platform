@@ -686,6 +686,57 @@ section#dashboard {
   }
 }
 
+.tab-link-style{
+  font-size: 13px; 
+  border-bottom: 1px solid #dadada !important;
+  padding: 0.7rem 1.4rem;
+  background: #f3f3f3 !important;
+}
+
+.active-tab-link-style{
+  font-size: 14px; 
+  padding: 0.7rem 1.4rem; 
+}
+
+.tab-link-style:hover{
+  font-size: 13px;   
+  background: #fff !important;
+}
+
+.subtab-link{
+  font-size: 12px; 
+  padding: 10px 15px; 
+  text-decoration: none; 
+  color: #333;
+  border: 1px solid #00000000;
+}
+
+.active-subtab-link{
+  font-size: 12px; 
+  padding: 10px 15px; 
+  text-decoration: none; 
+  color: #333;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 0px;
+}
+
+.active-subtab-link:hover{
+  text-decoration: none; 
+  color: #333;
+}
+
+.subtab-link:hover{
+  background: #fff;
+  border: 1px solid #333;
+  text-decoration: none; 
+  color: #333;  
+  border: 1px solid #d8d8d8;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 0px;
+}
+
 #tabs {
   border: 1px solid #e8e8e8;
   border-bottom-color: #dfdfdf;
