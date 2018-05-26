@@ -1516,6 +1516,13 @@ span.server_status i.running {
   display: inline-block;
   background: url(../images/server/running.png) no-repeat; }
 
+.user-manage{
+  background: #fff;
+  padding: 5px;
+  margin-top: 1px;
+  margin-bottom: 4px;
+}
+
 .user-manage i.auth {
   width: 16px;
   height: 16px;
@@ -1633,3 +1640,23 @@ textarea {
 .install-apps, .get-apps {
   float: left;
   width: 50%; }
+
+.cancel-btn-style{
+  background: white;
+  border: 0px;
+  color: #17a2b8 !important;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.name_click_change{
+  color: #505050 !important;
+}
+
+.cancel-btn-style:hover{  
+  background: white;
+  border: 0px;
+  color: #17a2b8 !important;
+  font-size: 13px;  
+  text-decoration: underline !important;
+}
