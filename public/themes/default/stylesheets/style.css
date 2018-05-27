@@ -1708,3 +1708,7 @@ span.install-button a{
   text-decoration: none;
   color: white;
 }
+
+span#setting_dns select{
+  font-size: 13px;
+}

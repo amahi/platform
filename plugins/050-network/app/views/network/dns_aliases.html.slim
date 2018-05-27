@@ -8,7 +8,7 @@
             th= t 'ip_address'
       = render :partial => 'network/dns_alias', :collection => @dns_aliases
     .empty-hint
-      h2= t('there_are_no_dns_aliases')
+      h2.ml-4.mt-3= t('there_are_no_dns_aliases')
 
   = button_tag t('new_dns_alias'), type: 'button', class: 'open-area btnn btn-create btn btn-info btn-sm', id: 'new-dns-alias-to-step1', data: { related: '#new-dns-alias-step1' }
 
