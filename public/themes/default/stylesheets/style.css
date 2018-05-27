@@ -53,7 +53,7 @@ a {
     clear: both; }
 
 .workgroup_click_change, .name_click_change, .lease_click_change, .gateway_click_change, .dyn_lo_click_change, .dyn_hi_click_change {
-  color: #333;
+  color: #505050 !important;
   text-decoration: none;
   border-bottom: 1px dashed;
   font-weight: bold; }
@@ -871,6 +871,10 @@ nav.preftab {
       -webkit-border-radius: 0 0 5px 0;
       border-radius: 0 0 5px 0; }
 
+.settings-table thead th {
+  vertical-align: middle;
+}
+
 tr.even{
   background: #b3b3b3a1;
 }
@@ -1083,12 +1087,10 @@ td.align-top {
   text-indent: 0; }
 
 .app-screenshot {
-  width: 320px;
-  height: 240px;
+  width: 90%;
   vertical-align: top;
-  margin: 0 25px 25px 0;
-  padding: 3px;
-  float: left;
+  margin: 5px;
+  padding: 4px;
   border: 1px solid #cccccc; }
 
 .app-more {
@@ -1102,8 +1104,7 @@ td.align-top {
   text-align: center;
   font-size: 2em;
   font-weight: bold;
-  margin: 20px 0 20px 0;
-  padding: 20px 0 20px 0; }
+  margin: 20px 0 20px 0; }
 
 .install-button {
   font-size: 12px;
@@ -1181,7 +1182,7 @@ td.align-top {
 
 .app-description {
   margin: 0;
-  color: #999999;
+  color: #444 !important;
   font-size: 12px; }
 
 .app-more {
@@ -1516,7 +1517,7 @@ span.server_status i.running {
   display: inline-block;
   background: url(../images/server/running.png) no-repeat; }
 
-.user-manage{
+.collapsed-div-style{
   background: #fff;
   padding: 5px;
   margin-top: 1px;
@@ -1681,6 +1682,10 @@ textarea {
   font-size:13px;
 }
 
+.f-size22{
+  font-size:22px;
+}
+
 #preferences{
   background: #1111111a;  
 }
@@ -1693,4 +1698,13 @@ textarea {
 #new-user-form{
   background: white; 
   margin-top: 8px; 
+}
+
+span.progress{
+  height: 32px;
+}
+
+span.install-button a{
+  text-decoration: none;
+  color: white;
 }
