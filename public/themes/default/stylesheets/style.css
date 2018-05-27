@@ -1660,3 +1660,37 @@ textarea {
   font-size: 13px;  
   text-decoration: underline !important;
 }
+
+.setup-main-tab{
+  width: 480px; 
+  border-bottom: 0px;
+}
+
+.setup-subtab-container{
+  padding: 20px 10px 8px 30px; 
+  background: #dedede1c; 
+  border: 1px solid #d8d8d8; 
+  border-top-width: 0.5px;
+}
+
+.setup-subtab{
+  border: 0px;
+}
+
+.f-size13{
+  font-size:13px;
+}
+
+#preferences{
+  background: #1111111a;  
+}
+
+.input-field-style{
+  width: 220px !important;
+  font-size: 12px !important;
+}
+
+#new-user-form{
+  background: white; 
+  margin-top: 8px; 
+}

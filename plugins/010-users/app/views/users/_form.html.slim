@@ -8,10 +8,10 @@
         :error_icon_path => theme_image_path('stop.png') \
       }, \
       :class => 'user create-form form-horizontal p-1', \
-      :id => 'new-user-form', :style => 'background: white; margin-top: 8px;' \
+      :id => 'new-user-form' \
     } do |f|
 
-    fieldset style="background: white;"
+    fieldset.bg-white
       legend &nbsp; #{t('create_a_new_user')} &nbsp;
       .create-inside
         / = render :partial => 'shared/errors', :object => @user
