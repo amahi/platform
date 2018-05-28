@@ -1,6 +1,6 @@
 - @share = @share || Share.new
 
-= form_for @share, :remote => true, :html => { :class => 'share create-form form-horizontal', :id => 'new-share-form' } do |f|
+= form_for @share, :remote => true, :html => { :class => 'share create-form form-horizontal p-1 mt-2 bg-white', :id => 'new-share-form' } do |f|
 
     fieldset
       legend &nbsp; #{t('create_a_new_share')} &nbsp;
@@ -25,4 +25,4 @@
           .controls
             = spinner
             = button_tag t('create'), :type => 'submit', :id => 'share_create_button', :class => 'btnn btn-create btn-info btn btn-sm'
-            = link_to t('cancel'), '#', :class => 'close-area cancel-link btn btn-primary btn-sm left-margin-10', :data => {:related => '#new-share-to-step1'}
+            = link_to t('cancel'), '#', :class => 'close-area cancel-link cancel-btn-style btn-sm left-margin-10', :data => {:related => '#new-share-to-step1'}

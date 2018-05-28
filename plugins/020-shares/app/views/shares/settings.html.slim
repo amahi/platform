@@ -1,14 +1,12 @@
-= javascript_include_tag 'shares'
-
-.share[id="workgroup_#{@workgroup.try(:id)}"]
-  .settings-stretcher
+.share.bg-white.p-1[id="workgroup_#{@workgroup.try(:id)}"]
+  .settings-stretcher.border-0
     fieldset
       legend
         | &nbsp; #{t('shares_global_settings')}
 
       - if @workgroup
         .settings-fields
-          table.table
+          table
             tr
               td
                 label #{t("workgroup_name")}

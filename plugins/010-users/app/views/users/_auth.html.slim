@@ -11,8 +11,8 @@ td.top
     = form_tag users_engine.update_pubkey_user_path(user), :remote => true, :method => 'put', :class => 'update-pubkey short-form form-horizontal left-margin-20' do |f|
       .control-group
         .controls.form-group
-          = text_area_tag "public_key_#{user.id}", user.public_key, :rows => 5,:class=>'form-control input-sm lef-margin-10', :cols => 78, :placeholder => t('public_key')
+          = text_area_tag "public_key_#{user.id}", user.public_key, :rows => 5,:class=>'form-control input-sm lef-margin-10 f-size13', :cols => 78, :placeholder => t('public_key')
       .control-group
         .controls.form-group
           = submit_tag t('update_key'), :class => 'btnn btn btn-info btn-sm'
-          = link_to t('cancel'), '#', :onclick=>"$(this).parents('.pubkey-area').hide('slow')", :class => 'cancel-link btn btn-primary btn-sm left-margin-10'
+          = link_to t('cancel'), '#', :onclick=>"event.preventDefault();$(this).parents('.pubkey-area').hide('slow');", :class => 'cancel-link cancel-btn-style btn-sm left-margin-10'

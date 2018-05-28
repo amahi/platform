@@ -1,5 +1,5 @@
 div.user[id="whole_user_#{user.id}"]
-  table.settings.stretchtoggle.table.table-condensed
+  table.settings.stretchtoggle
     tr.hover-style
       td.settings-col1.settings-col1-pad.users-col1
         = link_to user.login, '#'
@@ -7,7 +7,7 @@ div.user[id="whole_user_#{user.id}"]
       td.settings-col2.users-col2= user.name
 
   div.settings-stretcher[id="about_user_#{user.id}" style="display:none;"]
-    div.user-manage
+    div.user-manage.collapsed-div-style
       fieldset
         legend
           = t('edit_user')
@@ -24,10 +24,10 @@ div.user[id="whole_user_#{user.id}"]
                       :method => :delete,
                       :id => "delete-user-#{user.id}",
                       :data => { :confirm => confirm_user_destroy_message(user.login) },
-                      :class => 'btn-delete remote-btn navbar-right btn btn-primary btn-sm'
+                      :class => 'btn-delete remote-btn navbar-right btn btn-sm'
 
         .settings-fields
-          table.table
+          table
             tr
               td
                 label #{t('name')}
@@ -46,7 +46,7 @@ div.user[id="whole_user_#{user.id}"]
                                          :remote => true,
                                          :input_css_class=>'form-control input-sm',
                                          :form_css_class => "edit_name_form form_hidden form-inline",
-                                         :cancel_class => "name_cancel_link btn btn-primary btn-sm left-margin-10"
+                                         :cancel_class => "name_cancel_link left-margin-10 cancel-btn-style"
                 .messages
 
             - if advanced?

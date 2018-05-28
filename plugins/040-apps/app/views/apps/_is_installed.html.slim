@@ -1,5 +1,5 @@
 - if app.initial_user and ! app.initial_user.blank?
-  fieldset
+  fieldset.m-0.mt-3
 	legend &nbsp; #{t('initial_user_info')} &nbsp;
 	blockquote
 	  span.initial-user-more &raquo;
@@ -19,24 +19,23 @@
 
 
 - if app.webapp
-  div.app-url= link_to(app.full_url, app.full_url, :target => '_blank')
+  div.app-url= link_to(app.full_url, app.full_url, :target => '_blank', :class => 'f-size22')
   = render 'in_dashboard', :app => app
 
 - if app.plugin
-  div.app-url= link_to(app.plugin.name, app.plugin.path, :target => '_blank')
+  div.app-url= link_to(app.plugin.name, app.plugin.path, :target => '_blank', :class => 'f-size22')
   = spinner
 
 - if app.theme
-  div.app-url= link_to(t('manage_themes'), settings_engine.themes_path,:class=>"btn btn-info btn-sm")
+  div.app-url= link_to(t('manage_themes'), settings_engine.themes_path,:class=>"btn btn-info btn-sm", :class => 'f-size22')
 
 br
 br
-br
 
-span.progress
+span.progress.bg-white.ml-5
   - unless app.has_dependents?
     span.install-button
-      = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-in-background btn btn-primary btn-sm')
+      = link_to("#{t('uninstall')} &raquo;".html_safe, apps_engine.uninstall_path(:id => app.identifier), :method => :post, :remote => true, :class => 'uninstall-app-in-background btn-sm', :style => 'height: auto;')
 
 
 - unless app.installed
