@@ -38,7 +38,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
       #app.inner.container
         - unless @no_tabs
           = render 'shared/tabs'
-          #preferences.col-sm-8
+          #preferences
             .preftab
                 = yield
         - else

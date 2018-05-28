@@ -1,15 +1,15 @@
-div.settings-fields.settings-wrap
+div.settings-fields.settings-wrap.bg-white.p-2.mb-3
   fieldset
     legend
       = t 'global_settings'
-    table.table
+    table
       tr
         td
           label = t 'language'
         td
           = select_tag 'locale', options_for_select(@available_locales, I18n.locale.to_s),
             data: { remote: true, url: settings_engine.change_language_path, update: 'language' },
-            class: 'remote-select form-control'
+            class: 'remote-select form-control f-size13'
           = spinner
       tr
         td
@@ -30,7 +30,7 @@ div.settings-fields.settings-wrap
               data: { remote: true, url: settings_engine.toggle_setting_path(id: @guest) }
           = spinner
 
-div.settings-fields.settings-wrap
+div.settings-fields.settings-wrap.bg-white.p-2
   fieldset
     legend
       = t 'system_info'
@@ -40,7 +40,7 @@ div.settings-fields.settings-wrap
               settings_engine.poweroff_path,
               remote: true,
               method: :post,
-              class: 'btn-system glyphicon glyphicon-off left-margin-40',
+              class: 'btn-system glyphicon glyphicon-off left-margin-40 float-left',
               id: 'btn-poweroff',
               data: {:confirm => t('this_will_power_off')}
         = link_to '',
@@ -48,10 +48,10 @@ div.settings-fields.settings-wrap
               remote: true,
               method: :post,
               data: {:confirm => t('this_will_reboot')},
-              class: 'btn-system glyphicon glyphicon-repeat',
+              class: 'btn-system glyphicon glyphicon-repeat float-left',
               id: 'btn-reboot'
     div.settings-fields#info-table
-      table.table
+      table
         tr
           td
             label = t 'system'

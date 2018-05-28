@@ -1,12 +1,12 @@
 div.entry
-  table.settings.stretchtoggle.table
-    tr
+  table.settings.stretchtoggle
+    tr.hover-style
       td.settings-col1.settings-col1-pad
         = link_to dns_alias.name, '#'
       td
         = alias_ip(dns_alias)
 
-  .settings-stretcher[style="display:none;"]
+  .settings-stretcher.collapsed-div-style[style="display:none;"]
     fieldset
       legend
         | &nbsp; &nbsp;
@@ -21,10 +21,10 @@ div.entry
             :method => :delete,
             :data => {:confirm => confirm_dns_alias_destroy_message(dns_alias.name)},
             :remote => true,
-            :class => 'btn-delete remote-btn btn btn-primary btn-sm pull-right'
+            :class => 'btn-delete remote-btn btn btn-sm pull-right'
 
       .settings-fields
-        table.table
+        table
           tr
             td
               label #{t('name')}

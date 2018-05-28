@@ -1,6 +1,6 @@
 - @host = @host || Host.new
 
-= form_for @host, url: network_engine.hosts_path, remote: true, html: { class: 'host create-form form-horizontal col-md-6', id: 'new-host-form' } do |f|
+= form_for @host, url: network_engine.hosts_path, remote: true, html: { class: 'host create-form form-horizontal col-md-6 bg-white p-2', id: 'new-host-form' } do |f|
   fieldset
     legend &nbsp; #{t('create_a_new_host')} &nbsp;
 
@@ -24,4 +24,4 @@
         .controls
           = spinner
           = button_tag t('create'), type: 'submit', id: 'host_create_button', class: 'btnn btn-create btn btn-info btn-sm '
-          = link_to t('cancel'), '#', class: 'close-area cancel-link btn btn-primary btn-sm left-margin-10', data: { related: '#new-host-to-step1' }
+          = link_to t('cancel'), '#', class: 'close-area cancel-link cancel-btn-style left-margin-10', data: { related: '#new-host-to-step1' }

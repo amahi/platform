@@ -2,24 +2,23 @@
 
 = content_tag 'div', :class => 'app', :id => "app_whole_#{app.identifier}", :data => { :progress_path => apps_engine.uninstall_progress_path(app.identifier) } do
 
-  table.settings.stretchtoggle.table[id="app_row_#{app.identifier}"]
-    tr
+  table.settings.stretchtoggle[id="app_row_#{app.identifier}"]
+    tr.hover-style
       td.settings-col1.settings-col1-pad1.apps-col1
         = link_to name_with_warning(app), '#'
       td.settings-col2.apps-col2[id="app_ip_#{app.identifier}"]
         = short_desc(app)
 
   .settings-stretcher[id="app_info_#{app.identifier}" style="#{display_style}"]
-    .app-manage
+    .app-manage.collapsed-div-style.f-size13.text-secondary
       fieldset
         legend &nbsp; #{app.name} #{t('installed_paren')} &nbsp;
-        .settings-fields
+        .settings-fields.row
+          .img-wrap.col-md-6.col-xs-12.col-sm-12.align-items-center.mb-2
+            = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank', :style=>'width: 100%;') : image_for_app(app)
 
-          .img-wrap.col-md-6
-            = app.webapp ? link_to(image_for_app(app), app.remote_url, :target => '_blank') : image_for_app(app)
-
-          .app-content.col-md-6
-            div.app-description
+          .app-content.m-0.col-md-6.col-xs-12.col-sm-12
+            div.app-description 
               = app.description.try(:html_safe) || t('no_description_supplied')
 
             = render 'is_installed', :app => app

@@ -1,8 +1,8 @@
-.settings-fields.settings-wrap
+.settings-fields.settings-wrap.bg-white.p-2
   fieldset
     legend
       = t 'settings'
-    table.table
+    table
       tr
         td
           label = t 'dhcp_server'
@@ -29,7 +29,7 @@
                                    :remote => true,
                                    :input_css_class=>'form-control input-sm',
                                    :form_css_class => "edit_lease_form form-inline form_hidden",
-                                   :cancel_class => "lease-cancel-link btn btn-primary btn-sm left-margin-10"
+                                   :cancel_class => "lease-cancel-link cancel-btn-style left-margin-10"
       tr
         td
           label = t 'dns_provider'
@@ -40,6 +40,7 @@
                                    collection: dns_select_options,
                                    url: network_engine.update_dns_path,
                                    selected: @dns.value
+
           .dns-ips-area style=(@dns.value == "custom" ? "" : "display: none")
             = form_tag network_engine.update_dns_ips_path, remote: true, method: 'put', id: 'update-dns-ips-form', class: 'update-form form-horizontal' do |f|
               .control-group
@@ -72,16 +73,16 @@
                                    :remote => true,
                                    :input_css_class=>'form-control input-sm',
                                    :form_css_class => "edit_gateway_form form-inline form_hidden",
-                                   :cancel_class => "gateway-cancel-link btn btn-primary btn-sm left-margin-10"
+                                   :cancel_class => "gateway-cancel-link cancel-btn-style left-margin-10"
           .gateway_messages[style="display:none;"]
             =@net +'.'
             b.gateway_message_value = @gateway
 
-.settings-fields.settings-wrap
+.settings-fields.settings-wrap.bg-white.p-2
   fieldset
     legend
       = t 'dynamic_ip_range'
-    table.table
+    table
       tr
         td
           label= t 'minimum'
@@ -102,7 +103,7 @@
                                    :remote => true,
                                    :input_css_class=>'form-control input-sm',
                                    :form_css_class => "edit_dyn_lo_form form-inline form_hidden",
-                                   :cancel_class => "dyn-lo-cancel-link btn btn-primary btn-sm left-margin-10"
+                                   :cancel_class => "dyn-lo-cancel-link cancel-btn-style left-margin-10"
       tr
         td
           label= t 'maximum'
@@ -123,7 +124,7 @@
                                    :remote => true,
                                    :input_css_class=>'form-control input-sm',
                                    :form_css_class => "edit_dyn_hi_form form-inline form_hidden",
-                                   :cancel_class => "dyn-hi-cancel-link btn btn-primary btn-sm left-margin-10"
+                                   :cancel_class => "dyn-hi-cancel-link cancel-btn-style left-margin-10"
 
 = content_for(:js_templates) do
   script[id='updateLeaseTimeTemplate' type='text/x-jquery-tmpl']
