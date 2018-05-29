@@ -6,5 +6,5 @@ if @share.errors.any?
 else
   @share = nil
   json.status :ok
-  json.content render(:template => 'shares/index')
+  json.content render(:template => 'shares/index', :locals => {:include_javascript => false} )
 end
