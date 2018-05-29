@@ -93,7 +93,7 @@ class SharesController < ApplicationController
 
 	def update_tags		
 		sleep 2 if development?
-		@saved = @share.update_tags!(params_update_tags_path)           
+		@saved = @share.update_tags!(params_update_tags_path)
 	end
 
 	def update_path
@@ -173,7 +173,7 @@ class SharesController < ApplicationController
 
 	def params_update_tags_path
 	    unless params[:share].blank?
-	    	params.require(:share).permit([:path]) 
+	    	params.require(:share).permit([:path,:tags]) 
 	    else
 	    	params.permit([:name])	
 	    end
