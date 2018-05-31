@@ -124,7 +124,7 @@ class App < ApplicationRecord
 		AmahiApi::api_key = Setting.value_by_name("api-key")
 		begin
 			AmahiApi::App.find(:all).map do |online_app|
-				App.where(:identifier=>online_app.id).first ? nil : App.new(online_app.id, online_app)
+				App.where(identifier: online_app.id).first ? nil : App.new(online_app.id)
 			end.compact
 		rescue
 			[]

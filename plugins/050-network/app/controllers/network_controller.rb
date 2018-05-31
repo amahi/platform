@@ -153,14 +153,18 @@ private
   def get_hosts
     @hosts = Host.order('name ASC')
     @net = Setting.get 'net'
+    # for development ease
+    @net ||= '192.168.1' if Rails.env.development?
   end
 
   def get_dns_aliases
     @dns_aliases = DnsAlias.order('name ASC')
     @net = Setting.get 'net'
+    # for development ease
+    @net ||= '192.168.1' if Rails.env.development?
   end
 
-  def params_create_alias    
+  def params_create_alias
     params.require(:dns_alias).permit([:name, :address])
   end
 

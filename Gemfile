@@ -55,6 +55,9 @@ group :development do
 	gem 'binding_of_caller'
 
 	gem 'puma'
+
+	# DB performance warnings
+  gem 'bullet'
 end
 
 gem "rspec-rails", :group => [:test, :development]
