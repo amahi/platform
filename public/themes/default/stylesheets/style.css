@@ -1675,6 +1675,14 @@ textarea {
   border-top-width: 0.5px;
 }
 
+.all-subtab-container{
+  display: none;
+}
+
+.single-subtab-container{
+  display: block;
+}
+
 .setup-subtab{
   border: 0px;
 }

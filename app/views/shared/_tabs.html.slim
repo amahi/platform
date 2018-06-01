@@ -6,12 +6,55 @@
           - if tab_class(tab).blank?
               a.nav-link.active.text-capitalize.tab-link-style href="#{tab.url}"
                 = tab.label
+              
+              .container.setup-subtab-container.all-subtab-container
+                ul.nav.nav-tabs.setup-subtab
+                  - if @advanced
+                    - tab.advanced_subtabs.each do |subtab|           
+                      li.nav-item
+                        - if subtab_class(subtab.id,tab.id).blank?
+                          a.text-capitalize.subtab-link href="#{subtab.url}"
+                            = subtab.label
+                        - else
+                          a.text-capitalize.active-subtab-link href="#{subtab.url}"
+                            = subtab.label
+                  - else
+                    - tab.basic_subtabs.each do |subtab|      
+                      li.nav-item
+                        - if subtab_class(subtab.id,tab.id).blank?
+                          a.text-capitalize.subtab-link href="#{subtab.url}"
+                            = subtab.label
+                        - else
+                          a.text-capitalize.active-subtab-link href="#{subtab.url}"
+                            = subtab.label          
+
           - else
               - active_tab = tab
               a.nav-link.active.text-capitalize.active-tab-link-style href="#{tab.url}"
                 = tab.label
+          
+              .container.setup-subtab-container.all-subtab-container
+                ul.nav.nav-tabs.setup-subtab
+                  - if @advanced
+                    - tab.advanced_subtabs.each do |subtab|           
+                      li.nav-item
+                        - if subtab_class(subtab.id,tab.id).blank?
+                          a.text-capitalize.subtab-link href="#{subtab.url}"
+                            = subtab.label
+                        - else
+                          a.text-capitalize.active-subtab-link href="#{subtab.url}"
+                            = subtab.label
+                  - else
+                    - tab.basic_subtabs.each do |subtab|      
+                      li.nav-item
+                        - if subtab_class(subtab.id,tab.id).blank?
+                          a.text-capitalize.subtab-link href="#{subtab.url}"
+                            = subtab.label
+                        - else
+                          a.text-capitalize.active-subtab-link href="#{subtab.url}"
+                            = subtab.label          
 
-.container.setup-subtab-container
+.container.setup-subtab-container.single-subtab-container
   ul.nav.nav-tabs.setup-subtab
     - if @advanced
       - active_tab.advanced_subtabs.each do |subtab|           

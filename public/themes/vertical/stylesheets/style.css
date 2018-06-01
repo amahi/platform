@@ -16,12 +16,12 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor); }
 
 #preferences {
-  width: 770px;
+  width: 760px;
   float: left;
   border: 1px solid #e8e8e8;
-  -moz-border-radius: 0 5px 5px 5px;
-  -webkit-border-radius: 0 5px 5px 5px;
-  border-radius: 0 5px 5px 5px; }
+  -moz-border-radius: 0 5px 5px 0px;
+  -webkit-border-radius: 0 5px 5px 0px;
+  border-radius: 0 5px 5px 0px; }
 
 nav.preftab {
   position: static; }
@@ -40,11 +40,128 @@ nav.preftab {
       nav.preftab li ul li > a {
         padding: 0 40px; }
 
+@media(max-width: 992px){
+  #preferences{
+    width: 525px;
+  }  
+}
+
+@media(max-width: 768px){
+  #preferences{
+    width: 375px;
+    padding: 8px;
+  } 
+  .settings-table tbody tr td:first-child{
+    padding-left: 15px;
+  }
+  .form-horizontal textarea{
+    width: 170px;
+  }
+  .input-field-style{
+    width: 170px !important;
+  }
+  .nav-tabs{
+    width: 120px !important;
+  }
+  #update-path-form input#share_path{
+    width: 170px;
+  }
+  .form-horizontal textarea{
+    font-size: 13px;
+  }
+  #new-share-box{
+    max-width: 100%;
+  }
+  #disks-table{
+    margin-left: -10px;
+  }
+  #btn-get-apps{
+    line-height: 25px;
+  }
+  #btn-install-apps{
+    line-height: 25px; 
+  }
+  .settings-fields{
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0px !important;
+  }
+}
+
 .settings-actions {
   float: right; }
 
 .settings-fields {
+  margin: 5px;
+  width: 100%;
   float: left; }
 
 #systems-result {
   padding: 5px 0 5px 0; }
+
+.nav-tabs{
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  float: left;
+}
+
+.setup-main-tab{
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.setup-subtab-container{
+  background: #d6d6d6;
+}
+
+.all-subtab-container{  
+  display: inline-block;
+  padding: 0px;
+  margin-bottom: -8px;
+}
+
+.single-subtab-container{
+  display: none;
+}
+
+.subtab-link{
+  font-size: 11px;
+  padding: 6px 15px;
+  width: 100%;
+  margin-left: -2px;
+  margin-bottom: -1px;
+  border: 1px solid #d6d6d6;
+  display: inline-block;
+}
+
+.subtab-link:hover{
+  border-radius: 0px;
+  margin-left: -2px;
+  margin-top: 0px;
+  border: 1px solid #c7c7c7;
+}
+
+.active-subtab-link{
+  width: 100%;
+  padding: 6px 15px;
+  font-size: 11px;
+  margin-left: -2px;
+  margin-bottom: -1px;
+  border: 1px solid #c7c7c7;
+  border-radius: 0px;
+  display: inline-block; 
+  background: #fbfbfb;
+}
+
+.active-subtab-link: hover{
+  border-radius: 0px;
+  border: 1px solid #c7c7c7;
+}
+
+.setup-main-tab .nav-item{
+  margin-bottom: 0px;
+}
+
+.setup-subtab{
+  margin-top: -1px;
+}
