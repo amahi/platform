@@ -38,12 +38,12 @@ class App < ApplicationRecord
 		INSTALLER_LOG = "#{HDA_TMP_DIR}/amahi-app-installer.log"
 	end
 
-	belongs_to :webapp, :dependent => :destroy
-	belongs_to :theme, :dependent => :destroy
-	belongs_to :db, :dependent => :destroy
-	belongs_to :server, :dependent => :destroy
-	belongs_to :share, :dependent => :destroy
-	belongs_to :plugin, :dependent => :destroy
+	belongs_to :webapp, :dependent => :destroy, optional: true
+	belongs_to :theme, :dependent => :destroy, optional: true
+	belongs_to :db, :dependent => :destroy, optional: true
+	belongs_to :server, :dependent => :destroy, optional: true
+	belongs_to :share, :dependent => :destroy, optional: true
+	belongs_to :plugin, :dependent => :destroy, optional: true
 
 	has_many :app_dependencies, :dependent => :destroy
 	has_many :children, :class_name => "AppDependency", :foreign_key => 'dependency_id'
@@ -124,7 +124,7 @@ class App < ApplicationRecord
 		AmahiApi::api_key = Setting.value_by_name("api-key")
 		begin
 			AmahiApi::App.find(:all).map do |online_app|
-				App.where(:identifier=>online_app.id).first ? nil : App.new(online_app.id, online_app)
+				App.where(identifier: online_app.id).first ? nil : App.new(online_app.id)
 			end.compact
 		rescue
 			[]
@@ -232,7 +232,7 @@ class App < ApplicationRecord
 			else
 				self.show_in_dashboard = false
 			end
-			self.create_db(:name => installer.database) if installer.database && !installer.database.blank?
+			self.build_db(:name => installer.database) if installer.database && !installer.database.blank?
 			# if it has a share, create it and install it
 			if installer.share
 				sh = Share.where(:name=>installer.share).first
@@ -243,7 +243,7 @@ class App < ApplicationRecord
 					c = installer.share.capitalize
 					p = Share.default_full_path(installer.share)
 					# FIXME - use a relative path and not harcode the share path here?
-					self.create_share(:name => c, :path => p, :rdonly => false, :visible => true, :tags => "")
+					self.build_share(:name => c, :path => p, :rdonly => false, :visible => true, :tags => "")
 					cmd = Command.new("chmod 777 #{p}")
 					cmd.execute
 				end
@@ -253,7 +253,7 @@ class App < ApplicationRecord
 
 			# workaround : Skip creation of webapp for php5 kind apps
 			if installer.kind!="PHP5"
-				self.create_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+				self.build_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
 			end
 			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
 			if installer.kind == 'plugin'
@@ -301,7 +301,7 @@ class App < ApplicationRecord
 					servername = $1
 					pidfile = $2 unless $2.empty?
 				end
-				self.create_server(:name => servername, :comment => "#{self.name} Server", :pidfile => pidfile)
+				self.build_server(:name => servername, :comment => "#{self.name} Server", :pidfile => pidfile)
 			end
 			self.install_status = 80
 			self.initial_user = installer.initial_user

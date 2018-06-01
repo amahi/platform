@@ -26,4 +26,7 @@
   script[id='updateExtrasTemplate' type='text/x-jquery-tmpl']
     = render '/js_templates/shares/extras_form'
 
-= javascript_include_tag 'shares'
+- js_include = include_javascript rescue true
+
+- if js_include 
+  = javascript_include_tag 'shares'
