@@ -1570,6 +1570,7 @@ span.server_status i.running {
   height: 30px; }
 
 .messages {
+  margin-top: 8px;
   color: #a44; }
 
 #network-settings {
