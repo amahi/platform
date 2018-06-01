@@ -1,3 +1,5 @@
+= javascript_include_tag 'shares'
+
 .share.bg-white.p-1[id="workgroup_#{@workgroup.try(:id)}"]
   .settings-stretcher.border-0
     fieldset
@@ -23,7 +25,7 @@
                                          :method => :put,
                                          :remote => true,
                                          :form_css_class => "edit_workgroup_form form_hidden",
-                                         :cancel_class => "workgroup_cancel_link btn btn-primary btn-sm left-margin-10 "
+                                         :cancel_class => "workgroup_cancel_link cancel-btn-style left-margin-10"
                 .messages
 
 

@@ -1,3 +1,4 @@
+= javascript_include_tag 'network'
 - @dns_alias = @dns_alias || DnsAlias.new
 
 = form_for @dns_alias, url: network_engine.dns_aliases_path, remote: true, html: { class: 'dns_alias create-form form-horizontal col-md-6 bg-white p-2', id: 'new-dns-alias-form' } do |f|

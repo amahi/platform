@@ -234,7 +234,7 @@ class Share < ApplicationRecord
 		unless params[:path].blank?
 			self.update_attributes(params)
 		else
-			name = params[:name].downcase
+			name = params[:tags].downcase
 			if self.tags.include?(name)
 				self.tags = self.tags.gsub(name, '')
 			else
