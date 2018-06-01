@@ -21,8 +21,6 @@ gem 'rails-observers'
 gem 'jbuilder'
 gem 'ya2yaml'
 
-gem 'bootsnap', require: false
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
