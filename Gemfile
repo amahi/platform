@@ -61,7 +61,7 @@ end
 gem "rspec-rails", :group => [:test, :development]
 
 group :test do
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "capybara"
   gem 'capybara-screenshot'
 	gem 'database_cleaner'
