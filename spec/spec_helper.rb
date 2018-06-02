@@ -6,7 +6,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 
 # turn this to true to get screenshots and html in tmp/capybara/*
 SCREENSHOTS_ON_FAILURES=false
@@ -55,7 +55,7 @@ RSpec.configure do |config|
 	#     --seed 1234
 	config.order = "random"
 
-	config.include FactoryGirl::Syntax::Methods
+	config.include FactoryBot::Syntax::Methods
 
 	#change the default javascript driver to webkit
 	config.before(:suite) do
@@ -80,7 +80,7 @@ RSpec.configure do |config|
 
 end
 
-# This is to stub with RSpec in FactoryGirl
-FactoryGirl::SyntaxRunner.class_eval do
+# This is to stub with RSpec in FactoryBot
+FactoryBot::SyntaxRunner.class_eval do
   include RSpec::Mocks::ExampleMethods
 end
