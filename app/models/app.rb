@@ -58,11 +58,12 @@ class App < ApplicationRecord
 	validates :name, :presence => true
 	validates :identifier, :presence => true, :uniqueness => true
 
-	def initialize(identifier, app=nil)
+	def initialize(args)
 		super()
+		app = args[:app]
 		if app.nil?
 			AmahiApi::api_key = Setting.value_by_name("api-key")
-			app = AmahiApi::App.find(identifier)
+			app = AmahiApi::App.find(args[:identifier])
 		end
 		self.name = app.name
 		self.screenshot_url = app.screenshot_url
@@ -124,7 +125,7 @@ class App < ApplicationRecord
 		AmahiApi::api_key = Setting.value_by_name("api-key")
 		begin
 			AmahiApi::App.find(:all).map do |online_app|
-				App.where(identifier: online_app.id).first ? nil : App.new(online_app.id)
+				App.where(identifier: online_app.id).first ? nil : App.new({identifier: online_app.id, app: online_app})
 			end.compact
 		rescue
 			[]
@@ -476,7 +477,7 @@ class App < ApplicationRecord
 		deps.split(/[, ]+/).map do |identifier|
 			a = App.where(:identifier=>identifier).first
 			unless a
-				a = App.new identifier
+				a = App.new({identifier: identifier}) 
 				a.install_bg
 			end
 			# add the dependency if it does not exist

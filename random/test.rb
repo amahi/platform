@@ -21,7 +21,7 @@ end
 
 puts "Starting fresh installation"
 begin
-  app = App.new('ldwbkzuq8c')
+  app = App.new({identifier: 'ldwbkzuq8c'})
   app.install_bg
   puts "Container started successfully"
 rescue => e

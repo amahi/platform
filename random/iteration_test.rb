@@ -26,7 +26,7 @@ reset(identifier)
 (1..10).each do |t|
   puts "Starting iteration #{t}"
   begin
-    app = App.new(identifier)
+    app = App.new({identifier: identifier})
     app.install_bg
   rescue => e
     puts "Installation failed."
