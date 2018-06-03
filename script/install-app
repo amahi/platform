@@ -103,7 +103,7 @@ def main(app_id, install)
     exit 1
   end
   begin
-    app = install ? App.new(app_id) : App.where(:identifier=>app_id).first
+    app = install ? App.new({identifier: app_id}) : App.where(:identifier=>app_id).first
     raise "Error: cannot find #{app_id} to #{install ? "install" : "uninstall"}!" unless app
     install_or_uninstall install, app_id, app
   rescue => e
