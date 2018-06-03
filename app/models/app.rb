@@ -73,7 +73,7 @@ class App < ApplicationRecord
 		self.logo_url = app.logo_url
 		self.status = app.status
 		self.installed = false
-	end	
+	end
 
 	# Not used anymore. Instead install-app script directly calls install_bg function.
 	def install_start
