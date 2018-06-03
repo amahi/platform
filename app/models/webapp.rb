@@ -57,7 +57,7 @@ class Webapp < ApplicationRecord
 
 	def create_php5_vhost
 		puts "Creating vhost for php5 #{self.id}"
-		self.create_dns_alias(:name => self.name)
+		self.build_dns_alias(:name => self.name)
 		FileUtils.mkpath(File.join(path, "html"))
 		FileUtils.mkpath(File.join(path, "logs"))
 		write_conf_file
