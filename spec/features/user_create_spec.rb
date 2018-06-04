@@ -10,7 +10,8 @@ feature "Users tab" do
     click_button "Log In"
   end
   scenario "an admin should be able to create a new user", :js => true do
-    expect(page).to have_content("Setup")
+    element = page.find('.nav-item', visible: :all, text: 'Setup')
+    expect(element).to match_css('.nav-item', visible: :all)
     visit users_engine.users_path
     expect(page).to have_content("Username")
     expect(page).to have_content("Full Name")

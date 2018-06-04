@@ -10,7 +10,8 @@ feature "Admin" do
 		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
 		expect(page).to have_content("Dashboard")
-		expect(page).to have_content("Setup")
+		element = page.find('.nav-item', visible: :all, text: 'Setup')
+		expect(element).to match_css('.nav-item', visible: :all)
 		expect(page).to have_content("Logout")
 	end
 

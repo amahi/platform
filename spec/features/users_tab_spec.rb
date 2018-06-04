@@ -9,7 +9,8 @@ feature "Users tab" do
     fill_in "username", :with => @admin.login
     fill_in "password", :with => "secretpassword"
     click_button "Log In"
-    expect(page).to have_content("Setup")
+    element = page.find('.nav-item', visible: :all, text: 'Setup')
+    expect(element).to match_css('.nav-item', visible: :all)
     visit users_engine.users_path
     expect(page).to have_content("Username")
     expect(page).to have_content("Full Name")
