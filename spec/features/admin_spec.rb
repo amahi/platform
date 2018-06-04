@@ -22,7 +22,10 @@ feature "Admin" do
 		fill_in "username", :with => user.login
 		fill_in "password", :with => "secretpassword"
 		click_button "Log In"
-		expect(page).not_to have_content("Setup")
+		elements = page.all('.nav-item', visible: :all)
+		elements.each do |element|			
+			expect(element).not_to match_css('.nav-item', visible: :all, text: "Setup")
+		end
 		visit users_engine.users_path
 		expect(page).to have_content('You must have admin privileges to access this area')
 	end
