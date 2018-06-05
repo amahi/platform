@@ -21,7 +21,7 @@ class Webapp < ApplicationRecord
 
 	BASE = Rails.env.production? ? "/usr/share/hda-platform/webapps/app-%s.conf" : (File.join(Rails.root, "misc/webapps/app-%s.conf"))
 
-	belongs_to :dns_alias, :dependent => :destroy, :class_name => 'DnsAlias'
+	belongs_to :dns_alias, :dependent => :destroy, :class_name => 'DnsAlias', optional: true
 	has_many :webapp_aliases, :dependent => :destroy
 
 	before_create :before_create_hook , :unless => :php5?
@@ -32,11 +32,7 @@ class Webapp < ApplicationRecord
 	validates :name, :fname, :path, :presence => true
 
 	def php5?
-		if self.kind=="PHP5"
-			return true
-		else
-			return false
-		end
+		self.kind == "PHP5"
 	end
 
 	def full_url
@@ -57,7 +53,7 @@ class Webapp < ApplicationRecord
 
 	def create_php5_vhost
 		puts "Creating vhost for php5 #{self.id}"
-		self.build_dns_alias(:name => self.name)
+		self.build_dns_alias(name: self.name)
 		FileUtils.mkpath(File.join(path, "html"))
 		FileUtils.mkpath(File.join(path, "logs"))
 		write_conf_file
@@ -71,7 +67,7 @@ class Webapp < ApplicationRecord
 		# A very dirty hack to make php5 container app vhosts works.
 		# Most likely will remove it later on.
 		if self.kind!="PHP5"
-			self.create_dns_alias(:name => self.name)
+			self.build_dns_alias(name: self.name)
 			FileUtils.mkpath(File.join(path, "html"))
 			FileUtils.mkpath(File.join(path, "logs"))
 			write_conf_file
