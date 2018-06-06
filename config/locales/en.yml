@@ -99,6 +99,9 @@
   new: New
   password_cannot_be_blank: Password cannot be blank
   password_changed_successfully: Password changed successfully
+  pins_cannot_be_blank: Pin cannot be blank
+  pins_does_not_match: Pins does not match
+  pin_changed_successfully: Pin changed successfully
   workgroup_changed_successfully: Workgroup changed successfully
   password_is_too_short: Password is too short
   password_looks_good: Password looks good

@@ -88,6 +88,15 @@ $ ->
     		$(this).find("input[type=password]").val ""
     		$(this).find(".password-edit").hide("slow")
 
+    # update user pin
+    .on 'ajax:success', '.update-pin', (event, results) ->
+      msg = $(this).find(".messages:first")
+      msg.html results["message"]
+      setTimeout (-> msg.html ""), 8000
+      if results.status is 'ok'
+        $(this).find("input[type=password]").val ""
+        $(this).find(".pin-edit").hide("slow")
+
     # management of the public key area
     .on 'ajax:success', '.update-pubkey', (event, results) ->
     	form = $(this)

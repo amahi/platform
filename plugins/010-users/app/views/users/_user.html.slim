@@ -56,6 +56,8 @@ div.user[id="whole_user_#{user.id}"]
                 td = formatted_date(user.last_login_at)
               tr
                 = render partial: 'auth', locals: { user: user }
+              tr
+                = render partial: 'pin', locals: { user: user }
             tr
               td
                 label #{t('admin')}

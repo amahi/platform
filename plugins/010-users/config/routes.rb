@@ -7,6 +7,7 @@ Users::Engine.routes.draw do
 			put 'update_password'
 			put 'update_name'
 			put 'update_pubkey'
+			put 'update_pin'
 		end
 	end
 	match 'settings' => 'users#settings' ,via: [:get,:post]

@@ -111,6 +111,23 @@ class UsersController < ApplicationController
 		render :json => { :status => @user.errors.any? ? :not_acceptable : :ok }
 	end
 
+	def update_pin
+		sleep 2 if development?
+		@user = User.find(params[:id])
+		if(params[:user][:pin].blank? || params[:user][:pin_confirmation].blank?)
+			errors = true
+			error = t("pins_cannot_be_blank")
+		elsif params[:user][:pin] != params[:user][:pin_confirmation]
+			errors = true
+			error = t("pins_does_not_match")
+		else
+			@user.update_attributes(params_pin_update)
+			errors = @user.errors.any?
+			error = @user.errors.full_messages.join(', ')
+		end
+		render :json => { :status => errors ? :not_acceptable : :ok, :message => errors ?  error : t('pin_changed_successfully') }
+	end
+
 	def settings
 		unless @advanced
 			redirect_to users_engine_path
@@ -130,7 +147,7 @@ class UsersController < ApplicationController
 	private
 
 	def params_user_create
-		params.require(:user).permit(:login, :name, :password, :password_confirmation)
+		params.require(:user).permit(:login, :name, :password, :password_confirmation, :pin)
 	end
 
 	def params_password_update
@@ -139,6 +156,10 @@ class UsersController < ApplicationController
 
 	def params_name_update
 		params_user_create.permit(:name)
+	end
+
+	def params_pin_update
+		params_user_create.permit(:pin)
 	end
 
 end
