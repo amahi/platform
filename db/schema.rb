@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(version: 2014_07_17_200213) do
     t.string "current_login_ip"
     t.boolean "admin"
     t.text "public_key"
+    t.text "pin", null: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
