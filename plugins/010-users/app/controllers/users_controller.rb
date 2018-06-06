@@ -116,7 +116,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		if(params[:user][:pin].blank? || params[:user][:pin_confirmation].blank?)
 			errors = true
-			error = t("pins_cannot_be_blank")
+			error = t("pin_cannot_be_blank")
 		elsif params[:user][:pin] != params[:user][:pin_confirmation]
 			errors = true
 			error = t("pins_does_not_match")
