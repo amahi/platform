@@ -130,6 +130,24 @@ feature "Users tab" do
 			wait_for_ajax
 		end
 		expect(@user.reload.password).to eq "secretpassword"
-  end
-
+    end
+    scenario "should allow an admin user to change another user's pin" do
+    	user_link = find("#whole_user_#{@user.id}")
+		user_link.find("tr").click_link @user.login
+		within(user_link) do
+			expect(user_link).to have_selector("a#user-pin-control-action-#{@user.id}", :visible => true)
+			link = user_link.find_by_id("user-pin-control-action-#{@user.id}")
+			link.click
+			expect(user_link).to have_field("user[pin]")
+			expect(user_link).to have_field("user[pin_confirmation]")
+			pin_input = user_link.find_field("user[pin]")
+			pin_confirm_input = user_link.find_field("user[pin_confirmation]")
+			pin_input.set "abc12"
+			pin_confirm_input.set "abc12"
+			submit_link = user_link.find_by_id("submit_pin_#{@user.id}")
+			submit_link.click
+			wait_for_ajax
+		end
+		expect(@user.reload.pin).to eq "abc12"
+    end
 end
