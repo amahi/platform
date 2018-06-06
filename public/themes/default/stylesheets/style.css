@@ -1378,7 +1378,7 @@ span.server_status i.running {
   width: 19px;
   height: 20px;
   display: inline-block;
-  background: url(../images/password.png) no-repeat; }
+  background: url(../images/pin.png) no-repeat; }
   
 .editable {
   font-weight: bold; }
