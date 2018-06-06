@@ -24,7 +24,7 @@ class Webapp < ApplicationRecord
 	belongs_to :dns_alias, :dependent => :destroy, :class_name => 'DnsAlias', optional: true
 	has_many :webapp_aliases, :dependent => :destroy
 
-	before_create :before_create_hook , :unless => :php5?
+	before_validation :before_create_hook, on: :create, unless: :php5?
 	after_destroy :after_destroy_hook
 	after_save :after_save_hook, :unless => :php5?
 	before_validation :create_unique_fname, :on => :create
