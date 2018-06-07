@@ -45,6 +45,9 @@ class User < ApplicationRecord
 
 	validates :name, :presence => true
 
+	validates_uniqueness_of :pin, :allow_nil => true
+	validate :validate_pin,  unless: Proc.new { |user| user.pin.blank? }
+
 	#NOTE: validation for password and password_confirmation is set by authlogic
 
 	before_create :before_create_hook
@@ -188,5 +191,10 @@ class User < ApplicationRecord
 
 	def make_admin
 		Platform.make_admin(login, admin?)
+	end
+
+	def validate_pin
+		errors[:base] << "PIN length must be between 3 to 5" if self.pin.length < 3 || self.pin.length > 5
+		errors[:base] << "PIN format does not match" unless self.pin =~ /\A[A-Za-z0-9][A-Za-z0-9]+\z/
 	end
 end

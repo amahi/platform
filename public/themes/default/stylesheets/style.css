@@ -1374,6 +1374,19 @@ span.server_status i.running {
   height: 20px;
   display: inline-block;
   background: url(../images/password.png) no-repeat; }
+.user-manage i.pin {
+  width: 19px;
+  height: 20px;
+  display: inline-block;
+  background: url(../images/shield.png) no-repeat; }
+.user-manage i.pin-info {
+  width: 19px;
+  height: 20px;
+  display: inline-block;
+  background: url(../images/icon_user_warning.png) no-repeat;
+  background-size: 14.5px;
+  background-position-y: 2px;
+  background-position-x: 3px;}
 
 .editable {
   font-weight: bold; }

@@ -1543,6 +1543,21 @@ span.server_status {
 		display: inline-block;
 		background: url(../images/password.png) no-repeat;
 	}
+  i.pin {
+    width: 19px;
+    height: 20px;
+    display: inline-block;
+    background: url(../images/shield.png) no-repeat;
+  }
+  i.pin-info {
+    width: 19px;
+    height: 20px;
+    display: inline-block;
+    background: url(../images/icon_user_warning.png) no-repeat;
+    background-size: 14.5px;
+    background-position-y: 2px;
+    background-position-x: 3px;
+  }
 }
 
 // --------------------------------------------------

@@ -67,3 +67,5 @@ div.user[id="whole_user_#{user.id}"]
                                          :disabled => !can_i_toggle_admin?(user)
             tr
               = render partial: 'password', locals: { user: user }
+            tr
+              = render partial: 'pin', locals: { user: user }
