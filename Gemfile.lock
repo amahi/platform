@@ -60,6 +60,8 @@ GEM
       activesupport (>= 4.2, < 5.3)
       request_store (~> 1.0)
       scrypt (>= 1.2, < 4.0)
+    autoprefixer-rails (8.6.1)
+      execjs
     bcrypt (3.1.12)
     better_errors (2.4.0)
       coderay (>= 1.0.0)
@@ -67,6 +69,10 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
+    bootstrap (4.1.1)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     bullet (5.7.5)
       activesupport (>= 3.0.0)
@@ -154,6 +160,7 @@ GEM
       capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
+    popper_js (1.12.9)
     psych (3.0.2)
     public_suffix (3.0.2)
     puma (3.11.4)
@@ -276,6 +283,7 @@ DEPENDENCIES
   bcrypt
   better_errors
   binding_of_caller
+  bootstrap (~> 4.1.1)
   bullet
   capybara
   capybara-screenshot
@@ -291,6 +299,7 @@ DEPENDENCIES
   mysql2
   nokogiri
   poltergeist
+  popper_js (~> 1.12.9)
   psych
   puma
   rails (~> 5.2.0)

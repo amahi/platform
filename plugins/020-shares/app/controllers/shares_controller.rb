@@ -173,7 +173,7 @@ class SharesController < ApplicationController
 
 	def params_update_tags_path
 	    unless params[:share].blank?
-	    	params.require(:share).permit([:path,:tags]) 
+	    	params.require(:share).permit([:path,:tags])
 	    else
 	    	params.permit([:name])	
 	    end

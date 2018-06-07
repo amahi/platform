@@ -99,6 +99,7 @@
   new: New
   password_cannot_be_blank: Password cannot be blank
   password_changed_successfully: Password changed successfully
+  pin: PIN
   pin_cannot_be_blank: PIN cannot be blank
   pins_do_not_match: PINs do not match
   pin_changed_successfully: PIN changed successfully

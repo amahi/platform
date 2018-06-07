@@ -1,24 +1,28 @@
 - size = @apps.size
-#welcome.nav
+#welcome.nav.row
   section#dashboard
-    ul#welcome_apps
+    #welcome-apps.p-3    
       - if size > 6
         = render partial: 'pair', collection: @apps[0..(size-1)/2].zip(@apps[(size+1)/2..-1])
       - else
         = render partial: 'app', collection: @apps
 
       - if size < 3
-        li
+        #install-apps
           = link_to '', apps_engine.root_path, title: t('install_apps'), id: 'install-apps'
 
-  - if @news
-    section#latest_news
-      #ln_inner
-        #ln_header
-          h3
-            = t('latest_news')
-        #ln_content
-          ul
-            = render partial: 'news', collection: @news
-          span#more_news
-            = link_to(t("more_news"), "http://blog.amahi.org/")
+  - if @news 
+    container
+      section#latest_news.card.text-center.float-right.col-.d-none.d-md-block
+        .card-header style="font-weight: bold; color: #222; font-size: 14px; background: #cacaca"
+          = t('latest_news')
+        ul.list-group.list-group-flush
+          = render partial: 'news', collection: @news
+        #more_news.card-footer.text-muted style="border-top: 0; background: #c7c7c7"
+          = link_to(t("more_news"), "http://blog.amahi.org/")
+       
+javascript: 
+  function open_app(url){
+    window.open(url,'_blank');
+    console.log(url);
+  };

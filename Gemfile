@@ -21,6 +21,9 @@ gem 'rails-observers'
 gem 'jbuilder'
 gem 'ya2yaml'
 
+gem 'bootstrap', '~> 4.1.1'
+gem 'popper_js', '~> 1.12.9'
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
@@ -64,7 +67,8 @@ group :test do
   gem "factory_bot_rails"
   gem "capybara"
   gem 'capybara-screenshot'
-	gem 'database_cleaner'
+  gem 'database_cleaner'
+
   # FIXME: required in Fedora 18 for some (packaging?) reason
   # gem 'minitest'
   # required for javascript test in selenium

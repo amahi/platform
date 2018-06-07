@@ -33,11 +33,11 @@ a {
   border: 1px solid #cccccc; }
 
 .hover-style{
-	cursor: pointer;
+ cursor: pointer;
 }
 
 .hover-style:hover{
-	background: #d8d8d89c;
+ background: #d4d4d4;
 }
 
 .inside {
@@ -53,7 +53,7 @@ a {
     clear: both; }
 
 .workgroup_click_change, .name_click_change, .lease_click_change, .gateway_click_change, .dyn_lo_click_change, .dyn_hi_click_change {
-  color: #333;
+  color: #505050 !important;
   text-decoration: none;
   border-bottom: 1px dashed;
   font-weight: bold; }
@@ -481,6 +481,29 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
     display: block;
     padding: 36px 0 0 174px; }
 
+.page-title{
+  font-size: 2.5rem;
+  color: #44444482;
+}
+
+@media (max-width: 769px){
+  .page-title{
+    margin-left: 110px;
+  }
+}
+
+@media (min-width: 770px){
+  .page-title{
+    margin-left: 85px;
+  }
+}
+
+@media (min-width: 992px){
+  .page-title{
+    margin-left: 40px;
+  }
+}
+
 #app {
   margin: 15px auto 0;
   width: 960px; }
@@ -541,12 +564,19 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
 section#dashboard {
   float: left;
   text-align: center;
-  width: 710px; }
+  /*width: auto; */
+  /*margin-right: 285px;*/
+}
+
+.app-card{
+  max-width: 400px; 
+  margin: 0 auto;
+}
 
 #latest_news {
   float: right;
   border: 1px solid #e6e6e6;
-  width: 245px;
+  width: 250px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px; }
@@ -565,12 +595,21 @@ section#dashboard {
     text-transform: uppercase;
     line-height: 0px; }
 
-#ln_content {
+#install-apps {
+    background: url(../images/dashboard.png) no-repeat;
+    width: 400px;
+    height: 235px;
+    margin: 35px auto 0; 
+    float: left;
+}    
+
+#latest_news {
+  margin-top: 25px;
   background: #f7f6f6; }
-  #ln_content > ul {
+  #latest_news > ul {
     list-style: none;
     margin: 0 0 0px 0px; }
-    #ln_content > ul li {
+    #latest_news > ul li {
       background-color: #fff;
       background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f7f6f6));
       background-image: -webkit-linear-gradient(top, #fff, #f7f6f6);
@@ -580,16 +619,17 @@ section#dashboard {
       background-image: linear-gradient(top, #fff, #f7f6f6);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor);
       padding: 10px 15px; }
-      #ln_content > ul li a {
-        color: #000;
+      #latest_news > ul li a {
+        color: #333;
         font-weight: bold;
         display: block;
         margin: 0 0 5px; }
-      #ln_content > ul li span {
+      #latest_news > ul li span {
         display: block;
         background: url(../images/date-icon.png) no-repeat left 1px;
+        margin-left: 40px;
         color: #9a9a9a;
-        padding: 0 0 0 23px;
+        padding: 0 25px 0 0;
         font-size: 11px; }
   #ln_content #more_news {
     background: #f7f6f6;
@@ -599,10 +639,116 @@ section#dashboard {
     -moz-border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px; }
-    #ln_content #more_news a {
+    #more_news a {
       color: #000;
       display: inline;
       font-weight: bold; }
+
+@media screen and (max-width: 992px) {
+  .card-columns {
+    column-count: 4;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card-columns {
+    column-count: 3;
+  }
+}
+
+#welcome-apps{
+  width: 470px;
+  margin-left: 20px;
+}
+
+.app-item-card{
+  width: 180px;
+  padding: 1rem; 
+  float: left; 
+  height: 12rem;
+}
+
+.app-item-card:hover{
+  cursor: pointer;
+  box-shadow: 0 4px 10px 0 #0000002b;
+}
+
+@media screen and (min-width: 992px) {
+  #welcome-apps {
+    width: 700px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #welcome-apps {
+    width: 450px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  #welcome-apps {
+    width: 540px;
+    margin-left: 60px;
+  }
+}
+
+.tab-link-style{
+  font-size: 13px; 
+  padding: 0.7rem 1.2rem;
+  background: #f3f3f3 !important;
+  border-bottom: 0px !important;
+}
+
+.active-tab-link-style{
+  font-size: 14px; 
+  padding: 0.7rem 1.2rem; 
+  background: #dedede1c !important;  
+  border-bottom: 0px;
+}
+
+.tab-link-style:hover{
+  font-size: 13px;   
+  background: #dedede1c !important;
+  border-bottom: 0px !important;
+}
+
+.subtab-link{
+  font-size: 12px; 
+  padding: 10px 15px; 
+  text-decoration: none; 
+  color: #333;
+  border: 1px solid #00000000;
+  margin-left: 2px;
+}
+
+.active-subtab-link{
+  font-size: 12px; 
+  padding: 10px 15px; 
+  text-decoration: none; 
+  color: #333;
+  background: #f7f7f7;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 0px;
+  margin-left: 2px;
+}
+
+.active-subtab-link:hover{
+  text-decoration: none; 
+  color: #333;
+}
+
+.subtab-link:hover{
+  background: #f7f7f7;
+  border: 1px solid #333;
+  text-decoration: none; 
+  color: #333;  
+  border: 1px solid #d8d8d8;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 0px;
+}
 
 #tabs {
   border: 1px solid #e8e8e8;
@@ -725,6 +871,14 @@ nav.preftab {
       -webkit-border-radius: 0 0 5px 0;
       border-radius: 0 0 5px 0; }
 
+.settings-table thead th {
+  vertical-align: middle;
+}
+
+tr.even{
+  background: #b3b3b3a1;
+}
+
 .apptable {
   border-collapse: collapse; }
 
@@ -752,10 +906,12 @@ table.settings, .settings th {
   vertical-align: top; }
 
 .settings th, thead.apptable td {
-  font-size: 16px;
+  font-size: 13px;
   background: #333;
   color: #fff;
   border-collapse: collapse;
+  padding: 5px;
+  padding-left: 32px;
   height: 40px;
   line-height: 40px;
   text-align: left;
@@ -783,7 +939,7 @@ thead.apptable td:last-child, .fw-rules-col3 {
   padding: 0 30px 0 0; }
 
 .settings-col1 {
-  padding: 0 0 0 30px;
+  padding: 6px 6px 6px 30px;  
   width: 30%;
   -moz-border-radius: 5px 0 0 0;
   -webkit-border-radius: 5px 0 0 0;
@@ -931,12 +1087,10 @@ td.align-top {
   text-indent: 0; }
 
 .app-screenshot {
-  width: 320px;
-  height: 240px;
+  width: 90%;
   vertical-align: top;
-  margin: 0 25px 25px 0;
-  padding: 3px;
-  float: left;
+  margin: 5px;
+  padding: 4px;
   border: 1px solid #cccccc; }
 
 .app-more {
@@ -950,8 +1104,7 @@ td.align-top {
   text-align: center;
   font-size: 2em;
   font-weight: bold;
-  margin: 20px 0 20px 0;
-  padding: 20px 0 20px 0; }
+  margin: 20px 0 20px 0; }
 
 .install-button {
   font-size: 12px;
@@ -1029,7 +1182,7 @@ td.align-top {
 
 .app-description {
   margin: 0;
-  color: #999999;
+  color: #444 !important;
   font-size: 12px; }
 
 .app-more {
@@ -1364,6 +1517,13 @@ span.server_status i.running {
   display: inline-block;
   background: url(../images/server/running.png) no-repeat; }
 
+.collapsed-div-style{
+  background: #fff;
+  padding: 5px;
+  margin-top: 1px;
+  margin-bottom: 4px;
+}
+
 .user-manage i.auth {
   width: 16px;
   height: 16px;
@@ -1410,6 +1570,7 @@ span.server_status i.running {
   height: 30px; }
 
 .messages {
+  margin-top: 8px;
   color: #a44; }
 
 #network-settings {
@@ -1494,3 +1655,82 @@ textarea {
 .install-apps, .get-apps {
   float: left;
   width: 50%; }
+
+.cancel-btn-style{
+  background: white;
+  border: 0px;
+  color: #17a2b8 !important;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.name_click_change{
+  color: #505050 !important;
+}
+
+.cancel-btn-style:hover{  
+  background: white;
+  border: 0px;
+  color: #17a2b8 !important;
+  font-size: 13px;  
+  text-decoration: underline !important;
+}
+
+.setup-main-tab{
+  width: 485px; 
+  border-bottom: 0px;
+}
+
+.setup-subtab-container{
+  padding: 20px 10px 8px 30px; 
+  background: #dedede1c; 
+  border: 1px solid #d8d8d8; 
+  border-top-width: 0.5px;
+}
+
+.all-subtab-container{
+  display: none;
+}
+
+.single-subtab-container{
+  display: block;
+}
+
+.setup-subtab{
+  border: 0px;
+}
+
+.f-size13{
+  font-size:13px;
+}
+
+.f-size22{
+  font-size:22px;
+}
+
+#preferences{
+  background: #1111111a;  
+}
+
+.input-field-style{
+  width: 220px !important;
+  font-size: 12px !important;
+}
+
+#new-user-form{
+  background: white; 
+  margin-top: 8px; 
+}
+
+span.progress{
+  height: 32px;
+}
+
+span.install-button a{
+  text-decoration: none;
+  color: white;
+}
+
+span#setting_dns select{
+  font-size: 13px;
+}
