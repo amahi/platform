@@ -119,7 +119,7 @@ class UsersController < ApplicationController
 			error = t("pin_cannot_be_blank")
 		elsif params[:user][:pin] != params[:user][:pin_confirmation]
 			errors = true
-			error = t("pins_does_not_match")
+			error = t("pins_do_not_match")
 		else
 			@user.update_attributes(params_pin_update)
 			errors = @user.errors.any?
