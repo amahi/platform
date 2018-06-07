@@ -1664,7 +1664,7 @@ textarea {
 }
 
 .setup-main-tab{
-  width: 480px; 
+  width: 485px; 
   border-bottom: 0px;
 }
 
@@ -1673,6 +1673,14 @@ textarea {
   background: #dedede1c; 
   border: 1px solid #d8d8d8; 
   border-top-width: 0.5px;
+}
+
+.all-subtab-container{
+  display: none;
+}
+
+.single-subtab-container{
+  display: block;
 }
 
 .setup-subtab{
