@@ -24,8 +24,6 @@ gem 'ya2yaml'
 gem 'bootstrap', '~> 4.1.1'
 gem 'popper_js', '~> 1.12.9'
 
-gem 'bootsnap', require: false
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 

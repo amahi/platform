@@ -7,10 +7,9 @@
             th.settings-col1= t 'host'
             th= t 'ip_address'
       = render :partial => 'network/host', :collection => @hosts
-    br
-  - else
-    .empty-hint
-      h2.ml-4.mt-3= t('there_are_no_hosts')
+    - else
+      .empty-hint
+        h2.ml-4.mt-3= t('there_are_no_hosts')
 
 
   = button_tag t('new_host'), type: 'button', class: 'open-area btnn btn-create btn btn-info btn-sm', id: 'new-host-to-step1', data: { related: '#new-host-step1' }
