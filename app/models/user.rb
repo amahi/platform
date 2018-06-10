@@ -159,6 +159,15 @@ class User < ApplicationRecord
 	end
 
 	def before_save_hook
+		if public_key_changed?
+			update_pubkey
+		end
+
+		if admin_changed?
+			make_admin
+			Share.push_shares
+		end
+
 		return unless User.system_user_exists? self.login
 		pwd_option = password_option()
 		c = Command.new("usermod -c \"#{self.name}\" #{pwd_option} \"#{self.login}\"")
@@ -166,13 +175,7 @@ class User < ApplicationRecord
 	end
 
 	def after_save_hook
-		if admin_changed?
-			make_admin
-			Share.push_shares
-		end
-		if public_key_changed?
-			update_pubkey
-		end
+		#
 	end
 
 	def after_create_hook
