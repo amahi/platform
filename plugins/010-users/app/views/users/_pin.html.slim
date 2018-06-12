@@ -4,7 +4,7 @@ td.top
   = link_to content_tag('i', '', class: 'pin glyphicon glyphicon-lock'),'#', :onclick=> "event.preventDefault();$(this).parent().find('.pin-edit').toggle('slow');",
     :class => 'control-action',:id=>"user-pin-control-action-#{user.id}"
   = link_to content_tag('i', '', class: 'pin-info'),'https://wiki.amahi.org/index.php/PIN_user_access', :class => 'pin-info-wiki',:id=>"user-pin-info-wiki-#{user.id}", :target=>"_blank"
-  = form_for user, url: users_engine.update_pin_user_path(user), remote: true, method: :put, html: { class: 'update-pin update-form form-horizontal left-margin-20' } do |f|
+  = form_for user, url: users_engine.update_pin_user_path(user), remote: true, method: :put, html: { class: 'update-pin update-form form-horizontal left-margin-20', id: "edit_user_pin_#{user.id}" } do |f|
     .pin-edit[style="display:none"]
       .control-group.form-group
         .controls= f.password_field :pin, id: "pin_#{user.id}", size: 5, maxlength: 5, class:'form-control input-sm', placeholder: t('new')
