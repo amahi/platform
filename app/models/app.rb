@@ -287,12 +287,6 @@ class App < ApplicationRecord
 			# 	raise e
 			# end
 
-			if installer.install_script
-				# if there is an installer script, run it
-				Dir.chdir(webapp_path ? webapp_path : app_path) do
-					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password, self.db))
-				end
-			end
 			self.install_status = 70
 			# if it has a server, install it and associate it
 			if installer.server
@@ -312,6 +306,13 @@ class App < ApplicationRecord
 			# mark it as installed
 			self.installed = true
 			self.save!
+
+			if installer.install_script
+				# if there is an installer script, run it
+				Dir.chdir(webapp_path ? webapp_path : app_path) do
+					SystemUtils.run_script(installer.install_script, name, hda_environment(initial_user, initial_password, self.db))
+				end
+			end
 
 			# Once the app is saved in db then we can get its id and start running the container
 			# FIXME: Should this be added as an after create hook? But how would we know if its a php5 kind app?
@@ -477,7 +478,7 @@ class App < ApplicationRecord
 		deps.split(/[, ]+/).map do |identifier|
 			a = App.where(:identifier=>identifier).first
 			unless a
-				a = App.new({identifier: identifier}) 
+				a = App.new({identifier: identifier})
 				a.install_bg
 			end
 			# add the dependency if it does not exist

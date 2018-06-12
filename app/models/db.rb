@@ -43,6 +43,7 @@ private
 		password = name
 		user = name
 		host = 'localhost'
+		c.execute "DROP DATABASE IF EXISTS `#{name}`;" rescue nil
 		c.execute "CREATE DATABASE IF NOT EXISTS `#{name}` DEFAULT CHARACTER SET utf8;"
 		# FIXME - why do we have to drop the user first in some cases?!?!!??
 		c.execute("DROP USER '#{user}'@'#{host}';") rescue nil
@@ -60,7 +61,7 @@ private
 		end
 		c = self.class.connection
 		host = 'localhost'
-		c.execute "drop user '#{user}'@'#{host}';"
-		c.execute "drop database if exists `#{name}`;"
+		c.execute "DROP USER '#{user}'@'#{host}';"
+		c.execute "DROP DATABASE IF EXISTS `#{name}`;"
 	end
 end

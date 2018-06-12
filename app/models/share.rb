@@ -264,6 +264,9 @@ class Share < ApplicationRecord
 	private
 
 	def before_save_hook
+		if guest_writeable_changed?
+			guest_writeable ? make_guest_writeable : make_guest_non_writeable
+		end
 		self.tags = self.tags.split(/\s*,\s*|\s+/).reject {|s| s.empty? }.join(', ').downcase if self.tags_changed?
 		return unless self.path_changed?
 		return if self.path.nil? or self.path.blank?
@@ -277,9 +280,6 @@ class Share < ApplicationRecord
 	end
 
 	def after_save_hook
-		if guest_writeable_changed?
-			guest_writeable ? make_guest_writeable : make_guest_non_writeable
-		end
 		if everyone
 			users = User.all
 			self.users_with_share_access = users
