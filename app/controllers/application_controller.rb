@@ -63,6 +63,7 @@ class ApplicationController < ActionController::Base
 
 	def prepare_theme
 		@theme = SetTheme.find
+		prepend_view_path("public/themes/#{@theme.path}/views")
 	end
 
 	class Helper
