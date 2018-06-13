@@ -1,0 +1,25 @@
+nav.navbar.navbar-expand-md.bg-dark.navbar-inverse
+  .container
+    a.navbar-brand href="/"
+      = theme_image_tag("logo_two.png")
+
+    button.navbar-toggler.navbar-dark data-target="#amahi-nav" data-toggle="collapse"
+      span.navbar-toggler-icon
+
+    #amahi-nav.collapse.navbar-collapse.justify-content-end
+      - if current_user_is_admin?
+        .navbar-nav
+          a.nav-item.nav-link.text-white.text-center.nav_hover id="nav_home" href="/"
+            = t('home')
+          a.nav-item.nav-link.text-white.text-center.nav_hover id="nav_setup" href=users_engine.root_path
+            = t('setup')
+          a.nav-item.nav-link.text-white.text-center.nav_hover id="nav_help" href="https://wiki.amahi.org/index.php/Help" target='_blank'
+            = t('help')
+          a.nav-item.nav-link.text-white.text-center.nav_hover id="nav_apps" href=apps_engine.root_path
+            = t('apps')
+      - else
+        .navbar-nav
+          a.nav-item.nav-link.text-white.text-center.nav_hover id="nav_home" href="/"
+            = t('home')
+          a.nav-item.nav-link.text-white.text-center.nav_hover id="nav_help" href="https://wiki.amahi.org/index.php/Help" target='_blank'
+            = t('help')

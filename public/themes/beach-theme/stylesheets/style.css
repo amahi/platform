@@ -1,0 +1,398 @@
+#tabs {
+  width: 145px;
+  float: left;
+  border: 1px solid #e8e8e8;
+  border-bottom-color: #dfdfdf;
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
+  background-color: #fcfcfc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f7f7f7));
+  background-image: -webkit-linear-gradient(top, #fcfcfc, #f7f7f7);
+  background-image: -moz-linear-gradient(top, #fcfcfc, #f7f7f7);
+  background-image: -ms-linear-gradient(top, #fcfcfc, #f7f7f7);
+  background-image: -o-linear-gradient(top, #fcfcfc, #f7f7f7);
+  background-image: linear-gradient(top, #fcfcfc, #f7f7f7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor); }
+
+#preferences {
+  width: 760px;
+  float: left;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  -moz-border-radius: 0 5px 5px 0px;
+  -webkit-border-radius: 0 5px 5px 0px;
+  border-radius: 0 5px 5px 0px; }
+
+nav.preftab {
+  position: static; }
+  nav.preftab li {
+    width: 145px; }
+    nav.preftab li.active > ul {
+      display: inline; }
+    nav.preftab li:hover ul {
+      display: inline; }
+    nav.preftab li a {
+      width: 145px; }
+    nav.preftab li ul {
+      position: static;
+      width: 145;
+      display: inline; }
+      nav.preftab li ul li > a {
+        padding: 0 40px; }
+
+@media(max-width: 992px){
+  #preferences{
+    width: 525px;
+  }  
+}
+
+@media(max-width: 768px){
+  #preferences{
+    width: 375px;
+    padding: 8px;
+  } 
+  .settings-table tbody tr td:first-child{
+    padding-left: 15px;
+  }
+  .form-horizontal textarea{
+    width: 170px;
+  }
+  .input-field-style{
+    width: 170px !important;
+  }
+  .nav-tabs{
+    width: 120px !important;
+  }
+  #update-path-form input#share_path{
+    width: 170px;
+  }
+  .form-horizontal textarea{
+    font-size: 13px;
+  }
+  #new-share-box{
+    max-width: 100%;
+  }
+  #disks-table{
+    margin-left: -10px;
+  }
+  #btn-get-apps{
+    line-height: 25px;
+  }
+  #btn-install-apps{
+    line-height: 25px; 
+  }
+  .settings-fields{
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 0px !important;
+  }
+  #amahi-nav .navbar-nav{
+    padding-top: 13px;
+  }
+  #search_box{
+    width: 155px !important;
+  }
+  footer a[href="/logout"], footer a[href="/login"]{
+    padding: 6px;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+  }
+  .page-title{
+    margin-left: 8px !important;
+  }
+}
+
+@media(min-width: 768px){
+  #nav_home{
+    background-image: url("../images/home_icon_hv.png");
+    background-repeat: no-repeat;
+    background-position: 24px 9px;
+  }
+
+  #nav_setup{
+    background-image: url("../images/setup_icon_hv.png");
+    background-repeat: no-repeat;
+    background-position: 24px 10px;
+  }
+
+  #nav_help{
+    background-image: url("../images/help_icon_hv.png");
+    background-repeat: no-repeat;
+    background-position: 24px 10px;
+  }
+
+  #nav_apps{
+    background-image: url("../images/apps_icon_hv.png");
+    background-repeat: no-repeat;
+    background-position: 24px 10px;
+  }
+
+  #amahi-nav .navbar-nav a{
+    font-weight: bold;
+    padding-top: 30px;
+    width: 70px;
+  }
+}
+
+.settings-actions {
+  float: right; }
+
+.settings-fields {
+  margin: 5px;
+  width: 100%;
+  float: left; }
+
+#systems-result {
+  padding: 5px 0 5px 0; }
+
+.nav-tabs{
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  float: left;
+}
+
+.setup-main-tab{
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.setup-subtab-container{
+  background: #d6d6d6;
+}
+
+.all-subtab-container{  
+  display: inline-block;
+  padding: 0px;
+  margin-bottom: -8px;
+}
+
+.single-subtab-container{
+  display: none;
+}
+
+.subtab-link{
+  font-size: 11px;
+  padding: 6px 15px;
+  width: 100%;
+  margin-left: -2px;
+  margin-bottom: -1px;
+  border: 1px solid #d6d6d6;
+  display: inline-block;
+}
+
+.subtab-link:hover{
+  border-radius: 0px;
+  margin-left: -2px;
+  margin-top: 0px;
+  border: 1px solid #c7c7c7;
+}
+
+.active-subtab-link{
+  width: 100%;
+  padding: 6px 15px;
+  font-size: 11px;
+  margin-left: -2px;
+  margin-bottom: -1px;
+  border: 1px solid #c7c7c7;
+  border-radius: 0px;
+  display: inline-block; 
+  background: #fbfbfb;
+}
+
+.active-subtab-link: hover{
+  border-radius: 0px;
+  border: 1px solid #c7c7c7;
+}
+
+.setup-main-tab .nav-item{
+  margin-bottom: 0px;
+}
+
+.setup-subtab{
+  margin-top: -1px;
+}
+
+/*beach-theme specific stylings*/
+
+body nav.navbar.navbar-expand-md{
+  background-image: url("../images/header_bg.png");
+  background-size: 100% 73px;
+  background-repeat: repeat-x;
+}
+
+#amahi-nav .navbar-nav a{
+    font-weight: bold;
+}
+
+.page-title{
+  margin: 0px;
+  margin-left: 32px;
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+
+#hdasearchbutton{
+  background: #ff6125;
+  border-color: #dfdfdf;
+  border-color: #bdbdbd;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+#hdasearchbutton:hover{
+  background: #ff6d16;
+  cursor: pointer;
+}
+
+#websearchbutton{
+  background: #f3e5c5;
+  border-color: #d6ccb5;
+  border-radius: 4px;
+  color: #797878;
+  text-shadow: 0px 0px;
+  margin-right: 10px;
+}
+
+#websearchbutton:hover{
+  background: #f3deb0;
+  cursor: pointer;
+}
+
+#search_box{
+  height: 30px !important;  
+  background-image: url("../images/search_icon.png");
+  background-repeat: no-repeat;
+  background-position: 6px 8px;
+  padding-left: 28px;
+  margin-right: 5px;
+}
+
+.non-active-all-subtab{
+  display: none !important;
+}
+
+.active-subtab-link{
+  border-top: 0px;
+  background: white;
+  border-bottom: 0px;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  text-align: left;
+  padding-left: 44px;
+  color: #f96138;
+  font-weight: bold;
+}
+
+.subtab-link{
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  background: #fff;
+  text-align: left;
+  padding-left: 44px;
+  color: #0bafb9;
+  font-weight: bold;
+}
+
+.active-subtab-link:hover{
+  color: #f96138;
+}
+
+.subtab-link:hover{
+  border-top: 0px;
+  border-bottom: 0px;
+  background: white;
+  color: #f96138;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+
+.subtab-link:last-child{
+  border-bottom: 1px solid #dee2e6; 
+}
+
+.active-tab-link-style{
+  color: #f96138 !important;
+  background: white;
+  font-weight: bold;
+  background: #fff !important;
+  text-align: left;  
+  padding-left: 35px;
+}
+
+.tab-link-style{
+  padding-left: 35px;
+  text-align: left;
+}
+
+.tab-icon{
+  position: relative;
+  overflow: hidden;
+  right: 10px;
+  height: 25px;
+  width: 16px;
+  margin: 0px !important; 
+  padding: 0px !important;
+  background: url("../images/nav_apps_sprite.png") !important;
+  background-position: 0px 5px !important;
+  background-repeat: no-repeat;
+}
+
+#tab_icon_users{
+  background-position: 0px 5px !important;
+}
+
+#tab_icon_shares{
+  background-position: -17px 5px !important;
+}
+
+#tab_icon_disks{
+  background-position: -48px 5px !important;
+}
+
+#tab_icon_apps{
+  background-position: -33px 5px !important;
+}
+
+#tab_icon_network{
+  background-position: -63px 5px !important;
+}
+
+#tab_icon_settings{
+  background-position: -79px 5px !important;
+}
+
+.settings-fields{
+  -webkit-box-shadow: 0 0 9px 1px #dadada !important;
+  -moz-box-shadow: 0 0 9px 1px #dadada !important;
+  box-shadow: 0 0 9px 1px #dadada !important;
+  border-radius: 5px !important;
+}
+
+.settings th, thead.apptable td {
+  background: #e2e2e2;
+  color: #505050;
+}
+
+.hover-style:hover{
+  background: #d0e8f3;
+}
+
+footer a:hover{
+  text-decoration: underline;
+}
+
+footer a[href="/logout"], footer a[href="/login"]{
+  color: #505050;
+  background: #e8e7e7;
+  padding: 6px;
+  border-radius: 2px;
+}
+
+footer a[href="/logout"]:hover, footer a[href="/login"]:hover{
+  text-decoration: none;
+  background: #d6d5d5;
+  box-shadow: 2px 2px 2px #545454;  
+}
