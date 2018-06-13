@@ -234,14 +234,13 @@ body nav.navbar.navbar-expand-md{
 
 #hdasearchbutton{
   background: #ff6125;
-  border-color: #dfdfdf;
   border-color: #bdbdbd;
   border-radius: 4px;
   margin-left: 5px;
 }
 
 #hdasearchbutton:hover{
-  background: #ff6d16;
+  background: #f98606;
   cursor: pointer;
 }
 
@@ -365,6 +364,7 @@ body nav.navbar.navbar-expand-md{
 }
 
 .settings-fields{
+  padding: 6px;
   -webkit-box-shadow: 0 0 9px 1px #dadada !important;
   -moz-box-shadow: 0 0 9px 1px #dadada !important;
   box-shadow: 0 0 9px 1px #dadada !important;
@@ -395,4 +395,14 @@ footer a[href="/logout"]:hover, footer a[href="/login"]:hover{
   text-decoration: none;
   background: #d6d5d5;
   box-shadow: 2px 2px 2px #545454;  
+}
+
+.btnn{
+  background: #ff6125 !important;
+  border-color: #bdbdbd !important;
+  border-radius: 4px !important;
+}
+
+.btnn:hover{
+  background: #f98606 !important;
 }

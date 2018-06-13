@@ -14,10 +14,10 @@ def theme_init
 
 	ret = {}
 
-	ret[:name] = "Air Jordan Vertical"
+	ret[:name] = "Beach"
 	ret[:version] = "1.0"
 	ret[:theme_uri] = "http://www.amahi.org"
-	ret[:author] = "Solomon Seal, AKA - slm4996"
+	ret[:author] = "Carlos Puchol, for Amahi."
 	ret[:author_uri] = ""
 	ret[:disable_inheritance] = false
 	ret[:gruff_theme] = {
