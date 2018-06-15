@@ -43,7 +43,6 @@ pl:
   this_path_exists_already: "Ta ścieżka jest zajęta"
   poweroff: "Wyłącz"
   router_control: Kontrolowanie routera
-  are_you_sure_you_would_like_to_delete_calendar: "Czy na pewno chcesz usunąć %{calendar}"
   openvpn_server: OpenVPN Serwer
   port_range_looks_good: "Zakres portów wygląda dobrze"
   pictures: "Zdjęcia"
@@ -245,7 +244,6 @@ pl:
         delimiter: ""
   mariadb_database_server: MariaDB Serwer
   edit_and_rate_beta_apps: "Edytuj i oceń Beta apps"
-  or_view_each_one_separately_below: ""
   username: "Nazwa użytkownika"
   are_you_sure_you_want_to_restart_the_server: "Czy na pewno chcesz zrestartować '%{name}'?"
   done_final_check: Zrobione! Testowanie
@@ -327,7 +325,6 @@ pl:
         other: ponad %{count} lat
       half_a_minute: "pół minuty"
   nickname: Nickname
-  check_the_calendars_wiki_for_more_details: "Sprawdź Calendar Wiki, aby uzyskać więcej informacji o zarządzaniu kalendarzami i kompatybilności.\r\n\
     \r\n"
   pooled: Zbiorcze
   edit_web_app: Edytuj Web App
@@ -340,7 +337,6 @@ pl:
   this_name_is_not_available: "Ta nazwa nie jest dostępna"
   password_changed_successfully: "Hasło zmienione"
   will_start_at_boot_time: "uruchomi się przy starcie systemu"
-  calendar_name: Nazwa kalendarza
   this_application_install_ended_with_an_error_please_uninstall_status_is: ""
   mac_filtering: "Filtrowanie adresów MAC"
   tags: Tagi
@@ -355,13 +351,11 @@ pl:
   back: "Wróć"
   notifications_from_amahi: Powiadomienia od Amahi
   support_win_95_98: version
-  there_are_no_calendars_available_see_wiki: ""
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Włączenie debugowania może spowodować generowanie dużych plików z logami.\r\n\
     Na pewno chcesz włączyć debugowanie Samby?"
   the_mac_is_invalid: MAC jest niepoprawny
   making_home_networking_simple: Tworzenie Prostej Sieci Domowej
   disk_pool_details: "Wybierz partycje, które chcesz umieścić w puli pamięci %{greyhole}, a potem ustaw %{shares}  tak by wykorzystywały tą pulę."
-  calendars: Kalendarze
   a_single_number_0_254_to_point_to_a_given_machine: Numer z zakresu (0-254) w celu wskazania danej maszyny w twojej sieci
   writeable: Zapisywalny
   port_range_ports_must_be_numbers: "Porty muszą być numerami"
@@ -376,7 +370,6 @@ pl:
   ip_filtering: Filtry IP
   create: "Stwórz"
   guest_dashboard: "Panel Gościa"
-  view_all_calendars_simultaneously: "Pokaż wszystkie kalendarze jednocześnie"
   music: Muzyka
   permissions: Uprawnienia
   initial_password: "Hasło"
@@ -456,7 +449,6 @@ pl:
   network_gateway: Brama Siecowa
   path_looks_good: "Ścieżka wygląda dobrze"
   please_select: Zaznacz
-  subscribe: Opisz
   mac_address: MAC
   anonymous_guests: "Goście"
   settings: Ustawienia

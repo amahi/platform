@@ -45,7 +45,6 @@ hr:
   this_ip_address_will_always_be_statically_associated_to_the_mac_address: "Ova IP adresa (1-%{max}) uvijek će biti statički povezana na MAC adresu ispod."
   this_path_exists_already: "Ova putanja već postoji"
   poweroff: "Isključi"
-  are_you_sure_you_would_like_to_delete_calendar: "Jesi li siguran da želiš obrisati %{calendar} ?"
   port_range_looks_good: Raspon portova izgleda u redu
   pictures: Slike
   disk: Disk
@@ -243,7 +242,6 @@ hr:
         delimiter: ","
   mariadb_database_server: MariaDB Server
   edit_and_rate_beta_apps: Uredi i ocjeni Beta aplikacije
-  or_view_each_one_separately_below: ili pogledaj svaku posebno ispod.
   username: "Korisničko ime"
   are_you_sure_you_want_to_restart_the_server: "Jesi li siguran da želiš ponovo pokrenuti %{name}?"
   user_name_is_available: "Korisničko ime dostupno"
@@ -333,7 +331,6 @@ hr:
         other: preko %{count} godine
       half_a_minute: pola minute
   nickname: Nadimak
-  check_the_calendars_wiki_for_more_details: "Provjeri wiki stranicu kalendara za više informacija na koji način možeš upravljati kalendarima i koji su klijenti podržani."
   pooled: "Udružuje"
   edit_web_app: Uredi web aplikaciju
   movies: Filmovi
@@ -345,7 +342,6 @@ hr:
   logs: Logovi
   password_changed_successfully: "Lozinka uspješno promjenjena"
   will_start_at_boot_time: "<b>biti će</b> pokrenut pri podizanju sustava"
-  calendar_name: Naziv kalendara
   this_application_install_ended_with_an_error_please_uninstall_status_is: "Instalacija je završila sa greškom. Molim deinstaliraj aplikaciju i pokušaj ponovo. Status aplikacje je"
   mac_filtering: MAC Filtriranje
   tags: Tagovi
@@ -360,11 +356,9 @@ hr:
   changelog: Log promjena
   notifications_from_amahi: Obavijesti iz Amahi
   support_win_95_98: "Podrška za Windows 95/98 —  omogućuje (nesigurnu) LanManager autentifikaciju"
-  there_are_no_calendars_available_see_wiki: "Nema dostupnih kalendara na ovom poslužitelju. Izradi ih preko klijenta.  Pogledaj <a href=\"http://wiki.amahi.org/index.php/Calendars\">calendars wiki</a>."
   the_mac_is_invalid: MAC adresa nije valjana
   making_home_networking_simple: "Činimo kučne računalne mreže jednostavnima"
   disk_pool_details: "Odaberi particije koje želiš uključiti u %{greyhole} polje i onda podesi %{shares} da koriste to polje."
-  calendars: Kalendari
   a_single_number_0_254_to_point_to_a_given_machine: "Broj (0-254) koji određuje računalo u tvojoj lokalnoj mreži"
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Omogućavanje debug način rada može generirati jako velike log datoteke.\r\n\
     Jesi li siguran da želiš uključiti Samba debug način rada?"
@@ -381,7 +375,6 @@ hr:
   ip_filtering: IP Filtriranje
   create: Izradi
   guest_dashboard: "Gostujuća nadzorna ploča"
-  view_all_calendars_simultaneously: "Prikaži sve kalendara istovremeno"
   music: Muzika
   permissions: Dozvole
   initial_password: Lozinka
@@ -457,7 +450,6 @@ hr:
   there_are_no_servers_available: "Nema dostupnih poslužitelja u ovom trenutku."
   port_range: Raspon portova
   network_gateway: "Mrežni usmjerivač"
-  subscribe: Pretplati se
   path_looks_good: Putanja izgleda u redu
   please_select: Molimo odaberi ...
   mac_address: MAC Adresa

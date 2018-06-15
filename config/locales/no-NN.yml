@@ -42,7 +42,6 @@ no-NN:
   applications: Applikasjonar
   this_ip_address_will_always_be_statically_associated_to_the_mac_address: Denne IP-adressa (1-%{max}) vil alltid vere statisk tilknytta MAC-adressa nedenfor.
   this_path_exists_already: Denne fil-stien finnes allereie
-  are_you_sure_you_would_like_to_delete_calendar: "Er du sikker på at du vil slette %{calendar}?"
   router_control: Ruter Kontroll
   openvpn_server: OpenVPN Server
   port_range_looks_good: "Portområdet ser bra ut"
@@ -242,7 +241,6 @@ no-NN:
   mariadb_database_server: MariaDB Server
   edit_and_rate_beta_apps: Rediger og vurder apps
   are_you_sure_you_want_to_restart_the_server: "Er du sikker på at du vil restarte %{name}?"
-  or_view_each_one_separately_below: eller se kvar av disse nedenfor.
   username: Brukarnamn
   done_final_check: Ferdig! Siste Sjekk
   this_application_is_not_installed_please_refresh: Aplikasjonen er ikkje installert. Oppdater denne nettsida.
@@ -318,7 +316,6 @@ no-NN:
         other: "over %{count} år"
       half_a_minute: eit halvt minutt
   nickname: Kallenamn
-  check_the_calendars_wiki_for_more_details: Sjekk kalenderen wiki for mer informasjon om hvordan administrerer du kalendere og hvilke klienter som er kompatible.
   pooled: Pooled
   edit_web_app: Rediger Web App
   movies: Filmer
@@ -335,7 +332,6 @@ no-NN:
   drives: Stasjoner
   password_changed_successfully: Vellykket passord forandring
   will_start_at_boot_time: startar ved oppstart
-  calendar_name: Kalender Namn
   this_application_install_ended_with_an_error_please_uninstall_status_is: "Installasjon endte med en feilmelding. Avinstaller den og prøv igjen! Applikasjonsstatus er"
   mac_filtering: MAC-filtrering
   tags: Tags
@@ -350,11 +346,9 @@ no-NN:
   changelog: EndringsLog
   notifications_from_amahi: Meldinger fra Amahi
   support_win_95_98: "Support Windows 95/98 - muliggjør (usikker) LanManager godkjenning"
-  there_are_no_calendars_available_see_wiki: "Det er ingen kalendere tilgjengelig på serveren. Lag dem med en kalender klient. Se <a href=\"http://wiki.amahi.org/index.php/Calendars\">calendars wiki</a>."
   the_mac_is_invalid: MAC-adressen er ugyldig
   making_home_networking_simple: Hjemmenettverk, Enkelt
   disk_pool_details: Vel partisjonene du vil inkludera i %{greyhole} Storage pool, og la %{shares} bruke i storage pool.
-  calendars: Kalender
   a_single_number_0_254_to_point_to_a_given_machine: "Eit enkelt tal (0-254) for å peike på ein gitt maskin på nettverket"
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Aktivering av feilsøk kan generere svært store loggfiler. Er du sikker på at du vil aktivere Samba debugging?"
   writeable: Skrivbar
@@ -370,7 +364,6 @@ no-NN:
   ip_filtering: IP-filtrering
   create: Opprett
   guest_dashboard: Instrumentbrett for gjester
-  view_all_calendars_simultaneously: "Sjå alle kalendrar samstundes"
   your_domain_info: "Dette er heimenettverks-domenet ditt. Det er <b>kun</b> tilgjengeleg internt i heimenettverket. For meir informasjon om dette, jf. <a target=\"_blank\" href=\"http://www.amahi.org/faq#what-home-domain-should-i-use\">FAQ</a>. "
   music: Musikk
   permissions: Tillatelser
@@ -450,7 +443,6 @@ no-NN:
   network_gateway: Network Gateway
   path_looks_good: Filbane ser bra ut
   please_select: Vennligst velg ...
-  subscribe: Abonner
   mac_address: MAC-adresse
   anonymous_guests: Gjester
   settings: Innstillinger

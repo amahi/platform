@@ -18,6 +18,7 @@
         Are you sure you want to proceed?
 
   amahi_initialization: Amahi initialization
+  delete: Delete
 
   #=============================================
 
@@ -309,17 +310,6 @@
   the_mac_looks_good: The MAC looks good
   the_url_is_invalid: The URL is not valid
   the_url_looks_good: The URL looks good
-
-  # calendars
-  calendars: Calendars
-  are_you_sure_you_would_like_to_delete_calendar: Are you sure you would like to delete %{calendar} ?
-  calendar_name: Calendar Name
-  check_the_calendars_wiki_for_more_details: Check the calendar wiki for more information on how to manage calendars and what clients are compatible.
-  delete: Delete
-  subscribe: Subscribe
-  there_are_no_calendars_available_see_wiki: There are no calendars available in the server. Create them with a calendar client. See the <a href="http://wiki.amahi.org/index.php/Calendars">calendars wiki</a>.
-  view_all_calendars_simultaneously: View all calendars simultaneously
-  or_view_each_one_separately_below: or view each one separately below.
 
   # errors
   otherwise_you_can_go_to_the_error_log: Otherwise you can go directly to the <a href="/setup?tab=debug">error log</a>.

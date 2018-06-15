@@ -39,7 +39,6 @@ es:
   this_ip_address_will_always_be_statically_associated_to_the_mac_address: "Esta Dirección IP (1-%{max}) será asociada siempre de forma estática a la dirección MAC mostrada abajo."
   this_path_exists_already: La ruta ya existe
   poweroff: Apagar
-  are_you_sure_you_would_like_to_delete_calendar: "¿Estás seguro de que quieres eliminar %{calendar}?"
   router_control: Control del Router
   port_range_looks_good: "El rango de puertos está bien"
   disk: Disco
@@ -240,7 +239,6 @@ es:
         delimiter: ""
   mariadb_database_server: Servidor de BBDD MariaDB
   edit_and_rate_beta_apps: Editar y Votar aplicaciones en Beta
-  or_view_each_one_separately_below: o ver a cada uno por separado.
   username: Usuario
   are_you_sure_you_want_to_restart_the_server: "¿Estás seguro de que quieres reiniciar el %{name}?"
   done_final_check: "Hecho! Comprobación Final"
@@ -315,7 +313,6 @@ es:
         other: "más de %{count} años"
       half_a_minute: medio minuto
   nickname: Apodo
-  check_the_calendars_wiki_for_more_details: "Comprueba la wiki de calendarios para más información sobre cómo gestionar los calendarios y los clientes que son compatibles."
   pooled: Combinados
   edit_web_app: "Editar Applicación Web"
   movies: "Películas"
@@ -327,7 +324,6 @@ es:
   logs: Registros
   this_name_is_not_available: "Este nombre no está disponible"
   password_changed_successfully: "Contraseña cambiada con éxito"
-  calendar_name: Nombre del calendario
   will_start_at_boot_time: "comenzará en el momento de arranque"
   this_application_install_ended_with_an_error_please_uninstall_status_is: "La instalación de esta aplicación finalizó con un error. ¡Por favor desinstalela e inténtelo de nuevo! El estado de la aplicación es"
   mac_filtering: Filtrado de Direcciones MAC
@@ -343,8 +339,6 @@ es:
   changelog: ChangeLog
   notifications_from_amahi: Notificaciones de Amahi
   support_win_95_98: "Soporte para Windows 95/98 &mdash; activa acceso autentificación (muy poco segura) de LanManager"
-  there_are_no_calendars_available_see_wiki: No hay calendarios disponibles en el servidor.<br/>Crea uno con un cliente de calendario. Consulta la <a href="http://wiki.amahi.org/index.php/Calendars">wiki de calendarios</a>.
-  calendars: Calendarios
   the_mac_is_invalid: "Dirección MAC no válida"
   making_home_networking_simple: Simplifica tu Red Local
   disk_pool_details: "Selecciona las particiones a incluir en la zona comun de %{greyhole}, y a continuación añade %{shares} a la zona comun."
@@ -363,7 +357,6 @@ es:
   ip_filtering: Filtrado IP
   create: Crear
   guest_dashboard: "Panel abierto sin contraseña"
-  view_all_calendars_simultaneously: "Ver todos los calendarios de forma simultánea"
   music: "Música"
   permissions: Permisos
   initial_password: "Contraseña"
@@ -449,7 +442,6 @@ es:
   network_gateway: Pasarela de Red
   path_looks_good: "Ruta válida"
   please_select: Por favor seleccione ...
-  subscribe: Suscribirse
   mac_address: "Dirección MAC"
   settings: Control
   initial_user_info: Usuario Inicial

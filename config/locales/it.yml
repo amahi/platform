@@ -56,7 +56,6 @@ it:
   this_share_name_is_not_valid: "Questo nome di condivisione non è valido"
   openvpn_server: OpenVPN Server
   apps: Applicazioni
-  view_all_calendars_simultaneously: Visualizza tutti i calendari contemporaneamente
   dns_alias: DNS Alias
   global_settings_for_shares: Impostazioni globali per le Condivisioni
   description: Descrizione
@@ -105,7 +104,6 @@ it:
   disk: Disco
   there_are_no_static_dhcp_leases: Non ci sono assegnazioni DHCP statiche in evidenza in questo momento.
   not_a_valid_user_or_password: "Errore: nome utente o password errati"
-  there_are_no_calendars_available_see_wiki: Non ci sono calendari disponibili sul server. Crearli con un client di calendario. Vedere il <a href="http://wiki.amahi.org/index.php/Calendars">wiki calendari</a>.
   stop_it: Ferma
   your_control_panel: Il tuo Pannello di Controllo
   new_firewall_rule: Nuova Regola Firewall
@@ -210,7 +208,6 @@ it:
   movies: Film
   rule: Regola
   edit_web_app: Modifica Applicazione Web
-  are_you_sure_you_would_like_to_delete_calendar: Sei sicuro di voler eliminare %{calendar}?
   are_you_sure_webapp: Sei sicuro di voler cancellare l'applicazione web '%{webapp}'?
   audio: Audio
   name_is_taken_already: "Il nome è già occupato"
@@ -257,7 +254,6 @@ it:
         separator: .
         delimiter: ","
         precision: 2
-  calendars: Calendari
   start_building_a_new_hda: Costruisti un nuovo HDA
   the_url_is_invalid: "L'URL non è valido"
   your_domain_info: "Questo è il dominio della rete domestica. È disponibile <b>solo</b> all'interno della vostra rete domestica.\r\n\
@@ -341,7 +337,6 @@ it:
   share_name_cannot_be_blank: "Il nome della condivisione non può essere vuoto"
   delete_web_app: Cancella Web App
   running: Attivo
-  check_the_calendars_wiki_for_more_details: Controllare il wiki calendario per ulteriori informazioni su come gestire i calendari e su quali programmi client sono compatibili.
   the_mac_is_invalid: "Il MAC address non è valido"
   refresh_status: Aggiorna stato
   password_looks_good: "La Password  è valida"
@@ -400,7 +395,6 @@ it:
   dns_aliases: DNS Aliases
   never_email_me: Mai e-mail me
   read_only: Sola lettura
-  or_view_each_one_separately_below: o vedere ognuno separatamente di seguito.
   disabling_pdc_will_enable_workgroup_mode: "Disabilitando la modalità PDC verrà abilitata la modalità gruppo di lavoro.\r\n\
     Si tratta di un grande cambiamento nel modo in cui operano le condivisioni. Questo è significato per le reti domestiche (controllare il wiki per maggiori informazioni). Sei sicuro di voler disattivare la modalità PDC?"
   delete_share: Cancella condivisione
@@ -436,10 +430,8 @@ it:
   cancel: Annulla
   password_cannot_be_blank: "La Password non può essere vuota"
   static_ips: IP Statici
-  calendar_name: Nome Calendario
   features: Caratteristiche
   are_you_sure_you_want_to_restart_the_server: Sei sicuro di voler riavviare %{name}?
-  subscribe: Sottoscrivi
   edit_share: Modifica condivisione
   dhcp_lease: DHCP Lease
   disabling_lan_manager_will_not_allow_older_machines: "Disabilitando l'autenticazione di Windows 95/98 LanManager non consentirà alle macchine più vecchie di utilizzare le condivisioni. Sei sicuro di voler disattivare la modalità di autenticazione Windows 95/98?"

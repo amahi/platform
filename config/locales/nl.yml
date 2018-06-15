@@ -45,7 +45,6 @@ nl:
   this_path_exists_already: Dit pad bestaat al
   poweroff: Afsluiten
   router_control: Router beheer
-  are_you_sure_you_would_like_to_delete_calendar: Weet u zeker dat u %{calendar} wil verwijderen?
   openvpn_server: OpenVPN Server
   port_range_looks_good: De poort bereik ziet er goed uit
   pictures: Afbeeldingen
@@ -250,7 +249,6 @@ nl:
         delimiter: .
   mariadb_database_server: MariaDB Server
   edit_and_rate_beta_apps: Bewerk en stem op Beta toepassingen
-  or_view_each_one_separately_below: Of bekijk elk apart onderaan
   username: Gebruikersnaam
   are_you_sure_you_want_to_restart_the_server: Weet u zeker dat u %{name} opnieuw wil starten?
   done_final_check: Klaar! laatste check
@@ -333,7 +331,6 @@ nl:
         other: langer %{count} jaar
       half_a_minute: halve minuut
   nickname: Gebruikersnaam
-  check_the_calendars_wiki_for_more_details: Controleer de kalender wiki voor meer informatie over hoe je de agenda beheerd en welke clients er compatibel zijn.
   pooled: Pooled
   edit_web_app: Bewerk web toepassing
   movies: Films
@@ -348,7 +345,6 @@ nl:
   drives: Schijven
   password_changed_successfully: Wachtwoord succesvol veranderd
   will_start_at_boot_time: zal starten tijdens het opstarten
-  calendar_name: Kalender Naam
   this_application_install_ended_with_an_error_please_uninstall_status_is: Deze toepassings installatie eindigde met een fout. Verwijder en probeer het opnieuw! Toepassings status is
   mac_filtering: MAC filtering
   tags: Tags
@@ -365,14 +361,12 @@ nl:
   back: Terug
   notifications_from_amahi: Notificaties van amahi
   support_win_95_98: Ondersteuning Windows 95/98 - schakeld onveilige LanManager authenticatie in
-  there_are_no_calendars_available_see_wiki: "Er zijn geen agenda's beschikbaar op de server. Maak ze met een kalender cliënt. Zie de <a href=\"http://wiki.amahi.org/index.php/Calendars\">Kalenders wiki</a>."
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: |-
     Inschakelen van debug zorgt mogenlijk voor grote log bestanden.
     Weet je zeker dat je samba debug in wil schakelen?
   the_mac_is_invalid: Het MAC adres is onjuist
   making_home_networking_simple: Maakt thuis netwerken simpel!
   disk_pool_details: Selecteer de partitie's die je toe wil voegen in %{greyhole} opslag, voor %{shares} om te gebruiken.
-  calendars: Kalenders
   a_single_number_0_254_to_point_to_a_given_machine: Een enkele nummer (0-254) om te verwijzen naar een bepaalde machine in je netwerk
   writeable: Beschrijfbaar
   port_range_ports_must_be_numbers: De poorten moeten uit nummers bestaan
@@ -387,7 +381,6 @@ nl:
   ip_filtering: IP filtering
   create: "Creëer"
   guest_dashboard: Gasten Dashboard
-  view_all_calendars_simultaneously: Alle kalenders tegelijk bekijken
   music: Muziek
   permissions: Rechten
   initial_password: Wachtwoord
@@ -473,7 +466,6 @@ nl:
   network_gateway: Netwerk Gateway
   path_looks_good: pad ziet er juist uit
   please_select: Selecteer alstublieft..
-  subscribe: Abonneren
   mac_address: MAC adres
   anonymous_guests: Gasten
   settings: Instellingen

@@ -43,7 +43,6 @@ pt-pt:
   this_path_exists_already: "Este caminho já existe"
   poweroff: Encerrar
   router_control: Controlo do Router
-  are_you_sure_you_would_like_to_delete_calendar: Tem a certeza de que pretende apagar %{calendar} ?
   openvpn_server: Servidor OpenVPN
   port_range_looks_good: O intervalo de portas parece OK
   pictures: Fotos
@@ -249,7 +248,6 @@ pt-pt:
         delimiter: .
   mariadb_database_server: Servidor MariaDB
   edit_and_rate_beta_apps: "Editar e avaliar Aplicações Beta"
-  or_view_each_one_separately_below: ou veja cada uma separadamente abaixo.
   username: Nome de utilizador
   are_you_sure_you_want_to_restart_the_server: Tem a certeza de que pretende reiniciar o %{name}?
   done_final_check: "Concluído! Verificação Final"
@@ -325,7 +323,6 @@ pt-pt:
         other: mais de %{count} anos
       half_a_minute: meio minuto
   nickname: Alcunha
-  check_the_calendars_wiki_for_more_details: "Verifique o wiki do calendário para mais informações sobre como gerir calendários e quais os clientes compatíveis."
   pooled: "Adicionar à pool"
   edit_web_app: "Editar Aplicação Web"
   movies: Filmes
@@ -341,7 +338,6 @@ pt-pt:
   this_name_is_not_available: "Este nome não está disponível"
   password_changed_successfully: A senha foi alterada com sucesso
   will_start_at_boot_time: "irá começar na inicialização"
-  calendar_name: "Nome do Calendário"
   this_application_install_ended_with_an_error_please_uninstall_status_is: "A instalação desta aplicação terminou com um erro. Por favor, desinstale-a e tente novamente! O estado da aplicação é"
   mac_filtering: Filtro de MAC
   tags: Tags
@@ -356,12 +352,10 @@ pt-pt:
   back: Voltar
   notifications_from_amahi: "Notificações de Amahi"
   support_win_95_98: "Suporte a Windows 95/98 - habilita a autenticação LanManager (insegura)"
-  there_are_no_calendars_available_see_wiki: "Não há calendários disponíveis no servidor. Crie-os com um cliente de calendário. Veja o <a href=\"http://wiki.amahi.org/index.php/Calendars\">wiki de calendários</a>."
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Activar a depuração poderá gerar arquivos de log muito grandes. Tem a certeza de que pretende activar a depuração do Samba?"
   the_mac_is_invalid: "O endereço MAC é inválido"
   making_home_networking_simple: "Tornar Rede Doméstica Simples"
   disk_pool_details: "Seleccione as partições que pretende incluir na pool de armazenamento %{greyhole} e depois faça com que as %{shares} utilizem a pool de armazenamento."
-  calendars: "Calendários"
   a_single_number_0_254_to_point_to_a_given_machine: "Um número único (0-254) para apontar para uma determinada máquina na sua rede"
   writeable: "Escrevível"
   port_range_ports_must_be_numbers: "As portas devem ser números"
@@ -376,7 +370,6 @@ pt-pt:
   ip_filtering: Filtro de IP
   create: Criar
   guest_dashboard: Painel de Convidado
-  view_all_calendars_simultaneously: "Ver todos os calendários simultaneamente"
   music: "Música"
   permissions: "Permissões"
   initial_password: Senha
@@ -453,7 +446,6 @@ pt-pt:
   network_gateway: Gateway da Rede
   path_looks_good: Caminho parece OK
   please_select: Por favor selecione...
-  subscribe: Subscrever
   mac_address: "Endereço MAC"
   anonymous_guests: Convidados
   settings: "Definições"
