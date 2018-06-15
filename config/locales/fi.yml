@@ -46,7 +46,6 @@ fi:
   this_path_exists_already: "Polku on jo käytössä"
   poweroff: Sammuta
   router_control: Reitittimen hallinta
-  are_you_sure_you_would_like_to_delete_calendar: Haluatko varmasti poistaa %{calendar} ?
   port_range_looks_good: "Porttiväli näyttää hyvältä"
   pictures: Kuvat
   disk: Levy
@@ -274,7 +273,6 @@ fi:
           quadrillion: Kvadriljoona
   mariadb_database_server: MariaDB-tietokantapalvelin
   edit_and_rate_beta_apps: Muokkaa ja arvioi beta-sovelmia
-  or_view_each_one_separately_below: "tai näytä ne yksi kerrallaan."
   username: "Käyttäjänimi"
   are_you_sure_you_want_to_restart_the_server: "Haluatko varmasti uudelleenkäynnistää %{name}?"
   done_final_check: Valmis! Lopputarkastus
@@ -353,7 +351,6 @@ fi:
       minute: Minuutti
       second: Sekunti
   nickname: Lempinimi
-  check_the_calendars_wiki_for_more_details: "Tarkista kalenteriwikistä lisätietoja siitä, miten hallita kalentereita ja mitkä asiakaslaitteeet ovat yhteensopivia."
   pooled: Yhdistetty
   edit_web_app: Muokkaa websovelmaa
   movies: Elokuvat
@@ -374,7 +371,6 @@ fi:
   this_name_is_not_available: "Tämä nimi on varattu"
   password_changed_successfully: Salasana muutettu onnistuneesti
   will_start_at_boot_time: "käynnistyy tietokoneen käynnityksen yhteydessä"
-  calendar_name: Kalenterin nimi
   this_application_install_ended_with_an_error_please_uninstall_status_is: "Sovelman asennuksessa tapahtui virhe. Poista asennus ja yritä uudelleen! Sovelman tila on"
   mac_filtering: MAC-suodatus
   tags: "Tägi"
@@ -392,13 +388,11 @@ fi:
   back: Edellinen
   notifications_from_amahi: Huomautukset Ahahilta
   support_win_95_98: "Windows 95/98 -tuki &mdash; ottaa käyttöön (turvattoman) LanManager-kirjautumisen"
-  there_are_no_calendars_available_see_wiki: "Järjestelmässä ei tällä hetkellä ole kalentereita. Luo niitä kalenterisovelluksella. Lue lisää <a href=\"http://wiki.amahi.org/index.php/Calendars\">kalenteriwikistä</a>."
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Virheenkorjauksen käyttöönotto luo todennäköisesti todella suuria lokitiedostoja.\n\
     Haluatko varmasti ottaa Samban virheenkorjausen käyttöön?"
   the_mac_is_invalid: MAC-osoite on virheellinen
   making_home_networking_simple: Yksinkertaisen kotiverkon puolesta
   disk_pool_details: "Valitse osiot, jotka haluat sisällyttää %{greyhole}-tallennuspalveluun ja sen jälkeen salli %{shares} käyttää tallennuspalvelua."
-  calendars: Kalenterit
   a_single_number_0_254_to_point_to_a_given_machine: "yksittäinen numero (0-254), joka viittaa sovittuun tietokoneeseen verkossasi"
   writeable: Kirjoitettavissa
   port_range_ports_must_be_numbers: "Porttien pitää olla numeroita"
@@ -413,7 +407,6 @@ fi:
   ip_filtering: IP-suodatus
   create: Luo
   guest_dashboard: Vierailijan kojelauta
-  view_all_calendars_simultaneously: "Näytä kaikki kalenterit samanaikaisesti"
   music: Musiikki
   permissions: Oikeudet
   initial_password: Salasana
@@ -497,7 +490,6 @@ fi:
   network_gateway: "Verkkoyhdyskäytävä"
   path_looks_good: "Polku näyttää hyvältä"
   please_select: Valitse...
-  subscribe: Tilaa
   mac_address: MAC-osoite
   anonymous_guests: Vieraat
   settings: Asetukset

@@ -55,7 +55,6 @@ da:
   workgroup_name: Workgroup Navn
   global_settings_for_shares: Globale indstillinger for shares
   dns_alias: DNS Alias
-  view_all_calendars_simultaneously: Se alle kalendere samtidigt
   description: Beskrivelse
   apps: Apps
   get_involved: Involver dig!
@@ -102,7 +101,6 @@ da:
   change: "Ændre"
   your_control_panel: Dit Kontrolpanel
   stop_it: Stop det
-  there_are_no_calendars_available_see_wiki: "Der er ingen kalendere tilgængelige på serveren. Opret dem med en kalender-klient. Se <a href=\"http://wiki.amahi.org/index.php/Calendars\">kalendere wiki</a>."
   not_a_valid_user_or_password: "Fejl: Forkert brugernavn eller password"
   there_are_no_static_dhcp_leases: "Der er ingen statiske DHCP leases på dette tidspunkt."
   disk: Disk
@@ -201,10 +199,8 @@ da:
   movies: Film
   rule: Regel
   edit_web_app: Rediger Web App
-  are_you_sure_you_would_like_to_delete_calendar: "Er du sikker på, du vil slette %{calendar}?"
   router_firewall_settings: Router/firewall indstillinger
   name_is_taken_already: Navnet er taget allerede
-  calendars: Kalendere
   pdc_primary_domain_controller: "PDC &mdash; Primær Domæne Controller"
   time: 
     am: am
@@ -325,7 +321,6 @@ da:
   applications: Applikationer
   the_watchdog_is_running_and_will_restart_it_in_a_few_seconds: "BEMÆRK: Vagthunden KØRER og vil genstarte det om et par sekunder."
   the_mac_is_invalid: MAC-adressen er ugyldig
-  check_the_calendars_wiki_for_more_details: "Kontroller kalender wiki for mere information om håndtering af kalendere og hvilke klienter, der er kompatible."
   password_looks_good: Password ser ok ud
   running: "Kører"
   delete_web_app: Slet Web App
@@ -385,7 +380,6 @@ da:
   need_help_logging_in: "Brug for hjælp til at logge ind?"
   dns_aliases: DNS aliaser
   read_only: Skrivebeskyttet
-  or_view_each_one_separately_below: "eller se hver enkelt særskilt nedenfor."
   never_email_me: Aldrig e-mail mig
   disabling_pdc_will_enable_workgroup_mode: "Deaktivering af PDC tilstand vil aktivere Workgroup tilstand.\r\n\
     Dette er en VÆSENTLIG ændring i den måde, hvorpå shares fungerer. Dette er beregnet til hjemme-netværk (tjek wikien for mere info).\r\n\
@@ -422,7 +416,6 @@ da:
   cancel: Annuller
   static_ips: Statiske IP-adresser
   features: Funktioner
-  calendar_name: Kalender Navn
   password_cannot_be_blank: "Adgangskode kan ikke være tomt"
   are_you_sure_you_want_to_restart_the_server: "Er du sikker på, du vil genstarte %{name}?"
   forums: Fora
@@ -431,7 +424,6 @@ da:
   disabling_lan_manager_will_not_allow_older_machines: "Deaktivering af Windows 95/98 LanManager godkendelse, vil ikke tillade ældre maskiner at bruge shares. Er du sikker på, du vil deaktivere Windows 95/98 authentication mode?"
   dhcp_lease: DHCP Lease
   network_settings: "Netværksindstillinger"
-  subscribe: Abonner
   edit_share: Rediger share
   location: Placering
   url: URL

@@ -742,9 +742,6 @@ thead.apptable td {
   background-image: linear-gradient(top, #fcfcfc, #f7f7f7);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$startColor, EndColorStr=$endColor); }
 
-#calendars-table td {
-  padding: 5px; }
-
 table.settings, .settings th {
   border-collapse: collapse; }
 
@@ -760,9 +757,6 @@ table.settings, .settings th {
   line-height: 40px;
   text-align: left;
   font-weight: bold; }
-
-#calendars-table {
-  border: 1px solid #e8e8e8; }
 
 thead.apptable td:first-child, .fw-rules-col1 {
   -moz-border-radius: 5px 0 0 0;

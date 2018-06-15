@@ -41,7 +41,6 @@ sv:
   this_path_exists_already: "Denna sökväg finns redan"
   poweroff: "Stäng av"
   router_control: Router Kontroll
-  are_you_sure_you_would_like_to_delete_calendar: "Är du säker på att du vill ta bort '%{calendar}' ?"
   openvpn_server: OpenVPN Server
   port_range_looks_good: Portintervallet ser bra ut
   pictures: Bilder
@@ -241,7 +240,6 @@ sv:
       format: 
   mariadb_database_server: MariaDB Server
   edit_and_rate_beta_apps: "Redigera och betygsätt Beta-applikationer"
-  or_view_each_one_separately_below: eller visa var och en separat nedan.
   username: "Användarnamn"
   are_you_sure_you_want_to_restart_the_server: "Är du säker på att du vill starta om '%{name}' ?"
   done_final_check: Klar! Slutlig Kontroll
@@ -320,7 +318,6 @@ sv:
         other: "mer än %{count} år"
       half_a_minute: en halv minut
   nickname: Smeknamn
-  check_the_calendars_wiki_for_more_details: "Kolla <a href=\"http://wiki.amahi.org/index.php/Calendars\">kalender-wikin</a> för mer information om hur man ska hantera kalendrar och vilka klienter som är kompatibla."
   pooled: Poolad
   edit_web_app: "Ändra Web App"
   movies: Filmer
@@ -336,7 +333,6 @@ sv:
   this_name_is_not_available: "Detta namn är inte tillgänglig"
   password_changed_successfully: "Lösenordet ändrades"
   will_start_at_boot_time: kommer att starta vid uppstart
-  calendar_name: Kalendernamn
   this_application_install_ended_with_an_error_please_uninstall_status_is: "Denna programinstallation avslutades med ett fel. Avinstallera det och försök igen! Programstatus är"
   mac_filtering: MAC-filtrering
   tags: Taggar
@@ -351,12 +347,10 @@ sv:
   back: Tillbaka
   notifications_from_amahi: "Meddelande från Amahi"
   support_win_95_98: "Stöd Windows 95/98 - aktiverar (osäker) LanManager autentisering"
-  there_are_no_calendars_available_see_wiki: Det finns inga kalendrar i servern. Skapa dem med en kalender klient. Se <a href="http://wiki.amahi.org/index.php/Calendars">kalenderwiki</a>.
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Aktivering av felsökning kommer eventuellt skapa mycket stora loggfiler. Är du säker på att du vill aktivera Samba felsökning?"
   the_mac_is_invalid: "MAC-adressen är ogiltig"
   making_home_networking_simple: "Gör Hemnätverk Enkelt"
   disk_pool_details: "Välj partitionerna du vill inkludera i lagringspoolen för %{greyhole} och se till att %{shares} använder den."
-  calendars: Kalendrar
   a_single_number_0_254_to_point_to_a_given_machine: "Ett nummer (0-254) att peka på en viss maskin i ditt nätverk"
   writeable: Skrivbar
   port_range_ports_must_be_numbers: "Portarna måste vara siffror"
@@ -371,7 +365,6 @@ sv:
   ip_filtering: IP-filtrering
   create: Skapa
   guest_dashboard: "Gästpanel"
-  view_all_calendars_simultaneously: Se alla kalendrar samtidigt
   music: Musik
   permissions: "Rättigheter"
   initial_password: "Lösenord"
@@ -454,7 +447,6 @@ sv:
   network_gateway: "Nätverksgateway"
   path_looks_good: "Sökvägen är bra"
   please_select: "Välj ..."
-  subscribe: Prenumerera
   mac_address: MAC-adress
   anonymous_guests: "Gäster"
   settings: "Inställningar"

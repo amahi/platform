@@ -43,7 +43,6 @@ no-NB:
   this_path_exists_already: Denne stien finnes allerede
   poweroff: "Slå av"
   router_control: Ruterkontroll
-  are_you_sure_you_would_like_to_delete_calendar: "Er du sikker på at du vil slette %{calendar}?"
   openvpn_server: OpenVPN-tjener
   port_range_looks_good: "Portområde OK"
   pictures: Bilder
@@ -241,7 +240,6 @@ no-NB:
         delimiter: ""
   mariadb_database_server: MariaDB DB-tjener
   edit_and_rate_beta_apps: Rediger og vurder apps
-  or_view_each_one_separately_below: eller se hver enkelt nedenfor.
   username: Brukernavn
   are_you_sure_you_want_to_restart_the_server: "Er du sikker på at du vil restarte %{name}?"
   done_final_check: Ferdig! Final Sjekk
@@ -318,7 +316,6 @@ no-NB:
         other: "over %{count} år"
       half_a_minute: et halvt minutt
   nickname: Kallenavn
-  check_the_calendars_wiki_for_more_details: Sjekk kalenderen wiki for mer informasjon om hvordan du administrerer kalendere og hvilke klienter som er kompatible.
   pooled: Lagt til i pool
   edit_web_app: Rediger Web App
   movies: Filmer
@@ -335,7 +332,6 @@ no-NB:
   drives: Stasjoner
   password_changed_successfully: Vellykket passord-endring
   will_start_at_boot_time: starter ved oppstart
-  calendar_name: Kalender navn
   this_application_install_ended_with_an_error_please_uninstall_status_is: "Applikasjonens installasjon endte med en feilmelding. Vennligst avinstaller den og prøv igjen! Applikasjons-status er"
   mac_filtering: MAC-filtrering
   tags: Tagger
@@ -350,12 +346,10 @@ no-NB:
   back: Tilbake
   notifications_from_amahi: Varsler fra Amahi
   support_win_95_98: "Støtte Windows 95/98 - muliggjør (usikker) LanManager godkjenning"
-  there_are_no_calendars_available_see_wiki: "Det er ingen kalendere tilgjengelig på serveren. Lag dem med en kalender klient. Se <a href=\"http://wiki.amahi.org/index.php/Calendars\">calendars wiki</a>."
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Aktivering av \"Debug\" kan generere svært store loggfiler. Er du sikker på at du vil aktivere Samba debugging?"
   the_mac_is_invalid: MAC-adressen er ugyldig
   making_home_networking_simple: "Gjør hjemmenettverk enkelt"
   disk_pool_details: "Velg partisjonene du vil inkludere i %{greyhole} lagringsområde, og så opprett %{shares} bruk av lagringsområdet."
-  calendars: Kalender
   a_single_number_0_254_to_point_to_a_given_machine: "Ett enkelt tall (0-254) for å peke til en gitt maskin på nettverket"
   writeable: Skrivbar
   port_range_ports_must_be_numbers: "Portene må være tall"
@@ -370,7 +364,6 @@ no-NB:
   ip_filtering: IP-filtrering
   create: Opprett
   guest_dashboard: "Innstillingssentral gjesteområde"
-  view_all_calendars_simultaneously: Se alle kalendere samtidig
   music: Musikk
   permissions: Tillatelser
   initial_password: Passord
@@ -450,7 +443,6 @@ no-NB:
   network_gateway: Nettverks-gateway
   path_looks_good: Fil-stien ser bra ut
   please_select: Vennligst velg ...
-  subscribe: Abonner
   mac_address: MAC-adresse
   anonymous_guests: Gjester
   settings: Innstillinger

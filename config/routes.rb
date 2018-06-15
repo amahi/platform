@@ -57,10 +57,6 @@ Rails.application.routes.draw do
   match 'aliases/new_alias_check' => 'aliases#new_alias_check', via: [:get]
   match 'aliases/new_address_check' => 'aliases#new_address_check', via: [:get]
 
-  match 'calendar' => 'calendar#index', via: [:get]
-  match 'calendar/remove' => 'calendar#remove', via: [:get]
-  match 'calendar/new' => 'calendar#new', via: [:get]
-
   match 'hosts/new(.:format)' => 'hosts#new', via: [:get]
   match 'hosts(.:format)' => 'hosts#index', via: [:get]
   match 'hosts/:id(.:format)' => 'hosts#show', via: [:get]
