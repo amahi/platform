@@ -43,7 +43,6 @@ de:
   this_path_exists_already: Dieser Pfad existiert bereits
   poweroff: Herunterfahren
   router_control: Router-Kontrolle
-  are_you_sure_you_would_like_to_delete_calendar: "Sind Sie sich sicher, dass Sie %{calendar} löschen wollen?"
   port_range_looks_good: "Port-Bereich gültig"
   pictures: Bilder
   disk: Platte
@@ -251,7 +250,6 @@ de:
         delimiter: ""
   mariadb_database_server: MariaDB Server
   edit_and_rate_beta_apps: Beta Apps bearbeiten und bewerten
-  or_view_each_one_separately_below: oder betrachten Sie jeden einzeln unten.
   username: Benutzername
   are_you_sure_you_want_to_restart_the_server: Sind Sie sicher, dass Sie %{name} neustarten wollen?
   done_final_check: "Fertig! Letzte Überprüfung"
@@ -330,7 +328,6 @@ de:
         other: mehr als %{count} Jahre
       half_a_minute: eine halbe Minute
   nickname: Spitzname
-  check_the_calendars_wiki_for_more_details: "Im Kalender Wiki finden Sie weitere Informationen über die Verwaltung von Kalendern und welche Clients kompatibel sind."
   pooled: Pooled
   edit_web_app: Web App bearbeiten
   movies: Filme
@@ -352,7 +349,6 @@ de:
   drives: Laufwerk
   password_changed_successfully: "Passwort erfolgreich geändert"
   will_start_at_boot_time: "wird während des Hochfahrens gestartet"
-  calendar_name: Kalender Name
   this_application_install_ended_with_an_error_please_uninstall_status_is: Die Installation dieser Applikation wurde mit Fehlern beendet. Bitte deinstallieren Sie sie und versuchen es erneut. Applikation-Status ist
   mac_filtering: MAC Filter
   tags: Tags
@@ -367,13 +363,11 @@ de:
   back: "Zurück"
   notifications_from_amahi: Mitteilungen von Amahi
   support_win_95_98: "Windows 95/98-Unterstützung - ermöglicht (unsichere) LanManager Authentifizierung"
-  there_are_no_calendars_available_see_wiki: "Es stehen aktuell keine Kalender auf dem Server zur Verfügung. Erstellen Sie sie mit einem Client-Programm. Weitere Informationen im <a href=\"http://wiki.amahi.org/index.php/Calendars\">Kalender Wiki</a>."
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Das Einschalten der Fehlersuche wird möglicherweise sehr große Protokolldateien erzeugen.\r\n\
     Sind Sie sicher, dass Sie die Samba-Fehlersuche aktivieren möchten?"
   the_mac_is_invalid: "Die MAC Adresse ist ungültig"
   making_home_networking_simple: Heimnetzwerk, ganz einfach gemacht
   disk_pool_details: "Wählen Sie hier die Partitionen, die zum %{greyhole} Pool gehören, und danach die %{shares}, die den Pool nutzen."
-  calendars: Kalender
   a_single_number_0_254_to_point_to_a_given_machine: "Eine einzelne Nummer (0-254) die einem Gerät in ihrem Netzwerk zugeordnet ist."
   writeable: Schreibbar
   port_range_ports_must_be_numbers: "Die Ports dürfen nur aus Ziffern bestehen."
@@ -388,7 +382,6 @@ de:
   ip_filtering: IP Filterung
   create: Erstellen
   guest_dashboard: Gastzugang
-  view_all_calendars_simultaneously: Alle Kalender gleichzeitig betrachten
   music: Musik
   permissions: Berechtigungen
   initial_password: Kennwort
@@ -471,7 +464,6 @@ de:
   network_gateway: Netzwerk Gateway
   path_looks_good: "Pfad gültig"
   please_select: "Bitte wählen..."
-  subscribe: Abonnieren
   mac_address: MAC Adresse
   anonymous_guests: "Gäste"
   settings: Einstellungen

@@ -40,7 +40,6 @@ lv:
   this_path_exists_already: ""
   poweroff: "Izslēgt"
   router_control: "Maršrutētāja vadība"
-  are_you_sure_you_would_like_to_delete_calendar: ""
   openvpn_server: ""
   port_range_looks_good: ""
   disk: Disks
@@ -262,7 +261,6 @@ lv:
         delimiter: ""
   mariadb_database_server: MariaDB serveris
   edit_and_rate_beta_apps: ""
-  or_view_each_one_separately_below: ""
   username: "Lietotājvārds"
   are_you_sure_you_want_to_restart_the_server: ""
   done_final_check: "Darīts! Noslēdzošā pārbaude"
@@ -341,7 +339,6 @@ lv:
         other: "vairāk kā %{count} gadi"
       half_a_minute: "pusminūte"
   nickname: Iesauka
-  check_the_calendars_wiki_for_more_details: ""
   pooled: ""
   edit_web_app: ""
   movies: Filmas
@@ -353,7 +350,6 @@ lv:
   this_name_is_not_available: "Vārds nav pieejams"
   password_changed_successfully: "Parole veikmīgi nomainīta"
   will_start_at_boot_time: ""
-  calendar_name: "Kalendāra nosaukums"
   this_application_install_ended_with_an_error_please_uninstall_status_is: ""
   mac_filtering: "MAC filtrēšana"
   tags: Birkas
@@ -368,11 +364,9 @@ lv:
   changelog: ""
   notifications_from_amahi: "Ziņojumi no Amahi"
   support_win_95_98: ""
-  there_are_no_calendars_available_see_wiki: ""
   the_mac_is_invalid: "MAC adrese ir nederīga"
   making_home_networking_simple: ""
   disk_pool_details: ""
-  calendars: "Kalendāri"
   a_single_number_0_254_to_point_to_a_given_machine: ""
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: ""
   writeable: "Rakstāms"
@@ -411,7 +405,6 @@ lv:
   ip_filtering: "IP filtrēšana"
   create: Izveidot
   guest_dashboard: Viesu panelis
-  view_all_calendars_simultaneously: "Skatīt visus kalendārus vienlaikus"
   music: "Mūzika"
   initial_password: Parole
   your_domain_info: ""
@@ -491,7 +484,6 @@ lv:
   there_are_no_servers_available: "Pašlaik nav pieejams neviens serveris."
   port_range: ""
   network_gateway: "Tīkla vārteja"
-  subscribe: ""
   mac_address: MAC adrese
   anonymous_guests: Viesi
   settings: "Iestatījumi"

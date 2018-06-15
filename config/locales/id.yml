@@ -45,7 +45,6 @@ id:
   confirmation_must_match: Konfirmasi harus sesuai
   this_looks_like_a_database_corruption_please_report_it: Sepertinya ada korupsi basis data atau bug (silahkan <a href="http://bugs.amahi.org">lapor di sini</a>).
   this_ip_address_will_always_be_statically_associated_to_the_mac_address: Alamat IP (1-%{max}) akan selalu diasosiasikan dengan alamat MAC di bawah secara statis.
-  are_you_sure_you_would_like_to_delete_calendar: Anda yakin hendak menghapus %{calendar}?
   are_you_sure_you_would_like_to_uninstall: |-
     Anda yakin hendak melepas aplikasi ini?
     Semua data yang diasosiasi dengan aplikasi ini AKAN DIHAPUS
@@ -286,7 +285,6 @@ id:
   will_start_at_boot_time: akan mulai pada saat boot
   this_application_install_ended_with_an_error_please_uninstall_status_is: "Pemasangan aplikasi ini berakhir dengan kesalahan. Silahkan lepaskan dan coba lagi! Status aplikasi ini "
   mac_filtering: Filter MAC
-  or_view_each_one_separately_below: atau lihat satu per satu secara terpisah.
   firewall_mac_address_filter_info: |-
     Masukan pada tabel ini digunakan untuk membatasi tipe paket data tertentu
     dari jaringan lokal nada ke internet melalui Gateway.
@@ -367,23 +365,18 @@ id:
       long: "%d %B %Y %H.%M"
     pm: pm
   dns_server: Server DNS
-  calendar_name: Nama Kalender
   router_ip: IP Router
   general_amahi_news: "Berita Umum Amahi "
   sign_up_here: Daftar di sini
   static_ip_address: Alamat IP Statis
   port_forwarding: Port Forwarding
   app_logs: Log Apl
-  view_all_calendars_simultaneously: Lihat semua kalender bersamaan
   contribute: Kontribusi
   back: Kembali
-  check_the_calendars_wiki_for_more_details: Periksa calendar wiki untuk informasi lebih banyak bagaimana mengatur kalender dan klien apa yang sesuai.
   initial_password: Kata sandi
   support_win_95_98: Dukung Windows 96/98 %mdash; aktifkan (tidak aman) autentifikasi LanManager
-  there_are_no_calendars_available_see_wiki: Tidak ada kalender pada server. Buat kalender dengan klien. Lihat <a href="http://wiki.amahi.org/index.php/Calendars">wiki kalender</a>.
   dhcp_leases: Peminjaman-peminjaman DHCP
   disk_pool_details: Pilihlah partisi yang ingin anda masukkan dalam %{greyhole} storage pool, kemudian biarkan %{shares} menggunakan storage pool
-  calendars: Kalender
   a_single_number_0_254_to_point_to_a_given_machine: Nomor tunggal (0-254) untuk menunjukkan mesin tertentu dalam jaringan anda
   port_range_ports_must_be_numbers: Port harus berupa angka
   help: Bantuan
@@ -458,7 +451,6 @@ id:
   warning_this_application_is_in_testing: "PERINGATAN: Aplikasi ini sedang diuji!"
   there_are_no_servers_available: Tidak ada server tersedia saat ini.
   global_settings_for_shares: Pengaturan Global untuk Share
-  subscribe: Langganan
   delete_share: Hapus share
   is_being_monitored_24x7: akan dimonitor 24x7
   disk_pool_replication: Replikasi

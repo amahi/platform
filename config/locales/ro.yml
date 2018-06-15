@@ -41,7 +41,6 @@ ro:
   this_path_exists_already: "Această cale există deja"
   poweroff: Oprire
   router_control: Controlul routerului
-  are_you_sure_you_would_like_to_delete_calendar: "Sunteţi sigur că doriţi să ştergeţi %{calendar}?"
   openvpn_server: "Server OpenVPN "
   port_range_looks_good: "Intervalul de porturi arată bine"
   pictures: Imagini
@@ -243,7 +242,6 @@ ro:
         delimiter: ""
   mariadb_database_server: MariaDB Server
   edit_and_rate_beta_apps: "Editare şi evaluare aplicaţii Beta"
-  or_view_each_one_separately_below: "sau vizualizează pe fiecare separat mai jos."
   username: Nume de utilizator
   are_you_sure_you_want_to_restart_the_server: "Sunteţi sigur că doriţi să reporniţi %{name}?"
   done_final_check: "Gata! Verificare finală"
@@ -322,7 +320,6 @@ ro:
         other: mai mult de%{count} ani
       half_a_minute: "jumătate de minut"
   nickname: Porecla
-  check_the_calendars_wiki_for_more_details: "Verificaţi wiki calendar pentru mai multe informaţii cu privire la modul de  gestionare a calendarelor şi ce clientii sunt compatibili."
   pooled: Grupate
   edit_web_app: "Editare Aplicaţii Web"
   movies: Filme
@@ -338,7 +335,6 @@ ro:
   this_name_is_not_available: Acest nume nu este disponibil
   password_changed_successfully: "Parola a fost schimbată cu succes"
   will_start_at_boot_time: va porni la boot
-  calendar_name: Numele Calendarului
   this_application_install_ended_with_an_error_please_uninstall_status_is: "Instalarea aceste aplicaţii s-a încheiat cu o eroare. Vă rugăm să o dezinstalaţi şi să încercaţi din nou! Starea  aplicaţiei este"
   mac_filtering: Filtrare adrese MAC
   tags: Etichete
@@ -353,12 +349,10 @@ ro:
   back: "Înapoi"
   notifications_from_amahi: "Notificări din partea Amahi"
   support_win_95_98: Suport pentru Windows 95/98 &mdash - permite autentificare LanManager (nesecurizat)
-  there_are_no_calendars_available_see_wiki: "Nu sunt calendare disponibile pe server. Creaţi-le cu un client pentru calendare. A se vedea <a href=\"http://wiki.amahi.org/index.php/Calendars\">wiki calendare</a> ."
   enabling_debug_may_generate_a_lot_of_logs_are_you_sure: "Activarea depanării poate genera fişiere jurnal foarte mari. Sunteti sigur că doriţi să activaţi depanarea pentru Samba?"
   the_mac_is_invalid: "Adresa MAC este invalidă"
   making_home_networking_simple: "Simplifică reţeaua de domiciliu"
   disk_pool_details: "Selectaţi partiţiile pe care doriţi să le includeţi în fondul comun de stocare %{greyhole}, şi apoi permiteţi %{shares} să folosească  fondul comun de stocare."
-  calendars: Calendare
   a_single_number_0_254_to_point_to_a_given_machine: "Un număr unic (0-254) pentru a indica o maşină dată în reţeaua dumneavoastră"
   writeable: Inscriptibile
   port_range_ports_must_be_numbers: "Porturilor trebuie să fie numere"
@@ -373,7 +367,6 @@ ro:
   ip_filtering: Filtrare IP
   create: "Creaţi"
   guest_dashboard: "Tabloul de control pentru oaspeţi"
-  view_all_calendars_simultaneously: Vezi toate calendarele simultan
   music: Muzica
   permissions: Permisiuni
   initial_password: Parola
@@ -456,7 +449,6 @@ ro:
   network_gateway: "Gateway pentru reţea"
   path_looks_good: "Calea arată bine"
   please_select: "Vă rugăm să selectaţi ..."
-  subscribe: "Abonează-te"
   mac_address: Adresa MAC
   anonymous_guests: Vizitatori
   settings: "Setări"
