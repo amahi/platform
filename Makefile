@@ -1,12 +1,13 @@
 
 bundle:
 	bin/bundle install --without test --path vendor/bundle --binstubs bin/ --deployment
-	#(cd vendor/bundle/ruby/ && find . -type f -exec grep -l '/usr/bin/ruby' {} \; | xargs sed -i -e 's|/usr/bin/ruby|/usr/bin/ruby|') || true
-	# clean up things that are not needed at run time
 	(cd vendor/bundle/ruby/ && rm -rf cache) || true
 	(cd vendor/bundle/ruby/gems && rm -rf rails-*/guides */spec */doc */doc-api) || true
 	(cd vendor/bundle/ruby/gems && rm -rf */test */tests) || true
 	(cd vendor/bundle/ruby/ && find . \( -name '*.[coa]' -or -name '*.cc' -or -name '*.md' -or -name '.git' \) -exec rm -rf {} \;) || true
+
+assets:
+	RAILS_ENV=production bin/rails assets:precompile
 
 distclean: clean
 	rm -rf vendor/bundle
@@ -25,7 +26,6 @@ clean:
 	rm -rf tmp/smb*
 	rm -rf tmp/key*
 	rm -rf tmp/capybara
-	rm -rf public/assets
 
 # install necessary packages (FIXME: this is for fedora 18 only so far)
 devel-rpms:
