@@ -21,3 +21,5 @@ pickle-email-*.html
 
 # Ignore mysql data created by docker
 /docker/*
+
+public/assets
