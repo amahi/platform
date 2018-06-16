@@ -132,6 +132,7 @@ nav.preftab {
   margin-bottom: -1px;
   border: 1px solid #d6d6d6;
   display: inline-block;
+  border-radius: 0px 0px;
 }
 
 .subtab-link:hover{
@@ -164,4 +165,17 @@ nav.preftab {
 
 .setup-subtab{
   margin-top: -1px;
+  margin-bottom: auto;
+}
+
+.setup-subtab .nav-item{
+  height: auto;
+}
+
+.tab-link-style, .active-tab-link-style{
+  height: auto;
+}
+
+.tab-link-style{
+  border-bottom: 0px !important;
 }
