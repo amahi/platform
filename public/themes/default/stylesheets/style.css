@@ -703,7 +703,6 @@ section#dashboard {
 .tab-link-style{
   font-size: 13px;
   background: #f3f3f3 !important;
-  border-bottom: 0px !important;
 }
 
 .active-tab-link-style{
@@ -714,33 +713,34 @@ section#dashboard {
 .tab-link-style:hover{
   font-size: 13px;   
   background: #dedede1c !important;
-  border-bottom: 0px !important;
-}
-
-.subtab-link{
-  font-size: 12px; 
-  padding: 10px 15px; 
-  text-decoration: none; 
-  color: #333;
-  border: 1px solid #00000000;
-  margin-left: 2px;
 }
 
 .active-subtab-link{
-  font-size: 12px; 
-  padding: 10px 15px; 
-  text-decoration: none; 
+  font-size: 12px;
+  padding: 10px 15px;
+  text-decoration: none;
   color: #333;
   background: #f7f7f7;
   border: 1px solid #d8d8d8;
-  border-radius: 5px 5px 0px 0px;
-  border-bottom: 0px;
+  border-radius: 5px 5px 5px 5px;
   margin-left: 2px;
+  height: 36px;
 }
 
 .active-subtab-link:hover{
-  text-decoration: none; 
+  text-decoration: none;
   color: #333;
+  height: 36px;
+}
+
+.subtab-link{
+  font-size: 12px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #00000000;
+  margin-left: 2px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .subtab-link:hover{
@@ -749,8 +749,7 @@ section#dashboard {
   text-decoration: none; 
   color: #333;  
   border: 1px solid #d8d8d8;
-  border-radius: 5px 5px 0px 0px;
-  border-bottom: 0px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 #tabs {
@@ -1695,6 +1694,11 @@ textarea {
 
 .setup-subtab{
   border: 0px;
+  margin-bottom: -8px;
+}
+
+.setup-subtab .nav-item{
+  height: 38px;
 }
 
 .f-size13{
