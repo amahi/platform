@@ -694,18 +694,21 @@ section#dashboard {
   }
 }
 
-.tab-link-style{
-  font-size: 13px; 
+.tab-link-style, .active-tab-link-style{
   padding: 0.7rem 1.2rem;
+  overflow: hidden;
+  height: 43px;
+}
+
+.tab-link-style{
+  font-size: 13px;
   background: #f3f3f3 !important;
   border-bottom: 0px !important;
 }
 
 .active-tab-link-style{
-  font-size: 14px; 
-  padding: 0.7rem 1.2rem; 
-  background: #dedede1c !important;  
-  border-bottom: 0px;
+  font-size: 14px;
+  background: #dedede1c !important;
 }
 
 .tab-link-style:hover{
@@ -1671,7 +1674,7 @@ textarea {
 }
 
 .setup-main-tab{
-  width: 485px; 
+  width: 100%;
   border-bottom: 0px;
 }
 
