@@ -54,12 +54,12 @@ class Plugin < ApplicationRecord
 	# uninstall when the object is destroyed
 	def before_destroy
 		base = File.basename path
-		location = File.join(Rails.root, "plugins", "#{1000+id}-#{base}")
-		array = []
-		array <<"#{location}/db/migrate"
-		puts "Reverting the changes to the database made by the plugin"
-		ActiveRecord::Migrator.down(array,nil)
-		FileUtils.rm_rf location
+		destination = File.join(Rails.root, "plugins", "#{1000+id}-#{base}")
+
+		Rails.application.paths["db/migrate"] << "#{destination}/db/migrate"
+		ActiveRecord::Migration.new.migrate(:down)
+
+		FileUtils.rm_rf destination
 		# restart the rails stack -- FIXME: this is too much a restart would be best
 		c = Command.new "touch /var/hda/platform/html/tmp/restart.txt"
 		c.execute
@@ -80,11 +80,10 @@ class Plugin < ApplicationRecord
 			# move the plugin files to the destination
 			FileUtils.rm_rf destination
 			FileUtils.mv source, destination
-			# FIXME: eventually we need to do migrations, probably here
-			array = []
-			array <<"#{destination}/db/migrate"
-			puts "Migrating database of the plugin, if applicable"
-			ActiveRecord::Migrator.up(array, nil)
+
+			Rails.application.paths["db/migrate"] << "#{destination}/db/migrate"
+			ActiveRecord::Migration.new.migrate(:up)
+
 			# restart the rails stack -- FIXME: this is too much a restart would be best
 			c = Command.new "touch /var/hda/platform/html/tmp/restart.txt"
 			c.execute
