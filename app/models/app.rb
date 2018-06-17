@@ -252,14 +252,18 @@ class App < ApplicationRecord
 			self.install_status = 60
 			# Create a virtual host file for this app. For more info refer to app/models/webapp.rb
 
-			# workaround : Skip creation of webapp for php5 kind apps
-			if installer.kind!="PHP5"
-				self.build_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
-			end
-			self.theme = self.install_theme(installer, downloaded_file) if installer.kind == 'theme'
-			if installer.kind == 'plugin'
+			if installer.kind == 'theme'
+				self.theme = self.install_theme(installer, downloaded_file)
+			elsif installer.kind == 'plugin'
 				self.plugin = Plugin.install(installer, downloaded_file)
+			else
+				if installer.kind!="PHP5"
+					self.build_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+				end
 			end
+
+			# workaround : Skip creation of webapp for php5 kind apps
+
 			# run the script
 			initial_user = installer.initial_user
 			initial_password = installer.initial_password
