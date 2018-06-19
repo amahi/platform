@@ -414,3 +414,11 @@ footer a[href="/logout"]:hover, footer a[href="/login"]:hover{
 .btnn:hover{
   background: #f98606 !important;
 }
+
+.tab-title-span{
+  white-space: nowrap;
+  float: left;
+  width: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

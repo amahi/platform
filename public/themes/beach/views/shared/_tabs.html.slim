@@ -6,7 +6,7 @@
           - if tab_class(tab).blank?
               a.nav-link.active.text-capitalize.tab-link-style href="#{tab.url}"
                 .tab-icon.float-left id="tab_icon_#{tab.label}"
-                = t(tab.label)
+                span.tab-title-span title="#{t(tab.label)}" = t(tab.label)
               
               .container.setup-subtab-container.all-subtab-container.non-active-all-subtab
                 ul.nav.nav-tabs.setup-subtab
@@ -33,7 +33,7 @@
               - active_tab = tab
               a.nav-link.active.text-capitalize.active-tab-link-style href="#{tab.url}"
                 .tab-icon.float-left id="tab_icon_#{tab.label}"
-                = t(tab.label)
+                span.tab-title-span title="#{t(tab.label)}" = t(tab.label)
           
               .container.setup-subtab-container.all-subtab-container.active-all-subtab
                 ul.nav.nav-tabs.setup-subtab
