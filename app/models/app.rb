@@ -99,11 +99,15 @@ class App < ApplicationRecord
 	end
 
 	# This function is used to start background installation of apps
-	# It is important to start installs in background because installation takes long time and a web connection generally
-	# times out after a few seconds.
+	# It is important to start installs in background because installation takes long time 
+	# and a web connection generally times out after a few seconds.
+
 	def self.install(identifier)
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app --environment=#{Rails.env} #{identifier} >> #{INSTALLER_LOG} 2>&1 &")
+
+		# Rails.cache.write("app-id", identifier)
+
 		if Rails.env == "production"
 			c = Command.new cmd
 			c.execute

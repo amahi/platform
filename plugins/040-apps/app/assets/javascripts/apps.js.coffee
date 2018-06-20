@@ -30,10 +30,19 @@ Apps =
 		app.find(".spinner").toggle()
 
 	progress: (finder) ->
-		@app(finder).find ".progress:first"
+		@app(finder).find ".progress-status:first"
 
 	update_progress: (finder, content) ->
 		@progress(finder).html content
+
+	update_progress_bar: (finder, progress) ->
+		if progress != 999
+			progress_bar_div = @app(finder).get(0).querySelector(".progress-bar-div")
+			progress_bar = progress_bar_div.querySelector(".progress-bar")
+
+			progress_bar_div.style.display = "inline-block"
+			progress_bar.innerHTML = progress + "%"
+			progress_bar.style.width = progress+"%"
 
 	progress_message: (finder) ->
 		@app(finder).find ".install_progress"
@@ -63,16 +72,25 @@ Apps =
 			url: _this.app(finder).data("progressPath")
 			success: (data) ->
 				_this.update_progress_message finder, data["content"]
+				_this.update_progress_bar finder, data["progress"]
+
 				if data["app_content"]
-					_this.update_installed_app finder, data["app_content"]
-					$('.app').each ->
-						$(this).find('.install-app-in-background').removeClass('inactive')
+					timeout_t = 0
+					# 2 seconds wait so that progress bar completes to 100%
+					if data["progress"] == 100
+						timeout_t = 2000
+
+					setTimeout (->
+					    _this.update_installed_app finder, data["app_content"]
+					    $('.app').each ->
+					      $(this).find('.install-app-in-background').removeClass('inactive')
+					    return
+					), timeout_t
+
 				else if data["uninstalled"]
 					_this.update_uninstalled_app finder
 				else
 					setTimeout (-> Apps.trace_progress(finder)), 2000
 
-
 $(document).ready ->
 	Apps.initialize()
-

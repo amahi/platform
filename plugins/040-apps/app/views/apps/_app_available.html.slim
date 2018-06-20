@@ -6,7 +6,7 @@
     tr.hover-style
       td.settings-col1.settings-col1-pad1.apps-col1
         = link_to name_with_warning(app), '#'
-      td.settings-col2.apps-col2[id="app_ip_#{app.identifier}"]
+      td.settings-col2.apps-col2.p-1[id="app_ip_#{app.identifier}"]
         = short_desc(app)
 
   .settings-stretcher[id="app_info_#{app.identifier}" style="#{display_style}"]
@@ -22,6 +22,10 @@
               = app.description.try(:html_safe) || t('no_description_supplied')
 
             = render 'is_available', :app => app
+
+            .progress.progress-bar-div.mt-4 style="width: 100%; display: none; background: #c7c7c7;"
+              .progress-bar.progress-bar-striped.progress-bar-animated.bg-info aria-valuemax="100" \aria-valuemin="0" aria-valuenow="0" role="progressbar" style="width: 0%; height: 100%;"
+                = "0%"
 
             .app-more.top-margin-10
               p
