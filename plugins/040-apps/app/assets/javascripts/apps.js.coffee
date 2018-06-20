@@ -36,7 +36,7 @@ Apps =
 		@progress(finder).html content
 
 	update_progress_bar: (finder, progress) ->
-		if progress != 999
+		if progress >=0 and progress <= 100
 			progress_bar_div = @app(finder).get(0).querySelector(".progress-bar-div")
 			progress_bar = progress_bar_div.querySelector(".progress-bar")
 
@@ -66,20 +66,45 @@ Apps =
 		@app(finder).remove()
 		$(".install-button").show()
 
+	show_uninstall_button: (finder) ->
+		@progress(finder).get(0).querySelector(".install-button").style.display = "inline-block"
+
+		progress_bar_div = @app(finder).get(0).querySelector(".progress-bar-div")
+		progress_bar = progress_bar_div.querySelector(".progress-bar")
+
+		progress_bar_div.style.display = "none"
+		progress_bar.innerHTML = "0%"
+		progress_bar.style.width = "0%"
+
+		@app(finder).get(0).querySelector(".spinner").style.display = "none"
+		@app(finder).get(0).querySelector(".app-flash-notice").style.display = "none"
+
+		uninstall_progress = @app(finder).get(0).querySelector(".uninstall_progress")
+		uninstall_progress.innerHTML = "Some error occurred during uninstallation."
+		uninstall_progress.style.display = "inline-block"
+
+
 	trace_progress: (finder) ->
 		_this = this
 		$.ajax
 			url: _this.app(finder).data("progressPath")
 			success: (data) ->
-				_this.update_progress_message finder, data["content"]
-				_this.update_progress_bar finder, data["progress"]
+				progress = data["progress"]
+				timeout_t = 0
 
-				if data["app_content"]
-					timeout_t = 0
-					# 2 seconds wait so that progress bar completes to 100%
-					if data["progress"] == 100
+				if data["content"].indexOf("uninstall") != -1
+					progress = 100 - progress
+					if progress == 0
+						timeout_t = 2000
+				else
+					if progress == 100
 						timeout_t = 2000
 
+				_this.update_progress_bar finder, progress
+				_this.update_progress_message finder, data["content"]
+
+				if data["app_content"]
+					# 2 seconds wait so that progress bar completes to 100%
 					setTimeout (->
 					    _this.update_installed_app finder, data["app_content"]
 					    $('.app').each ->
@@ -88,7 +113,21 @@ Apps =
 					), timeout_t
 
 				else if data["uninstalled"]
-					_this.update_uninstalled_app finder
+					setTimeout (->
+						$('.app').each ->
+					      $(this).find('.install-app-in-background').removeClass('inactive')
+						_this.update_uninstalled_app finder
+						return
+					), 2000
+
+				else if progress == -899
+					# this check is for uninstall only, install 999 status handled in if-block
+					setTimeout (->
+						$('.app').each ->
+							$(this).find('.install-app-in-background').removeClass('inactive')
+						_this.show_uninstall_button finder
+						return
+					), 2000
 				else
 					setTimeout (-> Apps.trace_progress(finder)), 2000
 

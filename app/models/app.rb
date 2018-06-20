@@ -121,8 +121,14 @@ class App < ApplicationRecord
 	def uninstall
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app -u --environment=#{Rails.env} #{self.identifier} >>  #{INSTALLER_LOG} 2>&1 &")
-		c = Command.new cmd
-		c.execute
+
+		if Rails.env == "production"
+			c = Command.new cmd
+			c.execute
+		else
+			# execute the command directly not in production
+			system(cmd)
+		end
 	end
 
 	def self.available
@@ -166,7 +172,7 @@ class App < ApplicationRecord
 		when  40 then "Removing application files ..."
 		when  20 then "Uninstalling application ..."
 		when   0 then "Application uninstalled."
-		else "Application message unknown at #{self.install_status}% uninstall."
+		else "Application message unknown during uninstall."
 		end
 	end
 
@@ -387,6 +393,7 @@ class App < ApplicationRecord
 					end
 				end
 				self.install_status = 20
+
 				self.uninstall_pkgs uninstaller if uninstaller.pkg
 				# else
 				# FIXME - retry? what if an app is not
@@ -405,8 +412,9 @@ class App < ApplicationRecord
 			self.destroy
 			self.install_status = nil
 			FileUtils.rm_rf app_path
+
 		rescue Exception => e
-			self.install_status = 100
+			self.install_status = 999
 			FileUtils.rm_rf app_path
 			raise e
 		end
