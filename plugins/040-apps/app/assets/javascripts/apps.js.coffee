@@ -2,11 +2,17 @@ Apps =
 	initialize: ->
 		_this = this
 
-		$(document).on "ajax:beforeSend", ".install-app-in-background, .uninstall-app-in-background", ->
+		$(document).on "ajax:beforeSend", ".install-app-in-background", ->
 				$(".install-button").hide()
 				_this.toggle_spinner this
 				$('.app').each ->
 					$(this).find('.install-app-in-background').addClass('inactive')
+
+		$(document).on "ajax:beforeSend", ".uninstall-app-in-background", ->
+				_this.toggle_spinner this
+				$('.app').each ->
+					$(this).find('.install-app-in-background').addClass('inactive')
+					$(this).find('.install-button').addClass('inactive')
 
 		$(document).on "ajax:success", ".install-app-in-background, .uninstall-app-in-background", (data, results) ->
 				_this.update_progress results["identifier"], results["content"]
@@ -64,7 +70,8 @@ Apps =
 
 	update_uninstalled_app: (finder) ->
 		@app(finder).remove()
-		$(".install-button").show()
+		$('.app').each ->
+			$(".install-button").show()
 
 	show_uninstall_button: (finder) ->
 		@progress(finder).get(0).querySelector(".install-button").style.display = "inline-block"
@@ -100,6 +107,7 @@ Apps =
 					if progress == 100
 						timeout_t = 2000
 
+
 				_this.update_progress_bar finder, progress
 				_this.update_progress_message finder, data["content"]
 
@@ -109,6 +117,7 @@ Apps =
 					    _this.update_installed_app finder, data["app_content"]
 					    $('.app').each ->
 					      $(this).find('.install-app-in-background').removeClass('inactive')
+					      $(this).find('.install-button').removeClass('inactive')
 					    return
 					), timeout_t
 
@@ -116,6 +125,7 @@ Apps =
 					setTimeout (->
 						$('.app').each ->
 					      $(this).find('.install-app-in-background').removeClass('inactive')
+					      $(this).find('.install-button').removeClass('inactive')
 						_this.update_uninstalled_app finder
 						return
 					), 2000
@@ -125,6 +135,7 @@ Apps =
 					setTimeout (->
 						$('.app').each ->
 							$(this).find('.install-app-in-background').removeClass('inactive')
+							$(this).find('.install-button').removeClass('inactive')
 						_this.show_uninstall_button finder
 						return
 					), 2000
