@@ -46,6 +46,7 @@ group :development do
 	# gem 'rails_best_practices'
 
 	gem 'listen'
+	gem 'rack-mini-profiler'
 
 	# FIXME: for Fedora only
 	if ((open('/etc/issue').grep(/fedora/i).length > 0) rescue false)
