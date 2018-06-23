@@ -1,6 +1,7 @@
 json.identifier params[:id]
 json.content @message
 json.progress @progress
+json.type 'install'
 
 if @progress == 100
 	self.formats = [:html]

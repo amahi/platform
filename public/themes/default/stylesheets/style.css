@@ -490,6 +490,12 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
   .page-title{
     margin-left: 110px;
   }
+  #btn-install-apps{
+    line-height: 36px !important;
+  }
+  #btn-get-apps{
+    line-height: 50px !important;
+  }
 }
 
 @media (min-width: 770px){
@@ -1597,7 +1603,7 @@ span.server_status i.running {
 
 .app-store-header {
   font-size: 14px;
-  padding: 5px 0 60px 0;
+  padding: 5px 0 24px 0;
   text-align: center; }
 
 .focus {

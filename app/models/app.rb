@@ -103,10 +103,15 @@ class App < ApplicationRecord
 	# and a web connection generally times out after a few seconds.
 
 	def self.install(identifier)
+		# first check status
+		return unless self.check_availability()
+
+		self.update_progress(0)
+		Rails.cache.write("type", "install")
+		Rails.cache.write("app-id", identifier)
+
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app --environment=#{Rails.env} #{identifier} >> #{INSTALLER_LOG} 2>&1 &")
-
-		# Rails.cache.write("app-id", identifier)
 
 		if Rails.env == "production"
 			c = Command.new cmd
@@ -119,6 +124,13 @@ class App < ApplicationRecord
 
 	# This function is used to start background uninstallation of apps
 	def uninstall
+		# first check status
+		return unless App.check_availability()
+
+		App.update_progress(100)
+		Rails.cache.write("type", "uninstall")
+		Rails.cache.write("app-id", self.identifier)
+
 		# run the kickoff script
 		cmd = File.join(Rails.root, "script/install-app -u --environment=#{Rails.env} #{self.identifier} >>  #{INSTALLER_LOG} 2>&1 &")
 
@@ -144,7 +156,8 @@ class App < ApplicationRecord
 
 	def install_message
 		# NOTE: make sure these messages match the stages below
-		App.installation_message self.install_status
+		percent = Rails.cache.read("progress")
+		App.installation_message percent
 	end
 
 	def self.installation_message(percent)
@@ -159,13 +172,16 @@ class App < ApplicationRecord
 		when  80 then "Saving application settings ..."
 		when 100 then "Application installed."
 		when 999 then "Application failed to install (check /var/log/amahi-app-installer.log)."
-		else "Application message unknown at #{percent}% install."
+		when 950 then "Another app is getting installed."
+		else "Application message unknown during install."
 		end
 	end
 
 	def uninstall_message
+		return "Another app is getting installed." if Rails.cache.read("app-id") != identifier
+
 		# NOTE: make sure these messages match the stages below
-		case self.install_status
+		case Rails.cache.read("progress")
 		when 100 then "Preparing to uninstall ..."
 		when  80 then "Retrieving application information ..."
 		when  60 then "Running uninstall scripts ..."
@@ -181,9 +197,11 @@ class App < ApplicationRecord
 	end
 
 	def self.installation_status(identifier)
-		status = Setting.where(:kind=>identifier,:name=> 'install_status').first
-		return 0 unless status
-		status.value.to_i
+		if Rails.cache.read("app-id") == identifier
+			Rails.cache.read("progress")
+		else
+			950
+		end
 	end
 
 	def install_status=(value)
@@ -214,19 +232,19 @@ class App < ApplicationRecord
 		initial_path = Dir.pwd
 		begin
 			# see the install_message method for the meaning of the messages
-			self.install_status = 0
+			App.update_progress(0)
 			AmahiApi::api_key = Setting.value_by_name("api-key")
-			self.install_status = 10
+			App.update_progress(10)
 			installer = AmahiApi::AppInstaller.find identifier
-			self.install_status = 20
+			App.update_progress(20)
 			self.install_app_deps installer if installer.app_dependencies
-			self.install_status = 30
+			App.update_progress(30)
 			self.install_pkg_deps installer if installer.pkg_dependencies
 			self.install_pkgs installer if installer.pkg
 			app_path = APP_PATH % identifier
 			mkdir app_path
 			webapp_path = nil
-			self.install_status = 40
+			App.update_progress(40)
 
 			downloaded_file = nil
 			unless (installer.source_url.nil? or installer.source_url.blank?)
@@ -259,7 +277,7 @@ class App < ApplicationRecord
 					cmd.execute
 				end
 			end
-			self.install_status = 60
+			App.update_progress(60)
 			# Create a virtual host file for this app. For more info refer to app/models/webapp.rb
 
 			if installer.kind == 'theme'
@@ -301,7 +319,7 @@ class App < ApplicationRecord
 			# 	raise e
 			# end
 
-			self.install_status = 70
+			App.update_progress(70)
 			# if it has a server, install it and associate it
 			if installer.server
 				servername = installer.server
@@ -312,7 +330,7 @@ class App < ApplicationRecord
 				end
 				self.build_server(:name => servername, :comment => "#{self.name} Server", :pidfile => pidfile)
 			end
-			self.install_status = 80
+			App.update_progress(80)
 			self.initial_user = installer.initial_user
 			self.initial_password = installer.initial_password
 			self.special_instructions = installer.special_instructions
@@ -353,10 +371,10 @@ class App < ApplicationRecord
 				webapp.create_php5_vhost
 			end
 
-			self.install_status = 100
+			App.update_progress(100)
 			Dir.chdir(initial_path)
 		rescue Exception => e
-			self.install_status = 999
+			App.update_progress(999)
 			Dir.chdir(initial_path)
 			raise e
 		end
@@ -370,9 +388,9 @@ class App < ApplicationRecord
 		# TODO: Write uninstallation case for php5 apps.
 		app_path = APP_PATH % identifier
 		begin
-			self.install_status = 100
+			App.update_progress(100)
 			AmahiApi::api_key = Setting.value_by_name("api-key")
-			self.install_status = 80
+			App.update_progress(80)
 			uninstaller = AmahiApi::AppUninstaller.find(identifier)
 			# Have to get the installer as well to get the app kind
 			installer = AmahiApi::AppInstaller.find identifier
@@ -380,7 +398,7 @@ class App < ApplicationRecord
 
 			if uninstaller
 				# execute the uninstall script
-				self.install_status = 60
+				App.update_progress(60)
 				if uninstaller.uninstall_script
 					if self.webapp && self.webapp.path
 						Dir.chdir(self.webapp.path) do
@@ -392,7 +410,7 @@ class App < ApplicationRecord
 						end
 					end
 				end
-				self.install_status = 20
+				App.update_progress(20)
 
 				self.uninstall_pkgs uninstaller if uninstaller.pkg
 				# else
@@ -408,13 +426,12 @@ class App < ApplicationRecord
 			end
 
 			# FIXME - set to nil to destroy??
-			self.install_status = 0
+			App.update_progress(0)
 			self.destroy
-			self.install_status = nil
 			FileUtils.rm_rf app_path
 
 		rescue Exception => e
-			self.install_status = 999
+			App.update_progress(999)
 			FileUtils.rm_rf app_path
 			raise e
 		end
@@ -440,7 +457,26 @@ class App < ApplicationRecord
 		webapp ? "http://#{webapp.name}" : ''
 	end
 
+	def self.update_progress(progress)
+		Rails.cache.write("progress", progress)
+	end
 
+	# check if app can begin installation or uninstallation
+	def self.check_availability
+		progress = Rails.cache.read("progress")
+		return true if progress.blank?
+		return true if progress == 999
+
+		type = Rails.cache.read("type")
+
+		if type == "install" and progress == 100
+			return true
+		elsif type == "uninstall" and progress == 0
+			return true
+		else
+			return false
+		end
+	end
 
 	protected
 
