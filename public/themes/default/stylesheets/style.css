@@ -490,6 +490,12 @@ input[type=button][disabled="disabled"], input[type=submit][disabled="disabled"]
   .page-title{
     margin-left: 110px;
   }
+  #btn-install-apps{
+    line-height: 36px !important;
+  }
+  #btn-get-apps{
+    line-height: 50px !important;
+  }
 }
 
 @media (min-width: 770px){
@@ -1102,6 +1108,10 @@ td.align-top {
   font-weight: bold;
   margin: 20px 0 20px 0; }
 
+.app-url a{
+  word-wrap: break-word;
+}
+
 .install-button {
   font-size: 12px;
   font-weight: bold;
@@ -1253,6 +1263,10 @@ td.align-top {
   .theme-thumbs a {
     margin: 0 10px 0 0; }
   .theme-thumbs img {
+    width: 66px;
+    height: 66px;
+    display: inline-block;
+    margin-bottom: 5px;
     border: 1px solid #dfdfdf; }
     .theme-thumbs img:hover {
       border: 1px solid black; }
@@ -1591,7 +1605,7 @@ span.server_status i.running {
 
 .app-store-header {
   font-size: 14px;
-  padding: 5px 0 60px 0;
+  padding: 5px 0 24px 0;
   text-align: center; }
 
 .focus {
@@ -1725,7 +1739,7 @@ textarea {
   margin-top: 8px; 
 }
 
-span.progress{
+span.progress-status{
   height: 32px;
 }
 

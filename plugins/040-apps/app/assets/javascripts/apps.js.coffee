@@ -2,11 +2,17 @@ Apps =
 	initialize: ->
 		_this = this
 
-		$(document).on "ajax:beforeSend", ".install-app-in-background, .uninstall-app-in-background", ->
+		$(document).on "ajax:beforeSend", ".install-app-in-background", ->
 				$(".install-button").hide()
 				_this.toggle_spinner this
 				$('.app').each ->
 					$(this).find('.install-app-in-background').addClass('inactive')
+
+		$(document).on "ajax:beforeSend", ".uninstall-app-in-background", ->
+				_this.toggle_spinner this
+				$('.app').each ->
+					$(this).find('.install-app-in-background').addClass('inactive')
+					$(this).find('.install-button').addClass('inactive')
 
 		$(document).on "ajax:success", ".install-app-in-background, .uninstall-app-in-background", (data, results) ->
 				_this.update_progress results["identifier"], results["content"]
@@ -30,10 +36,23 @@ Apps =
 		app.find(".spinner").toggle()
 
 	progress: (finder) ->
-		@app(finder).find ".progress:first"
+		@app(finder).find ".progress-status:first"
 
 	update_progress: (finder, content) ->
 		@progress(finder).html content
+
+	update_progress_bar: (finder, progress) ->
+		if progress >=0 and progress <= 100
+			message = @app(finder).get(0).querySelector(".message")
+			if message
+				message.style.display = "none"
+
+			progress_bar_div = @app(finder).get(0).querySelector(".progress-bar-div")
+			progress_bar = progress_bar_div.querySelector(".progress-bar")
+
+			progress_bar_div.style.display = "inline-block"
+			progress_bar.innerHTML = progress + "%"
+			progress_bar.style.width = progress+"%"
 
 	progress_message: (finder) ->
 		@app(finder).find ".install_progress"
@@ -55,24 +74,97 @@ Apps =
 
 	update_uninstalled_app: (finder) ->
 		@app(finder).remove()
-		$(".install-button").show()
+		$('.app').each ->
+			$(".install-button").show()
+
+	show_uninstall_button: (finder) ->
+		@progress(finder).get(0).querySelector(".install-button").style.display = "inline-block"
+
+		progress_bar_div = @app(finder).get(0).querySelector(".progress-bar-div")
+		progress_bar_div.style.display = "none"
+
+		# progress_bar = progress_bar_div.querySelector(".progress-bar")
+
+		@app(finder).get(0).querySelector(".spinner").style.display = "none"
+		@app(finder).get(0).querySelector(".app-flash-notice").style.display = "none"
+
+		uninstall_progress = @app(finder).get(0).querySelector(".uninstall_progress")
+		uninstall_progress.innerHTML = "Some error occurred during uninstallation."
+		uninstall_progress.style.display = "inline-block"
+
+	# case when another app is getting installed - for installed subtab in apps
+	show_error_message_installed_tab: (finder, content) ->
+		message = @progress(finder).get(0).querySelector(".uninstall_progress")
+		message.innerHTML = content
+
+	# case when another app is getting installed - for available subtab in apps
+	show_error_message_available_tab: (finder, content) ->
+		message = @app(finder).get(0).querySelector(".message")
+		message.style.display = "inline-block"
+		message.innerHTML = content
+		@app(finder).get(0).querySelector(".spinner").style.display = "none"
 
 	trace_progress: (finder) ->
 		_this = this
 		$.ajax
 			url: _this.app(finder).data("progressPath")
 			success: (data) ->
+				progress = data["progress"]
+				timeout_t = 0
+
+				if data["type"].indexOf("uninstall") != -1
+					progress = 100 - progress
+					if progress == 0
+						timeout_t = 2000
+				else
+					if progress == 100
+						timeout_t = 2000
+
+				_this.update_progress_bar finder, progress
 				_this.update_progress_message finder, data["content"]
-				if data["app_content"]
-					_this.update_installed_app finder, data["app_content"]
+
+				if progress == 950
 					$('.app').each ->
 						$(this).find('.install-app-in-background').removeClass('inactive')
+					_this.show_error_message_available_tab finder, data["content"]
+
+				else if data["app_content"]
+					# 2 seconds wait so that progress bar completes to 100%
+					setTimeout (->
+					    _this.update_installed_app finder, data["app_content"]
+					    $('.app').each ->
+					      $(this).find('.install-app-in-background').removeClass('inactive')
+					      $(this).find('.install-button').removeClass('inactive')
+					    return
+					), timeout_t
+
 				else if data["uninstalled"]
-					_this.update_uninstalled_app finder
+					setTimeout (->
+						$('.app').each ->
+					      $(this).find('.install-app-in-background').removeClass('inactive')
+					      $(this).find('.install-button').removeClass('inactive')
+						_this.update_uninstalled_app finder
+						return
+					), 2000
+
+				else if progress == -899 # 100-999
+					# this check is for uninstall only, install 999 status handled in if-block
+					setTimeout (->
+						$('.app').each ->
+							$(this).find('.install-app-in-background').removeClass('inactive')
+							$(this).find('.install-button').removeClass('inactive')
+						_this.show_uninstall_button finder
+						return
+					), 2000
+
+				else if progress == -850 # 100-950
+					$('.app').each ->
+						$(this).find('.install-button').removeClass('inactive')
+					_this.show_uninstall_button finder
+					_this.show_error_message_installed_tab finder, data["content"]
+
 				else
 					setTimeout (-> Apps.trace_progress(finder)), 2000
 
-
 $(document).ready ->
 	Apps.initialize()
-

@@ -1,3 +1,5 @@
 = spinner
 span.install
     = link_to(t("install"), apps_engine.install_path(:id => app.identifier), :method => :post, :remote => true, :class => 'install-app-in-background btnn btn btn-info btn-sm ')
+span.message.m-3.mt-4 style="display:none;"
+	= "message"

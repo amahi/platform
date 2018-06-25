@@ -1,3 +1,2 @@
 json.identifier  params[:id]
-json.content  @app ? "<span class='uninstall_progress'>#{t('preparing_to_uninstall')}</span>".html_safe : t('this_application_is_not_installed_please_refresh')
-
+json.content  @app ? "<span class='install-button' style='display: none;'><a class='uninstall-app-in-background btn-sm' style='height: auto;' data-remote='true' rel='nofollow' data-method='post' href='/tab/apps/uninstall/#{params[:id]}'>Uninstall »</a></span><span class='uninstall_progress' style='display: inline-block; margin-top: 10px;'>#{t('preparing_to_uninstall')}</span>".html_safe : t('this_application_is_not_installed_please_refresh')

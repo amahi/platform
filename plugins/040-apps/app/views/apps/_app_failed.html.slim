@@ -3,13 +3,13 @@
 = content_tag 'div', :class => 'app', :id => "app_whole_#{identifier}" do
 
   table.settings.stretchtoggle[id="app_row_#{identifier}"]
-    tr
+    tr style="cursor: pointer;"
       td.settings-col1.settings-col1-pad1.apps-col1
         = link_to '-', '#'
       td.settings-col2.apps-col2[id="app_ip_#{identifier}"]
         | 
 
-  .settings-stretcher[id="app_info_#{identifier}" style="#{display_style}"]
+  .settings-stretcher.bg-white.mb-2.p-2[id="app_info_#{identifier}" style="#{display_style}"]
     .app-manage
       fieldset
         .settings-fields
@@ -30,5 +30,5 @@
               | tail -600 /var/log/amahi-app-installer.log | apaste
           p
             | Visit our wiki for further
-            a href="https://wiki.amahi.org/index.php/App_Install" app installation troubleshooting
+            a href="https://wiki.amahi.org/index.php/App_Install"  app installation troubleshooting
             | .

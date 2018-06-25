@@ -4,6 +4,8 @@ gem 'rake'
 
 gem "rails", '~>5.2.0'
 
+gem "dalli"
+
 gem "yettings"
 
 gem 'sass-rails'
