@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# We want our assets lazily compiled in production
+Bundler.require(:default, :assets, Rails.env)
+
 module AmahiHDA
   class Application < Rails::Application
 
@@ -32,6 +35,10 @@ module AmahiHDA
 
     # initialize tabs app variable
     config.tabs = []
+
+    # in case we need to debug assets
+    # config.assets.debug = true
+
   end
 end
 

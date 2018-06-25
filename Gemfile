@@ -11,8 +11,6 @@ gem "yettings"
 gem 'sass-rails'
 gem 'coffee-rails'
 
-gem 'therubyracer'
-
 gem 'uglifier'
 
 gem 'activeresource'
@@ -84,6 +82,10 @@ gem 'psych'
 
 group :development, :production do
 	gem 'mysql2'
+end
+
+group :production do
+	gem 'mini_racer'
 end
 
 group :development, :test do
