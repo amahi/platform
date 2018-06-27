@@ -458,7 +458,7 @@ class App < ApplicationRecord
 	end
 
 	def self.update_progress(progress)
-		Rails.cache.write("progress", progress)
+		Rails.cache.write("progress", progress, expires_in: 59.minutes)
 	end
 
 	# check if app can begin installation or uninstallation
