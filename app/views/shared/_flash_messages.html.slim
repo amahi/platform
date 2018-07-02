@@ -1,5 +1,5 @@
-#errors	
-  - flash.each do |name, msg|
-  	div[class=" alert alert-#{name}"]
-  		.container.pl-5
-  	  		strong = msg.html_safe
+- flash.each do |name, msg|
+  div class="alert alert-#{name} alert-dismissible" role="alert"
+    button class="close" aria-label="Close" data-dismiss="alert" type="button"
+      span aria-hidden="true"  &times;
+    strong = msg
