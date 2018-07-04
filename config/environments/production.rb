@@ -30,6 +30,9 @@ Rails.application.configure do
   config.assets.compile = true
   config.serve_static_assets = true
 
+  # for some reason, if we do not set asset debug to true, we observe errors in some js
+  # being loaded. maybe this table helps, but it's not clear why this is necessary:
+  # https://codingitwrong.com/2016/04/15/a-definitive-guide-to-asset-pipeline-settings.html
   config.assets.debug = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
