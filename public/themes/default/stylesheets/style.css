@@ -1751,3 +1751,7 @@ span.install-button a{
 span#setting_dns select{
   font-size: 13px;
 }
+
+.pd-l-12{
+  padding-left: 12px !important;
+}

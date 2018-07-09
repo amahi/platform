@@ -2,11 +2,11 @@
   table.settings.table
     thead
       tr
-        th.settings-col1= t 'partition'
-        th = t 'total_space'
-        th = t 'free_space'
-        th = t 'used_space'
-        th = t 'mount point'
+        th.settings-col1.pd-l-12 = t 'partition'
+        th.pd-l-12 = t 'total_space'
+        th.pd-l-12 = t 'free_space'
+        th.pd-l-12 = t 'used_space'
+        th.pd-l-12 = t 'mount point'
     tbody
       -if @mounts.any?
         - @mounts.each do | mount |
