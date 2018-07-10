@@ -379,6 +379,14 @@ body nav.navbar.navbar-expand-md{
   border-radius: 5px !important;
 }
 
+table.settings{
+  margin-bottom: 0px;
+}
+
+.settings-table{
+  margin-top: -1px;
+}
+
 .settings th, thead.apptable td {
   background: #e2e2e2;
   color: #505050;
