@@ -2,9 +2,9 @@
   table.settings.table
     thead
       tr
-        th.settings-col1= t 'model'
-        th= t 'device'
-        th
+        th.settings-col1.pd-l-12 = t 'model'
+        th.pd-l-12 = t 'device'
+        th.pd-l-12
           = t 'temperature'
           | &nbsp;(
           = link_to "F", '#', :onclick=> '$("#disks-table .temperature").toggle()', class: 'temperature', style: 'display:none'

@@ -4,8 +4,8 @@
       table.settings
         thead
           tr
-            th.settings-col1= t 'name'
-            th= t 'ip_address'
+            th.settings-col1 = t 'name'
+            th.pl-1 = t 'ip_address'
       = render :partial => 'network/dns_alias', :collection => @dns_aliases
     - else
       .empty-hint

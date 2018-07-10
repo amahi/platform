@@ -2,10 +2,10 @@
   table.settings.table-striped
     thead
       tr
-        th.settings-col1= t 'expiration'
-        th= t 'mac'
-        th= t 'ip'
-        th= t 'name'
+        th.settings-col1 = t 'expiration'
+        th.pl-1 = t 'mac'
+        th.pl-1 = t 'ip'
+        th.pl-1 = t 'name'
     tbody
       - @leases.each do |lease|
         tr class=cycle("odd", "even")

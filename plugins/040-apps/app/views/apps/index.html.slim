@@ -8,7 +8,7 @@
       table.settings
         tr
           th.settings-col1.settings-col1-pad1.apps-col1[scope='col']= t('application')
-          th.settings-col2.apps-col2[scope='col']= t('description')
+          th.settings-col2.pl-2.apps-col2[scope='col'] = t('description')
       = render :partial => 'apps/app_available', :collection => @apps
     - else
       div.align-center.default-message
