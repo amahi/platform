@@ -81,26 +81,13 @@ Rails.env.replace(options[:environment])
 HDA_CONFIG = YAML.load_file("#{ROOTDIR}/config/hda.yml")[options[:environment]]
 
 def install_or_uninstall(install, app_id, app)
-  unless App.check_availability()
-    puts "Another app is getting installed."
-    return
-  end
-
   if install
-    App.update_progress(0)
-    Rails.cache.write("type", "install")
-    Rails.cache.write("app-id", app_id)
-
     puts "=======  app install begin      @  #{Time.now} =========="
     puts "Installing   app id #{app_id} under #{ROOTDIR} ENV=#{Rails.env}"
     app.install_bg
     puts "App: #{app.name} installed"
     puts "=======  app install end        @  #{Time.now} =========="
   else
-    App.update_progress(100)
-    Rails.cache.write("type", "uninstall")
-    Rails.cache.write("app-id", app_id)
-
     puts "=======  app uninstall begin    @  #{Time.now} =========="
     puts "Uninstalling app id #{app_id} under #{ROOTDIR} ENV=#{Rails.env}"
     app.uninstall_bg
