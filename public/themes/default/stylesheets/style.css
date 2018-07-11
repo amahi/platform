@@ -728,8 +728,9 @@ section#dashboard {
   color: #333;
   background: #f7f7f7;
   border: 1px solid #d8d8d8;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 0px 0px;
   margin-left: 2px;
+  border-bottom: 0px;
   height: 36px;
 }
 
@@ -755,7 +756,8 @@ section#dashboard {
   text-decoration: none; 
   color: #333;  
   border: 1px solid #d8d8d8;
-  border-radius: 5px 5px 5px 5px;
+  border-bottom: 0px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 #tabs {
@@ -1698,6 +1700,7 @@ textarea {
   background: #dedede1c; 
   border: 1px solid #d8d8d8; 
   border-top-width: 0.5px;
+  padding-bottom: 0px;
 }
 
 .all-subtab-container{
@@ -1714,7 +1717,7 @@ textarea {
 }
 
 .setup-subtab .nav-item{
-  height: 38px;
+  height: 35px;
 }
 
 .f-size13{
