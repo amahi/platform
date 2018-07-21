@@ -286,7 +286,9 @@ class App < ApplicationRecord
 				self.plugin = Plugin.install(installer, downloaded_file)
 			else
 				if installer.kind!="PHP5"
-					self.build_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+					unless installer.url_name.blank?
+						self.build_webapp(:name => name, :path => webapp_path, :deletable => false, :custom_options => installer.webapp_custom_options, :kind => installer.kind)
+					end
 				end
 			end
 
