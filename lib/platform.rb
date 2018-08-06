@@ -167,8 +167,8 @@ class Platform
 	}
 	class << self
 		def reload(service)
-			c = Command.new("sleep 1")
-			c.submit("service #{service2name service} reload")
+			c = Command.new("sleep 4")
+			c.submit("systemctl reload #{service2name service}")
 			c.submit("sleep 1")
 			c.execute
 		end
