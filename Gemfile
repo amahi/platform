@@ -13,6 +13,8 @@ gem 'coffee-rails'
 
 gem 'uglifier'
 
+gem 'rest-client'
+
 gem 'activeresource'
 gem 'actionpack-action_caching'
 gem 'actionview'
