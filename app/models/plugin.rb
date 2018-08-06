@@ -56,8 +56,7 @@ class Plugin < ApplicationRecord
 		base = File.basename path
 		destination = File.join(Rails.root, "plugins", "#{1000+id}-#{base}")
 
-		Rails.application.paths["db/migrate"] << "#{destination}/db/migrate"
-		ActiveRecord::Migration.new.migrate(:down)
+		Plugin.run_migration(destination, :down)
 
 		FileUtils.rm_rf destination
 		# restart the rails stack -- FIXME: this is too much a restart would be best
@@ -81,8 +80,7 @@ class Plugin < ApplicationRecord
 			FileUtils.rm_rf destination
 			FileUtils.mv source, destination
 
-			Rails.application.paths["db/migrate"] << "#{destination}/db/migrate"
-			ActiveRecord::Migration.new.migrate(:up)
+			self.run_migration(destination, :up)
 
 			# restart the rails stack -- FIXME: this is too much a restart would be best
 			c = Command.new "touch /var/hda/platform/html/tmp/restart.txt"
@@ -90,6 +88,19 @@ class Plugin < ApplicationRecord
 			# return the plugin we just created
 			plugin
 		end
+
+		def run_migration(destination, type)
+			migration_files = Dir["#{destination}/db/migrate/*.rb"]
+			migration_files.each do |migration_file|
+				start_index = migration_file.index("_")+1
+				last_index = migration_file.rindex(".")-1
+				require "#{migration_file}"
+
+				class_name = migration_file[start_index..last_index].camelize.constantize
+				class_name.new.migrate(type)
+			end
+		end
+
 	end
 
 end
