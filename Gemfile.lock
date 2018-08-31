@@ -108,6 +108,7 @@ GEM
       multi_json
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    elif (0.1.0)
     erubi (1.7.1)
     excon (0.62.0)
     execjs (2.7.0)
@@ -305,6 +306,7 @@ DEPENDENCIES
   dalli
   database_cleaner
   docker-api
+  elif (~> 0.1.0)
   factory_bot_rails
   jbuilder
   jquery-rails
