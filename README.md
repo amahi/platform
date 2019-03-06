@@ -48,7 +48,7 @@ To start the app and use it with a browser, start a web server with rails:
 rails s
 ```
 
-Visit `http://localhost:3000/`, login with the username of `admin` & the password of `secretpassword` and excersise the app as much as you can.
+Visit `http://localhost:3000/`, login with the username of `admin` & the password of `secretpassword` and exercise the app as much as you can.
 
 We like to follow a particular [git branching model](http://nvie.com/posts/a-successful-git-branching-model/). You can create and work in your own branch, making your work easier to track.
 
