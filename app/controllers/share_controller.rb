@@ -18,6 +18,7 @@ require 'partition_utils'
 
 class ShareController < ApplicationController
 	before_action :admin_required
+	rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
 	VALID_NAME = Regexp.new "\A\\w[\\w ]+\z"
 	# Disk Pool minimum free: default og 10GB, but for root,
@@ -26,11 +27,20 @@ class ShareController < ApplicationController
 	DP_MIN_FREE_ROOT = 20
 
 	def update_name
-		# FIXME - lots of checks missing!
 		s = Share.find(params[:id])
-		s.name = params[:value]
-		s.save
-		s.reload
+		name=params[:value]
+		unless valid_name?(name)
+			render :plain => s.name
+			return
+		end
+
+		share=Share.where(:name => name).first
+		if share.nil?
+			#store if name is unique
+			s.name = name
+			s.save
+			s.reload
+		end
 		render :text => s.name
 	end
 
@@ -325,7 +335,9 @@ class ShareController < ApplicationController
 	end
 
 	def valid_name?(nm)
-		return false unless (nm =~ VALID_NAME)
+		unless nm =~ VALID_NAME and nm.length <= 32
+			return false
+		end
 		true
 	end
 
@@ -335,6 +347,11 @@ class ShareController < ApplicationController
 		# FIXME - no way to replace backslashes in ruby?!?!
 		rest.gsub!(/\\/, '/')
 		Share.full_path(rest)
+	end
+
+	def record_not_found
+		flash[:notice] = "Share doesn't exist"
+		redirect_to root_path
 	end
 
 end
