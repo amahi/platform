@@ -1,5 +1,5 @@
 .settings-table#disks-table
-  table.settings.table
+  table.settings.table style="margin-bottom: 0px;"
     thead
       tr
         #search-types
@@ -21,29 +21,15 @@
               ' | 
               =link_to 100, query: @query, per_page: 100
 
-
-    tbody
+    tbody class="search-table-body"
       - if @results.size > 0
-        - @results.first(5).each do | result |
-          tr class=cycle("odd", "even")
-            td 
-              .search-filename
-                = file_type_to_icon(result[:type], result[:path])
-                = link_to h(result[:title]), path2uri(result[:path])
-              .search-location
-                small = path2location(result[:path])
-                | &nbsp;&mdash;&nbsp;
-                em = number_to_human_size(result[:size])
-                | , 
-                em = h(result[:owner])
-                | &nbsp;&nbsp;
-                = link_to theme_image_tag("icons/open-folder.png"), path2uri(File.dirname result[:path]), :title => t('open'), :class => 'file-icon'
+        = render :partial => 'result', :collection => @results
       - else
         .myhda_empty
           = t 'no_documents_found'
 
 
-/ #search-pagination
+#search-pagination
   .pagination
     - if @page != 1
       span.previous_page =link_to t('previous'), query: @query, page: @page-1, per_page: @rpp
@@ -66,16 +52,3 @@
         =link_to @page+p, query: @query, rel: "next", page: @page+p, per_page: @rpp
         '
       span.next_page =link_to t('next'), query: @query, page: @page+1, per_page: @rpp
-
-nav
-  ul.pagination
-    li.page-item
-      a.page-link href="#"  Previous
-    li.page-item
-      a.page-link href="#"  1
-    li.page-item
-      a.page-link href="#"  2
-    li.page-item
-      a.page-link href="#"  3
-    li.page-item
-      a.page-link href="#"  Next
