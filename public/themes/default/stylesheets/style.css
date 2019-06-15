@@ -1365,6 +1365,19 @@ td.align-top {
     padding: 1px 4px;
     width: auto; }
 
+span.page-link{
+  padding: 0px !important;
+}
+
+span.page-link a{
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+}
+
+span.page-link a:hover{
+  text-decoration: none;
+}
+
 #footer {
   position: relative;
   margin-top: -50px;
