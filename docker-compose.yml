@@ -22,12 +22,12 @@ services:
       - amahi_mysqldb
 
   amahi_web:
-    image: vikasy/amahi_platform
+    image: sukhbir947/amahi_platform
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/amahi
     ports:
-      - "3000:3000"
+      - 3000:3000
     depends_on:
       - amahi_mysqldb
     volumes_from:
@@ -39,4 +39,3 @@ services:
     image: busybox
     volumes:
       - /box
-
