@@ -179,3 +179,35 @@ nav.preftab {
 .tab-link-style{
   border-bottom: 0px !important;
 }
+
+/*App description stylings*/
+
+@media screen and (min-width: 992px) {
+  .app-description-single{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 486px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .app-description-single{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 325px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .app-description-single{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 220px !important;
+  }
+}
