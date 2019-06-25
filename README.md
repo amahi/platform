@@ -29,7 +29,7 @@ make run-tests
 
 #### 3. Write some test-driven code
 
-The tests are in `spec/`. All test files are typically inside `spec/requests` and we use capybara and factory-girl for easy test writing.
+The tests are in `spec/`. All test files are typically inside `spec/requests` and we use [capybara](https://github.com/teamcapybara/capybara) and [factory-bot](https://github.com/thoughtbot/factory_bot_rails) for easy test writing.
 
 #### 4. Test by hand in the browser
 
