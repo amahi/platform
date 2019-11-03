@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 	def create
 		sleep 2 if development?
 		@user = User.new(params_user_create)
-		@user.save 
+		@user.save
 		@users = User.all_users	unless @user.errors.any?
 	end
 
@@ -107,7 +107,7 @@ class UsersController < ApplicationController
 
 	def update_name
 		@user = User.find(params[:id])
-		@user.update_attributes(params_name_update) 
+		@user.update_attributes(params_name_update)
 		render :json => { :status => @user.errors.any? ? :not_acceptable : :ok }
 	end
 
