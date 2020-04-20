@@ -52,7 +52,7 @@ Visit `http://localhost:3000/`, login with the username of `admin` & the passwor
 
 We like to follow a particular [git branching model](http://nvie.com/posts/a-successful-git-branching-model/). You can create and work in your own branch, making your work easier to track.
 
-##### Install for Development Using docker
+### Install for Development using Docker
 If you find it difficult to set up the development environment and all dependencies then you can use docker for an easy installation. Please note that docker and docker-compose must be installed on your system. 
 
 For docker installation refer to the following link: https://docs.docker.com/engine/installation/
@@ -74,9 +74,9 @@ Now run the following commands (Make sure you are at root directory of the code,
 # Clone this code and go to the directory 
 # Run bundle install to install all the required gems 
 docker-compose run amahi_web bundle install
-docker-compose run amahi_web rake db:create
-docker-compose run amahi_web rake db:migrate
-docker-compose run amahi_web rake db:seed
+docker-compose run amahi_web bundle exec rake db:create
+docker-compose run amahi_web bundle exec rake db:migrate
+docker-compose run amahi_web bundle exec rake db:seed
 # As you can see, to run any rails command we have to just prepend the rails commands with "docker-compose run amahi_web" 
 ```
 This should initialize everything required for the app. Now to run the server 
@@ -120,4 +120,3 @@ would improve the platform but are better done as plugins, See the [plugins](doc
 
 This program is Copyright (C) 2007-2013, [Amahi](http://www.amahi.org).
 Licensed under the AGPL. See the license in the [COPYING file](https://github.com/amahi/platform/blob/master/COPYING).
-
