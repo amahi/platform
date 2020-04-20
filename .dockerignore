@@ -1,0 +1,12 @@
+.gitignore
+/.git
+README.md
+TODO.txt
+COPYING
+/tmp
+/log
+/doc
+/.bundle
+.ruby-version
+.travis.yml
+.dockerignore
