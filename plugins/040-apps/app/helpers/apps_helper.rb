@@ -16,10 +16,9 @@
 
 module AppsHelper
 
-  def short_desc(app)
+  def check_desc(app)
     return t('no_description_supplied') unless app.description
-    # truncate if too long
-    truncate(strip_tags(app.description), length: 90)
+    strip_tags(app.description)
   end
 
   def name_with_warning(app)

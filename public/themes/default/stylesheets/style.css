@@ -684,6 +684,15 @@ section#dashboard {
     width: 700px;
     margin-left: 0px;
   }
+
+  .app-description-single{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 610px !important;
+  }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -691,6 +700,15 @@ section#dashboard {
     width: 450px;
     margin-left: 0px;
   }
+
+  .app-description-single{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 430px !important;
+  }
+
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -698,6 +716,15 @@ section#dashboard {
     width: 540px;
     margin-left: 60px;
   }
+
+  .app-description-single{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 312px !important;
+  }
+
 }
 
 .tab-link-style, .active-tab-link-style{

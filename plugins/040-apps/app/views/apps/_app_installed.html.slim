@@ -6,8 +6,8 @@
     tr.hover-style
       td.settings-col1.settings-col1-pad1.apps-col1
         = link_to name_with_warning(app), '#'
-      td.settings-col2.apps-col2.p-1[id="app_ip_#{app.identifier}"]
-        = short_desc(app)
+      td.settings-col2.apps-col2.p-1.app-description-single[id="app_ip_#{app.identifier}"]
+        = check_desc(app)
 
   .settings-stretcher[id="app_info_#{app.identifier}" style="#{display_style}"]
     .app-manage.collapsed-div-style.f-size13.text-secondary
