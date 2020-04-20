@@ -1141,6 +1141,14 @@ td.align-top {
   word-wrap: break-word;
 }
 
+.special-instructions-block{
+  margin-left: 0px;
+}
+
+.auto-width-legend{
+  width: auto !important;
+}
+
 .install-button {
   font-size: 12px;
   font-weight: bold;
