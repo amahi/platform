@@ -57,8 +57,6 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 
-	gem 'puma'
-
 	# DB performance warnings
   gem 'bullet'
 end
@@ -84,6 +82,7 @@ gem 'psych'
 
 group :development, :production do
 	gem 'mysql2'
+	gem 'puma'
 end
 
 group :production do

@@ -1,6 +1,9 @@
 
 bundle:
-	bin/bundle install --without test --path vendor/bundle --binstubs bin/ --deployment
+	bin/bundle config set deployment 'true'
+	bin/bundle config set path 'vendor/bundle'
+	bin/bundle config set without 'test'
+	bin/bundle install
 	(cd vendor/bundle/ruby/ && rm -rf cache) || true
 	(cd vendor/bundle/ruby/gems && rm -rf rails-*/guides */spec */doc */doc-api) || true
 	(cd vendor/bundle/ruby/gems && rm -rf */test */tests) || true
