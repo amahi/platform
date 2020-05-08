@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rake'
 
-gem "rails", '~>5.2.0'
+gem "rails", '~>6.0'
 
 gem "dalli"
 
@@ -49,16 +49,11 @@ group :development do
 
 	gem 'listen'
 
-	# FIXME: for Fedora only
-	if ((open('/etc/issue').grep(/fedora/i).length > 0) rescue false)
-		gem "minitest"
-	end
-
 	gem 'better_errors'
 	gem 'binding_of_caller'
 
 	# DB performance warnings
-  gem 'bullet'
+        gem 'bullet'
 end
 
 gem "rspec-rails", :group => [:test, :development]
@@ -69,8 +64,6 @@ group :test do
   gem 'capybara-screenshot'
   gem 'database_cleaner'
 
-  # FIXME: required in Fedora 18 for some (packaging?) reason
-  # gem 'minitest'
   # required for javascript test in selenium
   gem 'poltergeist'
   gem 'simplecov', :require => false
@@ -96,3 +89,4 @@ end
 # this is somehow needed for nokogiri
 gem 'mini_portile2',  '~> 2.3.0'
 gem "nokogiri", :require => "nokogiri"
+

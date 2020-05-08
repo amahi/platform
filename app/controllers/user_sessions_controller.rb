@@ -91,7 +91,7 @@ class UserSessionsController < ApplicationController
 		if u
 			@user = u
 		else
-			@user = User.new(:login => systemusername, :name => name, :password => pwd, :password_confirmation => conf, :admin => true)
+			@user = User.new(:login => systemusername, :name => name, :password => pwd, :admin => true)
 			@user.save(:validate => false)
 			@user.add_to_users_group
 			@user.add_or_passwd_change_samba_user
