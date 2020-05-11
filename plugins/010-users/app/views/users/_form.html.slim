@@ -1,7 +1,6 @@
 - @user = @user || User.new
 
 = form_for @user, :url => users_engine.users_path,
-    :remote => true, \
     :html => { \
       :data => { \
         :ok_icon_path => theme_image_path('ok.png'), \

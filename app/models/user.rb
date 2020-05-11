@@ -35,20 +35,23 @@ class User < ApplicationRecord
 	end
 
 	validates :login, :presence => true,
-	:format => { :with => /\A[A-Za-z][A-Za-z0-9]+\z/ },
-	:length => { :in => 3..32 },
-	:uniqueness => { :case_sensitive => false },
-	:user_not_exist_in_system => {:message => 'already exists in system', :on => :create}
+		:format => { :with => /\A[A-Za-z][A-Za-z0-9]+\z/ },
+		:length => { :in => 3..32 },
+		:uniqueness => { :case_sensitive => false },
+		:user_not_exist_in_system => {:message => 'already exists in system', :on => :create}
 
 	# this is a very coarse check on the public key! sshd(8) explains each key can be up to 8k?
 	validates_length_of :public_key, :in => 300..8192, :allow_nil => true
 
 	validates :name, :presence => true
 
-	validates_uniqueness_of :pin, :allow_nil => true
-	validate :validate_pin,  unless: Proc.new { |user| user.pin.blank? }
+	validates_uniqueness_of :pin, allow_nil: true, case_sensitive: false
+	validates :pin, confirmation: true
+  # validates :pin_confirmation, presence: true
 
 	#NOTE: validation for password and password_confirmation is set by authlogic
+
+  validates :password, confirmation: true
 
 	before_create :before_create_hook
 	before_save :before_save_hook
