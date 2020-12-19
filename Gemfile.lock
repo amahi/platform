@@ -174,7 +174,7 @@ GEM
     popper_js (1.12.9)
     psych (3.0.2)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (3.12.6)
     rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
