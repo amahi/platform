@@ -45,9 +45,9 @@ class SystemUtils
 			# child
 			environment.each_pair { |k,v| ENV[k] =v }
 			if script[0..1] =~ /^#!/
-				exec("#{f.path} #{name} 2>&1")
+				exec("#{f.path} '#{name}' 2>&1")
 			else
-				exec("bash #{f.path} #{name} 2>&1")
+				exec("bash #{f.path} '#{name}' 2>&1")
 			end
 		else
 			# parent
