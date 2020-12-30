@@ -157,7 +157,7 @@ GEM
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
     mini_mime (1.0.0)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.4.0)
     mini_racer (0.1.15)
       libv8 (~> 6.3)
     minitest (5.11.3)
@@ -165,8 +165,8 @@ GEM
     mysql2 (0.5.1)
     netrc (0.11.0)
     nio4r (2.3.1)
-    nokogiri (1.8.2)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
@@ -310,7 +310,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   listen
-  mini_portile2 (~> 2.3.0)
+  mini_portile2 (~> 2.4.0)
   mini_racer
   mysql2
   nokogiri
