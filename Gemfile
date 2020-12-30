@@ -95,5 +95,5 @@ group :development, :test do
 end
 
 # this is somehow needed for nokogiri
-gem 'mini_portile2',  '~> 2.3.0'
+gem 'mini_portile2',  '~> 2.4.0'
 gem "nokogiri", :require => "nokogiri"
