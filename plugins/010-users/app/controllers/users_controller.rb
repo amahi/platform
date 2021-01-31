@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 		user = User.find params[:id]
 		name = user.name
 		if can_i_edit_details?(user)
-			if(params[:name].strip.length !=0)
+			if(params[:name].strip.length !=0 && (/[^a-zA-Z]+/ =~ params[:name]) == nil)
 				user.name = params[:name]
 				user.save!
 				name = user.name

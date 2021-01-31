@@ -19,7 +19,7 @@
           .controls= f.text_field :login, :size => 16, :maxlength => 20, :class=>'form-control',:placeholder => t('username')
 
         .control-group.form-group
-          .controls= f.text_field :name, :size => 16, :maxlength => 64, :class=>'form-control', :placeholder => t('full_name')
+          .controls= f.text_field :name, :size => 16, :maxlength => 64, :class=>'form-control',:pattern => "[a-zA-Z]+", :placeholder => t('full_name')
 
         .control-group.form-group
           .controls= f.password_field :password, :size => 16, :maxlength => 24, :class=>'form-control',:placeholder => t('password')
