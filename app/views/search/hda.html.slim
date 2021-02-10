@@ -26,26 +26,28 @@
         .myhda_empty
           = t 'no_documents_found'
 
-  #search-pagination
-    .pagination
+  nav
+    ul.pagination
       - if @page != 1
-        span.previous_page =link_to t('previous'), query: @query, page: @page-1, per_page: @rpp
-        '
+        li.page-item
+          span.page-link = link_to t('previous'), query: @query, page: @page-1, per_page: @rpp
+
       - if @page > 5
-        =link_to "1", query: @query, page: 1, per_page: @rpp
-        '
-        =link_to "2", query: @query, page: 2, per_page: @rpp
-        '
-        ' ..
-      -(1..4).each do |p|
-        - page = @page-(5-p)
-        - unless page < 1
-          =link_to page, query: @query, page: page, per_page: @rpp
-          '
-      em.current = @page
+        span.page-link = link_to "1", query: @query, page: 1, per_page: @rpp
+        span.page-link = link_to "2", query: @query, page: 2, per_page: @rpp
+
+        em.current.page-link = ".."
+
+      - else
+        -(1..4).each do |p|
+            - page = @page-(5-p)
+            - unless page < 1
+              span.page-link = link_to page, query: @query, page: page, per_page: @rpp
+
+      em.current.page-link = @page
       - unless @results.size < @rpp
-        '
         -(1..6).each do |p|
-          =link_to @page+p, query: @query, rel: "next", page: @page+p, per_page: @rpp
-          '
-        span.next_page =link_to t('next'), query: @query, page: @page+1, per_page: @rpp
+          span.page-link = link_to @page+p, query: @query, rel: "next", page: @page+p, per_page: @rpp
+
+        li.page-item
+          span.page-link = link_to t('next'), query: @query, page: @page+1, per_page: @rpp
