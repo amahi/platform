@@ -1,92 +1,58 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rake'
+ruby '2.7.2'
 
-gem "rails", '~>6.0'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+# Use mysql as the database for Active Record
+gem 'mysql2', '~> 0.5'
+# Use Puma as the app server
+gem 'puma', '~> 5.0'
+# Use SCSS for stylesheets
+gem 'sass-rails', '>= 6'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 5.0'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.7'
+# Use Active Model has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
-gem "dalli"
-
-gem "yettings"
-
-gem 'sass-rails'
-gem 'coffee-rails'
-
-gem 'uglifier'
-
-gem 'rest-client'
+gem 'yettings'
 
 gem 'activeresource'
-gem 'actionpack-action_caching'
-gem 'actionview'
-gem 'rails-observers'
 
-gem 'jbuilder'
-gem 'ya2yaml'
-
-gem 'bootstrap', '~> 4.1.1'
-gem 'popper_js', '~> 1.12.9'
-
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'docker-api'
 
 gem 'slim'
 
-gem 'scrypt' # required for authlogic even though it's not used
+gem 'coffee-rails'
+
 gem 'authlogic'
 
 gem 'bcrypt'
 
-gem 'unicorn'
-
 gem 'rb-readline', require: false
 
-gem 'docker-api' # required to create and manage docker containers
-
-group :development do
-	# turn this on to enable reporting on best practices with:
-	#	rails_best_practices -f html .
-	# gem 'rails_best_practices'
-
-	gem 'listen'
-
-	gem 'better_errors'
-	gem 'binding_of_caller'
-
-	# DB performance warnings
-        gem 'bullet'
-end
-
-gem "rspec-rails", :group => [:test, :development]
-
-group :test do
-  gem "factory_bot_rails"
-  gem "capybara"
-  gem 'capybara-screenshot'
-  gem 'database_cleaner'
-
-  # required for javascript test in selenium
-  gem 'poltergeist'
-  gem 'simplecov', :require => false
-end
-
-# FIXME - temporary work-around for Fedora 19
-# see https://bugzilla.redhat.com/show_bug.cgi?id=979133
-gem 'psych'
-
-group :development, :production do
-	gem 'mysql2'
-	gem 'puma'
-end
-
-group :production do
-	gem 'mini_racer'
-end
+gem 'bootstrap'
 
 group :development, :test do
-	gem 'sqlite3'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-# this is somehow needed for nokogiri
-gem 'mini_portile2',  '~> 2.3.0'
-gem "nokogiri", :require => "nokogiri"
+group :development do
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 4.1.0'
+  # Display performance information such as SQL time and flame graphs for each request in your browser.
+  # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
+  gem 'rack-mini-profiler', '~> 2.0'
+  gem 'listen', '~> 3.3'
+  gem 'foreman'
+  gem 'bullet'
+end
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

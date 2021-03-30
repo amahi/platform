@@ -2,24 +2,24 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2018_06_06_185129) do
 
-  create_table "app_dependencies", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "app_dependencies", charset: "latin1", force: :cascade do |t|
     t.integer "app_id"
     t.integer "dependency_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "apps", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "apps", charset: "latin1", force: :cascade do |t|
     t.boolean "installed"
     t.string "name"
     t.string "screenshot_url"
@@ -44,32 +44,32 @@ ActiveRecord::Schema.define(version: 2018_06_06_185129) do
     t.integer "plugin_id"
   end
 
-  create_table "cap_accesses", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "cap_accesses", charset: "latin1", force: :cascade do |t|
     t.integer "user_id"
     t.integer "share_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "cap_writers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "cap_writers", charset: "latin1", force: :cascade do |t|
     t.integer "user_id"
     t.integer "share_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "dbs", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "dbs", charset: "latin1", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "dns_aliases", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "dns_aliases", charset: "latin1", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "address", default: "", null: false
   end
 
-  create_table "firewalls", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "firewalls", charset: "latin1", force: :cascade do |t|
     t.string "kind", default: ""
     t.boolean "state", default: true
     t.string "ip", default: ""
@@ -82,20 +82,20 @@ ActiveRecord::Schema.define(version: 2018_06_06_185129) do
     t.datetime "updated_at"
   end
 
-  create_table "hosts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "hosts", charset: "latin1", force: :cascade do |t|
     t.string "name", null: false
     t.string "mac", default: ""
     t.string "address"
   end
 
-  create_table "plugins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "plugins", charset: "latin1", force: :cascade do |t|
     t.string "name"
     t.string "path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "servers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "servers", charset: "latin1", force: :cascade do |t|
     t.string "name", null: false
     t.string "comment", default: ""
     t.string "pidfile"
@@ -107,13 +107,13 @@ ActiveRecord::Schema.define(version: 2018_06_06_185129) do
     t.datetime "updated_at"
   end
 
-  create_table "settings", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "settings", charset: "latin1", force: :cascade do |t|
     t.string "name"
     t.string "value"
     t.string "kind", default: "general"
   end
 
-  create_table "shares", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "shares", charset: "latin1", force: :cascade do |t|
     t.string "name"
     t.string "path"
     t.boolean "rdonly"
@@ -128,12 +128,12 @@ ActiveRecord::Schema.define(version: 2018_06_06_185129) do
     t.datetime "updated_at"
   end
 
-  create_table "themes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "themes", charset: "latin1", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "css", default: "", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", charset: "latin1", force: :cascade do |t|
     t.string "login", null: false
     t.string "name"
     t.string "crypted_password"
@@ -152,21 +152,21 @@ ActiveRecord::Schema.define(version: 2018_06_06_185129) do
     t.text "pin"
   end
 
-  create_table "webapp_accesses", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "webapp_accesses", charset: "latin1", force: :cascade do |t|
     t.integer "webapp_id"
     t.string "access_to"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "webapp_aliases", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "webapp_aliases", charset: "latin1", force: :cascade do |t|
     t.string "name"
     t.integer "webapp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "webapps", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "webapps", charset: "latin1", force: :cascade do |t|
     t.string "name", null: false
     t.string "path", default: ""
     t.string "kind", default: ""

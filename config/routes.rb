@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   match 'search/video' => 'search#video', :as => :search_video, via: [:get,:post]
 
   root :to => 'front#index'
-  
+
   match 'aliases/new(.:format)' => 'aliases#new', via: [:get]
   match 'aliases(.:format)' => 'aliases#index', via: [:get]
   match 'aliases/:id(.:format)' => 'aliases#show', via: [:get]
@@ -79,7 +79,7 @@ Rails.application.routes.draw do
   match 'server/refresh(/:id)' => 'server#refresh', via: [:get]
   match 'server/toggle_monitored(/:id)' => 'server#toggle_monitored', via: [:get]
   match 'server/toggle_start_at_boot(/:id)' => 'server#toggle_start_at_boot', via: [:get]
-  
+
   match 'share/update_name(/:id)' => 'share#update_name', via: [:get]
   match 'share/update_extras(/:id)' => 'share#update_extras', via: [:get]
   match 'share/update_path(/:id)' => 'share#update_path', via: [:get]

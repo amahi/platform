@@ -15,9 +15,6 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     - amahi_plugins.each do |p|
       = stylesheet_link_tag p[:class].underscore
 
-    /[ if lt IE 9 ]
-      = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
-
     = javascript_tag {render 'shared/js_vars'}
     = javascript_include_tag 'application'
     - amahi_plugins.each do |p|

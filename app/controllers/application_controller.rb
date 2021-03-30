@@ -18,7 +18,6 @@
 # Likewise, all the methods added will be available for all controllers.
 
 require 'set_theme'
-require 'tab'
 
 class ApplicationController < ActionController::Base
 	require 'ipaddr'

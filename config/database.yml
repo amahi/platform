@@ -1,55 +1,63 @@
-# config file. to get your changes ignored, do this
+# MySQL. Versions 5.5.8 and up are supported.
 #
-#   git update-index --assume-unchanged  config/database.yml
+# Install the MySQL driver
+#   gem install mysql2
 #
-# however, a git commit . or a git commit config/database.yml, will still try to commit it
+# Ensure the MySQL gem is defined in your Gemfile
+#   gem 'mysql2'
 #
+# And be sure to use new-style password hashing:
+#   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
-development:
+default: &default
   adapter: mysql2
-  encoding: utf8
-  pool: 5
-  database: hda_development
-  username: root
-  password: hda
-  host: localhost
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   socket: <%= [
      '/var/lib/mysql/mysql.sock', # Fedora.
      '/var/run/mysqld/mysqld.sock', # Ubuntu, Debian.
      '/tmp/mysqld.sock' # Mac OS X
     ].select { |f| File.exist? f }.first %>
+
+development:
+  <<: *default
+  database: hda_development
+  username: root
+  password:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
+  <<: *default
   adapter: sqlite3
   database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
 
-system:
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  database: hda_development
-  username: amahihda
-  password: AmahiHDARulez
-  host: localhost
-  socket: <%= [
-     '/var/lib/mysql/mysql.sock', # Fedora.
-     '/var/run/mysqld/mysqld.sock', # Ubuntu, Debian.
-     '/tmp/mysqld.sock' # Mac OS X
-    ].select { |f| File.exist? f }.first %>
-
+# As with config/credentials.yml, you never want to store sensitive information,
+# like your database password, in your source code. If your source code is
+# ever seen by anyone, they now have access to your database.
+#
+# Instead, provide the password or a full connection URL as an environment
+# variable when you boot the app. For example:
+#
+#   DATABASE_URL="mysql2://myuser:mypass@localhost/somedatabase"
+#
+# If the connection URL is provided in the special DATABASE_URL environment
+# variable, Rails will automatically merge its configuration values on top of
+# the values provided in this file. Alternatively, you can specify a connection
+# URL environment variable explicitly:
+#
+#   production:
+#     url: <%= ENV['MY_APP_DATABASE_URL'] %>
+#
+# Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
+# for a full overview on how database connection configuration can be specified.
+#
 production:
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
+  <<: *default
   database: hda_production
   username: amahihda
   password: AmahiHDARulez
-  host: localhost
   socket: <%= [
      '/var/lib/mysql/mysql.sock', # Fedora.
      '/var/run/mysqld/mysqld.sock', # Ubuntu, Debian.

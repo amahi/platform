@@ -1,4 +1,11 @@
 
+foreman:
+	PORT=3000 bundle exec foreman start -f Procfile.dev
+
+rr:
+	bundle exec rails routes > /tmp/rr
+	less /tmp/rr
+
 bundle:
 	bin/bundle config set deployment 'true'
 	bin/bundle config set path 'vendor/bundle'

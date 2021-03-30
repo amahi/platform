@@ -1,3 +1,0 @@
-= Amahi plugin <your plugin name>
-
-<your plugin name> for the Amahi platform

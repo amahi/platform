@@ -37,8 +37,10 @@ class User < ApplicationRecord
 	validates :login, :presence => true,
 		:format => { :with => /\A[A-Za-z][A-Za-z0-9]+\z/ },
 		:length => { :in => 3..32 },
-		:uniqueness => { :case_sensitive => false },
-		:user_not_exist_in_system => {:message => 'already exists in system', :on => :create}
+		:uniqueness => { :case_sensitive => false }
+
+	# FIXME-cpg: the validation above used to have this, which does not
+	# :user_not_exist_in_system => {:message => 'already exists in system', :on => :create}
 
 	# this is a very coarse check on the public key! sshd(8) explains each key can be up to 8k?
 	validates_length_of :public_key, :in => 300..8192, :allow_nil => true

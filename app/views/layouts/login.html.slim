@@ -8,8 +8,6 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     title= @title || "Amahi Server #{t('log_in')}"
     = stylesheet_link_tag "login"
     = csrf_meta_tags
-  /[ if lt IE 9 ]
-    = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
 
   body.login
     = yield
