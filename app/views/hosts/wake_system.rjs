@@ -1,1 +1,0 @@
-page["wake-icon-#{@host.id}"].replace_html theme_image_tag("ok")

@@ -575,7 +575,7 @@ section#dashboard {
 }
 
 .app-card{
-  max-width: 400px; 
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -605,9 +605,9 @@ section#dashboard {
     background: url(../images/dashboard.png) no-repeat;
     width: 400px;
     height: 235px;
-    margin: 35px auto 0; 
+    margin: 35px auto 0;
     float: left;
-}    
+}
 
 #latest_news {
   margin-top: 25px;
@@ -669,8 +669,8 @@ section#dashboard {
 
 .app-item-card{
   width: 180px;
-  padding: 1rem; 
-  float: left; 
+  padding: 1rem;
+  float: left;
   height: 12rem;
 }
 
@@ -744,7 +744,7 @@ section#dashboard {
 }
 
 .tab-link-style:hover{
-  font-size: 13px;   
+  font-size: 13px;
   background: #dedede1c !important;
 }
 
@@ -780,8 +780,8 @@ section#dashboard {
 .subtab-link:hover{
   background: #f7f7f7;
   border: 1px solid #333;
-  text-decoration: none; 
-  color: #333;  
+  text-decoration: none;
+  color: #333;
   border: 1px solid #d8d8d8;
   border-bottom: 0px;
   border-radius: 5px 5px 0px 0px;
@@ -970,7 +970,7 @@ thead.apptable td:last-child, .fw-rules-col3 {
   padding: 0 30px 0 0; }
 
 .settings-col1 {
-  padding: 6px 6px 6px 30px;  
+  padding: 6px 6px 6px 30px;
   width: 30%;
   -moz-border-radius: 5px 0 0 0;
   -webkit-border-radius: 5px 0 0 0;
@@ -1717,11 +1717,11 @@ textarea {
   color: #505050 !important;
 }
 
-.cancel-btn-style:hover{  
+.cancel-btn-style:hover{
   background: white;
   border: 0px;
   color: #17a2b8 !important;
-  font-size: 13px;  
+  font-size: 13px;
   text-decoration: underline !important;
 }
 
@@ -1731,9 +1731,9 @@ textarea {
 }
 
 .setup-subtab-container{
-  padding: 20px 10px 8px 30px; 
-  background: #dedede1c; 
-  border: 1px solid #d8d8d8; 
+  padding: 20px 10px 8px 30px;
+  background: #dedede1c;
+  border: 1px solid #d8d8d8;
   border-top-width: 0.5px;
   padding-bottom: 0px;
 }
@@ -1764,7 +1764,7 @@ textarea {
 }
 
 #preferences{
-  background: #1111111a;  
+  background: #1111111a;
 }
 
 .input-field-style{
@@ -1773,8 +1773,8 @@ textarea {
 }
 
 #new-user-form{
-  background: white; 
-  margin-top: 8px; 
+  background: white;
+  margin-top: 8px;
 }
 
 span.progress-status{

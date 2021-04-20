@@ -4,9 +4,9 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     meta charset="utf-8"
     title = full_page_title
 
-    = stylesheet_link_tag 'application'
+    = javascript_tag 'application'
 
-    - if theme.name != "default" and theme.disable_inheritance == false
+    - if theme.path != "default" and theme.disable_inheritance == false
       = stylesheet_link_tag(theme_stylesheet_path('style', theme.default))
       = stylesheet_link_tag(theme_stylesheet_path('rtl', theme.default)) if rtl?
 
@@ -16,7 +16,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
       = stylesheet_link_tag p[:class].underscore
 
     = javascript_tag {render 'shared/js_vars'}
-    = javascript_include_tag 'application'
+    = javascript_tag 'application'
     - amahi_plugins.each do |p|
       = javascript_include_tag p[:class].underscore
     = javascript_tag {'$.fx.off = true;' if Rails.env.test?}
@@ -27,6 +27,7 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"
 
     = csrf_meta_tags
+    = csp_meta_tag
 
   body.basic
 

@@ -17,7 +17,7 @@ bundle:
 	(cd vendor/bundle/ruby/ && find . \( -name '*.[coa]' -or -name '*.cc' -or -name '*.md' -or -name '.git' \) -exec rm -rf {} \;) || true
 
 assets:
-	RAILS_ENV=production bin/rails assets:precompile
+	bin/rails assets:precompile RAILS_ENV=production
 
 distclean: clean
 	rm -rf vendor/bundle

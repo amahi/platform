@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use mysql as the database for Active Record
@@ -11,8 +9,6 @@ gem 'mysql2', '~> 0.5'
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -34,9 +30,17 @@ gem 'authlogic'
 
 gem 'bcrypt'
 
+gem "execjs"
+gem 'bootstrap', '~> 5.0.0.beta2'
+
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+
 gem 'rb-readline', require: false
 
-gem 'bootstrap'
+gem 'sprockets'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,6 +56,10 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'foreman'
   gem 'bullet'
+end
+
+group :production do
+  gem 'mini_racer'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

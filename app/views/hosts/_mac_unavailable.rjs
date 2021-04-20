@@ -1,3 +1,0 @@
-page[:mac_messages].replace_html theme_image_tag("stop") + " " + t('mac_already_allocated')
-page.show 'mac_messages'
-page[:host_create_button].disabled = true

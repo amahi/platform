@@ -4,17 +4,16 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     meta charset="utf-8"
     title = full_page_title
 
-    = stylesheet_link_tag 'application'
+    = javascript_tag {render 'shared/js_vars'}
+    = stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-    - if theme.name != "default" and theme.disable_inheritance == false
+    - if theme.path != "default" and theme.disable_inheritance == false
       = stylesheet_link_tag(theme_stylesheet_path('style', theme.default))
       = stylesheet_link_tag(theme_stylesheet_path('rtl', theme.default)) if rtl?
 
     = theme_stylesheet_link_tag 'style'
     = theme_stylesheet_link_tag('rtl') if rtl?
-
-    = javascript_tag {render 'shared/js_vars'}
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
     = javascript_tag {'$.fx.off = true;' if Rails.env.test?}
     - for header in theme.headers do

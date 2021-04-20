@@ -7,8 +7,8 @@
         th.pd-l-12
           = t 'temperature'
           | &nbsp;(
-          = link_to "F", '#', :onclick=> '$("#disks-table .temperature").toggle()', class: 'temperature', style: 'display:none'
-          = link_to "C", '#', :onclick=> '$("#disks-table .temperature").toggle()', class: 'temperature'
+          = link_to "F", '#', :onclick=> '$("#disks-table .temperature").toggle(); return false;', class: 'temperature', style: 'display:none'
+          = link_to "C", '#', :onclick=> '$("#disks-table .temperature").toggle(); return false;', class: 'temperature'
           | )
     tbody
       - @disks.each do | disk |

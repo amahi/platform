@@ -1,3 +1,0 @@
-page[:host_messages].replace_html theme_image_tag("ok") + " " + t('name_looks_good')
-page.show 'host_messages'
-page[:host_address].disabled = false

@@ -1,22 +1,19 @@
 nav.navbar.navbar-expand-md.bg-dark.navbar-inverse
-  .container
-    a.nav-item.nav-link.text-white.nav_hover href="/"  
+  .container-fluid
+    a.nav-item.nav-link.text-white.nav_hover href="/"
      = t('home')
 
-    = render 'layouts/searchform'    
+    = render 'layouts/searchform'
 
-    #amahi-nav.collapse.navbar-collapse.justify-content-end    
-      - if current_user_is_admin?
-        .navbar-nav
+    #amahi-nav.collapse.navbar-collapse.justify-content-end
+      .navbar-nav
+        - if current_user_is_admin?
           a.nav-item.nav-link.text-white.text-center.nav_hover href=users_engine.root_path
             = t('setup')
-          a.nav-item.nav-link.text-white.text-center.nav_hover href="https://wiki.amahi.org/index.php/Help" target='_blank'  
+          a.nav-item.nav-link.text-white.text-center.nav_hover href="https://wiki.amahi.org/index.php/Help" target='_blank'
             = t('help')
           a.nav-item.nav-link.text-white.text-center.nav_hover href=apps_engine.root_path
             = t('apps')
-      - else
-        .navbar-nav
-          a.nav-item.nav-link.text-white.text-center.nav_hover href="https://wiki.amahi.org/index.php/Help" target='_blank'  
+        - else
+          a.nav-item.nav-link.text-white.text-center.nav_hover href="https://wiki.amahi.org/index.php/Help" target='_blank'
             = t('help')
-
- 

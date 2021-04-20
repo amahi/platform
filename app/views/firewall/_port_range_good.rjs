@@ -1,3 +1,0 @@
-page[:range_messages].replace_html msg_good(message)
-page[:range_messages].show 
-page[:firewall_create_button].disabled = false

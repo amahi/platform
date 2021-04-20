@@ -1,5 +1,0 @@
-page['select-message'].hide
-page.select(".fw-selection").each do |item|
-        page.send 'hide', item
-end
-page.visual_effect :appear, "url-filter"

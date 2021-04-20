@@ -1,3 +1,0 @@
-page[:firewall_create_button].disabled = true
-page[:url_messages].replace_html msg_bad(message)
-page[:url_messages].show 

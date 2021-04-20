@@ -25,6 +25,6 @@
 yarn-debug.log*
 .yarn-integrity
 
-db/test.sqlite3
-
 /vendor/bundle
+
+/db/test.sqlite3
