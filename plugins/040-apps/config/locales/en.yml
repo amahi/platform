@@ -3,3 +3,6 @@
 'en':
   # put here your string symbols and translations
   hello_world: Hello World! (yay for the Amahi plugins!)
+  installing_application: Installing Application
+  uninstalling_application: Uninstalling Application
+  clear: Clear

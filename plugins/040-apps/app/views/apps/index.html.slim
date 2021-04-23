@@ -2,6 +2,24 @@
   .col-xs-6.col-sm-6.col-md-6.col-lg-6.get-apps = link_to 'Get apps', 'https://www.amahi.org/apps', :title => 'Amahi App Store', :target => '_blank', :id => 'btn-get-apps'
   .col-xs-6.col-sm-6.col-md-6.col-lg-6.install-apps = link_to 'Install here!', apps_engine.root_path, :title => 'Refresh', :id => 'btn-install-apps'
 
+- progress = Rails.cache.read("progress")
+- type = Rails.cache.read("type")
+- unless (progress.blank? || (progress == 0 && type == "uninstall") || (progress == 100 && type == "install") || (progress<0) || (progress>100))
+  - app_id = Rails.cache.read("app-id")
+  - app = AmahiApi::App.find(app_id)
+  - status = type == "install" ? t('installing_application') : t('uninstalling_application')  
+  - progress = (100-progress) if type == "uninstall"
+
+  .container.app-installing
+    span.installation-status class="app_name_#{app_id}"
+      = status + ": " + app.name
+
+    // = button_tag t('clear'), :type => 'button', :class => 'btnn btn-create btn btn-info float-right mb-1', :id => "clear-app-installation",  :data => { :related => "#new-user-step1" }
+
+    .progress.progress-bar-div.mt-2 style="width: 100%; display: inline-block; background: #c7c7c7;"
+      .progress-bar.progress-bar-striped.progress-bar-animated.bg-info.global-progress aria-valuemax="100" \aria-valuemin="0" aria-valuenow="0" role="progressbar" style="width: #{progress}%; height: 100%;"
+        = "#{progress}%"
+
 #apps-table
   .settings-table
     - if @apps.any?

@@ -22,6 +22,11 @@ Apps =
 			selector: ".in_dashboard_checkbox"
 			parentSelector: "span:first"
 
+		if document.getElementsByClassName('app-installing')[0]
+  			element = document.getElementsByClassName('installation-status')[0]
+  			finder = element.classList[1].substr(9)
+  			_this.trace_global_progress(finder)
+
 	app: (finder) ->
 		(if typeof (finder) is "string" then @app_by_identifier(finder) else @app_by_element(finder))
 
@@ -104,6 +109,22 @@ Apps =
 		message.innerHTML = content
 		@app(finder).get(0).querySelector(".spinner").style.display = "none"
 
+	global_update_progress:(progress) ->
+		element = document.getElementsByClassName('global-progress')[0]
+		element.style.width = "#{progress}%"
+		element.innerHTML = "#{progress}%"
+
+	wait_and_hide_global_progress:() ->
+		setTimeout (->
+			element = document.getElementsByClassName('app-installing')[0]
+			element.style.display = "none"
+			return
+		), 2000
+
+	hide_global_progress:() ->
+		element = document.getElementsByClassName('app-installing')[0]
+		element.style.display = "none"
+
 	trace_progress: (finder) ->
 		_this = this
 		$.ajax
@@ -165,6 +186,33 @@ Apps =
 
 				else
 					setTimeout (-> Apps.trace_progress(finder)), 2000
+
+	trace_global_progress: (finder) ->
+		_this = this
+		$.ajax
+			url: _this.app(finder).data("progressPath")
+			success: (data) ->
+				progress = data["progress"]
+
+				timeout_t = 0
+
+				if data["type"].indexOf("uninstall") != -1
+					progress = 100 - progress
+					if progress == 0
+						timeout_t = 2000
+				else
+					if progress == 100
+						timeout_t = 2000
+
+				_this.global_update_progress(progress)
+
+				if progress >=0 && progress <=100
+					if (progress == 0 && data["type"] == "uninstall") || (progress == 100 && data["type"] == "install")
+						_this.wait_and_hide_global_progress()
+					else
+						setTimeout (-> Apps.trace_global_progress(finder)), 2000
+				else
+					_this.hide_global_progress()
 
 $(document).ready ->
 	Apps.initialize()
