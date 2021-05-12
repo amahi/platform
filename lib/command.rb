@@ -20,7 +20,6 @@ require 'yettings'
 class Command
 
 	CMD_FIFO = "/var/run/hda-ctl/notify"
-	HDACTL_PID = "/var/run/hda-ctl.pid"
 
 	@cmd = []
 
@@ -64,16 +63,12 @@ class Command
 	end
 
 	private
+
 	def running?
-		begin
-			f = File.open HDACTL_PID
-			s = f.readline
-			f.close
-			s.chomp!
-			File.exists?("/proc/#{s}") ? true : false
-		rescue
-			false
-		end
+                # linux-specific
+                mapping = Dir['/proc/[0-9]*/comm'].map { |comm| [comm.split('/')[2], File.read(comm).rstrip] }.to_h
+                pl = mapping.select { |_, prog| prog['hda-ctl'] }
+                pl.size == 2
 	end
 
 end
