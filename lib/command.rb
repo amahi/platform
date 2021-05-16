@@ -68,7 +68,7 @@ class Command
                 # linux-specific
                 mapping = Dir['/proc/[0-9]*/comm'].map { |comm| [comm.split('/')[2], (File.read(comm).rstrip rescue '')] }.to_h
                 pl = mapping.select { |_, prog| prog['hda-ctl'] }
-                pl.size == 2
+                pl.size > 0
 	end
 
 end

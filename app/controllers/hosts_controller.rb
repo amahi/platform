@@ -91,7 +91,7 @@ class HostsController < ApplicationController
 	  @domain = Setting.get 'domain'
 
 	  respond_to do |format|
-	    if @host.update_attributes(params[:host])
+	    if @host.update_columns(params[:host])
 	      flash[:notice] = 'Host was successfully updated.'
 	      format.html { redirect_to(@host) }
 	      format.xml  { head :ok }

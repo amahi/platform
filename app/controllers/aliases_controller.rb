@@ -91,7 +91,7 @@ class AliasesController < ApplicationController
 	  @alias = DnsAlias.find(params[:id])
 
 	  respond_to do |format|
-	    if @alias.update_attributes(params_dns_alias) 
+	    if @alias.update_columns(params_dns_alias)
 	      flash[:notice] = 'Alias was successfully updated.'
 	      format.html { redirect_to(@alias) }
 	      format.xml  { head :ok }

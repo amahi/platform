@@ -47,7 +47,7 @@ class Setting < ApplicationRecord
 		end
 
 		def set(name, value, kind=GENERAL)
-			self.where(:name => name).first_or_create.update_attributes(value: value, kind: kind)
+			self.where(:name => name).first_or_create.update_columns(value: value, kind: kind)
 		end
 
 		def get_kind(kind, name)

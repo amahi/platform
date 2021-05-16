@@ -232,7 +232,7 @@ class Share < ApplicationRecord
 		# format with coma is set in before save
 
 		unless params[:path].blank?
-			self.update_attributes(params)
+			self.update_columns(params)
 		else
 			name = params[:tags].downcase
 			if self.tags.include?(name)
@@ -251,7 +251,7 @@ class Share < ApplicationRecord
 	end
 
 	def update_extras!(params)
-		self.update_attributes(params)
+		self.update_columns(params)
 	end
 
 	# make all the files in the share globally writeable
