@@ -14,7 +14,7 @@
 # License along with this program; if not, write to the Amahi
 # team at http://www.amahi.org/ under "Contact Us."
 
-require 'uri'
+require 'cgi'
 require 'net/http'
 
 # Methods added to this helper will be available to all templates in the application.
@@ -135,7 +135,7 @@ module ApplicationHelper
 	end
 
 	def path2uri(name)
-		name = URI.escape name
+		name = CGI.escape name
 		is_a_mac? ? "smb://hda/#{name}" : "file://///hda/#{name}"
 	end
 
