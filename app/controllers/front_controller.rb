@@ -22,6 +22,5 @@ class FrontController < ApplicationController
 	def index
 		@page_title = t('dashboard')
 		@apps = App.in_dashboard
-		@news = [] # FIXME-cpg: disabling news for now
 	end
 end

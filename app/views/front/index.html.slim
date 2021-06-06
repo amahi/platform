@@ -11,16 +11,6 @@
         #install-apps
           = link_to '', apps_engine.root_path, title: t('install_apps'), id: 'install-apps'
 
-  - if @news
-    container
-      section#latest_news.card.text-center.float-right.col-.d-none.d-md-block
-        .card-header style="font-weight: bold; color: #222; font-size: 14px; background: #cacaca"
-          = t('latest_news')
-        ul.list-group.list-group-flush
-          = render partial: 'news', collection: @news
-        #more_news.card-footer.text-muted style="border-top: 0; background: #c7c7c7"
-          = link_to(t("more_news"), "http://blog.amahi.org/")
-
 javascript:
   function open_app(url){
     window.open(url,'_blank');
