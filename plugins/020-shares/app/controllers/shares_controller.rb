@@ -30,6 +30,7 @@ class SharesController < ApplicationController
 	def create
 		sleep 2 if development?
 		@share = Share.new(params_create_share)
+		@share.path = "./.hda" + @share.path  if development?
 		@share.save
 		get_shares unless @share.errors.any?
 	end
@@ -91,14 +92,14 @@ class SharesController < ApplicationController
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
-	def update_tags		
+	def update_tags
 		sleep 2 if development?
 		@saved = @share.update_tags!(params_update_tags_path)
 	end
 
 	def update_path
 		sleep 2 if development?
-		@saved = @share.update_tags!(params_update_tags_path)           
+		@saved = @share.update_tags!(params_update_tags_path)
 		render :json => { :status => @saved ? :ok : :not_acceptable }
 	end
 
@@ -175,7 +176,7 @@ class SharesController < ApplicationController
 	    unless params[:share].blank?
 	    	params.require(:share).permit([:path,:tags])
 	    else
-	    	params.permit([:name])	
+	    	params.permit([:name])
 	    end
 	end
 

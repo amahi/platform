@@ -271,6 +271,7 @@ class Share < ApplicationRecord
 		return unless self.path_changed?
 		return if self.path.nil? or self.path.blank?
 		user = User.admins.first.login
+		system("mkdir -p \"#{self.path}\"") if Rails.env == 'development'
 		c = Command.new
 		c.submit("rmdir \"#{self.path_was}\"") unless self.path_was.blank?
 		c.submit("mkdir -p \"#{self.path}\"")
