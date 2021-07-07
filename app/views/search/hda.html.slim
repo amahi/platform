@@ -1,51 +1,54 @@
-#search-page
-  #search-types
-    ul#search-menu
-      li[class="#{active 'hda'}"]
-        = action_name == "hda" ? t('files') : link_to(t('files'), :action => :hda, :query => @query, per_page: @rpp)
-      li[class="#{active 'images'}"]
-        = action_name == "images" ? t('images') : link_to(t('images'), :action => :images, :query => @query, per_page: @rpp)
-      li[class="#{active 'audio'}"]
-        = action_name == "audio" ? t('audio') : link_to(t('audio'), :action => :audio, :query => @query, per_page: @rpp)
-      li[class="#{active 'video'}"]
-        = action_name == "video" ? t('video') : link_to(t('video'), :action => :video, :query => @query, per_page: @rpp)
-      li.results
-        = t('results_displayed', :count => @results.size)
-        '
-        ' | 
-        =link_to 50, query: @query, per_page: 50
-        '
-        ' | 
-        =link_to 100, query: @query, per_page: 100
-  #search-results
-    .results_list
+.settings-table#disks-table
+  table.settings.table style="margin-bottom: 0px;"
+    thead
+      tr
+        #search-types
+          ul#search-menu
+            li[class="#{active 'hda'}"]
+              = action_name == "hda" ? t('files') : link_to(t('files'), :action => :hda, :query => @query, per_page: @rpp)
+            li[class="#{active 'images'}"]
+              = action_name == "images" ? t('images') : link_to(t('images'), :action => :images, :query => @query, per_page: @rpp)
+            li[class="#{active 'audio'}"]
+              = action_name == "audio" ? t('audio') : link_to(t('audio'), :action => :audio, :query => @query, per_page: @rpp)
+            li[class="#{active 'video'}"]
+              = action_name == "video" ? t('video') : link_to(t('video'), :action => :video, :query => @query, per_page: @rpp)
+            li.results
+              = t('results_displayed', :count => @results.size)
+              '
+              ' | 
+              =link_to 50, query: @query, per_page: 50
+              '
+              ' | 
+              =link_to 100, query: @query, per_page: 100
+
+    tbody class="search-table-body"
       - if @results.size > 0
-        ul
-          = render :partial => 'result', :collection => @results
+        = render :partial => 'result', :collection => @results
       - else
         .myhda_empty
           = t 'no_documents_found'
 
-  #search-pagination
-    .pagination
-      - if @page != 1
-        span.previous_page =link_to t('previous'), query: @query, page: @page-1, per_page: @rpp
+
+#search-pagination
+  .pagination
+    - if @page != 1
+      span.previous_page =link_to t('previous'), query: @query, page: @page-1, per_page: @rpp
+      '
+    - if @page > 5
+      =link_to "1", query: @query, page: 1, per_page: @rpp
+      '
+      =link_to "2", query: @query, page: 2, per_page: @rpp
+      '
+      ' ..
+    -(1..4).each do |p|
+      - page = @page-(5-p)
+      - unless page < 1
+        =link_to page, query: @query, page: page, per_page: @rpp
         '
-      - if @page > 5
-        =link_to "1", query: @query, page: 1, per_page: @rpp
+    em.current = @page
+    - unless @results.size < @rpp
+      '
+      -(1..6).each do |p|
+        =link_to @page+p, query: @query, rel: "next", page: @page+p, per_page: @rpp
         '
-        =link_to "2", query: @query, page: 2, per_page: @rpp
-        '
-        ' ..
-      -(1..4).each do |p|
-        - page = @page-(5-p)
-        - unless page < 1
-          =link_to page, query: @query, page: page, per_page: @rpp
-          '
-      em.current = @page
-      - unless @results.size < @rpp
-        '
-        -(1..6).each do |p|
-          =link_to @page+p, query: @query, rel: "next", page: @page+p, per_page: @rpp
-          '
-        span.next_page =link_to t('next'), query: @query, page: @page+1, per_page: @rpp
+      span.next_page =link_to t('next'), query: @query, page: @page+1, per_page: @rpp

@@ -1,12 +1,13 @@
-li[class="#{cycle('odd', 'even')}"]
-  .search-filename
-    = file_type_to_icon(result[:type], result[:path])
-    = link_to h(result[:title]), path2uri(result[:path])
-  .search-location
-    small = path2location(result[:path])
-    | &nbsp;&mdash;&nbsp;
-    em = number_to_human_size(result[:size])
-    | , 
-    em = h(result[:owner])
-    | &nbsp;&nbsp;
-    = link_to theme_image_tag("icons/open-folder.png"), path2uri(File.dirname result[:path]), :title => t('open'), :class => 'file-icon'
+tr class=cycle( "even", "odd")
+    td 
+      .search-filename
+        = file_type_to_icon(result[:type], result[:path])
+        = link_to h(result[:title]), path2uri(result[:path])
+      .search-location
+        = path2location(result[:path])
+        | &nbsp;&mdash;&nbsp;
+        em = number_to_human_size(result[:size])
+        | , 
+        em = h(result[:owner])
+        | &nbsp;&nbsp;
+        = link_to theme_image_tag("icons/open-folder.png"), path2uri(File.dirname result[:path]), :title => t('open'), :class => 'file-icon'

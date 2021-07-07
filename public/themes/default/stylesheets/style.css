@@ -1319,10 +1319,18 @@ td.align-top {
   margin-top: 5px; }
 
 #search-types {
-  border-top: 1px solid #506480;
   background-color: #f8f8f8;
   padding: 10px;
-  margin: 10px 0 20px; }
+}
+
+.search-table-body tr.even{
+  background: #b3b3b352;
+}
+
+div.search-filename a{
+  margin-left: 10px;
+  font-size: 13px;
+}
 
 #search-menu {
   list-style: none;
@@ -1378,6 +1386,10 @@ td.align-top {
       display: inline-block; }
   #search-results .even {
     background-color: #f8f8f8; }
+
+#search-pagination{
+  margin-top: 15px;
+}
 
 #search-pagination .pagination {
   text-align: center;
@@ -1599,7 +1611,10 @@ span.server_status i.running {
   font-weight: bold; }
 
 .search-location {
-  color: #009000; }
+  color: #009000;
+  font-size: 12px;
+  padding-left: 28px;
+}
 
 /* firewall settings in network tab */
 .fw-box {
